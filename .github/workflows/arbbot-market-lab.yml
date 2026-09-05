@@ -1,0 +1,43 @@
+name: ARBBOT market lab
+
+on:
+  schedule:
+    - cron: "27,57 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: arbbot-market-lab
+  cancel-in-progress: false
+
+jobs:
+  lab:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Scan public CEX markets
+        run: python arbbot/cex_market_scout.py
+
+      - name: Build persistence scoreboard
+        run: python arbbot/scoreboard.py
+
+      - name: Persist research data
+        run: |
+          git config user.name "arbbot"
+          git config user.email "actions@users.noreply.github.com"
+          git add arbbot/data/market_history.csv arbbot/data/market_latest.json arbbot/data/scoreboard.json
+          if git diff --cached --quiet; then
+            echo "No data change"
+          else
+            git commit -m "arbbot: market lab observation"
+            git pull --rebase
+            git push
+          fi
