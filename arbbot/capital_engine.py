@@ -26,7 +26,6 @@ UTILISATION = {
     "solana_cross_dex": 1.0,
     "cex_triangle": 1.0,
     "eur_triangle": 1.0,
-    "stable_dislocation": 1.0,
     "stable_eur_dislocation": 1.0,
     "cex_cross_spot": 0.5,
     "eu_cross_spot": 0.5,
@@ -53,6 +52,10 @@ def main():
 
     for item in sb.get("ranked") or []:
         strategy = item.get("strategy")
+        # Only rank strategies whose stored edge is already an executable-style net spread/carry measure.
+        # A simple stablecoin deviation from $1 is research context, not by itself a realizable arbitrage.
+        if strategy not in UTILISATION:
+            continue
         med = max(0.0, float(item.get("median_positive_edge_bps") or 0))
         persistence = max(0.0, min(1.0, float(item.get("persistence") or 0)))
         utilisation = UTILISATION.get(strategy, 0.5)
