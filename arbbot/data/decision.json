@@ -1,57 +1,60 @@
 {
-  "generated_at_utc": "2026-09-05T23:48:03+00:00",
+  "generated_at_utc": "2026-09-05T23:51:25+00:00",
   "state": "WAIT",
   "ranking_source": "capital_rank",
   "selected": {
-    "key": "stable_dislocation|FDUSD:Binance",
-    "strategy": "stable_dislocation",
-    "label": "FDUSD:Binance",
-    "direction": "below peg",
+    "key": "cex_triangle|ETH:USDT-BTC-ETH-USDT",
+    "strategy": "cex_triangle",
+    "label": "ETH:USDT-BTC-ETH-USDT",
+    "direction": "USDT->BTC->ETH->USDT",
     "venue": "Binance",
-    "observations": 1,
-    "positive_observations": 1,
-    "persistence": 1.0,
-    "median_positive_edge_bps": 16.5,
-    "p90_positive_edge_bps": 16.5,
-    "max_edge_bps": 16.5,
-    "latest_edge_bps": 16.5,
-    "research_score": 77.29,
+    "observations": 2,
+    "positive_observations": 0,
+    "persistence": 0.0,
+    "median_positive_edge_bps": 0.0,
+    "p90_positive_edge_bps": 0.0,
+    "max_edge_bps": -36.6288,
+    "latest_edge_bps": -37.6155,
+    "research_score": 3.33,
     "classification": "noise",
-    "last_seen_utc": "2026-09-05T23:47:18+00:00",
+    "last_seen_utc": "2026-09-05T23:50:40+00:00",
     "capital_utilisation": 1.0,
-    "capital_efficiency_score": 51.2,
+    "capital_efficiency_score": 0.0,
     "paper_economics": {
       "50": {
         "total_budget": 50,
         "effective_capital_per_edge": 50.0,
-        "paper_profit_per_event_at_median_edge": 0.0825
+        "paper_profit_per_event_at_median_edge": 0.0
       },
       "100": {
         "total_budget": 100,
         "effective_capital_per_edge": 100.0,
-        "paper_profit_per_event_at_median_edge": 0.165
+        "paper_profit_per_event_at_median_edge": 0.0
       },
       "250": {
         "total_budget": 250,
         "effective_capital_per_edge": 250.0,
-        "paper_profit_per_event_at_median_edge": 0.4125
+        "paper_profit_per_event_at_median_edge": 0.0
       },
       "500": {
         "total_budget": 500,
         "effective_capital_per_edge": 500.0,
-        "paper_profit_per_event_at_median_edge": 0.825
+        "paper_profit_per_event_at_median_edge": 0.0
       }
     }
   },
   "failed_gates": [
     "not strong_watch yet",
-    "only 1 observations; need 6"
+    "only 2 observations; need 8",
+    "persistence 0.00 below 0.75",
+    "median edge 0.00 bps below 8.00",
+    "research score 3.3 below 72.0"
   ],
   "policy": {
-    "min_observations": 6,
-    "min_persistence": 0.7,
+    "min_observations": 8,
+    "min_persistence": 0.75,
     "min_median_edge_bps": 8.0,
-    "min_research_score": 68.0
+    "min_research_score": 72.0
   },
   "next_action": "keep collecting data; no user action",
   "hard_boundary": "ARBBOT may research, rank and prepare a test plan. It must not custody funds, sign transactions, place orders, or enable live trading without explicit user authorization."
