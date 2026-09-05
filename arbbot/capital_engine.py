@@ -30,7 +30,6 @@ UTILISATION = {
     "cex_cross_spot": 0.5,
     "eu_cross_spot": 0.5,
     "funding_spread": 0.5,
-    "spot_perp_basis": 0.5,
 }
 
 CARRY_PERIODS_PER_DAY = {
