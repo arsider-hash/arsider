@@ -1,39 +1,41 @@
 # ARBBOT LAB
 
-The project is now a read-only opportunity laboratory rather than a single arbitrage script.
+ARBBOT is a read-only opportunity laboratory. The target is not prediction; it is
+finding places where market structure, financing, subsidies or fragmented liquidity
+create a measurable edge after conservative haircuts.
 
 ## Active research lanes
 
-1. **Solana cross-DEX** — quoted USDC -> SOL -> USDC round trips across selected DEXes.
+1. **Solana cross-DEX** — quoted USDC -> SOL -> USDC round trips.
 2. **Cross-exchange funding** — normalised Binance/Bybit perpetual funding spreads.
-3. **CEX cross-spot** — best ask on one venue versus best bid on the other for BTC, ETH and SOL.
-4. **CEX triangular arbitrage** — Binance top-of-book USDT/BTC/ETH and USDT/BTC/SOL cycles.
-5. **Spot-perp basis** — spot versus perpetual premium/discount on Binance and Bybit.
-6. **Stablecoin dislocations** — USDC/USDT and FDUSD/USDT where listed.
-7. **Persistence scoreboard** — rejects isolated spikes and ranks only repeated signals.
+3. **CEX cross-spot** — Binance/Bybit top-of-book fragmentation.
+4. **CEX triangular arbitrage** — same-venue USDT/BTC/ETH and USDT/BTC/SOL cycles.
+5. **Spot-perp basis** — spot versus perpetual premium/discount.
+6. **Stablecoin dislocations** — major stablecoin relative-value anomalies.
+7. **EU cross-spot** — Coinbase/Kraken BTC, ETH and SOL in EUR.
+8. **EUR triangular arbitrage** — same-venue EUR -> USDT -> crypto -> EUR cycles.
+9. **EUR stablecoin dislocations** — USDC/USDT conversion anomalies through EUR.
+10. **Stable-yield subsidy radar** — large stablecoin pools with persistent base/reward yield.
+11. **Persistence scoreboard** — rejects isolated spikes over a rolling 48-hour window.
+12. **Small-capital engine** — ranks the surviving signals at €50/100/250/500 paper budgets.
+13. **Burst validator** — rechecks promoted fast edges repeatedly for about one minute.
+14. **Autopilot decision engine** — returns one candidate only: WAIT, VALIDATE or READY.
 
-## Design rule
+## What ARBBOT is looking for
 
-Everything is read-only. No exchange credentials, API trading keys, wallet seed, private key, signing or order placement exists in this codebase.
+The useful "leaks" are lawful economic ones:
 
-## Why the scoreboard matters
+- fragmented liquidity between venues;
+- funding and basis imbalances created by one-sided positioning;
+- stablecoin/fiat conversion dislocations;
+- tiny-capacity edges that may be irrelevant to large firms but meaningful at small size;
+- explicit protocol subsidies and rewards.
 
-A single profitable-looking quote is usually worthless. The scoreboard reviews the last 48 hours and promotes a lane only when positive readings repeat.
+The project does not hunt software vulnerabilities, stolen credentials, protocol exploits,
+front-running victims or geoblock circumvention.
 
-A `strong_watch` is **not** permission to trade. It means the signal has survived the first noise filter and deserves execution-specific validation.
+## Live-money gate
 
-## Before any live-money phase
-
-A live prototype would require, at minimum:
-
-- account-specific fee schedules;
-- executable order-book depth for the intended size;
-- latency and fill-probability measurement;
-- funding-interval and basis-risk validation;
-- transfer/rebalancing costs;
-- hard capital limits;
-- kill switches;
-- isolated credentials with no withdrawal permission where supported;
-- a separate wallet/account and explicit user authorization.
-
-No live-money component is currently present.
+No live-money component exists. A candidate must survive persistence, capital-efficiency
+and strategy-specific validation before ARBBOT can even produce a capped live-test proposal.
+Actual funding or order authorization remains a separate explicit user action.
