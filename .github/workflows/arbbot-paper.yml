@@ -1,0 +1,41 @@
+name: ARBBOT paper scanner
+
+on:
+  schedule:
+    - cron: "17,47 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: arbbot-paper
+  cancel-in-progress: false
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run read-only scanner
+        run: python arbbot/scanner.py
+
+      - name: Persist observations
+        run: |
+          git config user.name "arbbot"
+          git config user.email "actions@users.noreply.github.com"
+          git add arbbot/data/history.csv arbbot/data/latest.json
+          if git diff --cached --quiet; then
+            echo "No data change"
+          else
+            git commit -m "arbbot: paper observation"
+            git push
+          fi
