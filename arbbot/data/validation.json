@@ -1,0 +1,46 @@
+{
+  "generated_at_utc": "2026-09-05T23:46:32+00:00",
+  "state": "SKIP",
+  "reason": "decision state is WAIT",
+  "selected": {
+    "key": "stable_dislocation|FDUSD:Binance",
+    "strategy": "stable_dislocation",
+    "label": "FDUSD:Binance",
+    "direction": "below peg",
+    "venue": "Binance",
+    "observations": 1,
+    "positive_observations": 1,
+    "persistence": 1.0,
+    "median_positive_edge_bps": 16.5,
+    "p90_positive_edge_bps": 16.5,
+    "max_edge_bps": 16.5,
+    "latest_edge_bps": 16.5,
+    "research_score": 77.29,
+    "classification": "noise",
+    "last_seen_utc": "2026-09-05T23:45:46+00:00",
+    "capital_utilisation": 1.0,
+    "capital_efficiency_score": 51.2,
+    "paper_economics": {
+      "50": {
+        "total_budget": 50,
+        "effective_capital_per_edge": 50.0,
+        "paper_profit_per_event_at_median_edge": 0.0825
+      },
+      "100": {
+        "total_budget": 100,
+        "effective_capital_per_edge": 100.0,
+        "paper_profit_per_event_at_median_edge": 0.165
+      },
+      "250": {
+        "total_budget": 250,
+        "effective_capital_per_edge": 250.0,
+        "paper_profit_per_event_at_median_edge": 0.4125
+      },
+      "500": {
+        "total_budget": 500,
+        "effective_capital_per_edge": 500.0,
+        "paper_profit_per_event_at_median_edge": 0.825
+      }
+    }
+  }
+}

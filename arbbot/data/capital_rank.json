@@ -1,0 +1,1201 @@
+{
+  "generated_at_utc": "2026-09-05T23:46:32+00:00",
+  "budgets": [
+    50,
+    100,
+    250,
+    500
+  ],
+  "best": {
+    "key": "stable_dislocation|FDUSD:Binance",
+    "strategy": "stable_dislocation",
+    "label": "FDUSD:Binance",
+    "direction": "below peg",
+    "venue": "Binance",
+    "observations": 1,
+    "positive_observations": 1,
+    "persistence": 1.0,
+    "median_positive_edge_bps": 16.5,
+    "p90_positive_edge_bps": 16.5,
+    "max_edge_bps": 16.5,
+    "latest_edge_bps": 16.5,
+    "research_score": 77.29,
+    "classification": "noise",
+    "last_seen_utc": "2026-09-05T23:45:46+00:00",
+    "capital_utilisation": 1.0,
+    "capital_efficiency_score": 51.2,
+    "paper_economics": {
+      "50": {
+        "total_budget": 50,
+        "effective_capital_per_edge": 50.0,
+        "paper_profit_per_event_at_median_edge": 0.0825
+      },
+      "100": {
+        "total_budget": 100,
+        "effective_capital_per_edge": 100.0,
+        "paper_profit_per_event_at_median_edge": 0.165
+      },
+      "250": {
+        "total_budget": 250,
+        "effective_capital_per_edge": 250.0,
+        "paper_profit_per_event_at_median_edge": 0.4125
+      },
+      "500": {
+        "total_budget": 500,
+        "effective_capital_per_edge": 500.0,
+        "paper_profit_per_event_at_median_edge": 0.825
+      }
+    }
+  },
+  "ranked": [
+    {
+      "key": "stable_dislocation|FDUSD:Binance",
+      "strategy": "stable_dislocation",
+      "label": "FDUSD:Binance",
+      "direction": "below peg",
+      "venue": "Binance",
+      "observations": 1,
+      "positive_observations": 1,
+      "persistence": 1.0,
+      "median_positive_edge_bps": 16.5,
+      "p90_positive_edge_bps": 16.5,
+      "max_edge_bps": 16.5,
+      "latest_edge_bps": 16.5,
+      "research_score": 77.29,
+      "classification": "noise",
+      "last_seen_utc": "2026-09-05T23:45:46+00:00",
+      "capital_utilisation": 1.0,
+      "capital_efficiency_score": 51.2,
+      "paper_economics": {
+        "50": {
+          "total_budget": 50,
+          "effective_capital_per_edge": 50.0,
+          "paper_profit_per_event_at_median_edge": 0.0825
+        },
+        "100": {
+          "total_budget": 100,
+          "effective_capital_per_edge": 100.0,
+          "paper_profit_per_event_at_median_edge": 0.165
+        },
+        "250": {
+          "total_budget": 250,
+          "effective_capital_per_edge": 250.0,
+          "paper_profit_per_event_at_median_edge": 0.4125
+        },
+        "500": {
+          "total_budget": 500,
+          "effective_capital_per_edge": 500.0,
+          "paper_profit_per_event_at_median_edge": 0.825
+        }
+      }
+    },
+    {
+      "key": "cex_triangle|ETH:USDT-BTC-ETH-USDT",
+      "strategy": "cex_triangle",
+      "label": "ETH:USDT-BTC-ETH-USDT",
+      "direction": "USDT->BTC->ETH->USDT",
+      "venue": "Binance",
+      "observations": 1,
+      "positive_observations": 0,
+      "persistence": 0.0,
+      "median_positive_edge_bps": 0.0,
+      "p90_positive_edge_bps": 0.0,
+      "max_edge_bps": -39.4222,
+      "latest_edge_bps": -39.4222,
+      "research_score": 1.67,
+      "classification": "noise",
+      "last_seen_utc": "2026-09-05T23:45:46+00:00",
+      "capital_utilisation": 1.0,
+      "capital_efficiency_score": 0.0,
+      "paper_economics": {
+        "50": {
+          "total_budget": 50,
+          "effective_capital_per_edge": 50.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        },
+        "100": {
+          "total_budget": 100,
+          "effective_capital_per_edge": 100.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        },
+        "250": {
+          "total_budget": 250,
+          "effective_capital_per_edge": 250.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        },
+        "500": {
+          "total_budget": 500,
+          "effective_capital_per_edge": 500.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        }
+      }
+    },
+    {
+      "key": "cex_triangle|ETH:USDT-ETH-BTC-USDT",
+      "strategy": "cex_triangle",
+      "label": "ETH:USDT-ETH-BTC-USDT",
+      "direction": "USDT->ETH->BTC->USDT",
+      "venue": "Binance",
+      "observations": 1,
+      "positive_observations": 0,
+      "persistence": 0.0,
+      "median_positive_edge_bps": 0.0,
+      "p90_positive_edge_bps": 0.0,
+      "max_edge_bps": -39.7673,
+      "latest_edge_bps": -39.7673,
+      "research_score": 1.67,
+      "classification": "noise",
+      "last_seen_utc": "2026-09-05T23:45:46+00:00",
+      "capital_utilisation": 1.0,
+      "capital_efficiency_score": 0.0,
+      "paper_economics": {
+        "50": {
+          "total_budget": 50,
+          "effective_capital_per_edge": 50.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        },
+        "100": {
+          "total_budget": 100,
+          "effective_capital_per_edge": 100.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        },
+        "250": {
+          "total_budget": 250,
+          "effective_capital_per_edge": 250.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        },
+        "500": {
+          "total_budget": 500,
+          "effective_capital_per_edge": 500.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        }
+      }
+    },
+    {
+      "key": "cex_triangle|SOL:USDT-BTC-SOL-USDT",
+      "strategy": "cex_triangle",
+      "label": "SOL:USDT-BTC-SOL-USDT",
+      "direction": "USDT->BTC->SOL->USDT",
+      "venue": "Binance",
+      "observations": 1,
+      "positive_observations": 0,
+      "persistence": 0.0,
+      "median_positive_edge_bps": 0.0,
+      "p90_positive_edge_bps": 0.0,
+      "max_edge_bps": -38.4392,
+      "latest_edge_bps": -38.4392,
+      "research_score": 1.67,
+      "classification": "noise",
+      "last_seen_utc": "2026-09-05T23:45:46+00:00",
+      "capital_utilisation": 1.0,
+      "capital_efficiency_score": 0.0,
+      "paper_economics": {
+        "50": {
+          "total_budget": 50,
+          "effective_capital_per_edge": 50.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        },
+        "100": {
+          "total_budget": 100,
+          "effective_capital_per_edge": 100.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        },
+        "250": {
+          "total_budget": 250,
+          "effective_capital_per_edge": 250.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        },
+        "500": {
+          "total_budget": 500,
+          "effective_capital_per_edge": 500.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        }
+      }
+    },
+    {
+      "key": "cex_triangle|SOL:USDT-SOL-BTC-USDT",
+      "strategy": "cex_triangle",
+      "label": "SOL:USDT-SOL-BTC-USDT",
+      "direction": "USDT->SOL->BTC->USDT",
+      "venue": "Binance",
+      "observations": 1,
+      "positive_observations": 0,
+      "persistence": 0.0,
+      "median_positive_edge_bps": 0.0,
+      "p90_positive_edge_bps": 0.0,
+      "max_edge_bps": -39.238,
+      "latest_edge_bps": -39.238,
+      "research_score": 1.67,
+      "classification": "noise",
+      "last_seen_utc": "2026-09-05T23:45:46+00:00",
+      "capital_utilisation": 1.0,
+      "capital_efficiency_score": 0.0,
+      "paper_economics": {
+        "50": {
+          "total_budget": 50,
+          "effective_capital_per_edge": 50.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        },
+        "100": {
+          "total_budget": 100,
+          "effective_capital_per_edge": 100.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        },
+        "250": {
+          "total_budget": 250,
+          "effective_capital_per_edge": 250.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        },
+        "500": {
+          "total_budget": 500,
+          "effective_capital_per_edge": 500.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        }
+      }
+    },
+    {
+      "key": "stable_dislocation|USDC:Binance",
+      "strategy": "stable_dislocation",
+      "label": "USDC:Binance",
+      "direction": "below peg",
+      "venue": "Binance",
+      "observations": 1,
+      "positive_observations": 0,
+      "persistence": 0.0,
+      "median_positive_edge_bps": 0.0,
+      "p90_positive_edge_bps": 0.0,
+      "max_edge_bps": 1.75,
+      "latest_edge_bps": 1.75,
+      "research_score": 1.67,
+      "classification": "noise",
+      "last_seen_utc": "2026-09-05T23:45:46+00:00",
+      "capital_utilisation": 1.0,
+      "capital_efficiency_score": 0.0,
+      "paper_economics": {
+        "50": {
+          "total_budget": 50,
+          "effective_capital_per_edge": 50.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        },
+        "100": {
+          "total_budget": 100,
+          "effective_capital_per_edge": 100.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        },
+        "250": {
+          "total_budget": 250,
+          "effective_capital_per_edge": 250.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        },
+        "500": {
+          "total_budget": 500,
+          "effective_capital_per_edge": 500.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        }
+      }
+    },
+    {
+      "key": "eu_cross_spot|BTC:buy Coinbase / sell Kraken",
+      "strategy": "eu_cross_spot",
+      "label": "BTC:buy Coinbase / sell Kraken",
+      "direction": "buy Coinbase / sell Kraken",
+      "venue": "Coinbase<->Kraken",
+      "observations": 1,
+      "positive_observations": 0,
+      "persistence": 0.0,
+      "median_positive_edge_bps": 0.0,
+      "p90_positive_edge_bps": 0.0,
+      "max_edge_bps": -43.5816,
+      "latest_edge_bps": -43.5816,
+      "research_score": 1.67,
+      "classification": "noise",
+      "last_seen_utc": "2026-09-05T23:46:27+00:00",
+      "capital_utilisation": 0.5,
+      "capital_efficiency_score": 0.0,
+      "paper_economics": {
+        "50": {
+          "total_budget": 50,
+          "effective_capital_per_edge": 25.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        },
+        "100": {
+          "total_budget": 100,
+          "effective_capital_per_edge": 50.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        },
+        "250": {
+          "total_budget": 250,
+          "effective_capital_per_edge": 125.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        },
+        "500": {
+          "total_budget": 500,
+          "effective_capital_per_edge": 250.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        }
+      }
+    },
+    {
+      "key": "eu_cross_spot|BTC:buy Kraken / sell Coinbase",
+      "strategy": "eu_cross_spot",
+      "label": "BTC:buy Kraken / sell Coinbase",
+      "direction": "buy Kraken / sell Coinbase",
+      "venue": "Coinbase<->Kraken",
+      "observations": 1,
+      "positive_observations": 0,
+      "persistence": 0.0,
+      "median_positive_edge_bps": 0.0,
+      "p90_positive_edge_bps": 0.0,
+      "max_edge_bps": -46.5185,
+      "latest_edge_bps": -46.5185,
+      "research_score": 1.67,
+      "classification": "noise",
+      "last_seen_utc": "2026-09-05T23:46:27+00:00",
+      "capital_utilisation": 0.5,
+      "capital_efficiency_score": 0.0,
+      "paper_economics": {
+        "50": {
+          "total_budget": 50,
+          "effective_capital_per_edge": 25.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        },
+        "100": {
+          "total_budget": 100,
+          "effective_capital_per_edge": 50.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        },
+        "250": {
+          "total_budget": 250,
+          "effective_capital_per_edge": 125.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        },
+        "500": {
+          "total_budget": 500,
+          "effective_capital_per_edge": 250.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        }
+      }
+    },
+    {
+      "key": "eu_cross_spot|ETH:buy Coinbase / sell Kraken",
+      "strategy": "eu_cross_spot",
+      "label": "ETH:buy Coinbase / sell Kraken",
+      "direction": "buy Coinbase / sell Kraken",
+      "venue": "Coinbase<->Kraken",
+      "observations": 1,
+      "positive_observations": 0,
+      "persistence": 0.0,
+      "median_positive_edge_bps": 0.0,
+      "p90_positive_edge_bps": 0.0,
+      "max_edge_bps": -45.4208,
+      "latest_edge_bps": -45.4208,
+      "research_score": 1.67,
+      "classification": "noise",
+      "last_seen_utc": "2026-09-05T23:46:27+00:00",
+      "capital_utilisation": 0.5,
+      "capital_efficiency_score": 0.0,
+      "paper_economics": {
+        "50": {
+          "total_budget": 50,
+          "effective_capital_per_edge": 25.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        },
+        "100": {
+          "total_budget": 100,
+          "effective_capital_per_edge": 50.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        },
+        "250": {
+          "total_budget": 250,
+          "effective_capital_per_edge": 125.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        },
+        "500": {
+          "total_budget": 500,
+          "effective_capital_per_edge": 250.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        }
+      }
+    },
+    {
+      "key": "eu_cross_spot|ETH:buy Kraken / sell Coinbase",
+      "strategy": "eu_cross_spot",
+      "label": "ETH:buy Kraken / sell Coinbase",
+      "direction": "buy Kraken / sell Coinbase",
+      "venue": "Coinbase<->Kraken",
+      "observations": 1,
+      "positive_observations": 0,
+      "persistence": 0.0,
+      "median_positive_edge_bps": 0.0,
+      "p90_positive_edge_bps": 0.0,
+      "max_edge_bps": -46.5897,
+      "latest_edge_bps": -46.5897,
+      "research_score": 1.67,
+      "classification": "noise",
+      "last_seen_utc": "2026-09-05T23:46:27+00:00",
+      "capital_utilisation": 0.5,
+      "capital_efficiency_score": 0.0,
+      "paper_economics": {
+        "50": {
+          "total_budget": 50,
+          "effective_capital_per_edge": 25.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        },
+        "100": {
+          "total_budget": 100,
+          "effective_capital_per_edge": 50.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        },
+        "250": {
+          "total_budget": 250,
+          "effective_capital_per_edge": 125.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        },
+        "500": {
+          "total_budget": 500,
+          "effective_capital_per_edge": 250.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        }
+      }
+    },
+    {
+      "key": "eu_cross_spot|SOL:buy Coinbase / sell Kraken",
+      "strategy": "eu_cross_spot",
+      "label": "SOL:buy Coinbase / sell Kraken",
+      "direction": "buy Coinbase / sell Kraken",
+      "venue": "Coinbase<->Kraken",
+      "observations": 1,
+      "positive_observations": 0,
+      "persistence": 0.0,
+      "median_positive_edge_bps": 0.0,
+      "p90_positive_edge_bps": 0.0,
+      "max_edge_bps": -47.2464,
+      "latest_edge_bps": -47.2464,
+      "research_score": 1.67,
+      "classification": "noise",
+      "last_seen_utc": "2026-09-05T23:46:27+00:00",
+      "capital_utilisation": 0.5,
+      "capital_efficiency_score": 0.0,
+      "paper_economics": {
+        "50": {
+          "total_budget": 50,
+          "effective_capital_per_edge": 25.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        },
+        "100": {
+          "total_budget": 100,
+          "effective_capital_per_edge": 50.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        },
+        "250": {
+          "total_budget": 250,
+          "effective_capital_per_edge": 125.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        },
+        "500": {
+          "total_budget": 500,
+          "effective_capital_per_edge": 250.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        }
+      }
+    },
+    {
+      "key": "eu_cross_spot|SOL:buy Kraken / sell Coinbase",
+      "strategy": "eu_cross_spot",
+      "label": "SOL:buy Kraken / sell Coinbase",
+      "direction": "buy Kraken / sell Coinbase",
+      "venue": "Coinbase<->Kraken",
+      "observations": 1,
+      "positive_observations": 0,
+      "persistence": 0.0,
+      "median_positive_edge_bps": 0.0,
+      "p90_positive_edge_bps": 0.0,
+      "max_edge_bps": -46.1233,
+      "latest_edge_bps": -46.1233,
+      "research_score": 1.67,
+      "classification": "noise",
+      "last_seen_utc": "2026-09-05T23:46:27+00:00",
+      "capital_utilisation": 0.5,
+      "capital_efficiency_score": 0.0,
+      "paper_economics": {
+        "50": {
+          "total_budget": 50,
+          "effective_capital_per_edge": 25.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        },
+        "100": {
+          "total_budget": 100,
+          "effective_capital_per_edge": 50.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        },
+        "250": {
+          "total_budget": 250,
+          "effective_capital_per_edge": 125.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        },
+        "500": {
+          "total_budget": 500,
+          "effective_capital_per_edge": 250.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        }
+      }
+    },
+    {
+      "key": "eur_triangle|Coinbase:BTC:EUR-USDT-BTC-EUR",
+      "strategy": "eur_triangle",
+      "label": "Coinbase:BTC:EUR-USDT-BTC-EUR",
+      "direction": "EUR->USDT->BTC->EUR",
+      "venue": "Coinbase",
+      "observations": 1,
+      "positive_observations": 0,
+      "persistence": 0.0,
+      "median_positive_edge_bps": 0.0,
+      "p90_positive_edge_bps": 0.0,
+      "max_edge_bps": -130.837,
+      "latest_edge_bps": -130.837,
+      "research_score": 1.67,
+      "classification": "noise",
+      "last_seen_utc": "2026-09-05T23:46:27+00:00",
+      "capital_utilisation": 1.0,
+      "capital_efficiency_score": 0.0,
+      "paper_economics": {
+        "50": {
+          "total_budget": 50,
+          "effective_capital_per_edge": 50.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        },
+        "100": {
+          "total_budget": 100,
+          "effective_capital_per_edge": 100.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        },
+        "250": {
+          "total_budget": 250,
+          "effective_capital_per_edge": 250.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        },
+        "500": {
+          "total_budget": 500,
+          "effective_capital_per_edge": 500.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        }
+      }
+    },
+    {
+      "key": "eur_triangle|Coinbase:BTC:EUR-BTC-USDT-EUR",
+      "strategy": "eur_triangle",
+      "label": "Coinbase:BTC:EUR-BTC-USDT-EUR",
+      "direction": "EUR->BTC->USDT->EUR",
+      "venue": "Coinbase",
+      "observations": 1,
+      "positive_observations": 0,
+      "persistence": 0.0,
+      "median_positive_edge_bps": 0.0,
+      "p90_positive_edge_bps": 0.0,
+      "max_edge_bps": -130.4673,
+      "latest_edge_bps": -130.4673,
+      "research_score": 1.67,
+      "classification": "noise",
+      "last_seen_utc": "2026-09-05T23:46:27+00:00",
+      "capital_utilisation": 1.0,
+      "capital_efficiency_score": 0.0,
+      "paper_economics": {
+        "50": {
+          "total_budget": 50,
+          "effective_capital_per_edge": 50.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        },
+        "100": {
+          "total_budget": 100,
+          "effective_capital_per_edge": 100.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        },
+        "250": {
+          "total_budget": 250,
+          "effective_capital_per_edge": 250.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        },
+        "500": {
+          "total_budget": 500,
+          "effective_capital_per_edge": 500.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        }
+      }
+    },
+    {
+      "key": "eur_triangle|Kraken:BTC:EUR-USDT-BTC-EUR",
+      "strategy": "eur_triangle",
+      "label": "Kraken:BTC:EUR-USDT-BTC-EUR",
+      "direction": "EUR->USDT->BTC->EUR",
+      "venue": "Kraken",
+      "observations": 1,
+      "positive_observations": 0,
+      "persistence": 0.0,
+      "median_positive_edge_bps": 0.0,
+      "p90_positive_edge_bps": 0.0,
+      "max_edge_bps": -129.0928,
+      "latest_edge_bps": -129.0928,
+      "research_score": 1.67,
+      "classification": "noise",
+      "last_seen_utc": "2026-09-05T23:46:27+00:00",
+      "capital_utilisation": 1.0,
+      "capital_efficiency_score": 0.0,
+      "paper_economics": {
+        "50": {
+          "total_budget": 50,
+          "effective_capital_per_edge": 50.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        },
+        "100": {
+          "total_budget": 100,
+          "effective_capital_per_edge": 100.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        },
+        "250": {
+          "total_budget": 250,
+          "effective_capital_per_edge": 250.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        },
+        "500": {
+          "total_budget": 500,
+          "effective_capital_per_edge": 500.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        }
+      }
+    },
+    {
+      "key": "eur_triangle|Kraken:BTC:EUR-BTC-USDT-EUR",
+      "strategy": "eur_triangle",
+      "label": "Kraken:BTC:EUR-BTC-USDT-EUR",
+      "direction": "EUR->BTC->USDT->EUR",
+      "venue": "Kraken",
+      "observations": 1,
+      "positive_observations": 0,
+      "persistence": 0.0,
+      "median_positive_edge_bps": 0.0,
+      "p90_positive_edge_bps": 0.0,
+      "max_edge_bps": -131.1217,
+      "latest_edge_bps": -131.1217,
+      "research_score": 1.67,
+      "classification": "noise",
+      "last_seen_utc": "2026-09-05T23:46:27+00:00",
+      "capital_utilisation": 1.0,
+      "capital_efficiency_score": 0.0,
+      "paper_economics": {
+        "50": {
+          "total_budget": 50,
+          "effective_capital_per_edge": 50.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        },
+        "100": {
+          "total_budget": 100,
+          "effective_capital_per_edge": 100.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        },
+        "250": {
+          "total_budget": 250,
+          "effective_capital_per_edge": 250.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        },
+        "500": {
+          "total_budget": 500,
+          "effective_capital_per_edge": 500.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        }
+      }
+    },
+    {
+      "key": "eur_triangle|Coinbase:ETH:EUR-USDT-ETH-EUR",
+      "strategy": "eur_triangle",
+      "label": "Coinbase:ETH:EUR-USDT-ETH-EUR",
+      "direction": "EUR->USDT->ETH->EUR",
+      "venue": "Coinbase",
+      "observations": 1,
+      "positive_observations": 0,
+      "persistence": 0.0,
+      "median_positive_edge_bps": 0.0,
+      "p90_positive_edge_bps": 0.0,
+      "max_edge_bps": -133.5473,
+      "latest_edge_bps": -133.5473,
+      "research_score": 1.67,
+      "classification": "noise",
+      "last_seen_utc": "2026-09-05T23:46:27+00:00",
+      "capital_utilisation": 1.0,
+      "capital_efficiency_score": 0.0,
+      "paper_economics": {
+        "50": {
+          "total_budget": 50,
+          "effective_capital_per_edge": 50.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        },
+        "100": {
+          "total_budget": 100,
+          "effective_capital_per_edge": 100.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        },
+        "250": {
+          "total_budget": 250,
+          "effective_capital_per_edge": 250.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        },
+        "500": {
+          "total_budget": 500,
+          "effective_capital_per_edge": 500.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        }
+      }
+    },
+    {
+      "key": "eur_triangle|Coinbase:ETH:EUR-ETH-USDT-EUR",
+      "strategy": "eur_triangle",
+      "label": "Coinbase:ETH:EUR-ETH-USDT-EUR",
+      "direction": "EUR->ETH->USDT->EUR",
+      "venue": "Coinbase",
+      "observations": 1,
+      "positive_observations": 0,
+      "persistence": 0.0,
+      "median_positive_edge_bps": 0.0,
+      "p90_positive_edge_bps": 0.0,
+      "max_edge_bps": -131.4694,
+      "latest_edge_bps": -131.4694,
+      "research_score": 1.67,
+      "classification": "noise",
+      "last_seen_utc": "2026-09-05T23:46:27+00:00",
+      "capital_utilisation": 1.0,
+      "capital_efficiency_score": 0.0,
+      "paper_economics": {
+        "50": {
+          "total_budget": 50,
+          "effective_capital_per_edge": 50.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        },
+        "100": {
+          "total_budget": 100,
+          "effective_capital_per_edge": 100.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        },
+        "250": {
+          "total_budget": 250,
+          "effective_capital_per_edge": 250.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        },
+        "500": {
+          "total_budget": 500,
+          "effective_capital_per_edge": 500.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        }
+      }
+    },
+    {
+      "key": "eur_triangle|Kraken:ETH:EUR-USDT-ETH-EUR",
+      "strategy": "eur_triangle",
+      "label": "Kraken:ETH:EUR-USDT-ETH-EUR",
+      "direction": "EUR->USDT->ETH->EUR",
+      "venue": "Kraken",
+      "observations": 1,
+      "positive_observations": 0,
+      "persistence": 0.0,
+      "median_positive_edge_bps": 0.0,
+      "p90_positive_edge_bps": 0.0,
+      "max_edge_bps": -130.7596,
+      "latest_edge_bps": -130.7596,
+      "research_score": 1.67,
+      "classification": "noise",
+      "last_seen_utc": "2026-09-05T23:46:27+00:00",
+      "capital_utilisation": 1.0,
+      "capital_efficiency_score": 0.0,
+      "paper_economics": {
+        "50": {
+          "total_budget": 50,
+          "effective_capital_per_edge": 50.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        },
+        "100": {
+          "total_budget": 100,
+          "effective_capital_per_edge": 100.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        },
+        "250": {
+          "total_budget": 250,
+          "effective_capital_per_edge": 250.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        },
+        "500": {
+          "total_budget": 500,
+          "effective_capital_per_edge": 500.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        }
+      }
+    },
+    {
+      "key": "eur_triangle|Kraken:ETH:EUR-ETH-USDT-EUR",
+      "strategy": "eur_triangle",
+      "label": "Kraken:ETH:EUR-ETH-USDT-EUR",
+      "direction": "EUR->ETH->USDT->EUR",
+      "venue": "Kraken",
+      "observations": 1,
+      "positive_observations": 0,
+      "persistence": 0.0,
+      "median_positive_edge_bps": 0.0,
+      "p90_positive_edge_bps": 0.0,
+      "max_edge_bps": -130.3295,
+      "latest_edge_bps": -130.3295,
+      "research_score": 1.67,
+      "classification": "noise",
+      "last_seen_utc": "2026-09-05T23:46:27+00:00",
+      "capital_utilisation": 1.0,
+      "capital_efficiency_score": 0.0,
+      "paper_economics": {
+        "50": {
+          "total_budget": 50,
+          "effective_capital_per_edge": 50.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        },
+        "100": {
+          "total_budget": 100,
+          "effective_capital_per_edge": 100.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        },
+        "250": {
+          "total_budget": 250,
+          "effective_capital_per_edge": 250.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        },
+        "500": {
+          "total_budget": 500,
+          "effective_capital_per_edge": 500.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        }
+      }
+    },
+    {
+      "key": "eur_triangle|Coinbase:SOL:EUR-USDT-SOL-EUR",
+      "strategy": "eur_triangle",
+      "label": "Coinbase:SOL:EUR-USDT-SOL-EUR",
+      "direction": "EUR->USDT->SOL->EUR",
+      "venue": "Coinbase",
+      "observations": 1,
+      "positive_observations": 0,
+      "persistence": 0.0,
+      "median_positive_edge_bps": 0.0,
+      "p90_positive_edge_bps": 0.0,
+      "max_edge_bps": -131.6046,
+      "latest_edge_bps": -131.6046,
+      "research_score": 1.67,
+      "classification": "noise",
+      "last_seen_utc": "2026-09-05T23:46:27+00:00",
+      "capital_utilisation": 1.0,
+      "capital_efficiency_score": 0.0,
+      "paper_economics": {
+        "50": {
+          "total_budget": 50,
+          "effective_capital_per_edge": 50.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        },
+        "100": {
+          "total_budget": 100,
+          "effective_capital_per_edge": 100.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        },
+        "250": {
+          "total_budget": 250,
+          "effective_capital_per_edge": 250.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        },
+        "500": {
+          "total_budget": 500,
+          "effective_capital_per_edge": 500.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        }
+      }
+    },
+    {
+      "key": "eur_triangle|Coinbase:SOL:EUR-SOL-USDT-EUR",
+      "strategy": "eur_triangle",
+      "label": "Coinbase:SOL:EUR-SOL-USDT-EUR",
+      "direction": "EUR->SOL->USDT->EUR",
+      "venue": "Coinbase",
+      "observations": 1,
+      "positive_observations": 0,
+      "persistence": 0.0,
+      "median_positive_edge_bps": 0.0,
+      "p90_positive_edge_bps": 0.0,
+      "max_edge_bps": -131.6835,
+      "latest_edge_bps": -131.6835,
+      "research_score": 1.67,
+      "classification": "noise",
+      "last_seen_utc": "2026-09-05T23:46:27+00:00",
+      "capital_utilisation": 1.0,
+      "capital_efficiency_score": 0.0,
+      "paper_economics": {
+        "50": {
+          "total_budget": 50,
+          "effective_capital_per_edge": 50.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        },
+        "100": {
+          "total_budget": 100,
+          "effective_capital_per_edge": 100.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        },
+        "250": {
+          "total_budget": 250,
+          "effective_capital_per_edge": 250.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        },
+        "500": {
+          "total_budget": 500,
+          "effective_capital_per_edge": 500.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        }
+      }
+    },
+    {
+      "key": "eur_triangle|Kraken:SOL:EUR-USDT-SOL-EUR",
+      "strategy": "eur_triangle",
+      "label": "Kraken:SOL:EUR-USDT-SOL-EUR",
+      "direction": "EUR->USDT->SOL->EUR",
+      "venue": "Kraken",
+      "observations": 1,
+      "positive_observations": 0,
+      "persistence": 0.0,
+      "median_positive_edge_bps": 0.0,
+      "p90_positive_edge_bps": 0.0,
+      "max_edge_bps": -130.8777,
+      "latest_edge_bps": -130.8777,
+      "research_score": 1.67,
+      "classification": "noise",
+      "last_seen_utc": "2026-09-05T23:46:27+00:00",
+      "capital_utilisation": 1.0,
+      "capital_efficiency_score": 0.0,
+      "paper_economics": {
+        "50": {
+          "total_budget": 50,
+          "effective_capital_per_edge": 50.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        },
+        "100": {
+          "total_budget": 100,
+          "effective_capital_per_edge": 100.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        },
+        "250": {
+          "total_budget": 250,
+          "effective_capital_per_edge": 250.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        },
+        "500": {
+          "total_budget": 500,
+          "effective_capital_per_edge": 500.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        }
+      }
+    },
+    {
+      "key": "eur_triangle|Kraken:SOL:EUR-SOL-USDT-EUR",
+      "strategy": "eur_triangle",
+      "label": "Kraken:SOL:EUR-SOL-USDT-EUR",
+      "direction": "EUR->SOL->USDT->EUR",
+      "venue": "Kraken",
+      "observations": 1,
+      "positive_observations": 0,
+      "persistence": 0.0,
+      "median_positive_edge_bps": 0.0,
+      "p90_positive_edge_bps": 0.0,
+      "max_edge_bps": -131.3764,
+      "latest_edge_bps": -131.3764,
+      "research_score": 1.67,
+      "classification": "noise",
+      "last_seen_utc": "2026-09-05T23:46:27+00:00",
+      "capital_utilisation": 1.0,
+      "capital_efficiency_score": 0.0,
+      "paper_economics": {
+        "50": {
+          "total_budget": 50,
+          "effective_capital_per_edge": 50.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        },
+        "100": {
+          "total_budget": 100,
+          "effective_capital_per_edge": 100.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        },
+        "250": {
+          "total_budget": 250,
+          "effective_capital_per_edge": 250.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        },
+        "500": {
+          "total_budget": 500,
+          "effective_capital_per_edge": 500.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        }
+      }
+    },
+    {
+      "key": "stable_eur_dislocation|Coinbase:USDC-EUR-USDT",
+      "strategy": "stable_eur_dislocation",
+      "label": "Coinbase:USDC-EUR-USDT",
+      "direction": "USDC->EUR->USDT",
+      "venue": "Coinbase",
+      "observations": 1,
+      "positive_observations": 0,
+      "persistence": 0.0,
+      "median_positive_edge_bps": 0.0,
+      "p90_positive_edge_bps": 0.0,
+      "max_edge_bps": -37.0889,
+      "latest_edge_bps": -37.0889,
+      "research_score": 1.67,
+      "classification": "noise",
+      "last_seen_utc": "2026-09-05T23:46:27+00:00",
+      "capital_utilisation": 1.0,
+      "capital_efficiency_score": 0.0,
+      "paper_economics": {
+        "50": {
+          "total_budget": 50,
+          "effective_capital_per_edge": 50.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        },
+        "100": {
+          "total_budget": 100,
+          "effective_capital_per_edge": 100.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        },
+        "250": {
+          "total_budget": 250,
+          "effective_capital_per_edge": 250.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        },
+        "500": {
+          "total_budget": 500,
+          "effective_capital_per_edge": 500.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        }
+      }
+    },
+    {
+      "key": "stable_eur_dislocation|Coinbase:USDT-EUR-USDC",
+      "strategy": "stable_eur_dislocation",
+      "label": "Coinbase:USDT-EUR-USDC",
+      "direction": "USDT->EUR->USDC",
+      "venue": "Coinbase",
+      "observations": 1,
+      "positive_observations": 0,
+      "persistence": 0.0,
+      "median_positive_edge_bps": 0.0,
+      "p90_positive_edge_bps": 0.0,
+      "max_edge_bps": -34.1876,
+      "latest_edge_bps": -34.1876,
+      "research_score": 1.67,
+      "classification": "noise",
+      "last_seen_utc": "2026-09-05T23:46:27+00:00",
+      "capital_utilisation": 1.0,
+      "capital_efficiency_score": 0.0,
+      "paper_economics": {
+        "50": {
+          "total_budget": 50,
+          "effective_capital_per_edge": 50.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        },
+        "100": {
+          "total_budget": 100,
+          "effective_capital_per_edge": 100.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        },
+        "250": {
+          "total_budget": 250,
+          "effective_capital_per_edge": 250.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        },
+        "500": {
+          "total_budget": 500,
+          "effective_capital_per_edge": 500.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        }
+      }
+    },
+    {
+      "key": "stable_eur_dislocation|Kraken:USDC-EUR-USDT",
+      "strategy": "stable_eur_dislocation",
+      "label": "Kraken:USDC-EUR-USDT",
+      "direction": "USDC->EUR->USDT",
+      "venue": "Kraken",
+      "observations": 1,
+      "positive_observations": 0,
+      "persistence": 0.0,
+      "median_positive_edge_bps": 0.0,
+      "p90_positive_edge_bps": 0.0,
+      "max_edge_bps": -37.321,
+      "latest_edge_bps": -37.321,
+      "research_score": 1.67,
+      "classification": "noise",
+      "last_seen_utc": "2026-09-05T23:46:27+00:00",
+      "capital_utilisation": 1.0,
+      "capital_efficiency_score": 0.0,
+      "paper_economics": {
+        "50": {
+          "total_budget": 50,
+          "effective_capital_per_edge": 50.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        },
+        "100": {
+          "total_budget": 100,
+          "effective_capital_per_edge": 100.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        },
+        "250": {
+          "total_budget": 250,
+          "effective_capital_per_edge": 250.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        },
+        "500": {
+          "total_budget": 500,
+          "effective_capital_per_edge": 500.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        }
+      }
+    },
+    {
+      "key": "stable_eur_dislocation|Kraken:USDT-EUR-USDC",
+      "strategy": "stable_eur_dislocation",
+      "label": "Kraken:USDT-EUR-USDC",
+      "direction": "USDT->EUR->USDC",
+      "venue": "Kraken",
+      "observations": 1,
+      "positive_observations": 0,
+      "persistence": 0.0,
+      "median_positive_edge_bps": 0.0,
+      "p90_positive_edge_bps": 0.0,
+      "max_edge_bps": -35.0,
+      "latest_edge_bps": -35.0,
+      "research_score": 1.67,
+      "classification": "noise",
+      "last_seen_utc": "2026-09-05T23:46:27+00:00",
+      "capital_utilisation": 1.0,
+      "capital_efficiency_score": 0.0,
+      "paper_economics": {
+        "50": {
+          "total_budget": 50,
+          "effective_capital_per_edge": 50.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        },
+        "100": {
+          "total_budget": 100,
+          "effective_capital_per_edge": 100.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        },
+        "250": {
+          "total_budget": 250,
+          "effective_capital_per_edge": 250.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        },
+        "500": {
+          "total_budget": 500,
+          "effective_capital_per_edge": 500.0,
+          "paper_profit_per_event_at_median_edge": 0.0
+        }
+      }
+    }
+  ],
+  "warning": "These are paper arithmetic conversions of observed edge, not expected returns. Fill probability, fees, slippage, transfer friction and edge decay are not fully captured."
+}
