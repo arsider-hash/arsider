@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-05T23:50:40+00:00",
+  "generated_at_utc": "2026-09-05T23:55:40+00:00",
   "mode": "paper_read_only",
   "errors": [
     "cross_exchange_spot: HTTP Error 403: Forbidden",
@@ -7,7 +7,7 @@
   ],
   "candidate_count": 1,
   "best": {
-    "timestamp_utc": "2026-09-05T23:50:40+00:00",
+    "timestamp_utc": "2026-09-05T23:55:40+00:00",
     "strategy": "stable_dislocation",
     "key": "FDUSD:Binance",
     "asset": "FDUSD",
@@ -16,12 +16,12 @@
     "gross_bps": "16.500000",
     "stressed_bps": "16.500000",
     "candidate": "YES",
-    "capacity_usdt_est": "321136.36",
+    "capacity_usdt_est": "293965.90",
     "detail_json": "{\"mid\":0.99835,\"note\":\"Peg deviation is a research signal; redemption, venue and issuer risks matter.\",\"signed_deviation_bps\":-16.500000000000405,\"watch_threshold_bps\":10.0}"
   },
   "rows": [
     {
-      "timestamp_utc": "2026-09-05T23:50:40+00:00",
+      "timestamp_utc": "2026-09-05T23:55:40+00:00",
       "strategy": "stable_dislocation",
       "key": "FDUSD:Binance",
       "asset": "FDUSD",
@@ -30,11 +30,11 @@
       "gross_bps": "16.500000",
       "stressed_bps": "16.500000",
       "candidate": "YES",
-      "capacity_usdt_est": "321136.36",
+      "capacity_usdt_est": "293965.90",
       "detail_json": "{\"mid\":0.99835,\"note\":\"Peg deviation is a research signal; redemption, venue and issuer risks matter.\",\"signed_deviation_bps\":-16.500000000000405,\"watch_threshold_bps\":10.0}"
     },
     {
-      "timestamp_utc": "2026-09-05T23:50:40+00:00",
+      "timestamp_utc": "2026-09-05T23:55:40+00:00",
       "strategy": "stable_dislocation",
       "key": "USDC:Binance",
       "asset": "USDC",
@@ -43,59 +43,59 @@
       "gross_bps": "1.750000",
       "stressed_bps": "1.750000",
       "candidate": "NO",
-      "capacity_usdt_est": "1215040.41",
+      "capacity_usdt_est": "1060696.65",
       "detail_json": "{\"mid\":0.999825,\"note\":\"Peg deviation is a research signal; redemption, venue and issuer risks matter.\",\"signed_deviation_bps\":-1.7500000000003624,\"watch_threshold_bps\":10.0}"
     },
     {
-      "timestamp_utc": "2026-09-05T23:50:40+00:00",
-      "strategy": "cex_triangle",
-      "key": "ETH:USDT-BTC-ETH-USDT",
-      "asset": "ETH",
-      "direction": "USDT->BTC->ETH->USDT",
-      "venue": "Binance",
-      "gross_bps": "0.355535",
-      "stressed_bps": "-37.615541",
-      "candidate": "NO",
-      "capacity_usdt_est": "44417.38",
-      "detail_json": "{\"extra_buffer_bps\":8.0,\"fee_bps_per_leg\":10.0,\"top_of_book_only\":true}"
-    },
-    {
-      "timestamp_utc": "2026-09-05T23:50:40+00:00",
-      "strategy": "cex_triangle",
-      "key": "SOL:USDT-BTC-SOL-USDT",
-      "asset": "SOL",
-      "direction": "USDT->BTC->SOL->USDT",
-      "venue": "Binance",
-      "gross_bps": "0.058504",
-      "stressed_bps": "-37.911682",
-      "candidate": "NO",
-      "capacity_usdt_est": "1595.26",
-      "detail_json": "{\"extra_buffer_bps\":8.0,\"fee_bps_per_leg\":10.0,\"top_of_book_only\":true}"
-    },
-    {
-      "timestamp_utc": "2026-09-05T23:50:40+00:00",
-      "strategy": "cex_triangle",
-      "key": "SOL:USDT-SOL-BTC-USDT",
-      "asset": "SOL",
-      "direction": "USDT->SOL->BTC->USDT",
-      "venue": "Binance",
-      "gross_bps": "-1.801657",
-      "stressed_bps": "-39.766268",
-      "candidate": "NO",
-      "capacity_usdt_est": "563.37",
-      "detail_json": "{\"extra_buffer_bps\":8.0,\"fee_bps_per_leg\":10.0,\"top_of_book_only\":true}"
-    },
-    {
-      "timestamp_utc": "2026-09-05T23:50:40+00:00",
+      "timestamp_utc": "2026-09-05T23:55:40+00:00",
       "strategy": "cex_triangle",
       "key": "ETH:USDT-ETH-BTC-USDT",
       "asset": "ETH",
       "direction": "USDT->ETH->BTC->USDT",
       "venue": "Binance",
-      "gross_bps": "-3.613411",
-      "stressed_bps": "-41.572591",
+      "gross_bps": "-0.205462",
+      "stressed_bps": "-38.174857",
       "candidate": "NO",
-      "capacity_usdt_est": "67523.37",
+      "capacity_usdt_est": "5864.99",
+      "detail_json": "{\"extra_buffer_bps\":8.0,\"fee_bps_per_leg\":10.0,\"top_of_book_only\":true}"
+    },
+    {
+      "timestamp_utc": "2026-09-05T23:55:40+00:00",
+      "strategy": "cex_triangle",
+      "key": "SOL:USDT-BTC-SOL-USDT",
+      "asset": "SOL",
+      "direction": "USDT->BTC->SOL->USDT",
+      "venue": "Binance",
+      "gross_bps": "-0.831444",
+      "stressed_bps": "-38.798962",
+      "candidate": "NO",
+      "capacity_usdt_est": "2160.07",
+      "detail_json": "{\"extra_buffer_bps\":8.0,\"fee_bps_per_leg\":10.0,\"top_of_book_only\":true}"
+    },
+    {
+      "timestamp_utc": "2026-09-05T23:55:40+00:00",
+      "strategy": "cex_triangle",
+      "key": "SOL:USDT-SOL-BTC-USDT",
+      "asset": "SOL",
+      "direction": "USDT->SOL->BTC->USDT",
+      "venue": "Binance",
+      "gross_bps": "-0.911053",
+      "stressed_bps": "-38.878333",
+      "candidate": "NO",
+      "capacity_usdt_est": "563.70",
+      "detail_json": "{\"extra_buffer_bps\":8.0,\"fee_bps_per_leg\":10.0,\"top_of_book_only\":true}"
+    },
+    {
+      "timestamp_utc": "2026-09-05T23:55:40+00:00",
+      "strategy": "cex_triangle",
+      "key": "ETH:USDT-BTC-ETH-USDT",
+      "asset": "ETH",
+      "direction": "USDT->BTC->ETH->USDT",
+      "venue": "Binance",
+      "gross_bps": "-3.051553",
+      "stressed_bps": "-41.012417",
+      "candidate": "NO",
+      "capacity_usdt_est": "13311.33",
       "detail_json": "{\"extra_buffer_bps\":8.0,\"fee_bps_per_leg\":10.0,\"top_of_book_only\":true}"
     }
   ],
