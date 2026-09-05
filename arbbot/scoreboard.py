@@ -2,15 +2,14 @@
 """
 ARBBOT persistence scoreboard.
 
-The goal is to reject one-off quote noise. It scores repeated paper signals
-over a rolling window and produces one compact file for human/automation review.
+Rejects one-off quote noise and ranks repeated paper signals over a rolling
+window. Sources currently include global CEX, EU CEX, Solana and funding.
 """
 
 from __future__ import annotations
 
 import csv
 import json
-import math
 from collections import defaultdict
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
@@ -34,8 +33,8 @@ def pct(xs, p):
     idx = min(len(ys) - 1, max(0, round((len(ys) - 1) * p)))
     return ys[idx]
 
-def load_market(cutoff):
-    path = DATA / "market_history.csv"
+def load_generic_history(filename, cutoff):
+    path = DATA / filename
     groups = defaultdict(list)
     if not path.exists():
         return groups
@@ -44,19 +43,20 @@ def load_market(cutoff):
             ts = parse_ts(r.get("timestamp_utc", ""))
             if not ts or ts < cutoff:
                 continue
-            if r.get("strategy", "").endswith("_error"):
+            strategy = r.get("strategy", "")
+            if not strategy or strategy.endswith("_error"):
                 continue
             try:
                 edge = float(r["stressed_bps"])
             except Exception:
                 continue
-            key = f"{r['strategy']}|{r['key']}"
-            groups[key].append({
+            label = r.get("key") or "?"
+            groups[f"{strategy}|{label}"].append({
                 "ts": ts,
                 "edge": edge,
                 "candidate": r.get("candidate") == "YES",
-                "strategy": r["strategy"],
-                "label": r["key"],
+                "strategy": strategy,
+                "label": label,
                 "direction": r.get("direction", ""),
                 "venue": r.get("venue", ""),
             })
@@ -121,13 +121,10 @@ def score_group(key, obs):
     positive_edges = [x["edge"] for x in positives]
     persistence = len(positives) / len(obs) if obs else 0
 
-    # Require repetition. Four observations prevents a single spike from looking impressive.
     repeated = len(obs) >= 4 and len(positives) >= 3
     med = median(positive_edges) if positive_edges else 0.0
     p90 = pct(positive_edges, 0.90) or 0.0
 
-    # Simple research score, not a probability of profit.
-    # Persistence dominates; edge magnitude is softly capped.
     magnitude = min(1.0, max(0.0, med) / 20.0)
     sample = min(1.0, len(obs) / 12.0)
     research_score = 100 * (0.55 * persistence + 0.25 * magnitude + 0.20 * sample)
@@ -162,7 +159,13 @@ def main():
     cutoff = now - timedelta(hours=LOOKBACK_HOURS)
 
     merged = defaultdict(list)
-    for source in [load_market(cutoff), load_solana(cutoff), load_funding(cutoff)]:
+    sources = [
+        load_generic_history("market_history.csv", cutoff),
+        load_generic_history("eu_history.csv", cutoff),
+        load_solana(cutoff),
+        load_funding(cutoff),
+    ]
+    for source in sources:
         for k, v in source.items():
             merged[k].extend(v)
 
