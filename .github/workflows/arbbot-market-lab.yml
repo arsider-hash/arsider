@@ -4,6 +4,10 @@ on:
   schedule:
     - cron: "27,57 * * * *"
   workflow_dispatch:
+  push:
+    paths:
+      - "arbbot/*.py"
+      - ".github/workflows/arbbot-market-lab.yml"
 
 permissions:
   contents: write
@@ -15,7 +19,7 @@ concurrency:
 jobs:
   lab:
     runs-on: ubuntu-latest
-    timeout-minutes: 8
+    timeout-minutes: 12
     steps:
       - uses: actions/checkout@v4
 
@@ -23,21 +27,39 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Scan public CEX markets
+      - name: Scan global public CEX markets
         run: python arbbot/cex_market_scout.py
+
+      - name: Scan EU EUR routes
+        run: python arbbot/eu_cex_scout.py
+
+      - name: Scan stable-yield subsidies
+        run: python arbbot/yield_scout.py
 
       - name: Build persistence scoreboard
         run: python arbbot/scoreboard.py
 
-      - name: Run decision engine\n        run: python arbbot/decision_engine.py\n\n      - name: Persist research data
+      - name: Rank small-capital economics
+        run: python arbbot/capital_engine.py
+
+      - name: Preliminary decision
+        run: python arbbot/decision_engine.py
+
+      - name: Burst-validate promoted fast edges
+        run: python arbbot/burst_validator.py
+
+      - name: Final decision after validation
+        run: python arbbot/decision_engine.py
+
+      - name: Persist research data
         run: |
           git config user.name "arbbot"
           git config user.email "actions@users.noreply.github.com"
-          git add arbbot/data/market_history.csv arbbot/data/market_latest.json arbbot/data/scoreboard.json arbbot/data/decision.json
+          git add             arbbot/data/market_history.csv             arbbot/data/market_latest.json             arbbot/data/eu_history.csv             arbbot/data/eu_latest.json             arbbot/data/yield_history.csv             arbbot/data/yield_latest.json             arbbot/data/scoreboard.json             arbbot/data/capital_rank.json             arbbot/data/validation.json             arbbot/data/decision.json
           if git diff --cached --quiet; then
             echo "No data change"
           else
-            git commit -m "arbbot: market lab observation"
+            git commit -m "arbbot: expanded opportunity observation"
             git pull --rebase
             git push
           fi
