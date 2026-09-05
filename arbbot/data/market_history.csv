@@ -1,0 +1,9 @@
+timestamp_utc,strategy,key,asset,direction,venue,gross_bps,stressed_bps,candidate,capacity_usdt_est,detail_json
+2026-09-05T23:47:18+00:00,cex_triangle,ETH:USDT-BTC-ETH-USDT,ETH,USDT->BTC->ETH->USDT,Binance,1.345225,-36.628816,NO,11542.66,"{""extra_buffer_bps"":8.0,""fee_bps_per_leg"":10.0,""top_of_book_only"":true}"
+2026-09-05T23:47:18+00:00,cex_triangle,ETH:USDT-ETH-BTC-USDT,ETH,USDT->ETH->BTC->USDT,Binance,-4.603632,-42.559845,NO,16506.91,"{""extra_buffer_bps"":8.0,""fee_bps_per_leg"":10.0,""top_of_book_only"":true}"
+2026-09-05T23:47:18+00:00,cex_triangle,SOL:USDT-BTC-SOL-USDT,SOL,USDT->BTC->SOL->USDT,Binance,-0.576121,-38.544404,NO,603.20,"{""extra_buffer_bps"":8.0,""fee_bps_per_leg"":10.0,""top_of_book_only"":true}"
+2026-09-05T23:47:18+00:00,cex_triangle,SOL:USDT-SOL-BTC-USDT,SOL,USDT->SOL->BTC->USDT,Binance,-1.166120,-39.132636,NO,2998.59,"{""extra_buffer_bps"":8.0,""fee_bps_per_leg"":10.0,""top_of_book_only"":true}"
+2026-09-05T23:47:18+00:00,stable_dislocation,USDC:Binance,USDC,below peg,Binance,1.750000,1.750000,NO,1459720.81,"{""mid"":0.999825,""note"":""Peg deviation is a research signal; redemption, venue and issuer risks matter."",""signed_deviation_bps"":-1.7500000000003624,""watch_threshold_bps"":10.0}"
+2026-09-05T23:47:18+00:00,stable_dislocation_error,USDC:Bybit:error,USDC,n/a,Bybit,0.000000,-9999.000000,NO,,"{""error"":""HTTP Error 403: Forbidden""}"
+2026-09-05T23:47:18+00:00,stable_dislocation,FDUSD:Binance,FDUSD,below peg,Binance,16.500000,16.500000,YES,328751.16,"{""mid"":0.99835,""note"":""Peg deviation is a research signal; redemption, venue and issuer risks matter."",""signed_deviation_bps"":-16.500000000000405,""watch_threshold_bps"":10.0}"
+2026-09-05T23:47:18+00:00,stable_dislocation_error,FDUSD:Bybit:error,FDUSD,n/a,Bybit,0.000000,-9999.000000,NO,,"{""error"":""HTTP Error 403: Forbidden""}"
