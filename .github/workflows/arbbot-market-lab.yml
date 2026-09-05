@@ -29,11 +29,11 @@ jobs:
       - name: Build persistence scoreboard
         run: python arbbot/scoreboard.py
 
-      - name: Persist research data
+      - name: Run decision engine\n        run: python arbbot/decision_engine.py\n\n      - name: Persist research data
         run: |
           git config user.name "arbbot"
           git config user.email "actions@users.noreply.github.com"
-          git add arbbot/data/market_history.csv arbbot/data/market_latest.json arbbot/data/scoreboard.json
+          git add arbbot/data/market_history.csv arbbot/data/market_latest.json arbbot/data/scoreboard.json arbbot/data/decision.json
           if git diff --cached --quiet; then
             echo "No data change"
           else
