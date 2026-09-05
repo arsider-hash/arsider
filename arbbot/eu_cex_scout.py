@@ -27,10 +27,11 @@ HISTORY = DATA / "eu_history.csv"
 
 ASSETS = ["BTC", "ETH", "SOL"]
 
-CROSS_VENUE_BUFFER_BPS = 45.0
-TRI_TAKER_FEE_BPS_PER_LEG = 40.0
-TRI_EXTRA_BUFFER_BPS = 10.0
-STABLE_EUR_BUFFER_BPS = 35.0
+COINBASE_TAKER_BPS = 60.0
+KRAKEN_TAKER_BPS = 80.0
+EXTRA_EXECUTION_BUFFER_BPS = 10.0
+COINBASE_STABLE_TAKER_BPS = 10.0
+KRAKEN_STABLE_TAKER_BPS = 20.0
 
 FIELDS = [
     "timestamp_utc", "strategy", "key", "asset", "direction", "venue",
@@ -113,14 +114,17 @@ def cross_spot(ts, cache):
             ("buy Kraken / sell Coinbase", kr["ask"], cb["bid"]),
         ]:
             gross = (sell_bid / buy_ask - 1.0) * 10000
-            stressed = gross - CROSS_VENUE_BUFFER_BPS
+            buy_fee = COINBASE_TAKER_BPS if direction.startswith("buy Coinbase") else KRAKEN_TAKER_BPS
+            sell_fee = KRAKEN_TAKER_BPS if direction.endswith("sell Kraken") else COINBASE_TAKER_BPS
+            fee_buffer = buy_fee + sell_fee + EXTRA_EXECUTION_BUFFER_BPS
+            stressed = gross - fee_buffer
             rows.append(make_row(
                 ts, "eu_cross_spot", f"{asset}:{direction}", asset,
                 direction, "Coinbase<->Kraken", gross, stressed,
                 {
                     "buy_ask": buy_ask,
                     "sell_bid": sell_bid,
-                    "buffer_bps": CROSS_VENUE_BUFFER_BPS,
+                    "buffer_bps": fee_buffer, "coinbase_taker_bps": COINBASE_TAKER_BPS, "kraken_taker_bps": KRAKEN_TAKER_BPS,
                     "note": "Assumes prefunded balances on both venues; rebalancing and account-specific fees can erase the edge."
                 }
             ))
@@ -131,19 +135,19 @@ def coinbase_triangle(ts, asset, cache):
     a_usdt = cache.setdefault(("cb", f"{asset}-USDT"), coinbase(f"{asset}-USDT"))
     a_eur = cache.setdefault(("cb", f"{asset}-EUR"), coinbase(f"{asset}-EUR"))
 
-    fee_mult = (1 - TRI_TAKER_FEE_BPS_PER_LEG / 10000) ** 3
+    fee_mult = (1 - COINBASE_TAKER_BPS / 10000) ** 3
 
     gross_ratio_a = (1 / stable["ask"]) * (1 / a_usdt["ask"]) * a_eur["bid"]
     gross_a = (gross_ratio_a - 1) * 10000
-    stressed_a = (gross_ratio_a * fee_mult - 1) * 10000 - TRI_EXTRA_BUFFER_BPS
+    stressed_a = (gross_ratio_a * fee_mult - 1) * 10000 - EXTRA_EXECUTION_BUFFER_BPS
 
     gross_ratio_b = (1 / a_eur["ask"]) * a_usdt["bid"] * stable["bid"]
     gross_b = (gross_ratio_b - 1) * 10000
-    stressed_b = (gross_ratio_b * fee_mult - 1) * 10000 - TRI_EXTRA_BUFFER_BPS
+    stressed_b = (gross_ratio_b * fee_mult - 1) * 10000 - EXTRA_EXECUTION_BUFFER_BPS
 
     common = {
-        "fee_bps_per_leg_assumption": TRI_TAKER_FEE_BPS_PER_LEG,
-        "extra_buffer_bps": TRI_EXTRA_BUFFER_BPS,
+        "fee_bps_per_leg_assumption": COINBASE_TAKER_BPS,
+        "extra_buffer_bps": EXTRA_EXECUTION_BUFFER_BPS,
         "note": "Top-of-book paper cycle. Exact Coinbase fee tier and available size must be validated."
     }
     return [
@@ -161,19 +165,19 @@ def kraken_triangle(ts, asset, cache):
     a_usdt = cache.setdefault(("kr", f"{base}USDT"), kraken(f"{base}USDT"))
     a_eur = cache.setdefault(("kr", f"{base}EUR"), kraken(f"{base}EUR"))
 
-    fee_mult = (1 - TRI_TAKER_FEE_BPS_PER_LEG / 10000) ** 3
+    fee_mult = (1 - KRAKEN_TAKER_BPS / 10000) ** 3
 
     gross_ratio_a = (1 / stable["ask"]) * (1 / a_usdt["ask"]) * a_eur["bid"]
     gross_a = (gross_ratio_a - 1) * 10000
-    stressed_a = (gross_ratio_a * fee_mult - 1) * 10000 - TRI_EXTRA_BUFFER_BPS
+    stressed_a = (gross_ratio_a * fee_mult - 1) * 10000 - EXTRA_EXECUTION_BUFFER_BPS
 
     gross_ratio_b = (1 / a_eur["ask"]) * a_usdt["bid"] * stable["bid"]
     gross_b = (gross_ratio_b - 1) * 10000
-    stressed_b = (gross_ratio_b * fee_mult - 1) * 10000 - TRI_EXTRA_BUFFER_BPS
+    stressed_b = (gross_ratio_b * fee_mult - 1) * 10000 - EXTRA_EXECUTION_BUFFER_BPS
 
     common = {
-        "fee_bps_per_leg_assumption": TRI_TAKER_FEE_BPS_PER_LEG,
-        "extra_buffer_bps": TRI_EXTRA_BUFFER_BPS,
+        "fee_bps_per_leg_assumption": KRAKEN_TAKER_BPS,
+        "extra_buffer_bps": EXTRA_EXECUTION_BUFFER_BPS,
         "note": "Top-of-book paper cycle. Exact Kraken fee tier and available size must be validated."
     }
     return [
@@ -198,16 +202,18 @@ def stable_eur(ts, cache):
 
             ratio_a = usdc["bid"] / usdt["ask"]
             gross_a = (ratio_a - 1) * 10000
-            stressed_a = gross_a - STABLE_EUR_BUFFER_BPS
+            stable_fee = COINBASE_STABLE_TAKER_BPS if venue == "Coinbase" else KRAKEN_STABLE_TAKER_BPS
+            fee_buffer = stable_fee * 2 + EXTRA_EXECUTION_BUFFER_BPS
+            stressed_a = gross_a - fee_buffer
 
             ratio_b = usdt["bid"] / usdc["ask"]
             gross_b = (ratio_b - 1) * 10000
-            stressed_b = gross_b - STABLE_EUR_BUFFER_BPS
+            stressed_b = gross_b - fee_buffer
 
             detail = {
                 "usdt_eur": usdt,
                 "usdc_eur": usdc,
-                "buffer_bps": STABLE_EUR_BUFFER_BPS,
+                "buffer_bps": fee_buffer,
                 "note": "Two-leg stablecoin conversion via EUR; issuer, venue and fee risks remain."
             }
             rows.append(make_row(
