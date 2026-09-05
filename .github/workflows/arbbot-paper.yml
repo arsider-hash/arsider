@@ -9,7 +9,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: arbbot-paper
+  group: arbbot-writes
   cancel-in-progress: false
 
 jobs:
@@ -25,7 +25,7 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Run read-only scanner
+      - name: Run read-only Solana scanner
         run: python arbbot/scanner.py
 
       - name: Persist observations
@@ -36,6 +36,7 @@ jobs:
           if git diff --cached --quiet; then
             echo "No data change"
           else
-            git commit -m "arbbot: paper observation"
+            git commit -m "arbbot: Solana paper observation"
+            git pull --rebase
             git push
           fi

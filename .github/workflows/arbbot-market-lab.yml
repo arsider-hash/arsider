@@ -1,8 +1,8 @@
-name: ARBBOT funding scout
+name: ARBBOT market lab
 
 on:
   schedule:
-    - cron: "7 * * * *"
+    - cron: "27,57 * * * *"
   workflow_dispatch:
 
 permissions:
@@ -13,9 +13,9 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  funding:
+  lab:
     runs-on: ubuntu-latest
-    timeout-minutes: 6
+    timeout-minutes: 8
     steps:
       - uses: actions/checkout@v4
 
@@ -23,18 +23,21 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Read and normalize public funding data
-        run: python arbbot/funding_scanner.py
+      - name: Scan public CEX markets
+        run: python arbbot/cex_market_scout.py
 
-      - name: Persist funding history
+      - name: Build persistence scoreboard
+        run: python arbbot/scoreboard.py
+
+      - name: Persist research data
         run: |
           git config user.name "arbbot"
           git config user.email "actions@users.noreply.github.com"
-          git add arbbot/data/funding_latest.json arbbot/data/funding_history.csv
+          git add arbbot/data/market_history.csv arbbot/data/market_latest.json arbbot/data/scoreboard.json
           if git diff --cached --quiet; then
             echo "No data change"
           else
-            git commit -m "arbbot: funding observation"
+            git commit -m "arbbot: market lab observation"
             git pull --rebase
             git push
           fi
