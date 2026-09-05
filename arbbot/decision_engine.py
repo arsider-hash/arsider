@@ -22,6 +22,8 @@ DATA = ROOT / "data"
 SCOREBOARD = DATA / "scoreboard.json"
 CAPITAL_RANK = DATA / "capital_rank.json"
 VALIDATION = DATA / "validation.json"
+DEPTH_VALIDATION = DATA / "depth_validation.json"
+SHADOW_SUMMARY = DATA / "shadow_summary.json"
 OUT = DATA / "decision.json"
 
 POLICY = {
@@ -48,10 +50,6 @@ POLICY = {
     "funding_spread": {
         "min_observations": 6, "min_persistence": 0.70,
         "min_median_edge_bps": 2.0, "min_research_score": 65.0,
-    },
-    "spot_perp_basis": {
-        "min_observations": 6, "min_persistence": 0.70,
-        "min_median_edge_bps": 15.0, "min_research_score": 65.0,
     },
     "stable_eur_dislocation": {
         "min_observations": 6, "min_persistence": 0.70,
@@ -80,23 +78,63 @@ def load_ranked():
     return [], "none"
 
 def validation_passes(selected):
-    if selected.get("strategy") not in FAST_STRATEGIES:
-        return True, "not_applicable"
-    if not VALIDATION.exists():
-        return False, "no burst validation yet"
+    strategy = selected.get("strategy")
+
+    if strategy in FAST_STRATEGIES:
+        if not VALIDATION.exists():
+            return False, "no burst validation yet"
+        try:
+            v = json.loads(VALIDATION.read_text(encoding="utf-8"))
+        except Exception:
+            return False, "invalid burst validation file"
+        same = (
+            (v.get("selected") or {}).get("strategy") == strategy
+            and (v.get("selected") or {}).get("label") == selected.get("label")
+        )
+        if not same:
+            return False, "burst validation belongs to another route"
+        if v.get("verdict") != "SURVIVES_BURST":
+            return False, f"burst verdict is {v.get('verdict')}"
+
+    if strategy in {"cex_cross_spot", "eu_cross_spot"}:
+        if not DEPTH_VALIDATION.exists():
+            return False, "no depth validation yet"
+        try:
+            dv = json.loads(DEPTH_VALIDATION.read_text(encoding="utf-8"))
+        except Exception:
+            return False, "invalid depth validation file"
+        same = (
+            (dv.get("selected") or {}).get("strategy") == strategy
+            and (dv.get("selected") or {}).get("label") == selected.get("label")
+        )
+        if not same:
+            return False, "depth validation belongs to another route"
+        if dv.get("state") != "PASS":
+            return False, f"depth verdict is {dv.get('state')}"
+
+    return True, "execution_validation_passed"
+
+def shadow_passes(selected):
+    if not SHADOW_SUMMARY.exists():
+        return False, "no shadow canaries yet"
     try:
-        v = json.loads(VALIDATION.read_text(encoding="utf-8"))
+        s = json.loads(SHADOW_SUMMARY.read_text(encoding="utf-8"))
     except Exception:
-        return False, "invalid burst validation file"
-    same = (
-        (v.get("selected") or {}).get("strategy") == selected.get("strategy")
-        and (v.get("selected") or {}).get("label") == selected.get("label")
-    )
-    if not same:
-        return False, "burst validation belongs to another route"
-    if v.get("verdict") != "SURVIVES_BURST":
-        return False, f"burst verdict is {v.get('verdict')}"
-    return True, "SURVIVES_BURST"
+        return False, "invalid shadow summary"
+    key = f"{selected.get('strategy')}|{selected.get('label')}"
+    item = next((x for x in (s.get("ranked") or []) if x.get("key") == key), None)
+    if not item:
+        return False, "no shadow history for selected route"
+    count = int(item.get("count") or 0)
+    positive_rate = float(item.get("positive_rate") or 0)
+    cumulative = float(item.get("cumulative_paper_pnl") or 0)
+    if count < 3:
+        return False, f"only {count} shadow canaries; need 3"
+    if positive_rate < 0.67:
+        return False, f"shadow positive rate {positive_rate:.2f} below 0.67"
+    if cumulative <= 0:
+        return False, "shadow cumulative PnL is not positive"
+    return True, "shadow_canaries_passed"
 
 def classify(item):
     strategy = item.get("strategy")
@@ -120,10 +158,13 @@ def classify(item):
     failed = [reason for ok, reason in checks if not ok]
 
     if not failed:
-        burst_ok, burst_reason = validation_passes(item)
-        if burst_ok:
+        exec_ok, exec_reason = validation_passes(item)
+        if not exec_ok:
+            return "VALIDATE", [exec_reason]
+        shadow_ok, shadow_reason = shadow_passes(item)
+        if shadow_ok:
             return "READY_FOR_MANUAL_AUTHORIZATION", []
-        return "VALIDATE", [burst_reason]
+        return "VALIDATE", [shadow_reason]
 
     if classification in {"watch", "strong_watch"} and obs >= max(3, rules["min_observations"] // 2):
         return "VALIDATE", failed
