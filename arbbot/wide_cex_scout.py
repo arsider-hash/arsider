@@ -6,7 +6,8 @@ Read-only public-market-data scanner aimed at higher-turnover fragmentation
 across a broader set of liquid USDT spot pairs. Uses Bitget and Gate public
 order-book/ticker endpoints because they have been reliable on GitHub runners.
 
-This is discovery only. No credentials, orders, transfers or custody.
+It emits the existing cex_cross_spot strategy family so all existing burst,
+depth and KILLER gates remain mandatory. No credentials, orders, transfers or custody.
 """
 
 from __future__ import annotations
@@ -31,7 +32,6 @@ SYMBOLS = [
     "DOTUSDT", "TRXUSDT", "SUIUSDT", "APTUSDT", "NEARUSDT",
 ]
 
-# Conservative first-pass friction: two taker legs plus extra execution buffer.
 TAKER_FEE_BPS_PER_LEG = 10.0
 EXTRA_BUFFER_BPS = 10.0
 TOTAL_FRICTION_BPS = 2 * TAKER_FEE_BPS_PER_LEG + EXTRA_BUFFER_BPS
@@ -98,7 +98,7 @@ def make_row(ts, symbol, direction, buy_ask, sell_bid, capacity, buy_venue, sell
     asset = symbol[:-4]
     return {
         "timestamp_utc": ts,
-        "strategy": "wide_cex_cross_spot",
+        "strategy": "cex_cross_spot",
         "key": f"{asset}:{direction}",
         "asset": asset,
         "direction": direction,
@@ -108,6 +108,7 @@ def make_row(ts, symbol, direction, buy_ask, sell_bid, capacity, buy_venue, sell
         "candidate": "YES" if stressed >= MIN_WATCH_NET_BPS else "NO",
         "capacity_usdt_est": f"{capacity:.2f}",
         "detail_json": json.dumps({
+            "source": "wide_cex_hunter",
             "buy_venue": buy_venue,
             "sell_venue": sell_venue,
             "buy_ask": buy_ask,
