@@ -52,6 +52,16 @@ def same_selected(doc, strategy, label):
     return selected.get("strategy") == strategy and selected.get("label") == label
 
 
+def verified_stable_route(strategy, label):
+    if strategy != "stable_dislocation" or not STABLE_VALIDATION.exists():
+        return False
+    try:
+        sv = json.loads(STABLE_VALIDATION.read_text(encoding="utf-8"))
+        return same_selected(sv, strategy, label) and sv.get("verified_exit_path") is True
+    except Exception:
+        return False
+
+
 def main():
     now = datetime.now(timezone.utc).isoformat(timespec="seconds")
     rows = load_rows()
@@ -82,16 +92,15 @@ def main():
             # hypothetical convergence manufacture positive shadow evidence.
             if strategy == "stable_dislocation":
                 eligible = False
-                if STABLE_VALIDATION.exists():
+                if verified_stable_route(strategy, label):
                     try:
                         sv = json.loads(STABLE_VALIDATION.read_text(encoding="utf-8"))
-                        if same_selected(sv, strategy, label) and sv.get("verified_exit_path") is True:
-                            row100 = next((x for x in (sv.get("rows") or []) if x.get("budget") == 100), None)
-                            if row100:
-                                pnl = float(row100.get("paper_profit_eur_if_full_convergence") or 0.0)
-                                edge = float(row100.get("convergence_edge_after_friction_bps") or 0.0)
-                                source = "verified_stable_exit_after_friction"
-                                eligible = True
+                        row100 = next((x for x in (sv.get("rows") or []) if x.get("budget") == 100), None)
+                        if row100:
+                            pnl = float(row100.get("paper_profit_eur_if_full_convergence") or 0.0)
+                            edge = float(row100.get("convergence_edge_after_friction_bps") or 0.0)
+                            source = "verified_stable_exit_after_friction"
+                            eligible = True
                     except Exception:
                         eligible = False
 
@@ -110,7 +119,6 @@ def main():
 
             if eligible:
                 if pnl is None:
-                    # Deliberately realize only half the already-stressed edge.
                     pnl = capital * edge / 10000 * 0.5
 
                 rec = {
@@ -127,8 +135,19 @@ def main():
                 append(rec)
                 rows.append(rec)
 
-    grouped = {}
+    # Legacy stablecoin rows created from raw peg deviation are intentionally
+    # excluded from evidence. They remain in the CSV for auditability.
+    evidence_rows = []
+    excluded_unverified_stable = 0
     for r in rows:
+        if r.get("strategy") == "stable_dislocation":
+            if r.get("source") != "verified_stable_exit_after_friction" or not verified_stable_route(r.get("strategy"), r.get("label")):
+                excluded_unverified_stable += 1
+                continue
+        evidence_rows.append(r)
+
+    grouped = {}
+    for r in evidence_rows:
         key = f"{r['strategy']}|{r['label']}"
         grouped.setdefault(key, []).append(r)
 
@@ -148,7 +167,9 @@ def main():
 
     SUMMARY.write_text(json.dumps({
         "generated_at_utc": now,
-        "total_shadow_trades": len(rows),
+        "total_shadow_trades_raw": len(rows),
+        "total_shadow_trades_evidence": len(evidence_rows),
+        "excluded_unverified_stable_rows": excluded_unverified_stable,
         "best": ranking[0] if ranking else None,
         "ranked": ranking,
         "warning": (
@@ -156,7 +177,7 @@ def main():
             "Stablecoin signals are excluded unless a matching verified exit path exists."
         )
     }, indent=2), encoding="utf-8")
-    print(f"shadow trades={len(rows)}")
+    print(f"shadow evidence={len(evidence_rows)} raw={len(rows)} excluded_stable={excluded_unverified_stable}")
 
 
 if __name__ == "__main__":
