@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-06T19:12:57+00:00",
+  "generated_at_utc": "2026-09-06T20:25:13+00:00",
   "verdict": "INSUFFICIENT_EVIDENCE",
   "selected": {
     "key": "stable_dislocation|FDUSD:Binance",
@@ -7,19 +7,19 @@
     "label": "FDUSD:Binance",
     "direction": "below peg",
     "venue": "Binance",
-    "observations": 23,
+    "observations": 24,
     "positive_observations": 21,
-    "persistence": 0.913,
+    "persistence": 0.875,
     "median_positive_edge_bps": 12.5,
     "p90_positive_edge_bps": 16.5,
     "max_edge_bps": 16.5,
     "latest_edge_bps": 9.5,
-    "research_score": 85.84,
+    "research_score": 83.75,
     "classification": "strong_watch",
-    "last_seen_utc": "2026-09-06T19:09:25+00:00",
+    "last_seen_utc": "2026-09-06T20:21:41+00:00",
     "capital_utilisation": 1.0,
-    "capital_efficiency_score": 44.08,
-    "economic_relevance_score": 44.08,
+    "capital_efficiency_score": 41.22,
+    "economic_relevance_score": 41.22,
     "economic_relevance": {
       "reference_budget_eur": 250,
       "reference_basis": "paper_profit_per_event_at_median_edge",
@@ -61,6 +61,7 @@
       }
     }
   },
+  "target_strategy": null,
   "checks": [
     {
       "check": "freshness",
@@ -72,7 +73,7 @@
       "check": "sample_presence",
       "status": "PASS",
       "severity": "hard",
-      "detail": "23 observations"
+      "detail": "24 observations"
     },
     {
       "check": "positive_edge_evidence",
@@ -84,7 +85,7 @@
       "check": "persistence",
       "status": "PASS",
       "severity": "hard",
-      "detail": "persistence=0.913"
+      "detail": "persistence=0.875"
     },
     {
       "check": "latest_edge_sign",
@@ -96,13 +97,13 @@
       "check": "economic_relevance",
       "status": "PASS",
       "severity": "soft",
-      "detail": "economic_relevance_score=44.08"
+      "detail": "economic_relevance_score=41.22"
     },
     {
       "check": "burst_validation",
       "status": "PASS",
       "severity": "hard",
-      "detail": "SURVIVES_BURST"
+      "detail": "verdict=SURVIVES_BURST"
     },
     {
       "check": "verified_exit_path",
