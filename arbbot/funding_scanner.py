@@ -3,9 +3,9 @@
 ARBBOT funding-rate scout.
 Read-only public market data only.
 
-Compares OKX perpetual funding with Bybit linear perpetual funding for
-BTC/ETH/SOL. The older Binance lane was removed from the cloud scanner
-because GitHub-hosted runners were receiving HTTP 451 from Binance.
+Compares Bitget USDT perpetual funding with Gate USDT perpetual funding for
+BTC/ETH/SOL. These public endpoints are used because Binance/Bybit/OKX cloud
+access has proven unreliable from GitHub-hosted runners.
 
 Legacy CSV column names are retained for backward compatibility.
 """
@@ -42,7 +42,7 @@ FIELDS = [
 def get_json(url: str, retries: int = 3):
     req = urllib.request.Request(url, headers={
         "Accept": "application/json",
-        "User-Agent": "arsider-arbbot/0.7",
+        "User-Agent": "arsider-arbbot/0.8",
     })
     last = None
     for attempt in range(retries):
@@ -57,46 +57,38 @@ def get_json(url: str, retries: int = 3):
 def q(url, **params):
     return url + "?" + urllib.parse.urlencode(params)
 
-def okx(symbol: str) -> dict:
-    base = symbol.replace("USDT", "")
-    inst = f"{base}-USDT-SWAP"
-    d = get_json(q("https://openapi.okx.com/api/v5/public/funding-rate", instId=inst))
-    if d.get("code") != "0" or not d.get("data"):
-        raise RuntimeError(f"OKX funding error: {d}")
+def bitget(symbol: str) -> dict:
+    d = get_json(q(
+        "https://api.bitget.com/api/v3/market/current-fund-rate",
+        category="USDT-FUTURES", symbol=symbol,
+    ))
+    if d.get("code") != "00000" or not d.get("data"):
+        raise RuntimeError(f"Bitget funding error: {d}")
     x = d["data"][0]
-    funding_time = int(x.get("fundingTime") or 0)
-    next_time = int(x.get("nextFundingTime") or 0)
-    interval_hours = (next_time - funding_time) / 3_600_000 if next_time > funding_time else 8.0
+    return {
+        "venue": "Bitget USDT perpetual",
+        "symbol": symbol,
+        "funding_rate": float(x.get("fundingRate") or 0),
+        "interval_hours": float(x.get("fundingRateInterval") or 8),
+        "next_funding_time": int(x.get("nextUpdate") or 0),
+    }
+
+def gate(symbol: str) -> dict:
+    contract = symbol.replace("USDT", "_USDT")
+    d = get_json(f"https://api.gateio.ws/api/v4/futures/usdt/contracts/{contract}")
+    if not isinstance(d, dict) or not d.get("name"):
+        raise RuntimeError(f"Gate funding error: {d}")
+    interval_seconds = float(d.get("funding_interval") or 28800)
+    interval_hours = interval_seconds / 3600.0
     if interval_hours <= 0 or interval_hours > 24:
         interval_hours = 8.0
     return {
-        "venue": "OKX perpetual",
+        "venue": "Gate USDT perpetual",
         "symbol": symbol,
-        "funding_rate": float(x.get("fundingRate") or 0),
-        "interval_hours": float(interval_hours),
-        "funding_time": funding_time,
-        "next_funding_time": next_time,
-        "formula_type": x.get("formulaType"),
-    }
-
-def bybit(symbol: str) -> dict:
-    tick = get_json(q("https://api.bybit.com/v5/market/tickers", category="linear", symbol=symbol))
-    if tick.get("retCode") != 0 or not tick.get("result", {}).get("list"):
-        raise RuntimeError(f"Bybit ticker error: {tick}")
-    x = tick["result"]["list"][0]
-
-    inst = get_json(q("https://api.bybit.com/v5/market/instruments-info", category="linear", symbol=symbol))
-    if inst.get("retCode") != 0 or not inst.get("result", {}).get("list"):
-        raise RuntimeError(f"Bybit instruments error: {inst}")
-    y = inst["result"]["list"][0]
-    interval_minutes = float(y.get("fundingInterval") or 480)
-
-    return {
-        "venue": "Bybit linear",
-        "symbol": symbol,
-        "funding_rate": float(x["fundingRate"]),
-        "interval_hours": interval_minutes / 60.0,
-        "next_funding_time": int(x["nextFundingTime"]),
+        "funding_rate": float(d.get("funding_rate") or 0),
+        "interval_hours": interval_hours,
+        "next_funding_time": int(float(d.get("funding_next_apply") or 0) * 1000),
+        "indicative_funding_rate": float(d.get("funding_rate_indicative") or 0),
     }
 
 def ensure_history():
@@ -115,8 +107,8 @@ def main():
 
     for symbol in SYMBOLS:
         try:
-            a = okx(symbol)
-            b = bybit(symbol)
+            a = bitget(symbol)
+            b = gate(symbol)
 
             a_per_hour = a["funding_rate"] / a["interval_hours"]
             b_per_hour = b["funding_rate"] / b["interval_hours"]
@@ -126,8 +118,8 @@ def main():
             annualized_pct = spread_per_hour * 24 * 365 * 100
 
             direction = (
-                "short OKX / long Bybit" if spread_per_hour > 0
-                else "long OKX / short Bybit" if spread_per_hour < 0
+                "short Bitget / long Gate" if spread_per_hour > 0
+                else "long Bitget / short Gate" if spread_per_hour < 0
                 else "flat"
             )
             edge = abs(spread_bps_per_8h)
@@ -153,7 +145,8 @@ def main():
                 **hrow,
                 "venue_a": a,
                 "venue_b": b,
-                "venue_a_name": "OKX",
+                "venue_a_name": "Bitget",
+                "venue_b_name": "Gate",
                 "round_trip_cost_assumption_bps": ROUND_TRIP_COST_BPS,
                 "warning": (
                     "Funding can change before settlement. Basis, liquidation, collateral, "
@@ -169,7 +162,7 @@ def main():
     payload = {
         "generated_at_utc": ts,
         "mode": "paper_read_only",
-        "venues": ["OKX", "Bybit"],
+        "venues": ["Bitget", "Gate"],
         "candidate_count": sum(x["candidate"] == "YES" for x in rows),
         "best": detailed[0] if detailed else None,
         "rows": detailed,
