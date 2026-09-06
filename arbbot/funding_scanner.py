@@ -8,7 +8,8 @@ BTC/ETH/SOL and records the contemporaneous perpetual mark-price basis.
 These public endpoints are used because Binance/Bybit/OKX cloud access has
 proven unreliable from GitHub-hosted runners.
 
-Legacy CSV column names are retained for backward compatibility.
+Legacy CSV column names are retained for backward compatibility. Basis history
+is stored separately so old funding_history.csv files remain readable.
 """
 
 from __future__ import annotations
@@ -26,6 +27,7 @@ DATA = ROOT / "data"
 DATA.mkdir(exist_ok=True)
 LATEST = DATA / "funding_latest.json"
 HISTORY = DATA / "funding_history.csv"
+BASIS_HISTORY = DATA / "funding_basis_history.csv"
 
 SYMBOLS = ["BTCUSDT", "ETHUSDT", "SOLUSDT"]
 ROUND_TRIP_COST_BPS = 30.0
@@ -38,6 +40,11 @@ FIELDS = [
     "spread_bps_per_hour", "spread_bps_per_8h",
     "rough_annualized_pct", "breakeven_8h_periods",
     "candidate"
+]
+BASIS_FIELDS = [
+    "timestamp_utc", "symbol", "direction", "spread_bps_per_8h",
+    "aligned_basis_bps", "adverse_basis_bps",
+    "periods_to_overcome_adverse_basis", "candidate"
 ]
 
 def get_json(url: str, retries: int = 3):
@@ -112,15 +119,20 @@ def ensure_history():
     if not HISTORY.exists():
         with HISTORY.open("w", newline="", encoding="utf-8") as f:
             csv.DictWriter(f, fieldnames=FIELDS).writeheader()
+    if not BASIS_HISTORY.exists():
+        with BASIS_HISTORY.open("w", newline="", encoding="utf-8") as f:
+            csv.DictWriter(f, fieldnames=BASIS_FIELDS).writeheader()
 
-def append_history(rows):
+def append_history(rows, basis_rows):
     ensure_history()
     with HISTORY.open("a", newline="", encoding="utf-8") as f:
         csv.DictWriter(f, fieldnames=FIELDS).writerows(rows)
+    with BASIS_HISTORY.open("a", newline="", encoding="utf-8") as f:
+        csv.DictWriter(f, fieldnames=BASIS_FIELDS).writerows(basis_rows)
 
 def main():
     ts = datetime.now(timezone.utc).isoformat(timespec="seconds")
-    rows, detailed, errors = [], [], []
+    rows, basis_rows, detailed, errors = [], [], [], []
 
     for symbol in SYMBOLS:
         try:
@@ -143,10 +155,6 @@ def main():
             breakeven = None if edge <= 0 else ROUND_TRIP_COST_BPS / edge
             candidate = edge >= WATCH_SPREAD_BPS_PER_8H
 
-            # Cross-venue perpetual mark basis. Positive means Bitget mark > Gate mark.
-            # Align the sign to the funding trade: positive aligned_basis_bps means the
-            # funding-favoured trade also shorts the richer venue and longs the cheaper
-            # one; negative means the entry basis is adverse to that direction.
             if a["mark_price"] > 0 and b["mark_price"] > 0:
                 raw_basis_bps = (a["mark_price"] / b["mark_price"] - 1.0) * 10000
                 direction_sign = 1.0 if spread_per_hour > 0 else -1.0 if spread_per_hour < 0 else 0.0
@@ -176,6 +184,18 @@ def main():
                 "candidate": "YES" if candidate else "NO",
             }
             rows.append(hrow)
+            basis_rows.append({
+                "timestamp_utc": ts,
+                "symbol": symbol,
+                "direction": direction,
+                "spread_bps_per_8h": f"{spread_bps_per_8h:.6f}",
+                "aligned_basis_bps": "" if aligned_basis_bps is None else f"{aligned_basis_bps:.6f}",
+                "adverse_basis_bps": "" if adverse_basis_bps is None else f"{adverse_basis_bps:.6f}",
+                "periods_to_overcome_adverse_basis": (
+                    "" if periods_to_overcome_adverse_basis is None else f"{periods_to_overcome_adverse_basis:.6f}"
+                ),
+                "candidate": "YES" if candidate else "NO",
+            })
             detailed.append({
                 **hrow,
                 "venue_a": a,
@@ -203,7 +223,7 @@ def main():
         except Exception as e:
             errors.append(f"{symbol}: {e}")
 
-    append_history(rows)
+    append_history(rows, basis_rows)
     detailed.sort(key=lambda x: abs(float(x["spread_bps_per_8h"])), reverse=True)
 
     payload = {
