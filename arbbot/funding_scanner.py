@@ -3,10 +3,11 @@
 ARBBOT funding-rate scout.
 Read-only public market data only.
 
-Compares Binance USD-M and Bybit linear perpetual funding for BTC/ETH/SOL,
-normalises different funding intervals, estimates the number of funding
-periods needed to recover a conservative round-trip execution cost, and
-keeps history for persistence analysis.
+Compares OKX perpetual funding with Bybit linear perpetual funding for
+BTC/ETH/SOL. The older Binance lane was removed from the cloud scanner
+because GitHub-hosted runners were receiving HTTP 451 from Binance.
+
+Legacy CSV column names are retained for backward compatibility.
 """
 
 from __future__ import annotations
@@ -41,7 +42,7 @@ FIELDS = [
 def get_json(url: str, retries: int = 3):
     req = urllib.request.Request(url, headers={
         "Accept": "application/json",
-        "User-Agent": "arsider-arbbot/0.4",
+        "User-Agent": "arsider-arbbot/0.7",
     })
     last = None
     for attempt in range(retries):
@@ -56,23 +57,26 @@ def get_json(url: str, retries: int = 3):
 def q(url, **params):
     return url + "?" + urllib.parse.urlencode(params)
 
-def binance_interval_map():
-    try:
-        data = get_json("https://fapi.binance.com/fapi/v1/fundingInfo")
-        return {x["symbol"]: float(x["fundingIntervalHours"]) for x in data}
-    except Exception:
-        return {}
-
-def binance(symbol: str, intervals: dict) -> dict:
-    d = get_json(q("https://fapi.binance.com/fapi/v1/premiumIndex", symbol=symbol))
+def okx(symbol: str) -> dict:
+    base = symbol.replace("USDT", "")
+    inst = f"{base}-USDT-SWAP"
+    d = get_json(q("https://openapi.okx.com/api/v5/public/funding-rate", instId=inst))
+    if d.get("code") != "0" or not d.get("data"):
+        raise RuntimeError(f"OKX funding error: {d}")
+    x = d["data"][0]
+    funding_time = int(x.get("fundingTime") or 0)
+    next_time = int(x.get("nextFundingTime") or 0)
+    interval_hours = (next_time - funding_time) / 3_600_000 if next_time > funding_time else 8.0
+    if interval_hours <= 0 or interval_hours > 24:
+        interval_hours = 8.0
     return {
-        "venue": "Binance USD-M",
+        "venue": "OKX perpetual",
         "symbol": symbol,
-        "mark_price": float(d["markPrice"]),
-        "index_price": float(d["indexPrice"]),
-        "funding_rate": float(d["lastFundingRate"]),
-        "interval_hours": float(intervals.get(symbol, 8.0)),
-        "next_funding_time": int(d["nextFundingTime"]),
+        "funding_rate": float(x.get("fundingRate") or 0),
+        "interval_hours": float(interval_hours),
+        "funding_time": funding_time,
+        "next_funding_time": next_time,
+        "formula_type": x.get("formulaType"),
     }
 
 def bybit(symbol: str) -> dict:
@@ -90,8 +94,6 @@ def bybit(symbol: str) -> dict:
     return {
         "venue": "Bybit linear",
         "symbol": symbol,
-        "mark_price": float(x["markPrice"]),
-        "index_price": float(x["indexPrice"]),
         "funding_rate": float(x["fundingRate"]),
         "interval_hours": interval_minutes / 60.0,
         "next_funding_time": int(x["nextFundingTime"]),
@@ -105,19 +107,15 @@ def ensure_history():
 def append_history(rows):
     ensure_history()
     with HISTORY.open("a", newline="", encoding="utf-8") as f:
-        w = csv.DictWriter(f, fieldnames=FIELDS)
-        w.writerows(rows)
+        csv.DictWriter(f, fieldnames=FIELDS).writerows(rows)
 
 def main():
     ts = datetime.now(timezone.utc).isoformat(timespec="seconds")
-    intervals = binance_interval_map()
-    rows = []
-    detailed = []
-    errors = []
+    rows, detailed, errors = [], [], []
 
     for symbol in SYMBOLS:
         try:
-            a = binance(symbol, intervals)
+            a = okx(symbol)
             b = bybit(symbol)
 
             a_per_hour = a["funding_rate"] / a["interval_hours"]
@@ -128,8 +126,8 @@ def main():
             annualized_pct = spread_per_hour * 24 * 365 * 100
 
             direction = (
-                "short Binance / long Bybit" if spread_per_hour > 0
-                else "long Binance / short Bybit" if spread_per_hour < 0
+                "short OKX / long Bybit" if spread_per_hour > 0
+                else "long OKX / short Bybit" if spread_per_hour < 0
                 else "flat"
             )
             edge = abs(spread_bps_per_8h)
@@ -151,15 +149,15 @@ def main():
                 "candidate": "YES" if candidate else "NO",
             }
             rows.append(hrow)
-
             detailed.append({
                 **hrow,
-                "binance": a,
-                "bybit": b,
+                "venue_a": a,
+                "venue_b": b,
+                "venue_a_name": "OKX",
                 "round_trip_cost_assumption_bps": ROUND_TRIP_COST_BPS,
                 "warning": (
-                    "Funding can change before settlement. This does not include basis moves, "
-                    "liquidation, collateral, fee-tier, venue or transfer risk."
+                    "Funding can change before settlement. Basis, liquidation, collateral, "
+                    "fee-tier, venue and transfer risk are not fully modeled."
                 )
             })
         except Exception as e:
@@ -171,6 +169,7 @@ def main():
     payload = {
         "generated_at_utc": ts,
         "mode": "paper_read_only",
+        "venues": ["OKX", "Bybit"],
         "candidate_count": sum(x["candidate"] == "YES" for x in rows),
         "best": detailed[0] if detailed else None,
         "rows": detailed,
@@ -179,10 +178,10 @@ def main():
     LATEST.write_text(json.dumps(payload, indent=2), encoding="utf-8")
 
     if detailed:
-        b = detailed[0]
+        best = detailed[0]
         print(
-            f"BEST {b['symbol']} {abs(float(b['spread_bps_per_8h'])):.3f} "
-            f"bps/8h | {b['direction']}"
+            f"BEST {best['symbol']} {abs(float(best['spread_bps_per_8h'])):.3f} "
+            f"bps/8h | {best['direction']}"
         )
     print(f"rows={len(rows)} errors={len(errors)}")
 

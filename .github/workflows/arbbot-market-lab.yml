@@ -2,7 +2,7 @@ name: ARBBOT market lab
 
 on:
   schedule:
-    - cron: "1/5 * * * *"
+    - cron: "*/5 * * * *"
   workflow_dispatch:
   push:
     paths:
@@ -28,12 +28,15 @@ jobs:
           python-version: "3.12"
 
       - name: Scan global public CEX markets
+        continue-on-error: true
         run: python arbbot/cex_market_scout.py
 
       - name: Scan EU EUR routes with conservative fees
+        continue-on-error: true
         run: python arbbot/eu_cex_scout.py
 
       - name: Scan stable-yield subsidies
+        continue-on-error: true
         run: python arbbot/yield_scout.py
 
       - name: Build persistence scoreboard
@@ -46,29 +49,46 @@ jobs:
         run: python arbbot/decision_engine.py
 
       - name: Burst-validate promoted fast edges
+        continue-on-error: true
         run: python arbbot/burst_validator.py
 
       - name: Validate cross-venue order-book depth
+        continue-on-error: true
         run: python arbbot/depth_validator.py
 
       - name: Re-evaluate after execution checks
         run: python arbbot/decision_engine.py
 
       - name: Record conservative shadow canary
+        continue-on-error: true
         run: python arbbot/shadow_ledger.py
 
       - name: Final decision after shadow history
         run: python arbbot/decision_engine.py
 
+      - name: Write health heartbeat
+        run: |
+          python - <<'PY'
+          import json
+          from datetime import datetime, timezone
+          from pathlib import Path
+          p = Path("arbbot/data")
+          p.mkdir(exist_ok=True)
+          (p / "health.json").write_text(json.dumps({
+              "market_lab_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+              "status": "workflow_reached_persist_step"
+          }, indent=2))
+          PY
+
       - name: Persist research data
         run: |
           git config user.name "arbbot"
           git config user.email "actions@users.noreply.github.com"
-          git add             arbbot/data/market_history.csv             arbbot/data/market_latest.json             arbbot/data/eu_history.csv             arbbot/data/eu_latest.json             arbbot/data/yield_history.csv             arbbot/data/yield_latest.json             arbbot/data/scoreboard.json             arbbot/data/capital_rank.json             arbbot/data/validation.json             arbbot/data/depth_validation.json             arbbot/data/shadow_trades.csv             arbbot/data/shadow_summary.json             arbbot/data/decision.json
+          git add -A arbbot/data
           if git diff --cached --quiet; then
             echo "No data change"
           else
-            git commit -m "arbbot: execution-realism observation"
+            git commit -m "arbbot: market lab heartbeat"
             git pull --rebase
             git push
           fi
