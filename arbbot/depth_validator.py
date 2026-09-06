@@ -21,7 +21,7 @@ DATA = ROOT / "data"
 DECISION = DATA / "decision.json"
 OUT = DATA / "depth_validation.json"
 
-BUDGETS = [50, 100, 250, 500]
+BUDGETS = [25, 50, 100, 250, 500, 1000]
 FEES_BPS = {
     "Binance": 10.0,
     "Bybit": 10.0,
@@ -29,11 +29,12 @@ FEES_BPS = {
     "Kraken": 80.0,
 }
 EXTRA_HAIRCUT_BPS = 5.0
+REFERENCE_BUDGET = 100
 
 def get_json(url: str):
     req = urllib.request.Request(url, headers={
         "Accept": "application/json",
-        "User-Agent": "arsider-arbbot/0.6",
+        "User-Agent": "arsider-arbbot/0.7",
     })
     with urllib.request.urlopen(req, timeout=20) as r:
         return json.loads(r.read().decode("utf-8"))
@@ -168,8 +169,20 @@ def main():
             "positive": pnl > 0,
         })
 
-    hundred = next(x for x in rows if x["total_budget"] == 100)
-    verdict = "PASS" if hundred["positive"] else "FAIL"
+    reference = next(x for x in rows if x["total_budget"] == REFERENCE_BUDGET)
+    positive_sizes = [x["total_budget"] for x in rows if x["positive"]]
+    max_positive_budget = max(positive_sizes) if positive_sizes else 0
+    pnl_bps = [float(x["paper_pnl_bps_on_total_capital"]) for x in rows]
+    size_decay_bps = round(pnl_bps[0] - pnl_bps[-1], 4) if rows else 0.0
+    capacity_class = (
+        "UP_TO_1000" if max_positive_budget >= 1000 else
+        "UP_TO_500" if max_positive_budget >= 500 else
+        "UP_TO_250" if max_positive_budget >= 250 else
+        "UP_TO_100" if max_positive_budget >= 100 else
+        "TINY_OR_NONE"
+    )
+
+    verdict = "PASS" if reference["positive"] else "FAIL"
 
     payload = {
         "generated_at_utc": ts,
@@ -180,11 +193,20 @@ def main():
         "buy_venue": buy_venue,
         "sell_venue": sell_venue,
         "rows": rows,
-        "rule": "PASS only if the €/$100 total-capital simulation remains positive after taker fees, real depth and an extra haircut.",
-        "warning": "Depth snapshots still do not guarantee simultaneous fills."
+        "capacity": {
+            "max_positive_budget": max_positive_budget,
+            "capacity_class": capacity_class,
+            "positive_sizes": positive_sizes,
+            "size_decay_bps_25_to_1000": size_decay_bps,
+        },
+        "rule": "PASS only if the €/$100 total-capital simulation remains positive after taker fees, real depth and an extra haircut; all six sizes are still reported so the Killer can reject poor scaling.",
+        "warning": "Depth snapshots still do not guarantee simultaneous fills; the multi-size curve measures snapshot capacity, not guaranteed executable capacity."
     }
     OUT.write_text(json.dumps(payload, indent=2), encoding="utf-8")
-    print(f"DEPTH {verdict} {asset} {buy_venue}->{sell_venue} pnl100={hundred['paper_pnl']:+.6f}")
+    print(
+        f"DEPTH {verdict} {asset} {buy_venue}->{sell_venue} "
+        f"pnl100={reference['paper_pnl']:+.6f} max_positive_budget={max_positive_budget}"
+    )
 
 if __name__ == "__main__":
     main()
