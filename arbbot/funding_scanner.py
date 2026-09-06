@@ -3,10 +3,10 @@
 ARBBOT funding-rate + cross-venue basis scout.
 Read-only public market data only.
 
-Compares Bitget USDT perpetual funding with Gate USDT perpetual funding for
-BTC/ETH/SOL and records the contemporaneous perpetual mark-price basis.
-These public endpoints are used because Binance/Bybit/OKX cloud access has
-proven unreliable from GitHub-hosted runners.
+Builds a dynamic liquid universe of USDT perpetuals shared by Bitget and Gate,
+then compares normalized funding and contemporaneous mark-price basis.
+The universe is re-discovered on every run so HUNTER follows current listings
+instead of a hard-coded BTC/ETH/SOL subset.
 
 Legacy CSV column names are retained for backward compatibility. Basis history
 is stored separately so old funding_history.csv files remain readable.
@@ -29,7 +29,9 @@ LATEST = DATA / "funding_latest.json"
 HISTORY = DATA / "funding_history.csv"
 BASIS_HISTORY = DATA / "funding_basis_history.csv"
 
-SYMBOLS = ["BTCUSDT", "ETHUSDT", "SOLUSDT"]
+CORE_SYMBOLS = ["BTCUSDT", "ETHUSDT", "SOLUSDT"]
+MAX_DYNAMIC_SYMBOLS = 40
+MIN_SHARED_NOTIONAL_24H_USDT = 2_000_000.0
 ROUND_TRIP_COST_BPS = 30.0
 WATCH_SPREAD_BPS_PER_8H = 2.0
 
@@ -47,10 +49,11 @@ BASIS_FIELDS = [
     "periods_to_overcome_adverse_basis", "candidate"
 ]
 
+
 def get_json(url: str, retries: int = 3):
     req = urllib.request.Request(url, headers={
         "Accept": "application/json",
-        "User-Agent": "arsider-arbbot/0.9",
+        "User-Agent": "arsider-arbbot/1.2",
     })
     last = None
     for attempt in range(retries):
@@ -59,11 +62,109 @@ def get_json(url: str, retries: int = 3):
                 return json.loads(r.read().decode("utf-8"))
         except Exception as e:
             last = e
-            time.sleep(1.5 * (attempt + 1))
+            time.sleep(1.25 * (attempt + 1))
     raise RuntimeError(str(last))
+
 
 def q(url, **params):
     return url + "?" + urllib.parse.urlencode(params)
+
+
+def normalize_symbol(s: str) -> str:
+    return str(s or "").upper().replace("_", "").replace("-", "")
+
+
+def bitget_liquid_universe() -> dict[str, float]:
+    d = get_json(q(
+        "https://api.bitget.com/api/v2/mix/market/tickers",
+        productType="USDT-FUTURES",
+    ))
+    if d.get("code") != "00000" or not isinstance(d.get("data"), list):
+        raise RuntimeError(f"Bitget ticker universe error: {d}")
+    out = {}
+    for x in d["data"]:
+        symbol = normalize_symbol(x.get("symbol"))
+        if not symbol.endswith("USDT"):
+            continue
+        try:
+            # quoteVolume is preferable; fall back to baseVolume * last price.
+            qv = float(x.get("usdtVolume") or x.get("quoteVolume") or 0.0)
+            if qv <= 0:
+                qv = float(x.get("baseVolume") or 0.0) * float(x.get("lastPr") or 0.0)
+        except Exception:
+            qv = 0.0
+        out[symbol] = max(0.0, qv)
+    return out
+
+
+def gate_liquid_universe() -> dict[str, float]:
+    d = get_json("https://api.gateio.ws/api/v4/futures/usdt/tickers")
+    if not isinstance(d, list):
+        raise RuntimeError(f"Gate ticker universe error: {d}")
+    out = {}
+    for x in d:
+        symbol = normalize_symbol(x.get("contract"))
+        if not symbol.endswith("USDT"):
+            continue
+        try:
+            qv = float(x.get("volume_24h_quote") or 0.0)
+            if qv <= 0:
+                qv = float(x.get("volume_24h_base") or 0.0) * float(x.get("last") or 0.0)
+        except Exception:
+            qv = 0.0
+        out[symbol] = max(0.0, qv)
+    return out
+
+
+def discover_symbols():
+    diagnostics = {"mode": "dynamic_shared_liquid_universe", "errors": []}
+    try:
+        bg = bitget_liquid_universe()
+        gt = gate_liquid_universe()
+        shared = set(bg) & set(gt)
+        ranked = sorted(
+            shared,
+            key=lambda s: min(bg.get(s, 0.0), gt.get(s, 0.0)),
+            reverse=True,
+        )
+        liquid = [
+            s for s in ranked
+            if min(bg.get(s, 0.0), gt.get(s, 0.0)) >= MIN_SHARED_NOTIONAL_24H_USDT
+        ]
+        selected = liquid[:MAX_DYNAMIC_SYMBOLS]
+        for s in reversed(CORE_SYMBOLS):
+            if s in shared and s not in selected:
+                selected.insert(0, s)
+        selected = selected[:MAX_DYNAMIC_SYMBOLS]
+        diagnostics.update({
+            "bitget_symbol_count": len(bg),
+            "gate_symbol_count": len(gt),
+            "shared_symbol_count": len(shared),
+            "liquid_shared_symbol_count": len(liquid),
+            "selected_symbol_count": len(selected),
+            "min_shared_notional_24h_usdt": MIN_SHARED_NOTIONAL_24H_USDT,
+            "max_dynamic_symbols": MAX_DYNAMIC_SYMBOLS,
+            "selected": [
+                {
+                    "symbol": s,
+                    "bitget_notional_24h_usdt": round(bg.get(s, 0.0), 2),
+                    "gate_notional_24h_usdt": round(gt.get(s, 0.0), 2),
+                    "shared_notional_floor_usdt": round(min(bg.get(s, 0.0), gt.get(s, 0.0)), 2),
+                }
+                for s in selected
+            ],
+        })
+        if selected:
+            return selected, diagnostics
+        diagnostics["errors"].append("dynamic universe empty; using core fallback")
+    except Exception as exc:
+        diagnostics["errors"].append(str(exc))
+
+    diagnostics["mode"] = "core_fallback"
+    diagnostics["selected_symbol_count"] = len(CORE_SYMBOLS)
+    diagnostics["selected"] = [{"symbol": s} for s in CORE_SYMBOLS]
+    return list(CORE_SYMBOLS), diagnostics
+
 
 def bitget(symbol: str) -> dict:
     d = get_json(q(
@@ -94,6 +195,7 @@ def bitget(symbol: str) -> dict:
         "price_timestamp_ms": int(px.get("ts") or 0),
     }
 
+
 def gate(symbol: str) -> dict:
     contract = symbol.replace("USDT", "_USDT")
     d = get_json(f"https://api.gateio.ws/api/v4/futures/usdt/contracts/{contract}")
@@ -115,6 +217,7 @@ def gate(symbol: str) -> dict:
         "last_price": float(d.get("last_price") or 0),
     }
 
+
 def ensure_history():
     if not HISTORY.exists():
         with HISTORY.open("w", newline="", encoding="utf-8") as f:
@@ -123,6 +226,7 @@ def ensure_history():
         with BASIS_HISTORY.open("w", newline="", encoding="utf-8") as f:
             csv.DictWriter(f, fieldnames=BASIS_FIELDS).writeheader()
 
+
 def append_history(rows, basis_rows):
     ensure_history()
     with HISTORY.open("a", newline="", encoding="utf-8") as f:
@@ -130,11 +234,13 @@ def append_history(rows, basis_rows):
     with BASIS_HISTORY.open("a", newline="", encoding="utf-8") as f:
         csv.DictWriter(f, fieldnames=BASIS_FIELDS).writerows(basis_rows)
 
+
 def main():
     ts = datetime.now(timezone.utc).isoformat(timespec="seconds")
     rows, basis_rows, detailed, errors = [], [], [], []
+    symbols, universe = discover_symbols()
 
-    for symbol in SYMBOLS:
+    for symbol in symbols:
         try:
             a = bitget(symbol)
             b = gate(symbol)
@@ -216,7 +322,7 @@ def main():
                     ),
                 },
                 "warning": (
-                    "Funding can change before settlement. Cross-venue mark basis is now measured, but future basis, "
+                    "Funding can change before settlement. Cross-venue mark basis is measured, but future basis, "
                     "liquidation, collateral, fee-tier, venue, transfer and fill risk remain incompletely modeled."
                 )
             })
@@ -230,6 +336,7 @@ def main():
         "generated_at_utc": ts,
         "mode": "paper_read_only",
         "venues": ["Bitget", "Gate"],
+        "universe": universe,
         "candidate_count": sum(x["candidate"] == "YES" for x in rows),
         "best": detailed[0] if detailed else None,
         "rows": detailed,
@@ -245,7 +352,11 @@ def main():
             f"BEST {best['symbol']} {abs(float(best['spread_bps_per_8h'])):.3f} "
             f"bps/8h | {best['direction']} | {basis_text}"
         )
-    print(f"rows={len(rows)} errors={len(errors)}")
+    print(
+        f"symbols={len(symbols)} rows={len(rows)} candidates={sum(x['candidate'] == 'YES' for x in rows)} "
+        f"errors={len(errors)} universe_mode={universe.get('mode')}"
+    )
+
 
 if __name__ == "__main__":
     main()
