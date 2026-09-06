@@ -82,6 +82,9 @@ jobs:
         continue-on-error: true
         run: python arbbot/shadow_ledger.py
 
+      - name: Refresh killer against latest shadow evidence
+        run: python arbbot/killer.py
+
       - name: Final decision
         run: python arbbot/decision_engine.py
 
