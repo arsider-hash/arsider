@@ -22,72 +22,63 @@ jobs:
     timeout-minutes: 18
     steps:
       - uses: actions/checkout@v4
-
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-
       - name: Scan Solana cross-DEX
         continue-on-error: true
         run: python arbbot/scanner.py
-
       - name: Scan funding
         continue-on-error: true
         run: python arbbot/funding_scanner.py
-
       - name: Scan global public CEX markets
         continue-on-error: true
         run: python arbbot/cex_market_scout.py
-
       - name: Scan wide high-turnover cross-CEX universe
         continue-on-error: true
         run: python arbbot/wide_cex_scout.py
-
       - name: Scan EU EUR routes
         continue-on-error: true
         run: python arbbot/eu_cex_scout.py
-
       - name: Scan stable-yield subsidies
         continue-on-error: true
         run: python arbbot/yield_scout.py
-
       - name: Build persistence scoreboard
         run: python arbbot/scoreboard.py
-
       - name: Rank small-capital economics
         run: python arbbot/capital_engine.py
-
       - name: Preliminary decision
         run: python arbbot/decision_engine.py
-
       - name: Burst-validate promoted fast edges
         continue-on-error: true
         run: python arbbot/burst_validator.py
-
       - name: Validate cross-venue order-book depth
         continue-on-error: true
         run: python arbbot/depth_validator.py
-
       - name: Diagnose stablecoin round-trip economics
         continue-on-error: true
         run: python arbbot/stable_roundtrip_validator.py
-
       - name: Adversarial killer falsification
         run: python arbbot/killer.py
-
+      - name: Dedicated funding killer
+        env:
+          KILLER_STRATEGY: funding_spread
+          KILLER_OUT: killer_funding_report.json
+        run: python arbbot/killer.py
       - name: Re-evaluate after execution and killer checks
         run: python arbbot/decision_engine.py
-
       - name: Record conservative shadow canary
         continue-on-error: true
         run: python arbbot/shadow_ledger.py
-
       - name: Refresh killer against latest shadow evidence
         run: python arbbot/killer.py
-
+      - name: Refresh dedicated funding killer
+        env:
+          KILLER_STRATEGY: funding_spread
+          KILLER_OUT: killer_funding_report.json
+        run: python arbbot/killer.py
       - name: Final decision
         run: python arbbot/decision_engine.py
-
       - name: Write health heartbeat
         run: |
           python - <<'PY'
@@ -96,27 +87,20 @@ jobs:
           from pathlib import Path
           p = Path("arbbot/data")
           p.mkdir(exist_ok=True)
-          (p / "health.json").write_text(json.dumps({
-              "unified_lab_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
-              "status": "workflow_reached_persist_step"
-          }, indent=2))
+          (p / "health.json").write_text(json.dumps({"unified_lab_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),"status":"workflow_reached_persist_step"}, indent=2))
           PY
-
       - name: Persist all research data atomically
         run: |
           set -euo pipefail
           git config user.name "arbbot"
           git config user.email "actions@users.noreply.github.com"
-
           snapshot_dir="$(mktemp -d)"
           cp -a arbbot/data "$snapshot_dir/data"
-
           git fetch origin main
           git reset --hard origin/main
           rm -rf arbbot/data
           mkdir -p arbbot
           cp -a "$snapshot_dir/data" arbbot/data
-
           git add -A arbbot/data
           if git diff --cached --quiet; then
             echo "No data change"
