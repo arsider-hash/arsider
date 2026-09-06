@@ -1,7 +1,6 @@
 {
   "generated_at_utc": "2026-09-06T06:52:07+00:00",
-  "state": "WAIT",
-  "ranking_source": "capital_rank",
+  "state": "NOT_APPLICABLE",
   "selected": {
     "key": "cex_triangle|ETH:USDT-BTC-ETH-USDT",
     "strategy": "cex_triangle",
@@ -42,20 +41,5 @@
         "paper_profit_per_event_at_median_edge": 0.0
       }
     }
-  },
-  "failed_gates": [
-    "not strong_watch yet",
-    "only 4 observations; need 8",
-    "persistence 0.00 below 0.75",
-    "median edge 0.00 bps below 8.00",
-    "research score 6.7 below 72.0"
-  ],
-  "policy": {
-    "min_observations": 8,
-    "min_persistence": 0.75,
-    "min_median_edge_bps": 8.0,
-    "min_research_score": 72.0
-  },
-  "next_action": "keep collecting data; no user action",
-  "hard_boundary": "ARBBOT may research, rank and prepare a test plan. It must not custody funds, sign transactions, place orders, or enable live trading without explicit user authorization."
+  }
 }
