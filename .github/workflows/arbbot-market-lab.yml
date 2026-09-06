@@ -39,6 +39,10 @@ jobs:
         continue-on-error: true
         run: python arbbot/cex_market_scout.py
 
+      - name: Scan wide high-turnover cross-CEX universe
+        continue-on-error: true
+        run: python arbbot/wide_cex_scout.py
+
       - name: Scan EU EUR routes
         continue-on-error: true
         run: python arbbot/eu_cex_scout.py
@@ -101,9 +105,6 @@ jobs:
           git config user.name "arbbot"
           git config user.email "actions@users.noreply.github.com"
 
-          # Preserve this run's generated research snapshot while moving the
-          # worktree onto the latest main. This avoids rebase conflicts when a
-          # code/policy commit lands during a running scan.
           snapshot_dir="$(mktemp -d)"
           cp -a arbbot/data "$snapshot_dir/data"
 
