@@ -11,9 +11,11 @@ moves funds. It only writes arbbot/data/killer_report.json.
 
 from __future__ import annotations
 
+import csv
 import json
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 from pathlib import Path
+from statistics import median
 
 ROOT = Path(__file__).resolve().parent
 DATA = ROOT / "data"
@@ -22,6 +24,7 @@ CAPITAL_RANK = DATA / "capital_rank.json"
 VALIDATION = DATA / "validation.json"
 DEPTH_VALIDATION = DATA / "depth_validation.json"
 SHADOW_SUMMARY = DATA / "shadow_summary.json"
+FUNDING_BASIS_HISTORY = DATA / "funding_basis_history.csv"
 OUT = DATA / "killer_report.json"
 
 FAST_STRATEGIES = {
@@ -31,6 +34,9 @@ FAST_STRATEGIES = {
 DEPTH_STRATEGIES = {"cex_cross_spot", "eu_cross_spot"}
 MAX_STALENESS_SECONDS = 15 * 60
 MIN_USEFUL_DEPTH_BUDGET = 250
+MIN_FUNDING_BASIS_SAMPLES = 4
+FUNDING_BASIS_LOOKBACK_HOURS = 48
+MAX_MEDIAN_ADVERSE_BASIS_PERIODS = 3.0
 
 
 def load_json(path: Path):
@@ -75,6 +81,47 @@ def add(checks, name, status, detail, severity="hard"):
         "severity": severity,
         "detail": detail,
     })
+
+
+def parse_ts(value):
+    try:
+        dt = datetime.fromisoformat(str(value).replace("Z", "+00:00"))
+        return dt if dt.tzinfo else dt.replace(tzinfo=timezone.utc)
+    except Exception:
+        return None
+
+
+def funding_basis_samples(symbol):
+    if not FUNDING_BASIS_HISTORY.exists():
+        return []
+    cutoff = datetime.now(timezone.utc) - timedelta(hours=FUNDING_BASIS_LOOKBACK_HOURS)
+    out = []
+    try:
+        with FUNDING_BASIS_HISTORY.open(encoding="utf-8") as f:
+            for row in csv.DictReader(f):
+                if row.get("symbol") != symbol:
+                    continue
+                ts = parse_ts(row.get("timestamp_utc"))
+                if not ts or ts < cutoff:
+                    continue
+                try:
+                    aligned = float(row.get("aligned_basis_bps") or 0.0)
+                    adverse = float(row.get("adverse_basis_bps") or 0.0)
+                    periods = float(row.get("periods_to_overcome_adverse_basis") or 0.0)
+                    spread = abs(float(row.get("spread_bps_per_8h") or 0.0))
+                except Exception:
+                    continue
+                out.append({
+                    "ts": ts,
+                    "direction": row.get("direction", ""),
+                    "aligned_basis_bps": aligned,
+                    "adverse_basis_bps": adverse,
+                    "adverse_periods": periods,
+                    "funding_edge_bps_per_8h": spread,
+                })
+    except Exception:
+        return []
+    return out
 
 
 def main():
@@ -172,6 +219,53 @@ def main():
                     f"positive through budget={max_budget}; 25->1000 size decay={decay:.4f} bps",
                 )
 
+    if strategy == "funding_spread":
+        samples = funding_basis_samples(selected.get("label"))
+        if len(samples) < MIN_FUNDING_BASIS_SAMPLES:
+            add(
+                checks,
+                "funding_basis_persistence",
+                "INSUFFICIENT",
+                f"only {len(samples)} basis samples; need {MIN_FUNDING_BASIS_SAMPLES}",
+            )
+        else:
+            adverse_periods = [x["adverse_periods"] for x in samples]
+            aligned = [x["aligned_basis_bps"] for x in samples]
+            med_adverse_periods = median(adverse_periods)
+            med_aligned = median(aligned)
+            selected_direction = selected.get("direction", "")
+            direction_match_rate = sum(x["direction"] == selected_direction for x in samples) / len(samples)
+            if med_adverse_periods > MAX_MEDIAN_ADVERSE_BASIS_PERIODS:
+                add(
+                    checks,
+                    "funding_basis_persistence",
+                    "FAIL",
+                    f"{len(samples)} samples; median adverse basis costs {med_adverse_periods:.2f} funding periods (> {MAX_MEDIAN_ADVERSE_BASIS_PERIODS:.1f}); median aligned basis={med_aligned:.3f} bps",
+                )
+            else:
+                add(
+                    checks,
+                    "funding_basis_persistence",
+                    "PASS",
+                    f"{len(samples)} samples; median adverse basis costs {med_adverse_periods:.2f} funding periods; median aligned basis={med_aligned:.3f} bps",
+                )
+            if direction_match_rate < 0.5:
+                add(
+                    checks,
+                    "funding_direction_stability",
+                    "WARN",
+                    f"latest funding direction matches only {direction_match_rate:.0%} of basis samples",
+                    severity="soft",
+                )
+            else:
+                add(
+                    checks,
+                    "funding_direction_stability",
+                    "PASS",
+                    f"latest funding direction matches {direction_match_rate:.0%} of basis samples",
+                    severity="soft",
+                )
+
     shadow = load_json(SHADOW_SUMMARY) or {}
     key = f"{selected.get('strategy')}|{selected.get('label')}"
     shadow_item = next((x for x in (shadow.get("ranked") or []) if x.get("key") == key), None)
@@ -204,6 +298,9 @@ def main():
         "policy": {
             "max_staleness_seconds": MAX_STALENESS_SECONDS,
             "min_useful_depth_budget": MIN_USEFUL_DEPTH_BUDGET,
+            "min_funding_basis_samples": MIN_FUNDING_BASIS_SAMPLES,
+            "funding_basis_lookback_hours": FUNDING_BASIS_LOOKBACK_HOURS,
+            "max_median_adverse_basis_periods": MAX_MEDIAN_ADVERSE_BASIS_PERIODS,
             "principle": "assume false until execution evidence survives adversarial checks",
         },
         "hard_boundary": "Research/falsification only; no live execution or custody.",
