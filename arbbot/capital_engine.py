@@ -37,6 +37,7 @@ UTILISATION = {
     "solana_cross_dex": 1.0,
     "cex_triangle": 1.0,
     "eur_triangle": 1.0,
+    "stable_dislocation": 1.0,
     "stable_eur_dislocation": 1.0,
     "cex_cross_spot": 0.5,
     "eu_cross_spot": 0.5,
