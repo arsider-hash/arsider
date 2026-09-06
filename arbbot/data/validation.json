@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-06T10:12:03+00:00",
+  "generated_at_utc": "2026-09-06T10:50:59+00:00",
   "state": "SKIP",
   "reason": "decision state is WAIT",
   "selected": {
@@ -8,19 +8,33 @@
     "label": "ETH:USDT-BTC-ETH-USDT",
     "direction": "USDT->BTC->ETH->USDT",
     "venue": "Binance",
-    "observations": 5,
+    "observations": 6,
     "positive_observations": 0,
     "persistence": 0.0,
     "median_positive_edge_bps": 0.0,
     "p90_positive_edge_bps": 0.0,
     "max_edge_bps": -36.6288,
-    "latest_edge_bps": -39.2271,
-    "research_score": 8.33,
+    "latest_edge_bps": -37.2992,
+    "research_score": 10.0,
     "classification": "noise",
-    "last_seen_utc": "2026-09-06T10:11:13+00:00",
+    "last_seen_utc": "2026-09-06T10:50:14+00:00",
     "capital_utilisation": 1.0,
     "capital_efficiency_score": 0.0,
+    "economic_relevance_score": 0.0,
+    "economic_relevance": {
+      "reference_budget_eur": 250,
+      "reference_basis": "paper_profit_per_event_at_median_edge",
+      "reference_payoff_eur": 0.0,
+      "reference_target_eur": 0.25,
+      "relevance_factor": 0.0,
+      "economically_material_at_reference_budget": false
+    },
     "paper_economics": {
+      "25": {
+        "total_budget": 25,
+        "effective_capital_per_edge": 25.0,
+        "paper_profit_per_event_at_median_edge": 0.0
+      },
       "50": {
         "total_budget": 50,
         "effective_capital_per_edge": 50.0,
@@ -39,6 +53,11 @@
       "500": {
         "total_budget": 500,
         "effective_capital_per_edge": 500.0,
+        "paper_profit_per_event_at_median_edge": 0.0
+      },
+      "1000": {
+        "total_budget": 1000,
+        "effective_capital_per_edge": 1000.0,
         "paper_profit_per_event_at_median_edge": 0.0
       }
     }
