@@ -30,6 +30,7 @@ FAST_STRATEGIES = {
 }
 DEPTH_STRATEGIES = {"cex_cross_spot", "eu_cross_spot"}
 MAX_STALENESS_SECONDS = 15 * 60
+MIN_USEFUL_DEPTH_BUDGET = 250
 
 
 def load_json(path: Path):
@@ -147,10 +148,29 @@ def main():
     if strategy in DEPTH_STRATEGIES:
         if not depth or not same_route(depth, selected):
             add(checks, "depth_validation", "INSUFFICIENT", "no matching depth validation")
+            add(checks, "multi_size_capacity", "INSUFFICIENT", "no matching multi-size depth curve")
         elif depth.get("state") != "PASS":
             add(checks, "depth_validation", "FAIL", f"state={depth.get('state')}")
+            add(checks, "multi_size_capacity", "FAIL", "reference-size depth test failed")
         else:
             add(checks, "depth_validation", "PASS", "order-book depth PASS")
+            capacity = depth.get("capacity") or {}
+            max_budget = int(capacity.get("max_positive_budget") or 0)
+            decay = float(capacity.get("size_decay_bps_25_to_1000") or 0.0)
+            if max_budget < MIN_USEFUL_DEPTH_BUDGET:
+                add(
+                    checks,
+                    "multi_size_capacity",
+                    "FAIL",
+                    f"positive snapshot edge scales only to {max_budget}; need at least {MIN_USEFUL_DEPTH_BUDGET}",
+                )
+            else:
+                add(
+                    checks,
+                    "multi_size_capacity",
+                    "PASS",
+                    f"positive through budget={max_budget}; 25->1000 size decay={decay:.4f} bps",
+                )
 
     shadow = load_json(SHADOW_SUMMARY) or {}
     key = f"{selected.get('strategy')}|{selected.get('label')}"
@@ -183,6 +203,7 @@ def main():
         "insufficient_evidence": insufficient,
         "policy": {
             "max_staleness_seconds": MAX_STALENESS_SECONDS,
+            "min_useful_depth_budget": MIN_USEFUL_DEPTH_BUDGET,
             "principle": "assume false until execution evidence survives adversarial checks",
         },
         "hard_boundary": "Research/falsification only; no live execution or custody.",
