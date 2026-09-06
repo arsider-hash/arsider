@@ -1,16 +1,10 @@
-name: ARBBOT funding scout
+name: ARBBOT funding scout manual
 
 on:
-  schedule:
-    - cron: "*/15 * * * *"
   workflow_dispatch:
 
 permissions:
-  contents: write
-
-concurrency:
-  group: arbbot-writes
-  cancel-in-progress: false
+  contents: read
 
 jobs:
   funding:
@@ -18,23 +12,8 @@ jobs:
     timeout-minutes: 6
     steps:
       - uses: actions/checkout@v4
-
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-
-      - name: Read and normalize public funding data
+      - name: Run read-only funding scanner
         run: python arbbot/funding_scanner.py
-
-      - name: Persist funding history
-        run: |
-          git config user.name "arbbot"
-          git config user.email "actions@users.noreply.github.com"
-          git add arbbot/data/funding_latest.json arbbot/data/funding_history.csv
-          if git diff --cached --quiet; then
-            echo "No data change"
-          else
-            git commit -m "arbbot: funding observation"
-            git pull --rebase
-            git push
-          fi

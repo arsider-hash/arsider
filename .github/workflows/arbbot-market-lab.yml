@@ -1,4 +1,4 @@
-name: ARBBOT market lab
+name: ARBBOT unified lab
 
 on:
   schedule:
@@ -13,13 +13,13 @@ permissions:
   contents: write
 
 concurrency:
-  group: arbbot-writes
+  group: arbbot-unified-writes
   cancel-in-progress: false
 
 jobs:
   lab:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 18
     steps:
       - uses: actions/checkout@v4
 
@@ -27,11 +27,19 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Scan Solana cross-DEX
+        continue-on-error: true
+        run: python arbbot/scanner.py
+
+      - name: Scan funding
+        continue-on-error: true
+        run: python arbbot/funding_scanner.py
+
       - name: Scan global public CEX markets
         continue-on-error: true
         run: python arbbot/cex_market_scout.py
 
-      - name: Scan EU EUR routes with conservative fees
+      - name: Scan EU EUR routes
         continue-on-error: true
         run: python arbbot/eu_cex_scout.py
 
@@ -63,7 +71,7 @@ jobs:
         continue-on-error: true
         run: python arbbot/shadow_ledger.py
 
-      - name: Final decision after shadow history
+      - name: Final decision
         run: python arbbot/decision_engine.py
 
       - name: Write health heartbeat
@@ -75,12 +83,12 @@ jobs:
           p = Path("arbbot/data")
           p.mkdir(exist_ok=True)
           (p / "health.json").write_text(json.dumps({
-              "market_lab_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+              "unified_lab_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
               "status": "workflow_reached_persist_step"
           }, indent=2))
           PY
 
-      - name: Persist research data
+      - name: Persist all research data atomically
         run: |
           git config user.name "arbbot"
           git config user.email "actions@users.noreply.github.com"
@@ -88,7 +96,7 @@ jobs:
           if git diff --cached --quiet; then
             echo "No data change"
           else
-            git commit -m "arbbot: market lab heartbeat"
+            git commit -m "arbbot: unified observation"
             git pull --rebase
             git push
           fi
