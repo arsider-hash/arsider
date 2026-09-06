@@ -3,7 +3,8 @@
 ARBBOT persistence scoreboard.
 
 Rejects one-off quote noise and ranks repeated paper signals over a rolling
-window. Sources currently include global CEX, EU CEX, Solana and funding.
+window. Sources currently include global CEX, wide cross-CEX, EU CEX, Solana
+and funding.
 """
 
 from __future__ import annotations
@@ -161,6 +162,7 @@ def main():
     merged = defaultdict(list)
     sources = [
         load_generic_history("market_history.csv", cutoff),
+        load_generic_history("wide_cex_history.csv", cutoff),
         load_generic_history("eu_history.csv", cutoff),
         load_solana(cutoff),
         load_funding(cutoff),
