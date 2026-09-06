@@ -191,6 +191,14 @@ def main():
         else:
             add(checks, "burst_validation", "PASS", "SURVIVES_BURST")
 
+    if strategy == "stable_dislocation":
+        add(
+            checks,
+            "verified_exit_path",
+            "INSUFFICIENT",
+            "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified",
+        )
+
     depth = load_json(DEPTH_VALIDATION)
     if strategy in DEPTH_STRATEGIES:
         if not depth or not same_route(depth, selected):
