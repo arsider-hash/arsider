@@ -1,16 +1,17 @@
 {
-  "generated_at_utc": "2026-09-06T21:20:43+00:00",
-  "total_shadow_trades_raw": 5,
+  "generated_at_utc": "2026-09-06T22:24:35+00:00",
+  "total_shadow_trades_raw": 6,
   "total_shadow_trades_evidence": 1,
   "excluded_unverified_stable_rows": 4,
+  "excluded_heuristic_funding_rows": 1,
   "best": {
     "key": "funding_spread|PONSUSDT",
     "count": 1,
     "positive_count": 1,
     "positive_rate": 1.0,
-    "cumulative_paper_pnl": 0.0965,
-    "median_paper_pnl": 0.0965,
-    "last_recorded_at_utc": "2026-09-06T21:20:43+00:00"
+    "cumulative_paper_pnl": 0.037537,
+    "median_paper_pnl": 0.037537,
+    "last_recorded_at_utc": "2026-09-06T22:24:35+00:00"
   },
   "ranked": [
     {
@@ -18,10 +19,10 @@
       "count": 1,
       "positive_count": 1,
       "positive_rate": 1.0,
-      "cumulative_paper_pnl": 0.0965,
-      "median_paper_pnl": 0.0965,
-      "last_recorded_at_utc": "2026-09-06T21:20:43+00:00"
+      "cumulative_paper_pnl": 0.037537,
+      "median_paper_pnl": 0.037537,
+      "last_recorded_at_utc": "2026-09-06T22:24:35+00:00"
     }
   ],
-  "warning": "Shadow PnL is simulated and is not proof of live fill performance. Stablecoin signals are excluded unless a matching verified exit path exists."
+  "warning": "Shadow PnL is simulated and is not proof of live fill performance. Stablecoin signals require a verified exit; funding signals require current edge after cost/basis haircuts."
 }
