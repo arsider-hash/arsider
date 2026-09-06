@@ -64,7 +64,10 @@ jobs:
         continue-on-error: true
         run: python arbbot/depth_validator.py
 
-      - name: Re-evaluate after execution checks
+      - name: Adversarial killer falsification
+        run: python arbbot/killer.py
+
+      - name: Re-evaluate after execution and killer checks
         run: python arbbot/decision_engine.py
 
       - name: Record conservative shadow canary
