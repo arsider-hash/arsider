@@ -93,13 +93,26 @@ jobs:
 
       - name: Persist all research data atomically
         run: |
+          set -euo pipefail
           git config user.name "arbbot"
           git config user.email "actions@users.noreply.github.com"
+
+          # Preserve this run's generated research snapshot while moving the
+          # worktree onto the latest main. This avoids rebase conflicts when a
+          # code/policy commit lands during a running scan.
+          snapshot_dir="$(mktemp -d)"
+          cp -a arbbot/data "$snapshot_dir/data"
+
+          git fetch origin main
+          git reset --hard origin/main
+          rm -rf arbbot/data
+          mkdir -p arbbot
+          cp -a "$snapshot_dir/data" arbbot/data
+
           git add -A arbbot/data
           if git diff --cached --quiet; then
             echo "No data change"
           else
             git commit -m "arbbot: unified observation"
-            git pull --rebase
-            git push
+            git push origin HEAD:main
           fi
