@@ -9,7 +9,7 @@ ROOT=Path(__file__).resolve().parent; DATA=ROOT/'data'
 DECISION=DATA/'decision.json'; CAPITAL_RANK=DATA/'capital_rank.json'; VALIDATION=DATA/'validation.json'; DEPTH_VALIDATION=DATA/'depth_validation.json'; SHADOW_SUMMARY=DATA/'shadow_summary.json'; FUNDING_BASIS_HISTORY=DATA/'funding_basis_history.csv'
 TARGET_STRATEGY=os.environ.get('KILLER_STRATEGY','').strip(); OUT=DATA/os.environ.get('KILLER_OUT','killer_report.json')
 FAST_STRATEGIES={'cex_cross_spot','eu_cross_spot','cex_triangle','eur_triangle','stable_dislocation','stable_eur_dislocation'}; DEPTH_STRATEGIES={'cex_cross_spot','eu_cross_spot'}
-MAX_STALENESS_SECONDS=900; MIN_USEFUL_DEPTH_BUDGET=250; MIN_FUNDING_BASIS_SAMPLES=4; FUNDING_BASIS_LOOKBACK_HOURS=48; MAX_MEDIAN_ADVERSE_BASIS_PERIODS=3.0
+MAX_STALENESS_SECONDS=900; MIN_USEFUL_DEPTH_BUDGET=250; MIN_FUNDING_BASIS_SAMPLES=4; FUNDING_BASIS_LOOKBACK_HOURS=48; MAX_MEDIAN_ADVERSE_BASIS_PERIODS=3.0; MIN_FUNDING_LATEST_TO_MEDIAN_RATIO=0.25
 
 def load_json(p):
  try:return json.loads(p.read_text()) if p.exists() else None
@@ -65,6 +65,8 @@ def main():
   else:
    add(c,'depth_validation','PASS','order-book depth PASS'); cap=depth.get('capacity') or {}; mb=int(cap.get('max_positive_budget') or 0); add(c,'multi_size_capacity','PASS' if mb>=MIN_USEFUL_DEPTH_BUDGET else 'FAIL',f'positive through budget={mb}; need at least {MIN_USEFUL_DEPTH_BUDGET}')
  if strategy=='funding_spread':
+  ratio=(latest/med) if med>0 else 0.0
+  add(c,'funding_regime_decay','PASS' if ratio>=MIN_FUNDING_LATEST_TO_MEDIAN_RATIO else 'INSUFFICIENT',f'latest/median edge ratio={ratio:.3f}; latest={latest:.3f} bps/8h, median={med:.3f}; require >= {MIN_FUNDING_LATEST_TO_MEDIAN_RATIO:.2f} to rule out sharp edge decay')
   x=funding_basis_samples(s.get('label'))
   if len(x)<MIN_FUNDING_BASIS_SAMPLES:add(c,'funding_basis_persistence','INSUFFICIENT',f'only {len(x)} basis samples; need {MIN_FUNDING_BASIS_SAMPLES}')
   else:
@@ -76,5 +78,5 @@ def main():
   count=int(item.get('count') or 0); rate=float(item.get('positive_rate') or 0); pnl=float(item.get('cumulative_paper_pnl') or 0); add(c,'shadow_evidence','PASS' if count>=3 and rate>=.67 and pnl>0 else 'WARN',f'count={count}, positive_rate={rate:.3f}, cumulative_paper_pnl={pnl:.6f}',severity='soft')
  else:add(c,'shadow_evidence','INSUFFICIENT','no matching shadow history',severity='soft')
  hf=[x['detail'] for x in c if x['severity']=='hard' and x['status']=='FAIL']; ie=[x['detail'] for x in c if x['severity']=='hard' and x['status']=='INSUFFICIENT']; verdict='REJECTED' if hf else 'INSUFFICIENT_EVIDENCE' if ie else 'SURVIVES_KILLER'
- OUT.write_text(json.dumps({'generated_at_utc':now,'verdict':verdict,'selected':s,'target_strategy':TARGET_STRATEGY or None,'checks':c,'hard_failures':hf,'insufficient_evidence':ie,'policy':{'max_staleness_seconds':MAX_STALENESS_SECONDS,'min_useful_depth_budget':MIN_USEFUL_DEPTH_BUDGET,'min_funding_basis_samples':MIN_FUNDING_BASIS_SAMPLES,'funding_basis_lookback_hours':FUNDING_BASIS_LOOKBACK_HOURS,'max_median_adverse_basis_periods':MAX_MEDIAN_ADVERSE_BASIS_PERIODS,'principle':'assume false until execution evidence survives adversarial checks'},'hard_boundary':'Research/falsification only; no live execution or custody.'},indent=2)); print(f'KILLER {verdict}: {strategy} {s.get("label")} -> {OUT.name}')
+ OUT.write_text(json.dumps({'generated_at_utc':now,'verdict':verdict,'selected':s,'target_strategy':TARGET_STRATEGY or None,'checks':c,'hard_failures':hf,'insufficient_evidence':ie,'policy':{'max_staleness_seconds':MAX_STALENESS_SECONDS,'min_useful_depth_budget':MIN_USEFUL_DEPTH_BUDGET,'min_funding_basis_samples':MIN_FUNDING_BASIS_SAMPLES,'funding_basis_lookback_hours':FUNDING_BASIS_LOOKBACK_HOURS,'max_median_adverse_basis_periods':MAX_MEDIAN_ADVERSE_BASIS_PERIODS,'min_funding_latest_to_median_ratio':MIN_FUNDING_LATEST_TO_MEDIAN_RATIO,'principle':'assume false until execution evidence survives adversarial checks'},'hard_boundary':'Research/falsification only; no live execution or custody.'},indent=2)); print(f'KILLER {verdict}: {strategy} {s.get("label")} -> {OUT.name}')
 if __name__=='__main__':main()
