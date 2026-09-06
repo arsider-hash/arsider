@@ -53,6 +53,10 @@ POLICY = {
         "min_observations": 6, "min_persistence": 0.70,
         "min_median_edge_bps": 2.0, "min_research_score": 65.0,
     },
+    "stable_dislocation": {
+        "min_observations": 6, "min_persistence": 0.70,
+        "min_median_edge_bps": 8.0, "min_research_score": 68.0,
+    },
     "stable_eur_dislocation": {
         "min_observations": 6, "min_persistence": 0.70,
         "min_median_edge_bps": 8.0, "min_research_score": 68.0,
@@ -62,7 +66,7 @@ POLICY = {
 FAST_STRATEGIES = {
     "cex_cross_spot", "eu_cross_spot",
     "cex_triangle", "eur_triangle",
-    "stable_eur_dislocation",
+    "stable_dislocation", "stable_eur_dislocation",
 }
 
 def load_ranked():
