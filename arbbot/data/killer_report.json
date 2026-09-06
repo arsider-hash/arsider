@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-06T20:30:16+00:00",
+  "generated_at_utc": "2026-09-06T21:15:59+00:00",
   "verdict": "INSUFFICIENT_EVIDENCE",
   "selected": {
     "key": "stable_dislocation|FDUSD:Binance",
@@ -7,19 +7,19 @@
     "label": "FDUSD:Binance",
     "direction": "below peg",
     "venue": "Binance",
-    "observations": 24,
+    "observations": 25,
     "positive_observations": 21,
-    "persistence": 0.875,
+    "persistence": 0.84,
     "median_positive_edge_bps": 12.5,
     "p90_positive_edge_bps": 16.5,
     "max_edge_bps": 16.5,
-    "latest_edge_bps": 9.5,
-    "research_score": 83.75,
+    "latest_edge_bps": 8.5,
+    "research_score": 81.82,
     "classification": "strong_watch",
-    "last_seen_utc": "2026-09-06T20:26:36+00:00",
+    "last_seen_utc": "2026-09-06T21:12:22+00:00",
     "capital_utilisation": 1.0,
-    "capital_efficiency_score": 41.22,
-    "economic_relevance_score": 41.22,
+    "capital_efficiency_score": 38.66,
+    "economic_relevance_score": 38.66,
     "economic_relevance": {
       "reference_budget_eur": 250,
       "reference_basis": "paper_profit_per_event_at_median_edge",
@@ -67,13 +67,13 @@
       "check": "freshness",
       "status": "PASS",
       "severity": "hard",
-      "detail": "candidate age 221s"
+      "detail": "candidate age 217s"
     },
     {
       "check": "sample_presence",
       "status": "PASS",
       "severity": "hard",
-      "detail": "24 observations"
+      "detail": "25 observations"
     },
     {
       "check": "positive_edge_evidence",
@@ -85,19 +85,19 @@
       "check": "persistence",
       "status": "PASS",
       "severity": "hard",
-      "detail": "persistence=0.875"
+      "detail": "persistence=0.840"
     },
     {
       "check": "latest_edge_sign",
       "status": "PASS",
       "severity": "soft",
-      "detail": "latest_edge_bps=9.5000"
+      "detail": "latest_edge_bps=8.5000"
     },
     {
       "check": "economic_relevance",
       "status": "PASS",
       "severity": "soft",
-      "detail": "economic_relevance_score=41.22"
+      "detail": "economic_relevance_score=38.66"
     },
     {
       "check": "burst_validation",
@@ -128,6 +128,7 @@
     "min_funding_basis_samples": 4,
     "funding_basis_lookback_hours": 48,
     "max_median_adverse_basis_periods": 3.0,
+    "min_funding_latest_to_median_ratio": 0.25,
     "principle": "assume false until execution evidence survives adversarial checks"
   },
   "hard_boundary": "Research/falsification only; no live execution or custody."
