@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-06T15:16:11+00:00",
+  "generated_at_utc": "2026-09-06T15:17:31+00:00",
   "mode": "paper_read_only",
   "venues": [
     "Bitget",
@@ -7,7 +7,7 @@
   ],
   "candidate_count": 0,
   "best": {
-    "timestamp_utc": "2026-09-06T15:16:11+00:00",
+    "timestamp_utc": "2026-09-06T15:17:31+00:00",
     "symbol": "BTCUSDT",
     "direction": "short Bitget / long Gate",
     "binance_rate": "0.0000610000",
@@ -25,10 +25,10 @@
       "funding_rate": 6.1e-05,
       "interval_hours": 8.0,
       "next_funding_time": 1788710400000,
-      "mark_price": 79562.5,
-      "index_price": 79595.569,
-      "market_price": 79560.2,
-      "price_timestamp_ms": 1788707771807
+      "mark_price": 79585.8,
+      "index_price": 79619.6235,
+      "market_price": 79580.0,
+      "price_timestamp_ms": 1788707852059
     },
     "venue_b": {
       "venue": "Gate USDT perpetual",
@@ -37,16 +37,16 @@
       "interval_hours": 8.0,
       "next_funding_time": 1788710400000,
       "indicative_funding_rate": 5e-06,
-      "mark_price": 79557.75,
-      "index_price": 79595.63,
-      "last_price": 79555.1
+      "mark_price": 79585.72,
+      "index_price": 79622.31,
+      "last_price": 79562.7
     },
     "venue_a_name": "Bitget",
     "venue_b_name": "Gate",
     "round_trip_cost_assumption_bps": 30.0,
     "cross_venue_basis": {
-      "bitget_minus_gate_mark_bps": 0.5971,
-      "aligned_with_funding_trade_bps": 0.5971,
+      "bitget_minus_gate_mark_bps": 0.0101,
+      "aligned_with_funding_trade_bps": 0.0101,
       "adverse_entry_basis_bps": 0.0,
       "funding_periods_to_overcome_adverse_entry_basis": 0.0,
       "interpretation": "Positive aligned basis favours the funding direction at entry; negative is adverse. Future basis can widen or reverse, so this is a risk diagnostic, not expected PnL."
@@ -55,7 +55,7 @@
   },
   "rows": [
     {
-      "timestamp_utc": "2026-09-06T15:16:11+00:00",
+      "timestamp_utc": "2026-09-06T15:17:31+00:00",
       "symbol": "BTCUSDT",
       "direction": "short Bitget / long Gate",
       "binance_rate": "0.0000610000",
@@ -73,10 +73,10 @@
         "funding_rate": 6.1e-05,
         "interval_hours": 8.0,
         "next_funding_time": 1788710400000,
-        "mark_price": 79562.5,
-        "index_price": 79595.569,
-        "market_price": 79560.2,
-        "price_timestamp_ms": 1788707771807
+        "mark_price": 79585.8,
+        "index_price": 79619.6235,
+        "market_price": 79580.0,
+        "price_timestamp_ms": 1788707852059
       },
       "venue_b": {
         "venue": "Gate USDT perpetual",
@@ -85,16 +85,16 @@
         "interval_hours": 8.0,
         "next_funding_time": 1788710400000,
         "indicative_funding_rate": 5e-06,
-        "mark_price": 79557.75,
-        "index_price": 79595.63,
-        "last_price": 79555.1
+        "mark_price": 79585.72,
+        "index_price": 79622.31,
+        "last_price": 79562.7
       },
       "venue_a_name": "Bitget",
       "venue_b_name": "Gate",
       "round_trip_cost_assumption_bps": 30.0,
       "cross_venue_basis": {
-        "bitget_minus_gate_mark_bps": 0.5971,
-        "aligned_with_funding_trade_bps": 0.5971,
+        "bitget_minus_gate_mark_bps": 0.0101,
+        "aligned_with_funding_trade_bps": 0.0101,
         "adverse_entry_basis_bps": 0.0,
         "funding_periods_to_overcome_adverse_entry_basis": 0.0,
         "interpretation": "Positive aligned basis favours the funding direction at entry; negative is adverse. Future basis can widen or reverse, so this is a risk diagnostic, not expected PnL."
@@ -102,54 +102,54 @@
       "warning": "Funding can change before settlement. Cross-venue mark basis is now measured, but future basis, liquidation, collateral, fee-tier, venue, transfer and fill risk remain incompletely modeled."
     },
     {
-      "timestamp_utc": "2026-09-06T15:16:11+00:00",
+      "timestamp_utc": "2026-09-06T15:17:31+00:00",
       "symbol": "ETHUSDT",
       "direction": "short Bitget / long Gate",
-      "binance_rate": "0.0000690000",
+      "binance_rate": "0.0000680000",
       "binance_interval_hours": "8.0000",
-      "bybit_rate": "0.0000360000",
+      "bybit_rate": "0.0000370000",
       "bybit_interval_hours": "8.0000",
-      "spread_bps_per_hour": "0.041250",
-      "spread_bps_per_8h": "0.330000",
-      "rough_annualized_pct": "3.6135",
-      "breakeven_8h_periods": "90.909",
+      "spread_bps_per_hour": "0.038750",
+      "spread_bps_per_8h": "0.310000",
+      "rough_annualized_pct": "3.3945",
+      "breakeven_8h_periods": "96.774",
       "candidate": "NO",
       "venue_a": {
         "venue": "Bitget USDT perpetual",
         "symbol": "ETHUSDT",
-        "funding_rate": 6.9e-05,
+        "funding_rate": 6.8e-05,
         "interval_hours": 8.0,
         "next_funding_time": 1788710400000,
-        "mark_price": 2477.21,
-        "index_price": 2478.482,
-        "market_price": 2477.14,
-        "price_timestamp_ms": 1788707773076
+        "mark_price": 2477.32,
+        "index_price": 2478.6265,
+        "market_price": 2477.24,
+        "price_timestamp_ms": 1788707853228
       },
       "venue_b": {
         "venue": "Gate USDT perpetual",
         "symbol": "ETHUSDT",
-        "funding_rate": 3.6e-05,
+        "funding_rate": 3.7e-05,
         "interval_hours": 8.0,
         "next_funding_time": 1788710400000,
-        "indicative_funding_rate": 3.6e-05,
-        "mark_price": 2477.46,
-        "index_price": 2478.56,
-        "last_price": 2477.4
+        "indicative_funding_rate": 3.7e-05,
+        "mark_price": 2477.52,
+        "index_price": 2478.61,
+        "last_price": 2477.1
       },
       "venue_a_name": "Bitget",
       "venue_b_name": "Gate",
       "round_trip_cost_assumption_bps": 30.0,
       "cross_venue_basis": {
-        "bitget_minus_gate_mark_bps": -1.0091,
-        "aligned_with_funding_trade_bps": -1.0091,
-        "adverse_entry_basis_bps": 1.0091,
-        "funding_periods_to_overcome_adverse_entry_basis": 3.058,
+        "bitget_minus_gate_mark_bps": -0.8073,
+        "aligned_with_funding_trade_bps": -0.8073,
+        "adverse_entry_basis_bps": 0.8073,
+        "funding_periods_to_overcome_adverse_entry_basis": 2.604,
         "interpretation": "Positive aligned basis favours the funding direction at entry; negative is adverse. Future basis can widen or reverse, so this is a risk diagnostic, not expected PnL."
       },
       "warning": "Funding can change before settlement. Cross-venue mark basis is now measured, but future basis, liquidation, collateral, fee-tier, venue, transfer and fill risk remain incompletely modeled."
     },
     {
-      "timestamp_utc": "2026-09-06T15:16:11+00:00",
+      "timestamp_utc": "2026-09-06T15:17:31+00:00",
       "symbol": "SOLUSDT",
       "direction": "flat",
       "binance_rate": "0.0001000000",
@@ -167,10 +167,10 @@
         "funding_rate": 0.0001,
         "interval_hours": 8.0,
         "next_funding_time": 1788710400000,
-        "mark_price": 105.407,
-        "index_price": 105.46,
-        "market_price": 105.402,
-        "price_timestamp_ms": 1788707774224
+        "mark_price": 105.589,
+        "index_price": 105.6315,
+        "market_price": 105.581,
+        "price_timestamp_ms": 1788707854472
       },
       "venue_b": {
         "venue": "Gate USDT perpetual",
@@ -179,16 +179,16 @@
         "interval_hours": 8.0,
         "next_funding_time": 1788710400000,
         "indicative_funding_rate": 0.0001,
-        "mark_price": 105.43,
-        "index_price": 105.48,
-        "last_price": 105.42
+        "mark_price": 105.58,
+        "index_price": 105.624,
+        "last_price": 105.54
       },
       "venue_a_name": "Bitget",
       "venue_b_name": "Gate",
       "round_trip_cost_assumption_bps": 30.0,
       "cross_venue_basis": {
-        "bitget_minus_gate_mark_bps": -2.1815,
-        "aligned_with_funding_trade_bps": -0.0,
+        "bitget_minus_gate_mark_bps": 0.8524,
+        "aligned_with_funding_trade_bps": 0.0,
         "adverse_entry_basis_bps": 0.0,
         "funding_periods_to_overcome_adverse_entry_basis": 0.0,
         "interpretation": "Positive aligned basis favours the funding direction at entry; negative is adverse. Future basis can widen or reverse, so this is a risk diagnostic, not expected PnL."

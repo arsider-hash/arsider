@@ -1,79 +1,71 @@
 {
-  "generated_at_utc": "2026-09-06T15:17:01+00:00",
+  "generated_at_utc": "2026-09-06T15:18:21+00:00",
   "state": "WAIT",
   "ranking_source": "capital_rank",
   "selected": {
-    "key": "cex_triangle|ETH:USDT-BTC-ETH-USDT",
-    "strategy": "cex_triangle",
-    "label": "ETH:USDT-BTC-ETH-USDT",
-    "direction": "USDT->BTC->ETH->USDT",
+    "key": "stable_dislocation|FDUSD:Binance",
+    "strategy": "stable_dislocation",
+    "label": "FDUSD:Binance",
+    "direction": "below peg",
     "venue": "Binance",
     "observations": 16,
-    "positive_observations": 0,
-    "persistence": 0.0,
-    "median_positive_edge_bps": 0.0,
-    "p90_positive_edge_bps": 0.0,
-    "max_edge_bps": -35.5288,
-    "latest_edge_bps": -42.3353,
-    "research_score": 20.0,
-    "classification": "noise",
-    "last_seen_utc": "2026-09-06T15:16:15+00:00",
+    "positive_observations": 16,
+    "persistence": 1.0,
+    "median_positive_edge_bps": 12.5,
+    "p90_positive_edge_bps": 16.5,
+    "max_edge_bps": 16.5,
+    "latest_edge_bps": 12.5,
+    "research_score": 90.62,
+    "classification": "strong_watch",
+    "last_seen_utc": "2026-09-06T15:17:35+00:00",
     "capital_utilisation": 1.0,
-    "capital_efficiency_score": 0.0,
-    "economic_relevance_score": 0.0,
+    "capital_efficiency_score": 50.97,
+    "economic_relevance_score": 50.97,
     "economic_relevance": {
       "reference_budget_eur": 250,
       "reference_basis": "paper_profit_per_event_at_median_edge",
-      "reference_payoff_eur": 0.0,
+      "reference_payoff_eur": 0.3125,
       "reference_target_eur": 0.25,
-      "relevance_factor": 0.0,
-      "economically_material_at_reference_budget": false
+      "relevance_factor": 1.0,
+      "economically_material_at_reference_budget": true
     },
     "paper_economics": {
       "25": {
         "total_budget": 25,
         "effective_capital_per_edge": 25.0,
-        "paper_profit_per_event_at_median_edge": 0.0
+        "paper_profit_per_event_at_median_edge": 0.0312
       },
       "50": {
         "total_budget": 50,
         "effective_capital_per_edge": 50.0,
-        "paper_profit_per_event_at_median_edge": 0.0
+        "paper_profit_per_event_at_median_edge": 0.0625
       },
       "100": {
         "total_budget": 100,
         "effective_capital_per_edge": 100.0,
-        "paper_profit_per_event_at_median_edge": 0.0
+        "paper_profit_per_event_at_median_edge": 0.125
       },
       "250": {
         "total_budget": 250,
         "effective_capital_per_edge": 250.0,
-        "paper_profit_per_event_at_median_edge": 0.0
+        "paper_profit_per_event_at_median_edge": 0.3125
       },
       "500": {
         "total_budget": 500,
         "effective_capital_per_edge": 500.0,
-        "paper_profit_per_event_at_median_edge": 0.0
+        "paper_profit_per_event_at_median_edge": 0.625
       },
       "1000": {
         "total_budget": 1000,
         "effective_capital_per_edge": 1000.0,
-        "paper_profit_per_event_at_median_edge": 0.0
+        "paper_profit_per_event_at_median_edge": 1.25
       }
     }
   },
   "failed_gates": [
-    "not strong_watch yet",
-    "persistence 0.00 below 0.75",
-    "median edge 0.00 bps below 8.00",
-    "research score 20.0 below 72.0"
+    "unsupported strategy: stable_dislocation"
   ],
-  "policy": {
-    "min_observations": 8,
-    "min_persistence": 0.75,
-    "min_median_edge_bps": 8.0,
-    "min_research_score": 72.0
-  },
+  "policy": {},
   "next_action": "keep collecting data; no user action",
   "hard_boundary": "ARBBOT may research, rank and prepare a test plan. It must not custody funds, sign transactions, place orders, or enable live trading without explicit user authorization."
 }
