@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-06T15:26:49+00:00",
+  "generated_at_utc": "2026-09-06T15:30:51+00:00",
   "mode": "paper_read_only",
   "venues": [
     "Bitget",
@@ -7,7 +7,7 @@
   ],
   "candidate_count": 0,
   "best": {
-    "timestamp_utc": "2026-09-06T15:26:49+00:00",
+    "timestamp_utc": "2026-09-06T15:30:51+00:00",
     "symbol": "BTCUSDT",
     "direction": "short Bitget / long Gate",
     "binance_rate": "0.0000620000",
@@ -25,10 +25,10 @@
       "funding_rate": 6.2e-05,
       "interval_hours": 8.0,
       "next_funding_time": 1788710400000,
-      "mark_price": 79594.0,
-      "index_price": 79626.6125,
-      "market_price": 79590.8,
-      "price_timestamp_ms": 1788708409976
+      "mark_price": 79624.5,
+      "index_price": 79657.5315,
+      "market_price": 79624.2,
+      "price_timestamp_ms": 1788708652218
     },
     "venue_b": {
       "venue": "Gate USDT perpetual",
@@ -37,16 +37,16 @@
       "interval_hours": 8.0,
       "next_funding_time": 1788710400000,
       "indicative_funding_rate": 7e-06,
-      "mark_price": 79591.3,
-      "index_price": 79628.91,
-      "last_price": 79584.4
+      "mark_price": 79623.1,
+      "index_price": 79658.16,
+      "last_price": 79623.1
     },
     "venue_a_name": "Bitget",
     "venue_b_name": "Gate",
     "round_trip_cost_assumption_bps": 30.0,
     "cross_venue_basis": {
-      "bitget_minus_gate_mark_bps": 0.3392,
-      "aligned_with_funding_trade_bps": 0.3392,
+      "bitget_minus_gate_mark_bps": 0.1758,
+      "aligned_with_funding_trade_bps": 0.1758,
       "adverse_entry_basis_bps": 0.0,
       "funding_periods_to_overcome_adverse_entry_basis": 0.0,
       "interpretation": "Positive aligned basis favours the funding direction at entry; negative is adverse. Future basis can widen or reverse, so this is a risk diagnostic, not expected PnL."
@@ -55,7 +55,7 @@
   },
   "rows": [
     {
-      "timestamp_utc": "2026-09-06T15:26:49+00:00",
+      "timestamp_utc": "2026-09-06T15:30:51+00:00",
       "symbol": "BTCUSDT",
       "direction": "short Bitget / long Gate",
       "binance_rate": "0.0000620000",
@@ -73,10 +73,10 @@
         "funding_rate": 6.2e-05,
         "interval_hours": 8.0,
         "next_funding_time": 1788710400000,
-        "mark_price": 79594.0,
-        "index_price": 79626.6125,
-        "market_price": 79590.8,
-        "price_timestamp_ms": 1788708409976
+        "mark_price": 79624.5,
+        "index_price": 79657.5315,
+        "market_price": 79624.2,
+        "price_timestamp_ms": 1788708652218
       },
       "venue_b": {
         "venue": "Gate USDT perpetual",
@@ -85,16 +85,16 @@
         "interval_hours": 8.0,
         "next_funding_time": 1788710400000,
         "indicative_funding_rate": 7e-06,
-        "mark_price": 79591.3,
-        "index_price": 79628.91,
-        "last_price": 79584.4
+        "mark_price": 79623.1,
+        "index_price": 79658.16,
+        "last_price": 79623.1
       },
       "venue_a_name": "Bitget",
       "venue_b_name": "Gate",
       "round_trip_cost_assumption_bps": 30.0,
       "cross_venue_basis": {
-        "bitget_minus_gate_mark_bps": 0.3392,
-        "aligned_with_funding_trade_bps": 0.3392,
+        "bitget_minus_gate_mark_bps": 0.1758,
+        "aligned_with_funding_trade_bps": 0.1758,
         "adverse_entry_basis_bps": 0.0,
         "funding_periods_to_overcome_adverse_entry_basis": 0.0,
         "interpretation": "Positive aligned basis favours the funding direction at entry; negative is adverse. Future basis can widen or reverse, so this is a risk diagnostic, not expected PnL."
@@ -102,28 +102,28 @@
       "warning": "Funding can change before settlement. Cross-venue mark basis is now measured, but future basis, liquidation, collateral, fee-tier, venue, transfer and fill risk remain incompletely modeled."
     },
     {
-      "timestamp_utc": "2026-09-06T15:26:49+00:00",
+      "timestamp_utc": "2026-09-06T15:30:51+00:00",
       "symbol": "ETHUSDT",
       "direction": "short Bitget / long Gate",
-      "binance_rate": "0.0000660000",
+      "binance_rate": "0.0000640000",
       "binance_interval_hours": "8.0000",
       "bybit_rate": "0.0000410000",
       "bybit_interval_hours": "8.0000",
-      "spread_bps_per_hour": "0.031250",
-      "spread_bps_per_8h": "0.250000",
-      "rough_annualized_pct": "2.7375",
-      "breakeven_8h_periods": "120.000",
+      "spread_bps_per_hour": "0.028750",
+      "spread_bps_per_8h": "0.230000",
+      "rough_annualized_pct": "2.5185",
+      "breakeven_8h_periods": "130.435",
       "candidate": "NO",
       "venue_a": {
         "venue": "Bitget USDT perpetual",
         "symbol": "ETHUSDT",
-        "funding_rate": 6.6e-05,
+        "funding_rate": 6.4e-05,
         "interval_hours": 8.0,
         "next_funding_time": 1788710400000,
-        "mark_price": 2477.96,
-        "index_price": 2479.2055,
-        "market_price": 2477.96,
-        "price_timestamp_ms": 1788708411163
+        "mark_price": 2478.38,
+        "index_price": 2479.687,
+        "market_price": 2478.25,
+        "price_timestamp_ms": 1788708653068
       },
       "venue_b": {
         "venue": "Gate USDT perpetual",
@@ -132,24 +132,24 @@
         "interval_hours": 8.0,
         "next_funding_time": 1788710400000,
         "indicative_funding_rate": 4.1e-05,
-        "mark_price": 2478.28,
-        "index_price": 2479.28,
-        "last_price": 2478.09
+        "mark_price": 2478.62,
+        "index_price": 2479.69,
+        "last_price": 2478.5
       },
       "venue_a_name": "Bitget",
       "venue_b_name": "Gate",
       "round_trip_cost_assumption_bps": 30.0,
       "cross_venue_basis": {
-        "bitget_minus_gate_mark_bps": -1.2912,
-        "aligned_with_funding_trade_bps": -1.2912,
-        "adverse_entry_basis_bps": 1.2912,
-        "funding_periods_to_overcome_adverse_entry_basis": 5.165,
+        "bitget_minus_gate_mark_bps": -0.9683,
+        "aligned_with_funding_trade_bps": -0.9683,
+        "adverse_entry_basis_bps": 0.9683,
+        "funding_periods_to_overcome_adverse_entry_basis": 4.21,
         "interpretation": "Positive aligned basis favours the funding direction at entry; negative is adverse. Future basis can widen or reverse, so this is a risk diagnostic, not expected PnL."
       },
       "warning": "Funding can change before settlement. Cross-venue mark basis is now measured, but future basis, liquidation, collateral, fee-tier, venue, transfer and fill risk remain incompletely modeled."
     },
     {
-      "timestamp_utc": "2026-09-06T15:26:49+00:00",
+      "timestamp_utc": "2026-09-06T15:30:51+00:00",
       "symbol": "SOLUSDT",
       "direction": "flat",
       "binance_rate": "0.0001000000",
@@ -167,10 +167,10 @@
         "funding_rate": 0.0001,
         "interval_hours": 8.0,
         "next_funding_time": 1788710400000,
-        "mark_price": 105.758,
-        "index_price": 105.811,
-        "market_price": 105.754,
-        "price_timestamp_ms": 1788708412227
+        "mark_price": 105.791,
+        "index_price": 105.85,
+        "market_price": 105.791,
+        "price_timestamp_ms": 1788708653824
       },
       "venue_b": {
         "venue": "Gate USDT perpetual",
@@ -179,16 +179,16 @@
         "interval_hours": 8.0,
         "next_funding_time": 1788710400000,
         "indicative_funding_rate": 0.0001,
-        "mark_price": 105.78,
-        "index_price": 105.83,
-        "last_price": 105.76
+        "mark_price": 105.79,
+        "index_price": 105.84,
+        "last_price": 105.8
       },
       "venue_a_name": "Bitget",
       "venue_b_name": "Gate",
       "round_trip_cost_assumption_bps": 30.0,
       "cross_venue_basis": {
-        "bitget_minus_gate_mark_bps": -2.0798,
-        "aligned_with_funding_trade_bps": -0.0,
+        "bitget_minus_gate_mark_bps": 0.0945,
+        "aligned_with_funding_trade_bps": 0.0,
         "adverse_entry_basis_bps": 0.0,
         "funding_periods_to_overcome_adverse_entry_basis": 0.0,
         "interpretation": "Positive aligned basis favours the funding direction at entry; negative is adverse. Future basis can widen or reverse, so this is a risk diagnostic, not expected PnL."
