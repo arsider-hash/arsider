@@ -62,6 +62,27 @@ def verified_stable_route(strategy, label):
         return False
 
 
+def funding_shadow_edge(selected):
+    """Return a conservative current funding edge after known recurring haircuts.
+
+    The rolling median is useful for ranking but must not manufacture a positive
+    shadow canary when the current funding regime has weakened. Start from the
+    latest observed spread, subtract the allocator's amortized round-trip and
+    adverse-basis costs, then realize only half of the remainder. This remains
+    paper evidence, not a fill guarantee.
+    """
+    model = selected.get("funding_cost_model") or {}
+    if not model.get("survives_cost_and_basis_haircuts"):
+        return None
+    latest = abs(float(selected.get("latest_edge_bps") or 0.0))
+    fee_haircut = float(model.get("amortized_cost_bps_per_8h") or 0.0)
+    basis_haircut = float(model.get("amortized_adverse_basis_bps_per_8h") or 0.0)
+    net_current = latest - fee_haircut - basis_haircut
+    if net_current <= 0:
+        return None
+    return net_current * 0.5
+
+
 def main():
     now = datetime.now(timezone.utc).isoformat(timespec="seconds")
     rows = load_rows()
@@ -104,6 +125,19 @@ def main():
                     except Exception:
                         eligible = False
 
+            # Funding shadow evidence must use the current spread after the
+            # allocator's explicit fee and adverse-basis haircuts. Old gross-edge
+            # heuristic canaries remain in the CSV but are excluded below.
+            if strategy == "funding_spread":
+                funding_edge = funding_shadow_edge(selected)
+                if funding_edge is None:
+                    eligible = False
+                else:
+                    edge = funding_edge
+                    utilisation = float(selected.get("capital_utilisation") or 0.5)
+                    pnl = capital * utilisation * edge / 10000.0
+                    source = "funding_current_after_cost_basis_50pct_realization"
+
             # Prefer the depth simulation when it belongs to the same cross-venue signal.
             if eligible and pnl is None and DEPTH.exists():
                 try:
@@ -135,14 +169,20 @@ def main():
                 append(rec)
                 rows.append(rec)
 
-    # Legacy stablecoin rows created from raw peg deviation are intentionally
-    # excluded from evidence. They remain in the CSV for auditability.
+    # Legacy stablecoin rows created from raw peg deviation and funding rows
+    # created from the gross-edge heuristic are intentionally excluded from
+    # READY-eligible evidence. They remain in the CSV for auditability.
     evidence_rows = []
     excluded_unverified_stable = 0
+    excluded_heuristic_funding = 0
     for r in rows:
         if r.get("strategy") == "stable_dislocation":
             if r.get("source") != "verified_stable_exit_after_friction" or not verified_stable_route(r.get("strategy"), r.get("label")):
                 excluded_unverified_stable += 1
+                continue
+        if r.get("strategy") == "funding_spread":
+            if r.get("source") != "funding_current_after_cost_basis_50pct_realization":
+                excluded_heuristic_funding += 1
                 continue
         evidence_rows.append(r)
 
@@ -170,14 +210,18 @@ def main():
         "total_shadow_trades_raw": len(rows),
         "total_shadow_trades_evidence": len(evidence_rows),
         "excluded_unverified_stable_rows": excluded_unverified_stable,
+        "excluded_heuristic_funding_rows": excluded_heuristic_funding,
         "best": ranking[0] if ranking else None,
         "ranked": ranking,
         "warning": (
             "Shadow PnL is simulated and is not proof of live fill performance. "
-            "Stablecoin signals are excluded unless a matching verified exit path exists."
+            "Stablecoin signals require a verified exit; funding signals require current edge after cost/basis haircuts."
         )
     }, indent=2), encoding="utf-8")
-    print(f"shadow evidence={len(evidence_rows)} raw={len(rows)} excluded_stable={excluded_unverified_stable}")
+    print(
+        f"shadow evidence={len(evidence_rows)} raw={len(rows)} "
+        f"excluded_stable={excluded_unverified_stable} excluded_funding_heuristic={excluded_heuristic_funding}"
+    )
 
 
 if __name__ == "__main__":
