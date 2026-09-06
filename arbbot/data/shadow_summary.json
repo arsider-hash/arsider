@@ -1,9 +1,27 @@
 {
-  "generated_at_utc": "2026-09-06T21:15:59+00:00",
-  "total_shadow_trades_raw": 4,
-  "total_shadow_trades_evidence": 0,
+  "generated_at_utc": "2026-09-06T21:20:43+00:00",
+  "total_shadow_trades_raw": 5,
+  "total_shadow_trades_evidence": 1,
   "excluded_unverified_stable_rows": 4,
-  "best": null,
-  "ranked": [],
+  "best": {
+    "key": "funding_spread|PONSUSDT",
+    "count": 1,
+    "positive_count": 1,
+    "positive_rate": 1.0,
+    "cumulative_paper_pnl": 0.0965,
+    "median_paper_pnl": 0.0965,
+    "last_recorded_at_utc": "2026-09-06T21:20:43+00:00"
+  },
+  "ranked": [
+    {
+      "key": "funding_spread|PONSUSDT",
+      "count": 1,
+      "positive_count": 1,
+      "positive_rate": 1.0,
+      "cumulative_paper_pnl": 0.0965,
+      "median_paper_pnl": 0.0965,
+      "last_recorded_at_utc": "2026-09-06T21:20:43+00:00"
+    }
+  ],
   "warning": "Shadow PnL is simulated and is not proof of live fill performance. Stablecoin signals are excluded unless a matching verified exit path exists."
 }
