@@ -64,6 +64,10 @@ jobs:
         continue-on-error: true
         run: python arbbot/depth_validator.py
 
+      - name: Diagnose stablecoin round-trip economics
+        continue-on-error: true
+        run: python arbbot/stable_roundtrip_validator.py
+
       - name: Adversarial killer falsification
         run: python arbbot/killer.py
 
