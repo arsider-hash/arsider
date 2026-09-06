@@ -110,7 +110,7 @@ def load_funding(cutoff):
                 "strategy": "funding_spread",
                 "label": label,
                 "direction": r.get("direction", ""),
-                "venue": "Binance<->Bybit",
+                "venue": "Bitget<->Gate",
             })
     return groups
 
