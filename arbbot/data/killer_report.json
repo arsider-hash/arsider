@@ -1,7 +1,6 @@
 {
   "generated_at_utc": "2026-09-06T10:54:35+00:00",
-  "state": "WAIT",
-  "ranking_source": "capital_rank",
+  "verdict": "REJECTED",
   "selected": {
     "key": "cex_triangle|ETH:USDT-BTC-ETH-USDT",
     "strategy": "cex_triangle",
@@ -62,19 +61,65 @@
       }
     }
   },
-  "failed_gates": [
-    "not strong_watch yet",
-    "only 7 observations; need 8",
-    "persistence 0.00 below 0.75",
-    "median edge 0.00 bps below 8.00",
-    "research score 11.7 below 72.0"
+  "checks": [
+    {
+      "check": "freshness",
+      "status": "PASS",
+      "severity": "hard",
+      "detail": "candidate age 49s"
+    },
+    {
+      "check": "sample_presence",
+      "status": "PASS",
+      "severity": "hard",
+      "detail": "7 observations"
+    },
+    {
+      "check": "positive_edge_evidence",
+      "status": "FAIL",
+      "severity": "hard",
+      "detail": "positive_observations=0, median_positive_edge_bps=0.0000"
+    },
+    {
+      "check": "persistence",
+      "status": "FAIL",
+      "severity": "hard",
+      "detail": "persistence=0.000"
+    },
+    {
+      "check": "latest_edge_sign",
+      "status": "WARN",
+      "severity": "soft",
+      "detail": "latest_edge_bps=-39.2059"
+    },
+    {
+      "check": "economic_relevance",
+      "status": "WARN",
+      "severity": "soft",
+      "detail": "economic_relevance_score=0.00"
+    },
+    {
+      "check": "burst_validation",
+      "status": "FAIL",
+      "severity": "hard",
+      "detail": "verdict=None"
+    },
+    {
+      "check": "shadow_evidence",
+      "status": "INSUFFICIENT",
+      "severity": "soft",
+      "detail": "no matching shadow history"
+    }
   ],
+  "hard_failures": [
+    "positive_observations=0, median_positive_edge_bps=0.0000",
+    "persistence=0.000",
+    "verdict=None"
+  ],
+  "insufficient_evidence": [],
   "policy": {
-    "min_observations": 8,
-    "min_persistence": 0.75,
-    "min_median_edge_bps": 8.0,
-    "min_research_score": 72.0
+    "max_staleness_seconds": 900,
+    "principle": "assume false until execution evidence survives adversarial checks"
   },
-  "next_action": "keep collecting data; no user action",
-  "hard_boundary": "ARBBOT may research, rank and prepare a test plan. It must not custody funds, sign transactions, place orders, or enable live trading without explicit user authorization."
+  "hard_boundary": "Research/falsification only; no live execution or custody."
 }
