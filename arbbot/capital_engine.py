@@ -7,6 +7,10 @@ small capital levels. It penalises strategies that require capital to be split
 across two venues/sides and de-prioritises technically positive but economically
 trivial candidates for small-capital use.
 
+Funding carry is additionally haircut by a conservative round-trip cost budget
+amortised over a fixed holding horizon, so gross funding spreads cannot look
+profitable merely because entry/exit friction was omitted.
+
 This is a ranking heuristic, not a profit forecast.
 """
 
@@ -39,6 +43,15 @@ CARRY_PERIODS_PER_DAY = {
     "funding_spread": 3.0,
 }
 
+# Funding is only credited for small-capital ranking after charging a deliberately
+# conservative 30 bps round trip across a seven-day holding horizon (21 x 8h).
+# This is an economics haircut, not an execution assumption or live-trading rule.
+FUNDING_ROUND_TRIP_COST_BPS = 30.0
+FUNDING_HOLD_DAYS = 7.0
+FUNDING_PERIODS_PER_DAY = 3.0
+FUNDING_HOLD_PERIODS = FUNDING_HOLD_DAYS * FUNDING_PERIODS_PER_DAY
+FUNDING_COST_BPS_PER_8H = FUNDING_ROUND_TRIP_COST_BPS / FUNDING_HOLD_PERIODS
+
 def main():
     now = datetime.now(timezone.utc).isoformat(timespec="seconds")
     if not SCOREBOARD.exists():
@@ -54,13 +67,17 @@ def main():
 
     for item in sb.get("ranked") or []:
         strategy = item.get("strategy")
-        # Only rank strategies whose stored edge is already an executable-style net spread/carry measure.
-        # A simple stablecoin deviation from $1 is research context, not by itself a realizable arbitrage.
         if strategy not in UTILISATION:
             continue
-        med = max(0.0, float(item.get("median_positive_edge_bps") or 0))
+
+        gross_med = max(0.0, float(item.get("median_positive_edge_bps") or 0))
         persistence = max(0.0, min(1.0, float(item.get("persistence") or 0)))
         utilisation = UTILISATION.get(strategy, 0.5)
+
+        if strategy == "funding_spread":
+            med = max(0.0, gross_med - FUNDING_COST_BPS_PER_8H)
+        else:
+            med = gross_med
 
         economics = {}
         for budget in BUDGETS:
@@ -74,6 +91,9 @@ def main():
             if strategy in CARRY_PERIODS_PER_DAY:
                 daily = per_event * CARRY_PERIODS_PER_DAY[strategy] * persistence
                 entry["paper_daily_carry_if_persistence_continues"] = round(daily, 4)
+                entry["gross_median_funding_spread_bps_per_8h"] = round(gross_med, 4)
+                entry["amortized_round_trip_cost_bps_per_8h"] = round(FUNDING_COST_BPS_PER_8H, 4)
+                entry["net_median_funding_spread_bps_per_8h"] = round(med, 4)
             economics[str(budget)] = entry
 
         edge_factor = min(30.0, med) / 30.0
@@ -87,19 +107,29 @@ def main():
         ref = economics[str(REFERENCE_BUDGET)]
         if strategy in CARRY_PERIODS_PER_DAY:
             reference_payoff = float(ref.get("paper_daily_carry_if_persistence_continues") or 0.0)
-            reference_basis = "paper_daily_carry_if_persistence_continues"
+            reference_basis = "paper_daily_carry_if_persistence_continues_after_cost_haircut"
         else:
             reference_payoff = float(ref.get("paper_profit_per_event_at_median_edge") or 0.0)
             reference_basis = "paper_profit_per_event_at_median_edge"
 
-        # 1.0 means the candidate reaches the deliberately modest reference payoff
-        # at EUR 250. Below that, the candidate is progressively de-prioritised as
-        # economically trivial. This does not promote a candidate or relax any gate.
         relevance_factor = max(0.0, min(1.0, reference_payoff / REFERENCE_PAYOFF_EUR))
         economic_relevance_score = capital_score * relevance_factor
 
+        extra = {}
+        if strategy == "funding_spread":
+            extra["funding_cost_model"] = {
+                "gross_median_spread_bps_per_8h": round(gross_med, 4),
+                "round_trip_cost_bps": FUNDING_ROUND_TRIP_COST_BPS,
+                "holding_horizon_days": FUNDING_HOLD_DAYS,
+                "holding_periods_8h": FUNDING_HOLD_PERIODS,
+                "amortized_cost_bps_per_8h": round(FUNDING_COST_BPS_PER_8H, 4),
+                "net_median_spread_bps_per_8h": round(med, 4),
+                "survives_cost_haircut": med > 0,
+            }
+
         ranked.append({
             **item,
+            **extra,
             "capital_utilisation": utilisation,
             "capital_efficiency_score": round(capital_score, 2),
             "economic_relevance_score": round(economic_relevance_score, 2),
@@ -126,12 +156,18 @@ def main():
         "budgets": BUDGETS,
         "reference_budget_eur": REFERENCE_BUDGET,
         "reference_payoff_eur": REFERENCE_PAYOFF_EUR,
+        "funding_cost_model": {
+            "round_trip_cost_bps": FUNDING_ROUND_TRIP_COST_BPS,
+            "holding_horizon_days": FUNDING_HOLD_DAYS,
+            "amortized_cost_bps_per_8h": round(FUNDING_COST_BPS_PER_8H, 4),
+        },
         "best": ranked[0] if ranked else None,
         "ranked": ranked,
         "warning": (
-            "These are paper arithmetic conversions of observed edge, not expected returns. "
-            "Economic relevance only de-prioritises trivial small-capital payoffs and does not validate profitability. "
-            "Fill probability, fees, slippage, transfer friction, latency and edge decay are not fully captured here."
+            "These are conservative paper arithmetic conversions, not expected returns. "
+            "Funding carry is haircut by an amortized round-trip cost assumption. "
+            "Fill probability, basis moves, funding changes, liquidation, slippage, transfer friction, "
+            "latency, collateral and venue risk still require separate validation."
         ),
     }, indent=2), encoding="utf-8")
 
