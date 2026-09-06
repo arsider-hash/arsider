@@ -5,8 +5,9 @@ ARBBOT decision engine.
 Selects one best research candidate, biased toward small-capital efficiency,
 and returns WAIT / VALIDATE / READY_FOR_MANUAL_AUTHORIZATION.
 
-Fast arbitrage strategies cannot reach READY unless the latest burst validator
-for the same route reports SURVIVES_BURST.
+Fast arbitrage strategies cannot reach READY unless execution validators pass,
+the adversarial KILLER reports SURVIVES_KILLER for the same route, and shadow
+canaries are positive.
 
 No orders, signing, wallets or trading credentials.
 """
@@ -23,6 +24,7 @@ SCOREBOARD = DATA / "scoreboard.json"
 CAPITAL_RANK = DATA / "capital_rank.json"
 VALIDATION = DATA / "validation.json"
 DEPTH_VALIDATION = DATA / "depth_validation.json"
+KILLER_REPORT = DATA / "killer_report.json"
 SHADOW_SUMMARY = DATA / "shadow_summary.json"
 OUT = DATA / "decision.json"
 
@@ -114,6 +116,24 @@ def validation_passes(selected):
 
     return True, "execution_validation_passed"
 
+def killer_passes(selected):
+    if not KILLER_REPORT.exists():
+        return False, "no killer report yet"
+    try:
+        k = json.loads(KILLER_REPORT.read_text(encoding="utf-8"))
+    except Exception:
+        return False, "invalid killer report"
+    same = (
+        (k.get("selected") or {}).get("strategy") == selected.get("strategy")
+        and (k.get("selected") or {}).get("label") == selected.get("label")
+    )
+    if not same:
+        return False, "killer report belongs to another route"
+    verdict = k.get("verdict")
+    if verdict != "SURVIVES_KILLER":
+        return False, f"killer verdict is {verdict}"
+    return True, "killer_survived"
+
 def shadow_passes(selected):
     if not SHADOW_SUMMARY.exists():
         return False, "no shadow canaries yet"
@@ -161,6 +181,9 @@ def classify(item):
         exec_ok, exec_reason = validation_passes(item)
         if not exec_ok:
             return "VALIDATE", [exec_reason]
+        killer_ok, killer_reason = killer_passes(item)
+        if not killer_ok:
+            return "VALIDATE", [killer_reason]
         shadow_ok, shadow_reason = shadow_passes(item)
         if shadow_ok:
             return "READY_FOR_MANUAL_AUTHORIZATION", []
@@ -195,7 +218,7 @@ def main():
         next_action = "keep collecting data; no user action"
     elif state == "VALIDATE":
         next_action = (
-            "run execution-specific paper validation for this single route; "
+            "run execution-specific paper validation and adversarial killer checks for this route; "
             "still no money and no credentials"
         )
     else:
