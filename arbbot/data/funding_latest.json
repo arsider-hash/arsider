@@ -1,16 +1,144 @@
 {
-  "generated_at_utc": "2026-09-06T11:35:40+00:00",
+  "generated_at_utc": "2026-09-06T11:49:51+00:00",
   "mode": "paper_read_only",
   "venues": [
-    "OKX",
-    "Bybit"
+    "Bitget",
+    "Gate"
   ],
   "candidate_count": 0,
-  "best": null,
-  "rows": [],
-  "errors": [
-    "BTCUSDT: HTTP Error 403: Forbidden",
-    "ETHUSDT: HTTP Error 403: Forbidden",
-    "SOLUSDT: HTTP Error 403: Forbidden"
-  ]
+  "best": {
+    "timestamp_utc": "2026-09-06T11:49:51+00:00",
+    "symbol": "ETHUSDT",
+    "direction": "short Bitget / long Gate",
+    "binance_rate": "0.0000960000",
+    "binance_interval_hours": "8.0000",
+    "bybit_rate": "0.0000190000",
+    "bybit_interval_hours": "8.0000",
+    "spread_bps_per_hour": "0.096250",
+    "spread_bps_per_8h": "0.770000",
+    "rough_annualized_pct": "8.4315",
+    "breakeven_8h_periods": "38.961",
+    "candidate": "NO",
+    "venue_a": {
+      "venue": "Bitget USDT perpetual",
+      "symbol": "ETHUSDT",
+      "funding_rate": 9.6e-05,
+      "interval_hours": 8.0,
+      "next_funding_time": 1788710400000
+    },
+    "venue_b": {
+      "venue": "Gate USDT perpetual",
+      "symbol": "ETHUSDT",
+      "funding_rate": 1.9e-05,
+      "interval_hours": 8.0,
+      "next_funding_time": 1788710400000,
+      "indicative_funding_rate": 1.9e-05
+    },
+    "venue_a_name": "Bitget",
+    "venue_b_name": "Gate",
+    "round_trip_cost_assumption_bps": 30.0,
+    "warning": "Funding can change before settlement. Basis, liquidation, collateral, fee-tier, venue and transfer risk are not fully modeled."
+  },
+  "rows": [
+    {
+      "timestamp_utc": "2026-09-06T11:49:51+00:00",
+      "symbol": "ETHUSDT",
+      "direction": "short Bitget / long Gate",
+      "binance_rate": "0.0000960000",
+      "binance_interval_hours": "8.0000",
+      "bybit_rate": "0.0000190000",
+      "bybit_interval_hours": "8.0000",
+      "spread_bps_per_hour": "0.096250",
+      "spread_bps_per_8h": "0.770000",
+      "rough_annualized_pct": "8.4315",
+      "breakeven_8h_periods": "38.961",
+      "candidate": "NO",
+      "venue_a": {
+        "venue": "Bitget USDT perpetual",
+        "symbol": "ETHUSDT",
+        "funding_rate": 9.6e-05,
+        "interval_hours": 8.0,
+        "next_funding_time": 1788710400000
+      },
+      "venue_b": {
+        "venue": "Gate USDT perpetual",
+        "symbol": "ETHUSDT",
+        "funding_rate": 1.9e-05,
+        "interval_hours": 8.0,
+        "next_funding_time": 1788710400000,
+        "indicative_funding_rate": 1.9e-05
+      },
+      "venue_a_name": "Bitget",
+      "venue_b_name": "Gate",
+      "round_trip_cost_assumption_bps": 30.0,
+      "warning": "Funding can change before settlement. Basis, liquidation, collateral, fee-tier, venue and transfer risk are not fully modeled."
+    },
+    {
+      "timestamp_utc": "2026-09-06T11:49:51+00:00",
+      "symbol": "BTCUSDT",
+      "direction": "short Bitget / long Gate",
+      "binance_rate": "0.0000670000",
+      "binance_interval_hours": "8.0000",
+      "bybit_rate": "-0.0000090000",
+      "bybit_interval_hours": "8.0000",
+      "spread_bps_per_hour": "0.095000",
+      "spread_bps_per_8h": "0.760000",
+      "rough_annualized_pct": "8.3220",
+      "breakeven_8h_periods": "39.474",
+      "candidate": "NO",
+      "venue_a": {
+        "venue": "Bitget USDT perpetual",
+        "symbol": "BTCUSDT",
+        "funding_rate": 6.7e-05,
+        "interval_hours": 8.0,
+        "next_funding_time": 1788710400000
+      },
+      "venue_b": {
+        "venue": "Gate USDT perpetual",
+        "symbol": "BTCUSDT",
+        "funding_rate": -9e-06,
+        "interval_hours": 8.0,
+        "next_funding_time": 1788710400000,
+        "indicative_funding_rate": -9e-06
+      },
+      "venue_a_name": "Bitget",
+      "venue_b_name": "Gate",
+      "round_trip_cost_assumption_bps": 30.0,
+      "warning": "Funding can change before settlement. Basis, liquidation, collateral, fee-tier, venue and transfer risk are not fully modeled."
+    },
+    {
+      "timestamp_utc": "2026-09-06T11:49:51+00:00",
+      "symbol": "SOLUSDT",
+      "direction": "flat",
+      "binance_rate": "0.0001000000",
+      "binance_interval_hours": "8.0000",
+      "bybit_rate": "0.0001000000",
+      "bybit_interval_hours": "8.0000",
+      "spread_bps_per_hour": "0.000000",
+      "spread_bps_per_8h": "0.000000",
+      "rough_annualized_pct": "0.0000",
+      "breakeven_8h_periods": "",
+      "candidate": "NO",
+      "venue_a": {
+        "venue": "Bitget USDT perpetual",
+        "symbol": "SOLUSDT",
+        "funding_rate": 0.0001,
+        "interval_hours": 8.0,
+        "next_funding_time": 1788710400000
+      },
+      "venue_b": {
+        "venue": "Gate USDT perpetual",
+        "symbol": "SOLUSDT",
+        "funding_rate": 0.0001,
+        "interval_hours": 8.0,
+        "next_funding_time": 1788710400000,
+        "indicative_funding_rate": 0.0001
+      },
+      "venue_a_name": "Bitget",
+      "venue_b_name": "Gate",
+      "round_trip_cost_assumption_bps": 30.0,
+      "warning": "Funding can change before settlement. Basis, liquidation, collateral, fee-tier, venue and transfer risk are not fully modeled."
+    }
+  ],
+  "errors": []
 }
