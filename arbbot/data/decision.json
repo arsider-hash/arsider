@@ -1,6 +1,6 @@
 {
-  "generated_at_utc": "2026-09-06T15:18:21+00:00",
-  "state": "WAIT",
+  "generated_at_utc": "2026-09-06T15:22:18+00:00",
+  "state": "VALIDATE",
   "ranking_source": "capital_rank",
   "selected": {
     "key": "stable_dislocation|FDUSD:Binance",
@@ -8,8 +8,8 @@
     "label": "FDUSD:Binance",
     "direction": "below peg",
     "venue": "Binance",
-    "observations": 16,
-    "positive_observations": 16,
+    "observations": 17,
+    "positive_observations": 17,
     "persistence": 1.0,
     "median_positive_edge_bps": 12.5,
     "p90_positive_edge_bps": 16.5,
@@ -17,7 +17,7 @@
     "latest_edge_bps": 12.5,
     "research_score": 90.62,
     "classification": "strong_watch",
-    "last_seen_utc": "2026-09-06T15:17:35+00:00",
+    "last_seen_utc": "2026-09-06T15:18:56+00:00",
     "capital_utilisation": 1.0,
     "capital_efficiency_score": 50.97,
     "economic_relevance_score": 50.97,
@@ -63,9 +63,14 @@
     }
   },
   "failed_gates": [
-    "unsupported strategy: stable_dislocation"
+    "only 1 shadow canaries; need 3"
   ],
-  "policy": {},
-  "next_action": "keep collecting data; no user action",
+  "policy": {
+    "min_observations": 6,
+    "min_persistence": 0.7,
+    "min_median_edge_bps": 8.0,
+    "min_research_score": 68.0
+  },
+  "next_action": "run execution-specific paper validation and adversarial killer checks for this route; still no money and no credentials",
   "hard_boundary": "ARBBOT may research, rank and prepare a test plan. It must not custody funds, sign transactions, place orders, or enable live trading without explicit user authorization."
 }

@@ -1,15 +1,13 @@
 {
-  "generated_at_utc": "2026-09-06T15:18:21+00:00",
-  "state": "SKIP",
-  "reason": "decision state is WAIT",
+  "generated_at_utc": "2026-09-06T15:22:17+00:00",
   "selected": {
     "key": "stable_dislocation|FDUSD:Binance",
     "strategy": "stable_dislocation",
     "label": "FDUSD:Binance",
     "direction": "below peg",
     "venue": "Binance",
-    "observations": 16,
-    "positive_observations": 16,
+    "observations": 17,
+    "positive_observations": 17,
     "persistence": 1.0,
     "median_positive_edge_bps": 12.5,
     "p90_positive_edge_bps": 16.5,
@@ -17,7 +15,7 @@
     "latest_edge_bps": 12.5,
     "research_score": 90.62,
     "classification": "strong_watch",
-    "last_seen_utc": "2026-09-06T15:17:35+00:00",
+    "last_seen_utc": "2026-09-06T15:18:56+00:00",
     "capital_utilisation": 1.0,
     "capital_efficiency_score": 50.97,
     "economic_relevance_score": 50.97,
@@ -61,5 +59,46 @@
         "paper_profit_per_event_at_median_edge": 1.25
       }
     }
-  }
+  },
+  "sample_count": 6,
+  "valid_edge_samples": 6,
+  "positive_samples": 6,
+  "survival_rate": 1.0,
+  "median_stressed_bps": 12.5,
+  "min_stressed_bps": 11.5,
+  "max_stressed_bps": 12.5,
+  "verdict": "SURVIVES_BURST",
+  "samples": [
+    {
+      "timestamp_utc": "2026-09-06T15:20:02+00:00",
+      "stressed_bps": 12.5,
+      "candidate": true
+    },
+    {
+      "timestamp_utc": "2026-09-06T15:20:29+00:00",
+      "stressed_bps": 12.5,
+      "candidate": true
+    },
+    {
+      "timestamp_utc": "2026-09-06T15:20:56+00:00",
+      "stressed_bps": 12.5,
+      "candidate": true
+    },
+    {
+      "timestamp_utc": "2026-09-06T15:21:23+00:00",
+      "stressed_bps": 12.5,
+      "candidate": true
+    },
+    {
+      "timestamp_utc": "2026-09-06T15:21:50+00:00",
+      "stressed_bps": 12.5,
+      "candidate": true
+    },
+    {
+      "timestamp_utc": "2026-09-06T15:22:17+00:00",
+      "stressed_bps": 11.5,
+      "candidate": true
+    }
+  ],
+  "warning": "Burst survival is necessary for fast arbitrage but still does not prove fillable profit."
 }
