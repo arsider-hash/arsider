@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-06T14:12:47+00:00",
+  "generated_at_utc": "2026-09-06T14:19:50+00:00",
   "verdict": "REJECTED",
   "selected": {
     "key": "cex_triangle|ETH:USDT-BTC-ETH-USDT",
@@ -7,16 +7,16 @@
     "label": "ETH:USDT-BTC-ETH-USDT",
     "direction": "USDT->BTC->ETH->USDT",
     "venue": "Binance",
-    "observations": 12,
+    "observations": 13,
     "positive_observations": 0,
     "persistence": 0.0,
     "median_positive_edge_bps": 0.0,
     "p90_positive_edge_bps": 0.0,
     "max_edge_bps": -35.5288,
-    "latest_edge_bps": -39.0664,
+    "latest_edge_bps": -39.7515,
     "research_score": 20.0,
     "classification": "noise",
-    "last_seen_utc": "2026-09-06T14:12:00+00:00",
+    "last_seen_utc": "2026-09-06T14:19:05+00:00",
     "capital_utilisation": 1.0,
     "capital_efficiency_score": 0.0,
     "economic_relevance_score": 0.0,
@@ -66,13 +66,13 @@
       "check": "freshness",
       "status": "PASS",
       "severity": "hard",
-      "detail": "candidate age 47s"
+      "detail": "candidate age 46s"
     },
     {
       "check": "sample_presence",
       "status": "PASS",
       "severity": "hard",
-      "detail": "12 observations"
+      "detail": "13 observations"
     },
     {
       "check": "positive_edge_evidence",
@@ -90,7 +90,7 @@
       "check": "latest_edge_sign",
       "status": "WARN",
       "severity": "soft",
-      "detail": "latest_edge_bps=-39.0664"
+      "detail": "latest_edge_bps=-39.7515"
     },
     {
       "check": "economic_relevance",
