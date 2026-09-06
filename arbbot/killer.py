@@ -29,7 +29,7 @@ OUT = DATA / "killer_report.json"
 
 FAST_STRATEGIES = {
     "cex_cross_spot", "eu_cross_spot", "cex_triangle", "eur_triangle",
-    "stable_eur_dislocation",
+    "stable_dislocation", "stable_eur_dislocation",
 }
 DEPTH_STRATEGIES = {"cex_cross_spot", "eu_cross_spot"}
 MAX_STALENESS_SECONDS = 15 * 60
