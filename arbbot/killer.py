@@ -7,7 +7,7 @@ from pathlib import Path
 from statistics import median
 ROOT=Path(__file__).resolve().parent; DATA=ROOT/'data'
 DECISION=DATA/'decision.json'; CAPITAL_RANK=DATA/'capital_rank.json'; VALIDATION=DATA/'validation.json'; DEPTH_VALIDATION=DATA/'depth_validation.json'; SHADOW_SUMMARY=DATA/'shadow_summary.json'; FUNDING_BASIS_HISTORY=DATA/'funding_basis_history.csv'
-TARGET_STRATEGY=os.environ.get('KILLER_STRATEGY','').strip(); OUT=DATA/os.environ.get('KILLER_OUT','killer_report.json')
+TARGET_STRATEGY=os.environ.get('KILLER_STRATEGY','').strip(); OUT=DATA/os.environ.get('KILLER_OUT','killer_report.json'); SELECTION_MODE=os.environ.get('KILLER_SELECTION','allocator').strip().lower()
 FAST_STRATEGIES={'cex_cross_spot','eu_cross_spot','cex_triangle','eur_triangle','stable_dislocation','stable_eur_dislocation'}; DEPTH_STRATEGIES={'cex_cross_spot','eu_cross_spot'}
 MAX_STALENESS_SECONDS=900; MIN_USEFUL_DEPTH_BUDGET=250; MIN_FUNDING_BASIS_SAMPLES=4; FUNDING_BASIS_LOOKBACK_HOURS=48; MAX_MEDIAN_ADVERSE_BASIS_PERIODS=3.0; MIN_FUNDING_LATEST_TO_MEDIAN_RATIO=0.25
 
@@ -21,6 +21,11 @@ def selected_candidate():
  if TARGET_STRATEGY:
   ranked=(load_json(CAPITAL_RANK) or {}).get('ranked') or []
   matches=[x for x in ranked if x.get('strategy')==TARGET_STRATEGY]
+  if SELECTION_MODE=='latest_edge':
+   # For ephemeral funding/spread regimes, falsify the strongest current edge rather
+   # than allowing a historically strong but decayed route to monopolise KILLER.
+   # All normal persistence, basis, cost and regime-decay gates still apply.
+   return max(matches,key=lambda x:(float(x.get('latest_edge_bps') or 0),float(x.get('economic_relevance_score') or 0),float(x.get('research_score') or 0)),default=None)
   return max(matches,key=lambda x:(float(x.get('economic_relevance_score') or 0),float(x.get('research_score') or 0)),default=None)
  d=load_json(DECISION) or {}
  return d.get('selected') or (load_json(CAPITAL_RANK) or {}).get('best')
@@ -47,7 +52,7 @@ def funding_basis_samples(symbol):
 def main():
  now=datetime.now(timezone.utc).isoformat(timespec='seconds'); s=selected_candidate()
  if not s:
-  OUT.write_text(json.dumps({'generated_at_utc':now,'verdict':'NO_CANDIDATE','selected':None,'checks':[],'hard_failures':[],'insufficient_evidence':['no selected candidate'],'target_strategy':TARGET_STRATEGY or None},indent=2)); return
+  OUT.write_text(json.dumps({'generated_at_utc':now,'verdict':'NO_CANDIDATE','selected':None,'checks':[],'hard_failures':[],'insufficient_evidence':['no selected candidate'],'target_strategy':TARGET_STRATEGY or None,'selection_mode':SELECTION_MODE},indent=2)); return
  c=[]; strategy=s.get('strategy'); obs=int(s.get('observations') or 0); pos=int(s.get('positive_observations') or 0); persistence=float(s.get('persistence') or 0); med=float(s.get('median_positive_edge_bps') or 0); latest=float(s.get('latest_edge_bps') or 0); relevance=float(s.get('economic_relevance_score') or 0)
  age=age_seconds(s.get('last_seen_utc')); add(c,'freshness','INSUFFICIENT' if age is None else 'FAIL' if age>MAX_STALENESS_SECONDS else 'PASS','candidate timestamp missing or invalid' if age is None else f'candidate age {age:.0f}s')
  add(c,'sample_presence','PASS' if obs>0 else 'FAIL',f'{obs} observations')
@@ -78,5 +83,5 @@ def main():
   count=int(item.get('count') or 0); rate=float(item.get('positive_rate') or 0); pnl=float(item.get('cumulative_paper_pnl') or 0); add(c,'shadow_evidence','PASS' if count>=3 and rate>=.67 and pnl>0 else 'WARN',f'count={count}, positive_rate={rate:.3f}, cumulative_paper_pnl={pnl:.6f}',severity='soft')
  else:add(c,'shadow_evidence','INSUFFICIENT','no matching shadow history',severity='soft')
  hf=[x['detail'] for x in c if x['severity']=='hard' and x['status']=='FAIL']; ie=[x['detail'] for x in c if x['severity']=='hard' and x['status']=='INSUFFICIENT']; verdict='REJECTED' if hf else 'INSUFFICIENT_EVIDENCE' if ie else 'SURVIVES_KILLER'
- OUT.write_text(json.dumps({'generated_at_utc':now,'verdict':verdict,'selected':s,'target_strategy':TARGET_STRATEGY or None,'checks':c,'hard_failures':hf,'insufficient_evidence':ie,'policy':{'max_staleness_seconds':MAX_STALENESS_SECONDS,'min_useful_depth_budget':MIN_USEFUL_DEPTH_BUDGET,'min_funding_basis_samples':MIN_FUNDING_BASIS_SAMPLES,'funding_basis_lookback_hours':FUNDING_BASIS_LOOKBACK_HOURS,'max_median_adverse_basis_periods':MAX_MEDIAN_ADVERSE_BASIS_PERIODS,'min_funding_latest_to_median_ratio':MIN_FUNDING_LATEST_TO_MEDIAN_RATIO,'principle':'assume false until execution evidence survives adversarial checks'},'hard_boundary':'Research/falsification only; no live execution or custody.'},indent=2)); print(f'KILLER {verdict}: {strategy} {s.get("label")} -> {OUT.name}')
+ OUT.write_text(json.dumps({'generated_at_utc':now,'verdict':verdict,'selected':s,'target_strategy':TARGET_STRATEGY or None,'selection_mode':SELECTION_MODE,'checks':c,'hard_failures':hf,'insufficient_evidence':ie,'policy':{'max_staleness_seconds':MAX_STALENESS_SECONDS,'min_useful_depth_budget':MIN_USEFUL_DEPTH_BUDGET,'min_funding_basis_samples':MIN_FUNDING_BASIS_SAMPLES,'funding_basis_lookback_hours':FUNDING_BASIS_LOOKBACK_HOURS,'max_median_adverse_basis_periods':MAX_MEDIAN_ADVERSE_BASIS_PERIODS,'min_funding_latest_to_median_ratio':MIN_FUNDING_LATEST_TO_MEDIAN_RATIO,'principle':'assume false until execution evidence survives adversarial checks'},'hard_boundary':'Research/falsification only; no live execution or custody.'},indent=2)); print(f'KILLER {verdict}: {strategy} {s.get("label")} -> {OUT.name}')
 if __name__=='__main__':main()
