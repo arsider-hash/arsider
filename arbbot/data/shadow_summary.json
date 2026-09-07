@@ -1,7 +1,7 @@
 {
-  "generated_at_utc": "2026-09-07T01:09:39+00:00",
-  "total_shadow_trades_raw": 6,
-  "total_shadow_trades_evidence": 1,
+  "generated_at_utc": "2026-09-07T02:02:24+00:00",
+  "total_shadow_trades_raw": 7,
+  "total_shadow_trades_evidence": 2,
   "excluded_unverified_stable_rows": 4,
   "excluded_heuristic_funding_rows": 1,
   "best": {
@@ -22,6 +22,15 @@
       "cumulative_paper_pnl": 0.037537,
       "median_paper_pnl": 0.037537,
       "last_recorded_at_utc": "2026-09-06T22:24:35+00:00"
+    },
+    {
+      "key": "funding_spread|AKEUSDT",
+      "count": 1,
+      "positive_count": 1,
+      "positive_rate": 1.0,
+      "cumulative_paper_pnl": 0.025876,
+      "median_paper_pnl": 0.025876,
+      "last_recorded_at_utc": "2026-09-07T02:02:24+00:00"
     }
   ],
   "warning": "Shadow PnL is simulated and is not proof of live fill performance. Stablecoin signals require a verified exit; funding signals require current edge after cost/basis haircuts."
