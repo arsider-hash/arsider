@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-07T15:52:01+00:00",
+  "generated_at_utc": "2026-09-07T15:56:25+00:00",
   "verdict": "INSUFFICIENT_EVIDENCE",
   "selected": {
     "key": "funding_spread|PONSUSDT",
@@ -13,10 +13,10 @@
     "median_positive_edge_bps": 17.16,
     "p90_positive_edge_bps": 29.62,
     "max_edge_bps": 39.56,
-    "latest_edge_bps": 3.38,
+    "latest_edge_bps": 3.56,
     "research_score": 91.67,
     "classification": "strong_watch",
-    "last_seen_utc": "2026-09-07T15:50:10+00:00",
+    "last_seen_utc": "2026-09-07T15:54:50+00:00",
     "funding_cost_model": {
       "gross_median_spread_bps_per_8h": 17.16,
       "round_trip_cost_bps": 30.0,
@@ -163,7 +163,7 @@
       "check": "freshness",
       "status": "PASS",
       "severity": "hard",
-      "detail": "candidate age 112s"
+      "detail": "candidate age 95s"
     },
     {
       "check": "sample_presence",
@@ -187,7 +187,7 @@
       "check": "latest_edge_sign",
       "status": "PASS",
       "severity": "soft",
-      "detail": "latest_edge_bps=3.3800"
+      "detail": "latest_edge_bps=3.5600"
     },
     {
       "check": "economic_relevance",
@@ -199,13 +199,13 @@
       "check": "funding_regime_decay",
       "status": "INSUFFICIENT",
       "severity": "hard",
-      "detail": "latest/median edge ratio=0.197; latest=3.380 bps/8h, median=17.160; require >= 0.25 to rule out sharp edge decay"
+      "detail": "latest/median edge ratio=0.207; latest=3.560 bps/8h, median=17.160; require >= 0.25 to rule out sharp edge decay"
     },
     {
       "check": "funding_basis_persistence",
       "status": "PASS",
       "severity": "hard",
-      "detail": "23 independent 15m buckets; median adverse basis costs 0.56 funding periods; median aligned basis=-10.116 bps"
+      "detail": "23 independent 15m buckets; median adverse basis costs 0.62 funding periods; median aligned basis=-10.116 bps"
     },
     {
       "check": "funding_direction_stability",
@@ -217,12 +217,12 @@
       "check": "shadow_evidence",
       "status": "PASS",
       "severity": "soft",
-      "detail": "count=7, positive_rate=1.000, cumulative_paper_pnl=0.255724"
+      "detail": "count=8, positive_rate=1.000, cumulative_paper_pnl=0.259848"
     }
   ],
   "hard_failures": [],
   "insufficient_evidence": [
-    "latest/median edge ratio=0.197; latest=3.380 bps/8h, median=17.160; require >= 0.25 to rule out sharp edge decay",
+    "latest/median edge ratio=0.207; latest=3.560 bps/8h, median=17.160; require >= 0.25 to rule out sharp edge decay",
     "latest funding direction matches 26% of independent basis buckets; require >= 50%"
   ],
   "policy": {

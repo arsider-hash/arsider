@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-07T15:52:01+00:00",
+  "generated_at_utc": "2026-09-07T15:56:24+00:00",
   "verdict": "INSUFFICIENT_EVIDENCE",
   "selected": {
     "key": "funding_spread|CLUSDT",
@@ -13,10 +13,10 @@
     "median_positive_edge_bps": 5.21,
     "p90_positive_edge_bps": 6.27,
     "max_edge_bps": 6.3,
-    "latest_edge_bps": 4.52,
+    "latest_edge_bps": 4.43,
     "research_score": 58.35,
     "classification": "watch",
-    "last_seen_utc": "2026-09-07T15:50:10+00:00",
+    "last_seen_utc": "2026-09-07T15:54:50+00:00",
     "funding_cost_model": {
       "gross_median_spread_bps_per_8h": 5.21,
       "round_trip_cost_bps": 30.0,
@@ -163,7 +163,7 @@
       "check": "freshness",
       "status": "PASS",
       "severity": "hard",
-      "detail": "candidate age 112s"
+      "detail": "candidate age 95s"
     },
     {
       "check": "sample_presence",
@@ -187,7 +187,7 @@
       "check": "latest_edge_sign",
       "status": "PASS",
       "severity": "soft",
-      "detail": "latest_edge_bps=4.5200"
+      "detail": "latest_edge_bps=4.4300"
     },
     {
       "check": "economic_relevance",
@@ -199,7 +199,7 @@
       "check": "funding_regime_decay",
       "status": "PASS",
       "severity": "hard",
-      "detail": "latest/median edge ratio=0.868; latest=4.520 bps/8h, median=5.210; require >= 0.25 to rule out sharp edge decay"
+      "detail": "latest/median edge ratio=0.850; latest=4.430 bps/8h, median=5.210; require >= 0.25 to rule out sharp edge decay"
     },
     {
       "check": "funding_basis_persistence",
