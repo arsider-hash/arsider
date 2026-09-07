@@ -8,6 +8,10 @@ then compares normalized funding and contemporaneous mark-price basis.
 The universe is re-discovered on every run so HUNTER follows current listings
 instead of a hard-coded BTC/ETH/SOL subset.
 
+Funding candidates are also probed against public order books at small-capital
+sizes. These executable-entry diagnostics are best-effort research evidence:
+they never promote a candidate by themselves and failures remain conservative.
+
 Legacy CSV column names are retained for backward compatibility. Basis history
 is stored separately so old funding_history.csv files remain readable.
 """
@@ -34,6 +38,7 @@ MAX_DYNAMIC_SYMBOLS = 40
 MIN_SHARED_NOTIONAL_24H_USDT = 2_000_000.0
 ROUND_TRIP_COST_BPS = 30.0
 WATCH_SPREAD_BPS_PER_8H = 2.0
+DEPTH_BUDGETS_EUR = [25, 50, 100, 250, 500, 1000]
 
 FIELDS = [
     "timestamp_utc", "symbol", "direction",
@@ -53,7 +58,7 @@ BASIS_FIELDS = [
 def get_json(url: str, retries: int = 3):
     req = urllib.request.Request(url, headers={
         "Accept": "application/json",
-        "User-Agent": "arsider-arbbot/1.2",
+        "User-Agent": "arsider-arbbot/1.3",
     })
     last = None
     for attempt in range(retries):
@@ -87,7 +92,6 @@ def bitget_liquid_universe() -> dict[str, float]:
         if not symbol.endswith("USDT"):
             continue
         try:
-            # quoteVolume is preferable; fall back to baseVolume * last price.
             qv = float(x.get("usdtVolume") or x.get("quoteVolume") or 0.0)
             if qv <= 0:
                 qv = float(x.get("baseVolume") or 0.0) * float(x.get("lastPr") or 0.0)
@@ -215,7 +219,124 @@ def gate(symbol: str) -> dict:
         "mark_price": float(d.get("mark_price") or 0),
         "index_price": float(d.get("index_price") or 0),
         "last_price": float(d.get("last_price") or 0),
+        "quanto_multiplier": float(d.get("quanto_multiplier") or 1.0),
     }
+
+
+def _levels(raw):
+    out = []
+    for x in raw or []:
+        try:
+            if isinstance(x, dict):
+                price = float(x.get("p") or x.get("price") or 0)
+                size = float(x.get("s") or x.get("size") or x.get("qty") or 0)
+            else:
+                price = float(x[0])
+                size = float(x[1])
+            if price > 0 and size > 0:
+                out.append((price, size))
+        except Exception:
+            continue
+    return out
+
+
+def bitget_book(symbol: str):
+    d = get_json(q(
+        "https://api.bitget.com/api/v2/mix/market/merge-depth",
+        productType="USDT-FUTURES", symbol=symbol, precision="scale0", limit="50",
+    ))
+    data = d.get("data") if isinstance(d, dict) else None
+    if d.get("code") != "00000" or not isinstance(data, dict):
+        raise RuntimeError(f"Bitget orderbook error: {d}")
+    return {"bids": _levels(data.get("bids")), "asks": _levels(data.get("asks"))}
+
+
+def gate_book(symbol: str, multiplier: float):
+    contract = symbol.replace("USDT", "_USDT")
+    d = get_json(q(
+        "https://api.gateio.ws/api/v4/futures/usdt/order_book",
+        contract=contract, limit=50, with_id="true",
+    ))
+    if not isinstance(d, dict):
+        raise RuntimeError(f"Gate orderbook error: {d}")
+    # Gate futures size is contracts; convert each level to base-asset quantity.
+    def convert(raw):
+        return [(p, s * multiplier) for p, s in _levels(raw)]
+    return {"bids": convert(d.get("bids")), "asks": convert(d.get("asks"))}
+
+
+def vwap_for_notional(levels, target_usdt):
+    remaining = float(target_usdt)
+    cost = 0.0
+    qty = 0.0
+    for price, base_qty in levels:
+        available = price * base_qty
+        take = min(remaining, available)
+        if take <= 0:
+            continue
+        qtake = take / price
+        cost += take
+        qty += qtake
+        remaining -= take
+        if remaining <= 1e-9:
+            break
+    if remaining > 1e-6 or qty <= 0:
+        return None
+    return cost / qty
+
+
+def executable_probe(symbol, direction, edge_bps, gate_multiplier):
+    result = {
+        "mode": "public_orderbook_best_effort",
+        "budgets_eur_approx_usdt": DEPTH_BUDGETS_EUR,
+        "rows": [],
+        "errors": [],
+        "can_promote_candidate": False,
+    }
+    try:
+        bg = bitget_book(symbol)
+    except Exception as exc:
+        result["errors"].append(f"Bitget: {exc}")
+        bg = None
+    try:
+        gt = gate_book(symbol, gate_multiplier)
+    except Exception as exc:
+        result["errors"].append(f"Gate: {exc}")
+        gt = None
+    if not bg or not gt:
+        return result
+
+    short_bg = direction.startswith("short Bitget")
+    bg_side = bg["bids"] if short_bg else bg["asks"]
+    gt_side = gt["asks"] if short_bg else gt["bids"]
+    direction_sign = 1.0 if short_bg else -1.0
+
+    for budget in DEPTH_BUDGETS_EUR:
+        # Total strategy capital is split across two legs, matching allocator utilisation=0.5.
+        leg_notional = budget * 0.5
+        bg_px = vwap_for_notional(bg_side, leg_notional)
+        gt_px = vwap_for_notional(gt_side, leg_notional)
+        executable = bg_px is not None and gt_px is not None
+        raw_basis = None
+        aligned_basis = None
+        adverse = None
+        periods = None
+        if executable:
+            raw_basis = (bg_px / gt_px - 1.0) * 10000
+            aligned_basis = raw_basis * direction_sign
+            adverse = max(0.0, -aligned_basis)
+            periods = adverse / edge_bps if edge_bps > 0 else None
+        result["rows"].append({
+            "total_budget_eur_approx": budget,
+            "leg_notional_usdt_approx": round(leg_notional, 2),
+            "depth_sufficient_both_legs": executable,
+            "bitget_entry_vwap": None if bg_px is None else round(bg_px, 10),
+            "gate_entry_vwap": None if gt_px is None else round(gt_px, 10),
+            "aligned_executable_entry_basis_bps": None if aligned_basis is None else round(aligned_basis, 4),
+            "adverse_executable_entry_basis_bps": None if adverse is None else round(adverse, 4),
+            "funding_periods_to_overcome_adverse_executable_basis": None if periods is None else round(periods, 3),
+        })
+    return result
 
 
 def ensure_history():
@@ -302,7 +423,7 @@ def main():
                 ),
                 "candidate": "YES" if candidate else "NO",
             })
-            detailed.append({
+            detail = {
                 **hrow,
                 "venue_a": a,
                 "venue_b": b,
@@ -322,10 +443,15 @@ def main():
                     ),
                 },
                 "warning": (
-                    "Funding can change before settlement. Cross-venue mark basis is measured, but future basis, "
-                    "liquidation, collateral, fee-tier, venue, transfer and fill risk remain incompletely modeled."
+                    "Funding can change before settlement. Mark basis and public order-book entry diagnostics are research evidence only; "
+                    "liquidation, collateral, fee-tier, venue, transfer and actual fill risk remain incompletely modeled."
                 )
-            })
+            }
+            if candidate:
+                detail["executable_entry_probe"] = executable_probe(
+                    symbol, direction, edge, float(b.get("quanto_multiplier") or 1.0)
+                )
+            detailed.append(detail)
         except Exception as e:
             errors.append(f"{symbol}: {e}")
 
@@ -337,6 +463,8 @@ def main():
         "mode": "paper_read_only",
         "venues": ["Bitget", "Gate"],
         "universe": universe,
+        "depth_probe_budgets_eur": DEPTH_BUDGETS_EUR,
+        "depth_probe_policy": "best-effort diagnostics only; cannot promote a candidate",
         "candidate_count": sum(x["candidate"] == "YES" for x in rows),
         "best": detailed[0] if detailed else None,
         "rows": detailed,
@@ -348,9 +476,11 @@ def main():
         best = detailed[0]
         basis = (best.get("cross_venue_basis") or {}).get("aligned_with_funding_trade_bps")
         basis_text = "n/a" if basis is None else f"{basis:+.2f}bps aligned basis"
+        probe = best.get("executable_entry_probe") or {}
+        depth_ok = sum(1 for r in probe.get("rows") or [] if r.get("depth_sufficient_both_legs"))
         print(
             f"BEST {best['symbol']} {abs(float(best['spread_bps_per_8h'])):.3f} "
-            f"bps/8h | {best['direction']} | {basis_text}"
+            f"bps/8h | {best['direction']} | {basis_text} | depth_sizes={depth_ok}/{len(DEPTH_BUDGETS_EUR)}"
         )
     print(
         f"symbols={len(symbols)} rows={len(rows)} candidates={sum(x['candidate'] == 'YES' for x in rows)} "
