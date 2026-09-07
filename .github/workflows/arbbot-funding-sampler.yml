@@ -2,7 +2,7 @@ name: ARBBOT funding sampler
 
 on:
   schedule:
-    - cron: "0-55/5 * * * *"
+    - cron: "0,15,30,45 * * * *"
   workflow_dispatch:
   push:
     paths:
@@ -11,10 +11,11 @@ on:
 
 permissions:
   contents: write
+  actions: write
 
-# Share the write lock with the unified lab. The sampler is deliberately tiny:
-# it increases market observation frequency but does not mint extra shadow
-# canaries or run decision logic on autocorrelated snapshots.
+# Share the write lock with the unified lab so research snapshots cannot clobber
+# each other. A burst already spans ~6 minutes, so a 15-minute cadence avoids
+# a permanent queue while preserving 2-minute raw observations inside each run.
 concurrency:
   group: arbbot-unified-writes
   cancel-in-progress: false
@@ -31,11 +32,6 @@ jobs:
       - name: Burst-sample funding and cross-venue basis
         run: |
           set -euo pipefail
-          # GitHub scheduled workflows can be delayed or skipped. When a sampler
-          # run does start, take four raw observations across ~6 minutes so one
-          # scheduler event still captures regime changes. Downstream evidence
-          # remains bucketed into 15-minute windows, so these are sensors, not
-          # four independent proofs.
           for i in 1 2 3 4; do
             echo "funding sample $i/4"
             python arbbot/funding_scanner.py
@@ -76,3 +72,7 @@ jobs:
             git commit -m "arbbot: funding sample"
             git push origin HEAD:main
           fi
+      - name: Trigger full HUNTER-KILLER-ALLOCATOR refresh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run arbbot-market-lab.yml --ref main
