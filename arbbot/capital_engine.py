@@ -15,7 +15,9 @@ minimum basis-history sample exists.
 Funding basis observations are time-bucketed so faster polling improves regime
 visibility without manufacturing independent evidence from autocorrelated data.
 
-This is a ranking heuristic, not a profit forecast.
+The allocator also reports whether a candidate is even directionally capable of
+supporting a small recurring-income target (EUR 100-200/month) under the same
+paper assumptions. This is a planning lens, not a promise or forecast.
 """
 
 from __future__ import annotations
@@ -35,6 +37,8 @@ OUT = DATA / "capital_rank.json"
 BUDGETS = [25, 50, 100, 250, 500, 1000]
 REFERENCE_BUDGET = 250
 REFERENCE_PAYOFF_EUR = 0.25
+MONTHLY_TARGETS_EUR = [100, 200]
+DAYS_PER_MONTH = 30.0
 
 UTILISATION = {
     "solana_cross_dex": 1.0,
@@ -109,6 +113,50 @@ def load_funding_basis(now):
             "median_aligned_basis_bps": median(aligned) if aligned else 0.0,
         }
     return by_symbol
+
+
+def monthly_target_lens(strategy, economics):
+    """Translate paper daily carry into a recurring-income planning lens.
+
+    Only carry strategies have enough cadence information here to estimate a
+    monthly paper run-rate. Event-driven strategies stay explicitly unknown
+    rather than assuming a fake event frequency.
+    """
+    if strategy not in CARRY_PERIODS_PER_DAY:
+        return {
+            "mode": "insufficient_turnover_model",
+            "targets_eur": MONTHLY_TARGETS_EUR,
+            "note": "Event frequency/turnover is not modelled conservatively enough for a monthly-income estimate.",
+        }
+
+    by_budget = {}
+    for budget in BUDGETS:
+        daily = float(economics[str(budget)].get("paper_daily_carry_if_persistence_continues") or 0.0)
+        monthly = daily * DAYS_PER_MONTH
+        by_budget[str(budget)] = {
+            "paper_monthly_run_rate_if_persistence_continues": round(monthly, 2),
+            "reaches_100_eur_month": monthly >= 100.0,
+            "reaches_200_eur_month": monthly >= 200.0,
+        }
+
+    ref_daily = float(economics[str(REFERENCE_BUDGET)].get("paper_daily_carry_if_persistence_continues") or 0.0)
+    required_capital = {}
+    for target in MONTHLY_TARGETS_EUR:
+        target_daily = target / DAYS_PER_MONTH
+        if ref_daily > 0:
+            required = REFERENCE_BUDGET * target_daily / ref_daily
+            required_capital[str(target)] = round(required, 2)
+        else:
+            required_capital[str(target)] = None
+
+    return {
+        "mode": "paper_carry_run_rate",
+        "days_per_month": DAYS_PER_MONTH,
+        "targets_eur": MONTHLY_TARGETS_EUR,
+        "by_budget": by_budget,
+        "approx_total_capital_required_eur": required_capital,
+        "warning": "Linear scaling assumes the same edge, persistence, costs and capacity survive at larger size; this must be separately validated.",
+    }
 
 
 def main():
@@ -228,6 +276,7 @@ def main():
                 ),
             },
             "paper_economics": economics,
+            "monthly_income_lens": monthly_target_lens(strategy, economics),
         })
 
     ranked.sort(key=lambda x: (
@@ -242,6 +291,7 @@ def main():
         "budgets": BUDGETS,
         "reference_budget_eur": REFERENCE_BUDGET,
         "reference_payoff_eur": REFERENCE_PAYOFF_EUR,
+        "monthly_income_targets_eur": MONTHLY_TARGETS_EUR,
         "funding_cost_model": {
             "round_trip_cost_bps": FUNDING_ROUND_TRIP_COST_BPS,
             "holding_horizon_days": FUNDING_HOLD_DAYS,
@@ -256,6 +306,7 @@ def main():
             "These are conservative paper arithmetic conversions, not expected returns. "
             "Funding carry is haircut by amortized round-trip cost and observed adverse basis. "
             "Funding evidence is time-bucketed to avoid pseudo-replication from faster polling. "
+            "Monthly income figures are planning run-rates only and assume persistence/capacity that may disappear. "
             "Funding is not economically material until basis evidence reaches the minimum sample. "
             "Fill probability, future basis moves, funding changes, liquidation, slippage, transfer friction, "
             "latency, collateral and venue risk still require separate validation."
