@@ -12,6 +12,9 @@ and by the observed adverse cross-venue basis, both amortised over a fixed
 holding horizon. Funding cannot be treated as economically material until a
 minimum basis-history sample exists.
 
+Funding basis observations are time-bucketed so faster polling improves regime
+visibility without manufacturing independent evidence from autocorrelated data.
+
 This is a ranking heuristic, not a profit forecast.
 """
 
@@ -55,6 +58,7 @@ FUNDING_HOLD_PERIODS = FUNDING_HOLD_DAYS * FUNDING_PERIODS_PER_DAY
 FUNDING_COST_BPS_PER_8H = FUNDING_ROUND_TRIP_COST_BPS / FUNDING_HOLD_PERIODS
 FUNDING_BASIS_LOOKBACK_HOURS = 48
 FUNDING_MIN_BASIS_OBSERVATIONS = 4
+FUNDING_EVIDENCE_BUCKET_MINUTES = 15
 
 
 def parse_ts(s):
@@ -62,6 +66,11 @@ def parse_ts(s):
         return datetime.fromisoformat(str(s).replace("Z", "+00:00"))
     except Exception:
         return None
+
+
+def bucket_key(ts, minutes):
+    minute = (ts.minute // minutes) * minutes
+    return ts.replace(minute=minute, second=0, microsecond=0)
 
 
 def load_funding_basis(now):
@@ -85,13 +94,15 @@ def load_funding_basis(now):
                     aligned = float(r.get("aligned_basis_bps") or 0.0)
                 except Exception:
                     continue
-                grouped.setdefault(symbol, []).append((adverse, aligned))
+                slot = bucket_key(ts, FUNDING_EVIDENCE_BUCKET_MINUTES)
+                grouped.setdefault(symbol, {})[slot] = (ts, adverse, aligned)
     except Exception:
         return by_symbol
 
-    for symbol, rows in grouped.items():
-        adverse = [x[0] for x in rows]
-        aligned = [x[1] for x in rows]
+    for symbol, slots in grouped.items():
+        rows = [x for _, x in sorted(slots.items(), key=lambda kv: kv[0])]
+        adverse = [x[1] for x in rows]
+        aligned = [x[2] for x in rows]
         by_symbol[symbol] = {
             "observations": len(rows),
             "median_adverse_basis_bps": median(adverse) if adverse else 0.0,
@@ -134,6 +145,7 @@ def main():
             basis_evidence_sufficient = basis_obs >= FUNDING_MIN_BASIS_OBSERVATIONS
             funding_basis_model = {
                 "lookback_hours": FUNDING_BASIS_LOOKBACK_HOURS,
+                "evidence_bucket_minutes": FUNDING_EVIDENCE_BUCKET_MINUTES,
                 "observations": basis_obs,
                 "min_observations": FUNDING_MIN_BASIS_OBSERVATIONS,
                 "evidence_sufficient": basis_evidence_sufficient,
@@ -236,12 +248,14 @@ def main():
             "amortized_cost_bps_per_8h": round(FUNDING_COST_BPS_PER_8H, 4),
             "basis_lookback_hours": FUNDING_BASIS_LOOKBACK_HOURS,
             "min_basis_observations": FUNDING_MIN_BASIS_OBSERVATIONS,
+            "evidence_bucket_minutes": FUNDING_EVIDENCE_BUCKET_MINUTES,
         },
         "best": ranked[0] if ranked else None,
         "ranked": ranked,
         "warning": (
             "These are conservative paper arithmetic conversions, not expected returns. "
             "Funding carry is haircut by amortized round-trip cost and observed adverse basis. "
+            "Funding evidence is time-bucketed to avoid pseudo-replication from faster polling. "
             "Funding is not economically material until basis evidence reaches the minimum sample. "
             "Fill probability, future basis moves, funding changes, liquidation, slippage, transfer friction, "
             "latency, collateral and venue risk still require separate validation."
@@ -257,6 +271,7 @@ def main():
         )
     else:
         print("No ranked opportunities yet.")
+
 
 if __name__ == "__main__":
     main()
