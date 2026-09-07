@@ -77,6 +77,51 @@ jobs:
           KILLER_STRATEGY: funding_spread
           KILLER_OUT: killer_funding_report.json
         run: python arbbot/killer.py
+      - name: ALLOCATOR keep only KILLER survivors
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d = Path('arbbot/data')
+          rank_path = d / 'capital_rank.json'
+          rank = json.loads(rank_path.read_text())
+          reports = []
+          for name in ('killer_report.json', 'killer_funding_report.json'):
+              p = d / name
+              if p.exists():
+                  try:
+                      reports.append(json.loads(p.read_text()))
+                  except Exception:
+                      pass
+          survivors = set()
+          for r in reports:
+              s = r.get('selected') or {}
+              if r.get('verdict') == 'SURVIVES_KILLER' and s.get('strategy') and s.get('label'):
+                  survivors.add(f"{s['strategy']}|{s['label']}")
+          original = rank.get('ranked') or []
+          filtered = [x for x in original if f"{x.get('strategy')}|{x.get('label')}" in survivors]
+          rank['pre_killer_ranked_count'] = len(original)
+          rank['killer_survivor_keys'] = sorted(survivors)
+          rank['allocator_gate'] = 'killer_survivors_only'
+          rank['ranked'] = filtered
+          rank['best'] = filtered[0] if filtered else None
+          rank_path.write_text(json.dumps(rank, indent=2))
+          print(f"allocator survivors={len(filtered)} keys={sorted(survivors)}")
+          PY
+      - name: Re-run first-class KILLER on surviving ALLOCATOR leader
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p = Path('arbbot/data/decision.json')
+          rank = json.loads(Path('arbbot/data/capital_rank.json').read_text())
+          best = rank.get('best')
+          if best:
+              d = json.loads(p.read_text()) if p.exists() else {}
+              d['selected'] = best
+              p.write_text(json.dumps(d, indent=2))
+          PY
+          python arbbot/killer.py
       - name: Final decision
         run: python arbbot/decision_engine.py
       - name: Write health heartbeat
