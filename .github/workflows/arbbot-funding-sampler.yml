@@ -1,0 +1,65 @@
+name: ARBBOT funding sampler
+
+on:
+  schedule:
+    - cron: "0-55/5 * * * *"
+  workflow_dispatch:
+  push:
+    paths:
+      - "arbbot/funding_scanner.py"
+      - ".github/workflows/arbbot-funding-sampler.yml"
+
+permissions:
+  contents: write
+
+# Share the write lock with the unified lab. The sampler is deliberately tiny:
+# it increases market observation frequency but does not mint extra shadow
+# canaries or run decision logic on autocorrelated snapshots.
+concurrency:
+  group: arbbot-unified-writes
+  cancel-in-progress: false
+
+jobs:
+  funding-sample:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Sample funding and cross-venue basis
+        run: python arbbot/funding_scanner.py
+      - name: Write sampler heartbeat
+        run: |
+          python - <<'PY'
+          import json
+          from datetime import datetime, timezone
+          from pathlib import Path
+          p = Path("arbbot/data")
+          p.mkdir(exist_ok=True)
+          (p / "funding_sampler_health.json").write_text(json.dumps({
+              "funding_sampler_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+              "status": "funding_sample_reached_persist_step",
+              "evidence_note": "Raw polling may be faster; scoreboard/capital/KILLER use 15-minute funding evidence buckets."
+          }, indent=2))
+          PY
+      - name: Persist funding observations atomically
+        run: |
+          set -euo pipefail
+          git config user.name "arbbot"
+          git config user.email "actions@users.noreply.github.com"
+          snapshot_dir="$(mktemp -d)"
+          cp -a arbbot/data "$snapshot_dir/data"
+          git fetch origin main
+          git reset --hard origin/main
+          rm -rf arbbot/data
+          mkdir -p arbbot
+          cp -a "$snapshot_dir/data" arbbot/data
+          git add -A arbbot/data
+          if git diff --cached --quiet; then
+            echo "No data change"
+          else
+            git commit -m "arbbot: funding sample"
+            git push origin HEAD:main
+          fi
