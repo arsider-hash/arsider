@@ -5,6 +5,9 @@ ARBBOT persistence scoreboard.
 Rejects one-off quote noise and ranks repeated paper signals over a rolling
 window. Sources currently include global CEX, wide cross-CEX, EU CEX, Solana
 and funding.
+
+Funding observations are time-bucketed so faster polling improves freshness
+without turning highly autocorrelated snapshots into fake independent evidence.
 """
 
 from __future__ import annotations
@@ -20,6 +23,8 @@ ROOT = Path(__file__).resolve().parent
 DATA = ROOT / "data"
 OUT = DATA / "scoreboard.json"
 LOOKBACK_HOURS = 48
+FUNDING_EVIDENCE_BUCKET_MINUTES = 15
+
 
 def parse_ts(s):
     try:
@@ -27,12 +32,19 @@ def parse_ts(s):
     except Exception:
         return None
 
+
 def pct(xs, p):
     if not xs:
         return None
     ys = sorted(xs)
     idx = min(len(ys) - 1, max(0, round((len(ys) - 1) * p)))
     return ys[idx]
+
+
+def bucket_key(ts, minutes):
+    minute = (ts.minute // minutes) * minutes
+    return ts.replace(minute=minute, second=0, microsecond=0)
+
 
 def load_generic_history(filename, cutoff):
     path = DATA / filename
@@ -63,6 +75,7 @@ def load_generic_history(filename, cutoff):
             })
     return groups
 
+
 def load_solana(cutoff):
     path = DATA / "history.csv"
     groups = defaultdict(list)
@@ -89,9 +102,11 @@ def load_solana(cutoff):
             })
     return groups
 
+
 def load_funding(cutoff):
     path = DATA / "funding_history.csv"
     groups = defaultdict(list)
+    bucketed = {}
     if not path.exists():
         return groups
     with path.open(encoding="utf-8") as f:
@@ -104,7 +119,8 @@ def load_funding(cutoff):
             except Exception:
                 continue
             label = r.get("symbol", "?")
-            groups[f"funding_spread|{label}"].append({
+            key = f"funding_spread|{label}"
+            obs = {
                 "ts": ts,
                 "edge": edge,
                 "candidate": r.get("candidate") == "YES",
@@ -112,8 +128,19 @@ def load_funding(cutoff):
                 "label": label,
                 "direction": r.get("direction", ""),
                 "venue": "Bitget<->Gate",
-            })
+            }
+            # Keep the latest snapshot in each 15-minute bucket. This preserves
+            # current-regime sensitivity while preventing 2-5 minute polling from
+            # multiplying statistical evidence.
+            b = bucket_key(ts, FUNDING_EVIDENCE_BUCKET_MINUTES)
+            slot = (key, b)
+            prev = bucketed.get(slot)
+            if prev is None or ts > prev["ts"]:
+                bucketed[slot] = obs
+    for (key, _), obs in bucketed.items():
+        groups[key].append(obs)
     return groups
+
 
 def score_group(key, obs):
     obs = sorted(obs, key=lambda x: x["ts"])
@@ -155,6 +182,7 @@ def score_group(key, obs):
         "last_seen_utc": latest["ts"].isoformat(),
     }
 
+
 def main():
     now = datetime.now(timezone.utc)
     cutoff = now - timedelta(hours=LOOKBACK_HOURS)
@@ -184,12 +212,14 @@ def main():
     out = {
         "generated_at_utc": now.isoformat(timespec="seconds"),
         "lookback_hours": LOOKBACK_HOURS,
+        "funding_evidence_bucket_minutes": FUNDING_EVIDENCE_BUCKET_MINUTES,
         "strong_watch_count": sum(x["classification"] == "strong_watch" for x in ranked),
         "watch_count": sum(x["classification"] == "watch" for x in ranked),
         "best": ranked[0] if ranked else None,
         "ranked": ranked,
         "interpretation": (
             "This is a noise-rejection research score, not a forecast or guarantee. "
+            "Funding evidence is time-bucketed to avoid pseudo-replication from faster polling. "
             "Only repeated signals are promoted. Live profitability still requires "
             "execution-specific fee, slippage, latency, capital and risk validation."
         ),
@@ -203,6 +233,7 @@ def main():
         )
     else:
         print("No history yet.")
+
 
 if __name__ == "__main__":
     main()
