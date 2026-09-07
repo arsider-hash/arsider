@@ -7,7 +7,8 @@ and returns WAIT / VALIDATE / READY_FOR_MANUAL_AUTHORIZATION.
 
 Fast arbitrage strategies cannot reach READY unless execution validators pass,
 the adversarial KILLER reports SURVIVES_KILLER for the same route, and shadow
-canaries are positive.
+canaries are positive. Funding spreads additionally require the dedicated
+funding KILLER to survive for the same symbol and direction.
 
 READY is intentionally short-lived for manual authorization: the selected
 candidate must be no more than five minutes old, and every READY payload carries
@@ -30,6 +31,7 @@ CAPITAL_RANK = DATA / "capital_rank.json"
 VALIDATION = DATA / "validation.json"
 DEPTH_VALIDATION = DATA / "depth_validation.json"
 KILLER_REPORT = DATA / "killer_report.json"
+KILLER_FUNDING_REPORT = DATA / "killer_funding_report.json"
 SHADOW_SUMMARY = DATA / "shadow_summary.json"
 OUT = DATA / "decision.json"
 
@@ -145,6 +147,15 @@ def validation_passes(selected):
     return True, "execution_validation_passed"
 
 
+def report_matches_selected(report, selected):
+    reported = report.get("selected") or {}
+    return (
+        reported.get("strategy") == selected.get("strategy")
+        and reported.get("label") == selected.get("label")
+        and reported.get("direction") == selected.get("direction")
+    )
+
+
 def killer_passes(selected):
     if not KILLER_REPORT.exists():
         return False, "no killer report yet"
@@ -152,15 +163,25 @@ def killer_passes(selected):
         k = json.loads(KILLER_REPORT.read_text(encoding="utf-8"))
     except Exception:
         return False, "invalid killer report"
-    same = (
-        (k.get("selected") or {}).get("strategy") == selected.get("strategy")
-        and (k.get("selected") or {}).get("label") == selected.get("label")
-    )
-    if not same:
-        return False, "killer report belongs to another route"
+    if not report_matches_selected(k, selected):
+        return False, "killer report belongs to another route or direction"
     verdict = k.get("verdict")
     if verdict != "SURVIVES_KILLER":
         return False, f"killer verdict is {verdict}"
+
+    if selected.get("strategy") == "funding_spread":
+        if not KILLER_FUNDING_REPORT.exists():
+            return False, "no dedicated funding killer report yet"
+        try:
+            fk = json.loads(KILLER_FUNDING_REPORT.read_text(encoding="utf-8"))
+        except Exception:
+            return False, "invalid dedicated funding killer report"
+        if not report_matches_selected(fk, selected):
+            return False, "funding killer report belongs to another route or direction"
+        funding_verdict = fk.get("verdict")
+        if funding_verdict != "SURVIVES_KILLER":
+            return False, f"funding killer verdict is {funding_verdict}"
+
     return True, "killer_survived"
 
 
