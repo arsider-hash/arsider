@@ -9,6 +9,11 @@ Fast arbitrage strategies cannot reach READY unless execution validators pass,
 the adversarial KILLER reports SURVIVES_KILLER for the same route, and shadow
 canaries are positive.
 
+READY is intentionally short-lived for manual authorization: the selected
+candidate must be no more than five minutes old, and every READY payload carries
+an explicit expiry timestamp. A stale static decision file must therefore never
+be interpreted as a current authorization signal.
+
 No orders, signing, wallets or trading credentials.
 """
 
@@ -16,7 +21,7 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 
 ROOT = Path(__file__).resolve().parent
 DATA = ROOT / "data"
@@ -27,6 +32,8 @@ DEPTH_VALIDATION = DATA / "depth_validation.json"
 KILLER_REPORT = DATA / "killer_report.json"
 SHADOW_SUMMARY = DATA / "shadow_summary.json"
 OUT = DATA / "decision.json"
+
+MANUAL_AUTH_MAX_AGE_SECONDS = 300
 
 POLICY = {
     "solana_cross_dex": {
@@ -69,6 +76,22 @@ FAST_STRATEGIES = {
     "stable_dislocation", "stable_eur_dislocation",
 }
 
+
+def parse_ts(value):
+    try:
+        return datetime.fromisoformat(str(value).replace("Z", "+00:00"))
+    except Exception:
+        return None
+
+
+def candidate_age_seconds(selected, now_dt=None):
+    now_dt = now_dt or datetime.now(timezone.utc)
+    seen = parse_ts(selected.get("last_seen_utc"))
+    if not seen:
+        return None
+    return max(0.0, (now_dt - seen).total_seconds())
+
+
 def load_ranked():
     if CAPITAL_RANK.exists():
         try:
@@ -82,6 +105,7 @@ def load_ranked():
         d = json.loads(SCOREBOARD.read_text(encoding="utf-8"))
         return d.get("ranked") or [], "scoreboard"
     return [], "none"
+
 
 def validation_passes(selected):
     strategy = selected.get("strategy")
@@ -120,6 +144,7 @@ def validation_passes(selected):
 
     return True, "execution_validation_passed"
 
+
 def killer_passes(selected):
     if not KILLER_REPORT.exists():
         return False, "no killer report yet"
@@ -137,6 +162,7 @@ def killer_passes(selected):
     if verdict != "SURVIVES_KILLER":
         return False, f"killer verdict is {verdict}"
     return True, "killer_survived"
+
 
 def shadow_passes(selected):
     if not SHADOW_SUMMARY.exists():
@@ -159,6 +185,7 @@ def shadow_passes(selected):
     if cumulative <= 0:
         return False, "shadow cumulative PnL is not positive"
     return True, "shadow_canaries_passed"
+
 
 def classify(item):
     strategy = item.get("strategy")
@@ -189,17 +216,27 @@ def classify(item):
         if not killer_ok:
             return "VALIDATE", [killer_reason]
         shadow_ok, shadow_reason = shadow_passes(item)
-        if shadow_ok:
-            return "READY_FOR_MANUAL_AUTHORIZATION", []
-        return "VALIDATE", [shadow_reason]
+        if not shadow_ok:
+            return "VALIDATE", [shadow_reason]
+        age = candidate_age_seconds(item)
+        if age is None:
+            return "VALIDATE", ["candidate freshness timestamp missing"]
+        if age > MANUAL_AUTH_MAX_AGE_SECONDS:
+            return "VALIDATE", [
+                f"candidate age {age:.0f}s exceeds manual-authorization freshness limit "
+                f"{MANUAL_AUTH_MAX_AGE_SECONDS}s"
+            ]
+        return "READY_FOR_MANUAL_AUTHORIZATION", []
 
     if classification in {"watch", "strong_watch"} and obs >= max(3, rules["min_observations"] // 2):
         return "VALIDATE", failed
 
     return "WAIT", failed
 
+
 def main():
-    now = datetime.now(timezone.utc).isoformat(timespec="seconds")
+    now_dt = datetime.now(timezone.utc)
+    now = now_dt.isoformat(timespec="seconds")
     ranked, source = load_ranked()
 
     if not ranked:
@@ -231,6 +268,11 @@ def main():
             "do not move funds or place orders"
         )
 
+    seen = parse_ts(selected.get("last_seen_utc"))
+    readiness_expiry = None
+    if seen:
+        readiness_expiry = (seen + timedelta(seconds=MANUAL_AUTH_MAX_AGE_SECONDS)).isoformat(timespec="seconds")
+
     payload = {
         "generated_at_utc": now,
         "state": state,
@@ -238,6 +280,12 @@ def main():
         "selected": selected,
         "failed_gates": failed,
         "policy": POLICY.get(selected.get("strategy"), {}),
+        "manual_authorization_freshness": {
+            "max_candidate_age_seconds": MANUAL_AUTH_MAX_AGE_SECONDS,
+            "candidate_last_seen_utc": selected.get("last_seen_utc"),
+            "valid_until_utc": readiness_expiry,
+            "rule": "READY is invalid after valid_until_utc unless a new laboratory run refreshes the evidence",
+        },
         "next_action": next_action,
         "hard_boundary": (
             "ARBBOT may research, rank and prepare a test plan. "
@@ -247,6 +295,7 @@ def main():
     }
     OUT.write_text(json.dumps(payload, indent=2), encoding="utf-8")
     print(f"{state}: {selected.get('strategy')} {selected.get('label')}")
+
 
 if __name__ == "__main__":
     main()
