@@ -2,7 +2,7 @@ name: ARBBOT unified lab
 
 on:
   schedule:
-    - cron: "2-57/5 * * * *"
+    - cron: "12,27,42,57 * * * *"
   workflow_dispatch:
   push:
     paths:
@@ -12,6 +12,9 @@ on:
 permissions:
   contents: write
 
+# The funding sampler runs on quarter-hours and holds the same write lock for
+# roughly six minutes. Keep this fallback scan offset from those bursts so
+# scheduled jobs do not continuously compete for a single pending slot.
 concurrency:
   group: arbbot-unified-writes
   cancel-in-progress: false
