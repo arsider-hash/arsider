@@ -25,26 +25,35 @@ jobs:
           from pathlib import Path
 
           max_age_seconds = 1800
-          stamps = []
-          for filename, field in (
-              ("arbbot/data/funding_sampler_health.json", "funding_sampler_utc"),
-              ("arbbot/data/health.json", "unified_lab_utc"),
-          ):
+          now = datetime.now(timezone.utc)
+
+          def read_stamp(filename, field):
               p = Path(filename)
               if not p.exists():
-                  continue
+                  return None
               try:
                   value = json.loads(p.read_text()).get(field)
                   if value:
-                      stamps.append(datetime.fromisoformat(value.replace("Z", "+00:00")))
+                      return datetime.fromisoformat(value.replace("Z", "+00:00"))
               except Exception:
                   pass
+              return None
 
-          now = datetime.now(timezone.utc)
-          freshest = max(stamps) if stamps else None
-          age = (now - freshest).total_seconds() if freshest else float("inf")
-          stale = age > max_age_seconds
-          print(f"freshest_heartbeat={freshest.isoformat() if freshest else 'missing'} age_seconds={age:.0f} stale={stale}")
+          sampler = read_stamp("arbbot/data/funding_sampler_health.json", "funding_sampler_utc")
+          lab = read_stamp("arbbot/data/health.json", "unified_lab_utc")
+          sampler_age = (now - sampler).total_seconds() if sampler else float("inf")
+          lab_age = (now - lab).total_seconds() if lab else float("inf")
+
+          # This watchdog's recovery action is the funding sampler, so assess its
+          # heartbeat independently. A fresh unified-lab heartbeat must not mask a
+          # stalled sampler.
+          stale = sampler_age > max_age_seconds
+          print(
+              f"funding_sampler={sampler.isoformat() if sampler else 'missing'} "
+              f"sampler_age_seconds={sampler_age:.0f} "
+              f"unified_lab={lab.isoformat() if lab else 'missing'} "
+              f"lab_age_seconds={lab_age:.0f} stale={stale}"
+          )
           with open(os.environ["GITHUB_OUTPUT"], "a") as fh:
               fh.write(f"stale={'true' if stale else 'false'}\n")
           PY
@@ -64,7 +73,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          echo "Research heartbeat is stale; dispatching funding sampler."
+          echo "Funding sampler heartbeat is stale; dispatching funding sampler."
           gh workflow run arbbot-funding-sampler.yml --ref main
 
       - name: Safety boundary
