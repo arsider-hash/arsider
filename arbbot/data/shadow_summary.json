@@ -1,7 +1,7 @@
 {
-  "generated_at_utc": "2026-09-08T08:01:33+00:00",
-  "total_shadow_trades_raw": 22,
-  "total_shadow_trades_evidence": 17,
+  "generated_at_utc": "2026-09-08T09:37:37+00:00",
+  "total_shadow_trades_raw": 23,
+  "total_shadow_trades_evidence": 18,
   "excluded_unverified_stable_rows": 4,
   "excluded_heuristic_funding_rows": 1,
   "best": {
@@ -24,6 +24,15 @@
       "last_recorded_at_utc": "2026-09-08T02:58:41+00:00"
     },
     {
+      "key": "funding_spread|SOPHUSDT",
+      "count": 2,
+      "positive_count": 2,
+      "positive_rate": 1.0,
+      "cumulative_paper_pnl": 0.155007,
+      "median_paper_pnl": 0.077504,
+      "last_recorded_at_utc": "2026-09-08T09:37:37+00:00"
+    },
+    {
       "key": "funding_spread|AKEUSDT",
       "count": 2,
       "positive_count": 2,
@@ -31,15 +40,6 @@
       "cumulative_paper_pnl": 0.03771,
       "median_paper_pnl": 0.018855,
       "last_recorded_at_utc": "2026-09-07T05:11:48+00:00"
-    },
-    {
-      "key": "funding_spread|SOPHUSDT",
-      "count": 1,
-      "positive_count": 1,
-      "positive_rate": 1.0,
-      "cumulative_paper_pnl": 0.056329,
-      "median_paper_pnl": 0.056329,
-      "last_recorded_at_utc": "2026-09-08T08:01:33+00:00"
     }
   ],
   "warning": "Shadow PnL is simulated and is not proof of live fill performance. Stablecoin signals require a verified exit; funding signals require current edge after cost/basis haircuts."
