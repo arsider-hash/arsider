@@ -21,6 +21,7 @@ SELECTION_MODE = os.environ.get('KILLER_SELECTION', 'allocator').strip().lower()
 FAST_STRATEGIES = {'cex_cross_spot', 'eu_cross_spot', 'cex_triangle', 'eur_triangle', 'stable_dislocation', 'stable_eur_dislocation'}
 DEPTH_STRATEGIES = {'cex_cross_spot', 'eu_cross_spot'}
 MAX_STALENESS_SECONDS = 900
+MIN_CANDIDATE_OBSERVATIONS = 6
 MIN_USEFUL_DEPTH_BUDGET = 250
 MIN_FUNDING_BASIS_SAMPLES = 4
 FUNDING_BASIS_LOOKBACK_HOURS = 48
@@ -157,7 +158,7 @@ def main():
 
     age = age_seconds(s.get('last_seen_utc'))
     add(c, 'freshness', 'INSUFFICIENT' if age is None else 'FAIL' if age > MAX_STALENESS_SECONDS else 'PASS', 'candidate timestamp missing or invalid' if age is None else f'candidate age {age:.0f}s')
-    add(c, 'sample_presence', 'PASS' if obs > 0 else 'FAIL', f'{obs} observations')
+    add(c, 'sample_presence', 'PASS' if obs >= MIN_CANDIDATE_OBSERVATIONS else 'INSUFFICIENT', f'{obs} observations; need at least {MIN_CANDIDATE_OBSERVATIONS}')
     add(c, 'positive_edge_evidence', 'PASS' if pos > 0 and med > 0 else 'FAIL', f'positive_observations={pos}, median_positive_edge_bps={med:.4f}')
     add(c, 'persistence', 'PASS' if persistence > 0 else 'FAIL', f'persistence={persistence:.3f}')
     add(c, 'latest_edge_sign', 'PASS' if latest > 0 else 'WARN', f'latest_edge_bps={latest:.4f}', severity='soft')
@@ -234,6 +235,7 @@ def main():
         'insufficient_evidence': ie,
         'policy': {
             'max_staleness_seconds': MAX_STALENESS_SECONDS,
+            'min_candidate_observations': MIN_CANDIDATE_OBSERVATIONS,
             'min_useful_depth_budget': MIN_USEFUL_DEPTH_BUDGET,
             'min_funding_basis_samples': MIN_FUNDING_BASIS_SAMPLES,
             'funding_basis_lookback_hours': FUNDING_BASIS_LOOKBACK_HOURS,
