@@ -1,23 +1,23 @@
 {
-  "generated_at_utc": "2026-09-08T19:45:20+00:00",
+  "generated_at_utc": "2026-09-08T19:56:12+00:00",
   "state": "VALIDATE",
   "ranking_source": "scoreboard",
   "selected": {
     "key": "funding_spread|SOPHUSDT",
     "strategy": "funding_spread",
     "label": "SOPHUSDT",
-    "direction": "long Bitget / short Gate",
+    "direction": "short Bitget / long Gate",
     "venue": "Bitget<->Gate",
-    "observations": 20,
+    "observations": 21,
     "positive_observations": 18,
-    "persistence": 0.9,
+    "persistence": 0.8571,
     "median_positive_edge_bps": 141.8,
     "p90_positive_edge_bps": 558.16,
     "max_edge_bps": 949.52,
     "latest_edge_bps": 0.08,
-    "research_score": 94.5,
+    "research_score": 92.14,
     "classification": "strong_watch",
-    "last_seen_utc": "2026-09-08T19:43:23+00:00"
+    "last_seen_utc": "2026-09-08T19:54:16+00:00"
   },
   "failed_gates": [
     "killer verdict is INSUFFICIENT_EVIDENCE"
@@ -30,8 +30,8 @@
   },
   "manual_authorization_freshness": {
     "max_candidate_age_seconds": 300,
-    "candidate_last_seen_utc": "2026-09-08T19:43:23+00:00",
-    "valid_until_utc": "2026-09-08T19:48:23+00:00",
+    "candidate_last_seen_utc": "2026-09-08T19:54:16+00:00",
+    "valid_until_utc": "2026-09-08T19:59:16+00:00",
     "rule": "READY is invalid after valid_until_utc unless a new laboratory run refreshes the evidence"
   },
   "next_action": "run execution-specific paper validation and adversarial killer checks for this route; still no money and no credentials",
