@@ -202,14 +202,27 @@ def main():
             add(c, 'funding_executable_entry', 'INSUFFICIENT', probe_error)
         else:
             depth_ok = bool(probe.get('depth_sufficient_both_legs'))
-            periods = float(probe.get('funding_periods_to_overcome_adverse_executable_basis') or 0)
-            adverse_bps = float(probe.get('adverse_executable_entry_basis_bps') or 0)
+            raw_periods = probe.get('funding_periods_to_overcome_adverse_executable_basis')
+            raw_adverse_bps = probe.get('adverse_executable_entry_basis_bps')
             if not depth_ok:
                 add(c, 'funding_executable_entry', 'FAIL', f'EUR {FUNDING_EXECUTION_REFERENCE_BUDGET} depth insufficient on at least one leg')
-            elif periods <= 0:
-                add(c, 'funding_executable_entry', 'INSUFFICIENT', f'EUR {FUNDING_EXECUTION_REFERENCE_BUDGET} executable basis recovery period missing/invalid')
+            elif raw_periods is None or raw_adverse_bps is None:
+                add(c, 'funding_executable_entry', 'INSUFFICIENT', f'EUR {FUNDING_EXECUTION_REFERENCE_BUDGET} executable basis metrics missing')
             else:
-                add(c, 'funding_executable_entry', 'FAIL' if periods > MAX_MEDIAN_ADVERSE_BASIS_PERIODS else 'PASS', f'EUR {FUNDING_EXECUTION_REFERENCE_BUDGET} executable adverse basis={adverse_bps:.3f} bps, recovery={periods:.2f} funding periods; require <= {MAX_MEDIAN_ADVERSE_BASIS_PERIODS:.2f}')
+                try:
+                    periods = float(raw_periods)
+                    adverse_bps = float(raw_adverse_bps)
+                except (TypeError, ValueError):
+                    add(c, 'funding_executable_entry', 'INSUFFICIENT', f'EUR {FUNDING_EXECUTION_REFERENCE_BUDGET} executable basis metrics invalid')
+                else:
+                    if periods < 0 or adverse_bps < 0:
+                        add(c, 'funding_executable_entry', 'INSUFFICIENT', f'EUR {FUNDING_EXECUTION_REFERENCE_BUDGET} executable basis metrics invalid')
+                    elif adverse_bps == 0 and periods == 0:
+                        add(c, 'funding_executable_entry', 'PASS', f'EUR {FUNDING_EXECUTION_REFERENCE_BUDGET} executable basis is non-adverse; adverse basis=0.000 bps, recovery=0.00 funding periods')
+                    elif adverse_bps > 0 and periods == 0:
+                        add(c, 'funding_executable_entry', 'INSUFFICIENT', f'EUR {FUNDING_EXECUTION_REFERENCE_BUDGET} positive adverse basis has zero/missing recovery period')
+                    else:
+                        add(c, 'funding_executable_entry', 'FAIL' if periods > MAX_MEDIAN_ADVERSE_BASIS_PERIODS else 'PASS', f'EUR {FUNDING_EXECUTION_REFERENCE_BUDGET} executable adverse basis={adverse_bps:.3f} bps, recovery={periods:.2f} funding periods; require <= {MAX_MEDIAN_ADVERSE_BASIS_PERIODS:.2f}')
 
     sh = load_json(SHADOW_SUMMARY) or {}
     key = f"{s.get('strategy')}|{s.get('label')}"
