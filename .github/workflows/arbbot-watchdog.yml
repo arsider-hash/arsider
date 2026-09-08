@@ -1,0 +1,72 @@
+name: ARBBOT stale-pipeline watchdog
+
+on:
+  schedule:
+    - cron: "7,22,37,52 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: write
+
+jobs:
+  watchdog:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check research heartbeat age
+        id: stale
+        run: |
+          python - <<'PY'
+          import json, os
+          from datetime import datetime, timezone
+          from pathlib import Path
+
+          max_age_seconds = 1800
+          stamps = []
+          for filename, field in (
+              ("arbbot/data/funding_sampler_health.json", "funding_sampler_utc"),
+              ("arbbot/data/health.json", "unified_lab_utc"),
+          ):
+              p = Path(filename)
+              if not p.exists():
+                  continue
+              try:
+                  value = json.loads(p.read_text()).get(field)
+                  if value:
+                      stamps.append(datetime.fromisoformat(value.replace("Z", "+00:00")))
+              except Exception:
+                  pass
+
+          now = datetime.now(timezone.utc)
+          freshest = max(stamps) if stamps else None
+          age = (now - freshest).total_seconds() if freshest else float("inf")
+          stale = age > max_age_seconds
+          print(f"freshest_heartbeat={freshest.isoformat() if freshest else 'missing'} age_seconds={age:.0f} stale={stale}")
+          with open(os.environ["GITHUB_OUTPUT"], "a") as fh:
+              fh.write(f"stale={'true' if stale else 'false'}\n")
+          PY
+
+      - name: Avoid duplicate recovery dispatch
+        if: steps.stale.outputs.stale == 'true'
+        id: active
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          active="$(gh run list --workflow arbbot-funding-sampler.yml --limit 10 --json status --jq '[.[] | select(.status == "queued" or .status == "in_progress")] | length')"
+          echo "active=$active"
+          echo "count=$active" >> "$GITHUB_OUTPUT"
+
+      - name: Recover stale research pipeline
+        if: steps.stale.outputs.stale == 'true' && steps.active.outputs.count == '0'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          echo "Research heartbeat is stale; dispatching funding sampler."
+          gh workflow run arbbot-funding-sampler.yml --ref main
+
+      - name: Safety boundary
+        run: |
+          echo "Watchdog may only dispatch paper-research workflows. It cannot place orders, move funds, sign transactions, or alter strategy gates."
