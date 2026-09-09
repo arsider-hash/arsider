@@ -1,7 +1,7 @@
 {
-  "generated_at_utc": "2026-09-09T17:31:20+00:00",
-  "total_shadow_trades_raw": 33,
-  "total_shadow_trades_evidence": 28,
+  "generated_at_utc": "2026-09-09T18:01:53+00:00",
+  "total_shadow_trades_raw": 34,
+  "total_shadow_trades_evidence": 29,
   "excluded_unverified_stable_rows": 4,
   "excluded_heuristic_funding_rows": 1,
   "best": {
@@ -40,6 +40,15 @@
       "cumulative_paper_pnl": 0.03771,
       "median_paper_pnl": 0.018855,
       "last_recorded_at_utc": "2026-09-07T05:11:48+00:00"
+    },
+    {
+      "key": "funding_spread|IOSTUSDT",
+      "count": 1,
+      "positive_count": 1,
+      "positive_rate": 1.0,
+      "cumulative_paper_pnl": 0.109793,
+      "median_paper_pnl": 0.109793,
+      "last_recorded_at_utc": "2026-09-09T18:01:53+00:00"
     }
   ],
   "warning": "Shadow PnL is simulated and is not proof of live fill performance. Stablecoin signals require a verified exit; funding signals require current edge after cost/basis haircuts."
