@@ -4,7 +4,7 @@ Research-to-live bridge only. This document does not authorize execution and ARB
 
 ## Candidate
 
-Current research candidate class: market-neutral cross-venue funding spread, currently PONSUSDT when and only when the fresh decision is `READY_FOR_MANUAL_AUTHORIZATION` and both global and funding KILLER verdicts are `SURVIVES_KILLER`.
+Current research candidate class: market-neutral cross-venue funding spread. The only eligible candidate is the symbol and direction selected by a fresh `decision.json` in `READY_FOR_MANUAL_AUTHORIZATION` state when both global and funding KILLER verdicts are `SURVIVES_KILLER` for that exact same symbol and direction. Never use a previously named or historical candidate merely because it appeared in an older runbook or report.
 
 ## Hard preflight gate
 
