@@ -3,6 +3,12 @@ name: ARBBOT stale-pipeline watchdog
 on:
   schedule:
     - cron: "7,22,37,52 * * * *"
+  push:
+    branches:
+      - main
+    paths:
+      - "arbbot/data/**"
+      - ".github/workflows/arbbot-*.yml"
   workflow_dispatch:
 
 permissions:
