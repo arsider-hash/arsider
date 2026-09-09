@@ -1,40 +1,37 @@
 {
-  "generated_at_utc": "2026-09-09T20:09:06+00:00",
+  "generated_at_utc": "2026-09-09T21:00:18+00:00",
   "state": "VALIDATE",
   "ranking_source": "scoreboard",
   "selected": {
-    "key": "funding_spread|IOSTUSDT",
-    "strategy": "funding_spread",
-    "label": "IOSTUSDT",
-    "direction": "short Bitget / long Gate",
-    "venue": "Bitget<->Gate",
-    "observations": 8,
-    "positive_observations": 7,
-    "persistence": 0.875,
-    "median_positive_edge_bps": 47.03,
-    "p90_positive_edge_bps": 94.63,
-    "max_edge_bps": 107.71,
-    "latest_edge_bps": 0.14,
-    "research_score": 86.46,
+    "key": "stable_dislocation|FDUSD:Binance",
+    "strategy": "stable_dislocation",
+    "label": "FDUSD:Binance",
+    "direction": "below peg",
+    "venue": "Binance",
+    "observations": 44,
+    "positive_observations": 36,
+    "persistence": 0.8182,
+    "median_positive_edge_bps": 12.5,
+    "p90_positive_edge_bps": 14.5,
+    "max_edge_bps": 14.5,
+    "latest_edge_bps": 9.5,
+    "research_score": 80.63,
     "classification": "strong_watch",
-    "last_seen_utc": "2026-09-09T20:04:25+00:00",
-    "current_direction_stability": 1.0,
-    "current_direction_observations": 8,
-    "direction_stability_required_for_watch": 0.5
+    "last_seen_utc": "2026-09-09T20:56:44+00:00"
   },
   "failed_gates": [
-    "killer report belongs to another route or direction"
+    "killer verdict is INSUFFICIENT_EVIDENCE"
   ],
   "policy": {
     "min_observations": 6,
     "min_persistence": 0.7,
-    "min_median_edge_bps": 2.0,
-    "min_research_score": 65.0
+    "min_median_edge_bps": 8.0,
+    "min_research_score": 68.0
   },
   "manual_authorization_freshness": {
     "max_candidate_age_seconds": 300,
-    "candidate_last_seen_utc": "2026-09-09T20:04:25+00:00",
-    "valid_until_utc": "2026-09-09T20:09:25+00:00",
+    "candidate_last_seen_utc": "2026-09-09T20:56:44+00:00",
+    "valid_until_utc": "2026-09-09T21:01:44+00:00",
     "rule": "READY is invalid after valid_until_utc unless a new laboratory run refreshes the evidence"
   },
   "next_action": "run execution-specific paper validation and adversarial killer checks for this route; still no money and no credentials",
