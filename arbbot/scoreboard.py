@@ -10,6 +10,11 @@ Funding observations are time-bucketed so faster polling improves freshness
 without turning highly autocorrelated snapshots into fake independent evidence.
 Funding ranking is also current-direction aware so a symbol cannot remain a
 strong watch merely by mixing evidence from opposite funding regimes.
+
+A candidate must also have a current observation to remain watch/strong_watch.
+Historical persistence is retained for diagnostics, but stale routes are
+explicitly degraded to noise so HUNTER does not spend validation budget on a
+signal that is no longer present.
 """
 
 from __future__ import annotations
@@ -27,6 +32,7 @@ OUT = DATA / "scoreboard.json"
 LOOKBACK_HOURS = 48
 FUNDING_EVIDENCE_BUCKET_MINUTES = 15
 FUNDING_MIN_CURRENT_DIRECTION_STABILITY = 0.50
+CURRENT_SIGNAL_MAX_AGE_SECONDS = 900
 
 
 def parse_ts(s):
@@ -145,9 +151,12 @@ def load_funding(cutoff):
     return groups
 
 
-def score_group(key, obs):
+def score_group(key, obs, now=None):
+    now = now or datetime.now(timezone.utc)
     obs = sorted(obs, key=lambda x: x["ts"])
     latest = obs[-1]
+    latest_age_seconds = max(0.0, (now - latest["ts"].astimezone(timezone.utc)).total_seconds())
+    current_signal_fresh = latest_age_seconds <= CURRENT_SIGNAL_MAX_AGE_SECONDS
 
     # Funding spread direction can flip while the absolute spread stays large.
     # For ranking purposes, only observations aligned with the CURRENT direction
@@ -181,9 +190,9 @@ def score_group(key, obs):
         or current_direction_stability is not None
         and current_direction_stability >= FUNDING_MIN_CURRENT_DIRECTION_STABILITY
     )
-    if repeated and direction_ok and persistence >= 0.70 and med > 0:
+    if current_signal_fresh and repeated and direction_ok and persistence >= 0.70 and med > 0:
         classification = "strong_watch"
-    elif repeated and direction_ok and persistence >= 0.40 and med > 0:
+    elif current_signal_fresh and repeated and direction_ok and persistence >= 0.40 and med > 0:
         classification = "watch"
 
     result = {
@@ -202,6 +211,8 @@ def score_group(key, obs):
         "research_score": round(research_score, 2),
         "classification": classification,
         "last_seen_utc": latest["ts"].isoformat(),
+        "latest_age_seconds": round(latest_age_seconds, 1),
+        "current_signal_fresh": current_signal_fresh,
     }
     if latest["strategy"] == "funding_spread":
         result["current_direction_stability"] = round(current_direction_stability or 0.0, 4)
@@ -226,11 +237,12 @@ def main():
         for k, v in source.items():
             merged[k].extend(v)
 
-    ranked = [score_group(k, v) for k, v in merged.items()]
+    ranked = [score_group(k, v, now=now) for k, v in merged.items()]
     ranked.sort(
         key=lambda x: (
             x["classification"] == "strong_watch",
             x["classification"] == "watch",
+            x["current_signal_fresh"],
             x["research_score"],
         ),
         reverse=True,
@@ -241,17 +253,20 @@ def main():
         "lookback_hours": LOOKBACK_HOURS,
         "funding_evidence_bucket_minutes": FUNDING_EVIDENCE_BUCKET_MINUTES,
         "funding_min_current_direction_stability": FUNDING_MIN_CURRENT_DIRECTION_STABILITY,
+        "current_signal_max_age_seconds": CURRENT_SIGNAL_MAX_AGE_SECONDS,
         "strong_watch_count": sum(x["classification"] == "strong_watch" for x in ranked),
         "watch_count": sum(x["classification"] == "watch" for x in ranked),
+        "stale_candidate_count": sum(not x["current_signal_fresh"] for x in ranked),
         "best": ranked[0] if ranked else None,
         "ranked": ranked,
         "interpretation": (
             "This is a noise-rejection research score, not a forecast or guarantee. "
             "Funding evidence is time-bucketed to avoid pseudo-replication from faster polling, "
-            "and funding ranking uses only observations aligned with the current direction so "
-            "opposite regimes cannot inflate persistence or magnitude. Only repeated signals are "
-            "promoted. Live profitability still requires execution-specific fee, slippage, latency, "
-            "capital and risk validation."
+            "funding ranking uses only observations aligned with the current direction so opposite "
+            "regimes cannot inflate persistence or magnitude, and stale routes cannot remain "
+            "watch/strong_watch after their current signal disappears. Only repeated, current "
+            "signals are promoted. Live profitability still requires execution-specific fee, "
+            "slippage, latency, capital and risk validation."
         ),
     }
     OUT.write_text(json.dumps(out, indent=2), encoding="utf-8")
@@ -259,7 +274,8 @@ def main():
         b = ranked[0]
         print(
             f"BEST {b['classification']} {b['key']} "
-            f"score={b['research_score']:.1f} persistence={b['persistence']:.2f}"
+            f"score={b['research_score']:.1f} persistence={b['persistence']:.2f} "
+            f"fresh={b['current_signal_fresh']}"
         )
     else:
         print("No history yet.")
