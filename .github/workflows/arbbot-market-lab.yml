@@ -3,6 +3,10 @@ name: ARBBOT unified lab
 on:
   schedule:
     - cron: "12,27,42,57 * * * *"
+    # Low-frequency fallback heartbeat. GitHub scheduled runs are best-effort;
+    # this gives the lab an additional hourly chance to recover from missed
+    # quarter-hour slots without changing any research or validation gates.
+    - cron: "6 * * * *"
   workflow_dispatch:
   push:
     paths:
