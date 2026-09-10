@@ -1,28 +1,28 @@
 {
-  "generated_at_utc": "2026-09-10T22:04:48+00:00",
+  "generated_at_utc": "2026-09-10T22:17:42+00:00",
   "lookback_hours": 48,
   "funding_evidence_bucket_minutes": 15,
   "funding_min_current_direction_stability": 0.5,
   "strong_watch_count": 1,
-  "watch_count": 6,
+  "watch_count": 7,
   "best": {
     "key": "funding_spread|AKEUSDT",
     "strategy": "funding_spread",
     "label": "AKEUSDT",
     "direction": "short Bitget / long Gate",
     "venue": "Bitget<->Gate",
-    "observations": 25,
-    "positive_observations": 23,
-    "persistence": 0.92,
-    "median_positive_edge_bps": 13.34,
-    "p90_positive_edge_bps": 19.0,
+    "observations": 24,
+    "positive_observations": 22,
+    "persistence": 0.9167,
+    "median_positive_edge_bps": 11.9,
+    "p90_positive_edge_bps": 15.58,
     "max_edge_bps": 27.88,
     "latest_edge_bps": 4.58,
-    "research_score": 87.28,
+    "research_score": 85.29,
     "classification": "strong_watch",
     "last_seen_utc": "2026-09-09T16:40:12+00:00",
-    "current_direction_stability": 0.96,
-    "current_direction_observations": 24,
+    "current_direction_stability": 0.9583,
+    "current_direction_observations": 23,
     "direction_stability_required_for_watch": 0.5
   },
   "ranked": [
@@ -32,18 +32,18 @@
       "label": "AKEUSDT",
       "direction": "short Bitget / long Gate",
       "venue": "Bitget<->Gate",
-      "observations": 25,
-      "positive_observations": 23,
-      "persistence": 0.92,
-      "median_positive_edge_bps": 13.34,
-      "p90_positive_edge_bps": 19.0,
+      "observations": 24,
+      "positive_observations": 22,
+      "persistence": 0.9167,
+      "median_positive_edge_bps": 11.9,
+      "p90_positive_edge_bps": 15.58,
       "max_edge_bps": 27.88,
       "latest_edge_bps": 4.58,
-      "research_score": 87.28,
+      "research_score": 85.29,
       "classification": "strong_watch",
       "last_seen_utc": "2026-09-09T16:40:12+00:00",
-      "current_direction_stability": 0.96,
-      "current_direction_observations": 24,
+      "current_direction_stability": 0.9583,
+      "current_direction_observations": 23,
       "direction_stability_required_for_watch": 0.5
     },
     {
@@ -52,38 +52,18 @@
       "label": "\u725b\u6765USDT",
       "direction": "short Bitget / long Gate",
       "venue": "Bitget<->Gate",
-      "observations": 15,
-      "positive_observations": 8,
-      "persistence": 0.5333,
-      "median_positive_edge_bps": 135.33,
+      "observations": 16,
+      "positive_observations": 9,
+      "persistence": 0.5625,
+      "median_positive_edge_bps": 140.84,
       "p90_positive_edge_bps": 146.78,
       "max_edge_bps": 149.34,
-      "latest_edge_bps": 141.82,
-      "research_score": 74.33,
+      "latest_edge_bps": 143.38,
+      "research_score": 75.94,
       "classification": "watch",
-      "last_seen_utc": "2026-09-10T22:03:13+00:00",
-      "current_direction_stability": 0.5333,
-      "current_direction_observations": 8,
-      "direction_stability_required_for_watch": 0.5
-    },
-    {
-      "key": "funding_spread|IOSTUSDT",
-      "strategy": "funding_spread",
-      "label": "IOSTUSDT",
-      "direction": "short Bitget / long Gate",
-      "venue": "Bitget<->Gate",
-      "observations": 41,
-      "positive_observations": 23,
-      "persistence": 0.561,
-      "median_positive_edge_bps": 16.96,
-      "p90_positive_edge_bps": 107.71,
-      "max_edge_bps": 490.16,
-      "latest_edge_bps": 27.36,
-      "research_score": 72.05,
-      "classification": "watch",
-      "last_seen_utc": "2026-09-10T22:03:13+00:00",
-      "current_direction_stability": 0.5854,
-      "current_direction_observations": 24,
+      "last_seen_utc": "2026-09-10T22:15:54+00:00",
+      "current_direction_stability": 0.5625,
+      "current_direction_observations": 9,
       "direction_stability_required_for_watch": 0.5
     },
     {
@@ -101,7 +81,27 @@
       "latest_edge_bps": 12.5,
       "research_score": 71.49,
       "classification": "watch",
-      "last_seen_utc": "2026-09-10T22:03:51+00:00"
+      "last_seen_utc": "2026-09-10T22:16:43+00:00"
+    },
+    {
+      "key": "funding_spread|IOSTUSDT",
+      "strategy": "funding_spread",
+      "label": "IOSTUSDT",
+      "direction": "short Bitget / long Gate",
+      "venue": "Bitget<->Gate",
+      "observations": 42,
+      "positive_observations": 24,
+      "persistence": 0.5714,
+      "median_positive_edge_bps": 15.64,
+      "p90_positive_edge_bps": 107.71,
+      "max_edge_bps": 490.16,
+      "latest_edge_bps": 8.72,
+      "research_score": 70.98,
+      "classification": "watch",
+      "last_seen_utc": "2026-09-10T22:15:54+00:00",
+      "current_direction_stability": 0.5952,
+      "current_direction_observations": 25,
+      "direction_stability_required_for_watch": 0.5
     },
     {
       "key": "funding_spread|BZUSDT",
@@ -112,15 +112,35 @@
       "observations": 64,
       "positive_observations": 41,
       "persistence": 0.6406,
-      "median_positive_edge_bps": 10.62,
+      "median_positive_edge_bps": 10.11,
       "p90_positive_edge_bps": 31.86,
       "max_edge_bps": 35.66,
-      "latest_edge_bps": 5.38,
-      "research_score": 68.51,
+      "latest_edge_bps": 4.85,
+      "research_score": 67.87,
       "classification": "watch",
-      "last_seen_utc": "2026-09-10T22:03:13+00:00",
+      "last_seen_utc": "2026-09-10T22:15:54+00:00",
       "current_direction_stability": 0.7031,
       "current_direction_observations": 45,
+      "direction_stability_required_for_watch": 0.5
+    },
+    {
+      "key": "funding_spread|CLUSDT",
+      "strategy": "funding_spread",
+      "label": "CLUSDT",
+      "direction": "long Bitget / short Gate",
+      "venue": "Bitget<->Gate",
+      "observations": 64,
+      "positive_observations": 29,
+      "persistence": 0.4531,
+      "median_positive_edge_bps": 9.94,
+      "p90_positive_edge_bps": 17.33,
+      "max_edge_bps": 25.9,
+      "latest_edge_bps": 2.34,
+      "research_score": 57.35,
+      "classification": "watch",
+      "last_seen_utc": "2026-09-10T22:15:54+00:00",
+      "current_direction_stability": 0.5156,
+      "current_direction_observations": 33,
       "direction_stability_required_for_watch": 0.5
     },
     {
@@ -129,18 +149,18 @@
       "label": "UAIUSDT",
       "direction": "long Bitget / short Gate",
       "venue": "Bitget<->Gate",
-      "observations": 26,
-      "positive_observations": 13,
-      "persistence": 0.5,
-      "median_positive_edge_bps": 6.77,
+      "observations": 25,
+      "positive_observations": 12,
+      "persistence": 0.48,
+      "median_positive_edge_bps": 7.705,
       "p90_positive_edge_bps": 14.9,
       "max_edge_bps": 16.59,
       "latest_edge_bps": 0.0,
-      "research_score": 55.96,
+      "research_score": 56.03,
       "classification": "watch",
       "last_seen_utc": "2026-09-10T18:27:23+00:00",
-      "current_direction_stability": 0.9615,
-      "current_direction_observations": 25,
+      "current_direction_stability": 0.96,
+      "current_direction_observations": 24,
       "direction_stability_required_for_watch": 0.5
     },
     {
@@ -155,10 +175,10 @@
       "median_positive_edge_bps": 4.995,
       "p90_positive_edge_bps": 7.01,
       "max_edge_bps": 12.24,
-      "latest_edge_bps": 0.72,
+      "latest_edge_bps": 0.44,
       "research_score": 50.31,
       "classification": "watch",
-      "last_seen_utc": "2026-09-10T22:03:13+00:00",
+      "last_seen_utc": "2026-09-10T22:15:54+00:00",
       "current_direction_stability": 0.6719,
       "current_direction_observations": 43,
       "direction_stability_required_for_watch": 0.5
@@ -169,18 +189,18 @@
       "label": "VTHOUSDT",
       "direction": "short Bitget / long Gate",
       "venue": "Bitget<->Gate",
-      "observations": 15,
-      "positive_observations": 6,
-      "persistence": 0.4,
-      "median_positive_edge_bps": 27.61,
+      "observations": 16,
+      "positive_observations": 7,
+      "persistence": 0.4375,
+      "median_positive_edge_bps": 26.44,
       "p90_positive_edge_bps": 30.5,
       "max_edge_bps": 33.4,
-      "latest_edge_bps": 26.44,
-      "research_score": 67.0,
+      "latest_edge_bps": 19.14,
+      "research_score": 69.06,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:03:13+00:00",
-      "current_direction_stability": 0.4,
-      "current_direction_observations": 6,
+      "last_seen_utc": "2026-09-10T22:15:54+00:00",
+      "current_direction_stability": 0.4375,
+      "current_direction_observations": 7,
       "direction_stability_required_for_watch": 0.5
     },
     {
@@ -192,35 +212,15 @@
       "observations": 64,
       "positive_observations": 19,
       "persistence": 0.2969,
-      "median_positive_edge_bps": 14.54,
+      "median_positive_edge_bps": 13.94,
       "p90_positive_edge_bps": 38.98,
       "max_edge_bps": 51.7,
-      "latest_edge_bps": 11.86,
-      "research_score": 54.5,
+      "latest_edge_bps": 10.64,
+      "research_score": 53.75,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:03:13+00:00",
+      "last_seen_utc": "2026-09-10T22:15:54+00:00",
       "current_direction_stability": 0.4219,
       "current_direction_observations": 27,
-      "direction_stability_required_for_watch": 0.5
-    },
-    {
-      "key": "funding_spread|CLUSDT",
-      "strategy": "funding_spread",
-      "label": "CLUSDT",
-      "direction": "short Bitget / long Gate",
-      "venue": "Bitget<->Gate",
-      "observations": 64,
-      "positive_observations": 27,
-      "persistence": 0.4219,
-      "median_positive_edge_bps": 4.82,
-      "p90_positive_edge_bps": 11.47,
-      "max_edge_bps": 14.79,
-      "latest_edge_bps": 2.88,
-      "research_score": 49.23,
-      "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:03:13+00:00",
-      "current_direction_stability": 0.4844,
-      "current_direction_observations": 31,
       "direction_stability_required_for_watch": 0.5
     },
     {
@@ -235,10 +235,10 @@
       "median_positive_edge_bps": 2.26,
       "p90_positive_edge_bps": 3.36,
       "max_edge_bps": 4.36,
-      "latest_edge_bps": 0.06,
+      "latest_edge_bps": 0.02,
       "research_score": 41.73,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:03:13+00:00",
+      "last_seen_utc": "2026-09-10T22:15:54+00:00",
       "current_direction_stability": 1.0,
       "current_direction_observations": 64,
       "direction_stability_required_for_watch": 0.5
@@ -249,17 +249,17 @@
       "label": "MARSCOINUSDT",
       "direction": "short Bitget / long Gate",
       "venue": "Bitget<->Gate",
-      "observations": 37,
+      "observations": 36,
       "positive_observations": 9,
-      "persistence": 0.2432,
+      "persistence": 0.25,
       "median_positive_edge_bps": 3.1,
       "p90_positive_edge_bps": 4.62,
       "max_edge_bps": 6.96,
       "latest_edge_bps": 0.56,
-      "research_score": 37.25,
+      "research_score": 37.62,
       "classification": "noise",
       "last_seen_utc": "2026-09-10T00:12:54+00:00",
-      "current_direction_stability": 0.5405,
+      "current_direction_stability": 0.5556,
       "current_direction_observations": 20,
       "direction_stability_required_for_watch": 0.5
     },
@@ -269,17 +269,17 @@
       "label": "SOPHUSDT",
       "direction": "short Bitget / long Gate",
       "venue": "Bitget<->Gate",
-      "observations": 27,
+      "observations": 26,
       "positive_observations": 3,
-      "persistence": 0.1111,
+      "persistence": 0.1154,
       "median_positive_edge_bps": 6.48,
       "p90_positive_edge_bps": 6.64,
       "max_edge_bps": 6.64,
       "latest_edge_bps": 0.04,
-      "research_score": 34.21,
+      "research_score": 34.45,
       "classification": "noise",
       "last_seen_utc": "2026-09-09T18:00:14+00:00",
-      "current_direction_stability": 0.4074,
+      "current_direction_stability": 0.4231,
       "current_direction_observations": 11,
       "direction_stability_required_for_watch": 0.5
     },
@@ -298,9 +298,9 @@
       "latest_edge_bps": 0.0,
       "research_score": 34.03,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:03:13+00:00",
-      "current_direction_stability": 0.4531,
-      "current_direction_observations": 29,
+      "last_seen_utc": "2026-09-10T22:15:54+00:00",
+      "current_direction_stability": 0.4688,
+      "current_direction_observations": 30,
       "direction_stability_required_for_watch": 0.5
     },
     {
@@ -315,10 +315,10 @@
       "median_positive_edge_bps": 2.165,
       "p90_positive_edge_bps": 2.83,
       "max_edge_bps": 3.44,
-      "latest_edge_bps": 1.48,
+      "latest_edge_bps": 1.46,
       "research_score": 31.3,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:03:13+00:00",
+      "last_seen_utc": "2026-09-10T22:15:54+00:00",
       "current_direction_stability": 0.8594,
       "current_direction_observations": 55,
       "direction_stability_required_for_watch": 0.5
@@ -338,7 +338,7 @@
       "latest_edge_bps": 0.0,
       "research_score": 31.27,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:03:13+00:00",
+      "last_seen_utc": "2026-09-10T22:15:54+00:00",
       "current_direction_stability": 0.8125,
       "current_direction_observations": 52,
       "direction_stability_required_for_watch": 0.5
@@ -349,18 +349,18 @@
       "label": "BCHUSDT",
       "direction": "short Bitget / long Gate",
       "venue": "Bitget<->Gate",
-      "observations": 14,
+      "observations": 15,
       "positive_observations": 2,
-      "persistence": 0.1429,
+      "persistence": 0.1333,
       "median_positive_edge_bps": 2.125,
       "p90_positive_edge_bps": 2.15,
       "max_edge_bps": 2.15,
-      "latest_edge_bps": 0.68,
-      "research_score": 30.51,
+      "latest_edge_bps": 0.75,
+      "research_score": 29.99,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:03:13+00:00",
-      "current_direction_stability": 0.9286,
-      "current_direction_observations": 13,
+      "last_seen_utc": "2026-09-10T22:15:54+00:00",
+      "current_direction_stability": 0.9333,
+      "current_direction_observations": 14,
       "direction_stability_required_for_watch": 0.5
     },
     {
@@ -375,12 +375,12 @@
       "median_positive_edge_bps": 2.34,
       "p90_positive_edge_bps": 2.58,
       "max_edge_bps": 3.32,
-      "latest_edge_bps": 0.9,
+      "latest_edge_bps": 1.02,
       "research_score": 28.94,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:03:13+00:00",
-      "current_direction_stability": 0.7344,
-      "current_direction_observations": 47,
+      "last_seen_utc": "2026-09-10T22:15:54+00:00",
+      "current_direction_stability": 0.75,
+      "current_direction_observations": 48,
       "direction_stability_required_for_watch": 0.5
     },
     {
@@ -395,10 +395,10 @@
       "median_positive_edge_bps": 2.26,
       "p90_positive_edge_bps": 2.93,
       "max_edge_bps": 2.97,
-      "latest_edge_bps": 0.45,
+      "latest_edge_bps": 0.44,
       "research_score": 28.84,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:03:13+00:00",
+      "last_seen_utc": "2026-09-10T22:15:54+00:00",
       "current_direction_stability": 0.5156,
       "current_direction_observations": 33,
       "direction_stability_required_for_watch": 0.5
@@ -418,29 +418,9 @@
       "latest_edge_bps": 0.0,
       "research_score": 28.83,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:03:13+00:00",
-      "current_direction_stability": 0.35,
-      "current_direction_observations": 21,
-      "direction_stability_required_for_watch": 0.5
-    },
-    {
-      "key": "funding_spread|SNXXUSDT",
-      "strategy": "funding_spread",
-      "label": "SNXXUSDT",
-      "direction": "short Bitget / long Gate",
-      "venue": "Bitget<->Gate",
-      "observations": 18,
-      "positive_observations": 1,
-      "persistence": 0.0556,
-      "median_positive_edge_bps": 3.48,
-      "p90_positive_edge_bps": 3.48,
-      "max_edge_bps": 3.48,
-      "latest_edge_bps": 3.48,
-      "research_score": 27.41,
-      "classification": "noise",
-      "last_seen_utc": "2026-09-09T09:58:35+00:00",
-      "current_direction_stability": 0.0556,
-      "current_direction_observations": 1,
+      "last_seen_utc": "2026-09-10T22:15:54+00:00",
+      "current_direction_stability": 0.3667,
+      "current_direction_observations": 22,
       "direction_stability_required_for_watch": 0.5
     },
     {
@@ -450,17 +430,37 @@
       "direction": "short Bitget / long Gate",
       "venue": "Bitget<->Gate",
       "observations": 56,
-      "positive_observations": 4,
-      "persistence": 0.0714,
-      "median_positive_edge_bps": 2.38,
-      "p90_positive_edge_bps": 2.56,
-      "max_edge_bps": 2.56,
-      "latest_edge_bps": 2.56,
-      "research_score": 26.9,
+      "positive_observations": 5,
+      "persistence": 0.0893,
+      "median_positive_edge_bps": 2.56,
+      "p90_positive_edge_bps": 2.6,
+      "max_edge_bps": 2.6,
+      "latest_edge_bps": 2.6,
+      "research_score": 28.11,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:03:13+00:00",
+      "last_seen_utc": "2026-09-10T22:15:54+00:00",
       "current_direction_stability": 0.8393,
       "current_direction_observations": 47,
+      "direction_stability_required_for_watch": 0.5
+    },
+    {
+      "key": "funding_spread|SNXXUSDT",
+      "strategy": "funding_spread",
+      "label": "SNXXUSDT",
+      "direction": "short Bitget / long Gate",
+      "venue": "Bitget<->Gate",
+      "observations": 17,
+      "positive_observations": 1,
+      "persistence": 0.0588,
+      "median_positive_edge_bps": 3.48,
+      "p90_positive_edge_bps": 3.48,
+      "max_edge_bps": 3.48,
+      "latest_edge_bps": 3.48,
+      "research_score": 27.59,
+      "classification": "noise",
+      "last_seen_utc": "2026-09-09T09:58:35+00:00",
+      "current_direction_stability": 0.0588,
+      "current_direction_observations": 1,
       "direction_stability_required_for_watch": 0.5
     },
     {
@@ -475,12 +475,12 @@
       "median_positive_edge_bps": 3.01,
       "p90_positive_edge_bps": 3.41,
       "max_edge_bps": 3.41,
-      "latest_edge_bps": 0.46,
+      "latest_edge_bps": 0.43,
       "research_score": 26.34,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:03:13+00:00",
-      "current_direction_stability": 0.4062,
-      "current_direction_observations": 26,
+      "last_seen_utc": "2026-09-10T22:15:54+00:00",
+      "current_direction_stability": 0.4219,
+      "current_direction_observations": 27,
       "direction_stability_required_for_watch": 0.5
     },
     {
@@ -495,12 +495,12 @@
       "median_positive_edge_bps": 2.78,
       "p90_positive_edge_bps": 2.82,
       "max_edge_bps": 2.82,
-      "latest_edge_bps": 0.78,
+      "latest_edge_bps": 1.14,
       "research_score": 26.05,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:03:13+00:00",
-      "current_direction_stability": 0.2969,
-      "current_direction_observations": 19,
+      "last_seen_utc": "2026-09-10T22:15:54+00:00",
+      "current_direction_stability": 0.3125,
+      "current_direction_observations": 20,
       "direction_stability_required_for_watch": 0.5
     },
     {
@@ -515,12 +515,32 @@
       "median_positive_edge_bps": 2.38,
       "p90_positive_edge_bps": 2.48,
       "max_edge_bps": 2.48,
-      "latest_edge_bps": 0.3,
+      "latest_edge_bps": 0.44,
       "research_score": 25.55,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:03:13+00:00",
+      "last_seen_utc": "2026-09-10T22:15:54+00:00",
       "current_direction_stability": 0.4219,
       "current_direction_observations": 27,
+      "direction_stability_required_for_watch": 0.5
+    },
+    {
+      "key": "funding_spread|DOTUSDT",
+      "strategy": "funding_spread",
+      "label": "DOTUSDT",
+      "direction": "short Bitget / long Gate",
+      "venue": "Bitget<->Gate",
+      "observations": 49,
+      "positive_observations": 2,
+      "persistence": 0.0408,
+      "median_positive_edge_bps": 2.305,
+      "p90_positive_edge_bps": 2.32,
+      "max_edge_bps": 2.32,
+      "latest_edge_bps": 0.19,
+      "research_score": 25.13,
+      "classification": "noise",
+      "last_seen_utc": "2026-09-10T13:40:47+00:00",
+      "current_direction_stability": 0.449,
+      "current_direction_observations": 22,
       "direction_stability_required_for_watch": 0.5
     },
     {
@@ -530,37 +550,17 @@
       "direction": "long Bitget / short Gate",
       "venue": "Bitget<->Gate",
       "observations": 64,
-      "positive_observations": 3,
-      "persistence": 0.0469,
-      "median_positive_edge_bps": 2.26,
+      "positive_observations": 2,
+      "persistence": 0.0312,
+      "median_positive_edge_bps": 2.28,
       "p90_positive_edge_bps": 2.48,
       "max_edge_bps": 2.48,
       "latest_edge_bps": 0.0,
-      "research_score": 25.4,
+      "research_score": 24.57,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:03:13+00:00",
+      "last_seen_utc": "2026-09-10T22:15:54+00:00",
       "current_direction_stability": 0.3906,
       "current_direction_observations": 25,
-      "direction_stability_required_for_watch": 0.5
-    },
-    {
-      "key": "funding_spread|DOTUSDT",
-      "strategy": "funding_spread",
-      "label": "DOTUSDT",
-      "direction": "short Bitget / long Gate",
-      "venue": "Bitget<->Gate",
-      "observations": 50,
-      "positive_observations": 2,
-      "persistence": 0.04,
-      "median_positive_edge_bps": 2.305,
-      "p90_positive_edge_bps": 2.32,
-      "max_edge_bps": 2.32,
-      "latest_edge_bps": 0.19,
-      "research_score": 25.08,
-      "classification": "noise",
-      "last_seen_utc": "2026-09-10T13:40:47+00:00",
-      "current_direction_stability": 0.44,
-      "current_direction_observations": 22,
       "direction_stability_required_for_watch": 0.5
     },
     {
@@ -578,9 +578,9 @@
       "latest_edge_bps": 0.0,
       "research_score": 23.38,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:03:13+00:00",
-      "current_direction_stability": 0.3906,
-      "current_direction_observations": 25,
+      "last_seen_utc": "2026-09-10T22:15:54+00:00",
+      "current_direction_stability": 0.4062,
+      "current_direction_observations": 26,
       "direction_stability_required_for_watch": 0.5
     },
     {
@@ -595,10 +595,10 @@
       "median_positive_edge_bps": 0.0,
       "p90_positive_edge_bps": 0.0,
       "max_edge_bps": -35.2289,
-      "latest_edge_bps": -40.2045,
+      "latest_edge_bps": -40.3688,
       "research_score": 20.0,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:03:51+00:00"
+      "last_seen_utc": "2026-09-10T22:16:43+00:00"
     },
     {
       "key": "cex_triangle|ETH:USDT-ETH-BTC-USDT",
@@ -612,10 +612,10 @@
       "median_positive_edge_bps": 0.0,
       "p90_positive_edge_bps": 0.0,
       "max_edge_bps": -32.0673,
-      "latest_edge_bps": -38.9039,
+      "latest_edge_bps": -38.7415,
       "research_score": 20.0,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:03:51+00:00"
+      "last_seen_utc": "2026-09-10T22:16:43+00:00"
     },
     {
       "key": "cex_triangle|SOL:USDT-BTC-SOL-USDT",
@@ -629,10 +629,10 @@
       "median_positive_edge_bps": 0.0,
       "p90_positive_edge_bps": 0.0,
       "max_edge_bps": -29.2489,
-      "latest_edge_bps": -39.0783,
+      "latest_edge_bps": -38.6212,
       "research_score": 20.0,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:03:51+00:00"
+      "last_seen_utc": "2026-09-10T22:16:43+00:00"
     },
     {
       "key": "cex_triangle|SOL:USDT-SOL-BTC-USDT",
@@ -646,10 +646,10 @@
       "median_positive_edge_bps": 0.0,
       "p90_positive_edge_bps": 0.0,
       "max_edge_bps": -35.3929,
-      "latest_edge_bps": -38.6316,
+      "latest_edge_bps": -39.0854,
       "research_score": 20.0,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:03:51+00:00"
+      "last_seen_utc": "2026-09-10T22:16:43+00:00"
     },
     {
       "key": "stable_dislocation|USDC:Binance",
@@ -663,10 +663,10 @@
       "median_positive_edge_bps": 0.0,
       "p90_positive_edge_bps": 0.0,
       "max_edge_bps": 3.45,
-      "latest_edge_bps": 1.95,
+      "latest_edge_bps": 2.05,
       "research_score": 20.0,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:03:51+00:00"
+      "last_seen_utc": "2026-09-10T22:16:43+00:00"
     },
     {
       "key": "cex_cross_spot|BTC:buy Bitget / sell Gate",
@@ -680,10 +680,10 @@
       "median_positive_edge_bps": 0.0,
       "p90_positive_edge_bps": 0.0,
       "max_edge_bps": -28.2861,
-      "latest_edge_bps": -29.4,
+      "latest_edge_bps": -31.1918,
       "research_score": 20.0,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:04:32+00:00"
+      "last_seen_utc": "2026-09-10T22:17:26+00:00"
     },
     {
       "key": "cex_cross_spot|BTC:buy Gate / sell Bitget",
@@ -697,10 +697,10 @@
       "median_positive_edge_bps": 0.0,
       "p90_positive_edge_bps": 0.0,
       "max_edge_bps": -27.8687,
-      "latest_edge_bps": -30.6142,
+      "latest_edge_bps": -28.8223,
       "research_score": 20.0,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:04:32+00:00"
+      "last_seen_utc": "2026-09-10T22:17:26+00:00"
     },
     {
       "key": "cex_cross_spot|ETH:buy Bitget / sell Gate",
@@ -714,10 +714,10 @@
       "median_positive_edge_bps": 0.0,
       "p90_positive_edge_bps": 0.0,
       "max_edge_bps": -28.1334,
-      "latest_edge_bps": -29.3902,
+      "latest_edge_bps": -30.0407,
       "research_score": 20.0,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:04:32+00:00"
+      "last_seen_utc": "2026-09-10T22:17:26+00:00"
     },
     {
       "key": "cex_cross_spot|ETH:buy Gate / sell Bitget",
@@ -731,10 +731,10 @@
       "median_positive_edge_bps": 0.0,
       "p90_positive_edge_bps": 0.0,
       "max_edge_bps": -28.419,
-      "latest_edge_bps": -30.6911,
+      "latest_edge_bps": -30.0407,
       "research_score": 20.0,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:04:32+00:00"
+      "last_seen_utc": "2026-09-10T22:17:26+00:00"
     },
     {
       "key": "cex_cross_spot|SOL:buy Bitget / sell Gate",
@@ -748,10 +748,10 @@
       "median_positive_edge_bps": 0.0,
       "p90_positive_edge_bps": 0.0,
       "max_edge_bps": -28.9945,
-      "latest_edge_bps": -30.0,
+      "latest_edge_bps": -30.9995,
       "research_score": 20.0,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:04:32+00:00"
+      "last_seen_utc": "2026-09-10T22:17:26+00:00"
     },
     {
       "key": "cex_cross_spot|SOL:buy Gate / sell Bitget",
@@ -765,10 +765,10 @@
       "median_positive_edge_bps": 0.0,
       "p90_positive_edge_bps": 0.0,
       "max_edge_bps": -28.9987,
-      "latest_edge_bps": -32.0018,
+      "latest_edge_bps": -30.9995,
       "research_score": 20.0,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:04:32+00:00"
+      "last_seen_utc": "2026-09-10T22:17:26+00:00"
     },
     {
       "key": "cex_cross_spot|XRP:buy Bitget / sell Gate",
@@ -782,10 +782,10 @@
       "median_positive_edge_bps": 0.0,
       "p90_positive_edge_bps": 0.0,
       "max_edge_bps": -27.0458,
-      "latest_edge_bps": -31.4783,
+      "latest_edge_bps": -31.477,
       "research_score": 20.0,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:04:32+00:00"
+      "last_seen_utc": "2026-09-10T22:17:26+00:00"
     },
     {
       "key": "cex_cross_spot|XRP:buy Gate / sell Bitget",
@@ -799,10 +799,10 @@
       "median_positive_edge_bps": 0.0,
       "p90_positive_edge_bps": 0.0,
       "max_edge_bps": -26.4801,
-      "latest_edge_bps": -31.4782,
+      "latest_edge_bps": -30.0,
       "research_score": 20.0,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:04:32+00:00"
+      "last_seen_utc": "2026-09-10T22:17:26+00:00"
     },
     {
       "key": "cex_cross_spot|DOGE:buy Bitget / sell Gate",
@@ -816,10 +816,10 @@
       "median_positive_edge_bps": 0.0,
       "p90_positive_edge_bps": 0.0,
       "max_edge_bps": -26.6718,
-      "latest_edge_bps": -32.3778,
+      "latest_edge_bps": -32.375,
       "research_score": 20.0,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:04:32+00:00"
+      "last_seen_utc": "2026-09-10T22:17:26+00:00"
     },
     {
       "key": "cex_cross_spot|DOGE:buy Gate / sell Bitget",
@@ -833,10 +833,10 @@
       "median_positive_edge_bps": 0.0,
       "p90_positive_edge_bps": 0.0,
       "max_edge_bps": -25.2279,
-      "latest_edge_bps": -32.3776,
+      "latest_edge_bps": -31.1875,
       "research_score": 20.0,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:04:32+00:00"
+      "last_seen_utc": "2026-09-10T22:17:26+00:00"
     },
     {
       "key": "cex_cross_spot|ADA:buy Bitget / sell Gate",
@@ -850,10 +850,10 @@
       "median_positive_edge_bps": 0.0,
       "p90_positive_edge_bps": 0.0,
       "max_edge_bps": -29.093,
-      "latest_edge_bps": -34.3083,
+      "latest_edge_bps": -33.3477,
       "research_score": 20.0,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:04:32+00:00"
+      "last_seen_utc": "2026-09-10T22:17:26+00:00"
     },
     {
       "key": "cex_cross_spot|ADA:buy Gate / sell Bitget",
@@ -867,10 +867,10 @@
       "median_positive_edge_bps": 0.0,
       "p90_positive_edge_bps": 0.0,
       "max_edge_bps": -30.0,
-      "latest_edge_bps": -34.3085,
+      "latest_edge_bps": -33.8263,
       "research_score": 20.0,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:04:32+00:00"
+      "last_seen_utc": "2026-09-10T22:17:26+00:00"
     },
     {
       "key": "cex_cross_spot|LINK:buy Bitget / sell Gate",
@@ -884,10 +884,10 @@
       "median_positive_edge_bps": 0.0,
       "p90_positive_edge_bps": 0.0,
       "max_edge_bps": -28.3505,
-      "latest_edge_bps": -34.3096,
+      "latest_edge_bps": -31.7244,
       "research_score": 20.0,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:04:32+00:00"
+      "last_seen_utc": "2026-09-10T22:17:26+00:00"
     },
     {
       "key": "cex_cross_spot|LINK:buy Gate / sell Bitget",
@@ -901,10 +901,10 @@
       "median_positive_edge_bps": 0.0,
       "p90_positive_edge_bps": 0.0,
       "max_edge_bps": -28.2803,
-      "latest_edge_bps": -30.0,
+      "latest_edge_bps": -31.7244,
       "research_score": 20.0,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:04:32+00:00"
+      "last_seen_utc": "2026-09-10T22:17:26+00:00"
     },
     {
       "key": "cex_cross_spot|LTC:buy Bitget / sell Gate",
@@ -918,10 +918,10 @@
       "median_positive_edge_bps": 0.0,
       "p90_positive_edge_bps": 0.0,
       "max_edge_bps": -24.5095,
-      "latest_edge_bps": -37.6249,
+      "latest_edge_bps": -33.8052,
       "research_score": 20.0,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:04:32+00:00"
+      "last_seen_utc": "2026-09-10T22:17:26+00:00"
     },
     {
       "key": "cex_cross_spot|LTC:buy Gate / sell Bitget",
@@ -935,10 +935,10 @@
       "median_positive_edge_bps": 0.0,
       "p90_positive_edge_bps": 0.0,
       "max_edge_bps": -26.268,
-      "latest_edge_bps": -28.0927,
+      "latest_edge_bps": -31.903,
       "research_score": 20.0,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:04:32+00:00"
+      "last_seen_utc": "2026-09-10T22:17:26+00:00"
     },
     {
       "key": "cex_cross_spot|BCH:buy Bitget / sell Gate",
@@ -951,11 +951,11 @@
       "persistence": 0.0,
       "median_positive_edge_bps": 0.0,
       "p90_positive_edge_bps": 0.0,
-      "max_edge_bps": -31.1914,
-      "latest_edge_bps": -41.9311,
+      "max_edge_bps": -30.8842,
+      "latest_edge_bps": -30.8842,
       "research_score": 20.0,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:04:32+00:00"
+      "last_seen_utc": "2026-09-10T22:17:26+00:00"
     },
     {
       "key": "cex_cross_spot|BCH:buy Gate / sell Bitget",
@@ -969,10 +969,10 @@
       "median_positive_edge_bps": 0.0,
       "p90_positive_edge_bps": 0.0,
       "max_edge_bps": -29.2253,
-      "latest_edge_bps": -30.8841,
+      "latest_edge_bps": -37.5131,
       "research_score": 20.0,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:04:32+00:00"
+      "last_seen_utc": "2026-09-10T22:17:26+00:00"
     },
     {
       "key": "cex_cross_spot|AVAX:buy Bitget / sell Gate",
@@ -986,10 +986,10 @@
       "median_positive_edge_bps": 0.0,
       "p90_positive_edge_bps": 0.0,
       "max_edge_bps": -30.0,
-      "latest_edge_bps": -33.9594,
+      "latest_edge_bps": -32.6385,
       "research_score": 20.0,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:04:32+00:00"
+      "last_seen_utc": "2026-09-10T22:17:26+00:00"
     },
     {
       "key": "cex_cross_spot|AVAX:buy Gate / sell Bitget",
@@ -1003,10 +1003,10 @@
       "median_positive_edge_bps": 0.0,
       "p90_positive_edge_bps": 0.0,
       "max_edge_bps": -27.4177,
-      "latest_edge_bps": -31.3198,
+      "latest_edge_bps": -31.3193,
       "research_score": 20.0,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:04:32+00:00"
+      "last_seen_utc": "2026-09-10T22:17:26+00:00"
     },
     {
       "key": "cex_cross_spot|DOT:buy Bitget / sell Gate",
@@ -1020,10 +1020,10 @@
       "median_positive_edge_bps": 0.0,
       "p90_positive_edge_bps": 0.0,
       "max_edge_bps": -29.1817,
-      "latest_edge_bps": -37.1238,
+      "latest_edge_bps": -33.5556,
       "research_score": 20.0,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:04:32+00:00"
+      "last_seen_utc": "2026-09-10T22:17:26+00:00"
     },
     {
       "key": "cex_cross_spot|DOT:buy Gate / sell Bitget",
@@ -1037,10 +1037,10 @@
       "median_positive_edge_bps": 0.0,
       "p90_positive_edge_bps": 0.0,
       "max_edge_bps": -28.1614,
-      "latest_edge_bps": -44.2526,
+      "latest_edge_bps": -38.0007,
       "research_score": 20.0,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:04:32+00:00"
+      "last_seen_utc": "2026-09-10T22:17:26+00:00"
     },
     {
       "key": "cex_cross_spot|TRX:buy Bitget / sell Gate",
@@ -1054,10 +1054,10 @@
       "median_positive_edge_bps": 0.0,
       "p90_positive_edge_bps": 0.0,
       "max_edge_bps": -28.5322,
-      "latest_edge_bps": -34.4008,
+      "latest_edge_bps": -31.7597,
       "research_score": 20.0,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:04:32+00:00"
+      "last_seen_utc": "2026-09-10T22:17:26+00:00"
     },
     {
       "key": "cex_cross_spot|TRX:buy Gate / sell Bitget",
@@ -1071,10 +1071,10 @@
       "median_positive_edge_bps": 0.0,
       "p90_positive_edge_bps": 0.0,
       "max_edge_bps": -27.3467,
-      "latest_edge_bps": -28.8263,
+      "latest_edge_bps": -31.4663,
       "research_score": 20.0,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:04:32+00:00"
+      "last_seen_utc": "2026-09-10T22:17:26+00:00"
     },
     {
       "key": "cex_cross_spot|SUI:buy Bitget / sell Gate",
@@ -1088,10 +1088,10 @@
       "median_positive_edge_bps": 0.0,
       "p90_positive_edge_bps": 0.0,
       "max_edge_bps": -23.2751,
-      "latest_edge_bps": -34.0562,
+      "latest_edge_bps": -32.7038,
       "research_score": 20.0,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:04:32+00:00"
+      "last_seen_utc": "2026-09-10T22:17:26+00:00"
     },
     {
       "key": "cex_cross_spot|SUI:buy Gate / sell Bitget",
@@ -1105,10 +1105,10 @@
       "median_positive_edge_bps": 0.0,
       "p90_positive_edge_bps": 0.0,
       "max_edge_bps": -28.7497,
-      "latest_edge_bps": -32.7042,
+      "latest_edge_bps": -31.3519,
       "research_score": 20.0,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:04:32+00:00"
+      "last_seen_utc": "2026-09-10T22:17:26+00:00"
     },
     {
       "key": "cex_cross_spot|APT:buy Bitget / sell Gate",
@@ -1122,10 +1122,10 @@
       "median_positive_edge_bps": 0.0,
       "p90_positive_edge_bps": 0.0,
       "max_edge_bps": -28.4523,
-      "latest_edge_bps": -43.9773,
+      "latest_edge_bps": -31.5307,
       "research_score": 20.0,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:04:32+00:00"
+      "last_seen_utc": "2026-09-10T22:17:26+00:00"
     },
     {
       "key": "cex_cross_spot|APT:buy Gate / sell Bitget",
@@ -1139,10 +1139,10 @@
       "median_positive_edge_bps": 0.0,
       "p90_positive_edge_bps": 0.0,
       "max_edge_bps": -26.7721,
-      "latest_edge_bps": -31.5535,
+      "latest_edge_bps": -45.2952,
       "research_score": 20.0,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:04:32+00:00"
+      "last_seen_utc": "2026-09-10T22:17:26+00:00"
     },
     {
       "key": "cex_cross_spot|NEAR:buy Bitget / sell Gate",
@@ -1156,10 +1156,10 @@
       "median_positive_edge_bps": 0.0,
       "p90_positive_edge_bps": 0.0,
       "max_edge_bps": -25.9904,
-      "latest_edge_bps": -37.9365,
+      "latest_edge_bps": -37.8802,
       "research_score": 20.0,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:04:32+00:00"
+      "last_seen_utc": "2026-09-10T22:17:26+00:00"
     },
     {
       "key": "cex_cross_spot|NEAR:buy Gate / sell Bitget",
@@ -1173,10 +1173,10 @@
       "median_positive_edge_bps": 0.0,
       "p90_positive_edge_bps": 0.0,
       "max_edge_bps": -30.0,
-      "latest_edge_bps": -33.9698,
+      "latest_edge_bps": -33.9417,
       "research_score": 20.0,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:04:32+00:00"
+      "last_seen_utc": "2026-09-10T22:17:26+00:00"
     },
     {
       "key": "eu_cross_spot|BTC:buy Coinbase / sell Kraken",
@@ -1190,10 +1190,10 @@
       "median_positive_edge_bps": 0.0,
       "p90_positive_edge_bps": 0.0,
       "max_edge_bps": -146.978,
-      "latest_edge_bps": -149.7021,
+      "latest_edge_bps": -151.8799,
       "research_score": 20.0,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:04:42+00:00"
+      "last_seen_utc": "2026-09-10T22:17:39+00:00"
     },
     {
       "key": "eu_cross_spot|BTC:buy Kraken / sell Coinbase",
@@ -1207,10 +1207,10 @@
       "median_positive_edge_bps": 0.0,
       "p90_positive_edge_bps": 0.0,
       "max_edge_bps": -148.2643,
-      "latest_edge_bps": -151.8387,
+      "latest_edge_bps": -148.9395,
       "research_score": 20.0,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:04:42+00:00"
+      "last_seen_utc": "2026-09-10T22:17:39+00:00"
     },
     {
       "key": "eu_cross_spot|ETH:buy Coinbase / sell Kraken",
@@ -1224,10 +1224,10 @@
       "median_positive_edge_bps": 0.0,
       "p90_positive_edge_bps": 0.0,
       "max_edge_bps": -148.2564,
-      "latest_edge_bps": -150.5663,
+      "latest_edge_bps": -150.8496,
       "research_score": 20.0,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:04:42+00:00"
+      "last_seen_utc": "2026-09-10T22:17:39+00:00"
     },
     {
       "key": "eu_cross_spot|ETH:buy Kraken / sell Coinbase",
@@ -1241,10 +1241,10 @@
       "median_positive_edge_bps": 0.0,
       "p90_positive_edge_bps": 0.0,
       "max_edge_bps": -148.4246,
-      "latest_edge_bps": -153.4449,
+      "latest_edge_bps": -150.5193,
       "research_score": 20.0,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:04:42+00:00"
+      "last_seen_utc": "2026-09-10T22:17:39+00:00"
     },
     {
       "key": "eu_cross_spot|SOL:buy Coinbase / sell Kraken",
@@ -1258,10 +1258,10 @@
       "median_positive_edge_bps": 0.0,
       "p90_positive_edge_bps": 0.0,
       "max_edge_bps": -148.8482,
-      "latest_edge_bps": -152.3237,
+      "latest_edge_bps": -151.1605,
       "research_score": 20.0,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:04:42+00:00"
+      "last_seen_utc": "2026-09-10T22:17:39+00:00"
     },
     {
       "key": "eu_cross_spot|SOL:buy Kraken / sell Coinbase",
@@ -1275,10 +1275,10 @@
       "median_positive_edge_bps": 0.0,
       "p90_positive_edge_bps": 0.0,
       "max_edge_bps": -147.666,
-      "latest_edge_bps": -151.162,
+      "latest_edge_bps": -152.321,
       "research_score": 20.0,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:04:42+00:00"
+      "last_seen_utc": "2026-09-10T22:17:39+00:00"
     },
     {
       "key": "eur_triangle|Coinbase:BTC:EUR-USDT-BTC-EUR",
@@ -1292,10 +1292,10 @@
       "median_positive_edge_bps": 0.0,
       "p90_positive_edge_bps": 0.0,
       "max_edge_bps": -187.2664,
-      "latest_edge_bps": -190.0345,
+      "latest_edge_bps": -188.6311,
       "research_score": 20.0,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:04:42+00:00"
+      "last_seen_utc": "2026-09-10T22:17:39+00:00"
     },
     {
       "key": "eur_triangle|Coinbase:BTC:EUR-BTC-USDT-EUR",
@@ -1309,10 +1309,10 @@
       "median_positive_edge_bps": 0.0,
       "p90_positive_edge_bps": 0.0,
       "max_edge_bps": -187.9677,
-      "latest_edge_bps": -192.5781,
+      "latest_edge_bps": -191.5727,
       "research_score": 20.0,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:04:42+00:00"
+      "last_seen_utc": "2026-09-10T22:17:39+00:00"
     },
     {
       "key": "eur_triangle|Kraken:BTC:EUR-USDT-BTC-EUR",
@@ -1326,10 +1326,10 @@
       "median_positive_edge_bps": 0.0,
       "p90_positive_edge_bps": 0.0,
       "max_edge_bps": -245.8262,
-      "latest_edge_bps": -248.0712,
+      "latest_edge_bps": -249.1309,
       "research_score": 20.0,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:04:42+00:00"
+      "last_seen_utc": "2026-09-10T22:17:39+00:00"
     },
     {
       "key": "eur_triangle|Kraken:BTC:EUR-BTC-USDT-EUR",
@@ -1343,10 +1343,10 @@
       "median_positive_edge_bps": 0.0,
       "p90_positive_edge_bps": 0.0,
       "max_edge_bps": -247.5439,
-      "latest_edge_bps": -249.2597,
+      "latest_edge_bps": -248.2001,
       "research_score": 20.0,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:04:42+00:00"
+      "last_seen_utc": "2026-09-10T22:17:39+00:00"
     },
     {
       "key": "eur_triangle|Coinbase:ETH:EUR-USDT-ETH-EUR",
@@ -1360,10 +1360,10 @@
       "median_positive_edge_bps": 0.0,
       "p90_positive_edge_bps": 0.0,
       "max_edge_bps": -187.8408,
-      "latest_edge_bps": -194.6945,
+      "latest_edge_bps": -191.4757,
       "research_score": 20.0,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:04:42+00:00"
+      "last_seen_utc": "2026-09-10T22:17:39+00:00"
     },
     {
       "key": "eur_triangle|Coinbase:ETH:EUR-ETH-USDT-EUR",
@@ -1377,10 +1377,10 @@
       "median_positive_edge_bps": 0.0,
       "p90_positive_edge_bps": 0.0,
       "max_edge_bps": -188.9307,
-      "latest_edge_bps": -190.5372,
+      "latest_edge_bps": -190.6949,
       "research_score": 20.0,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:04:42+00:00"
+      "last_seen_utc": "2026-09-10T22:17:39+00:00"
     },
     {
       "key": "eur_triangle|Kraken:ETH:EUR-USDT-ETH-EUR",
@@ -1394,10 +1394,10 @@
       "median_positive_edge_bps": 0.0,
       "p90_positive_edge_bps": 0.0,
       "max_edge_bps": -245.3891,
-      "latest_edge_bps": -248.7384,
+      "latest_edge_bps": -247.9744,
       "research_score": 20.0,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:04:42+00:00"
+      "last_seen_utc": "2026-09-10T22:17:39+00:00"
     },
     {
       "key": "eur_triangle|Kraken:ETH:EUR-ETH-USDT-EUR",
@@ -1411,10 +1411,10 @@
       "median_positive_edge_bps": 0.0,
       "p90_positive_edge_bps": 0.0,
       "max_edge_bps": -246.0839,
-      "latest_edge_bps": -248.6509,
+      "latest_edge_bps": -249.415,
       "research_score": 20.0,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:04:42+00:00"
+      "last_seen_utc": "2026-09-10T22:17:39+00:00"
     },
     {
       "key": "eur_triangle|Coinbase:SOL:EUR-USDT-SOL-EUR",
@@ -1428,10 +1428,10 @@
       "median_positive_edge_bps": 0.0,
       "p90_positive_edge_bps": 0.0,
       "max_edge_bps": -187.0421,
-      "latest_edge_bps": -190.8724,
+      "latest_edge_bps": -192.4181,
       "research_score": 20.0,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:04:42+00:00"
+      "last_seen_utc": "2026-09-10T22:17:39+00:00"
     },
     {
       "key": "eur_triangle|Coinbase:SOL:EUR-SOL-USDT-EUR",
@@ -1445,10 +1445,10 @@
       "median_positive_edge_bps": 0.0,
       "p90_positive_edge_bps": 0.0,
       "max_edge_bps": -187.61,
-      "latest_edge_bps": -190.5789,
+      "latest_edge_bps": -188.8009,
       "research_score": 20.0,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:04:42+00:00"
+      "last_seen_utc": "2026-09-10T22:17:39+00:00"
     },
     {
       "key": "eur_triangle|Kraken:SOL:EUR-USDT-SOL-EUR",
@@ -1462,10 +1462,10 @@
       "median_positive_edge_bps": 0.0,
       "p90_positive_edge_bps": 0.0,
       "max_edge_bps": -244.7379,
-      "latest_edge_bps": -249.5,
+      "latest_edge_bps": -249.5652,
       "research_score": 20.0,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:04:42+00:00"
+      "last_seen_utc": "2026-09-10T22:17:39+00:00"
     },
     {
       "key": "eur_triangle|Kraken:SOL:EUR-SOL-USDT-EUR",
@@ -1479,10 +1479,10 @@
       "median_positive_edge_bps": 0.0,
       "p90_positive_edge_bps": 0.0,
       "max_edge_bps": -245.3049,
-      "latest_edge_bps": -249.9148,
+      "latest_edge_bps": -249.847,
       "research_score": 20.0,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:04:42+00:00"
+      "last_seen_utc": "2026-09-10T22:17:39+00:00"
     },
     {
       "key": "stable_eur_dislocation|Coinbase:USDC-EUR-USDT",
@@ -1496,10 +1496,10 @@
       "median_positive_edge_bps": 0.0,
       "p90_positive_edge_bps": 0.0,
       "max_edge_bps": -26.5137,
-      "latest_edge_bps": -28.3747,
+      "latest_edge_bps": -28.7228,
       "research_score": 20.0,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:04:42+00:00"
+      "last_seen_utc": "2026-09-10T22:17:39+00:00"
     },
     {
       "key": "stable_eur_dislocation|Coinbase:USDT-EUR-USDC",
@@ -1513,10 +1513,10 @@
       "median_positive_edge_bps": 0.0,
       "p90_positive_edge_bps": 0.0,
       "max_edge_bps": -30.5817,
-      "latest_edge_bps": -33.1337,
+      "latest_edge_bps": -32.5537,
       "research_score": 20.0,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:04:42+00:00"
+      "last_seen_utc": "2026-09-10T22:17:39+00:00"
     },
     {
       "key": "stable_eur_dislocation|Kraken:USDC-EUR-USDT",
@@ -1530,10 +1530,10 @@
       "median_positive_edge_bps": 0.0,
       "p90_positive_edge_bps": 0.0,
       "max_edge_bps": -47.6704,
-      "latest_edge_bps": -48.8391,
+      "latest_edge_bps": -48.839,
       "research_score": 20.0,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:04:42+00:00"
+      "last_seen_utc": "2026-09-10T22:17:39+00:00"
     },
     {
       "key": "stable_eur_dislocation|Kraken:USDT-EUR-USDC",
@@ -1546,11 +1546,11 @@
       "persistence": 0.0,
       "median_positive_edge_bps": 0.0,
       "p90_positive_edge_bps": 0.0,
-      "max_edge_bps": -51.1623,
-      "latest_edge_bps": -53.4819,
+      "max_edge_bps": -51.1625,
+      "latest_edge_bps": -53.4823,
       "research_score": 20.0,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:04:42+00:00"
+      "last_seen_utc": "2026-09-10T22:17:39+00:00"
     },
     {
       "key": "solana_cross_dex|Raydium CLMM->Meteora DLMM",
@@ -1564,10 +1564,10 @@
       "median_positive_edge_bps": 0.0,
       "p90_positive_edge_bps": 0.0,
       "max_edge_bps": -21.186,
-      "latest_edge_bps": -24.409,
+      "latest_edge_bps": -23.851,
       "research_score": 20.0,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:02:59+00:00"
+      "last_seen_utc": "2026-09-10T22:15:41+00:00"
     },
     {
       "key": "solana_cross_dex|Meteora DLMM->Raydium CLMM",
@@ -1581,10 +1581,10 @@
       "median_positive_edge_bps": 0.0,
       "p90_positive_edge_bps": 0.0,
       "max_edge_bps": -21.064,
-      "latest_edge_bps": -24.892,
+      "latest_edge_bps": -24.021,
       "research_score": 20.0,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:03:08+00:00"
+      "last_seen_utc": "2026-09-10T22:15:50+00:00"
     },
     {
       "key": "funding_spread|BTCUSDT",
@@ -1598,10 +1598,10 @@
       "median_positive_edge_bps": 0.0,
       "p90_positive_edge_bps": 0.0,
       "max_edge_bps": 0.73,
-      "latest_edge_bps": 0.22,
+      "latest_edge_bps": 0.23,
       "research_score": 20.0,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:03:13+00:00",
+      "last_seen_utc": "2026-09-10T22:15:54+00:00",
       "current_direction_stability": 0.9062,
       "current_direction_observations": 58,
       "direction_stability_required_for_watch": 0.5
@@ -1618,12 +1618,12 @@
       "median_positive_edge_bps": 0.0,
       "p90_positive_edge_bps": 0.0,
       "max_edge_bps": 0.95,
-      "latest_edge_bps": 0.3,
+      "latest_edge_bps": 0.28,
       "research_score": 20.0,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:03:13+00:00",
-      "current_direction_stability": 0.7344,
-      "current_direction_observations": 47,
+      "last_seen_utc": "2026-09-10T22:15:54+00:00",
+      "current_direction_stability": 0.75,
+      "current_direction_observations": 48,
       "direction_stability_required_for_watch": 0.5
     },
     {
@@ -1638,10 +1638,10 @@
       "median_positive_edge_bps": 0.0,
       "p90_positive_edge_bps": 0.0,
       "max_edge_bps": 1.24,
-      "latest_edge_bps": 0.03,
+      "latest_edge_bps": 0.11,
       "research_score": 20.0,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:03:13+00:00",
+      "last_seen_utc": "2026-09-10T22:15:54+00:00",
       "current_direction_stability": 0.9375,
       "current_direction_observations": 60,
       "direction_stability_required_for_watch": 0.5
@@ -1661,9 +1661,9 @@
       "latest_edge_bps": 0.0,
       "research_score": 20.0,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:03:13+00:00",
-      "current_direction_stability": 0.3281,
-      "current_direction_observations": 21,
+      "last_seen_utc": "2026-09-10T22:15:54+00:00",
+      "current_direction_stability": 0.3438,
+      "current_direction_observations": 22,
       "direction_stability_required_for_watch": 0.5
     },
     {
@@ -1678,12 +1678,12 @@
       "median_positive_edge_bps": 0.0,
       "p90_positive_edge_bps": 0.0,
       "max_edge_bps": 1.57,
-      "latest_edge_bps": 0.28,
+      "latest_edge_bps": 0.34,
       "research_score": 20.0,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:03:13+00:00",
-      "current_direction_stability": 0.7188,
-      "current_direction_observations": 46,
+      "last_seen_utc": "2026-09-10T22:15:54+00:00",
+      "current_direction_stability": 0.7344,
+      "current_direction_observations": 47,
       "direction_stability_required_for_watch": 0.5
     },
     {
@@ -1698,12 +1698,12 @@
       "median_positive_edge_bps": 0.0,
       "p90_positive_edge_bps": 0.0,
       "max_edge_bps": 0.75,
-      "latest_edge_bps": 0.12,
+      "latest_edge_bps": 0.08,
       "research_score": 20.0,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:03:13+00:00",
-      "current_direction_stability": 0.2969,
-      "current_direction_observations": 19,
+      "last_seen_utc": "2026-09-10T22:15:54+00:00",
+      "current_direction_stability": 0.3125,
+      "current_direction_observations": 20,
       "direction_stability_required_for_watch": 0.5
     },
     {
@@ -1718,12 +1718,12 @@
       "median_positive_edge_bps": 0.0,
       "p90_positive_edge_bps": 0.0,
       "max_edge_bps": 1.59,
-      "latest_edge_bps": 0.81,
+      "latest_edge_bps": 0.78,
       "research_score": 20.0,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:03:13+00:00",
-      "current_direction_stability": 0.5781,
-      "current_direction_observations": 37,
+      "last_seen_utc": "2026-09-10T22:15:54+00:00",
+      "current_direction_stability": 0.5938,
+      "current_direction_observations": 38,
       "direction_stability_required_for_watch": 0.5
     },
     {
@@ -1741,9 +1741,9 @@
       "latest_edge_bps": 0.0,
       "research_score": 20.0,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:03:13+00:00",
-      "current_direction_stability": 0.3438,
-      "current_direction_observations": 22,
+      "last_seen_utc": "2026-09-10T22:15:54+00:00",
+      "current_direction_stability": 0.3594,
+      "current_direction_observations": 23,
       "direction_stability_required_for_watch": 0.5
     },
     {
@@ -1758,12 +1758,12 @@
       "median_positive_edge_bps": 0.0,
       "p90_positive_edge_bps": 0.0,
       "max_edge_bps": 1.81,
-      "latest_edge_bps": 0.29,
+      "latest_edge_bps": 0.24,
       "research_score": 20.0,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:03:13+00:00",
-      "current_direction_stability": 0.6875,
-      "current_direction_observations": 44,
+      "last_seen_utc": "2026-09-10T22:15:54+00:00",
+      "current_direction_stability": 0.7031,
+      "current_direction_observations": 45,
       "direction_stability_required_for_watch": 0.5
     },
     {
@@ -1781,9 +1781,9 @@
       "latest_edge_bps": 0.0,
       "research_score": 20.0,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:03:13+00:00",
-      "current_direction_stability": 0.3281,
-      "current_direction_observations": 21,
+      "last_seen_utc": "2026-09-10T22:15:54+00:00",
+      "current_direction_stability": 0.3438,
+      "current_direction_observations": 22,
       "direction_stability_required_for_watch": 0.5
     },
     {
@@ -1801,9 +1801,9 @@
       "latest_edge_bps": 0.0,
       "research_score": 20.0,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:03:13+00:00",
-      "current_direction_stability": 0.3438,
-      "current_direction_observations": 22,
+      "last_seen_utc": "2026-09-10T22:15:54+00:00",
+      "current_direction_stability": 0.3594,
+      "current_direction_observations": 23,
       "direction_stability_required_for_watch": 0.5
     },
     {
@@ -1817,11 +1817,11 @@
       "persistence": 0.0,
       "median_positive_edge_bps": 0.0,
       "p90_positive_edge_bps": 0.0,
-      "max_edge_bps": 0.74,
+      "max_edge_bps": 0.72,
       "latest_edge_bps": 0.0,
       "research_score": 20.0,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:03:13+00:00",
+      "last_seen_utc": "2026-09-10T22:15:54+00:00",
       "current_direction_stability": 0.5,
       "current_direction_observations": 32,
       "direction_stability_required_for_watch": 0.5
@@ -1841,9 +1841,9 @@
       "latest_edge_bps": 0.0,
       "research_score": 20.0,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:03:13+00:00",
-      "current_direction_stability": 0.125,
-      "current_direction_observations": 8,
+      "last_seen_utc": "2026-09-10T22:15:54+00:00",
+      "current_direction_stability": 0.1406,
+      "current_direction_observations": 9,
       "direction_stability_required_for_watch": 0.5
     },
     {
@@ -1861,9 +1861,9 @@
       "latest_edge_bps": 0.0,
       "research_score": 20.0,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:03:13+00:00",
-      "current_direction_stability": 0.1562,
-      "current_direction_observations": 10,
+      "last_seen_utc": "2026-09-10T22:15:54+00:00",
+      "current_direction_stability": 0.1719,
+      "current_direction_observations": 11,
       "direction_stability_required_for_watch": 0.5
     },
     {
@@ -1878,12 +1878,12 @@
       "median_positive_edge_bps": 0.0,
       "p90_positive_edge_bps": 0.0,
       "max_edge_bps": 1.87,
-      "latest_edge_bps": 0.51,
+      "latest_edge_bps": 0.67,
       "research_score": 20.0,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:03:13+00:00",
-      "current_direction_stability": 0.3438,
-      "current_direction_observations": 22,
+      "last_seen_utc": "2026-09-10T22:15:54+00:00",
+      "current_direction_stability": 0.3594,
+      "current_direction_observations": 23,
       "direction_stability_required_for_watch": 0.5
     },
     {
@@ -1901,9 +1901,9 @@
       "latest_edge_bps": 0.0,
       "research_score": 20.0,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:03:13+00:00",
-      "current_direction_stability": 0.5526,
-      "current_direction_observations": 21,
+      "last_seen_utc": "2026-09-10T22:15:54+00:00",
+      "current_direction_stability": 0.5789,
+      "current_direction_observations": 22,
       "direction_stability_required_for_watch": 0.5
     },
     {
@@ -1921,9 +1921,9 @@
       "latest_edge_bps": 0.0,
       "research_score": 20.0,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:03:13+00:00",
-      "current_direction_stability": 0.2188,
-      "current_direction_observations": 14,
+      "last_seen_utc": "2026-09-10T22:15:54+00:00",
+      "current_direction_stability": 0.2344,
+      "current_direction_observations": 15,
       "direction_stability_required_for_watch": 0.5
     },
     {
@@ -1932,7 +1932,7 @@
       "label": "XAUTUSDT",
       "direction": "short Bitget / long Gate",
       "venue": "Bitget<->Gate",
-      "observations": 49,
+      "observations": 50,
       "positive_observations": 0,
       "persistence": 0.0,
       "median_positive_edge_bps": 0.0,
@@ -1941,9 +1941,9 @@
       "latest_edge_bps": 0.5,
       "research_score": 20.0,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:03:13+00:00",
-      "current_direction_stability": 0.9184,
-      "current_direction_observations": 45,
+      "last_seen_utc": "2026-09-10T22:15:54+00:00",
+      "current_direction_stability": 0.92,
+      "current_direction_observations": 46,
       "direction_stability_required_for_watch": 0.5
     },
     {
@@ -1972,7 +1972,7 @@
       "label": "AAPLUSDT",
       "direction": "long Bitget / short Gate",
       "venue": "Bitget<->Gate",
-      "observations": 37,
+      "observations": 38,
       "positive_observations": 0,
       "persistence": 0.0,
       "median_positive_edge_bps": 0.0,
@@ -1981,9 +1981,9 @@
       "latest_edge_bps": 0.0,
       "research_score": 20.0,
       "classification": "noise",
-      "last_seen_utc": "2026-09-10T22:03:13+00:00",
-      "current_direction_stability": 0.4865,
-      "current_direction_observations": 18,
+      "last_seen_utc": "2026-09-10T22:15:54+00:00",
+      "current_direction_stability": 0.5,
+      "current_direction_observations": 19,
       "direction_stability_required_for_watch": 0.5
     },
     {
