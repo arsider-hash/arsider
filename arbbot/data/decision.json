@@ -1,42 +1,8 @@
 {
-  "generated_at_utc": "2026-09-10T18:29:14+00:00",
-  "state": "VALIDATE",
-  "ranking_source": "scoreboard",
-  "selected": {
-    "key": "funding_spread|\u725b\u6765USDT",
-    "strategy": "funding_spread",
-    "label": "\u725b\u6765USDT",
-    "direction": "long Bitget / short Gate",
-    "venue": "Bitget<->Gate",
-    "observations": 6,
-    "positive_observations": 6,
-    "persistence": 1.0,
-    "median_positive_edge_bps": 84.02,
-    "p90_positive_edge_bps": 86.3,
-    "max_edge_bps": 86.84,
-    "latest_edge_bps": 83.5,
-    "research_score": 90.0,
-    "classification": "strong_watch",
-    "last_seen_utc": "2026-09-10T11:18:11+00:00",
-    "current_direction_stability": 1.0,
-    "current_direction_observations": 6,
-    "direction_stability_required_for_watch": 0.5
-  },
-  "failed_gates": [
-    "killer verdict is REJECTED"
-  ],
-  "policy": {
-    "min_observations": 6,
-    "min_persistence": 0.7,
-    "min_median_edge_bps": 2.0,
-    "min_research_score": 65.0
-  },
-  "manual_authorization_freshness": {
-    "max_candidate_age_seconds": 300,
-    "candidate_last_seen_utc": "2026-09-10T11:18:11+00:00",
-    "valid_until_utc": "2026-09-10T11:23:11+00:00",
-    "rule": "READY is invalid after valid_until_utc unless a new laboratory run refreshes the evidence"
-  },
-  "next_action": "run execution-specific paper validation and adversarial killer checks for this route; still no money and no credentials",
-  "hard_boundary": "ARBBOT may research, rank and prepare a test plan. It must not custody funds, sign transactions, place orders, or enable live trading without explicit user authorization."
+  "generated_at_utc": "2026-09-10T19:05:10+00:00",
+  "state": "WAIT",
+  "reason": "no candidates available after current ranking/gates",
+  "selected": null,
+  "ranking_source": "capital_rank_killer_survivors_only",
+  "next_action": "collect more paper observations"
 }
