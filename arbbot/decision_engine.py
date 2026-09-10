@@ -36,6 +36,7 @@ SHADOW_SUMMARY = DATA / "shadow_summary.json"
 OUT = DATA / "decision.json"
 
 MANUAL_AUTH_MAX_AGE_SECONDS = 300
+RESEARCH_SELECTION_MAX_AGE_SECONDS = 900
 
 POLICY = {
     "solana_cross_dex": {
@@ -99,6 +100,11 @@ def load_ranked():
         try:
             d = json.loads(CAPITAL_RANK.read_text(encoding="utf-8"))
             ranked = d.get("ranked") or []
+            # Once ALLOCATOR has applied the first-class KILLER survivor gate,
+            # an empty list is meaningful. Do not fall back to the unfiltered
+            # scoreboard and resurrect candidates KILLER just rejected.
+            if d.get("allocator_gate") == "killer_survivors_only":
+                return ranked, "capital_rank_killer_survivors_only"
             if ranked:
                 return ranked, "capital_rank"
         except Exception:
@@ -107,6 +113,20 @@ def load_ranked():
         d = json.loads(SCOREBOARD.read_text(encoding="utf-8"))
         return d.get("ranked") or [], "scoreboard"
     return [], "none"
+
+
+def select_fresh_candidate(ranked, now_dt=None):
+    """Return the highest-ranked candidate still fresh enough for KILLER research.
+
+    This is a selection rule only. It does not relax any validation, KILLER,
+    shadow, executable-entry, or READY threshold.
+    """
+    now_dt = now_dt or datetime.now(timezone.utc)
+    for item in ranked:
+        age = candidate_age_seconds(item, now_dt=now_dt)
+        if age is not None and age <= RESEARCH_SELECTION_MAX_AGE_SECONDS:
+            return item
+    return None
 
 
 def validation_passes(selected):
@@ -264,7 +284,7 @@ def main():
         payload = {
             "generated_at_utc": now,
             "state": "WAIT",
-            "reason": "no candidates in rolling history",
+            "reason": "no candidates available after current ranking/gates",
             "selected": None,
             "ranking_source": source,
             "next_action": "collect more paper observations",
@@ -273,7 +293,24 @@ def main():
         print("WAIT: no candidates")
         return
 
-    selected = ranked[0]
+    selected = select_fresh_candidate(ranked, now_dt=now_dt)
+    if selected is None:
+        payload = {
+            "generated_at_utc": now,
+            "state": "WAIT",
+            "reason": f"no candidate fresh within {RESEARCH_SELECTION_MAX_AGE_SECONDS}s for adversarial evaluation",
+            "selected": None,
+            "ranking_source": source,
+            "selection_policy": {
+                "research_selection_max_age_seconds": RESEARCH_SELECTION_MAX_AGE_SECONDS,
+                "principle": "stale candidates cannot monopolize KILLER selection",
+            },
+            "next_action": "collect a fresh paper observation; no user action",
+        }
+        OUT.write_text(json.dumps(payload, indent=2), encoding="utf-8")
+        print("WAIT: no fresh candidates")
+        return
+
     state, failed = classify(selected)
 
     if state == "WAIT":
@@ -301,6 +338,10 @@ def main():
         "selected": selected,
         "failed_gates": failed,
         "policy": POLICY.get(selected.get("strategy"), {}),
+        "selection_policy": {
+            "research_selection_max_age_seconds": RESEARCH_SELECTION_MAX_AGE_SECONDS,
+            "principle": "highest-ranked fresh candidate is evaluated; stale leaders cannot monopolize KILLER",
+        },
         "manual_authorization_freshness": {
             "max_candidate_age_seconds": MANUAL_AUTH_MAX_AGE_SECONDS,
             "candidate_last_seen_utc": selected.get("last_seen_utc"),
