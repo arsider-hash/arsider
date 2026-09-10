@@ -1,10 +1,13 @@
 {
-  "unified_lab_utc": "2026-09-10T08:37:11+00:00",
+  "unified_lab_utc": "2026-09-10T06:02:47+00:00",
   "status": "degraded_scanner_coverage",
   "scanner_errors": {
     "market_latest.json": [
       "cross_exchange_spot: HTTP Error 403: Forbidden",
       "basis_rows: HTTP Error 451: "
+    ],
+    "funding_latest.json": [
+      "\u725b\u6765USDT: 'ascii' codec can't encode characters in position 35-36: ordinal not in range(128)"
     ],
     "latest.json": [
       "Raydium CLMM -> Orca Whirlpool: HTTP 400: {\"error\":\"No routes found\",\"errorCode\":\"NO_ROUTES_FOUND\"}",
