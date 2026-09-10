@@ -1,6 +1,6 @@
 {
-  "generated_at_utc": "2026-09-10T11:19:47+00:00",
-  "verdict": "SURVIVES_KILLER",
+  "generated_at_utc": "2026-09-10T13:42:45+00:00",
+  "verdict": "REJECTED",
   "selected": {
     "key": "funding_spread|\u725b\u6765USDT",
     "strategy": "funding_spread",
@@ -164,9 +164,9 @@
   "checks": [
     {
       "check": "freshness",
-      "status": "PASS",
+      "status": "FAIL",
       "severity": "hard",
-      "detail": "candidate age 96s"
+      "detail": "candidate age 8675s"
     },
     {
       "check": "sample_presence",
@@ -218,9 +218,9 @@
     },
     {
       "check": "funding_executable_entry",
-      "status": "PASS",
+      "status": "INSUFFICIENT",
       "severity": "hard",
-      "detail": "EUR 250 executable adverse basis=84.339 bps, recovery=1.01 funding periods; require <= 3.00"
+      "detail": "no matching executable-entry probe at EUR 250 for \u725b\u6765USDT long Bitget / short Gate"
     },
     {
       "check": "shadow_evidence",
@@ -229,8 +229,12 @@
       "detail": "count=3, positive_rate=1.000, cumulative_paper_pnl=0.583670"
     }
   ],
-  "hard_failures": [],
-  "insufficient_evidence": [],
+  "hard_failures": [
+    "candidate age 8675s"
+  ],
+  "insufficient_evidence": [
+    "no matching executable-entry probe at EUR 250 for \u725b\u6765USDT long Bitget / short Gate"
+  ],
   "policy": {
     "max_staleness_seconds": 900,
     "min_candidate_observations": 6,
