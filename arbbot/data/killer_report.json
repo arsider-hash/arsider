@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-10T06:02:47+00:00",
+  "generated_at_utc": "2026-09-10T08:37:11+00:00",
   "verdict": "INSUFFICIENT_EVIDENCE",
   "selected": {
     "key": "stable_dislocation|FDUSD:Binance",
@@ -7,19 +7,19 @@
     "label": "FDUSD:Binance",
     "direction": "below peg",
     "venue": "Binance",
-    "observations": 46,
-    "positive_observations": 34,
-    "persistence": 0.7391,
+    "observations": 44,
+    "positive_observations": 31,
+    "persistence": 0.7045,
     "median_positive_edge_bps": 12.5,
     "p90_positive_edge_bps": 14.5,
     "max_edge_bps": 14.5,
-    "latest_edge_bps": 8.5,
-    "research_score": 76.28,
+    "latest_edge_bps": 9.5,
+    "research_score": 74.38,
     "classification": "strong_watch",
-    "last_seen_utc": "2026-09-10T05:59:09+00:00",
+    "last_seen_utc": "2026-09-10T08:33:30+00:00",
     "capital_utilisation": 1.0,
-    "capital_efficiency_score": 31.71,
-    "economic_relevance_score": 31.71,
+    "capital_efficiency_score": 29.48,
+    "economic_relevance_score": 29.48,
     "economic_relevance": {
       "reference_budget_eur": 250,
       "reference_basis": "paper_profit_per_event_at_median_edge",
@@ -76,37 +76,37 @@
       "check": "freshness",
       "status": "PASS",
       "severity": "hard",
-      "detail": "candidate age 218s"
+      "detail": "candidate age 221s"
     },
     {
       "check": "sample_presence",
       "status": "PASS",
       "severity": "hard",
-      "detail": "46 observations; need at least 6"
+      "detail": "44 observations; need at least 6"
     },
     {
       "check": "positive_edge_evidence",
       "status": "PASS",
       "severity": "hard",
-      "detail": "positive_observations=34, median_positive_edge_bps=12.5000"
+      "detail": "positive_observations=31, median_positive_edge_bps=12.5000"
     },
     {
       "check": "persistence",
       "status": "PASS",
       "severity": "hard",
-      "detail": "persistence=0.739; need at least 0.70"
+      "detail": "persistence=0.705; need at least 0.70"
     },
     {
       "check": "latest_edge_sign",
       "status": "PASS",
       "severity": "soft",
-      "detail": "latest_edge_bps=8.5000"
+      "detail": "latest_edge_bps=9.5000"
     },
     {
       "check": "economic_relevance",
       "status": "PASS",
       "severity": "soft",
-      "detail": "economic_relevance_score=31.71"
+      "detail": "economic_relevance_score=29.48"
     },
     {
       "check": "burst_validation",
