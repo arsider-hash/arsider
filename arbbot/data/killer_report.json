@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-10T04:54:24+00:00",
+  "generated_at_utc": "2026-09-10T05:45:13+00:00",
   "verdict": "INSUFFICIENT_EVIDENCE",
   "selected": {
     "key": "stable_dislocation|FDUSD:Binance",
@@ -8,18 +8,18 @@
     "direction": "below peg",
     "venue": "Binance",
     "observations": 45,
-    "positive_observations": 35,
-    "persistence": 0.7778,
+    "positive_observations": 34,
+    "persistence": 0.7556,
     "median_positive_edge_bps": 12.5,
     "p90_positive_edge_bps": 14.5,
     "max_edge_bps": 14.5,
     "latest_edge_bps": 9.5,
-    "research_score": 78.4,
+    "research_score": 77.18,
     "classification": "strong_watch",
-    "last_seen_utc": "2026-09-10T04:50:46+00:00",
+    "last_seen_utc": "2026-09-10T05:41:42+00:00",
     "capital_utilisation": 1.0,
-    "capital_efficiency_score": 34.3,
-    "economic_relevance_score": 34.3,
+    "capital_efficiency_score": 32.8,
+    "economic_relevance_score": 32.8,
     "economic_relevance": {
       "reference_budget_eur": 250,
       "reference_basis": "paper_profit_per_event_at_median_edge",
@@ -76,7 +76,7 @@
       "check": "freshness",
       "status": "PASS",
       "severity": "hard",
-      "detail": "candidate age 218s"
+      "detail": "candidate age 211s"
     },
     {
       "check": "sample_presence",
@@ -88,13 +88,13 @@
       "check": "positive_edge_evidence",
       "status": "PASS",
       "severity": "hard",
-      "detail": "positive_observations=35, median_positive_edge_bps=12.5000"
+      "detail": "positive_observations=34, median_positive_edge_bps=12.5000"
     },
     {
       "check": "persistence",
       "status": "PASS",
       "severity": "hard",
-      "detail": "persistence=0.778; need at least 0.70"
+      "detail": "persistence=0.756; need at least 0.70"
     },
     {
       "check": "latest_edge_sign",
@@ -106,7 +106,7 @@
       "check": "economic_relevance",
       "status": "PASS",
       "severity": "soft",
-      "detail": "economic_relevance_score=34.30"
+      "detail": "economic_relevance_score=32.80"
     },
     {
       "check": "burst_validation",
