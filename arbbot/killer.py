@@ -12,6 +12,7 @@ DECISION = DATA / 'decision.json'
 CAPITAL_RANK = DATA / 'capital_rank.json'
 VALIDATION = DATA / 'validation.json'
 DEPTH_VALIDATION = DATA / 'depth_validation.json'
+STABLE_ROUNDTRIP_VALIDATION = DATA / 'stable_roundtrip_validation.json'
 SHADOW_SUMMARY = DATA / 'shadow_summary.json'
 FUNDING_BASIS_HISTORY = DATA / 'funding_basis_history.csv'
 FUNDING_LATEST = DATA / 'funding_latest.json'
@@ -141,6 +142,25 @@ def funding_execution_probe(symbol, direction):
     return None, f'no matching executable-entry probe at EUR {FUNDING_EXECUTION_REFERENCE_BUDGET} for {symbol} {direction}'
 
 
+def stable_roundtrip_evidence(selected):
+    doc = load_json(STABLE_ROUNDTRIP_VALIDATION)
+    if not doc:
+        return None, 'stable round-trip validation missing or invalid'
+    if not same_route(doc, selected):
+        return None, 'stable round-trip validation belongs to another route'
+    generated = parse_ts(doc.get('generated_at_utc'))
+    if not generated:
+        return None, 'stable round-trip validation timestamp missing or invalid'
+    age = max(0, (datetime.now(timezone.utc) - generated.astimezone(timezone.utc)).total_seconds())
+    if age > MAX_STALENESS_SECONDS:
+        return None, f'stable round-trip validation stale: age={age:.0f}s'
+    rows = doc.get('rows') or []
+    ref = next((r for r in rows if int(float(r.get('budget') or 0)) == MIN_USEFUL_DEPTH_BUDGET), None)
+    if not ref:
+        return None, f'no EUR {MIN_USEFUL_DEPTH_BUDGET} stable round-trip probe'
+    return {'doc': doc, 'reference': ref, 'row_count': len(rows)}, None
+
+
 def main():
     now = datetime.now(timezone.utc).isoformat(timespec='seconds')
     s = selected_candidate()
@@ -169,6 +189,17 @@ def main():
     if strategy in FAST_STRATEGIES:
         add(c, 'burst_validation', 'INSUFFICIENT' if not v or not same_route(v, s) else 'PASS' if v.get('verdict') == 'SURVIVES_BURST' else 'FAIL', 'no matching burst validation' if not v or not same_route(v, s) else f"verdict={v.get('verdict')}")
     if strategy == 'stable_dislocation':
+        stable, stable_error = stable_roundtrip_evidence(s)
+        if stable_error:
+            add(c, 'stable_execution_diagnostic', 'INSUFFICIENT', stable_error)
+        else:
+            ref = stable['reference']
+            immediate = ref.get('immediate_roundtrip_edge_bps')
+            max_hyp = int(float((stable['doc'] or {}).get('max_positive_budget_under_hypothetical_convergence') or 0))
+            if immediate is None:
+                add(c, 'stable_execution_diagnostic', 'INSUFFICIENT', f'EUR {MIN_USEFUL_DEPTH_BUDGET} immediate round-trip metric missing')
+            else:
+                add(c, 'stable_execution_diagnostic', 'PASS', f'{stable["row_count"]} multi-size probes present; EUR {MIN_USEFUL_DEPTH_BUDGET} immediate round-trip={float(immediate):.3f} bps; hypothetical convergence positive through EUR {max_hyp}', severity='soft')
         add(c, 'verified_exit_path', 'INSUFFICIENT', 'peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified')
 
     depth = load_json(DEPTH_VALIDATION)
