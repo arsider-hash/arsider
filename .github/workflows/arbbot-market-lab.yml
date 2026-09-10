@@ -70,7 +70,7 @@ jobs:
       - name: Dedicated funding killer
         env:
           KILLER_STRATEGY: funding_spread
-          KILLER_SELECTION: latest_edge
+          KILLER_SELECTION: allocator
           KILLER_OUT: killer_funding_report.json
         run: python arbbot/killer.py
       - name: Re-evaluate after execution and killer checks
@@ -83,7 +83,7 @@ jobs:
       - name: Refresh dedicated funding killer
         env:
           KILLER_STRATEGY: funding_spread
-          KILLER_SELECTION: latest_edge
+          KILLER_SELECTION: allocator
           KILLER_OUT: killer_funding_report.json
         run: python arbbot/killer.py
       - name: ALLOCATOR keep only KILLER survivors
