@@ -141,7 +141,25 @@ jobs:
           from pathlib import Path
           p = Path("arbbot/data")
           p.mkdir(exist_ok=True)
-          (p / "health.json").write_text(json.dumps({"unified_lab_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),"status":"workflow_reached_persist_step"}, indent=2))
+          scanner_errors = {}
+          for name in ("market_latest.json", "eu_latest.json", "funding_latest.json", "latest.json", "yield_latest.json"):
+              f = p / name
+              if not f.exists():
+                  scanner_errors[name] = ["missing_output"]
+                  continue
+              try:
+                  data = json.loads(f.read_text())
+                  errors = data.get("errors") or []
+                  if errors:
+                      scanner_errors[name] = errors
+              except Exception as exc:
+                  scanner_errors[name] = [f"unreadable_output: {exc}"]
+          status = "degraded_scanner_coverage" if scanner_errors else "healthy"
+          (p / "health.json").write_text(json.dumps({
+              "unified_lab_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+              "status": status,
+              "scanner_errors": scanner_errors,
+          }, indent=2))
           PY
       - name: Persist all research data atomically
         run: |
