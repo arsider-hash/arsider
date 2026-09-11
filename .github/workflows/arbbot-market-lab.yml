@@ -163,6 +163,8 @@ jobs:
           PY
       - name: Run read-only research quality audit
         run: python arbbot/research_audit.py
+      - name: Persist falsification graveyard memory
+        run: python arbbot/opportunity_graveyard.py
       - name: Persist all research data atomically
         run: |
           set -euo pipefail
