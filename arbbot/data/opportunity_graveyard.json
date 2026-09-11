@@ -1,0 +1,29 @@
+{
+  "generated_at_utc": "2026-09-11T15:28:17+00:00",
+  "mode": "falsification_memory_only",
+  "can_promote_candidate": false,
+  "entries": {
+    "funding_spread|\u725b\u6765USDT": {
+      "strategy": "funding_spread",
+      "label": "\u725b\u6765USDT",
+      "snapshots": 1,
+      "survives": 0,
+      "rejected": 0,
+      "insufficient": 1,
+      "consecutive_non_survivals": 1,
+      "reason_counts": {
+        "latest/median edge ratio=0.127; latest=5.220 bps/8h, median=40.980; require >= 0.25 to rule out sharp edge decay": 1
+      },
+      "last_verdict": "INSUFFICIENT_EVIDENCE",
+      "last_seen_utc": "2026-09-11T15:26:46+00:00",
+      "last_latest_edge_bps": 5.22,
+      "last_median_positive_edge_bps": 40.98,
+      "last_persistence": 0.8,
+      "last_reasons": [
+        "latest/median edge ratio=0.127; latest=5.220 bps/8h, median=40.980; require >= 0.25 to rule out sharp edge decay"
+      ],
+      "updated_at_utc": "2026-09-11T15:28:17+00:00"
+    }
+  },
+  "note": "Historical failure memory is diagnostic evidence only. It cannot loosen gates or create READY."
+}
