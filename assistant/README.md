@@ -4,34 +4,34 @@ Telegram-first control plane for the Vivo Y29s microdatacenter.
 
 ## Core goals
 - zero paid services
-- exactly two authorized users
+- exactly two authorized users: `C` and `T`
 - differentiated capabilities, not two identical roots
 - ON / OFF / TEST / LIVE control
 - natural-language task intake
 - persistent SQLite queue
 - Android/Termux first
-- Lenovo is optional and owner-only
+- Lenovo is optional and restricted to `C`
 - no arbitrary text-to-shell execution
 - no public inbound port
 
 The Telegram runtime uses `python-telegram-bot`; the queue/state layer remains small and local. See `SCAVENGING.md` for the permanent reuse-before-rebuild policy.
 
 ## User roles
-The first account paired is `OWNER` (Emi). The second is `COLLABORATOR` (Tom).
+The first account paired is `C`. The second is `T`.
 
 Both can:
 - ask general tasks in private;
 - use Arsider group tools;
 - inspect ordinary bot status/actions allowed to both users.
 
-Only OWNER can:
+Only `C` can:
 - bind the Arsider group;
 - create tasks routed to the Lenovo/PC worker.
 
-The Arsider group never gets PC access. PC-bound requests must be sent in private by OWNER.
+The Arsider group never gets PC access. PC-bound requests must be sent in private by `C`.
 
 ## Arsider group mode
-Add the bot to the Telegram Arsider group, then OWNER sends:
+Add the bot to the Telegram Arsider group, then `C` sends:
 
 ```text
 /bind_arsider
@@ -83,7 +83,7 @@ Run:
 arsiderctl pair
 ```
 
-Pair OWNER/Emi first and COLLABORATOR/Tom second. The script writes `OWNER_ID` and `ADMIN_IDS` locally to `.env`.
+Pair `C` first and `T` second. The script writes the local role IDs to `.env`.
 
 Finish with:
 
@@ -119,7 +119,7 @@ arsiderctl dashboard
 Default: `http://127.0.0.1:8787`. It is localhost-only by default and exposes no controls.
 
 ## Lenovo worker
-`worker_lenovo.py` is deliberately dormant. It can observe jobs routed to the PC but cannot execute arbitrary commands. Future PC capabilities must be explicit tools with bounded inputs, permissions and timeouts. Only OWNER can create PC-routed jobs.
+`worker_lenovo.py` is deliberately dormant. It can observe jobs routed to the PC but cannot execute arbitrary commands. Future PC capabilities must be explicit tools with bounded inputs, permissions and timeouts. Only `C` can create PC-routed jobs.
 
 ## Health and backup
 `health.py` verifies runtime tools, configuration, admin count, SQLite integrity and disk headroom. `backup.py` uses SQLite's own backup API and retains a small rolling history.
@@ -127,7 +127,7 @@ Default: `http://127.0.0.1:8787`. It is localhost-only by default and exposes no
 ## Safety rules
 - unknown Telegram users are ignored;
 - exactly two authorized users are accepted;
-- only OWNER has PC capability;
+- only `C` has PC capability;
 - group chat has no PC capability;
 - secrets never belong in Git;
 - optional modules may fail without taking the control plane down;
