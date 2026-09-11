@@ -40,10 +40,17 @@ case "$cmd" in
     ;;
   test)
     python -m unittest discover -s tests -v
-    printf 'status\n/on\ntrovami un pdf\n/stop\nquit\n' | python simulate.py
+    printf '/status\n/on\ntrovami un pdf\n/stop\nquit\n' | python simulate.py
+    ;;
+  update)
+    git fetch origin arsider-assistant-v0
+    git pull --ff-only origin arsider-assistant-v0
+    python -m pip install -r requirements.txt
+    python -m unittest discover -s tests -v
+    echo "Update verified. Use: arsiderctl restart"
     ;;
   *)
-    echo "usage: arsiderctl {status|health|pair|start|stop|restart|logs|backup|dashboard|test}"
+    echo "usage: arsiderctl {status|health|pair|start|stop|restart|logs|backup|dashboard|test|update}"
     exit 2
     ;;
 esac
