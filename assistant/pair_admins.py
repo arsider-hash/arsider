@@ -19,18 +19,24 @@ def api(token: str, method: str, **params):
     return payload["result"]
 
 
-def write_admins(ids: list[int], path: Path) -> None:
+def write_pairing(ids: list[int], path: Path) -> None:
     lines = path.read_text(encoding="utf-8").splitlines() if path.exists() else []
-    out = []
-    replaced = False
+    values = {
+        "ADMIN_IDS": ",".join(map(str, ids)),
+        "OWNER_ID": str(ids[0]),
+    }
+    seen: set[str] = set()
+    out: list[str] = []
     for line in lines:
-        if line.startswith("ADMIN_IDS="):
-            out.append("ADMIN_IDS=" + ",".join(map(str, ids)))
-            replaced = True
+        key = line.split("=", 1)[0] if "=" in line else ""
+        if key in values:
+            out.append(f"{key}={values[key]}")
+            seen.add(key)
         else:
             out.append(line)
-    if not replaced:
-        out.append("ADMIN_IDS=" + ",".join(map(str, ids)))
+    for key, value in values.items():
+        if key not in seen:
+            out.append(f"{key}={value}")
     path.write_text("\n".join(out).rstrip() + "\n", encoding="utf-8")
     try:
         path.chmod(0o600)
@@ -46,6 +52,7 @@ def main() -> None:
 
     code = secrets.token_hex(4).upper()
     print("ARSIDER // ADMIN PAIRING")
+    print("IMPORTANT: pair OWNER/Emi FIRST, collaborator/Tom SECOND.")
     print(f"Send /pair {code} to the bot from exactly TWO Telegram accounts.")
     print("The code is valid only while this program is running.\n")
 
@@ -67,11 +74,12 @@ def main() -> None:
             if uid in found:
                 continue
             found.append(uid)
-            api(token, "sendMessage", chat_id=msg["chat"]["id"], text=f"Paired admin {len(found)}/2.")
-            print(f"paired {len(found)}/2: {uid}")
+            role = "OWNER" if len(found) == 1 else "COLLABORATOR"
+            api(token, "sendMessage", chat_id=msg["chat"]["id"], text=f"Paired {role} ({len(found)}/2).")
+            print(f"paired {role}: {uid}")
 
-    write_admins(found, Path(".env"))
-    print("\nPairing complete. ADMIN_IDS written to .env; pairing code is now dead.")
+    write_pairing(found, Path(".env"))
+    print("\nPairing complete. OWNER_ID + ADMIN_IDS written to .env; pairing code is now dead.")
     print("Start with: arsiderctl start")
 
 
