@@ -97,5 +97,15 @@ def parse_admins(raw: str | None) -> set[int]:
     return out
 
 
+def parse_owner(raw: str | None) -> int | None:
+    if not raw or not raw.strip():
+        return None
+    return int(raw.strip())
+
+
 def is_admin(user_id: int, admins: Iterable[int]) -> bool:
     return user_id in set(admins)
+
+
+def can_use_pc(user_id: int, owner_id: int | None) -> bool:
+    return owner_id is not None and user_id == owner_id
