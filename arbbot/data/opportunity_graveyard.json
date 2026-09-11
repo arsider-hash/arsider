@@ -1,31 +1,29 @@
 {
-  "generated_at_utc": "2026-09-11T18:35:42+00:00",
+  "generated_at_utc": "2026-09-11T19:49:09+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
     "funding_spread|\u725b\u6765USDT": {
       "strategy": "funding_spread",
       "label": "\u725b\u6765USDT",
-      "snapshots": 4,
-      "survives": 0,
+      "snapshots": 5,
+      "survives": 1,
       "rejected": 0,
       "insufficient": 4,
-      "consecutive_non_survivals": 4,
+      "consecutive_non_survivals": 0,
       "reason_counts": {
         "latest/median edge ratio=0.127; latest=5.220 bps/8h, median=40.980; require >= 0.25 to rule out sharp edge decay": 1,
         "latest/median edge ratio=0.057; latest=2.260 bps/8h, median=39.860; require >= 0.25 to rule out sharp edge decay": 1,
         "latest/median edge ratio=0.195; latest=7.180 bps/8h, median=36.890; require >= 0.25 to rule out sharp edge decay": 1,
         "latest/median edge ratio=0.229; latest=7.760 bps/8h, median=33.920; require >= 0.25 to rule out sharp edge decay": 1
       },
-      "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-09-11T18:33:44+00:00",
-      "last_latest_edge_bps": 7.76,
-      "last_median_positive_edge_bps": 33.92,
-      "last_persistence": 0.814,
-      "last_reasons": [
-        "latest/median edge ratio=0.229; latest=7.760 bps/8h, median=33.920; require >= 0.25 to rule out sharp edge decay"
-      ],
-      "updated_at_utc": "2026-09-11T18:35:42+00:00"
+      "last_verdict": "SURVIVES_KILLER",
+      "last_seen_utc": "2026-09-11T19:45:01+00:00",
+      "last_latest_edge_bps": 4.22,
+      "last_median_positive_edge_bps": 14.8,
+      "last_persistence": 0.8222,
+      "last_reasons": [],
+      "updated_at_utc": "2026-09-11T19:49:09+00:00"
     }
   },
   "note": "Historical failure memory is diagnostic evidence only. It cannot loosen gates or create READY."
