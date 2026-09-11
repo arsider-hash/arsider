@@ -2,7 +2,9 @@ name: ARBBOT funding sampler
 
 on:
   schedule:
-    - cron: "0,15,30,45 * * * *"
+    # Avoid exact quarter-hour boundaries, which are high-load GitHub Actions
+    # schedule slots and can be delayed or dropped. Preserve 15-minute cadence.
+    - cron: "3,18,33,48 * * * *"
   workflow_dispatch:
   push:
     paths:
