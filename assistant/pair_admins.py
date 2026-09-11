@@ -1,10 +1,10 @@
 from __future__ import annotations
 
+import json
 import os
 import secrets
 import urllib.parse
 import urllib.request
-import json
 from pathlib import Path
 
 from run import load_env
@@ -44,7 +44,7 @@ def main() -> None:
     if not token:
         raise SystemExit("Set TELEGRAM_BOT_TOKEN in .env first.")
 
-    code = secrets.token_hex(3).upper()
+    code = secrets.token_hex(4).upper()
     print("ARSIDER // ADMIN PAIRING")
     print(f"Send /pair {code} to the bot from exactly TWO Telegram accounts.")
     print("The code is valid only while this program is running.\n")
@@ -52,7 +52,10 @@ def main() -> None:
     found: list[int] = []
     offset = None
     while len(found) < 2:
-        updates = api(token, "getUpdates", timeout=30, offset=offset or "")
+        args = {"timeout": 30}
+        if offset is not None:
+            args["offset"] = offset
+        updates = api(token, "getUpdates", **args)
         for u in updates:
             offset = u["update_id"] + 1
             msg = u.get("message") or {}
@@ -69,7 +72,7 @@ def main() -> None:
 
     write_admins(found, Path(".env"))
     print("\nPairing complete. ADMIN_IDS written to .env; pairing code is now dead.")
-    print("Start with: python run.py")
+    print("Start with: arsiderctl start")
 
 
 if __name__ == "__main__":
