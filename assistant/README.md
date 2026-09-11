@@ -31,7 +31,7 @@ The same controls are exposed as inline buttons. Any other text from an authoriz
 ```bash
 cd assistant
 python -m pip install -r requirements.txt
-arsiderctl test
+./arsiderctl test
 ```
 
 or:
@@ -80,7 +80,10 @@ arsiderctl backup
 arsiderctl restart
 arsiderctl stop
 arsiderctl dashboard
+arsiderctl update
 ```
+
+`arsiderctl update` performs only a fast-forward pull from the dedicated assistant branch, reinstalls the pinned requirements and reruns tests. It does not merge arbitrary branches.
 
 ## Persistence on Android
 `termux-services`/runit supervises the process and restarts it after a crash while Termux is alive. The installer also prepares a Termux:Boot script. Android itself can still kill background apps, so the official Termux:Boot add-on must be installed/opened once and battery optimization for Termux should be disabled during real deployment. Boot persistence is treated as recoverable infrastructure, not magic.
