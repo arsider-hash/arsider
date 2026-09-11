@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-11T21:23:28+00:00",
+  "generated_at_utc": "2026-09-11T21:45:39+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -33,23 +33,48 @@
     "stable_dislocation|FDUSD:Binance": {
       "strategy": "stable_dislocation",
       "label": "FDUSD:Binance",
-      "snapshots": 1,
+      "snapshots": 2,
       "survives": 0,
       "rejected": 0,
-      "insufficient": 1,
-      "consecutive_non_survivals": 1,
+      "insufficient": 2,
+      "consecutive_non_survivals": 2,
       "reason_counts": {
-        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 1
+        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 2
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-09-11T21:19:48+00:00",
+      "last_seen_utc": "2026-09-11T21:42:00+00:00",
       "last_latest_edge_bps": 11.5,
       "last_median_positive_edge_bps": 11.5,
-      "last_persistence": 0.8125,
+      "last_persistence": 0.8163,
       "last_reasons": [
         "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified"
       ],
-      "updated_at_utc": "2026-09-11T21:23:28+00:00"
+      "updated_at_utc": "2026-09-11T21:45:39+00:00"
+    },
+    "funding_spread|VTHOUSDT": {
+      "strategy": "funding_spread",
+      "label": "VTHOUSDT",
+      "snapshots": 1,
+      "survives": 0,
+      "rejected": 1,
+      "insufficient": 0,
+      "consecutive_non_survivals": 1,
+      "reason_counts": {
+        "candidate age 1605s": 1,
+        "persistence=0.522; need at least 0.70": 1,
+        "no matching executable-entry probe at EUR 250 for VTHOUSDT short Bitget / long Gate": 1
+      },
+      "last_verdict": "REJECTED",
+      "last_seen_utc": "2026-09-11T21:18:54+00:00",
+      "last_latest_edge_bps": 17.92,
+      "last_median_positive_edge_bps": 25.38,
+      "last_persistence": 0.5217,
+      "last_reasons": [
+        "candidate age 1605s",
+        "persistence=0.522; need at least 0.70",
+        "no matching executable-entry probe at EUR 250 for VTHOUSDT short Bitget / long Gate"
+      ],
+      "updated_at_utc": "2026-09-11T21:45:39+00:00"
     }
   },
   "note": "Historical failure memory is diagnostic evidence only. It cannot loosen gates or create READY."

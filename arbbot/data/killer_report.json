@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-11T21:23:28+00:00",
+  "generated_at_utc": "2026-09-11T21:45:39+00:00",
   "verdict": "INSUFFICIENT_EVIDENCE",
   "selected": {
     "key": "stable_dislocation|FDUSD:Binance",
@@ -7,21 +7,21 @@
     "label": "FDUSD:Binance",
     "direction": "below peg",
     "venue": "Binance",
-    "observations": 48,
-    "positive_observations": 39,
-    "persistence": 0.8125,
+    "observations": 49,
+    "positive_observations": 40,
+    "persistence": 0.8163,
     "median_positive_edge_bps": 11.5,
     "p90_positive_edge_bps": 12.5,
     "max_edge_bps": 13.5,
     "latest_edge_bps": 11.5,
-    "research_score": 79.06,
+    "research_score": 79.27,
     "classification": "strong_watch",
-    "last_seen_utc": "2026-09-11T21:19:48+00:00",
-    "latest_age_seconds": 60.9,
+    "last_seen_utc": "2026-09-11T21:42:00+00:00",
+    "latest_age_seconds": 60.3,
     "current_signal_fresh": true,
     "capital_utilisation": 1.0,
-    "capital_efficiency_score": 34.53,
-    "economic_relevance_score": 34.53,
+    "capital_efficiency_score": 34.78,
+    "economic_relevance_score": 34.78,
     "economic_relevance": {
       "reference_budget_eur": 250,
       "reference_basis": "paper_profit_per_event_at_median_edge",
@@ -84,19 +84,19 @@
       "check": "sample_presence",
       "status": "PASS",
       "severity": "hard",
-      "detail": "48 observations; need at least 6"
+      "detail": "49 observations; need at least 6"
     },
     {
       "check": "positive_edge_evidence",
       "status": "PASS",
       "severity": "hard",
-      "detail": "positive_observations=39, median_positive_edge_bps=11.5000"
+      "detail": "positive_observations=40, median_positive_edge_bps=11.5000"
     },
     {
       "check": "persistence",
       "status": "PASS",
       "severity": "hard",
-      "detail": "persistence=0.812; need at least 0.70"
+      "detail": "persistence=0.816; need at least 0.70"
     },
     {
       "check": "latest_edge_sign",
@@ -108,7 +108,7 @@
       "check": "economic_relevance",
       "status": "PASS",
       "severity": "soft",
-      "detail": "economic_relevance_score=34.53"
+      "detail": "economic_relevance_score=34.78"
     },
     {
       "check": "burst_validation",
