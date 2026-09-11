@@ -161,6 +161,8 @@ jobs:
               "scanner_errors": scanner_errors,
           }, indent=2))
           PY
+      - name: Run read-only research quality audit
+        run: python arbbot/research_audit.py
       - name: Persist all research data atomically
         run: |
           set -euo pipefail
