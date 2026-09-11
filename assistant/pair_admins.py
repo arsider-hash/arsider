@@ -52,7 +52,7 @@ def main() -> None:
 
     code = secrets.token_hex(4).upper()
     print("ARSIDER // ADMIN PAIRING")
-    print("IMPORTANT: pair OWNER/Emi FIRST, collaborator/Tom SECOND.")
+    print("IMPORTANT: pair C FIRST, T SECOND.")
     print(f"Send /pair {code} to the bot from exactly TWO Telegram accounts.")
     print("The code is valid only while this program is running.\n")
 
@@ -74,12 +74,12 @@ def main() -> None:
             if uid in found:
                 continue
             found.append(uid)
-            role = "OWNER" if len(found) == 1 else "COLLABORATOR"
+            role = "C" if len(found) == 1 else "T"
             api(token, "sendMessage", chat_id=msg["chat"]["id"], text=f"Paired {role} ({len(found)}/2).")
             print(f"paired {role}: {uid}")
 
     write_pairing(found, Path(".env"))
-    print("\nPairing complete. OWNER_ID + ADMIN_IDS written to .env; pairing code is now dead.")
+    print("\nPairing complete. Local role IDs written to .env; pairing code is now dead.")
     print("Start with: arsiderctl start")
 
 
