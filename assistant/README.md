@@ -1,69 +1,113 @@
 # ARSIDER ASSISTANT V0
 
-Minimal Telegram-first control plane for the Vivo Y29s microdatacenter.
+Telegram-first control plane for the Vivo Y29s microdatacenter.
 
-## Goals
+## Core goals
 - zero paid services
-- two authorized admins only
+- exactly two authorized admins
 - ON / OFF / TEST / LIVE control
 - natural-language task intake
-- SQLite task queue
-- stdlib-only Python core
+- persistent SQLite queue
 - Android/Termux first
-- Lenovo is an optional worker, never the always-on brain
+- Lenovo is optional and idle unless explicitly needed
+- no arbitrary text-to-shell execution
+- no public inbound port
 
-## V0 commands
+The Telegram runtime uses `python-telegram-bot`; the queue/state layer remains small and local. See `SCAVENGING.md` for the permanent reuse-before-rebuild policy.
+
+## Telegram controls
 - `/status` system state + queue
 - `/on` accept new tasks
-- `/off` pause automation, keep remote control alive
-- `/test` replies only to admins/private test flow
-- `/live` enable live destination mode later
-- `/stop` pause and mark queued work stopped
+- `/off` pause automation while the remote stays alive
+- `/test` private/safe mode
+- `/live` select live mode for future output modules
+- `/stop` stop queued work and pause intake
 - `/help` tiny guide
 
-Any non-command text from an authorized admin becomes a queued task. A lightweight router classifies it as `vivo`, `lenovo`, or `unknown` without using an LLM.
+The same controls are exposed as inline buttons. Any other text from an authorized admin becomes a queued task. The V0 router labels it `vivo`, `pc`, or `unknown`; it does not execute the task yet.
 
-## Local simulation first
-No Telegram token is needed to test the core:
+## Test without Telegram
 
 ```bash
 cd assistant
-python simulate.py
-python -m unittest discover -s tests -v
+python -m pip install -r requirements.txt
+arsiderctl test
 ```
 
-## Termux install
-Later, on the Vivo:
+or:
+
+```bash
+python -m unittest discover -s tests -v
+printf '/status\n/on\ntrovami un pdf\n/stop\nquit\n' | python simulate.py
+```
+
+## Vivo / Termux bootstrap
+From this directory on the Vivo:
 
 ```bash
 bash install-termux.sh
 ```
 
-Copy `.env.example` to `.env`, set `TELEGRAM_BOT_TOKEN` and exactly two Telegram numeric user IDs, then:
+The installer is intended to be safe to re-run. It installs Python, Git, FFmpeg, OpenSSH, `termux-services`, the pinned Telegram library, creates local directories, installs a supervised service in the disabled state, and runs tests.
+
+Then the only secret you enter manually is the BotFather token in `.env`:
+
+```text
+TELEGRAM_BOT_TOKEN=...
+```
+
+Do not manually hunt for Telegram numeric user IDs. Run:
 
 ```bash
-python run.py
+arsiderctl pair
 ```
+
+It prints a one-time code. Send `/pair CODE` to the bot from the two authorized Telegram accounts. Their IDs are written locally to `.env`, which is kept out of Git and restricted to the local user.
+
+Finish with:
+
+```bash
+arsiderctl health
+arsiderctl start
+```
+
+Useful local maintenance commands:
+
+```bash
+arsiderctl status
+arsiderctl logs
+arsiderctl backup
+arsiderctl restart
+arsiderctl stop
+arsiderctl dashboard
+```
+
+## Persistence on Android
+`termux-services`/runit supervises the process and restarts it after a crash while Termux is alive. The installer also prepares a Termux:Boot script. Android itself can still kill background apps, so the official Termux:Boot add-on must be installed/opened once and battery optimization for Termux should be disabled during real deployment. Boot persistence is treated as recoverable infrastructure, not magic.
 
 ## Read-only dashboard
-The dashboard is deliberately local and dependency-free:
 
 ```bash
-python dashboard.py
+arsiderctl dashboard
 ```
 
-Default address: `http://127.0.0.1:8787`. It shows system mode, queue depth and recent tasks. Network exposure can be enabled later deliberately; V0 does not expose it by default.
+Default: `http://127.0.0.1:8787`. It is localhost-only by default and exposes no controls.
 
 ## Lenovo worker
-`worker_lenovo.py` is intentionally dormant in V0. It can see tasks routed to the Lenovo, but it does not execute arbitrary shell commands. Future modules will explicitly claim safe task types. This keeps the laptop idle and prevents the control plane from becoming a remote-shell accident.
+`worker_lenovo.py` is deliberately dormant. It can observe jobs routed to the PC but cannot execute arbitrary commands. Future PC capabilities must be explicit tools with bounded inputs, permissions and timeouts.
 
-## Safety / design rules
-- Modules fail independently.
-- The Telegram control plane remains reachable when optional modules fail.
-- No secrets belong in Git.
-- Unknown users are ignored.
-- The core never executes arbitrary text as shell commands.
-- Expensive work must be delegated explicitly, never inferred silently.
+## Health and backup
+`health.py` verifies runtime tools, configuration, admin count, SQLite integrity and disk headroom. `backup.py` uses SQLite's own backup API and retains a small rolling history.
 
-## Scope after V0
-Planned modules can be added independently: web/download, files, local personality engine, Arsider archive/repost, audio tools, Radio Blackout recorder/escopost recovery, and later the universal inbox bridge.
+## Safety rules
+- unknown Telegram users are ignored;
+- exactly two admins are accepted;
+- secrets never belong in Git;
+- optional modules may fail without taking the control plane down;
+- no arbitrary task text becomes a shell command;
+- expensive work is delegated explicitly;
+- dashboard binds to localhost unless deliberately changed;
+- LIVE mode by itself does not magically grant publication powers: output modules must be installed separately.
+
+## Not in V0
+Web research/download execution, local LLM/personality, archive/repost, audio factory, Radio Blackout recorder, computer-use and universal inbox are independent later modules. Before each one, apply `SCAVENGING.md`.
