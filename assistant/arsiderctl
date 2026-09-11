@@ -1,0 +1,49 @@
+#!/data/data/com.termux/files/usr/bin/bash
+set -euo pipefail
+HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "$HERE"
+SERVICE="arsider-assistant"
+
+cmd="${1:-status}"
+case "$cmd" in
+  health)
+    exec python health.py
+    ;;
+  pair)
+    exec python pair_admins.py
+    ;;
+  start)
+    command -v termux-wake-lock >/dev/null 2>&1 && termux-wake-lock || true
+    if command -v sv-enable >/dev/null 2>&1; then sv-enable "$SERVICE" || true; fi
+    if command -v sv >/dev/null 2>&1; then sv up "$SERVICE"; else exec python run.py; fi
+    ;;
+  stop)
+    if command -v sv >/dev/null 2>&1; then sv down "$SERVICE" || true; fi
+    ;;
+  restart)
+    if command -v sv >/dev/null 2>&1; then sv restart "$SERVICE"; else exec python run.py; fi
+    ;;
+  status)
+    if command -v sv >/dev/null 2>&1; then sv status "$SERVICE" || true; fi
+    python health.py || true
+    ;;
+  logs)
+    log="${PREFIX:-}/var/log/sv/$SERVICE/current"
+    if [ -f "$log" ]; then exec tail -n 100 -F "$log"; fi
+    echo "No service log yet: $log"
+    ;;
+  backup)
+    exec python backup.py
+    ;;
+  dashboard)
+    exec python dashboard.py
+    ;;
+  test)
+    python -m unittest discover -s tests -v
+    printf 'status\n/on\ntrovami un pdf\n/stop\nquit\n' | python simulate.py
+    ;;
+  *)
+    echo "usage: arsiderctl {status|health|pair|start|stop|restart|logs|backup|dashboard|test}"
+    exit 2
+    ;;
+esac
