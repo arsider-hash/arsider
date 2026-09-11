@@ -1,0 +1,47 @@
+name: ARBBOT research quality audit
+
+on:
+  workflow_run:
+    workflows: ["ARBBOT unified lab"]
+    types: [completed]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: arbbot-research-audit
+  cancel-in-progress: true
+
+jobs:
+  audit:
+    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Audit feed freshness, KILLER alignment, multi-size execution and small-capital relevance
+        run: python arbbot/research_audit.py
+      - name: Persist diagnostic only
+        run: |
+          set -euo pipefail
+          git config user.name "arbbot"
+          git config user.email "actions@users.noreply.github.com"
+          cp arbbot/data/research_audit.json /tmp/research_audit.json
+          git fetch origin main
+          git reset --hard origin/main
+          cp /tmp/research_audit.json arbbot/data/research_audit.json
+          git add arbbot/data/research_audit.json
+          if git diff --cached --quiet; then
+            echo "No audit change"
+          else
+            git commit -m "arbbot: research quality audit"
+            git push origin HEAD:main
+          fi
+      - name: Safety boundary
+        run: echo "Audit is diagnostic only; it cannot create READY, trade, move funds, sign transactions, or alter strategy gates."
