@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-12T09:01:01+00:00",
+  "generated_at_utc": "2026-09-12T10:42:19+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -30,23 +30,23 @@
     "stable_dislocation|FDUSD:Binance": {
       "strategy": "stable_dislocation",
       "label": "FDUSD:Binance",
-      "snapshots": 9,
+      "snapshots": 10,
       "survives": 0,
       "rejected": 0,
-      "insufficient": 9,
-      "consecutive_non_survivals": 9,
+      "insufficient": 10,
+      "consecutive_non_survivals": 10,
       "reason_counts": {
-        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 9
+        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 10
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-09-12T08:57:31+00:00",
+      "last_seen_utc": "2026-09-12T10:38:39+00:00",
       "last_latest_edge_bps": 12.5,
       "last_median_positive_edge_bps": 11.5,
-      "last_persistence": 0.9184,
+      "last_persistence": 0.9583,
       "last_reasons": [
         "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified"
       ],
-      "updated_at_utc": "2026-09-12T09:01:01+00:00"
+      "updated_at_utc": "2026-09-12T10:42:19+00:00"
     },
     "funding_spread|VTHOUSDT": {
       "strategy": "funding_spread",
@@ -80,25 +80,30 @@
     "funding_spread|PONSUSDT": {
       "strategy": "funding_spread",
       "label": "PONSUSDT",
-      "snapshots": 3,
+      "snapshots": 4,
       "survives": 0,
       "rejected": 0,
-      "insufficient": 3,
-      "consecutive_non_survivals": 3,
+      "insufficient": 4,
+      "consecutive_non_survivals": 4,
       "reason_counts": {
         "persistence=0.460; need at least 0.70": 1,
         "persistence=0.476; need at least 0.70": 1,
-        "persistence=0.500; need at least 0.70": 1
+        "persistence=0.500; need at least 0.70": 1,
+        "persistence=0.517; need at least 0.70": 1,
+        "latest/median edge ratio=0.000; latest=0.000 bps/8h, median=29.580; require >= 0.25 to rule out sharp edge decay": 1,
+        "no matching executable-entry probe at EUR 250 for PONSUSDT long Bitget / short Gate": 1
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-09-12T08:56:56+00:00",
-      "last_latest_edge_bps": 9.42,
+      "last_seen_utc": "2026-09-12T10:37:53+00:00",
+      "last_latest_edge_bps": 0.0,
       "last_median_positive_edge_bps": 29.58,
-      "last_persistence": 0.5,
+      "last_persistence": 0.5167,
       "last_reasons": [
-        "persistence=0.500; need at least 0.70"
+        "persistence=0.517; need at least 0.70",
+        "latest/median edge ratio=0.000; latest=0.000 bps/8h, median=29.580; require >= 0.25 to rule out sharp edge decay",
+        "no matching executable-entry probe at EUR 250 for PONSUSDT long Bitget / short Gate"
       ],
-      "updated_at_utc": "2026-09-12T09:01:01+00:00"
+      "updated_at_utc": "2026-09-12T10:42:19+00:00"
     }
   },
   "note": "Historical failure memory is diagnostic evidence only. It cannot loosen gates or create READY."
