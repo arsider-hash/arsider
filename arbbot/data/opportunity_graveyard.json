@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-12T13:02:36+00:00",
+  "generated_at_utc": "2026-09-12T13:59:21+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -39,14 +39,14 @@
         "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 13
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-09-12T12:59:06+00:00",
+      "last_seen_utc": "2026-09-12T13:55:51+00:00",
       "last_latest_edge_bps": 12.5,
       "last_median_positive_edge_bps": 11.5,
-      "last_persistence": 0.98,
+      "last_persistence": 0.9796,
       "last_reasons": [
         "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified"
       ],
-      "updated_at_utc": "2026-09-12T13:02:36+00:00"
+      "updated_at_utc": "2026-09-12T13:59:21+00:00"
     },
     "funding_spread|VTHOUSDT": {
       "strategy": "funding_spread",
@@ -82,8 +82,8 @@
       "label": "PONSUSDT",
       "snapshots": 6,
       "survives": 0,
-      "rejected": 0,
-      "insufficient": 6,
+      "rejected": 1,
+      "insufficient": 5,
       "consecutive_non_survivals": 6,
       "reason_counts": {
         "persistence=0.460; need at least 0.70": 1,
@@ -93,17 +93,21 @@
         "latest/median edge ratio=0.000; latest=0.000 bps/8h, median=29.580; require >= 0.25 to rule out sharp edge decay": 1,
         "no matching executable-entry probe at EUR 250 for PONSUSDT long Bitget / short Gate": 1,
         "persistence=0.532; need at least 0.70": 1,
-        "persistence=0.540; need at least 0.70": 1
+        "EUR 250 executable adverse basis=21.647 bps, recovery=3.60 funding periods; require <= 3.00": 1,
+        "persistence=0.540; need at least 0.70": 1,
+        "latest/median edge ratio=0.194; latest=6.020 bps/8h, median=31.100; require >= 0.25 to rule out sharp edge decay": 1
       },
-      "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-09-12T12:58:33+00:00",
-      "last_latest_edge_bps": 17.74,
+      "last_verdict": "REJECTED",
+      "last_seen_utc": "2026-09-12T13:55:17+00:00",
+      "last_latest_edge_bps": 6.02,
       "last_median_positive_edge_bps": 31.1,
       "last_persistence": 0.5397,
       "last_reasons": [
-        "persistence=0.540; need at least 0.70"
+        "EUR 250 executable adverse basis=21.647 bps, recovery=3.60 funding periods; require <= 3.00",
+        "persistence=0.540; need at least 0.70",
+        "latest/median edge ratio=0.194; latest=6.020 bps/8h, median=31.100; require >= 0.25 to rule out sharp edge decay"
       ],
-      "updated_at_utc": "2026-09-12T13:02:36+00:00"
+      "updated_at_utc": "2026-09-12T13:59:21+00:00"
     },
     "funding_spread|BZUSDT": {
       "strategy": "funding_spread",
