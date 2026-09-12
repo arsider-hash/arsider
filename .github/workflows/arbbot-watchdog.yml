@@ -49,24 +49,23 @@ jobs:
           lab = read_stamp("arbbot/data/health.json", "unified_lab_utc")
           sampler_age = (now - sampler).total_seconds() if sampler else float("inf")
           lab_age = (now - lab).total_seconds() if lab else float("inf")
+          sampler_stale = sampler_age > max_age_seconds
+          lab_stale = lab_age > max_age_seconds
 
-          # This watchdog's recovery action is the funding sampler, so assess its
-          # heartbeat independently. A fresh unified-lab heartbeat must not mask a
-          # stalled sampler.
-          stale = sampler_age > max_age_seconds
           print(
               f"funding_sampler={sampler.isoformat() if sampler else 'missing'} "
-              f"sampler_age_seconds={sampler_age:.0f} "
+              f"sampler_age_seconds={sampler_age:.0f} sampler_stale={sampler_stale} "
               f"unified_lab={lab.isoformat() if lab else 'missing'} "
-              f"lab_age_seconds={lab_age:.0f} stale={stale}"
+              f"lab_age_seconds={lab_age:.0f} lab_stale={lab_stale}"
           )
           with open(os.environ["GITHUB_OUTPUT"], "a") as fh:
-              fh.write(f"stale={'true' if stale else 'false'}\n")
+              fh.write(f"sampler_stale={'true' if sampler_stale else 'false'}\n")
+              fh.write(f"lab_stale={'true' if lab_stale else 'false'}\n")
           PY
 
-      - name: Avoid duplicate recovery dispatch
-        if: steps.stale.outputs.stale == 'true'
-        id: active
+      - name: Check active funding recovery
+        if: steps.stale.outputs.sampler_stale == 'true'
+        id: funding_active
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
@@ -74,13 +73,31 @@ jobs:
           echo "active=$active"
           echo "count=$active" >> "$GITHUB_OUTPUT"
 
-      - name: Recover stale research pipeline
-        if: steps.stale.outputs.stale == 'true' && steps.active.outputs.count == '0'
+      - name: Recover stale funding sampler
+        if: steps.stale.outputs.sampler_stale == 'true' && steps.funding_active.outputs.count == '0'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           echo "Funding sampler heartbeat is stale; dispatching funding sampler."
           gh workflow run arbbot-funding-sampler.yml --ref main
+
+      - name: Check active unified-lab recovery
+        if: steps.stale.outputs.lab_stale == 'true'
+        id: lab_active
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          active="$(gh run list --workflow arbbot-market-lab.yml --limit 10 --json status --jq '[.[] | select(.status == "queued" or .status == "in_progress")] | length')"
+          echo "active=$active"
+          echo "count=$active" >> "$GITHUB_OUTPUT"
+
+      - name: Recover stale unified lab
+        if: steps.stale.outputs.lab_stale == 'true' && steps.lab_active.outputs.count == '0'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          echo "Unified lab heartbeat is stale; dispatching unified lab."
+          gh workflow run arbbot-market-lab.yml --ref main
 
       - name: Safety boundary
         run: |
