@@ -30,7 +30,10 @@ jobs:
           from datetime import datetime, timezone
           from pathlib import Path
 
-          max_age_seconds = 1800
+          # Match the first-class KILLER/current-signal freshness gate. The
+          # watchdog must recover research before accepting a looser age than
+          # the validators themselves accept.
+          max_age_seconds = 900
           now = datetime.now(timezone.utc)
 
           def read_stamp(filename, field):
