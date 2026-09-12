@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-12T21:59:22+00:00",
+  "generated_at_utc": "2026-09-12T22:16:42+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -30,23 +30,23 @@
     "stable_dislocation|FDUSD:Binance": {
       "strategy": "stable_dislocation",
       "label": "FDUSD:Binance",
-      "snapshots": 26,
+      "snapshots": 27,
       "survives": 0,
       "rejected": 0,
-      "insufficient": 26,
-      "consecutive_non_survivals": 26,
+      "insufficient": 27,
+      "consecutive_non_survivals": 27,
       "reason_counts": {
-        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 26
+        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 27
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-09-12T21:55:50+00:00",
+      "last_seen_utc": "2026-09-12T22:13:02+00:00",
       "last_latest_edge_bps": 12.5,
       "last_median_positive_edge_bps": 11.5,
       "last_persistence": 0.9808,
       "last_reasons": [
         "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified"
       ],
-      "updated_at_utc": "2026-09-12T21:59:22+00:00"
+      "updated_at_utc": "2026-09-12T22:16:42+00:00"
     },
     "funding_spread|VTHOUSDT": {
       "strategy": "funding_spread",
@@ -149,11 +149,11 @@
     "funding_spread|LSKUSDT": {
       "strategy": "funding_spread",
       "label": "LSKUSDT",
-      "snapshots": 8,
+      "snapshots": 9,
       "survives": 0,
       "rejected": 0,
-      "insufficient": 8,
-      "consecutive_non_survivals": 8,
+      "insufficient": 9,
+      "consecutive_non_survivals": 9,
       "reason_counts": {
         "4 observations; need at least 6": 1,
         "persistence=0.556; need at least 0.70": 1,
@@ -165,17 +165,18 @@
         "latest funding direction matches 46% of independent basis buckets; require >= 50%": 1,
         "persistence=0.500; need at least 0.70": 1,
         "persistence=0.562; need at least 0.70": 1,
-        "persistence=0.588; need at least 0.70": 1
+        "persistence=0.588; need at least 0.70": 1,
+        "persistence=0.611; need at least 0.70": 1
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-09-12T21:55:13+00:00",
-      "last_latest_edge_bps": 22.02,
-      "last_median_positive_edge_bps": 25.01,
-      "last_persistence": 0.5882,
+      "last_seen_utc": "2026-09-12T22:12:11+00:00",
+      "last_latest_edge_bps": 30.77,
+      "last_median_positive_edge_bps": 28.0,
+      "last_persistence": 0.6111,
       "last_reasons": [
-        "persistence=0.588; need at least 0.70"
+        "persistence=0.611; need at least 0.70"
       ],
-      "updated_at_utc": "2026-09-12T21:59:22+00:00"
+      "updated_at_utc": "2026-09-12T22:16:42+00:00"
     }
   },
   "note": "Historical failure memory is diagnostic evidence only. It cannot loosen gates or create READY."
