@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-13T18:59:16+00:00",
+  "generated_at_utc": "2026-09-13T19:02:17+00:00",
   "verdict": "INSUFFICIENT_EVIDENCE",
   "selected": {
     "key": "funding_spread|CVCUSDT",
@@ -13,11 +13,11 @@
     "median_positive_edge_bps": 164.93,
     "p90_positive_edge_bps": 191.08,
     "max_edge_bps": 209.62,
-    "latest_edge_bps": 38.88,
+    "latest_edge_bps": 39.8,
     "research_score": 93.33,
     "classification": "strong_watch",
-    "last_seen_utc": "2026-09-13T18:54:52+00:00",
-    "latest_age_seconds": 106.2,
+    "last_seen_utc": "2026-09-13T18:59:52+00:00",
+    "latest_age_seconds": 93.2,
     "current_signal_fresh": true,
     "current_direction_stability": 1.0,
     "current_direction_observations": 8,
@@ -39,7 +39,7 @@
       "min_observations": 4,
       "evidence_sufficient": true,
       "median_adverse_basis_bps": 0.0,
-      "median_aligned_basis_bps": 32.6676,
+      "median_aligned_basis_bps": 31.4657,
       "amortized_adverse_basis_bps_per_8h": 0.0
     },
     "capital_utilisation": 0.5,
@@ -168,7 +168,7 @@
       "check": "freshness",
       "status": "PASS",
       "severity": "hard",
-      "detail": "candidate age 264s"
+      "detail": "candidate age 146s"
     },
     {
       "check": "sample_presence",
@@ -192,7 +192,7 @@
       "check": "latest_edge_sign",
       "status": "PASS",
       "severity": "soft",
-      "detail": "latest_edge_bps=38.8800"
+      "detail": "latest_edge_bps=39.8000"
     },
     {
       "check": "economic_relevance",
@@ -204,13 +204,13 @@
       "check": "funding_regime_decay",
       "status": "INSUFFICIENT",
       "severity": "hard",
-      "detail": "latest/median edge ratio=0.236; latest=38.880 bps/8h, median=164.930; require >= 0.25 to rule out sharp edge decay"
+      "detail": "latest/median edge ratio=0.241; latest=39.800 bps/8h, median=164.930; require >= 0.25 to rule out sharp edge decay"
     },
     {
       "check": "funding_basis_persistence",
       "status": "PASS",
       "severity": "hard",
-      "detail": "8 independent 15m buckets; median adverse basis costs 0.00 funding periods; median aligned basis=32.668 bps"
+      "detail": "8 independent 15m buckets; median adverse basis costs 0.00 funding periods; median aligned basis=31.466 bps"
     },
     {
       "check": "funding_direction_stability",
@@ -233,7 +233,7 @@
   ],
   "hard_failures": [],
   "insufficient_evidence": [
-    "latest/median edge ratio=0.236; latest=38.880 bps/8h, median=164.930; require >= 0.25 to rule out sharp edge decay"
+    "latest/median edge ratio=0.241; latest=39.800 bps/8h, median=164.930; require >= 0.25 to rule out sharp edge decay"
   ],
   "policy": {
     "max_staleness_seconds": 900,
