@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-13T16:37:23+00:00",
+  "generated_at_utc": "2026-09-13T18:29:19+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -214,24 +214,22 @@
     "funding_spread|CVCUSDT": {
       "strategy": "funding_spread",
       "label": "CVCUSDT",
-      "snapshots": 2,
-      "survives": 0,
+      "snapshots": 3,
+      "survives": 1,
       "rejected": 0,
       "insufficient": 2,
-      "consecutive_non_survivals": 2,
+      "consecutive_non_survivals": 0,
       "reason_counts": {
         "4 observations; need at least 6": 1,
         "5 observations; need at least 6": 1
       },
-      "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-09-13T16:32:56+00:00",
-      "last_latest_edge_bps": 154.86,
+      "last_verdict": "SURVIVES_KILLER",
+      "last_seen_utc": "2026-09-13T18:24:47+00:00",
+      "last_latest_edge_bps": 51.22,
       "last_median_positive_edge_bps": 175.0,
       "last_persistence": 1.0,
-      "last_reasons": [
-        "5 observations; need at least 6"
-      ],
-      "updated_at_utc": "2026-09-13T16:37:23+00:00"
+      "last_reasons": [],
+      "updated_at_utc": "2026-09-13T18:29:19+00:00"
     }
   },
   "note": "Historical failure memory is diagnostic evidence only. It cannot loosen gates or create READY."
