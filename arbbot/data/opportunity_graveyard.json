@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-13T19:02:18+00:00",
+  "generated_at_utc": "2026-09-13T19:26:26+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -30,23 +30,23 @@
     "stable_dislocation|FDUSD:Binance": {
       "strategy": "stable_dislocation",
       "label": "FDUSD:Binance",
-      "snapshots": 39,
+      "snapshots": 40,
       "survives": 0,
       "rejected": 0,
-      "insufficient": 39,
-      "consecutive_non_survivals": 39,
+      "insufficient": 40,
+      "consecutive_non_survivals": 40,
       "reason_counts": {
-        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 39
+        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 40
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-09-13T19:00:47+00:00",
+      "last_seen_utc": "2026-09-13T19:22:44+00:00",
       "last_latest_edge_bps": 11.5,
       "last_median_positive_edge_bps": 12.5,
       "last_persistence": 1.0,
       "last_reasons": [
         "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified"
       ],
-      "updated_at_utc": "2026-09-13T19:02:18+00:00"
+      "updated_at_utc": "2026-09-13T19:26:26+00:00"
     },
     "funding_spread|VTHOUSDT": {
       "strategy": "funding_spread",
@@ -214,25 +214,26 @@
     "funding_spread|CVCUSDT": {
       "strategy": "funding_spread",
       "label": "CVCUSDT",
-      "snapshots": 4,
+      "snapshots": 5,
       "survives": 1,
       "rejected": 0,
-      "insufficient": 3,
-      "consecutive_non_survivals": 1,
+      "insufficient": 4,
+      "consecutive_non_survivals": 2,
       "reason_counts": {
         "4 observations; need at least 6": 1,
         "5 observations; need at least 6": 1,
-        "latest/median edge ratio=0.241; latest=39.800 bps/8h, median=164.930; require >= 0.25 to rule out sharp edge decay": 1
+        "latest/median edge ratio=0.241; latest=39.800 bps/8h, median=164.930; require >= 0.25 to rule out sharp edge decay": 1,
+        "latest/median edge ratio=0.195; latest=30.180 bps/8h, median=154.860; require >= 0.25 to rule out sharp edge decay": 1
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-09-13T18:59:52+00:00",
-      "last_latest_edge_bps": 39.8,
-      "last_median_positive_edge_bps": 164.93,
+      "last_seen_utc": "2026-09-13T19:21:53+00:00",
+      "last_latest_edge_bps": 30.18,
+      "last_median_positive_edge_bps": 154.86,
       "last_persistence": 1.0,
       "last_reasons": [
-        "latest/median edge ratio=0.241; latest=39.800 bps/8h, median=164.930; require >= 0.25 to rule out sharp edge decay"
+        "latest/median edge ratio=0.195; latest=30.180 bps/8h, median=154.860; require >= 0.25 to rule out sharp edge decay"
       ],
-      "updated_at_utc": "2026-09-13T19:02:18+00:00"
+      "updated_at_utc": "2026-09-13T19:26:26+00:00"
     }
   },
   "note": "Historical failure memory is diagnostic evidence only. It cannot loosen gates or create READY."
