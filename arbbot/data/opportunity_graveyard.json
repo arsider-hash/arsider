@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-13T23:19:04+00:00",
+  "generated_at_utc": "2026-09-13T23:25:01+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -215,11 +215,11 @@
     "funding_spread|CVCUSDT": {
       "strategy": "funding_spread",
       "label": "CVCUSDT",
-      "snapshots": 6,
-      "survives": 1,
+      "snapshots": 7,
+      "survives": 2,
       "rejected": 0,
       "insufficient": 5,
-      "consecutive_non_survivals": 3,
+      "consecutive_non_survivals": 0,
       "reason_counts": {
         "4 observations; need at least 6": 1,
         "5 observations; need at least 6": 1,
@@ -227,15 +227,13 @@
         "latest/median edge ratio=0.195; latest=30.180 bps/8h, median=154.860; require >= 0.25 to rule out sharp edge decay": 1,
         "latest/median edge ratio=0.100; latest=10.780 bps/8h, median=107.650; require >= 0.25 to rule out sharp edge decay": 1
       },
-      "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-09-13T23:14:37+00:00",
-      "last_latest_edge_bps": 10.78,
-      "last_median_positive_edge_bps": 107.65,
-      "last_persistence": 0.7143,
-      "last_reasons": [
-        "latest/median edge ratio=0.100; latest=10.780 bps/8h, median=107.650; require >= 0.25 to rule out sharp edge decay"
-      ],
-      "updated_at_utc": "2026-09-13T23:19:04+00:00"
+      "last_verdict": "SURVIVES_KILLER",
+      "last_seen_utc": "2026-09-13T23:20:23+00:00",
+      "last_latest_edge_bps": 23.08,
+      "last_median_positive_edge_bps": 60.44,
+      "last_persistence": 0.7333,
+      "last_reasons": [],
+      "updated_at_utc": "2026-09-13T23:25:01+00:00"
     },
     "funding_spread|BTWUSDT": {
       "strategy": "funding_spread",
