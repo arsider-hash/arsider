@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-12T23:44:30+00:00",
+  "generated_at_utc": "2026-09-13T01:05:11+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -30,23 +30,23 @@
     "stable_dislocation|FDUSD:Binance": {
       "strategy": "stable_dislocation",
       "label": "FDUSD:Binance",
-      "snapshots": 29,
+      "snapshots": 30,
       "survives": 0,
       "rejected": 0,
-      "insufficient": 29,
-      "consecutive_non_survivals": 29,
+      "insufficient": 30,
+      "consecutive_non_survivals": 30,
       "reason_counts": {
-        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 29
+        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 30
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-09-12T23:40:52+00:00",
+      "last_seen_utc": "2026-09-13T01:01:31+00:00",
       "last_latest_edge_bps": 12.5,
       "last_median_positive_edge_bps": 11.5,
-      "last_persistence": 0.9808,
+      "last_persistence": 0.9804,
       "last_reasons": [
         "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified"
       ],
-      "updated_at_utc": "2026-09-12T23:44:30+00:00"
+      "updated_at_utc": "2026-09-13T01:05:11+00:00"
     },
     "funding_spread|VTHOUSDT": {
       "strategy": "funding_spread",
@@ -179,6 +179,29 @@
         "persistence=0.667; need at least 0.70"
       ],
       "updated_at_utc": "2026-09-12T23:44:30+00:00"
+    },
+    "funding_spread|IOSTUSDT": {
+      "strategy": "funding_spread",
+      "label": "IOSTUSDT",
+      "snapshots": 1,
+      "survives": 0,
+      "rejected": 1,
+      "insufficient": 0,
+      "consecutive_non_survivals": 1,
+      "reason_counts": {
+        "candidate age 160270s": 1,
+        "no matching executable-entry probe at EUR 250 for IOSTUSDT long Bitget / short Gate": 1
+      },
+      "last_verdict": "REJECTED",
+      "last_seen_utc": "2026-09-11T04:34:01+00:00",
+      "last_latest_edge_bps": 6.88,
+      "last_median_positive_edge_bps": 11.76,
+      "last_persistence": 1.0,
+      "last_reasons": [
+        "candidate age 160270s",
+        "no matching executable-entry probe at EUR 250 for IOSTUSDT long Bitget / short Gate"
+      ],
+      "updated_at_utc": "2026-09-13T01:05:11+00:00"
     }
   },
   "note": "Historical failure memory is diagnostic evidence only. It cannot loosen gates or create READY."
