@@ -1,5 +1,5 @@
 {
-  "unified_lab_utc": "2026-09-13T21:10:10+00:00",
+  "unified_lab_utc": "2026-09-13T21:27:52+00:00",
   "status": "degraded_scanner_coverage",
   "scanner_errors": {
     "market_latest.json": [
@@ -7,10 +7,12 @@
       "basis_rows: HTTP Error 451: "
     ],
     "latest.json": [
-      "Raydium CLMM -> Orca Whirlpool: HTTP 400: {\"error\":\"No routes found\",\"errorCode\":\"NO_ROUTES_FOUND\"}",
-      "Orca Whirlpool -> Raydium CLMM: HTTP 400: {\"error\":\"No routes found\",\"errorCode\":\"NO_ROUTES_FOUND\"}",
-      "Orca Whirlpool -> Meteora DLMM: HTTP 400: {\"error\":\"No routes found\",\"errorCode\":\"NO_ROUTES_FOUND\"}",
-      "Meteora DLMM -> Orca Whirlpool: HTTP 400: {\"error\":\"No routes found\",\"errorCode\":\"NO_ROUTES_FOUND\"}"
+      "Raydium CLMM -> Orca Whirlpool: HTTP 503: upstream connect error or disconnect/reset before headers. retried and the latest reset reason: connection timeout",
+      "Raydium CLMM -> Meteora DLMM: HTTP 503: upstream connect error or disconnect/reset before headers. retried and the latest reset reason: connection timeout",
+      "Orca Whirlpool -> Raydium CLMM: HTTP 503: upstream connect error or disconnect/reset before headers. retried and the latest reset reason: connection timeout",
+      "Orca Whirlpool -> Meteora DLMM: HTTP 503: upstream connect error or disconnect/reset before headers. retried and the latest reset reason: connection timeout",
+      "Meteora DLMM -> Raydium CLMM: HTTP 503: upstream connect error or disconnect/reset before headers. retried and the latest reset reason: remote connection failure",
+      "Meteora DLMM -> Orca Whirlpool: HTTP 503: upstream connect error or disconnect/reset before headers. retried and the latest reset reason: remote connection failure"
     ]
   }
 }
