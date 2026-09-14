@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-14T06:46:09+00:00",
+  "generated_at_utc": "2026-09-14T13:30:42+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -30,23 +30,23 @@
     "stable_dislocation|FDUSD:Binance": {
       "strategy": "stable_dislocation",
       "label": "FDUSD:Binance",
-      "snapshots": 48,
+      "snapshots": 49,
       "survives": 0,
       "rejected": 0,
-      "insufficient": 48,
-      "consecutive_non_survivals": 48,
+      "insufficient": 49,
+      "consecutive_non_survivals": 49,
       "reason_counts": {
-        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 48
+        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 49
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-09-14T06:42:39+00:00",
-      "last_latest_edge_bps": 10.5,
+      "last_seen_utc": "2026-09-14T13:27:02+00:00",
+      "last_latest_edge_bps": 11.5,
       "last_median_positive_edge_bps": 12.5,
       "last_persistence": 1.0,
       "last_reasons": [
         "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified"
       ],
-      "updated_at_utc": "2026-09-14T06:46:09+00:00"
+      "updated_at_utc": "2026-09-14T13:30:42+00:00"
     },
     "funding_spread|VTHOUSDT": {
       "strategy": "funding_spread",
@@ -257,14 +257,15 @@
     "funding_spread|STEEMUSDT": {
       "strategy": "funding_spread",
       "label": "STEEMUSDT",
-      "snapshots": 1,
+      "snapshots": 2,
       "survives": 0,
-      "rejected": 1,
+      "rejected": 2,
       "insufficient": 0,
-      "consecutive_non_survivals": 1,
+      "consecutive_non_survivals": 2,
       "reason_counts": {
         "candidate age 24666s": 1,
-        "no matching executable-entry probe at EUR 250 for STEEMUSDT long Bitget / short Gate": 1
+        "no matching executable-entry probe at EUR 250 for STEEMUSDT long Bitget / short Gate": 2,
+        "candidate age 51019s": 1
       },
       "last_verdict": "REJECTED",
       "last_seen_utc": "2026-09-13T23:20:23+00:00",
@@ -272,10 +273,10 @@
       "last_median_positive_edge_bps": 20.115,
       "last_persistence": 0.7273,
       "last_reasons": [
-        "candidate age 24666s",
+        "candidate age 51019s",
         "no matching executable-entry probe at EUR 250 for STEEMUSDT long Bitget / short Gate"
       ],
-      "updated_at_utc": "2026-09-14T06:11:28+00:00"
+      "updated_at_utc": "2026-09-14T13:30:42+00:00"
     }
   },
   "note": "Historical failure memory is diagnostic evidence only. It cannot loosen gates or create READY."
