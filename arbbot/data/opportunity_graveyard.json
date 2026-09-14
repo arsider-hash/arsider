@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-14T19:20:33+00:00",
+  "generated_at_utc": "2026-09-14T22:20:58+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -148,11 +148,11 @@
     "funding_spread|LSKUSDT": {
       "strategy": "funding_spread",
       "label": "LSKUSDT",
-      "snapshots": 23,
-      "survives": 0,
+      "snapshots": 24,
+      "survives": 1,
       "rejected": 0,
       "insufficient": 23,
-      "consecutive_non_survivals": 23,
+      "consecutive_non_survivals": 0,
       "reason_counts": {
         "4 observations; need at least 6": 1,
         "persistence=0.556; need at least 0.70": 1,
@@ -183,16 +183,13 @@
         "persistence=0.591; need at least 0.70": 1,
         "latest/median edge ratio=0.142; latest=5.120 bps/8h, median=35.960; require >= 0.25 to rule out sharp edge decay": 1
       },
-      "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-09-14T19:15:59+00:00",
-      "last_latest_edge_bps": 5.12,
-      "last_median_positive_edge_bps": 35.96,
-      "last_persistence": 0.5909,
-      "last_reasons": [
-        "persistence=0.591; need at least 0.70",
-        "latest/median edge ratio=0.142; latest=5.120 bps/8h, median=35.960; require >= 0.25 to rule out sharp edge decay"
-      ],
-      "updated_at_utc": "2026-09-14T19:20:33+00:00"
+      "last_verdict": "SURVIVES_KILLER",
+      "last_seen_utc": "2026-09-14T22:16:28+00:00",
+      "last_latest_edge_bps": 52.4,
+      "last_median_positive_edge_bps": 36.36,
+      "last_persistence": 0.7,
+      "last_reasons": [],
+      "updated_at_utc": "2026-09-14T22:20:58+00:00"
     },
     "funding_spread|IOSTUSDT": {
       "strategy": "funding_spread",
