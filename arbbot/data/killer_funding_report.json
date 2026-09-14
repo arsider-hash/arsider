@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-14T06:37:27+00:00",
+  "generated_at_utc": "2026-09-14T06:46:08+00:00",
   "verdict": "INSUFFICIENT_EVIDENCE",
   "selected": {
     "key": "funding_spread|LSKUSDT",
@@ -13,11 +13,11 @@
     "median_positive_edge_bps": 34.48,
     "p90_positive_edge_bps": 97.84,
     "max_edge_bps": 1196.72,
-    "latest_edge_bps": 44.0,
+    "latest_edge_bps": 58.08,
     "research_score": 77.35,
     "classification": "watch",
-    "last_seen_utc": "2026-09-14T06:32:57+00:00",
-    "latest_age_seconds": 109.6,
+    "last_seen_utc": "2026-09-14T06:42:03+00:00",
+    "latest_age_seconds": 90.5,
     "current_signal_fresh": true,
     "current_direction_stability": 0.5882,
     "current_direction_observations": 30,
@@ -168,7 +168,7 @@
       "check": "freshness",
       "status": "PASS",
       "severity": "hard",
-      "detail": "candidate age 271s"
+      "detail": "candidate age 246s"
     },
     {
       "check": "sample_presence",
@@ -192,7 +192,7 @@
       "check": "latest_edge_sign",
       "status": "PASS",
       "severity": "soft",
-      "detail": "latest_edge_bps=44.0000"
+      "detail": "latest_edge_bps=58.0800"
     },
     {
       "check": "economic_relevance",
@@ -204,7 +204,7 @@
       "check": "funding_regime_decay",
       "status": "PASS",
       "severity": "hard",
-      "detail": "latest/median edge ratio=1.276; latest=44.000 bps/8h, median=34.480; require >= 0.25 to rule out sharp edge decay"
+      "detail": "latest/median edge ratio=1.684; latest=58.080 bps/8h, median=34.480; require >= 0.25 to rule out sharp edge decay"
     },
     {
       "check": "funding_basis_persistence",
@@ -222,7 +222,7 @@
       "check": "funding_executable_entry",
       "status": "PASS",
       "severity": "hard",
-      "detail": "EUR 250 executable adverse basis=16.765 bps, recovery=0.38 funding periods; require <= 3.00"
+      "detail": "EUR 250 executable adverse basis=17.152 bps, recovery=0.29 funding periods; require <= 3.00"
     },
     {
       "check": "shadow_evidence",

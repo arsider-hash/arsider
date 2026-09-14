@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-14T06:37:28+00:00",
+  "generated_at_utc": "2026-09-14T06:46:09+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -30,23 +30,23 @@
     "stable_dislocation|FDUSD:Binance": {
       "strategy": "stable_dislocation",
       "label": "FDUSD:Binance",
-      "snapshots": 47,
+      "snapshots": 48,
       "survives": 0,
       "rejected": 0,
-      "insufficient": 47,
-      "consecutive_non_survivals": 47,
+      "insufficient": 48,
+      "consecutive_non_survivals": 48,
       "reason_counts": {
-        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 47
+        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 48
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-09-14T06:33:46+00:00",
+      "last_seen_utc": "2026-09-14T06:42:39+00:00",
       "last_latest_edge_bps": 10.5,
       "last_median_positive_edge_bps": 12.5,
       "last_persistence": 1.0,
       "last_reasons": [
         "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified"
       ],
-      "updated_at_utc": "2026-09-14T06:37:28+00:00"
+      "updated_at_utc": "2026-09-14T06:46:09+00:00"
     },
     "funding_spread|VTHOUSDT": {
       "strategy": "funding_spread",
@@ -148,11 +148,11 @@
     "funding_spread|LSKUSDT": {
       "strategy": "funding_spread",
       "label": "LSKUSDT",
-      "snapshots": 21,
+      "snapshots": 22,
       "survives": 0,
       "rejected": 0,
-      "insufficient": 21,
-      "consecutive_non_survivals": 21,
+      "insufficient": 22,
+      "consecutive_non_survivals": 22,
       "reason_counts": {
         "4 observations; need at least 6": 1,
         "persistence=0.556; need at least 0.70": 1,
@@ -164,7 +164,7 @@
         "latest funding direction matches 46% of independent basis buckets; require >= 50%": 1,
         "persistence=0.500; need at least 0.70": 1,
         "persistence=0.562; need at least 0.70": 1,
-        "persistence=0.588; need at least 0.70": 2,
+        "persistence=0.588; need at least 0.70": 3,
         "persistence=0.611; need at least 0.70": 1,
         "persistence=0.650; need at least 0.70": 1,
         "persistence=0.667; need at least 0.70": 1,
@@ -182,14 +182,14 @@
         "persistence=0.592; need at least 0.70": 1
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-09-14T06:32:57+00:00",
-      "last_latest_edge_bps": 44.0,
+      "last_seen_utc": "2026-09-14T06:42:03+00:00",
+      "last_latest_edge_bps": 58.08,
       "last_median_positive_edge_bps": 34.48,
       "last_persistence": 0.5882,
       "last_reasons": [
         "persistence=0.588; need at least 0.70"
       ],
-      "updated_at_utc": "2026-09-14T06:37:28+00:00"
+      "updated_at_utc": "2026-09-14T06:46:09+00:00"
     },
     "funding_spread|IOSTUSDT": {
       "strategy": "funding_spread",
