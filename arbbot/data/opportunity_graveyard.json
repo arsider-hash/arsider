@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-15T00:56:54+00:00",
+  "generated_at_utc": "2026-09-15T01:02:00+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -30,23 +30,23 @@
     "stable_dislocation|FDUSD:Binance": {
       "strategy": "stable_dislocation",
       "label": "FDUSD:Binance",
-      "snapshots": 53,
+      "snapshots": 54,
       "survives": 0,
       "rejected": 0,
-      "insufficient": 53,
-      "consecutive_non_survivals": 53,
+      "insufficient": 54,
+      "consecutive_non_survivals": 54,
       "reason_counts": {
-        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 53
+        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 54
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-09-14T23:05:32+00:00",
-      "last_latest_edge_bps": 10.5,
+      "last_seen_utc": "2026-09-15T00:58:20+00:00",
+      "last_latest_edge_bps": 11.5,
       "last_median_positive_edge_bps": 11.5,
       "last_persistence": 0.931,
       "last_reasons": [
         "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified"
       ],
-      "updated_at_utc": "2026-09-14T23:09:25+00:00"
+      "updated_at_utc": "2026-09-15T01:02:00+00:00"
     },
     "funding_spread|VTHOUSDT": {
       "strategy": "funding_spread",
@@ -148,8 +148,8 @@
     "funding_spread|LSKUSDT": {
       "strategy": "funding_spread",
       "label": "LSKUSDT",
-      "snapshots": 25,
-      "survives": 2,
+      "snapshots": 24,
+      "survives": 1,
       "rejected": 0,
       "insufficient": 23,
       "consecutive_non_survivals": 0,
@@ -184,12 +184,12 @@
         "latest/median edge ratio=0.142; latest=5.120 bps/8h, median=35.960; require >= 0.25 to rule out sharp edge decay": 1
       },
       "last_verdict": "SURVIVES_KILLER",
-      "last_seen_utc": "2026-09-15T00:42:28+00:00",
-      "last_latest_edge_bps": 26.72,
-      "last_median_positive_edge_bps": 36.16,
-      "last_persistence": 0.7436,
+      "last_seen_utc": "2026-09-14T22:16:28+00:00",
+      "last_latest_edge_bps": 52.4,
+      "last_median_positive_edge_bps": 36.36,
+      "last_persistence": 0.7,
       "last_reasons": [],
-      "updated_at_utc": "2026-09-15T00:56:54+00:00"
+      "updated_at_utc": "2026-09-14T22:20:58+00:00"
     },
     "funding_spread|IOSTUSDT": {
       "strategy": "funding_spread",
@@ -257,18 +257,19 @@
     "funding_spread|STEEMUSDT": {
       "strategy": "funding_spread",
       "label": "STEEMUSDT",
-      "snapshots": 5,
+      "snapshots": 6,
       "survives": 0,
-      "rejected": 5,
+      "rejected": 6,
       "insufficient": 0,
-      "consecutive_non_survivals": 5,
+      "consecutive_non_survivals": 6,
       "reason_counts": {
         "candidate age 24666s": 1,
-        "no matching executable-entry probe at EUR 250 for STEEMUSDT long Bitget / short Gate": 5,
+        "no matching executable-entry probe at EUR 250 for STEEMUSDT long Bitget / short Gate": 6,
         "candidate age 51019s": 1,
         "candidate age 52694s": 1,
         "candidate age 70420s": 1,
-        "candidate age 85742s": 1
+        "candidate age 85742s": 1,
+        "candidate age 92497s": 1
       },
       "last_verdict": "REJECTED",
       "last_seen_utc": "2026-09-13T23:20:23+00:00",
@@ -276,10 +277,10 @@
       "last_median_positive_edge_bps": 20.115,
       "last_persistence": 0.7273,
       "last_reasons": [
-        "candidate age 85742s",
+        "candidate age 92497s",
         "no matching executable-entry probe at EUR 250 for STEEMUSDT long Bitget / short Gate"
       ],
-      "updated_at_utc": "2026-09-14T23:09:25+00:00"
+      "updated_at_utc": "2026-09-15T01:02:00+00:00"
     }
   },
   "note": "Historical failure memory is diagnostic evidence only. It cannot loosen gates or create READY."
