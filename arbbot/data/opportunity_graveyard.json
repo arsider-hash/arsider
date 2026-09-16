@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-16T00:25:30+00:00",
+  "generated_at_utc": "2026-09-16T00:56:30+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -30,36 +30,36 @@
     "stable_dislocation|FDUSD:Binance": {
       "strategy": "stable_dislocation",
       "label": "FDUSD:Binance",
-      "snapshots": 56,
+      "snapshots": 57,
       "survives": 0,
       "rejected": 0,
-      "insufficient": 56,
-      "consecutive_non_survivals": 56,
+      "insufficient": 57,
+      "consecutive_non_survivals": 57,
       "reason_counts": {
-        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 56
+        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 57
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-09-15T15:34:34+00:00",
-      "last_latest_edge_bps": 9.5,
+      "last_seen_utc": "2026-09-16T00:55:01+00:00",
+      "last_latest_edge_bps": 14.5,
       "last_median_positive_edge_bps": 11.5,
-      "last_persistence": 0.8788,
+      "last_persistence": 0.8214,
       "last_reasons": [
         "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified"
       ],
-      "updated_at_utc": "2026-09-15T15:38:12+00:00"
+      "updated_at_utc": "2026-09-16T00:56:30+00:00"
     },
     "funding_spread|VTHOUSDT": {
       "strategy": "funding_spread",
       "label": "VTHOUSDT",
-      "snapshots": 7,
+      "snapshots": 8,
       "survives": 0,
-      "rejected": 6,
+      "rejected": 7,
       "insufficient": 1,
-      "consecutive_non_survivals": 7,
+      "consecutive_non_survivals": 8,
       "reason_counts": {
         "candidate age 1605s": 1,
         "persistence=0.522; need at least 0.70": 5,
-        "no matching executable-entry probe at EUR 250 for VTHOUSDT short Bitget / long Gate": 5,
+        "no matching executable-entry probe at EUR 250 for VTHOUSDT short Bitget / long Gate": 6,
         "candidate age 10812s": 1,
         "candidate age 15222s": 1,
         "candidate age 26432s": 1,
@@ -67,17 +67,21 @@
         "EUR 250 executable adverse basis=20.929 bps, recovery=3.71 funding periods; require <= 3.00": 1,
         "persistence=0.510; need at least 0.70": 1,
         "latest/median edge ratio=0.226; latest=5.640 bps/8h, median=25.000; require >= 0.25 to rule out sharp edge decay": 1,
-        "persistence=0.500; need at least 0.70": 1
+        "persistence=0.500; need at least 0.70": 1,
+        "candidate age 152068s": 1,
+        "5 observations; need at least 6": 1
       },
-      "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-09-13T06:33:13+00:00",
-      "last_latest_edge_bps": 28.12,
-      "last_median_positive_edge_bps": 24.56,
-      "last_persistence": 0.5,
+      "last_verdict": "REJECTED",
+      "last_seen_utc": "2026-09-14T06:42:03+00:00",
+      "last_latest_edge_bps": 7.1,
+      "last_median_positive_edge_bps": 17.66,
+      "last_persistence": 1.0,
       "last_reasons": [
-        "persistence=0.500; need at least 0.70"
+        "candidate age 152068s",
+        "5 observations; need at least 6",
+        "no matching executable-entry probe at EUR 250 for VTHOUSDT short Bitget / long Gate"
       ],
-      "updated_at_utc": "2026-09-13T06:37:24+00:00"
+      "updated_at_utc": "2026-09-16T00:56:30+00:00"
     },
     "funding_spread|PONSUSDT": {
       "strategy": "funding_spread",
