@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-16T00:56:30+00:00",
+  "generated_at_utc": "2026-09-16T01:25:05+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -30,23 +30,23 @@
     "stable_dislocation|FDUSD:Binance": {
       "strategy": "stable_dislocation",
       "label": "FDUSD:Binance",
-      "snapshots": 57,
+      "snapshots": 58,
       "survives": 0,
       "rejected": 0,
-      "insufficient": 57,
-      "consecutive_non_survivals": 57,
+      "insufficient": 58,
+      "consecutive_non_survivals": 58,
       "reason_counts": {
-        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 57
+        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 58
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-09-16T00:55:01+00:00",
-      "last_latest_edge_bps": 14.5,
-      "last_median_positive_edge_bps": 11.5,
-      "last_persistence": 0.8214,
+      "last_seen_utc": "2026-09-16T01:21:21+00:00",
+      "last_latest_edge_bps": 13.5,
+      "last_median_positive_edge_bps": 12.5,
+      "last_persistence": 0.8148,
       "last_reasons": [
         "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified"
       ],
-      "updated_at_utc": "2026-09-16T00:56:30+00:00"
+      "updated_at_utc": "2026-09-16T01:25:05+00:00"
     },
     "funding_spread|VTHOUSDT": {
       "strategy": "funding_spread",
@@ -223,25 +223,32 @@
     "funding_spread|CVCUSDT": {
       "strategy": "funding_spread",
       "label": "CVCUSDT",
-      "snapshots": 7,
+      "snapshots": 8,
       "survives": 2,
-      "rejected": 0,
+      "rejected": 1,
       "insufficient": 5,
-      "consecutive_non_survivals": 0,
+      "consecutive_non_survivals": 1,
       "reason_counts": {
         "4 observations; need at least 6": 1,
         "5 observations; need at least 6": 1,
         "latest/median edge ratio=0.241; latest=39.800 bps/8h, median=164.930; require >= 0.25 to rule out sharp edge decay": 1,
         "latest/median edge ratio=0.195; latest=30.180 bps/8h, median=154.860; require >= 0.25 to rule out sharp edge decay": 1,
-        "latest/median edge ratio=0.100; latest=10.780 bps/8h, median=107.650; require >= 0.25 to rule out sharp edge decay": 1
+        "latest/median edge ratio=0.100; latest=10.780 bps/8h, median=107.650; require >= 0.25 to rule out sharp edge decay": 1,
+        "candidate age 53606s": 1,
+        "persistence=0.571; need at least 0.70": 1,
+        "no matching executable-entry probe at EUR 250 for CVCUSDT short Bitget / long Gate": 1
       },
-      "last_verdict": "SURVIVES_KILLER",
-      "last_seen_utc": "2026-09-13T23:20:23+00:00",
-      "last_latest_edge_bps": 23.08,
-      "last_median_positive_edge_bps": 60.44,
-      "last_persistence": 0.7333,
-      "last_reasons": [],
-      "updated_at_utc": "2026-09-13T23:25:01+00:00"
+      "last_verdict": "REJECTED",
+      "last_seen_utc": "2026-09-15T10:31:39+00:00",
+      "last_latest_edge_bps": 31.26,
+      "last_median_positive_edge_bps": 43.45,
+      "last_persistence": 0.5714,
+      "last_reasons": [
+        "candidate age 53606s",
+        "persistence=0.571; need at least 0.70",
+        "no matching executable-entry probe at EUR 250 for CVCUSDT short Bitget / long Gate"
+      ],
+      "updated_at_utc": "2026-09-16T01:25:05+00:00"
     },
     "funding_spread|BTWUSDT": {
       "strategy": "funding_spread",
