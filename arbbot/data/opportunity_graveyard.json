@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-17T10:03:36+00:00",
+  "generated_at_utc": "2026-09-17T10:36:49+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -152,11 +152,11 @@
     "funding_spread|LSKUSDT": {
       "strategy": "funding_spread",
       "label": "LSKUSDT",
-      "snapshots": 55,
-      "survives": 27,
+      "snapshots": 56,
+      "survives": 28,
       "rejected": 3,
       "insufficient": 25,
-      "consecutive_non_survivals": 1,
+      "consecutive_non_survivals": 0,
       "reason_counts": {
         "4 observations; need at least 6": 1,
         "persistence=0.556; need at least 0.70": 1,
@@ -196,16 +196,13 @@
         "no matching executable-entry probe at EUR 250 for LSKUSDT short Bitget / long Gate": 2,
         "latest/median edge ratio=0.059; latest=1.120 bps/8h, median=19.120; require >= 0.25 to rule out sharp edge decay": 1
       },
-      "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-09-17T09:49:37+00:00",
-      "last_latest_edge_bps": 1.12,
-      "last_median_positive_edge_bps": 19.12,
-      "last_persistence": 0.74,
-      "last_reasons": [
-        "latest/median edge ratio=0.059; latest=1.120 bps/8h, median=19.120; require >= 0.25 to rule out sharp edge decay",
-        "no matching executable-entry probe at EUR 250 for LSKUSDT short Bitget / long Gate"
-      ],
-      "updated_at_utc": "2026-09-17T09:54:03+00:00"
+      "last_verdict": "SURVIVES_KILLER",
+      "last_seen_utc": "2026-09-17T10:32:11+00:00",
+      "last_latest_edge_bps": 19.12,
+      "last_median_positive_edge_bps": 18.0,
+      "last_persistence": 0.7143,
+      "last_reasons": [],
+      "updated_at_utc": "2026-09-17T10:36:49+00:00"
     },
     "funding_spread|IOSTUSDT": {
       "strategy": "funding_spread",
