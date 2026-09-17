@@ -5,6 +5,15 @@ on:
     workflows: ["ARBBOT unified lab"]
     types: [completed]
   workflow_dispatch:
+  push:
+    paths:
+      - "arbbot/capital_scheduler.py"
+      - "arbbot/opportunity_event.py"
+      - "arbbot/betfair_hunter.py"
+      - "arbbot/habitat_board.py"
+      - "arbbot/target_100_engine.py"
+      - "arbbot/test_capital_scheduler.py"
+      - ".github/workflows/arbbot-target-100.yml"
 
 permissions:
   contents: write
@@ -15,7 +24,7 @@ concurrency:
 
 jobs:
   challenge:
-    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
@@ -25,18 +34,33 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: Verify chronological capital-conflict logic
+        run: python arbbot/test_capital_scheduler.py
+      - name: Ingest Betfair shadow/replay events if a feed exists
+        run: python arbbot/betfair_hunter.py
+      - name: Simulate one shared EUR250 capital pool
+        run: python arbbot/capital_scheduler.py
+      - name: Build cross-habitat board
+        run: python arbbot/habitat_board.py
       - name: Evaluate EUR100 feasibility without optimistic scaling
         run: python arbbot/target_100_engine.py
-      - name: Persist challenge result
+      - name: Persist challenge evidence
         run: |
           set -euo pipefail
           git config user.name "arbbot"
           git config user.email "actions@users.noreply.github.com"
-          git add arbbot/data/target_100.json
+          git add \
+            arbbot/data/betfair_latest.json \
+            arbbot/data/capital_schedule.json \
+            arbbot/data/habitat_board.json \
+            arbbot/data/target_100.json
+          if [ -f arbbot/data/opportunity_events.jsonl ]; then
+            git add arbbot/data/opportunity_events.jsonl
+          fi
           if git diff --cached --quiet; then
             echo "No challenge change"
           else
-            git commit -m "arbbot: refresh EUR100 feasibility"
+            git commit -m "arbbot: refresh multi-habitat EUR100 proof"
             git pull --rebase origin main
             git push origin HEAD:main
           fi
