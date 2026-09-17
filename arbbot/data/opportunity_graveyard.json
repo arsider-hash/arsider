@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-17T11:37:53+00:00",
+  "generated_at_utc": "2026-09-17T13:13:32+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -30,23 +30,23 @@
     "stable_dislocation|FDUSD:Binance": {
       "strategy": "stable_dislocation",
       "label": "FDUSD:Binance",
-      "snapshots": 71,
+      "snapshots": 72,
       "survives": 0,
       "rejected": 0,
-      "insufficient": 71,
-      "consecutive_non_survivals": 71,
+      "insufficient": 72,
+      "consecutive_non_survivals": 72,
       "reason_counts": {
-        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 71
+        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 72
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-09-17T11:34:12+00:00",
+      "last_seen_utc": "2026-09-17T13:09:50+00:00",
       "last_latest_edge_bps": 14.5,
       "last_median_positive_edge_bps": 13.5,
-      "last_persistence": 0.9167,
+      "last_persistence": 0.9189,
       "last_reasons": [
         "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified"
       ],
-      "updated_at_utc": "2026-09-17T11:37:53+00:00"
+      "updated_at_utc": "2026-09-17T13:13:32+00:00"
     },
     "funding_spread|VTHOUSDT": {
       "strategy": "funding_spread",
@@ -152,11 +152,11 @@
     "funding_spread|LSKUSDT": {
       "strategy": "funding_spread",
       "label": "LSKUSDT",
-      "snapshots": 57,
+      "snapshots": 58,
       "survives": 28,
       "rejected": 3,
-      "insufficient": 26,
-      "consecutive_non_survivals": 1,
+      "insufficient": 27,
+      "consecutive_non_survivals": 2,
       "reason_counts": {
         "4 observations; need at least 6": 1,
         "persistence=0.556; need at least 0.70": 1,
@@ -196,18 +196,20 @@
         "no matching executable-entry probe at EUR 250 for LSKUSDT short Bitget / long Gate": 2,
         "latest/median edge ratio=0.059; latest=1.120 bps/8h, median=19.120; require >= 0.25 to rule out sharp edge decay": 1,
         "persistence=0.286; need at least 0.70": 1,
-        "latest funding direction matches 29% of independent basis buckets; require >= 50%": 1
+        "latest funding direction matches 29% of independent basis buckets; require >= 50%": 1,
+        "persistence=0.300; need at least 0.70": 1,
+        "latest funding direction matches 30% of independent basis buckets; require >= 50%": 1
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-09-17T11:33:22+00:00",
-      "last_latest_edge_bps": 135.2,
-      "last_median_positive_edge_bps": 16.24,
-      "last_persistence": 0.2857,
+      "last_seen_utc": "2026-09-17T13:09:02+00:00",
+      "last_latest_edge_bps": 93.76,
+      "last_median_positive_edge_bps": 17.28,
+      "last_persistence": 0.3,
       "last_reasons": [
-        "persistence=0.286; need at least 0.70",
-        "latest funding direction matches 29% of independent basis buckets; require >= 50%"
+        "persistence=0.300; need at least 0.70",
+        "latest funding direction matches 30% of independent basis buckets; require >= 50%"
       ],
-      "updated_at_utc": "2026-09-17T11:37:53+00:00"
+      "updated_at_utc": "2026-09-17T13:13:32+00:00"
     },
     "funding_spread|IOSTUSDT": {
       "strategy": "funding_spread",
