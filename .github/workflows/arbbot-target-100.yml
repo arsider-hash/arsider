@@ -59,8 +59,31 @@ jobs:
           fi
           if git diff --cached --quiet; then
             echo "No challenge change"
-          else
-            git commit -m "arbbot: refresh multi-habitat EUR100 proof"
-            git pull --rebase origin main
-            git push origin HEAD:main
+            exit 0
           fi
+
+          git commit -m "arbbot: refresh multi-habitat EUR100 proof"
+
+          # Other ARBBOT scanners also persist generated evidence to main. A
+          # successful rebase can therefore still lose the race before push.
+          # Retry the fetch/rebase/push sequence instead of failing the whole
+          # research pipeline on a transient non-fast-forward update.
+          for attempt in 1 2 3 4 5; do
+            echo "Persist attempt ${attempt}/5"
+            git fetch origin main
+            if ! git rebase origin/main; then
+              echo "Rebase conflict is not a transient race; refusing to overwrite evidence."
+              git rebase --abort || true
+              exit 1
+            fi
+            if git push origin HEAD:main; then
+              echo "Challenge evidence persisted"
+              exit 0
+            fi
+            if [ "$attempt" -lt 5 ]; then
+              sleep $((attempt * 2))
+            fi
+          done
+
+          echo "Failed to persist challenge evidence after 5 race-safe attempts"
+          exit 1
