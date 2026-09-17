@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-17T20:17:23+00:00",
+  "generated_at_utc": "2026-09-17T21:54:01+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -30,23 +30,23 @@
     "stable_dislocation|FDUSD:Binance": {
       "strategy": "stable_dislocation",
       "label": "FDUSD:Binance",
-      "snapshots": 80,
+      "snapshots": 81,
       "survives": 0,
       "rejected": 0,
-      "insufficient": 80,
-      "consecutive_non_survivals": 80,
+      "insufficient": 81,
+      "consecutive_non_survivals": 81,
       "reason_counts": {
-        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 80
+        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 81
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-09-17T20:13:44+00:00",
-      "last_latest_edge_bps": 10.5,
+      "last_seen_utc": "2026-09-17T21:50:12+00:00",
+      "last_latest_edge_bps": 11.5,
       "last_median_positive_edge_bps": 13.5,
       "last_persistence": 1.0,
       "last_reasons": [
         "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified"
       ],
-      "updated_at_utc": "2026-09-17T20:17:23+00:00"
+      "updated_at_utc": "2026-09-17T21:54:01+00:00"
     },
     "funding_spread|VTHOUSDT": {
       "strategy": "funding_spread",
@@ -388,11 +388,11 @@
     "funding_spread|ONEUSDT": {
       "strategy": "funding_spread",
       "label": "ONEUSDT",
-      "snapshots": 4,
+      "snapshots": 5,
       "survives": 0,
-      "rejected": 4,
+      "rejected": 5,
       "insufficient": 0,
-      "consecutive_non_survivals": 4,
+      "consecutive_non_survivals": 5,
       "reason_counts": {
         "5 independent 15m buckets; median adverse basis costs 3.52 funding periods; median aligned basis=-261.830 bps": 1,
         "EUR 250 executable adverse basis=277.307 bps, recovery=3.40 funding periods; require <= 3.00": 1,
@@ -402,18 +402,20 @@
         "7 independent 15m buckets; median adverse basis costs 3.57 funding periods; median aligned basis=-267.673 bps": 1,
         "EUR 250 executable adverse basis=387.724 bps, recovery=6.34 funding periods; require <= 3.00": 1,
         "8 independent 15m buckets; median adverse basis costs 3.72 funding periods; median aligned basis=-292.779 bps": 1,
-        "EUR 250 executable adverse basis=376.890 bps, recovery=5.62 funding periods; require <= 3.00": 1
+        "EUR 250 executable adverse basis=376.890 bps, recovery=5.62 funding periods; require <= 3.00": 1,
+        "10 independent 15m buckets; median adverse basis costs 3.97 funding periods; median aligned basis=-328.334 bps": 1,
+        "EUR 250 executable adverse basis=355.894 bps, recovery=4.28 funding periods; require <= 3.00": 1
       },
       "last_verdict": "REJECTED",
-      "last_seen_utc": "2026-09-17T20:12:58+00:00",
-      "last_latest_edge_bps": 67.1,
-      "last_median_positive_edge_bps": 71.985,
+      "last_seen_utc": "2026-09-17T21:49:27+00:00",
+      "last_latest_edge_bps": 83.12,
+      "last_median_positive_edge_bps": 78.345,
       "last_persistence": 1.0,
       "last_reasons": [
-        "8 independent 15m buckets; median adverse basis costs 3.72 funding periods; median aligned basis=-292.779 bps",
-        "EUR 250 executable adverse basis=376.890 bps, recovery=5.62 funding periods; require <= 3.00"
+        "10 independent 15m buckets; median adverse basis costs 3.97 funding periods; median aligned basis=-328.334 bps",
+        "EUR 250 executable adverse basis=355.894 bps, recovery=4.28 funding periods; require <= 3.00"
       ],
-      "updated_at_utc": "2026-09-17T20:17:23+00:00"
+      "updated_at_utc": "2026-09-17T21:54:01+00:00"
     }
   },
   "note": "Historical failure memory is diagnostic evidence only. It cannot loosen gates or create READY."
