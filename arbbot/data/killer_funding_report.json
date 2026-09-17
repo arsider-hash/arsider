@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-17T13:13:32+00:00",
+  "generated_at_utc": "2026-09-17T13:18:39+00:00",
   "verdict": "INSUFFICIENT_EVIDENCE",
   "selected": {
     "key": "funding_spread|LSKUSDT",
@@ -11,13 +11,13 @@
     "positive_observations": 15,
     "persistence": 0.3,
     "median_positive_edge_bps": 17.28,
-    "p90_positive_edge_bps": 93.76,
+    "p90_positive_edge_bps": 114.64,
     "max_edge_bps": 135.2,
-    "latest_edge_bps": 93.76,
+    "latest_edge_bps": 114.64,
     "research_score": 58.1,
     "classification": "noise",
-    "last_seen_utc": "2026-09-17T13:09:02+00:00",
-    "latest_age_seconds": 111.8,
+    "last_seen_utc": "2026-09-17T13:14:04+00:00",
+    "latest_age_seconds": 116.3,
     "current_signal_fresh": true,
     "current_direction_stability": 0.3,
     "current_direction_observations": 15,
@@ -168,7 +168,7 @@
       "check": "freshness",
       "status": "PASS",
       "severity": "hard",
-      "detail": "candidate age 270s"
+      "detail": "candidate age 276s"
     },
     {
       "check": "sample_presence",
@@ -192,7 +192,7 @@
       "check": "latest_edge_sign",
       "status": "PASS",
       "severity": "soft",
-      "detail": "latest_edge_bps=93.7600"
+      "detail": "latest_edge_bps=114.6400"
     },
     {
       "check": "economic_relevance",
@@ -204,7 +204,7 @@
       "check": "funding_regime_decay",
       "status": "PASS",
       "severity": "hard",
-      "detail": "latest/median edge ratio=5.426; latest=93.760 bps/8h, median=17.280; require >= 0.25 to rule out sharp edge decay"
+      "detail": "latest/median edge ratio=6.634; latest=114.640 bps/8h, median=17.280; require >= 0.25 to rule out sharp edge decay"
     },
     {
       "check": "funding_basis_persistence",
@@ -222,7 +222,7 @@
       "check": "funding_executable_entry",
       "status": "PASS",
       "severity": "hard",
-      "detail": "EUR 250 executable adverse basis=0.206 bps, recovery=0.00 funding periods; require <= 3.00"
+      "detail": "EUR 250 executable basis is non-adverse; adverse basis=0.000 bps, recovery=0.00 funding periods"
     },
     {
       "check": "shadow_evidence",
