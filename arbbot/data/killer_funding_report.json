@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-18T07:03:13+00:00",
+  "generated_at_utc": "2026-09-18T07:05:23+00:00",
   "verdict": "REJECTED",
   "selected": {
     "key": "funding_spread|ONEUSDT",
@@ -13,11 +13,11 @@
     "median_positive_edge_bps": 82.93,
     "p90_positive_edge_bps": 154.84,
     "max_edge_bps": 162.06,
-    "latest_edge_bps": 159.27,
+    "latest_edge_bps": 159.07,
     "research_score": 100.0,
     "classification": "strong_watch",
-    "last_seen_utc": "2026-09-18T07:01:16+00:00",
-    "latest_age_seconds": 116.5,
+    "last_seen_utc": "2026-09-18T07:03:49+00:00",
+    "latest_age_seconds": 92.8,
     "current_signal_fresh": true,
     "current_direction_stability": 1.0,
     "current_direction_observations": 23,
@@ -168,7 +168,7 @@
       "check": "freshness",
       "status": "PASS",
       "severity": "hard",
-      "detail": "candidate age 118s"
+      "detail": "candidate age 94s"
     },
     {
       "check": "sample_presence",
@@ -192,7 +192,7 @@
       "check": "latest_edge_sign",
       "status": "PASS",
       "severity": "soft",
-      "detail": "latest_edge_bps=159.2700"
+      "detail": "latest_edge_bps=159.0700"
     },
     {
       "check": "economic_relevance",
@@ -204,7 +204,7 @@
       "check": "funding_regime_decay",
       "status": "PASS",
       "severity": "hard",
-      "detail": "latest/median edge ratio=1.921; latest=159.270 bps/8h, median=82.930; require >= 0.25 to rule out sharp edge decay"
+      "detail": "latest/median edge ratio=1.918; latest=159.070 bps/8h, median=82.930; require >= 0.25 to rule out sharp edge decay"
     },
     {
       "check": "funding_basis_persistence",
@@ -222,18 +222,18 @@
       "check": "funding_executable_entry",
       "status": "FAIL",
       "severity": "hard",
-      "detail": "EUR 250 executable adverse basis=658.836 bps, recovery=4.14 funding periods; require <= 3.00"
+      "detail": "EUR 250 executable adverse basis=738.940 bps, recovery=4.64 funding periods; require <= 3.00"
     },
     {
       "check": "shadow_evidence",
       "status": "PASS",
       "severity": "soft",
-      "detail": "count=5, positive_rate=1.000, cumulative_paper_pnl=1.548668"
+      "detail": "count=5, positive_rate=1.000, cumulative_paper_pnl=1.548168"
     }
   ],
   "hard_failures": [
     "23 independent 15m buckets; median adverse basis costs 3.89 funding periods; median aligned basis=-354.670 bps",
-    "EUR 250 executable adverse basis=658.836 bps, recovery=4.14 funding periods; require <= 3.00"
+    "EUR 250 executable adverse basis=738.940 bps, recovery=4.64 funding periods; require <= 3.00"
   ],
   "insufficient_evidence": [],
   "policy": {
