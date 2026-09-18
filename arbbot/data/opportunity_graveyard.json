@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-18T01:48:16+00:00",
+  "generated_at_utc": "2026-09-18T04:34:25+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -388,11 +388,11 @@
     "funding_spread|ONEUSDT": {
       "strategy": "funding_spread",
       "label": "ONEUSDT",
-      "snapshots": 12,
+      "snapshots": 13,
       "survives": 0,
-      "rejected": 12,
+      "rejected": 13,
       "insufficient": 0,
-      "consecutive_non_survivals": 12,
+      "consecutive_non_survivals": 13,
       "reason_counts": {
         "5 independent 15m buckets; median adverse basis costs 3.52 funding periods; median aligned basis=-261.830 bps": 1,
         "EUR 250 executable adverse basis=277.307 bps, recovery=3.40 funding periods; require <= 3.00": 1,
@@ -415,17 +415,20 @@
         "EUR 250 executable adverse basis=259.207 bps, recovery=4.24 funding periods; require <= 3.00": 1,
         "15 independent 15m buckets; median adverse basis costs 4.07 funding periods; median aligned basis=-317.885 bps": 1,
         "16 independent 15m buckets; median adverse basis costs 3.98 funding periods; median aligned basis=-292.779 bps": 1,
-        "17 independent 15m buckets; median adverse basis costs 3.89 funding periods; median aligned basis=-317.885 bps": 1
+        "17 independent 15m buckets; median adverse basis costs 3.89 funding periods; median aligned basis=-317.885 bps": 1,
+        "18 independent 15m buckets; median adverse basis costs 3.98 funding periods; median aligned basis=-324.554 bps": 1,
+        "EUR 250 executable adverse basis=511.828 bps, recovery=5.22 funding periods; require <= 3.00": 1
       },
       "last_verdict": "REJECTED",
-      "last_seen_utc": "2026-09-18T01:43:45+00:00",
-      "last_latest_edge_bps": 136.36,
-      "last_median_positive_edge_bps": 79.26,
+      "last_seen_utc": "2026-09-18T04:32:26+00:00",
+      "last_latest_edge_bps": 97.96,
+      "last_median_positive_edge_bps": 80.44,
       "last_persistence": 1.0,
       "last_reasons": [
-        "17 independent 15m buckets; median adverse basis costs 3.89 funding periods; median aligned basis=-317.885 bps"
+        "18 independent 15m buckets; median adverse basis costs 3.98 funding periods; median aligned basis=-324.554 bps",
+        "EUR 250 executable adverse basis=511.828 bps, recovery=5.22 funding periods; require <= 3.00"
       ],
-      "updated_at_utc": "2026-09-18T01:48:16+00:00"
+      "updated_at_utc": "2026-09-18T04:34:25+00:00"
     }
   },
   "note": "Historical failure memory is diagnostic evidence only. It cannot loosen gates or create READY."
