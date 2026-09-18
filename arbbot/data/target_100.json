@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-18T05:01:08+00:00",
+  "generated_at_utc": "2026-09-18T07:03:29+00:00",
   "challenge": {
     "starting_capital_eur": 250.0,
     "target_net_eur_per_month": 100.0,
@@ -22,11 +22,23 @@
       "status": "ACTIVE_BASELINE",
       "killer_survivors": 0,
       "best": null,
-      "note": "Existing crypto HUNTER/KILLER/ALLOCATOR remains unchanged."
+      "scheduler_adapter_status": "NO_ELIGIBLE_EVENT",
+      "scheduler_events_appended": 0,
+      "adapter_attempted": [
+        {
+          "strategy": "funding_spread",
+          "result": "SKIP",
+          "reason": "general_killer_not_survived"
+        }
+      ],
+      "note": "Existing crypto HUNTER/KILLER/ALLOCATOR remains unchanged; only fresh survivors can enter the shared EUR250 scheduler."
     },
     {
       "habitat": "betfair_exchange",
       "status": "AWAITING_FEED",
+      "replay_status": "AWAITING_REPLAY",
+      "replay_snapshots_seen": 0,
+      "replay_survivors": 0,
       "valid_events_seen": 0,
       "new_events_appended": 0,
       "orders_enabled": false
@@ -34,7 +46,7 @@
   ],
   "best_current_killer_survivor": null,
   "best_planning_run_rate_eur_month_at_250": null,
-  "all_time_accepted_shadow_pnl_eur_not_monthly_comparable": 8.561399,
+  "all_time_accepted_shadow_pnl_eur_not_monthly_comparable": 9.617279,
   "missing_proof": [
     "rolling ~30-day chronological executable-shadow evidence using the same EUR250 pool",
     "normalized executable-shadow opportunity events with venue pre-allocation and lock/release time",

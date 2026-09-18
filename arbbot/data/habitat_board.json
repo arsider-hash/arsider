@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-18T05:01:08+00:00",
+  "generated_at_utc": "2026-09-18T07:03:29+00:00",
   "principle": "new habitats compete for the same EUR250 pool; no habitat replaces or bypasses existing KILLER gates",
   "habitats": [
     {
@@ -7,11 +7,23 @@
       "status": "ACTIVE_BASELINE",
       "killer_survivors": 0,
       "best": null,
-      "note": "Existing crypto HUNTER/KILLER/ALLOCATOR remains unchanged."
+      "scheduler_adapter_status": "NO_ELIGIBLE_EVENT",
+      "scheduler_events_appended": 0,
+      "adapter_attempted": [
+        {
+          "strategy": "funding_spread",
+          "result": "SKIP",
+          "reason": "general_killer_not_survived"
+        }
+      ],
+      "note": "Existing crypto HUNTER/KILLER/ALLOCATOR remains unchanged; only fresh survivors can enter the shared EUR250 scheduler."
     },
     {
       "habitat": "betfair_exchange",
       "status": "AWAITING_FEED",
+      "replay_status": "AWAITING_REPLAY",
+      "replay_snapshots_seen": 0,
+      "replay_survivors": 0,
       "valid_events_seen": 0,
       "new_events_appended": 0,
       "orders_enabled": false
@@ -20,7 +32,8 @@
   "shared_capital_scheduler": {
     "status": "NO_EXECUTABLE_EVENTS",
     "best_plan": null,
-    "proof_window_span_days": 0.0
+    "proof_window_span_days": 0.0,
+    "eligible_events": 0
   },
   "safety": "research/shadow only; no orders, custody, transfers, signing or live-trading enablement"
 }

@@ -1,0 +1,22 @@
+{
+  "generated_at_utc": "2026-09-18T07:03:29+00:00",
+  "habitat": "crypto",
+  "status": "NO_ELIGIBLE_EVENT",
+  "new_events_appended": 0,
+  "event": null,
+  "attempted": [
+    {
+      "strategy": "funding_spread",
+      "result": "SKIP",
+      "reason": "general_killer_not_survived"
+    }
+  ],
+  "policy": {
+    "reference_budget_eur": 250.0,
+    "max_staleness_seconds": 900.0,
+    "funding_requires_both_killers_survive_same_route": true,
+    "cross_spot_requires_matching_depth_pass_and_measured_lock_time": true,
+    "stable_requires_verified_exit_and_measured_lock_time": true
+  },
+  "safety": "research/shadow only; no credentials, orders or fund movement"
+}
