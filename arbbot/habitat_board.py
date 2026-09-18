@@ -14,6 +14,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 DATA = ROOT / "data"
 CAPITAL_RANK = DATA / "capital_rank.json"
+CRYPTO_ADAPTER = DATA / "crypto_event_adapter_latest.json"
+BETFAIR_REPLAY = DATA / "betfair_replay_latest.json"
 BETFAIR = DATA / "betfair_latest.json"
 SCHEDULE = DATA / "capital_schedule.json"
 OUT = DATA / "habitat_board.json"
@@ -28,6 +30,8 @@ def load(path):
 
 def main():
     rank = load(CAPITAL_RANK)
+    crypto_adapter = load(CRYPTO_ADAPTER)
+    bf_replay = load(BETFAIR_REPLAY)
     bf = load(BETFAIR)
     schedule = load(SCHEDULE)
     crypto = rank.get("ranked") or []
@@ -39,11 +43,17 @@ def main():
             "status": "ACTIVE_BASELINE",
             "killer_survivors": len(crypto),
             "best": crypto_best,
-            "note": "Existing crypto HUNTER/KILLER/ALLOCATOR remains unchanged.",
+            "scheduler_adapter_status": crypto_adapter.get("status") or "NOT_RUN",
+            "scheduler_events_appended": crypto_adapter.get("new_events_appended", 0),
+            "adapter_attempted": crypto_adapter.get("attempted") or [],
+            "note": "Existing crypto HUNTER/KILLER/ALLOCATOR remains unchanged; only fresh survivors can enter the shared EUR250 scheduler.",
         },
         {
             "habitat": "betfair_exchange",
             "status": bf.get("status") or "AWAITING_FEED",
+            "replay_status": bf_replay.get("status") or "AWAITING_REPLAY",
+            "replay_snapshots_seen": bf_replay.get("snapshots_seen", 0),
+            "replay_survivors": bf_replay.get("survivors", 0),
             "valid_events_seen": bf.get("valid_events_seen", 0),
             "new_events_appended": bf.get("new_events_appended", 0),
             "orders_enabled": False,
@@ -58,6 +68,7 @@ def main():
             "status": schedule.get("status") or "NOT_RUN",
             "best_plan": schedule.get("best_plan"),
             "proof_window_span_days": schedule.get("proof_window_span_days", 0.0),
+            "eligible_events": schedule.get("eligible_events", 0),
         },
         "safety": "research/shadow only; no orders, custody, transfers, signing or live-trading enablement",
     }
