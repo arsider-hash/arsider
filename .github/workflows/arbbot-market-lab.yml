@@ -165,21 +165,56 @@ jobs:
         run: python arbbot/research_audit.py
       - name: Persist falsification graveyard memory
         run: python arbbot/opportunity_graveyard.py
-      - name: Persist all research data atomically
+      - name: Persist unified research data without erasing other habitat ledgers
         run: |
           set -euo pipefail
           git config user.name "arbbot"
           git config user.email "actions@users.noreply.github.com"
           snapshot_dir="$(mktemp -d)"
           cp -a arbbot/data "$snapshot_dir/data"
+
+          # Refresh main first. Other workflows (EUR100/Betfair/edge-node) own
+          # some files under arbbot/data. Never replace the whole directory with
+          # this run's older checkout, otherwise concurrent evidence can vanish.
           git fetch origin main
           git reset --hard origin/main
-          rm -rf arbbot/data
-          mkdir -p arbbot
-          cp -a "$snapshot_dir/data" arbbot/data
+          mkdir -p arbbot/data
+
+          python - "$snapshot_dir/data" arbbot/data <<'PY'
+          import shutil
+          import sys
+          from pathlib import Path
+
+          src = Path(sys.argv[1])
+          dst = Path(sys.argv[2])
+          protected = {
+              "crypto_event_adapter_latest.json",
+              "betfair_replay_latest.json",
+              "betfair_latest.json",
+              "betfair_inbox.jsonl",
+              "opportunity_events.jsonl",
+              "capital_schedule.json",
+              "habitat_board.json",
+              "target_100.json",
+          }
+
+          for item in src.iterdir():
+              if item.name in protected:
+                  continue
+              target = dst / item.name
+              if item.is_dir():
+                  if target.exists():
+                      shutil.rmtree(target)
+                  shutil.copytree(item, target)
+              else:
+                  shutil.copy2(item, target)
+
+          print("preserved cross-habitat files:", sorted(protected))
+          PY
+
           git add -A arbbot/data
           if git diff --cached --quiet; then
-            echo "No data change"
+            echo "No unified data change"
           else
             git commit -m "arbbot: unified observation"
             git push origin HEAD:main
