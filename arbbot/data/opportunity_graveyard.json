@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-19T23:37:15+00:00",
+  "generated_at_utc": "2026-09-19T23:48:11+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -388,11 +388,11 @@
     "funding_spread|ONEUSDT": {
       "strategy": "funding_spread",
       "label": "ONEUSDT",
-      "snapshots": 50,
+      "snapshots": 51,
       "survives": 0,
-      "rejected": 50,
+      "rejected": 51,
       "insufficient": 0,
-      "consecutive_non_survivals": 50,
+      "consecutive_non_survivals": 51,
       "reason_counts": {
         "5 independent 15m buckets; median adverse basis costs 3.52 funding periods; median aligned basis=-261.830 bps": 1,
         "EUR 250 executable adverse basis=277.307 bps, recovery=3.40 funding periods; require <= 3.00": 1,
@@ -499,32 +499,36 @@
         "latest/median edge ratio=0.106; latest=7.730 bps/8h, median=72.655; require >= 0.25 to rule out sharp edge decay": 1,
         "60 independent 15m buckets; median adverse basis costs 5.18 funding periods; median aligned basis=-424.534 bps": 1,
         "EUR 250 executable adverse basis=453.202 bps, recovery=164.20 funding periods; require <= 3.00": 1,
-        "latest/median edge ratio=0.040; latest=2.760 bps/8h, median=69.570; require >= 0.25 to rule out sharp edge decay": 1
+        "latest/median edge ratio=0.040; latest=2.760 bps/8h, median=69.570; require >= 0.25 to rule out sharp edge decay": 1,
+        "60 independent 15m buckets; median adverse basis costs 5.23 funding periods; median aligned basis=-426.424 bps": 1,
+        "EUR 250 executable adverse basis=489.204 bps, recovery=147.80 funding periods; require <= 3.00": 1,
+        "latest/median edge ratio=0.048; latest=3.310 bps/8h, median=69.570; require >= 0.25 to rule out sharp edge decay": 1
       },
       "last_verdict": "REJECTED",
-      "last_seen_utc": "2026-09-19T23:35:31+00:00",
-      "last_latest_edge_bps": 2.76,
+      "last_seen_utc": "2026-09-19T23:46:38+00:00",
+      "last_latest_edge_bps": 3.31,
       "last_median_positive_edge_bps": 69.57,
       "last_persistence": 0.85,
       "last_reasons": [
-        "60 independent 15m buckets; median adverse basis costs 5.18 funding periods; median aligned basis=-424.534 bps",
-        "EUR 250 executable adverse basis=453.202 bps, recovery=164.20 funding periods; require <= 3.00",
-        "latest/median edge ratio=0.040; latest=2.760 bps/8h, median=69.570; require >= 0.25 to rule out sharp edge decay"
+        "60 independent 15m buckets; median adverse basis costs 5.23 funding periods; median aligned basis=-426.424 bps",
+        "EUR 250 executable adverse basis=489.204 bps, recovery=147.80 funding periods; require <= 3.00",
+        "latest/median edge ratio=0.048; latest=3.310 bps/8h, median=69.570; require >= 0.25 to rule out sharp edge decay"
       ],
-      "updated_at_utc": "2026-09-19T23:37:15+00:00"
+      "updated_at_utc": "2026-09-19T23:48:11+00:00"
     },
     "funding_spread|FUSDT": {
       "strategy": "funding_spread",
       "label": "FUSDT",
-      "snapshots": 9,
+      "snapshots": 10,
       "survives": 7,
-      "rejected": 2,
+      "rejected": 3,
       "insufficient": 0,
-      "consecutive_non_survivals": 2,
+      "consecutive_non_survivals": 3,
       "reason_counts": {
         "candidate age 3814s": 1,
-        "no matching executable-entry probe at EUR 250 for FUSDT short Bitget / long Gate": 2,
-        "candidate age 6245s": 1
+        "no matching executable-entry probe at EUR 250 for FUSDT short Bitget / long Gate": 3,
+        "candidate age 6245s": 1,
+        "candidate age 6901s": 1
       },
       "last_verdict": "REJECTED",
       "last_seen_utc": "2026-09-19T21:53:10+00:00",
@@ -532,10 +536,10 @@
       "last_median_positive_edge_bps": 32.81,
       "last_persistence": 1.0,
       "last_reasons": [
-        "candidate age 6245s",
+        "candidate age 6901s",
         "no matching executable-entry probe at EUR 250 for FUSDT short Bitget / long Gate"
       ],
-      "updated_at_utc": "2026-09-19T23:37:15+00:00"
+      "updated_at_utc": "2026-09-19T23:48:11+00:00"
     },
     "funding_spread|AKEUSDT": {
       "strategy": "funding_spread",
