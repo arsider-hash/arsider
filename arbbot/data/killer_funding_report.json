@@ -1,6 +1,6 @@
 {
-  "generated_at_utc": "2026-09-19T21:55:12+00:00",
-  "verdict": "SURVIVES_KILLER",
+  "generated_at_utc": "2026-09-19T22:56:43+00:00",
+  "verdict": "REJECTED",
   "selected": {
     "key": "funding_spread|FUSDT",
     "strategy": "funding_spread",
@@ -15,10 +15,10 @@
     "max_edge_bps": 44.51,
     "latest_edge_bps": 20.95,
     "research_score": 100.0,
-    "classification": "strong_watch",
+    "classification": "noise",
     "last_seen_utc": "2026-09-19T21:53:10+00:00",
-    "latest_age_seconds": 121.2,
-    "current_signal_fresh": true,
+    "latest_age_seconds": 3812.7,
+    "current_signal_fresh": false,
     "current_direction_stability": 1.0,
     "current_direction_observations": 17,
     "direction_stability_required_for_watch": 0.5,
@@ -166,9 +166,9 @@
   "checks": [
     {
       "check": "freshness",
-      "status": "PASS",
+      "status": "FAIL",
       "severity": "hard",
-      "detail": "candidate age 122s"
+      "detail": "candidate age 3814s"
     },
     {
       "check": "sample_presence",
@@ -220,9 +220,9 @@
     },
     {
       "check": "funding_executable_entry",
-      "status": "PASS",
+      "status": "INSUFFICIENT",
       "severity": "hard",
-      "detail": "EUR 250 executable adverse basis=30.293 bps, recovery=1.45 funding periods; require <= 3.00"
+      "detail": "no matching executable-entry probe at EUR 250 for FUSDT short Bitget / long Gate"
     },
     {
       "check": "shadow_evidence",
@@ -231,8 +231,12 @@
       "detail": "count=7, positive_rate=1.000, cumulative_paper_pnl=0.503223"
     }
   ],
-  "hard_failures": [],
-  "insufficient_evidence": [],
+  "hard_failures": [
+    "candidate age 3814s"
+  ],
+  "insufficient_evidence": [
+    "no matching executable-entry probe at EUR 250 for FUSDT short Bitget / long Gate"
+  ],
   "policy": {
     "max_staleness_seconds": 900,
     "min_candidate_observations": 6,
