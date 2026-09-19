@@ -1,15 +1,86 @@
 {
-  "generated_at_utc": "2026-09-19T17:58:43+00:00",
-  "status": "NO_EXECUTABLE_EVENTS",
+  "generated_at_utc": "2026-09-19T19:00:23+00:00",
+  "status": "SIMULATED",
   "starting_capital_eur": 250.0,
   "window_days": 30,
-  "eligible_events": 0,
-  "rejected_input_events": 0,
-  "best_plan": null,
+  "window_end_utc": "2026-09-19T18:58:25+00:00",
+  "window_start_utc": "2026-08-20T18:58:25+00:00",
   "proof_window_span_days": 0.0,
+  "eligible_events": 1,
+  "rejected_input_events": 0,
+  "plans_tested": 3,
+  "best_plan": {
+    "preallocation_eur": {
+      "Bitget": 125.0,
+      "Gate": 125.0
+    },
+    "venue_count": 2,
+    "total_preallocated_eur": 250.0,
+    "idle_unallocated_eur": 0.0,
+    "accepted_events": 1,
+    "net_eur": 0.219259,
+    "human_minutes": 2.0,
+    "average_locked_capital_eur": 58.333,
+    "missed": {},
+    "accepted": [
+      {
+        "event_id": "crypto|funding_spread|FUSDT|2026-09-19T18:58:25+00:00|250",
+        "observed_at_utc": "2026-09-19T18:58:25+00:00",
+        "release_at_utc": "2026-09-26T18:58:25+00:00",
+        "habitat": "crypto",
+        "strategy": "funding_spread",
+        "label": "FUSDT",
+        "required_preallocation_eur": {
+          "Bitget": 125.0,
+          "Gate": 125.0
+        },
+        "expected_net_eur": 0.21925875,
+        "human_minutes": 2.0
+      }
+    ]
+  },
+  "best_plan_max_2_venues": {
+    "preallocation_eur": {
+      "Bitget": 125.0,
+      "Gate": 125.0
+    },
+    "venue_count": 2,
+    "total_preallocated_eur": 250.0,
+    "idle_unallocated_eur": 0.0,
+    "accepted_events": 1,
+    "net_eur": 0.219259,
+    "human_minutes": 2.0,
+    "average_locked_capital_eur": 58.333,
+    "missed": {},
+    "accepted": [
+      {
+        "event_id": "crypto|funding_spread|FUSDT|2026-09-19T18:58:25+00:00|250",
+        "observed_at_utc": "2026-09-19T18:58:25+00:00",
+        "release_at_utc": "2026-09-26T18:58:25+00:00",
+        "habitat": "crypto",
+        "strategy": "funding_spread",
+        "label": "FUSDT",
+        "required_preallocation_eur": {
+          "Bitget": 125.0,
+          "Gate": 125.0
+        },
+        "expected_net_eur": 0.21925875,
+        "human_minutes": 2.0
+      }
+    ]
+  },
+  "best_plan_3_venues": null,
   "third_venue_rule": {
     "absolute_gain_eur_min": 10.0,
-    "relative_gain_min": 0.2
+    "relative_gain_min": 0.2,
+    "principle": "a third account/venue is accepted only if both material-gain thresholds are met"
   },
+  "conservatism": [
+    "profits are not compounded into available capital",
+    "capital must be preallocated before an event appears",
+    "overlapping locks cannot double-spend the same venue balance",
+    "KILLER must SURVIVE and evidence tier must be executable_shadow",
+    "human-time budget is capped at 60 minutes per 30-day test window"
+  ],
   "safety": "shadow accounting only; no live orders or fund movement"
 }
