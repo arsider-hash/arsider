@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-19T16:44:08+00:00",
+  "generated_at_utc": "2026-09-19T17:21:13+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -388,11 +388,11 @@
     "funding_spread|ONEUSDT": {
       "strategy": "funding_spread",
       "label": "ONEUSDT",
-      "snapshots": 46,
+      "snapshots": 47,
       "survives": 0,
-      "rejected": 46,
+      "rejected": 47,
       "insufficient": 0,
-      "consecutive_non_survivals": 46,
+      "consecutive_non_survivals": 47,
       "reason_counts": {
         "5 independent 15m buckets; median adverse basis costs 3.52 funding periods; median aligned basis=-261.830 bps": 1,
         "EUR 250 executable adverse basis=277.307 bps, recovery=3.40 funding periods; require <= 3.00": 1,
@@ -487,19 +487,22 @@
         "EUR 250 executable adverse basis=390.401 bps, recovery=18.37 funding periods; require <= 3.00": 1,
         "56 independent 15m buckets; median adverse basis costs 5.15 funding periods; median aligned basis=-410.514 bps": 1,
         "EUR 250 executable adverse basis=428.460 bps, recovery=98.27 funding periods; require <= 3.00": 1,
-        "latest/median edge ratio=0.057; latest=4.360 bps/8h, median=76.535; require >= 0.25 to rule out sharp edge decay": 1
+        "latest/median edge ratio=0.057; latest=4.360 bps/8h, median=76.535; require >= 0.25 to rule out sharp edge decay": 1,
+        "57 independent 15m buckets; median adverse basis costs 5.20 funding periods; median aligned basis=-416.715 bps": 1,
+        "EUR 250 executable adverse basis=478.566 bps, recovery=63.64 funding periods; require <= 3.00": 1,
+        "latest/median edge ratio=0.102; latest=7.520 bps/8h, median=73.395; require >= 0.25 to rule out sharp edge decay": 1
       },
       "last_verdict": "REJECTED",
-      "last_seen_utc": "2026-09-19T16:42:16+00:00",
-      "last_latest_edge_bps": 4.36,
-      "last_median_positive_edge_bps": 76.535,
-      "last_persistence": 1.0,
+      "last_seen_utc": "2026-09-19T17:19:39+00:00",
+      "last_latest_edge_bps": 7.52,
+      "last_median_positive_edge_bps": 73.395,
+      "last_persistence": 0.9825,
       "last_reasons": [
-        "56 independent 15m buckets; median adverse basis costs 5.15 funding periods; median aligned basis=-410.514 bps",
-        "EUR 250 executable adverse basis=428.460 bps, recovery=98.27 funding periods; require <= 3.00",
-        "latest/median edge ratio=0.057; latest=4.360 bps/8h, median=76.535; require >= 0.25 to rule out sharp edge decay"
+        "57 independent 15m buckets; median adverse basis costs 5.20 funding periods; median aligned basis=-416.715 bps",
+        "EUR 250 executable adverse basis=478.566 bps, recovery=63.64 funding periods; require <= 3.00",
+        "latest/median edge ratio=0.102; latest=7.520 bps/8h, median=73.395; require >= 0.25 to rule out sharp edge decay"
       ],
-      "updated_at_utc": "2026-09-19T16:44:08+00:00"
+      "updated_at_utc": "2026-09-19T17:21:13+00:00"
     }
   },
   "note": "Historical failure memory is diagnostic evidence only. It cannot loosen gates or create READY."
