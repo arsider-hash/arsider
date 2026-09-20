@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-20T07:20:52+00:00",
+  "generated_at_utc": "2026-09-20T11:17:42+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -528,21 +528,22 @@
     "funding_spread|FUSDT": {
       "strategy": "funding_spread",
       "label": "FUSDT",
-      "snapshots": 15,
+      "snapshots": 16,
       "survives": 7,
-      "rejected": 8,
+      "rejected": 9,
       "insufficient": 0,
-      "consecutive_non_survivals": 8,
+      "consecutive_non_survivals": 9,
       "reason_counts": {
         "candidate age 3814s": 1,
-        "no matching executable-entry probe at EUR 250 for FUSDT short Bitget / long Gate": 8,
+        "no matching executable-entry probe at EUR 250 for FUSDT short Bitget / long Gate": 9,
         "candidate age 6245s": 1,
         "candidate age 6901s": 1,
         "candidate age 11349s": 1,
         "candidate age 13755s": 1,
         "candidate age 14763s": 1,
         "candidate age 29632s": 1,
-        "candidate age 34062s": 1
+        "candidate age 34062s": 1,
+        "candidate age 48272s": 1
       },
       "last_verdict": "REJECTED",
       "last_seen_utc": "2026-09-19T21:53:10+00:00",
@@ -550,27 +551,27 @@
       "last_median_positive_edge_bps": 32.81,
       "last_persistence": 1.0,
       "last_reasons": [
-        "candidate age 34062s",
+        "candidate age 48272s",
         "no matching executable-entry probe at EUR 250 for FUSDT short Bitget / long Gate"
       ],
-      "updated_at_utc": "2026-09-20T07:20:52+00:00"
+      "updated_at_utc": "2026-09-20T11:17:42+00:00"
     },
     "funding_spread|AKEUSDT": {
       "strategy": "funding_spread",
       "label": "AKEUSDT",
-      "snapshots": 1,
-      "survives": 1,
+      "snapshots": 2,
+      "survives": 2,
       "rejected": 0,
       "insufficient": 0,
       "consecutive_non_survivals": 0,
       "reason_counts": {},
       "last_verdict": "SURVIVES_KILLER",
-      "last_seen_utc": "2026-09-19T22:54:52+00:00",
-      "last_latest_edge_bps": 20.32,
-      "last_median_positive_edge_bps": 12.84,
-      "last_persistence": 0.8158,
+      "last_seen_utc": "2026-09-20T11:16:09+00:00",
+      "last_latest_edge_bps": 217.6,
+      "last_median_positive_edge_bps": 13.18,
+      "last_persistence": 0.7872,
       "last_reasons": [],
-      "updated_at_utc": "2026-09-19T22:56:44+00:00"
+      "updated_at_utc": "2026-09-20T11:17:42+00:00"
     },
     "funding_spread|GUSDT": {
       "strategy": "funding_spread",
