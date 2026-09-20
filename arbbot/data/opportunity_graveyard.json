@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-20T01:59:13+00:00",
+  "generated_at_utc": "2026-09-20T06:07:02+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -527,19 +527,20 @@
     "funding_spread|FUSDT": {
       "strategy": "funding_spread",
       "label": "FUSDT",
-      "snapshots": 13,
+      "snapshots": 14,
       "survives": 7,
-      "rejected": 6,
+      "rejected": 7,
       "insufficient": 0,
-      "consecutive_non_survivals": 6,
+      "consecutive_non_survivals": 7,
       "reason_counts": {
         "candidate age 3814s": 1,
-        "no matching executable-entry probe at EUR 250 for FUSDT short Bitget / long Gate": 6,
+        "no matching executable-entry probe at EUR 250 for FUSDT short Bitget / long Gate": 7,
         "candidate age 6245s": 1,
         "candidate age 6901s": 1,
         "candidate age 11349s": 1,
         "candidate age 13755s": 1,
-        "candidate age 14763s": 1
+        "candidate age 14763s": 1,
+        "candidate age 29632s": 1
       },
       "last_verdict": "REJECTED",
       "last_seen_utc": "2026-09-19T21:53:10+00:00",
@@ -547,10 +548,10 @@
       "last_median_positive_edge_bps": 32.81,
       "last_persistence": 1.0,
       "last_reasons": [
-        "candidate age 14763s",
+        "candidate age 29632s",
         "no matching executable-entry probe at EUR 250 for FUSDT short Bitget / long Gate"
       ],
-      "updated_at_utc": "2026-09-20T01:59:13+00:00"
+      "updated_at_utc": "2026-09-20T06:07:02+00:00"
     },
     "funding_spread|AKEUSDT": {
       "strategy": "funding_spread",
@@ -568,6 +569,23 @@
       "last_persistence": 0.8158,
       "last_reasons": [],
       "updated_at_utc": "2026-09-19T22:56:44+00:00"
+    },
+    "funding_spread|GUSDT": {
+      "strategy": "funding_spread",
+      "label": "GUSDT",
+      "snapshots": 1,
+      "survives": 1,
+      "rejected": 0,
+      "insufficient": 0,
+      "consecutive_non_survivals": 0,
+      "reason_counts": {},
+      "last_verdict": "SURVIVES_KILLER",
+      "last_seen_utc": "2026-09-20T06:05:12+00:00",
+      "last_latest_edge_bps": 22.52,
+      "last_median_positive_edge_bps": 7.04,
+      "last_persistence": 0.9167,
+      "last_reasons": [],
+      "updated_at_utc": "2026-09-20T06:07:02+00:00"
     }
   },
   "note": "Historical failure memory is diagnostic evidence only. It cannot loosen gates or create READY."
