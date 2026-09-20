@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-20T15:06:41+00:00",
+  "generated_at_utc": "2026-09-20T16:00:35+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -528,14 +528,14 @@
     "funding_spread|FUSDT": {
       "strategy": "funding_spread",
       "label": "FUSDT",
-      "snapshots": 20,
+      "snapshots": 21,
       "survives": 7,
-      "rejected": 13,
+      "rejected": 14,
       "insufficient": 0,
-      "consecutive_non_survivals": 13,
+      "consecutive_non_survivals": 14,
       "reason_counts": {
         "candidate age 3814s": 1,
-        "no matching executable-entry probe at EUR 250 for FUSDT short Bitget / long Gate": 13,
+        "no matching executable-entry probe at EUR 250 for FUSDT short Bitget / long Gate": 14,
         "candidate age 6245s": 1,
         "candidate age 6901s": 1,
         "candidate age 11349s": 1,
@@ -547,7 +547,8 @@
         "candidate age 50958s": 1,
         "candidate age 52198s": 1,
         "candidate age 53173s": 1,
-        "candidate age 62011s": 1
+        "candidate age 62011s": 1,
+        "candidate age 65245s": 1
       },
       "last_verdict": "REJECTED",
       "last_seen_utc": "2026-09-19T21:53:10+00:00",
@@ -555,16 +556,16 @@
       "last_median_positive_edge_bps": 32.81,
       "last_persistence": 1.0,
       "last_reasons": [
-        "candidate age 62011s",
+        "candidate age 65245s",
         "no matching executable-entry probe at EUR 250 for FUSDT short Bitget / long Gate"
       ],
-      "updated_at_utc": "2026-09-20T15:06:41+00:00"
+      "updated_at_utc": "2026-09-20T16:00:35+00:00"
     },
     "funding_spread|AKEUSDT": {
       "strategy": "funding_spread",
       "label": "AKEUSDT",
-      "snapshots": 5,
-      "survives": 4,
+      "snapshots": 6,
+      "survives": 5,
       "rejected": 0,
       "insufficient": 1,
       "consecutive_non_survivals": 0,
@@ -573,12 +574,12 @@
         "no matching executable-entry probe at EUR 250 for AKEUSDT long Bitget / short Gate": 1
       },
       "last_verdict": "SURVIVES_KILLER",
-      "last_seen_utc": "2026-09-20T15:04:44+00:00",
-      "last_latest_edge_bps": 48.0,
-      "last_median_positive_edge_bps": 13.54,
-      "last_persistence": 0.7736,
+      "last_seen_utc": "2026-09-20T15:58:37+00:00",
+      "last_latest_edge_bps": 33.44,
+      "last_median_positive_edge_bps": 13.62,
+      "last_persistence": 0.7778,
       "last_reasons": [],
-      "updated_at_utc": "2026-09-20T15:06:41+00:00"
+      "updated_at_utc": "2026-09-20T16:00:35+00:00"
     },
     "funding_spread|GUSDT": {
       "strategy": "funding_spread",
