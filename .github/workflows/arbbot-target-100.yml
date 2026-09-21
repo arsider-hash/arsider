@@ -14,6 +14,7 @@ on:
       - "arbbot/betfair_hunter.py"
       - "arbbot/habitat_board.py"
       - "arbbot/target_100_engine.py"
+      - "arbbot/turnover_rank.py"
       - "arbbot/test_capital_scheduler.py"
       - "arbbot/test_event_adapters.py"
       - ".github/workflows/arbbot-target-100.yml"
@@ -47,6 +48,8 @@ jobs:
         run: python arbbot/betfair_replay_adapter.py
       - name: Ingest Betfair executable-shadow events if present
         run: python arbbot/betfair_hunter.py
+      - name: Rank high-turnover opportunities by NET EUR per capital-hour
+        run: python arbbot/turnover_rank.py
       - name: Simulate one shared EUR250 capital pool
         run: python arbbot/capital_scheduler.py
       - name: Build cross-habitat board
@@ -58,7 +61,7 @@ jobs:
           set -euo pipefail
           git config user.name "arbbot"
           git config user.email "actions@users.noreply.github.com"
-          git add             arbbot/data/crypto_event_adapter_latest.json             arbbot/data/betfair_replay_latest.json             arbbot/data/betfair_latest.json             arbbot/data/capital_schedule.json             arbbot/data/habitat_board.json             arbbot/data/target_100.json
+          git add             arbbot/data/crypto_event_adapter_latest.json             arbbot/data/betfair_replay_latest.json             arbbot/data/betfair_latest.json             arbbot/data/turnover_rank.json             arbbot/data/capital_schedule.json             arbbot/data/habitat_board.json             arbbot/data/target_100.json
           if [ -f arbbot/data/betfair_inbox.jsonl ]; then
             git add arbbot/data/betfair_inbox.jsonl
           fi
