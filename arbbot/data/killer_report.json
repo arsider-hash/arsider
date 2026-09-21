@@ -1,6 +1,6 @@
 {
-  "generated_at_utc": "2026-09-21T23:02:26+00:00",
-  "verdict": "INSUFFICIENT_EVIDENCE",
+  "generated_at_utc": "2026-09-21T23:14:16+00:00",
+  "verdict": "SURVIVES_KILLER",
   "selected": {
     "key": "funding_spread|AKEUSDT",
     "strategy": "funding_spread",
@@ -13,11 +13,11 @@
     "median_positive_edge_bps": 15.52,
     "p90_positive_edge_bps": 48.0,
     "max_edge_bps": 217.6,
-    "latest_edge_bps": 3.7,
+    "latest_edge_bps": 4.44,
     "research_score": 86.4,
     "classification": "strong_watch",
-    "last_seen_utc": "2026-09-21T23:00:40+00:00",
-    "latest_age_seconds": 105.1,
+    "last_seen_utc": "2026-09-21T23:12:42+00:00",
+    "latest_age_seconds": 93.2,
     "current_signal_fresh": true,
     "current_direction_stability": 0.8909,
     "current_direction_observations": 49,
@@ -168,7 +168,7 @@
       "check": "freshness",
       "status": "PASS",
       "severity": "hard",
-      "detail": "candidate age 107s"
+      "detail": "candidate age 95s"
     },
     {
       "check": "sample_presence",
@@ -192,7 +192,7 @@
       "check": "latest_edge_sign",
       "status": "PASS",
       "severity": "soft",
-      "detail": "latest_edge_bps=3.7000"
+      "detail": "latest_edge_bps=4.4400"
     },
     {
       "check": "economic_relevance",
@@ -202,9 +202,9 @@
     },
     {
       "check": "funding_regime_decay",
-      "status": "INSUFFICIENT",
+      "status": "PASS",
       "severity": "hard",
-      "detail": "latest/median edge ratio=0.238; latest=3.700 bps/8h, median=15.520; require >= 0.25 to rule out sharp edge decay"
+      "detail": "latest/median edge ratio=0.286; latest=4.440 bps/8h, median=15.520; require >= 0.25 to rule out sharp edge decay"
     },
     {
       "check": "funding_basis_persistence",
@@ -222,19 +222,17 @@
       "check": "funding_executable_entry",
       "status": "PASS",
       "severity": "hard",
-      "detail": "EUR 250 executable adverse basis=5.371 bps, recovery=1.45 funding periods; require <= 3.00"
+      "detail": "EUR 250 executable adverse basis=7.793 bps, recovery=1.75 funding periods; require <= 3.00"
     },
     {
       "check": "shadow_evidence",
       "status": "PASS",
       "severity": "soft",
-      "detail": "count=31, positive_rate=1.000, cumulative_paper_pnl=1.976431"
+      "detail": "count=32, positive_rate=1.000, cumulative_paper_pnl=1.983959"
     }
   ],
   "hard_failures": [],
-  "insufficient_evidence": [
-    "latest/median edge ratio=0.238; latest=3.700 bps/8h, median=15.520; require >= 0.25 to rule out sharp edge decay"
-  ],
+  "insufficient_evidence": [],
   "policy": {
     "max_staleness_seconds": 900,
     "min_candidate_observations": 6,
