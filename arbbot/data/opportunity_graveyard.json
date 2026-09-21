@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-21T22:36:29+00:00",
+  "generated_at_utc": "2026-09-21T23:02:27+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -594,11 +594,11 @@
     "funding_spread|AKEUSDT": {
       "strategy": "funding_spread",
       "label": "AKEUSDT",
-      "snapshots": 29,
+      "snapshots": 30,
       "survives": 22,
       "rejected": 3,
-      "insufficient": 4,
-      "consecutive_non_survivals": 0,
+      "insufficient": 5,
+      "consecutive_non_survivals": 1,
       "reason_counts": {
         "latest/median edge ratio=0.083; latest=1.120 bps/8h, median=13.420; require >= 0.25 to rule out sharp edge decay": 1,
         "no matching executable-entry probe at EUR 250 for AKEUSDT long Bitget / short Gate": 1,
@@ -609,15 +609,18 @@
         "latest/median edge ratio=0.104; latest=2.000 bps/8h, median=19.310; require >= 0.25 to rule out sharp edge decay": 1,
         "EUR 250 executable adverse basis=12.809 bps, recovery=4.57 funding periods; require <= 3.00": 1,
         "latest/median edge ratio=0.116; latest=2.800 bps/8h, median=24.200; require >= 0.25 to rule out sharp edge decay": 1,
-        "latest/median edge ratio=0.114; latest=2.480 bps/8h, median=21.840; require >= 0.25 to rule out sharp edge decay": 1
+        "latest/median edge ratio=0.114; latest=2.480 bps/8h, median=21.840; require >= 0.25 to rule out sharp edge decay": 1,
+        "latest/median edge ratio=0.238; latest=3.700 bps/8h, median=15.520; require >= 0.25 to rule out sharp edge decay": 1
       },
-      "last_verdict": "SURVIVES_KILLER",
-      "last_seen_utc": "2026-09-21T22:34:56+00:00",
-      "last_latest_edge_bps": 6.28,
-      "last_median_positive_edge_bps": 17.08,
-      "last_persistence": 0.8519,
-      "last_reasons": [],
-      "updated_at_utc": "2026-09-21T22:36:29+00:00"
+      "last_verdict": "INSUFFICIENT_EVIDENCE",
+      "last_seen_utc": "2026-09-21T23:00:40+00:00",
+      "last_latest_edge_bps": 3.7,
+      "last_median_positive_edge_bps": 15.52,
+      "last_persistence": 0.8545,
+      "last_reasons": [
+        "latest/median edge ratio=0.238; latest=3.700 bps/8h, median=15.520; require >= 0.25 to rule out sharp edge decay"
+      ],
+      "updated_at_utc": "2026-09-21T23:02:27+00:00"
     },
     "funding_spread|GUSDT": {
       "strategy": "funding_spread",
