@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-21T01:44:13+00:00",
+  "generated_at_utc": "2026-09-21T06:13:09+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -528,14 +528,14 @@
     "funding_spread|FUSDT": {
       "strategy": "funding_spread",
       "label": "FUSDT",
-      "snapshots": 37,
+      "snapshots": 38,
       "survives": 7,
-      "rejected": 30,
+      "rejected": 31,
       "insufficient": 0,
-      "consecutive_non_survivals": 30,
+      "consecutive_non_survivals": 31,
       "reason_counts": {
         "candidate age 3814s": 1,
-        "no matching executable-entry probe at EUR 250 for FUSDT short Bitget / long Gate": 30,
+        "no matching executable-entry probe at EUR 250 for FUSDT short Bitget / long Gate": 31,
         "candidate age 6245s": 1,
         "candidate age 6901s": 1,
         "candidate age 11349s": 1,
@@ -564,7 +564,8 @@
         "candidate age 94680s": 1,
         "candidate age 98971s": 1,
         "candidate age 99229s": 1,
-        "candidate age 100263s": 1
+        "candidate age 100263s": 1,
+        "candidate age 116399s": 1
       },
       "last_verdict": "REJECTED",
       "last_seen_utc": "2026-09-19T21:53:10+00:00",
@@ -572,16 +573,16 @@
       "last_median_positive_edge_bps": 32.81,
       "last_persistence": 1.0,
       "last_reasons": [
-        "candidate age 100263s",
+        "candidate age 116399s",
         "no matching executable-entry probe at EUR 250 for FUSDT short Bitget / long Gate"
       ],
-      "updated_at_utc": "2026-09-21T01:44:13+00:00"
+      "updated_at_utc": "2026-09-21T06:13:09+00:00"
     },
     "funding_spread|AKEUSDT": {
       "strategy": "funding_spread",
       "label": "AKEUSDT",
-      "snapshots": 15,
-      "survives": 13,
+      "snapshots": 16,
+      "survives": 14,
       "rejected": 0,
       "insufficient": 2,
       "consecutive_non_survivals": 0,
@@ -591,12 +592,12 @@
         "latest/median edge ratio=0.195; latest=3.760 bps/8h, median=19.310; require >= 0.25 to rule out sharp edge decay": 1
       },
       "last_verdict": "SURVIVES_KILLER",
-      "last_seen_utc": "2026-09-21T01:42:20+00:00",
-      "last_latest_edge_bps": 15.52,
-      "last_median_positive_edge_bps": 20.32,
-      "last_persistence": 0.8793,
+      "last_seen_utc": "2026-09-21T06:11:13+00:00",
+      "last_latest_edge_bps": 6.72,
+      "last_median_positive_edge_bps": 20.92,
+      "last_persistence": 0.8909,
       "last_reasons": [],
-      "updated_at_utc": "2026-09-21T01:44:13+00:00"
+      "updated_at_utc": "2026-09-21T06:13:09+00:00"
     },
     "funding_spread|GUSDT": {
       "strategy": "funding_spread",
