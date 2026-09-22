@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-22T12:43:21+00:00",
+  "generated_at_utc": "2026-09-22T14:44:48+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -707,24 +707,22 @@
     "funding_spread|MUBARAKUSDT": {
       "strategy": "funding_spread",
       "label": "MUBARAKUSDT",
-      "snapshots": 2,
-      "survives": 0,
+      "snapshots": 3,
+      "survives": 1,
       "rejected": 0,
       "insufficient": 2,
-      "consecutive_non_survivals": 2,
+      "consecutive_non_survivals": 0,
       "reason_counts": {
         "4 observations; need at least 6": 1,
         "5 observations; need at least 6": 1
       },
-      "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-09-22T12:41:26+00:00",
-      "last_latest_edge_bps": 20.88,
-      "last_median_positive_edge_bps": 21.54,
+      "last_verdict": "SURVIVES_KILLER",
+      "last_seen_utc": "2026-09-22T14:42:55+00:00",
+      "last_latest_edge_bps": 16.26,
+      "last_median_positive_edge_bps": 21.21,
       "last_persistence": 1.0,
-      "last_reasons": [
-        "5 observations; need at least 6"
-      ],
-      "updated_at_utc": "2026-09-22T12:43:21+00:00"
+      "last_reasons": [],
+      "updated_at_utc": "2026-09-22T14:44:48+00:00"
     }
   },
   "note": "Historical failure memory is diagnostic evidence only. It cannot loosen gates or create READY."
