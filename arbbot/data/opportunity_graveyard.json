@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-22T11:36:06+00:00",
+  "generated_at_utc": "2026-09-22T11:58:02+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -703,6 +703,27 @@
         "persistence=0.474; need at least 0.70"
       ],
       "updated_at_utc": "2026-09-21T13:26:16+00:00"
+    },
+    "funding_spread|MUBARAKUSDT": {
+      "strategy": "funding_spread",
+      "label": "MUBARAKUSDT",
+      "snapshots": 1,
+      "survives": 0,
+      "rejected": 0,
+      "insufficient": 1,
+      "consecutive_non_survivals": 1,
+      "reason_counts": {
+        "4 observations; need at least 6": 1
+      },
+      "last_verdict": "INSUFFICIENT_EVIDENCE",
+      "last_seen_utc": "2026-09-22T11:56:17+00:00",
+      "last_latest_edge_bps": 21.9,
+      "last_median_positive_edge_bps": 21.68,
+      "last_persistence": 1.0,
+      "last_reasons": [
+        "4 observations; need at least 6"
+      ],
+      "updated_at_utc": "2026-09-22T11:58:02+00:00"
     }
   },
   "note": "Historical failure memory is diagnostic evidence only. It cannot loosen gates or create READY."
