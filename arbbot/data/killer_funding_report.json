@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-22T01:44:36+00:00",
+  "generated_at_utc": "2026-09-22T04:45:14+00:00",
   "verdict": "SURVIVES_KILLER",
   "selected": {
     "key": "funding_spread|AKEUSDT",
@@ -13,11 +13,11 @@
     "median_positive_edge_bps": 16.16,
     "p90_positive_edge_bps": 49.28,
     "max_edge_bps": 217.6,
-    "latest_edge_bps": 5.1,
+    "latest_edge_bps": 5.56,
     "research_score": 86.9,
     "classification": "strong_watch",
-    "last_seen_utc": "2026-09-22T01:42:57+00:00",
-    "latest_age_seconds": 98.2,
+    "last_seen_utc": "2026-09-22T04:43:27+00:00",
+    "latest_age_seconds": 106.3,
     "current_signal_fresh": true,
     "current_direction_stability": 0.8868,
     "current_direction_observations": 47,
@@ -39,7 +39,7 @@
       "min_observations": 4,
       "evidence_sufficient": true,
       "median_adverse_basis_bps": 0.0,
-      "median_aligned_basis_bps": 14.2079,
+      "median_aligned_basis_bps": 13.9654,
       "amortized_adverse_basis_bps_per_8h": 0.0
     },
     "capital_utilisation": 0.5,
@@ -168,7 +168,7 @@
       "check": "freshness",
       "status": "PASS",
       "severity": "hard",
-      "detail": "candidate age 100s"
+      "detail": "candidate age 108s"
     },
     {
       "check": "sample_presence",
@@ -192,7 +192,7 @@
       "check": "latest_edge_sign",
       "status": "PASS",
       "severity": "soft",
-      "detail": "latest_edge_bps=5.1000"
+      "detail": "latest_edge_bps=5.5600"
     },
     {
       "check": "economic_relevance",
@@ -204,13 +204,13 @@
       "check": "funding_regime_decay",
       "status": "PASS",
       "severity": "hard",
-      "detail": "latest/median edge ratio=0.316; latest=5.100 bps/8h, median=16.160; require >= 0.25 to rule out sharp edge decay"
+      "detail": "latest/median edge ratio=0.344; latest=5.560 bps/8h, median=16.160; require >= 0.25 to rule out sharp edge decay"
     },
     {
       "check": "funding_basis_persistence",
       "status": "PASS",
       "severity": "hard",
-      "detail": "53 independent 15m buckets; median adverse basis costs 0.00 funding periods; median aligned basis=14.208 bps"
+      "detail": "53 independent 15m buckets; median adverse basis costs 0.00 funding periods; median aligned basis=13.965 bps"
     },
     {
       "check": "funding_direction_stability",
@@ -222,13 +222,13 @@
       "check": "funding_executable_entry",
       "status": "PASS",
       "severity": "hard",
-      "detail": "EUR 250 executable adverse basis=12.260 bps, recovery=2.40 funding periods; require <= 3.00"
+      "detail": "EUR 250 executable adverse basis=9.059 bps, recovery=1.63 funding periods; require <= 3.00"
     },
     {
       "check": "shadow_evidence",
       "status": "PASS",
       "severity": "soft",
-      "detail": "count=35, positive_rate=1.000, cumulative_paper_pnl=2.017543"
+      "detail": "count=36, positive_rate=1.000, cumulative_paper_pnl=2.027871"
     }
   ],
   "hard_failures": [],
