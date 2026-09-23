@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-23T20:42:36+00:00",
+  "generated_at_utc": "2026-09-23T22:22:55+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -388,11 +388,11 @@
     "funding_spread|ONEUSDT": {
       "strategy": "funding_spread",
       "label": "ONEUSDT",
-      "snapshots": 58,
+      "snapshots": 59,
       "survives": 0,
-      "rejected": 58,
+      "rejected": 59,
       "insufficient": 0,
-      "consecutive_non_survivals": 58,
+      "consecutive_non_survivals": 59,
       "reason_counts": {
         "5 independent 15m buckets; median adverse basis costs 3.52 funding periods; median aligned basis=-261.830 bps": 1,
         "EUR 250 executable adverse basis=277.307 bps, recovery=3.40 funding periods; require <= 3.00": 1,
@@ -508,25 +508,26 @@
         "latest/median edge ratio=0.098; latest=6.760 bps/8h, median=68.730; require >= 0.25 to rule out sharp edge decay": 1,
         "59 independent 15m buckets; median adverse basis costs 5.39 funding periods; median aligned basis=-436.487 bps": 1,
         "latest/median edge ratio=0.010; latest=0.680 bps/8h, median=68.730; require >= 0.25 to rule out sharp edge decay": 1,
-        "no matching executable-entry probe at EUR 250 for ONEUSDT long Bitget / short Gate": 5,
+        "no matching executable-entry probe at EUR 250 for ONEUSDT long Bitget / short Gate": 6,
         "59 independent 15m buckets; median adverse basis costs 5.41 funding periods; median aligned basis=-442.842 bps": 1,
         "latest/median edge ratio=0.007; latest=0.440 bps/8h, median=66.100; require >= 0.25 to rule out sharp edge decay": 1,
         "56 independent 15m buckets; median adverse basis costs 7.49 funding periods; median aligned basis=-424.534 bps": 1,
         "EUR 250 executable adverse basis=322.034 bps, recovery=14.01 funding periods; require <= 3.00": 1,
         "candidate age 133159s": 1,
         "candidate age 134103s": 1,
-        "candidate age 135767s": 1
+        "candidate age 135767s": 1,
+        "candidate age 141786s": 1
       },
       "last_verdict": "REJECTED",
       "last_seen_utc": "2026-09-22T06:59:49+00:00",
       "last_latest_edge_bps": 10.58,
-      "last_median_positive_edge_bps": 27.075,
-      "last_persistence": 0.8,
+      "last_median_positive_edge_bps": 32.26,
+      "last_persistence": 0.7778,
       "last_reasons": [
-        "candidate age 135767s",
+        "candidate age 141786s",
         "no matching executable-entry probe at EUR 250 for ONEUSDT long Bitget / short Gate"
       ],
-      "updated_at_utc": "2026-09-23T20:42:36+00:00"
+      "updated_at_utc": "2026-09-23T22:22:55+00:00"
     },
     "funding_spread|FUSDT": {
       "strategy": "funding_spread",
@@ -710,8 +711,8 @@
     "funding_spread|MUBARAKUSDT": {
       "strategy": "funding_spread",
       "label": "MUBARAKUSDT",
-      "snapshots": 34,
-      "survives": 31,
+      "snapshots": 35,
+      "survives": 32,
       "rejected": 0,
       "insufficient": 3,
       "consecutive_non_survivals": 0,
@@ -721,12 +722,12 @@
         "latest/median edge ratio=0.235; latest=2.820 bps/8h, median=11.980; require >= 0.25 to rule out sharp edge decay": 1
       },
       "last_verdict": "SURVIVES_KILLER",
-      "last_seen_utc": "2026-09-23T20:40:43+00:00",
-      "last_latest_edge_bps": 6.22,
-      "last_median_positive_edge_bps": 12.1,
+      "last_seen_utc": "2026-09-23T22:21:18+00:00",
+      "last_latest_edge_bps": 8.7,
+      "last_median_positive_edge_bps": 12.04,
       "last_persistence": 1.0,
       "last_reasons": [],
-      "updated_at_utc": "2026-09-23T20:42:36+00:00"
+      "updated_at_utc": "2026-09-23T22:22:55+00:00"
     }
   },
   "note": "Historical failure memory is diagnostic evidence only. It cannot loosen gates or create READY."
