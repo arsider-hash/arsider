@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-23T15:04:51+00:00",
+  "generated_at_utc": "2026-09-23T16:45:11+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -707,25 +707,23 @@
     "funding_spread|MUBARAKUSDT": {
       "strategy": "funding_spread",
       "label": "MUBARAKUSDT",
-      "snapshots": 27,
-      "survives": 24,
+      "snapshots": 28,
+      "survives": 25,
       "rejected": 0,
       "insufficient": 3,
-      "consecutive_non_survivals": 1,
+      "consecutive_non_survivals": 0,
       "reason_counts": {
         "4 observations; need at least 6": 1,
         "5 observations; need at least 6": 1,
         "latest/median edge ratio=0.235; latest=2.820 bps/8h, median=11.980; require >= 0.25 to rule out sharp edge decay": 1
       },
-      "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-09-23T15:03:13+00:00",
-      "last_latest_edge_bps": 2.82,
-      "last_median_positive_edge_bps": 11.98,
+      "last_verdict": "SURVIVES_KILLER",
+      "last_seen_utc": "2026-09-23T16:43:38+00:00",
+      "last_latest_edge_bps": 21.58,
+      "last_median_positive_edge_bps": 12.01,
       "last_persistence": 1.0,
-      "last_reasons": [
-        "latest/median edge ratio=0.235; latest=2.820 bps/8h, median=11.980; require >= 0.25 to rule out sharp edge decay"
-      ],
-      "updated_at_utc": "2026-09-23T15:04:51+00:00"
+      "last_reasons": [],
+      "updated_at_utc": "2026-09-23T16:45:11+00:00"
     }
   },
   "note": "Historical failure memory is diagnostic evidence only. It cannot loosen gates or create READY."
