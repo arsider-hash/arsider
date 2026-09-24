@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-24T16:29:24+00:00",
+  "generated_at_utc": "2026-09-24T17:42:27+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -711,32 +711,33 @@
     "funding_spread|MUBARAKUSDT": {
       "strategy": "funding_spread",
       "label": "MUBARAKUSDT",
-      "snapshots": 52,
+      "snapshots": 53,
       "survives": 44,
-      "rejected": 5,
+      "rejected": 6,
       "insufficient": 3,
-      "consecutive_non_survivals": 5,
+      "consecutive_non_survivals": 6,
       "reason_counts": {
         "4 observations; need at least 6": 1,
         "5 observations; need at least 6": 1,
         "latest/median edge ratio=0.235; latest=2.820 bps/8h, median=11.980; require >= 0.25 to rule out sharp edge decay": 1,
         "candidate age 5721s": 1,
-        "no matching executable-entry probe at EUR 250 for MUBARAKUSDT long Bitget / short Gate": 5,
+        "no matching executable-entry probe at EUR 250 for MUBARAKUSDT long Bitget / short Gate": 6,
         "candidate age 8054s": 1,
         "candidate age 16926s": 1,
         "candidate age 17587s": 1,
-        "candidate age 22400s": 1
+        "candidate age 22400s": 1,
+        "candidate age 26783s": 1
       },
       "last_verdict": "REJECTED",
       "last_seen_utc": "2026-09-24T10:16:04+00:00",
       "last_latest_edge_bps": 8.8,
-      "last_median_positive_edge_bps": 8.7,
+      "last_median_positive_edge_bps": 8.46,
       "last_persistence": 1.0,
       "last_reasons": [
-        "candidate age 22400s",
+        "candidate age 26783s",
         "no matching executable-entry probe at EUR 250 for MUBARAKUSDT long Bitget / short Gate"
       ],
-      "updated_at_utc": "2026-09-24T16:29:24+00:00"
+      "updated_at_utc": "2026-09-24T17:42:27+00:00"
     },
     "funding_spread|NILUSDT": {
       "strategy": "funding_spread",
@@ -763,24 +764,27 @@
     "funding_spread|CRCLUSDT": {
       "strategy": "funding_spread",
       "label": "CRCLUSDT",
-      "snapshots": 3,
+      "snapshots": 4,
       "survives": 0,
-      "rejected": 0,
+      "rejected": 1,
       "insufficient": 3,
-      "consecutive_non_survivals": 3,
+      "consecutive_non_survivals": 4,
       "reason_counts": {
         "persistence=0.661; need at least 0.70": 2,
-        "persistence=0.667; need at least 0.70": 1
+        "persistence=0.667; need at least 0.70": 1,
+        "EUR 250 executable adverse basis=9.743 bps, recovery=4.66 funding periods; require <= 3.00": 1,
+        "persistence=0.654; need at least 0.70": 1
       },
-      "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-09-24T16:27:26+00:00",
-      "last_latest_edge_bps": 2.85,
-      "last_median_positive_edge_bps": 3.32,
-      "last_persistence": 0.6607,
+      "last_verdict": "REJECTED",
+      "last_seen_utc": "2026-09-24T17:40:33+00:00",
+      "last_latest_edge_bps": 2.09,
+      "last_median_positive_edge_bps": 3.08,
+      "last_persistence": 0.6545,
       "last_reasons": [
-        "persistence=0.661; need at least 0.70"
+        "EUR 250 executable adverse basis=9.743 bps, recovery=4.66 funding periods; require <= 3.00",
+        "persistence=0.654; need at least 0.70"
       ],
-      "updated_at_utc": "2026-09-24T16:29:24+00:00"
+      "updated_at_utc": "2026-09-24T17:42:27+00:00"
     }
   },
   "note": "Historical failure memory is diagnostic evidence only. It cannot loosen gates or create READY."
