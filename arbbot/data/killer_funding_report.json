@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-24T17:42:27+00:00",
+  "generated_at_utc": "2026-09-24T19:12:22+00:00",
   "verdict": "REJECTED",
   "selected": {
     "key": "funding_spread|MUBARAKUSDT",
@@ -7,20 +7,20 @@
     "label": "MUBARAKUSDT",
     "direction": "long Bitget / short Gate",
     "venue": "Bitget<->Gate",
-    "observations": 49,
-    "positive_observations": 49,
+    "observations": 48,
+    "positive_observations": 48,
     "persistence": 1.0,
     "median_positive_edge_bps": 8.46,
-    "p90_positive_edge_bps": 14.88,
+    "p90_positive_edge_bps": 14.64,
     "max_edge_bps": 21.58,
     "latest_edge_bps": 8.8,
     "research_score": 85.58,
     "classification": "noise",
     "last_seen_utc": "2026-09-24T10:16:04+00:00",
-    "latest_age_seconds": 26781.9,
+    "latest_age_seconds": 32176.4,
     "current_signal_fresh": false,
     "current_direction_stability": 1.0,
-    "current_direction_observations": 49,
+    "current_direction_observations": 48,
     "direction_stability_required_for_watch": 0.5,
     "funding_cost_model": {
       "gross_median_spread_bps_per_8h": 8.46,
@@ -35,11 +35,11 @@
     "funding_basis_model": {
       "lookback_hours": 48,
       "evidence_bucket_minutes": 15,
-      "observations": 49,
+      "observations": 48,
       "min_observations": 4,
       "evidence_sufficient": true,
       "median_adverse_basis_bps": 0.0,
-      "median_aligned_basis_bps": 1.8481,
+      "median_aligned_basis_bps": 0.924,
       "amortized_adverse_basis_bps_per_8h": 0.0
     },
     "capital_utilisation": 0.5,
@@ -168,19 +168,19 @@
       "check": "freshness",
       "status": "FAIL",
       "severity": "hard",
-      "detail": "candidate age 26783s"
+      "detail": "candidate age 32178s"
     },
     {
       "check": "sample_presence",
       "status": "PASS",
       "severity": "hard",
-      "detail": "49 observations; need at least 6"
+      "detail": "48 observations; need at least 6"
     },
     {
       "check": "positive_edge_evidence",
       "status": "PASS",
       "severity": "hard",
-      "detail": "positive_observations=49, median_positive_edge_bps=8.4600"
+      "detail": "positive_observations=48, median_positive_edge_bps=8.4600"
     },
     {
       "check": "persistence",
@@ -210,7 +210,7 @@
       "check": "funding_basis_persistence",
       "status": "PASS",
       "severity": "hard",
-      "detail": "49 independent 15m buckets; median adverse basis costs 0.00 funding periods; median aligned basis=1.848 bps"
+      "detail": "48 independent 15m buckets; median adverse basis costs 0.00 funding periods; median aligned basis=0.924 bps"
     },
     {
       "check": "funding_direction_stability",
@@ -232,7 +232,7 @@
     }
   ],
   "hard_failures": [
-    "candidate age 26783s"
+    "candidate age 32178s"
   ],
   "insufficient_evidence": [
     "no matching executable-entry probe at EUR 250 for MUBARAKUSDT long Bitget / short Gate"

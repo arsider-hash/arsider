@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-24T17:42:27+00:00",
+  "generated_at_utc": "2026-09-24T19:12:22+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -152,11 +152,11 @@
     "funding_spread|LSKUSDT": {
       "strategy": "funding_spread",
       "label": "LSKUSDT",
-      "snapshots": 61,
+      "snapshots": 62,
       "survives": 28,
       "rejected": 4,
-      "insufficient": 29,
-      "consecutive_non_survivals": 5,
+      "insufficient": 30,
+      "consecutive_non_survivals": 6,
       "reason_counts": {
         "4 observations; need at least 6": 1,
         "persistence=0.556; need at least 0.70": 1,
@@ -202,18 +202,20 @@
         "persistence=0.686; need at least 0.70": 1,
         "persistence=0.692; need at least 0.70": 1,
         "EUR 250 executable adverse basis=30.434 bps, recovery=13.12 funding periods; require <= 3.00": 1,
-        "latest/median edge ratio=0.121; latest=2.320 bps/8h, median=19.120; require >= 0.25 to rule out sharp edge decay": 1
+        "latest/median edge ratio=0.121; latest=2.320 bps/8h, median=19.120; require >= 0.25 to rule out sharp edge decay": 1,
+        "5 observations; need at least 6": 1,
+        "persistence=0.600; need at least 0.70": 1
       },
-      "last_verdict": "REJECTED",
-      "last_seen_utc": "2026-09-17T15:26:13+00:00",
-      "last_latest_edge_bps": 2.32,
-      "last_median_positive_edge_bps": 19.12,
-      "last_persistence": 0.7115,
+      "last_verdict": "INSUFFICIENT_EVIDENCE",
+      "last_seen_utc": "2026-09-24T19:10:30+00:00",
+      "last_latest_edge_bps": 4.24,
+      "last_median_positive_edge_bps": 10.16,
+      "last_persistence": 0.6,
       "last_reasons": [
-        "EUR 250 executable adverse basis=30.434 bps, recovery=13.12 funding periods; require <= 3.00",
-        "latest/median edge ratio=0.121; latest=2.320 bps/8h, median=19.120; require >= 0.25 to rule out sharp edge decay"
+        "5 observations; need at least 6",
+        "persistence=0.600; need at least 0.70"
       ],
-      "updated_at_utc": "2026-09-17T15:30:41+00:00"
+      "updated_at_utc": "2026-09-24T19:12:22+00:00"
     },
     "funding_spread|IOSTUSDT": {
       "strategy": "funding_spread",
@@ -711,22 +713,23 @@
     "funding_spread|MUBARAKUSDT": {
       "strategy": "funding_spread",
       "label": "MUBARAKUSDT",
-      "snapshots": 53,
+      "snapshots": 54,
       "survives": 44,
-      "rejected": 6,
+      "rejected": 7,
       "insufficient": 3,
-      "consecutive_non_survivals": 6,
+      "consecutive_non_survivals": 7,
       "reason_counts": {
         "4 observations; need at least 6": 1,
         "5 observations; need at least 6": 1,
         "latest/median edge ratio=0.235; latest=2.820 bps/8h, median=11.980; require >= 0.25 to rule out sharp edge decay": 1,
         "candidate age 5721s": 1,
-        "no matching executable-entry probe at EUR 250 for MUBARAKUSDT long Bitget / short Gate": 6,
+        "no matching executable-entry probe at EUR 250 for MUBARAKUSDT long Bitget / short Gate": 7,
         "candidate age 8054s": 1,
         "candidate age 16926s": 1,
         "candidate age 17587s": 1,
         "candidate age 22400s": 1,
-        "candidate age 26783s": 1
+        "candidate age 26783s": 1,
+        "candidate age 32178s": 1
       },
       "last_verdict": "REJECTED",
       "last_seen_utc": "2026-09-24T10:16:04+00:00",
@@ -734,10 +737,10 @@
       "last_median_positive_edge_bps": 8.46,
       "last_persistence": 1.0,
       "last_reasons": [
-        "candidate age 26783s",
+        "candidate age 32178s",
         "no matching executable-entry probe at EUR 250 for MUBARAKUSDT long Bitget / short Gate"
       ],
-      "updated_at_utc": "2026-09-24T17:42:27+00:00"
+      "updated_at_utc": "2026-09-24T19:12:22+00:00"
     },
     "funding_spread|NILUSDT": {
       "strategy": "funding_spread",
