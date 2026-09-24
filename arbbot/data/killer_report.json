@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-24T06:52:38+00:00",
+  "generated_at_utc": "2026-09-24T09:56:26+00:00",
   "verdict": "SURVIVES_KILLER",
   "selected": {
     "key": "funding_spread|MUBARAKUSDT",
@@ -13,11 +13,11 @@
     "median_positive_edge_bps": 9.68,
     "p90_positive_edge_bps": 21.08,
     "max_edge_bps": 25.56,
-    "latest_edge_bps": 9.62,
+    "latest_edge_bps": 10.5,
     "research_score": 87.1,
     "classification": "strong_watch",
-    "last_seen_utc": "2026-09-24T06:50:48+00:00",
-    "latest_age_seconds": 108.5,
+    "last_seen_utc": "2026-09-24T09:54:34+00:00",
+    "latest_age_seconds": 110.4,
     "current_signal_fresh": true,
     "current_direction_stability": 1.0,
     "current_direction_observations": 56,
@@ -39,7 +39,7 @@
       "min_observations": 4,
       "evidence_sufficient": true,
       "median_adverse_basis_bps": 0.0,
-      "median_aligned_basis_bps": 4.0486,
+      "median_aligned_basis_bps": 3.712,
       "amortized_adverse_basis_bps_per_8h": 0.0
     },
     "capital_utilisation": 0.5,
@@ -168,7 +168,7 @@
       "check": "freshness",
       "status": "PASS",
       "severity": "hard",
-      "detail": "candidate age 110s"
+      "detail": "candidate age 112s"
     },
     {
       "check": "sample_presence",
@@ -192,7 +192,7 @@
       "check": "latest_edge_sign",
       "status": "PASS",
       "severity": "soft",
-      "detail": "latest_edge_bps=9.6200"
+      "detail": "latest_edge_bps=10.5000"
     },
     {
       "check": "economic_relevance",
@@ -204,13 +204,13 @@
       "check": "funding_regime_decay",
       "status": "PASS",
       "severity": "hard",
-      "detail": "latest/median edge ratio=0.994; latest=9.620 bps/8h, median=9.680; require >= 0.25 to rule out sharp edge decay"
+      "detail": "latest/median edge ratio=1.085; latest=10.500 bps/8h, median=9.680; require >= 0.25 to rule out sharp edge decay"
     },
     {
       "check": "funding_basis_persistence",
       "status": "PASS",
       "severity": "hard",
-      "detail": "56 independent 15m buckets; median adverse basis costs 0.00 funding periods; median aligned basis=4.049 bps"
+      "detail": "56 independent 15m buckets; median adverse basis costs 0.00 funding periods; median aligned basis=3.712 bps"
     },
     {
       "check": "funding_direction_stability",
@@ -222,13 +222,13 @@
       "check": "funding_executable_entry",
       "status": "PASS",
       "severity": "hard",
-      "detail": "EUR 250 executable adverse basis=7.402 bps, recovery=0.77 funding periods; require <= 3.00"
+      "detail": "EUR 250 executable adverse basis=6.376 bps, recovery=0.61 funding periods; require <= 3.00"
     },
     {
       "check": "shadow_evidence",
       "status": "PASS",
       "severity": "soft",
-      "detail": "count=45, positive_rate=1.000, cumulative_paper_pnl=1.160484"
+      "detail": "count=46, positive_rate=1.000, cumulative_paper_pnl=1.183163"
     }
   ],
   "hard_failures": [],
