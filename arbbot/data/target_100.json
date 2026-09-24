@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-24T04:37:53+00:00",
+  "generated_at_utc": "2026-09-24T06:12:14+00:00",
   "challenge": {
     "starting_capital_eur": 250.0,
     "target_net_eur_per_month": 100.0,
@@ -13,7 +13,7 @@
   "feasibility_basis": "withheld until a near-30-day chronological capital-scheduler window exists",
   "capital_scheduler_proof": {
     "status": "SIMULATED",
-    "proof_window_span_days": 4.4011,
+    "proof_window_span_days": 4.4666,
     "best_plan": {
       "preallocation_eur": {
         "Bitget": 125.0,
@@ -27,7 +27,7 @@
       "human_minutes": 2.0,
       "average_locked_capital_eur": 58.333,
       "missed": {
-        "capital_busy": 25
+        "capital_busy": 26
       },
       "accepted": [
         {
@@ -58,20 +58,20 @@
         "label": "MUBARAKUSDT",
         "direction": "long Bitget / short Gate",
         "venue": "Bitget<->Gate",
-        "observations": 52,
-        "positive_observations": 52,
+        "observations": 54,
+        "positive_observations": 54,
         "persistence": 1.0,
         "median_positive_edge_bps": 9.71,
         "p90_positive_edge_bps": 21.08,
         "max_edge_bps": 25.56,
-        "latest_edge_bps": 7.04,
+        "latest_edge_bps": 8.04,
         "research_score": 87.14,
         "classification": "strong_watch",
-        "last_seen_utc": "2026-09-24T04:36:04+00:00",
-        "latest_age_seconds": 88.5,
+        "last_seen_utc": "2026-09-24T06:10:21+00:00",
+        "latest_age_seconds": 96.1,
         "current_signal_fresh": true,
         "current_direction_stability": 1.0,
-        "current_direction_observations": 52,
+        "current_direction_observations": 54,
         "direction_stability_required_for_watch": 0.5,
         "funding_cost_model": {
           "gross_median_spread_bps_per_8h": 9.71,
@@ -86,11 +86,11 @@
         "funding_basis_model": {
           "lookback_hours": 48,
           "evidence_bucket_minutes": 15,
-          "observations": 52,
+          "observations": 54,
           "min_observations": 4,
           "evidence_sufficient": true,
           "median_adverse_basis_bps": 0.0,
-          "median_aligned_basis_bps": 3.712,
+          "median_aligned_basis_bps": 4.0486,
           "amortized_adverse_basis_bps_per_8h": 0.0
         },
         "capital_utilisation": 0.5,
@@ -240,20 +240,20 @@
     "label": "MUBARAKUSDT",
     "direction": "long Bitget / short Gate",
     "venue": "Bitget<->Gate",
-    "observations": 52,
-    "positive_observations": 52,
+    "observations": 54,
+    "positive_observations": 54,
     "persistence": 1.0,
     "median_positive_edge_bps": 9.71,
     "p90_positive_edge_bps": 21.08,
     "max_edge_bps": 25.56,
-    "latest_edge_bps": 7.04,
+    "latest_edge_bps": 8.04,
     "research_score": 87.14,
     "classification": "strong_watch",
-    "last_seen_utc": "2026-09-24T04:36:04+00:00",
-    "latest_age_seconds": 88.5,
+    "last_seen_utc": "2026-09-24T06:10:21+00:00",
+    "latest_age_seconds": 96.1,
     "current_signal_fresh": true,
     "current_direction_stability": 1.0,
-    "current_direction_observations": 52,
+    "current_direction_observations": 54,
     "direction_stability_required_for_watch": 0.5,
     "funding_cost_model": {
       "gross_median_spread_bps_per_8h": 9.71,
@@ -268,11 +268,11 @@
     "funding_basis_model": {
       "lookback_hours": 48,
       "evidence_bucket_minutes": 15,
-      "observations": 52,
+      "observations": 54,
       "min_observations": 4,
       "evidence_sufficient": true,
       "median_adverse_basis_bps": 0.0,
-      "median_aligned_basis_bps": 3.712,
+      "median_aligned_basis_bps": 4.0486,
       "amortized_adverse_basis_bps_per_8h": 0.0
     },
     "capital_utilisation": 0.5,
@@ -395,7 +395,7 @@
     }
   },
   "best_planning_run_rate_eur_month_at_250": 9.32,
-  "all_time_accepted_shadow_pnl_eur_not_monthly_comparable": 18.116972,
+  "all_time_accepted_shadow_pnl_eur_not_monthly_comparable": 18.164379,
   "missing_proof": [
     "rolling ~30-day chronological executable-shadow evidence using the same EUR250 pool"
   ],
