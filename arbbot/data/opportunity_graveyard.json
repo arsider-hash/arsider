@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-25T00:46:44+00:00",
+  "generated_at_utc": "2026-09-25T01:26:29+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -712,17 +712,17 @@
     "funding_spread|MUBARAKUSDT": {
       "strategy": "funding_spread",
       "label": "MUBARAKUSDT",
-      "snapshots": 60,
+      "snapshots": 61,
       "survives": 44,
-      "rejected": 13,
+      "rejected": 14,
       "insufficient": 3,
-      "consecutive_non_survivals": 13,
+      "consecutive_non_survivals": 14,
       "reason_counts": {
         "4 observations; need at least 6": 1,
         "5 observations; need at least 6": 1,
         "latest/median edge ratio=0.235; latest=2.820 bps/8h, median=11.980; require >= 0.25 to rule out sharp edge decay": 1,
         "candidate age 5721s": 1,
-        "no matching executable-entry probe at EUR 250 for MUBARAKUSDT long Bitget / short Gate": 13,
+        "no matching executable-entry probe at EUR 250 for MUBARAKUSDT long Bitget / short Gate": 14,
         "candidate age 8054s": 1,
         "candidate age 16926s": 1,
         "candidate age 17587s": 1,
@@ -734,18 +734,19 @@
         "candidate age 43709s": 1,
         "candidate age 46672s": 1,
         "candidate age 48511s": 1,
-        "candidate age 52240s": 1
+        "candidate age 52240s": 1,
+        "candidate age 54625s": 1
       },
       "last_verdict": "REJECTED",
       "last_seen_utc": "2026-09-24T10:16:04+00:00",
       "last_latest_edge_bps": 8.8,
-      "last_median_positive_edge_bps": 8.42,
+      "last_median_positive_edge_bps": 8.41,
       "last_persistence": 1.0,
       "last_reasons": [
-        "candidate age 52240s",
+        "candidate age 54625s",
         "no matching executable-entry probe at EUR 250 for MUBARAKUSDT long Bitget / short Gate"
       ],
-      "updated_at_utc": "2026-09-25T00:46:44+00:00"
+      "updated_at_utc": "2026-09-25T01:26:29+00:00"
     },
     "funding_spread|NILUSDT": {
       "strategy": "funding_spread",
@@ -797,19 +798,19 @@
     "funding_spread|TRUMPUSDT": {
       "strategy": "funding_spread",
       "label": "TRUMPUSDT",
-      "snapshots": 5,
+      "snapshots": 6,
       "survives": 0,
       "rejected": 0,
-      "insufficient": 5,
-      "consecutive_non_survivals": 5,
+      "insufficient": 6,
+      "consecutive_non_survivals": 6,
       "reason_counts": {
         "persistence=0.418; need at least 0.70": 3,
-        "latest/median edge ratio=0.000; latest=0.000 bps/8h, median=4.540; require >= 0.25 to rule out sharp edge decay": 5,
-        "no matching executable-entry probe at EUR 250 for TRUMPUSDT long Bitget / short Gate": 5,
-        "persistence=0.426; need at least 0.70": 2
+        "latest/median edge ratio=0.000; latest=0.000 bps/8h, median=4.540; require >= 0.25 to rule out sharp edge decay": 6,
+        "no matching executable-entry probe at EUR 250 for TRUMPUSDT long Bitget / short Gate": 6,
+        "persistence=0.426; need at least 0.70": 3
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-09-25T00:44:51+00:00",
+      "last_seen_utc": "2026-09-25T01:24:31+00:00",
       "last_latest_edge_bps": 0.0,
       "last_median_positive_edge_bps": 4.54,
       "last_persistence": 0.4259,
@@ -818,7 +819,7 @@
         "latest/median edge ratio=0.000; latest=0.000 bps/8h, median=4.540; require >= 0.25 to rule out sharp edge decay",
         "no matching executable-entry probe at EUR 250 for TRUMPUSDT long Bitget / short Gate"
       ],
-      "updated_at_utc": "2026-09-25T00:46:44+00:00"
+      "updated_at_utc": "2026-09-25T01:26:29+00:00"
     }
   },
   "note": "Historical failure memory is diagnostic evidence only. It cannot loosen gates or create READY."
