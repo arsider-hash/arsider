@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-26T19:33:34+00:00",
+  "generated_at_utc": "2026-09-26T19:49:59+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -876,23 +876,24 @@
     "funding_spread|RAREUSDT": {
       "strategy": "funding_spread",
       "label": "RAREUSDT",
-      "snapshots": 1,
+      "snapshots": 2,
       "survives": 0,
       "rejected": 0,
-      "insufficient": 1,
-      "consecutive_non_survivals": 1,
+      "insufficient": 2,
+      "consecutive_non_survivals": 2,
       "reason_counts": {
-        "4 observations; need at least 6": 1
+        "4 observations; need at least 6": 1,
+        "5 observations; need at least 6": 1
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-09-26T19:31:41+00:00",
-      "last_latest_edge_bps": 6.12,
-      "last_median_positive_edge_bps": 24.47,
+      "last_seen_utc": "2026-09-26T19:48:11+00:00",
+      "last_latest_edge_bps": 5.56,
+      "last_median_positive_edge_bps": 17.14,
       "last_persistence": 1.0,
       "last_reasons": [
-        "4 observations; need at least 6"
+        "5 observations; need at least 6"
       ],
-      "updated_at_utc": "2026-09-26T19:33:34+00:00"
+      "updated_at_utc": "2026-09-26T19:49:59+00:00"
     }
   },
   "note": "Historical failure memory is diagnostic evidence only. It cannot loosen gates or create READY."
