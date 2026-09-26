@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-26T18:07:27+00:00",
+  "generated_at_utc": "2026-09-26T19:33:34+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -872,6 +872,27 @@
         "no matching executable-entry probe at EUR 250 for BRUSDT long Bitget / short Gate"
       ],
       "updated_at_utc": "2026-09-26T14:31:46+00:00"
+    },
+    "funding_spread|RAREUSDT": {
+      "strategy": "funding_spread",
+      "label": "RAREUSDT",
+      "snapshots": 1,
+      "survives": 0,
+      "rejected": 0,
+      "insufficient": 1,
+      "consecutive_non_survivals": 1,
+      "reason_counts": {
+        "4 observations; need at least 6": 1
+      },
+      "last_verdict": "INSUFFICIENT_EVIDENCE",
+      "last_seen_utc": "2026-09-26T19:31:41+00:00",
+      "last_latest_edge_bps": 6.12,
+      "last_median_positive_edge_bps": 24.47,
+      "last_persistence": 1.0,
+      "last_reasons": [
+        "4 observations; need at least 6"
+      ],
+      "updated_at_utc": "2026-09-26T19:33:34+00:00"
     }
   },
   "note": "Historical failure memory is diagnostic evidence only. It cannot loosen gates or create READY."
