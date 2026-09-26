@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-26T07:34:50+00:00",
+  "generated_at_utc": "2026-09-26T07:41:51+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -283,11 +283,11 @@
     "funding_spread|BTWUSDT": {
       "strategy": "funding_spread",
       "label": "BTWUSDT",
-      "snapshots": 18,
+      "snapshots": 19,
       "survives": 9,
-      "rejected": 5,
+      "rejected": 6,
       "insufficient": 4,
-      "consecutive_non_survivals": 2,
+      "consecutive_non_survivals": 3,
       "reason_counts": {
         "candidate age 169391s": 1,
         "4 independent 15m buckets; median adverse basis costs 3.24 funding periods; median aligned basis=-19.157 bps": 1,
@@ -302,17 +302,18 @@
         "persistence=0.667; need at least 0.70": 1,
         "persistence=0.692; need at least 0.70": 1,
         "EUR 250 executable adverse basis=60.476 bps, recovery=3.16 funding periods; require <= 3.00": 1,
-        "EUR 250 executable adverse basis=69.630 bps, recovery=4.49 funding periods; require <= 3.00": 1
+        "EUR 250 executable adverse basis=69.630 bps, recovery=4.49 funding periods; require <= 3.00": 1,
+        "EUR 250 executable adverse basis=79.349 bps, recovery=4.85 funding periods; require <= 3.00": 1
       },
       "last_verdict": "REJECTED",
-      "last_seen_utc": "2026-09-26T07:32:57+00:00",
-      "last_latest_edge_bps": 15.5,
+      "last_seen_utc": "2026-09-26T07:40:01+00:00",
+      "last_latest_edge_bps": 16.36,
       "last_median_positive_edge_bps": 20.31,
       "last_persistence": 0.8824,
       "last_reasons": [
-        "EUR 250 executable adverse basis=69.630 bps, recovery=4.49 funding periods; require <= 3.00"
+        "EUR 250 executable adverse basis=79.349 bps, recovery=4.85 funding periods; require <= 3.00"
       ],
-      "updated_at_utc": "2026-09-26T07:34:50+00:00"
+      "updated_at_utc": "2026-09-26T07:41:51+00:00"
     },
     "funding_spread|STEEMUSDT": {
       "strategy": "funding_spread",
