@@ -1,12 +1,12 @@
 {
-  "generated_at_utc": "2026-09-26T19:50:14+00:00",
+  "generated_at_utc": "2026-09-26T22:14:28+00:00",
   "status": "SIMULATED",
   "starting_capital_eur": 250.0,
   "window_days": 30,
-  "window_end_utc": "2026-09-26T02:00:11+00:00",
-  "window_start_utc": "2026-08-27T02:00:11+00:00",
-  "proof_window_span_days": 6.2929,
-  "eligible_events": 34,
+  "window_end_utc": "2026-09-26T22:12:17+00:00",
+  "window_start_utc": "2026-08-27T22:12:17+00:00",
+  "proof_window_span_days": 7.1346,
+  "eligible_events": 35,
   "rejected_input_events": 0,
   "plans_tested": 3,
   "best_plan": {
@@ -17,10 +17,10 @@
     "venue_count": 2,
     "total_preallocated_eur": 250.0,
     "idle_unallocated_eur": 0.0,
-    "accepted_events": 1,
-    "net_eur": 0.219259,
-    "human_minutes": 2.0,
-    "average_locked_capital_eur": 58.333,
+    "accepted_events": 2,
+    "net_eur": 0.291532,
+    "human_minutes": 4.0,
+    "average_locked_capital_eur": 116.667,
     "missed": {
       "capital_busy": 33
     },
@@ -38,6 +38,20 @@
         },
         "expected_net_eur": 0.21925875,
         "human_minutes": 2.0
+      },
+      {
+        "event_id": "crypto|funding_spread|BTWUSDT|2026-09-26T22:12:17+00:00|250",
+        "observed_at_utc": "2026-09-26T22:12:17+00:00",
+        "release_at_utc": "2026-10-03T22:12:17+00:00",
+        "habitat": "crypto",
+        "strategy": "funding_spread",
+        "label": "BTWUSDT",
+        "required_preallocation_eur": {
+          "Bitget": 125.0,
+          "Gate": 125.0
+        },
+        "expected_net_eur": 0.07227375,
+        "human_minutes": 2.0
       }
     ]
   },
@@ -49,10 +63,10 @@
     "venue_count": 2,
     "total_preallocated_eur": 250.0,
     "idle_unallocated_eur": 0.0,
-    "accepted_events": 1,
-    "net_eur": 0.219259,
-    "human_minutes": 2.0,
-    "average_locked_capital_eur": 58.333,
+    "accepted_events": 2,
+    "net_eur": 0.291532,
+    "human_minutes": 4.0,
+    "average_locked_capital_eur": 116.667,
     "missed": {
       "capital_busy": 33
     },
@@ -69,6 +83,20 @@
           "Gate": 125.0
         },
         "expected_net_eur": 0.21925875,
+        "human_minutes": 2.0
+      },
+      {
+        "event_id": "crypto|funding_spread|BTWUSDT|2026-09-26T22:12:17+00:00|250",
+        "observed_at_utc": "2026-09-26T22:12:17+00:00",
+        "release_at_utc": "2026-10-03T22:12:17+00:00",
+        "habitat": "crypto",
+        "strategy": "funding_spread",
+        "label": "BTWUSDT",
+        "required_preallocation_eur": {
+          "Bitget": 125.0,
+          "Gate": 125.0
+        },
+        "expected_net_eur": 0.07227375,
         "human_minutes": 2.0
       }
     ]
