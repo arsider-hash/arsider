@@ -1,41 +1,14 @@
 {
-  "generated_at_utc": "2026-09-26T02:02:23+00:00",
+  "generated_at_utc": "2026-09-26T07:35:03+00:00",
   "habitat": "crypto",
-  "status": "APPENDED_EXECUTABLE_SHADOW_EVENT",
-  "new_events_appended": 1,
-  "event": {
-    "event_id": "crypto|funding_spread|BRUSDT|2026-09-26T02:00:11+00:00|250",
-    "observed_at_utc": "2026-09-26T02:00:11+00:00",
-    "habitat": "crypto",
-    "strategy": "funding_spread",
-    "label": "BRUSDT",
-    "direction": "long Bitget / short Gate",
-    "required_preallocation_eur": {
-      "Bitget": 125.0,
-      "Gate": 125.0
-    },
-    "lock_seconds": 604800.0,
-    "expected_net_eur": 0.10888937,
-    "human_minutes": 2.0,
-    "human_minutes_basis": "planning_assumption_manual_two_leg_authorization",
-    "killer_verdict": "SURVIVES_KILLER",
-    "evidence_tier": "executable_shadow",
-    "source": "fresh_dual_killer_funding_current_edge_after_fee_basis_and_50pct_stress",
-    "evidence": {
-      "latest_edge_bps": 18.9,
-      "fee_haircut_bps_per_8h": 1.4286,
-      "basis_haircut_bps_per_8h": 0.0491,
-      "stressed_net_edge_bps_per_8h": 8.71115,
-      "reference_budget_eur": 250.0,
-      "effective_notional_eur": 125.0,
-      "holding_horizon_days": 7.0
-    }
-  },
+  "status": "NO_ELIGIBLE_EVENT",
+  "new_events_appended": 0,
+  "event": null,
   "attempted": [
     {
       "strategy": "funding_spread",
-      "result": "EMIT",
-      "reason": null
+      "result": "SKIP",
+      "reason": "general_killer_not_survived"
     }
   ],
   "policy": {
