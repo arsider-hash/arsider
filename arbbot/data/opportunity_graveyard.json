@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-26T14:31:46+00:00",
+  "generated_at_utc": "2026-09-26T16:47:44+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -283,11 +283,11 @@
     "funding_spread|BTWUSDT": {
       "strategy": "funding_spread",
       "label": "BTWUSDT",
-      "snapshots": 22,
+      "snapshots": 23,
       "survives": 9,
-      "rejected": 8,
+      "rejected": 9,
       "insufficient": 5,
-      "consecutive_non_survivals": 6,
+      "consecutive_non_survivals": 7,
       "reason_counts": {
         "candidate age 169391s": 1,
         "4 independent 15m buckets; median adverse basis costs 3.24 funding periods; median aligned basis=-19.157 bps": 1,
@@ -307,18 +307,20 @@
         "EUR 250 executable adverse basis=67.540 bps, recovery=4.80 funding periods; require <= 3.00": 1,
         "latest/median edge ratio=0.023; latest=0.460 bps/8h, median=19.920; require >= 0.25 to rule out sharp edge decay": 1,
         "EUR 250 executable adverse basis=55.386 bps, recovery=26.89 funding periods; require <= 3.00": 1,
-        "latest/median edge ratio=0.104; latest=2.060 bps/8h, median=19.780; require >= 0.25 to rule out sharp edge decay": 1
+        "latest/median edge ratio=0.104; latest=2.060 bps/8h, median=19.780; require >= 0.25 to rule out sharp edge decay": 1,
+        "EUR 250 executable adverse basis=26.997 bps, recovery=6.55 funding periods; require <= 3.00": 1,
+        "latest/median edge ratio=0.209; latest=4.120 bps/8h, median=19.700; require >= 0.25 to rule out sharp edge decay": 1
       },
       "last_verdict": "REJECTED",
-      "last_seen_utc": "2026-09-26T12:59:54+00:00",
-      "last_latest_edge_bps": 2.06,
-      "last_median_positive_edge_bps": 19.78,
-      "last_persistence": 0.8684,
+      "last_seen_utc": "2026-09-26T16:46:10+00:00",
+      "last_latest_edge_bps": 4.12,
+      "last_median_positive_edge_bps": 19.7,
+      "last_persistence": 0.8293,
       "last_reasons": [
-        "EUR 250 executable adverse basis=55.386 bps, recovery=26.89 funding periods; require <= 3.00",
-        "latest/median edge ratio=0.104; latest=2.060 bps/8h, median=19.780; require >= 0.25 to rule out sharp edge decay"
+        "EUR 250 executable adverse basis=26.997 bps, recovery=6.55 funding periods; require <= 3.00",
+        "latest/median edge ratio=0.209; latest=4.120 bps/8h, median=19.700; require >= 0.25 to rule out sharp edge decay"
       ],
-      "updated_at_utc": "2026-09-26T13:01:46+00:00"
+      "updated_at_utc": "2026-09-26T16:47:44+00:00"
     },
     "funding_spread|STEEMUSDT": {
       "strategy": "funding_spread",
