@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-27T01:22:43+00:00",
+  "generated_at_utc": "2026-09-27T01:53:35+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -283,11 +283,11 @@
     "funding_spread|BTWUSDT": {
       "strategy": "funding_spread",
       "label": "BTWUSDT",
-      "snapshots": 31,
+      "snapshots": 32,
       "survives": 12,
-      "rejected": 12,
+      "rejected": 13,
       "insufficient": 7,
-      "consecutive_non_survivals": 3,
+      "consecutive_non_survivals": 4,
       "reason_counts": {
         "candidate age 169391s": 1,
         "4 independent 15m buckets; median adverse basis costs 3.24 funding periods; median aligned basis=-19.157 bps": 1,
@@ -314,17 +314,18 @@
         "latest/median edge ratio=0.000; latest=0.000 bps/8h, median=19.700; require >= 0.25 to rule out sharp edge decay": 1,
         "EUR 250 executable adverse basis=40.372 bps, recovery=3.38 funding periods; require <= 3.00": 1,
         "EUR 250 executable adverse basis=42.546 bps, recovery=4.14 funding periods; require <= 3.00": 1,
-        "EUR 250 executable adverse basis=37.660 bps, recovery=3.17 funding periods; require <= 3.00": 1
+        "EUR 250 executable adverse basis=37.660 bps, recovery=3.17 funding periods; require <= 3.00": 1,
+        "EUR 250 executable adverse basis=46.405 bps, recovery=3.44 funding periods; require <= 3.00": 1
       },
       "last_verdict": "REJECTED",
-      "last_seen_utc": "2026-09-27T01:20:22+00:00",
-      "last_latest_edge_bps": 11.9,
+      "last_seen_utc": "2026-09-27T01:51:57+00:00",
+      "last_latest_edge_bps": 13.5,
       "last_median_positive_edge_bps": 19.13,
       "last_persistence": 0.875,
       "last_reasons": [
-        "EUR 250 executable adverse basis=37.660 bps, recovery=3.17 funding periods; require <= 3.00"
+        "EUR 250 executable adverse basis=46.405 bps, recovery=3.44 funding periods; require <= 3.00"
       ],
-      "updated_at_utc": "2026-09-27T01:22:43+00:00"
+      "updated_at_utc": "2026-09-27T01:53:35+00:00"
     },
     "funding_spread|STEEMUSDT": {
       "strategy": "funding_spread",
