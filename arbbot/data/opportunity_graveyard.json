@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-27T18:19:24+00:00",
+  "generated_at_utc": "2026-09-27T19:32:45+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -715,26 +715,27 @@
     "funding_spread|INTCUSDT": {
       "strategy": "funding_spread",
       "label": "INTCUSDT",
-      "snapshots": 2,
+      "snapshots": 3,
       "survives": 0,
-      "rejected": 1,
+      "rejected": 2,
       "insufficient": 1,
-      "consecutive_non_survivals": 2,
+      "consecutive_non_survivals": 3,
       "reason_counts": {
         "persistence=0.474; need at least 0.70": 1,
         "candidate age 145153s": 1,
-        "no matching executable-entry probe at EUR 250 for INTCUSDT short Bitget / long Gate": 1
+        "no matching executable-entry probe at EUR 250 for INTCUSDT short Bitget / long Gate": 2,
+        "candidate age 149554s": 1
       },
       "last_verdict": "REJECTED",
       "last_seen_utc": "2026-09-26T02:00:11+00:00",
       "last_latest_edge_bps": 3.22,
-      "last_median_positive_edge_bps": 8.79,
+      "last_median_positive_edge_bps": 8.95,
       "last_persistence": 1.0,
       "last_reasons": [
-        "candidate age 145153s",
+        "candidate age 149554s",
         "no matching executable-entry probe at EUR 250 for INTCUSDT short Bitget / long Gate"
       ],
-      "updated_at_utc": "2026-09-27T18:19:24+00:00"
+      "updated_at_utc": "2026-09-27T19:32:45+00:00"
     },
     "funding_spread|MUBARAKUSDT": {
       "strategy": "funding_spread",
@@ -887,25 +888,29 @@
     "funding_spread|RAREUSDT": {
       "strategy": "funding_spread",
       "label": "RAREUSDT",
-      "snapshots": 7,
+      "snapshots": 8,
       "survives": 3,
       "rejected": 0,
-      "insufficient": 4,
-      "consecutive_non_survivals": 0,
+      "insufficient": 5,
+      "consecutive_non_survivals": 1,
       "reason_counts": {
         "4 observations; need at least 6": 1,
         "5 observations; need at least 6": 1,
         "latest/median edge ratio=0.092; latest=1.400 bps/8h, median=15.140; require >= 0.25 to rule out sharp edge decay": 1,
-        "no matching executable-entry probe at EUR 250 for RAREUSDT short Bitget / long Gate": 2,
-        "latest/median edge ratio=0.085; latest=1.280 bps/8h, median=15.140; require >= 0.25 to rule out sharp edge decay": 1
+        "no matching executable-entry probe at EUR 250 for RAREUSDT short Bitget / long Gate": 3,
+        "latest/median edge ratio=0.085; latest=1.280 bps/8h, median=15.140; require >= 0.25 to rule out sharp edge decay": 1,
+        "latest/median edge ratio=0.028; latest=0.320 bps/8h, median=11.550; require >= 0.25 to rule out sharp edge decay": 1
       },
-      "last_verdict": "SURVIVES_KILLER",
-      "last_seen_utc": "2026-09-27T18:17:30+00:00",
-      "last_latest_edge_bps": 7.38,
+      "last_verdict": "INSUFFICIENT_EVIDENCE",
+      "last_seen_utc": "2026-09-27T19:30:53+00:00",
+      "last_latest_edge_bps": 0.32,
       "last_median_positive_edge_bps": 11.55,
-      "last_persistence": 0.8462,
-      "last_reasons": [],
-      "updated_at_utc": "2026-09-27T18:19:24+00:00"
+      "last_persistence": 0.8148,
+      "last_reasons": [
+        "latest/median edge ratio=0.028; latest=0.320 bps/8h, median=11.550; require >= 0.25 to rule out sharp edge decay",
+        "no matching executable-entry probe at EUR 250 for RAREUSDT short Bitget / long Gate"
+      ],
+      "updated_at_utc": "2026-09-27T19:32:45+00:00"
     },
     "funding_spread|SOONUSDT": {
       "strategy": "funding_spread",
