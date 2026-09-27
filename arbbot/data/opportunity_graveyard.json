@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-27T07:20:28+00:00",
+  "generated_at_utc": "2026-09-27T08:03:36+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -856,25 +856,26 @@
     "funding_spread|BRUSDT": {
       "strategy": "funding_spread",
       "label": "BRUSDT",
-      "snapshots": 7,
+      "snapshots": 8,
       "survives": 6,
-      "rejected": 1,
+      "rejected": 2,
       "insufficient": 0,
-      "consecutive_non_survivals": 1,
+      "consecutive_non_survivals": 2,
       "reason_counts": {
         "candidate age 16359s": 1,
-        "no matching executable-entry probe at EUR 250 for BRUSDT long Bitget / short Gate": 1
+        "no matching executable-entry probe at EUR 250 for BRUSDT long Bitget / short Gate": 2,
+        "candidate age 22299s": 1
       },
       "last_verdict": "REJECTED",
-      "last_seen_utc": "2026-09-26T09:59:07+00:00",
-      "last_latest_edge_bps": 19.72,
-      "last_median_positive_edge_bps": 17.96,
-      "last_persistence": 0.8421,
+      "last_seen_utc": "2026-09-27T01:51:57+00:00",
+      "last_latest_edge_bps": 3.96,
+      "last_median_positive_edge_bps": 13.8,
+      "last_persistence": 0.7667,
       "last_reasons": [
-        "candidate age 16359s",
+        "candidate age 22299s",
         "no matching executable-entry probe at EUR 250 for BRUSDT long Bitget / short Gate"
       ],
-      "updated_at_utc": "2026-09-26T14:31:46+00:00"
+      "updated_at_utc": "2026-09-27T08:03:36+00:00"
     },
     "funding_spread|RAREUSDT": {
       "strategy": "funding_spread",
@@ -900,6 +901,29 @@
         "no matching executable-entry probe at EUR 250 for RAREUSDT short Bitget / long Gate"
       ],
       "updated_at_utc": "2026-09-27T07:20:28+00:00"
+    },
+    "funding_spread|SOONUSDT": {
+      "strategy": "funding_spread",
+      "label": "SOONUSDT",
+      "snapshots": 1,
+      "survives": 0,
+      "rejected": 1,
+      "insufficient": 0,
+      "consecutive_non_survivals": 1,
+      "reason_counts": {
+        "4 independent 15m buckets; median adverse basis costs 8.30 funding periods; median aligned basis=-41.242 bps": 1,
+        "4 observations; need at least 6": 1
+      },
+      "last_verdict": "REJECTED",
+      "last_seen_utc": "2026-09-27T08:01:35+00:00",
+      "last_latest_edge_bps": 23.08,
+      "last_median_positive_edge_bps": 6.69,
+      "last_persistence": 1.0,
+      "last_reasons": [
+        "4 independent 15m buckets; median adverse basis costs 8.30 funding periods; median aligned basis=-41.242 bps",
+        "4 observations; need at least 6"
+      ],
+      "updated_at_utc": "2026-09-27T08:03:36+00:00"
     }
   },
   "note": "Historical failure memory is diagnostic evidence only. It cannot loosen gates or create READY."
