@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-27T19:32:45+00:00",
+  "generated_at_utc": "2026-09-27T20:40:12+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -715,16 +715,17 @@
     "funding_spread|INTCUSDT": {
       "strategy": "funding_spread",
       "label": "INTCUSDT",
-      "snapshots": 3,
+      "snapshots": 4,
       "survives": 0,
-      "rejected": 2,
+      "rejected": 3,
       "insufficient": 1,
-      "consecutive_non_survivals": 3,
+      "consecutive_non_survivals": 4,
       "reason_counts": {
         "persistence=0.474; need at least 0.70": 1,
         "candidate age 145153s": 1,
-        "no matching executable-entry probe at EUR 250 for INTCUSDT short Bitget / long Gate": 2,
-        "candidate age 149554s": 1
+        "no matching executable-entry probe at EUR 250 for INTCUSDT short Bitget / long Gate": 3,
+        "candidate age 149554s": 1,
+        "candidate age 153601s": 1
       },
       "last_verdict": "REJECTED",
       "last_seen_utc": "2026-09-26T02:00:11+00:00",
@@ -732,10 +733,10 @@
       "last_median_positive_edge_bps": 8.95,
       "last_persistence": 1.0,
       "last_reasons": [
-        "candidate age 149554s",
+        "candidate age 153601s",
         "no matching executable-entry probe at EUR 250 for INTCUSDT short Bitget / long Gate"
       ],
-      "updated_at_utc": "2026-09-27T19:32:45+00:00"
+      "updated_at_utc": "2026-09-27T20:40:12+00:00"
     },
     "funding_spread|MUBARAKUSDT": {
       "strategy": "funding_spread",
@@ -934,6 +935,27 @@
         "4 observations; need at least 6"
       ],
       "updated_at_utc": "2026-09-27T08:03:36+00:00"
+    },
+    "funding_spread|USUSDT": {
+      "strategy": "funding_spread",
+      "label": "USUSDT",
+      "snapshots": 1,
+      "survives": 0,
+      "rejected": 1,
+      "insufficient": 0,
+      "consecutive_non_survivals": 1,
+      "reason_counts": {
+        "EUR 250 executable adverse basis=28.953 bps, recovery=4.55 funding periods; require <= 3.00": 1
+      },
+      "last_verdict": "REJECTED",
+      "last_seen_utc": "2026-09-27T20:38:15+00:00",
+      "last_latest_edge_bps": 6.36,
+      "last_median_positive_edge_bps": 5.66,
+      "last_persistence": 0.9,
+      "last_reasons": [
+        "EUR 250 executable adverse basis=28.953 bps, recovery=4.55 funding periods; require <= 3.00"
+      ],
+      "updated_at_utc": "2026-09-27T20:40:12+00:00"
     }
   },
   "note": "Historical failure memory is diagnostic evidence only. It cannot loosen gates or create READY."
