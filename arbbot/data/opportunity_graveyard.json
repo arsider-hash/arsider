@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-27T11:23:04+00:00",
+  "generated_at_utc": "2026-09-27T13:17:54+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -283,16 +283,16 @@
     "funding_spread|BTWUSDT": {
       "strategy": "funding_spread",
       "label": "BTWUSDT",
-      "snapshots": 32,
+      "snapshots": 33,
       "survives": 12,
       "rejected": 13,
-      "insufficient": 7,
-      "consecutive_non_survivals": 4,
+      "insufficient": 8,
+      "consecutive_non_survivals": 5,
       "reason_counts": {
         "candidate age 169391s": 1,
         "4 independent 15m buckets; median adverse basis costs 3.24 funding periods; median aligned basis=-19.157 bps": 1,
         "4 observations; need at least 6": 1,
-        "no matching executable-entry probe at EUR 250 for BTWUSDT long Bitget / short Gate": 4,
+        "no matching executable-entry probe at EUR 250 for BTWUSDT long Bitget / short Gate": 5,
         "EUR 250 executable adverse basis=22.321 bps, recovery=3.18 funding periods; require <= 3.00": 1,
         "persistence=0.429; need at least 0.70": 1,
         "EUR 250 executable adverse basis=21.737 bps, recovery=4.75 funding periods; require <= 3.00": 1,
@@ -315,17 +315,19 @@
         "EUR 250 executable adverse basis=40.372 bps, recovery=3.38 funding periods; require <= 3.00": 1,
         "EUR 250 executable adverse basis=42.546 bps, recovery=4.14 funding periods; require <= 3.00": 1,
         "EUR 250 executable adverse basis=37.660 bps, recovery=3.17 funding periods; require <= 3.00": 1,
-        "EUR 250 executable adverse basis=46.405 bps, recovery=3.44 funding periods; require <= 3.00": 1
+        "EUR 250 executable adverse basis=46.405 bps, recovery=3.44 funding periods; require <= 3.00": 1,
+        "latest/median edge ratio=0.000; latest=0.000 bps/8h, median=19.130; require >= 0.25 to rule out sharp edge decay": 1
       },
-      "last_verdict": "REJECTED",
-      "last_seen_utc": "2026-09-27T01:51:57+00:00",
-      "last_latest_edge_bps": 13.5,
+      "last_verdict": "INSUFFICIENT_EVIDENCE",
+      "last_seen_utc": "2026-09-27T13:16:17+00:00",
+      "last_latest_edge_bps": 0.0,
       "last_median_positive_edge_bps": 19.13,
-      "last_persistence": 0.875,
+      "last_persistence": 0.7451,
       "last_reasons": [
-        "EUR 250 executable adverse basis=46.405 bps, recovery=3.44 funding periods; require <= 3.00"
+        "latest/median edge ratio=0.000; latest=0.000 bps/8h, median=19.130; require >= 0.25 to rule out sharp edge decay",
+        "no matching executable-entry probe at EUR 250 for BTWUSDT long Bitget / short Gate"
       ],
-      "updated_at_utc": "2026-09-27T01:53:35+00:00"
+      "updated_at_utc": "2026-09-27T13:17:54+00:00"
     },
     "funding_spread|STEEMUSDT": {
       "strategy": "funding_spread",
