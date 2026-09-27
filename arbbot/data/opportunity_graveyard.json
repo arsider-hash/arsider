@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-27T22:34:33+00:00",
+  "generated_at_utc": "2026-09-27T23:32:54+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -944,24 +944,48 @@
     "funding_spread|USUSDT": {
       "strategy": "funding_spread",
       "label": "USUSDT",
-      "snapshots": 4,
+      "snapshots": 5,
       "survives": 2,
-      "rejected": 2,
+      "rejected": 3,
+      "insufficient": 0,
+      "consecutive_non_survivals": 2,
+      "reason_counts": {
+        "EUR 250 executable adverse basis=28.953 bps, recovery=4.55 funding periods; require <= 3.00": 1,
+        "EUR 250 executable adverse basis=35.598 bps, recovery=3.37 funding periods; require <= 3.00": 1,
+        "EUR 250 executable adverse basis=60.880 bps, recovery=7.67 funding periods; require <= 3.00": 1
+      },
+      "last_verdict": "REJECTED",
+      "last_seen_utc": "2026-09-27T23:30:58+00:00",
+      "last_latest_edge_bps": 7.94,
+      "last_median_positive_edge_bps": 7.1,
+      "last_persistence": 0.9333,
+      "last_reasons": [
+        "EUR 250 executable adverse basis=60.880 bps, recovery=7.67 funding periods; require <= 3.00"
+      ],
+      "updated_at_utc": "2026-09-27T23:32:54+00:00"
+    },
+    "funding_spread|FETUSDT": {
+      "strategy": "funding_spread",
+      "label": "FETUSDT",
+      "snapshots": 1,
+      "survives": 0,
+      "rejected": 1,
       "insufficient": 0,
       "consecutive_non_survivals": 1,
       "reason_counts": {
-        "EUR 250 executable adverse basis=28.953 bps, recovery=4.55 funding periods; require <= 3.00": 1,
-        "EUR 250 executable adverse basis=35.598 bps, recovery=3.37 funding periods; require <= 3.00": 1
+        "candidate age 34858s": 1,
+        "no matching executable-entry probe at EUR 250 for FETUSDT short Bitget / long Gate": 1
       },
       "last_verdict": "REJECTED",
-      "last_seen_utc": "2026-09-27T22:33:02+00:00",
-      "last_latest_edge_bps": 10.56,
-      "last_median_positive_edge_bps": 6.62,
-      "last_persistence": 0.9231,
+      "last_seen_utc": "2026-09-27T13:51:56+00:00",
+      "last_latest_edge_bps": 7.02,
+      "last_median_positive_edge_bps": 6.34,
+      "last_persistence": 1.0,
       "last_reasons": [
-        "EUR 250 executable adverse basis=35.598 bps, recovery=3.37 funding periods; require <= 3.00"
+        "candidate age 34858s",
+        "no matching executable-entry probe at EUR 250 for FETUSDT short Bitget / long Gate"
       ],
-      "updated_at_utc": "2026-09-27T22:34:33+00:00"
+      "updated_at_utc": "2026-09-27T23:32:54+00:00"
     }
   },
   "note": "Historical failure memory is diagnostic evidence only. It cannot loosen gates or create READY."
