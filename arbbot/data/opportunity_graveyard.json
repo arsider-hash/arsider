@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-28T18:58:21+00:00",
+  "generated_at_utc": "2026-09-28T21:23:04+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -1068,23 +1068,47 @@
     "funding_spread|SPCXUSDT": {
       "strategy": "funding_spread",
       "label": "SPCXUSDT",
-      "snapshots": 1,
+      "snapshots": 2,
       "survives": 0,
       "rejected": 0,
-      "insufficient": 1,
-      "consecutive_non_survivals": 1,
+      "insufficient": 2,
+      "consecutive_non_survivals": 2,
       "reason_counts": {
-        "4 observations; need at least 6": 1
+        "4 observations; need at least 6": 1,
+        "5 observations; need at least 6": 1
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-09-28T18:56:16+00:00",
-      "last_latest_edge_bps": 5.64,
-      "last_median_positive_edge_bps": 4.93,
-      "last_persistence": 0.75,
+      "last_seen_utc": "2026-09-28T21:21:10+00:00",
+      "last_latest_edge_bps": 6.49,
+      "last_median_positive_edge_bps": 5.285,
+      "last_persistence": 0.8,
       "last_reasons": [
-        "4 observations; need at least 6"
+        "5 observations; need at least 6"
       ],
-      "updated_at_utc": "2026-09-28T18:58:21+00:00"
+      "updated_at_utc": "2026-09-28T21:23:04+00:00"
+    },
+    "funding_spread|\u9f99\u867eUSDT": {
+      "strategy": "funding_spread",
+      "label": "\u9f99\u867eUSDT",
+      "snapshots": 1,
+      "survives": 0,
+      "rejected": 1,
+      "insufficient": 0,
+      "consecutive_non_survivals": 1,
+      "reason_counts": {
+        "candidate age 156667s": 1,
+        "no matching executable-entry probe at EUR 250 for \u9f99\u867eUSDT short Bitget / long Gate": 1
+      },
+      "last_verdict": "REJECTED",
+      "last_seen_utc": "2026-09-27T01:51:57+00:00",
+      "last_latest_edge_bps": 4.64,
+      "last_median_positive_edge_bps": 7.7,
+      "last_persistence": 1.0,
+      "last_reasons": [
+        "candidate age 156667s",
+        "no matching executable-entry probe at EUR 250 for \u9f99\u867eUSDT short Bitget / long Gate"
+      ],
+      "updated_at_utc": "2026-09-28T21:23:04+00:00"
     }
   },
   "note": "Historical failure memory is diagnostic evidence only. It cannot loosen gates or create READY."
