@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-27T23:32:54+00:00",
+  "generated_at_utc": "2026-09-28T00:01:42+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -944,37 +944,39 @@
     "funding_spread|USUSDT": {
       "strategy": "funding_spread",
       "label": "USUSDT",
-      "snapshots": 5,
+      "snapshots": 6,
       "survives": 2,
-      "rejected": 3,
+      "rejected": 4,
       "insufficient": 0,
-      "consecutive_non_survivals": 2,
+      "consecutive_non_survivals": 3,
       "reason_counts": {
         "EUR 250 executable adverse basis=28.953 bps, recovery=4.55 funding periods; require <= 3.00": 1,
         "EUR 250 executable adverse basis=35.598 bps, recovery=3.37 funding periods; require <= 3.00": 1,
-        "EUR 250 executable adverse basis=60.880 bps, recovery=7.67 funding periods; require <= 3.00": 1
+        "EUR 250 executable adverse basis=60.880 bps, recovery=7.67 funding periods; require <= 3.00": 1,
+        "EUR 250 executable adverse basis=42.185 bps, recovery=7.99 funding periods; require <= 3.00": 1
       },
       "last_verdict": "REJECTED",
-      "last_seen_utc": "2026-09-27T23:30:58+00:00",
-      "last_latest_edge_bps": 7.94,
-      "last_median_positive_edge_bps": 7.1,
-      "last_persistence": 0.9333,
+      "last_seen_utc": "2026-09-27T23:59:49+00:00",
+      "last_latest_edge_bps": 5.28,
+      "last_median_positive_edge_bps": 6.88,
+      "last_persistence": 0.9375,
       "last_reasons": [
-        "EUR 250 executable adverse basis=60.880 bps, recovery=7.67 funding periods; require <= 3.00"
+        "EUR 250 executable adverse basis=42.185 bps, recovery=7.99 funding periods; require <= 3.00"
       ],
-      "updated_at_utc": "2026-09-27T23:32:54+00:00"
+      "updated_at_utc": "2026-09-28T00:01:42+00:00"
     },
     "funding_spread|FETUSDT": {
       "strategy": "funding_spread",
       "label": "FETUSDT",
-      "snapshots": 1,
+      "snapshots": 2,
       "survives": 0,
-      "rejected": 1,
+      "rejected": 2,
       "insufficient": 0,
-      "consecutive_non_survivals": 1,
+      "consecutive_non_survivals": 2,
       "reason_counts": {
         "candidate age 34858s": 1,
-        "no matching executable-entry probe at EUR 250 for FETUSDT short Bitget / long Gate": 1
+        "no matching executable-entry probe at EUR 250 for FETUSDT short Bitget / long Gate": 2,
+        "candidate age 36585s": 1
       },
       "last_verdict": "REJECTED",
       "last_seen_utc": "2026-09-27T13:51:56+00:00",
@@ -982,10 +984,10 @@
       "last_median_positive_edge_bps": 6.34,
       "last_persistence": 1.0,
       "last_reasons": [
-        "candidate age 34858s",
+        "candidate age 36585s",
         "no matching executable-entry probe at EUR 250 for FETUSDT short Bitget / long Gate"
       ],
-      "updated_at_utc": "2026-09-27T23:32:54+00:00"
+      "updated_at_utc": "2026-09-28T00:01:42+00:00"
     }
   },
   "note": "Historical failure memory is diagnostic evidence only. It cannot loosen gates or create READY."
