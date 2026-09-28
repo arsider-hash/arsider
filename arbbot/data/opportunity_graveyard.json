@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-28T05:22:41+00:00",
+  "generated_at_utc": "2026-09-28T06:43:51+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -819,8 +819,8 @@
     "funding_spread|CRCLUSDT": {
       "strategy": "funding_spread",
       "label": "CRCLUSDT",
-      "snapshots": 8,
-      "survives": 3,
+      "snapshots": 9,
+      "survives": 4,
       "rejected": 1,
       "insufficient": 4,
       "consecutive_non_survivals": 0,
@@ -832,12 +832,12 @@
         "persistence=0.679; need at least 0.70": 1
       },
       "last_verdict": "SURVIVES_KILLER",
-      "last_seen_utc": "2026-09-28T05:20:47+00:00",
-      "last_latest_edge_bps": 8.1,
-      "last_median_positive_edge_bps": 4.99,
-      "last_persistence": 0.8519,
+      "last_seen_utc": "2026-09-28T06:42:01+00:00",
+      "last_latest_edge_bps": 5.19,
+      "last_median_positive_edge_bps": 5.09,
+      "last_persistence": 0.8889,
       "last_reasons": [],
-      "updated_at_utc": "2026-09-28T05:22:41+00:00"
+      "updated_at_utc": "2026-09-28T06:43:51+00:00"
     },
     "funding_spread|TRUMPUSDT": {
       "strategy": "funding_spread",
@@ -966,19 +966,20 @@
     "funding_spread|FETUSDT": {
       "strategy": "funding_spread",
       "label": "FETUSDT",
-      "snapshots": 6,
+      "snapshots": 7,
       "survives": 0,
-      "rejected": 6,
+      "rejected": 7,
       "insufficient": 0,
-      "consecutive_non_survivals": 6,
+      "consecutive_non_survivals": 7,
       "reason_counts": {
         "candidate age 34858s": 1,
-        "no matching executable-entry probe at EUR 250 for FETUSDT short Bitget / long Gate": 6,
+        "no matching executable-entry probe at EUR 250 for FETUSDT short Bitget / long Gate": 7,
         "candidate age 36585s": 1,
         "candidate age 38739s": 1,
         "candidate age 40865s": 1,
         "candidate age 43480s": 1,
-        "candidate age 55845s": 1
+        "candidate age 55845s": 1,
+        "candidate age 60715s": 1
       },
       "last_verdict": "REJECTED",
       "last_seen_utc": "2026-09-27T13:51:56+00:00",
@@ -986,10 +987,10 @@
       "last_median_positive_edge_bps": 6.34,
       "last_persistence": 1.0,
       "last_reasons": [
-        "candidate age 55845s",
+        "candidate age 60715s",
         "no matching executable-entry probe at EUR 250 for FETUSDT short Bitget / long Gate"
       ],
-      "updated_at_utc": "2026-09-28T05:22:41+00:00"
+      "updated_at_utc": "2026-09-28T06:43:51+00:00"
     }
   },
   "note": "Historical failure memory is diagnostic evidence only. It cannot loosen gates or create READY."
