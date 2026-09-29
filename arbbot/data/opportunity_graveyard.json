@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-29T01:10:12+00:00",
+  "generated_at_utc": "2026-09-29T01:29:30+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -1041,51 +1041,55 @@
     "funding_spread|INJUSDT": {
       "strategy": "funding_spread",
       "label": "INJUSDT",
-      "snapshots": 6,
+      "snapshots": 7,
       "survives": 0,
-      "rejected": 6,
+      "rejected": 7,
       "insufficient": 0,
-      "consecutive_non_survivals": 6,
+      "consecutive_non_survivals": 7,
       "reason_counts": {
         "candidate age 112794s": 1,
         "persistence=0.684; need at least 0.70": 3,
-        "no matching executable-entry probe at EUR 250 for INJUSDT short Bitget / long Gate": 6,
+        "no matching executable-entry probe at EUR 250 for INJUSDT short Bitget / long Gate": 7,
         "candidate age 113222s": 1,
         "candidate age 115939s": 1,
         "candidate age 125806s": 1,
         "candidate age 143065s": 1,
-        "candidate age 148117s": 1
+        "candidate age 148117s": 1,
+        "candidate age 149274s": 1
       },
       "last_verdict": "REJECTED",
       "last_seen_utc": "2026-09-27T08:01:35+00:00",
       "last_latest_edge_bps": 13.34,
-      "last_median_positive_edge_bps": 13.34,
+      "last_median_positive_edge_bps": 12.525,
       "last_persistence": 1.0,
       "last_reasons": [
-        "candidate age 148117s",
+        "candidate age 149274s",
         "no matching executable-entry probe at EUR 250 for INJUSDT short Bitget / long Gate"
       ],
-      "updated_at_utc": "2026-09-29T01:10:12+00:00"
+      "updated_at_utc": "2026-09-29T01:29:30+00:00"
     },
     "funding_spread|SPCXUSDT": {
       "strategy": "funding_spread",
       "label": "SPCXUSDT",
-      "snapshots": 5,
+      "snapshots": 6,
       "survives": 3,
       "rejected": 0,
-      "insufficient": 2,
-      "consecutive_non_survivals": 0,
+      "insufficient": 3,
+      "consecutive_non_survivals": 1,
       "reason_counts": {
         "4 observations; need at least 6": 1,
-        "5 observations; need at least 6": 1
+        "5 observations; need at least 6": 1,
+        "no matching executable-entry probe at EUR 250 for SPCXUSDT short Bitget / long Gate": 1
       },
-      "last_verdict": "SURVIVES_KILLER",
-      "last_seen_utc": "2026-09-29T01:08:36+00:00",
-      "last_latest_edge_bps": 3.74,
+      "last_verdict": "INSUFFICIENT_EVIDENCE",
+      "last_seen_utc": "2026-09-29T01:27:56+00:00",
+      "last_latest_edge_bps": 1.71,
       "last_median_positive_edge_bps": 5.64,
-      "last_persistence": 0.875,
-      "last_reasons": [],
-      "updated_at_utc": "2026-09-29T01:10:12+00:00"
+      "last_persistence": 0.7778,
+      "last_reasons": [
+        "no matching executable-entry probe at EUR 250 for SPCXUSDT short Bitget / long Gate"
+      ],
+      "updated_at_utc": "2026-09-29T01:29:30+00:00"
     },
     "funding_spread|\u9f99\u867eUSDT": {
       "strategy": "funding_spread",
