@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-29T01:50:13+00:00",
+  "generated_at_utc": "2026-09-29T02:59:28+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -1041,15 +1041,15 @@
     "funding_spread|INJUSDT": {
       "strategy": "funding_spread",
       "label": "INJUSDT",
-      "snapshots": 8,
+      "snapshots": 9,
       "survives": 0,
-      "rejected": 8,
+      "rejected": 9,
       "insufficient": 0,
-      "consecutive_non_survivals": 8,
+      "consecutive_non_survivals": 9,
       "reason_counts": {
         "candidate age 112794s": 1,
         "persistence=0.684; need at least 0.70": 3,
-        "no matching executable-entry probe at EUR 250 for INJUSDT short Bitget / long Gate": 8,
+        "no matching executable-entry probe at EUR 250 for INJUSDT short Bitget / long Gate": 9,
         "candidate age 113222s": 1,
         "candidate age 115939s": 1,
         "candidate age 125806s": 1,
@@ -1057,19 +1057,21 @@
         "candidate age 148117s": 1,
         "candidate age 149274s": 1,
         "candidate age 150518s": 1,
-        "5 observations; need at least 6": 1
+        "5 observations; need at least 6": 1,
+        "candidate age 154673s": 1,
+        "4 observations; need at least 6": 1
       },
       "last_verdict": "REJECTED",
       "last_seen_utc": "2026-09-27T08:01:35+00:00",
       "last_latest_edge_bps": 13.34,
-      "last_median_positive_edge_bps": 11.71,
+      "last_median_positive_edge_bps": 11.61,
       "last_persistence": 1.0,
       "last_reasons": [
-        "candidate age 150518s",
-        "5 observations; need at least 6",
+        "candidate age 154673s",
+        "4 observations; need at least 6",
         "no matching executable-entry probe at EUR 250 for INJUSDT short Bitget / long Gate"
       ],
-      "updated_at_utc": "2026-09-29T01:50:13+00:00"
+      "updated_at_utc": "2026-09-29T02:59:28+00:00"
     },
     "funding_spread|SPCXUSDT": {
       "strategy": "funding_spread",
@@ -1121,23 +1123,24 @@
     "funding_spread|SAMSUNGUSDT": {
       "strategy": "funding_spread",
       "label": "SAMSUNGUSDT",
-      "snapshots": 1,
+      "snapshots": 2,
       "survives": 0,
       "rejected": 0,
-      "insufficient": 1,
-      "consecutive_non_survivals": 1,
+      "insufficient": 2,
+      "consecutive_non_survivals": 2,
       "reason_counts": {
-        "4 observations; need at least 6": 1
+        "4 observations; need at least 6": 1,
+        "5 observations; need at least 6": 1
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-09-29T01:48:40+00:00",
-      "last_latest_edge_bps": 4.86,
-      "last_median_positive_edge_bps": 5.1,
+      "last_seen_utc": "2026-09-29T02:57:15+00:00",
+      "last_latest_edge_bps": 2.7,
+      "last_median_positive_edge_bps": 4.86,
       "last_persistence": 1.0,
       "last_reasons": [
-        "4 observations; need at least 6"
+        "5 observations; need at least 6"
       ],
-      "updated_at_utc": "2026-09-29T01:50:13+00:00"
+      "updated_at_utc": "2026-09-29T02:59:28+00:00"
     }
   },
   "note": "Historical failure memory is diagnostic evidence only. It cannot loosen gates or create READY."
