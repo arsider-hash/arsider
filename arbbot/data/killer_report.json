@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-29T13:54:52+00:00",
+  "generated_at_utc": "2026-09-29T14:11:29+00:00",
   "verdict": "INSUFFICIENT_EVIDENCE",
   "selected": {
     "key": "stable_dislocation|FDUSD:Binance",
@@ -8,24 +8,24 @@
     "direction": "below peg",
     "venue": "Binance",
     "observations": 35,
-    "positive_observations": 21,
-    "persistence": 0.6,
-    "median_positive_edge_bps": 12.5,
+    "positive_observations": 22,
+    "persistence": 0.6286,
+    "median_positive_edge_bps": 12.0,
     "p90_positive_edge_bps": 12.5,
     "max_edge_bps": 12.5,
     "latest_edge_bps": 11.5,
-    "research_score": 68.62,
+    "research_score": 69.57,
     "classification": "watch",
-    "last_seen_utc": "2026-09-29T13:51:21+00:00",
-    "latest_age_seconds": 55.6,
+    "last_seen_utc": "2026-09-29T14:07:47+00:00",
+    "latest_age_seconds": 62.5,
     "current_signal_fresh": true,
     "capital_utilisation": 1.0,
-    "capital_efficiency_score": 23.16,
-    "economic_relevance_score": 23.16,
+    "capital_efficiency_score": 24.05,
+    "economic_relevance_score": 24.05,
     "economic_relevance": {
       "reference_budget_eur": 250,
       "reference_basis": "paper_profit_per_event_at_median_edge",
-      "reference_payoff_eur": 0.3125,
+      "reference_payoff_eur": 0.3,
       "reference_target_eur": 0.25,
       "relevance_factor": 1.0,
       "economically_material_at_reference_budget": true
@@ -34,32 +34,32 @@
       "25": {
         "total_budget": 25,
         "effective_capital_per_edge": 25.0,
-        "paper_profit_per_event_at_median_edge": 0.0312
+        "paper_profit_per_event_at_median_edge": 0.03
       },
       "50": {
         "total_budget": 50,
         "effective_capital_per_edge": 50.0,
-        "paper_profit_per_event_at_median_edge": 0.0625
+        "paper_profit_per_event_at_median_edge": 0.06
       },
       "100": {
         "total_budget": 100,
         "effective_capital_per_edge": 100.0,
-        "paper_profit_per_event_at_median_edge": 0.125
+        "paper_profit_per_event_at_median_edge": 0.12
       },
       "250": {
         "total_budget": 250,
         "effective_capital_per_edge": 250.0,
-        "paper_profit_per_event_at_median_edge": 0.3125
+        "paper_profit_per_event_at_median_edge": 0.3
       },
       "500": {
         "total_budget": 500,
         "effective_capital_per_edge": 500.0,
-        "paper_profit_per_event_at_median_edge": 0.625
+        "paper_profit_per_event_at_median_edge": 0.6
       },
       "1000": {
         "total_budget": 1000,
         "effective_capital_per_edge": 1000.0,
-        "paper_profit_per_event_at_median_edge": 1.25
+        "paper_profit_per_event_at_median_edge": 1.2
       }
     },
     "monthly_income_lens": {
@@ -78,7 +78,7 @@
       "check": "freshness",
       "status": "PASS",
       "severity": "hard",
-      "detail": "candidate age 212s"
+      "detail": "candidate age 222s"
     },
     {
       "check": "sample_presence",
@@ -90,13 +90,13 @@
       "check": "positive_edge_evidence",
       "status": "PASS",
       "severity": "hard",
-      "detail": "positive_observations=21, median_positive_edge_bps=12.5000"
+      "detail": "positive_observations=22, median_positive_edge_bps=12.0000"
     },
     {
       "check": "persistence",
       "status": "INSUFFICIENT",
       "severity": "hard",
-      "detail": "persistence=0.600; need at least 0.70"
+      "detail": "persistence=0.629; need at least 0.70"
     },
     {
       "check": "latest_edge_sign",
@@ -108,7 +108,7 @@
       "check": "economic_relevance",
       "status": "PASS",
       "severity": "soft",
-      "detail": "economic_relevance_score=23.16"
+      "detail": "economic_relevance_score=24.05"
     },
     {
       "check": "burst_validation",
@@ -137,7 +137,7 @@
   ],
   "hard_failures": [],
   "insufficient_evidence": [
-    "persistence=0.600; need at least 0.70",
+    "persistence=0.629; need at least 0.70",
     "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified"
   ],
   "policy": {
