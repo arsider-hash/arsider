@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-29T06:58:59+00:00",
+  "generated_at_utc": "2026-09-29T07:13:00+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -30,25 +30,26 @@
     "stable_dislocation|FDUSD:Binance": {
       "strategy": "stable_dislocation",
       "label": "FDUSD:Binance",
-      "snapshots": 89,
+      "snapshots": 90,
       "survives": 0,
       "rejected": 0,
-      "insufficient": 89,
-      "consecutive_non_survivals": 89,
+      "insufficient": 90,
+      "consecutive_non_survivals": 90,
       "reason_counts": {
-        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 89,
-        "persistence=0.486; need at least 0.70": 1
+        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 90,
+        "persistence=0.486; need at least 0.70": 1,
+        "persistence=0.500; need at least 0.70": 1
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-09-29T06:55:19+00:00",
+      "last_seen_utc": "2026-09-29T07:09:26+00:00",
       "last_latest_edge_bps": 12.5,
       "last_median_positive_edge_bps": 12.5,
-      "last_persistence": 0.4857,
+      "last_persistence": 0.5,
       "last_reasons": [
-        "persistence=0.486; need at least 0.70",
+        "persistence=0.500; need at least 0.70",
         "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified"
       ],
-      "updated_at_utc": "2026-09-29T06:58:59+00:00"
+      "updated_at_utc": "2026-09-29T07:13:00+00:00"
     },
     "funding_spread|VTHOUSDT": {
       "strategy": "funding_spread",
@@ -969,14 +970,14 @@
     "funding_spread|FETUSDT": {
       "strategy": "funding_spread",
       "label": "FETUSDT",
-      "snapshots": 11,
+      "snapshots": 12,
       "survives": 0,
-      "rejected": 11,
+      "rejected": 12,
       "insufficient": 0,
-      "consecutive_non_survivals": 11,
+      "consecutive_non_survivals": 12,
       "reason_counts": {
         "candidate age 34858s": 1,
-        "no matching executable-entry probe at EUR 250 for FETUSDT short Bitget / long Gate": 11,
+        "no matching executable-entry probe at EUR 250 for FETUSDT short Bitget / long Gate": 12,
         "candidate age 36585s": 1,
         "candidate age 38739s": 1,
         "candidate age 40865s": 1,
@@ -986,7 +987,8 @@
         "candidate age 61784s": 1,
         "candidate age 64928s": 1,
         "candidate age 79523s": 1,
-        "candidate age 148023s": 1
+        "candidate age 148023s": 1,
+        "candidate age 148864s": 1
       },
       "last_verdict": "REJECTED",
       "last_seen_utc": "2026-09-27T13:51:56+00:00",
@@ -994,10 +996,10 @@
       "last_median_positive_edge_bps": 6.36,
       "last_persistence": 1.0,
       "last_reasons": [
-        "candidate age 148023s",
+        "candidate age 148864s",
         "no matching executable-entry probe at EUR 250 for FETUSDT short Bitget / long Gate"
       ],
-      "updated_at_utc": "2026-09-29T06:58:59+00:00"
+      "updated_at_utc": "2026-09-29T07:13:00+00:00"
     },
     "funding_spread|SKHYNIXUSDT": {
       "strategy": "funding_spread",
