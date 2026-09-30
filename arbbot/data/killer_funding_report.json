@@ -1,6 +1,6 @@
 {
-  "generated_at_utc": "2026-09-29T23:15:16+00:00",
-  "verdict": "INSUFFICIENT_EVIDENCE",
+  "generated_at_utc": "2026-09-30T00:12:38+00:00",
+  "verdict": "REJECTED",
   "selected": {
     "key": "funding_spread|NMRUSDT",
     "strategy": "funding_spread",
@@ -15,10 +15,10 @@
     "max_edge_bps": 20.37,
     "latest_edge_bps": 20.37,
     "research_score": 84.83,
-    "classification": "strong_watch",
+    "classification": "noise",
     "last_seen_utc": "2026-09-29T23:11:02+00:00",
-    "latest_age_seconds": 98.5,
-    "current_signal_fresh": true,
+    "latest_age_seconds": 3537.1,
+    "current_signal_fresh": false,
     "current_direction_stability": 1.0,
     "current_direction_observations": 5,
     "direction_stability_required_for_watch": 0.5,
@@ -166,9 +166,9 @@
   "checks": [
     {
       "check": "freshness",
-      "status": "PASS",
+      "status": "FAIL",
       "severity": "hard",
-      "detail": "candidate age 255s"
+      "detail": "candidate age 3697s"
     },
     {
       "check": "sample_presence",
@@ -220,9 +220,9 @@
     },
     {
       "check": "funding_executable_entry",
-      "status": "PASS",
+      "status": "INSUFFICIENT",
       "severity": "hard",
-      "detail": "EUR 250 executable adverse basis=4.762 bps, recovery=0.23 funding periods; require <= 3.00"
+      "detail": "no matching executable-entry probe at EUR 250 for NMRUSDT short Bitget / long Gate"
     },
     {
       "check": "shadow_evidence",
@@ -231,9 +231,12 @@
       "detail": "no matching shadow history"
     }
   ],
-  "hard_failures": [],
+  "hard_failures": [
+    "candidate age 3697s"
+  ],
   "insufficient_evidence": [
-    "5 observations; need at least 6"
+    "5 observations; need at least 6",
+    "no matching executable-entry probe at EUR 250 for NMRUSDT short Bitget / long Gate"
   ],
   "policy": {
     "max_staleness_seconds": 900,
