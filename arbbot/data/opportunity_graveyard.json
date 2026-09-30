@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-30T20:19:42+00:00",
+  "generated_at_utc": "2026-09-30T21:35:01+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -1200,6 +1200,27 @@
         "no matching executable-entry probe at EUR 250 for NMRUSDT short Bitget / long Gate"
       ],
       "updated_at_utc": "2026-09-30T20:19:42+00:00"
+    },
+    "funding_spread|ARKUSDT": {
+      "strategy": "funding_spread",
+      "label": "ARKUSDT",
+      "snapshots": 1,
+      "survives": 0,
+      "rejected": 0,
+      "insufficient": 1,
+      "consecutive_non_survivals": 1,
+      "reason_counts": {
+        "5 observations; need at least 6": 1
+      },
+      "last_verdict": "INSUFFICIENT_EVIDENCE",
+      "last_seen_utc": "2026-09-30T21:33:23+00:00",
+      "last_latest_edge_bps": 48.32,
+      "last_median_positive_edge_bps": 119.92,
+      "last_persistence": 1.0,
+      "last_reasons": [
+        "5 observations; need at least 6"
+      ],
+      "updated_at_utc": "2026-09-30T21:35:01+00:00"
     }
   },
   "note": "Historical failure memory is diagnostic evidence only. It cannot loosen gates or create READY."
