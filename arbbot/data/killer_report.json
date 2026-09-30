@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-30T23:50:56+00:00",
+  "generated_at_utc": "2026-09-30T23:57:13+00:00",
   "verdict": "SURVIVES_KILLER",
   "selected": {
     "key": "funding_spread|ARKUSDT",
@@ -13,11 +13,11 @@
     "median_positive_edge_bps": 178.08,
     "p90_positive_edge_bps": 200.0,
     "max_edge_bps": 200.0,
-    "latest_edge_bps": 181.04,
+    "latest_edge_bps": 183.92,
     "research_score": 91.67,
     "classification": "strong_watch",
-    "last_seen_utc": "2026-09-30T23:49:24+00:00",
-    "latest_age_seconds": 90.1,
+    "last_seen_utc": "2026-09-30T23:55:39+00:00",
+    "latest_age_seconds": 92.2,
     "current_signal_fresh": true,
     "current_direction_stability": 1.0,
     "current_direction_observations": 7,
@@ -168,7 +168,7 @@
       "check": "freshness",
       "status": "PASS",
       "severity": "hard",
-      "detail": "candidate age 92s"
+      "detail": "candidate age 94s"
     },
     {
       "check": "sample_presence",
@@ -192,7 +192,7 @@
       "check": "latest_edge_sign",
       "status": "PASS",
       "severity": "soft",
-      "detail": "latest_edge_bps=181.0400"
+      "detail": "latest_edge_bps=183.9200"
     },
     {
       "check": "economic_relevance",
@@ -204,7 +204,7 @@
       "check": "funding_regime_decay",
       "status": "PASS",
       "severity": "hard",
-      "detail": "latest/median edge ratio=1.017; latest=181.040 bps/8h, median=178.080; require >= 0.25 to rule out sharp edge decay"
+      "detail": "latest/median edge ratio=1.033; latest=183.920 bps/8h, median=178.080; require >= 0.25 to rule out sharp edge decay"
     },
     {
       "check": "funding_basis_persistence",
@@ -226,9 +226,9 @@
     },
     {
       "check": "shadow_evidence",
-      "status": "WARN",
+      "status": "PASS",
       "severity": "soft",
-      "detail": "count=2, positive_rate=1.000, cumulative_paper_pnl=0.551643"
+      "detail": "count=3, positive_rate=1.000, cumulative_paper_pnl=1.007871"
     }
   ],
   "hard_failures": [],
