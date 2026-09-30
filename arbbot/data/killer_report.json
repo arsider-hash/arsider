@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-30T15:13:28+00:00",
+  "generated_at_utc": "2026-09-30T15:23:53+00:00",
   "verdict": "INSUFFICIENT_EVIDENCE",
   "selected": {
     "key": "stable_dislocation|FDUSD:Binance",
@@ -8,20 +8,20 @@
     "direction": "below peg",
     "venue": "Binance",
     "observations": 32,
-    "positive_observations": 30,
-    "persistence": 0.9375,
+    "positive_observations": 29,
+    "persistence": 0.9062,
     "median_positive_edge_bps": 12.5,
     "p90_positive_edge_bps": 14.5,
     "max_edge_bps": 15.5,
-    "latest_edge_bps": 9.5,
-    "research_score": 87.19,
+    "latest_edge_bps": 7.5,
+    "research_score": 85.47,
     "classification": "strong_watch",
-    "last_seen_utc": "2026-09-30T15:09:48+00:00",
-    "latest_age_seconds": 60.4,
+    "last_seen_utc": "2026-09-30T15:20:12+00:00",
+    "latest_age_seconds": 61.2,
     "current_signal_fresh": true,
     "capital_utilisation": 1.0,
-    "capital_efficiency_score": 45.98,
-    "economic_relevance_score": 45.98,
+    "capital_efficiency_score": 43.57,
+    "economic_relevance_score": 43.57,
     "economic_relevance": {
       "reference_budget_eur": 250,
       "reference_basis": "paper_profit_per_event_at_median_edge",
@@ -90,25 +90,25 @@
       "check": "positive_edge_evidence",
       "status": "PASS",
       "severity": "hard",
-      "detail": "positive_observations=30, median_positive_edge_bps=12.5000"
+      "detail": "positive_observations=29, median_positive_edge_bps=12.5000"
     },
     {
       "check": "persistence",
       "status": "PASS",
       "severity": "hard",
-      "detail": "persistence=0.938; need at least 0.70"
+      "detail": "persistence=0.906; need at least 0.70"
     },
     {
       "check": "latest_edge_sign",
       "status": "PASS",
       "severity": "soft",
-      "detail": "latest_edge_bps=9.5000"
+      "detail": "latest_edge_bps=7.5000"
     },
     {
       "check": "economic_relevance",
       "status": "PASS",
       "severity": "soft",
-      "detail": "economic_relevance_score=45.98"
+      "detail": "economic_relevance_score=43.57"
     },
     {
       "check": "burst_validation",
