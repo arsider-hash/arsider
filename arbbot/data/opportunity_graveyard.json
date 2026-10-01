@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-01T14:09:16+00:00",
+  "generated_at_utc": "2026-10-01T16:43:25+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -1122,8 +1122,8 @@
     "funding_spread|\u9f99\u867eUSDT": {
       "strategy": "funding_spread",
       "label": "\u9f99\u867eUSDT",
-      "snapshots": 3,
-      "survives": 1,
+      "snapshots": 4,
+      "survives": 2,
       "rejected": 2,
       "insufficient": 0,
       "consecutive_non_survivals": 0,
@@ -1133,12 +1133,12 @@
         "candidate age 158914s": 1
       },
       "last_verdict": "SURVIVES_KILLER",
-      "last_seen_utc": "2026-10-01T14:07:20+00:00",
-      "last_latest_edge_bps": 12.8,
+      "last_seen_utc": "2026-10-01T16:41:35+00:00",
+      "last_latest_edge_bps": 10.74,
       "last_median_positive_edge_bps": 12.14,
-      "last_persistence": 0.75,
+      "last_persistence": 0.7778,
       "last_reasons": [],
-      "updated_at_utc": "2026-10-01T14:09:16+00:00"
+      "updated_at_utc": "2026-10-01T16:43:25+00:00"
     },
     "funding_spread|SAMSUNGUSDT": {
       "strategy": "funding_spread",
@@ -1165,16 +1165,16 @@
     "funding_spread|NMRUSDT": {
       "strategy": "funding_spread",
       "label": "NMRUSDT",
-      "snapshots": 23,
+      "snapshots": 24,
       "survives": 0,
-      "rejected": 21,
+      "rejected": 22,
       "insufficient": 2,
-      "consecutive_non_survivals": 23,
+      "consecutive_non_survivals": 24,
       "reason_counts": {
         "4 observations; need at least 6": 1,
-        "5 observations; need at least 6": 22,
+        "5 observations; need at least 6": 23,
         "candidate age 3697s": 1,
-        "no matching executable-entry probe at EUR 250 for NMRUSDT short Bitget / long Gate": 21,
+        "no matching executable-entry probe at EUR 250 for NMRUSDT short Bitget / long Gate": 22,
         "candidate age 4403s": 1,
         "candidate age 11265s": 1,
         "candidate age 23109s": 1,
@@ -1194,7 +1194,8 @@
         "candidate age 123842s": 1,
         "candidate age 131851s": 1,
         "candidate age 136527s": 1,
-        "candidate age 140294s": 1
+        "candidate age 140294s": 1,
+        "candidate age 149543s": 1
       },
       "last_verdict": "REJECTED",
       "last_seen_utc": "2026-09-29T23:11:02+00:00",
@@ -1202,11 +1203,11 @@
       "last_median_positive_edge_bps": 17.2,
       "last_persistence": 1.0,
       "last_reasons": [
-        "candidate age 140294s",
+        "candidate age 149543s",
         "5 observations; need at least 6",
         "no matching executable-entry probe at EUR 250 for NMRUSDT short Bitget / long Gate"
       ],
-      "updated_at_utc": "2026-10-01T14:09:16+00:00"
+      "updated_at_utc": "2026-10-01T16:43:25+00:00"
     },
     "funding_spread|ARKUSDT": {
       "strategy": "funding_spread",
