@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-02T09:40:43+00:00",
+  "generated_at_utc": "2026-10-02T12:59:35+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -1219,21 +1219,22 @@
     "funding_spread|ARKUSDT": {
       "strategy": "funding_spread",
       "label": "ARKUSDT",
-      "snapshots": 9,
+      "snapshots": 10,
       "survives": 3,
-      "rejected": 4,
+      "rejected": 5,
       "insufficient": 2,
-      "consecutive_non_survivals": 4,
+      "consecutive_non_survivals": 5,
       "reason_counts": {
         "5 observations; need at least 6": 1,
         "latest/median edge ratio=0.004; latest=0.720 bps/8h, median=178.080; require >= 0.25 to rule out sharp edge decay": 1,
         "no matching executable-entry probe at EUR 250 for ARKUSDT long Bitget / short Gate": 1,
         "candidate age 34431s": 1,
-        "persistence=0.476; need at least 0.70": 4,
-        "no matching executable-entry probe at EUR 250 for ARKUSDT short Bitget / long Gate": 4,
+        "persistence=0.476; need at least 0.70": 5,
+        "no matching executable-entry probe at EUR 250 for ARKUSDT short Bitget / long Gate": 5,
         "candidate age 36270s": 1,
         "candidate age 59274s": 1,
-        "candidate age 61147s": 1
+        "candidate age 61147s": 1,
+        "candidate age 73079s": 1
       },
       "last_verdict": "REJECTED",
       "last_seen_utc": "2026-10-01T16:41:35+00:00",
@@ -1241,11 +1242,11 @@
       "last_median_positive_edge_bps": 15.44,
       "last_persistence": 0.4762,
       "last_reasons": [
-        "candidate age 61147s",
+        "candidate age 73079s",
         "persistence=0.476; need at least 0.70",
         "no matching executable-entry probe at EUR 250 for ARKUSDT short Bitget / long Gate"
       ],
-      "updated_at_utc": "2026-10-02T09:40:43+00:00"
+      "updated_at_utc": "2026-10-02T12:59:35+00:00"
     },
     "funding_spread|TSLAUSDT": {
       "strategy": "funding_spread",
@@ -1271,28 +1272,26 @@
     "funding_spread|SKHYUSDT": {
       "strategy": "funding_spread",
       "label": "SKHYUSDT",
-      "snapshots": 2,
+      "snapshots": 3,
       "survives": 0,
       "rejected": 0,
-      "insufficient": 2,
-      "consecutive_non_survivals": 2,
+      "insufficient": 3,
+      "consecutive_non_survivals": 3,
       "reason_counts": {
-        "persistence=0.500; need at least 0.70": 1,
+        "persistence=0.500; need at least 0.70": 2,
         "latest/median edge ratio=0.000; latest=0.000 bps/8h, median=5.925; require >= 0.25 to rule out sharp edge decay": 2,
         "no matching executable-entry probe at EUR 250 for SKHYUSDT long Bitget / short Gate": 2,
         "persistence=0.476; need at least 0.70": 1
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-10-02T09:38:53+00:00",
-      "last_latest_edge_bps": 0.0,
-      "last_median_positive_edge_bps": 5.925,
-      "last_persistence": 0.4762,
+      "last_seen_utc": "2026-10-02T12:57:45+00:00",
+      "last_latest_edge_bps": 2.0,
+      "last_median_positive_edge_bps": 5.58,
+      "last_persistence": 0.5,
       "last_reasons": [
-        "persistence=0.476; need at least 0.70",
-        "latest/median edge ratio=0.000; latest=0.000 bps/8h, median=5.925; require >= 0.25 to rule out sharp edge decay",
-        "no matching executable-entry probe at EUR 250 for SKHYUSDT long Bitget / short Gate"
+        "persistence=0.500; need at least 0.70"
       ],
-      "updated_at_utc": "2026-10-02T09:40:43+00:00"
+      "updated_at_utc": "2026-10-02T12:59:35+00:00"
     }
   },
   "note": "Historical failure memory is diagnostic evidence only. It cannot loosen gates or create READY."
