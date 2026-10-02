@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-02T21:18:43+00:00",
+  "generated_at_utc": "2026-10-02T22:08:10+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -1297,11 +1297,11 @@
     "funding_spread|SANDUSDT": {
       "strategy": "funding_spread",
       "label": "SANDUSDT",
-      "snapshots": 6,
+      "snapshots": 7,
       "survives": 1,
-      "rejected": 0,
+      "rejected": 1,
       "insufficient": 5,
-      "consecutive_non_survivals": 2,
+      "consecutive_non_survivals": 3,
       "reason_counts": {
         "4 observations; need at least 6": 1,
         "persistence=0.500; need at least 0.70": 1,
@@ -1310,18 +1310,20 @@
         "persistence=0.667; need at least 0.70": 1,
         "latest/median edge ratio=0.246; latest=6.110 bps/8h, median=24.790; require >= 0.25 to rule out sharp edge decay": 1,
         "latest/median edge ratio=0.070; latest=1.730 bps/8h, median=24.790; require >= 0.25 to rule out sharp edge decay": 1,
-        "no matching executable-entry probe at EUR 250 for SANDUSDT long Bitget / short Gate": 1
+        "no matching executable-entry probe at EUR 250 for SANDUSDT long Bitget / short Gate": 1,
+        "EUR 250 executable adverse basis=9.738 bps, recovery=3.59 funding periods; require <= 3.00": 1,
+        "latest/median edge ratio=0.140; latest=2.710 bps/8h, median=19.300; require >= 0.25 to rule out sharp edge decay": 1
       },
-      "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-10-02T21:17:07+00:00",
-      "last_latest_edge_bps": 1.73,
-      "last_median_positive_edge_bps": 24.79,
-      "last_persistence": 0.7,
+      "last_verdict": "REJECTED",
+      "last_seen_utc": "2026-10-02T22:06:39+00:00",
+      "last_latest_edge_bps": 2.71,
+      "last_median_positive_edge_bps": 19.3,
+      "last_persistence": 0.7273,
       "last_reasons": [
-        "latest/median edge ratio=0.070; latest=1.730 bps/8h, median=24.790; require >= 0.25 to rule out sharp edge decay",
-        "no matching executable-entry probe at EUR 250 for SANDUSDT long Bitget / short Gate"
+        "EUR 250 executable adverse basis=9.738 bps, recovery=3.59 funding periods; require <= 3.00",
+        "latest/median edge ratio=0.140; latest=2.710 bps/8h, median=19.300; require >= 0.25 to rule out sharp edge decay"
       ],
-      "updated_at_utc": "2026-10-02T21:18:43+00:00"
+      "updated_at_utc": "2026-10-02T22:08:10+00:00"
     }
   },
   "note": "Historical failure memory is diagnostic evidence only. It cannot loosen gates or create READY."
