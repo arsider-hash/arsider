@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-02T12:59:35+00:00",
+  "generated_at_utc": "2026-10-02T14:34:26+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -1124,8 +1124,8 @@
     "funding_spread|\u9f99\u867eUSDT": {
       "strategy": "funding_spread",
       "label": "\u9f99\u867eUSDT",
-      "snapshots": 15,
-      "survives": 10,
+      "snapshots": 16,
+      "survives": 11,
       "rejected": 5,
       "insufficient": 0,
       "consecutive_non_survivals": 0,
@@ -1138,12 +1138,12 @@
         "EUR 250 executable adverse basis=18.875 bps, recovery=3.37 funding periods; require <= 3.00": 1
       },
       "last_verdict": "SURVIVES_KILLER",
-      "last_seen_utc": "2026-10-02T07:54:30+00:00",
-      "last_latest_edge_bps": 17.42,
-      "last_median_positive_edge_bps": 8.62,
-      "last_persistence": 0.84,
+      "last_seen_utc": "2026-10-02T14:32:33+00:00",
+      "last_latest_edge_bps": 3.32,
+      "last_median_positive_edge_bps": 8.08,
+      "last_persistence": 0.7333,
       "last_reasons": [],
-      "updated_at_utc": "2026-10-02T07:56:23+00:00"
+      "updated_at_utc": "2026-10-02T14:34:26+00:00"
     },
     "funding_spread|SAMSUNGUSDT": {
       "strategy": "funding_spread",
@@ -1219,22 +1219,23 @@
     "funding_spread|ARKUSDT": {
       "strategy": "funding_spread",
       "label": "ARKUSDT",
-      "snapshots": 10,
+      "snapshots": 11,
       "survives": 3,
-      "rejected": 5,
+      "rejected": 6,
       "insufficient": 2,
-      "consecutive_non_survivals": 5,
+      "consecutive_non_survivals": 6,
       "reason_counts": {
         "5 observations; need at least 6": 1,
         "latest/median edge ratio=0.004; latest=0.720 bps/8h, median=178.080; require >= 0.25 to rule out sharp edge decay": 1,
         "no matching executable-entry probe at EUR 250 for ARKUSDT long Bitget / short Gate": 1,
         "candidate age 34431s": 1,
-        "persistence=0.476; need at least 0.70": 5,
-        "no matching executable-entry probe at EUR 250 for ARKUSDT short Bitget / long Gate": 5,
+        "persistence=0.476; need at least 0.70": 6,
+        "no matching executable-entry probe at EUR 250 for ARKUSDT short Bitget / long Gate": 6,
         "candidate age 36270s": 1,
         "candidate age 59274s": 1,
         "candidate age 61147s": 1,
-        "candidate age 73079s": 1
+        "candidate age 73079s": 1,
+        "candidate age 78771s": 1
       },
       "last_verdict": "REJECTED",
       "last_seen_utc": "2026-10-01T16:41:35+00:00",
@@ -1242,11 +1243,11 @@
       "last_median_positive_edge_bps": 15.44,
       "last_persistence": 0.4762,
       "last_reasons": [
-        "candidate age 73079s",
+        "candidate age 78771s",
         "persistence=0.476; need at least 0.70",
         "no matching executable-entry probe at EUR 250 for ARKUSDT short Bitget / long Gate"
       ],
-      "updated_at_utc": "2026-10-02T12:59:35+00:00"
+      "updated_at_utc": "2026-10-02T14:34:26+00:00"
     },
     "funding_spread|TSLAUSDT": {
       "strategy": "funding_spread",
