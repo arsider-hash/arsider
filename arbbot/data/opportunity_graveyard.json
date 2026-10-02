@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-02T00:55:06+00:00",
+  "generated_at_utc": "2026-10-01T23:35:27+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -30,13 +30,13 @@
     "stable_dislocation|FDUSD:Binance": {
       "strategy": "stable_dislocation",
       "label": "FDUSD:Binance",
-      "snapshots": 120,
+      "snapshots": 119,
       "survives": 0,
       "rejected": 0,
-      "insufficient": 120,
-      "consecutive_non_survivals": 120,
+      "insufficient": 119,
+      "consecutive_non_survivals": 119,
       "reason_counts": {
-        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 120,
+        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 119,
         "persistence=0.486; need at least 0.70": 1,
         "persistence=0.500; need at least 0.70": 1,
         "persistence=0.543; need at least 0.70": 1,
@@ -46,19 +46,18 @@
         "persistence=0.639; need at least 0.70": 1,
         "persistence=0.667; need at least 0.70": 3,
         "persistence=0.656; need at least 0.70": 2,
-        "persistence=0.645; need at least 0.70": 1,
-        "persistence=0.455; need at least 0.70": 1
+        "persistence=0.645; need at least 0.70": 1
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-10-02T00:51:36+00:00",
-      "last_latest_edge_bps": 10.5,
-      "last_median_positive_edge_bps": 12.5,
-      "last_persistence": 0.4545,
+      "last_seen_utc": "2026-10-01T13:02:56+00:00",
+      "last_latest_edge_bps": 12.5,
+      "last_median_positive_edge_bps": 14.0,
+      "last_persistence": 0.6667,
       "last_reasons": [
-        "persistence=0.455; need at least 0.70",
+        "persistence=0.667; need at least 0.70",
         "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified"
       ],
-      "updated_at_utc": "2026-10-02T00:55:06+00:00"
+      "updated_at_utc": "2026-10-01T13:06:29+00:00"
     },
     "funding_spread|VTHOUSDT": {
       "strategy": "funding_spread",
@@ -1215,30 +1214,23 @@
     "funding_spread|ARKUSDT": {
       "strategy": "funding_spread",
       "label": "ARKUSDT",
-      "snapshots": 6,
+      "snapshots": 5,
       "survives": 3,
-      "rejected": 1,
+      "rejected": 0,
       "insufficient": 2,
-      "consecutive_non_survivals": 1,
+      "consecutive_non_survivals": 0,
       "reason_counts": {
         "5 observations; need at least 6": 1,
         "latest/median edge ratio=0.004; latest=0.720 bps/8h, median=178.080; require >= 0.25 to rule out sharp edge decay": 1,
-        "no matching executable-entry probe at EUR 250 for ARKUSDT long Bitget / short Gate": 1,
-        "candidate age 29611s": 1,
-        "persistence=0.476; need at least 0.70": 1,
-        "no matching executable-entry probe at EUR 250 for ARKUSDT short Bitget / long Gate": 1
+        "no matching executable-entry probe at EUR 250 for ARKUSDT long Bitget / short Gate": 1
       },
-      "last_verdict": "REJECTED",
-      "last_seen_utc": "2026-10-01T16:41:35+00:00",
-      "last_latest_edge_bps": 9.28,
-      "last_median_positive_edge_bps": 15.44,
-      "last_persistence": 0.4762,
-      "last_reasons": [
-        "candidate age 29611s",
-        "persistence=0.476; need at least 0.70",
-        "no matching executable-entry probe at EUR 250 for ARKUSDT short Bitget / long Gate"
-      ],
-      "updated_at_utc": "2026-10-02T00:55:06+00:00"
+      "last_verdict": "SURVIVES_KILLER",
+      "last_seen_utc": "2026-10-01T02:37:47+00:00",
+      "last_latest_edge_bps": 37.2,
+      "last_median_positive_edge_bps": 119.92,
+      "last_persistence": 0.9,
+      "last_reasons": [],
+      "updated_at_utc": "2026-10-01T02:39:38+00:00"
     },
     "funding_spread|TSLAUSDT": {
       "strategy": "funding_spread",
