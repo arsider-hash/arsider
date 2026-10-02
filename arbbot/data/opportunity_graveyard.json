@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-02T02:46:05+00:00",
+  "generated_at_utc": "2026-10-02T06:30:52+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -1124,27 +1124,28 @@
     "funding_spread|\u9f99\u867eUSDT": {
       "strategy": "funding_spread",
       "label": "\u9f99\u867eUSDT",
-      "snapshots": 13,
+      "snapshots": 14,
       "survives": 9,
-      "rejected": 4,
+      "rejected": 5,
       "insufficient": 0,
-      "consecutive_non_survivals": 2,
+      "consecutive_non_survivals": 3,
       "reason_counts": {
         "candidate age 156667s": 1,
         "no matching executable-entry probe at EUR 250 for \u9f99\u867eUSDT short Bitget / long Gate": 2,
         "candidate age 158914s": 1,
         "EUR 250 executable adverse basis=38.316 bps, recovery=8.08 funding periods; require <= 3.00": 1,
-        "EUR 250 executable adverse basis=40.880 bps, recovery=15.25 funding periods; require <= 3.00": 1
+        "EUR 250 executable adverse basis=40.880 bps, recovery=15.25 funding periods; require <= 3.00": 1,
+        "EUR 250 executable adverse basis=18.875 bps, recovery=3.37 funding periods; require <= 3.00": 1
       },
       "last_verdict": "REJECTED",
-      "last_seen_utc": "2026-10-02T01:49:52+00:00",
-      "last_latest_edge_bps": 2.68,
-      "last_median_positive_edge_bps": 8.62,
-      "last_persistence": 0.9048,
+      "last_seen_utc": "2026-10-02T06:28:59+00:00",
+      "last_latest_edge_bps": 5.6,
+      "last_median_positive_edge_bps": 8.08,
+      "last_persistence": 0.8333,
       "last_reasons": [
-        "EUR 250 executable adverse basis=40.880 bps, recovery=15.25 funding periods; require <= 3.00"
+        "EUR 250 executable adverse basis=18.875 bps, recovery=3.37 funding periods; require <= 3.00"
       ],
-      "updated_at_utc": "2026-10-02T01:51:48+00:00"
+      "updated_at_utc": "2026-10-02T06:30:52+00:00"
     },
     "funding_spread|SAMSUNGUSDT": {
       "strategy": "funding_spread",
