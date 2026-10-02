@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-01T23:35:27+00:00",
+  "generated_at_utc": "2026-10-02T01:07:39+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -1122,23 +1122,26 @@
     "funding_spread|\u9f99\u867eUSDT": {
       "strategy": "funding_spread",
       "label": "\u9f99\u867eUSDT",
-      "snapshots": 11,
+      "snapshots": 12,
       "survives": 9,
-      "rejected": 2,
+      "rejected": 3,
       "insufficient": 0,
-      "consecutive_non_survivals": 0,
+      "consecutive_non_survivals": 1,
       "reason_counts": {
         "candidate age 156667s": 1,
         "no matching executable-entry probe at EUR 250 for \u9f99\u867eUSDT short Bitget / long Gate": 2,
-        "candidate age 158914s": 1
+        "candidate age 158914s": 1,
+        "EUR 250 executable adverse basis=38.316 bps, recovery=8.08 funding periods; require <= 3.00": 1
       },
-      "last_verdict": "SURVIVES_KILLER",
-      "last_seen_utc": "2026-10-01T23:33:36+00:00",
-      "last_latest_edge_bps": 6.72,
-      "last_median_positive_edge_bps": 9.3,
-      "last_persistence": 0.8889,
-      "last_reasons": [],
-      "updated_at_utc": "2026-10-01T23:35:27+00:00"
+      "last_verdict": "REJECTED",
+      "last_seen_utc": "2026-10-02T01:05:42+00:00",
+      "last_latest_edge_bps": 4.74,
+      "last_median_positive_edge_bps": 8.83,
+      "last_persistence": 0.9,
+      "last_reasons": [
+        "EUR 250 executable adverse basis=38.316 bps, recovery=8.08 funding periods; require <= 3.00"
+      ],
+      "updated_at_utc": "2026-10-02T01:07:39+00:00"
     },
     "funding_spread|SAMSUNGUSDT": {
       "strategy": "funding_spread",
