@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-03T16:19:53+00:00",
+  "generated_at_utc": "2026-10-03T17:13:51+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -1307,11 +1307,11 @@
     "funding_spread|SANDUSDT": {
       "strategy": "funding_spread",
       "label": "SANDUSDT",
-      "snapshots": 13,
+      "snapshots": 14,
       "survives": 1,
       "rejected": 1,
-      "insufficient": 11,
-      "consecutive_non_survivals": 9,
+      "insufficient": 12,
+      "consecutive_non_survivals": 10,
       "reason_counts": {
         "4 observations; need at least 6": 1,
         "persistence=0.500; need at least 0.70": 1,
@@ -1328,35 +1328,37 @@
         "persistence=0.586; need at least 0.70": 1,
         "latest/median edge ratio=0.077; latest=1.690 bps/8h, median=21.860; require >= 0.25 to rule out sharp edge decay": 1,
         "persistence=0.344; need at least 0.70": 1,
-        "latest funding direction matches 38% of independent basis buckets; require >= 50%": 1
+        "latest funding direction matches 38% of independent basis buckets; require >= 50%": 1,
+        "persistence=0.364; need at least 0.70": 1,
+        "latest funding direction matches 39% of independent basis buckets; require >= 50%": 1
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-10-03T16:18:04+00:00",
-      "last_latest_edge_bps": 33.35,
-      "last_median_positive_edge_bps": 39.26,
-      "last_persistence": 0.3438,
+      "last_seen_utc": "2026-10-03T17:12:04+00:00",
+      "last_latest_edge_bps": 14.93,
+      "last_median_positive_edge_bps": 36.305,
+      "last_persistence": 0.3636,
       "last_reasons": [
-        "persistence=0.344; need at least 0.70",
-        "latest funding direction matches 38% of independent basis buckets; require >= 50%"
+        "persistence=0.364; need at least 0.70",
+        "latest funding direction matches 39% of independent basis buckets; require >= 50%"
       ],
-      "updated_at_utc": "2026-10-03T16:19:53+00:00"
+      "updated_at_utc": "2026-10-03T17:13:51+00:00"
     },
     "funding_spread|QNTUSDT": {
       "strategy": "funding_spread",
       "label": "QNTUSDT",
-      "snapshots": 2,
-      "survives": 2,
+      "snapshots": 3,
+      "survives": 3,
       "rejected": 0,
       "insufficient": 0,
       "consecutive_non_survivals": 0,
       "reason_counts": {},
       "last_verdict": "SURVIVES_KILLER",
-      "last_seen_utc": "2026-10-03T16:18:04+00:00",
-      "last_latest_edge_bps": 6.04,
-      "last_median_positive_edge_bps": 5.93,
-      "last_persistence": 0.7308,
+      "last_seen_utc": "2026-10-03T17:12:04+00:00",
+      "last_latest_edge_bps": 9.22,
+      "last_median_positive_edge_bps": 5.94,
+      "last_persistence": 0.75,
       "last_reasons": [],
-      "updated_at_utc": "2026-10-03T16:19:53+00:00"
+      "updated_at_utc": "2026-10-03T17:13:51+00:00"
     }
   },
   "note": "Historical failure memory is diagnostic evidence only. It cannot loosen gates or create READY."
