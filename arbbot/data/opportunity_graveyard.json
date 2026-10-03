@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-03T06:35:28+00:00",
+  "generated_at_utc": "2026-10-03T08:14:37+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -1302,11 +1302,11 @@
     "funding_spread|SANDUSDT": {
       "strategy": "funding_spread",
       "label": "SANDUSDT",
-      "snapshots": 9,
+      "snapshots": 10,
       "survives": 1,
       "rejected": 1,
-      "insufficient": 7,
-      "consecutive_non_survivals": 5,
+      "insufficient": 8,
+      "consecutive_non_survivals": 6,
       "reason_counts": {
         "4 observations; need at least 6": 1,
         "persistence=0.500; need at least 0.70": 1,
@@ -1318,17 +1318,18 @@
         "no matching executable-entry probe at EUR 250 for SANDUSDT long Bitget / short Gate": 1,
         "latest/median edge ratio=0.225; latest=3.110 bps/8h, median=13.810; require >= 0.25 to rule out sharp edge decay": 1,
         "EUR 250 executable adverse basis=10.765 bps, recovery=3.93 funding periods; require <= 3.00": 1,
-        "persistence=0.682; need at least 0.70": 1
+        "persistence=0.682; need at least 0.70": 1,
+        "persistence=0.696; need at least 0.70": 1
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-10-03T06:33:40+00:00",
-      "last_latest_edge_bps": 21.86,
-      "last_median_positive_edge_bps": 21.86,
-      "last_persistence": 0.6818,
+      "last_seen_utc": "2026-10-03T08:13:07+00:00",
+      "last_latest_edge_bps": 45.86,
+      "last_median_positive_edge_bps": 21.975,
+      "last_persistence": 0.6957,
       "last_reasons": [
-        "persistence=0.682; need at least 0.70"
+        "persistence=0.696; need at least 0.70"
       ],
-      "updated_at_utc": "2026-10-03T06:35:28+00:00"
+      "updated_at_utc": "2026-10-03T08:14:37+00:00"
     }
   },
   "note": "Historical failure memory is diagnostic evidence only. It cannot loosen gates or create READY."
