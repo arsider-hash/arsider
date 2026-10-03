@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-03T18:50:06+00:00",
+  "generated_at_utc": "2026-10-03T19:26:58+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -1307,11 +1307,11 @@
     "funding_spread|SANDUSDT": {
       "strategy": "funding_spread",
       "label": "SANDUSDT",
-      "snapshots": 16,
+      "snapshots": 17,
       "survives": 1,
       "rejected": 1,
-      "insufficient": 14,
-      "consecutive_non_survivals": 12,
+      "insufficient": 15,
+      "consecutive_non_survivals": 13,
       "reason_counts": {
         "4 observations; need at least 6": 1,
         "persistence=0.500; need at least 0.70": 2,
@@ -1334,36 +1334,37 @@
         "persistence=0.382; need at least 0.70": 1,
         "latest/median edge ratio=0.214; latest=7.140 bps/8h, median=33.350; require >= 0.25 to rule out sharp edge decay": 1,
         "latest funding direction matches 41% of independent basis buckets; require >= 50%": 1,
-        "latest/median edge ratio=0.107; latest=1.910 bps/8h, median=17.835; require >= 0.25 to rule out sharp edge decay": 1
+        "latest/median edge ratio=0.107; latest=1.910 bps/8h, median=17.835; require >= 0.25 to rule out sharp edge decay": 1,
+        "persistence=0.513; need at least 0.70": 1,
+        "latest/median edge ratio=0.190; latest=2.620 bps/8h, median=13.810; require >= 0.25 to rule out sharp edge decay": 1
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-10-03T18:48:18+00:00",
-      "last_latest_edge_bps": 1.91,
-      "last_median_positive_edge_bps": 17.835,
-      "last_persistence": 0.5,
+      "last_seen_utc": "2026-10-03T19:25:23+00:00",
+      "last_latest_edge_bps": 2.62,
+      "last_median_positive_edge_bps": 13.81,
+      "last_persistence": 0.5135,
       "last_reasons": [
-        "persistence=0.500; need at least 0.70",
-        "latest/median edge ratio=0.107; latest=1.910 bps/8h, median=17.835; require >= 0.25 to rule out sharp edge decay",
-        "no matching executable-entry probe at EUR 250 for SANDUSDT long Bitget / short Gate"
+        "persistence=0.513; need at least 0.70",
+        "latest/median edge ratio=0.190; latest=2.620 bps/8h, median=13.810; require >= 0.25 to rule out sharp edge decay"
       ],
-      "updated_at_utc": "2026-10-03T18:50:06+00:00"
+      "updated_at_utc": "2026-10-03T19:26:58+00:00"
     },
     "funding_spread|QNTUSDT": {
       "strategy": "funding_spread",
       "label": "QNTUSDT",
-      "snapshots": 5,
-      "survives": 5,
+      "snapshots": 6,
+      "survives": 6,
       "rejected": 0,
       "insufficient": 0,
       "consecutive_non_survivals": 0,
       "reason_counts": {},
       "last_verdict": "SURVIVES_KILLER",
-      "last_seen_utc": "2026-10-03T18:48:18+00:00",
-      "last_latest_edge_bps": 8.29,
-      "last_median_positive_edge_bps": 6.04,
-      "last_persistence": 0.7736,
+      "last_seen_utc": "2026-10-03T19:25:23+00:00",
+      "last_latest_edge_bps": 8.28,
+      "last_median_positive_edge_bps": 6.165,
+      "last_persistence": 0.7778,
       "last_reasons": [],
-      "updated_at_utc": "2026-10-03T18:50:06+00:00"
+      "updated_at_utc": "2026-10-03T19:26:58+00:00"
     }
   },
   "note": "Historical failure memory is diagnostic evidence only. It cannot loosen gates or create READY."
