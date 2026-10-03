@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-02T23:18:10+00:00",
+  "generated_at_utc": "2026-10-03T00:05:13+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -30,13 +30,13 @@
     "stable_dislocation|FDUSD:Binance": {
       "strategy": "stable_dislocation",
       "label": "FDUSD:Binance",
-      "snapshots": 121,
+      "snapshots": 122,
       "survives": 0,
       "rejected": 0,
-      "insufficient": 121,
-      "consecutive_non_survivals": 121,
+      "insufficient": 122,
+      "consecutive_non_survivals": 122,
       "reason_counts": {
-        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 121,
+        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 122,
         "persistence=0.486; need at least 0.70": 1,
         "persistence=0.500; need at least 0.70": 1,
         "persistence=0.543; need at least 0.70": 1,
@@ -48,18 +48,19 @@
         "persistence=0.656; need at least 0.70": 2,
         "persistence=0.645; need at least 0.70": 1,
         "persistence=0.429; need at least 0.70": 1,
-        "persistence=0.400; need at least 0.70": 1
+        "persistence=0.400; need at least 0.70": 1,
+        "persistence=0.528; need at least 0.70": 1
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-10-02T02:42:27+00:00",
-      "last_latest_edge_bps": 8.5,
-      "last_median_positive_edge_bps": 12.0,
-      "last_persistence": 0.4,
+      "last_seen_utc": "2026-10-03T00:01:31+00:00",
+      "last_latest_edge_bps": 11.5,
+      "last_median_positive_edge_bps": 11.5,
+      "last_persistence": 0.5278,
       "last_reasons": [
-        "persistence=0.400; need at least 0.70",
+        "persistence=0.528; need at least 0.70",
         "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified"
       ],
-      "updated_at_utc": "2026-10-02T02:46:05+00:00"
+      "updated_at_utc": "2026-10-03T00:05:13+00:00"
     },
     "funding_spread|VTHOUSDT": {
       "strategy": "funding_spread",
@@ -1219,35 +1220,35 @@
     "funding_spread|ARKUSDT": {
       "strategy": "funding_spread",
       "label": "ARKUSDT",
-      "snapshots": 11,
+      "snapshots": 12,
       "survives": 3,
-      "rejected": 6,
+      "rejected": 7,
       "insufficient": 2,
-      "consecutive_non_survivals": 6,
+      "consecutive_non_survivals": 7,
       "reason_counts": {
         "5 observations; need at least 6": 1,
         "latest/median edge ratio=0.004; latest=0.720 bps/8h, median=178.080; require >= 0.25 to rule out sharp edge decay": 1,
         "no matching executable-entry probe at EUR 250 for ARKUSDT long Bitget / short Gate": 1,
         "candidate age 34431s": 1,
         "persistence=0.476; need at least 0.70": 6,
-        "no matching executable-entry probe at EUR 250 for ARKUSDT short Bitget / long Gate": 6,
+        "no matching executable-entry probe at EUR 250 for ARKUSDT short Bitget / long Gate": 7,
         "candidate age 36270s": 1,
         "candidate age 59274s": 1,
         "candidate age 61147s": 1,
         "candidate age 73079s": 1,
-        "candidate age 78771s": 1
+        "candidate age 78771s": 1,
+        "candidate age 113018s": 1
       },
       "last_verdict": "REJECTED",
       "last_seen_utc": "2026-10-01T16:41:35+00:00",
       "last_latest_edge_bps": 9.28,
       "last_median_positive_edge_bps": 15.44,
-      "last_persistence": 0.4762,
+      "last_persistence": 0.7143,
       "last_reasons": [
-        "candidate age 78771s",
-        "persistence=0.476; need at least 0.70",
+        "candidate age 113018s",
         "no matching executable-entry probe at EUR 250 for ARKUSDT short Bitget / long Gate"
       ],
-      "updated_at_utc": "2026-10-02T14:34:26+00:00"
+      "updated_at_utc": "2026-10-03T00:05:13+00:00"
     },
     "funding_spread|TSLAUSDT": {
       "strategy": "funding_spread",
