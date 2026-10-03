@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-03T12:31:47+00:00",
+  "generated_at_utc": "2026-10-03T13:40:17+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -30,13 +30,13 @@
     "stable_dislocation|FDUSD:Binance": {
       "strategy": "stable_dislocation",
       "label": "FDUSD:Binance",
-      "snapshots": 128,
+      "snapshots": 129,
       "survives": 0,
       "rejected": 0,
-      "insufficient": 128,
-      "consecutive_non_survivals": 128,
+      "insufficient": 129,
+      "consecutive_non_survivals": 129,
       "reason_counts": {
-        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 128,
+        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 129,
         "persistence=0.486; need at least 0.70": 1,
         "persistence=0.500; need at least 0.70": 1,
         "persistence=0.543; need at least 0.70": 1,
@@ -50,10 +50,10 @@
         "persistence=0.429; need at least 0.70": 1,
         "persistence=0.400; need at least 0.70": 1,
         "persistence=0.528; need at least 0.70": 1,
-        "persistence=0.568; need at least 0.70": 2
+        "persistence=0.568; need at least 0.70": 3
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-10-03T12:28:05+00:00",
+      "last_seen_utc": "2026-10-03T13:36:34+00:00",
       "last_latest_edge_bps": 10.5,
       "last_median_positive_edge_bps": 11.5,
       "last_persistence": 0.5676,
@@ -61,7 +61,7 @@
         "persistence=0.568; need at least 0.70",
         "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified"
       ],
-      "updated_at_utc": "2026-10-03T12:31:47+00:00"
+      "updated_at_utc": "2026-10-03T13:40:17+00:00"
     },
     "funding_spread|VTHOUSDT": {
       "strategy": "funding_spread",
@@ -1307,11 +1307,11 @@
     "funding_spread|SANDUSDT": {
       "strategy": "funding_spread",
       "label": "SANDUSDT",
-      "snapshots": 10,
+      "snapshots": 11,
       "survives": 1,
       "rejected": 1,
-      "insufficient": 8,
-      "consecutive_non_survivals": 6,
+      "insufficient": 9,
+      "consecutive_non_survivals": 7,
       "reason_counts": {
         "4 observations; need at least 6": 1,
         "persistence=0.500; need at least 0.70": 1,
@@ -1320,21 +1320,25 @@
         "persistence=0.667; need at least 0.70": 1,
         "latest/median edge ratio=0.246; latest=6.110 bps/8h, median=24.790; require >= 0.25 to rule out sharp edge decay": 1,
         "latest/median edge ratio=0.070; latest=1.730 bps/8h, median=24.790; require >= 0.25 to rule out sharp edge decay": 1,
-        "no matching executable-entry probe at EUR 250 for SANDUSDT long Bitget / short Gate": 1,
+        "no matching executable-entry probe at EUR 250 for SANDUSDT long Bitget / short Gate": 2,
         "latest/median edge ratio=0.225; latest=3.110 bps/8h, median=13.810; require >= 0.25 to rule out sharp edge decay": 1,
         "EUR 250 executable adverse basis=10.765 bps, recovery=3.93 funding periods; require <= 3.00": 1,
         "persistence=0.682; need at least 0.70": 1,
-        "persistence=0.696; need at least 0.70": 1
+        "persistence=0.696; need at least 0.70": 1,
+        "persistence=0.586; need at least 0.70": 1,
+        "latest/median edge ratio=0.077; latest=1.690 bps/8h, median=21.860; require >= 0.25 to rule out sharp edge decay": 1
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-10-03T08:13:07+00:00",
-      "last_latest_edge_bps": 45.86,
-      "last_median_positive_edge_bps": 21.975,
-      "last_persistence": 0.6957,
+      "last_seen_utc": "2026-10-03T13:35:44+00:00",
+      "last_latest_edge_bps": 1.69,
+      "last_median_positive_edge_bps": 21.86,
+      "last_persistence": 0.5862,
       "last_reasons": [
-        "persistence=0.696; need at least 0.70"
+        "persistence=0.586; need at least 0.70",
+        "latest/median edge ratio=0.077; latest=1.690 bps/8h, median=21.860; require >= 0.25 to rule out sharp edge decay",
+        "no matching executable-entry probe at EUR 250 for SANDUSDT long Bitget / short Gate"
       ],
-      "updated_at_utc": "2026-10-03T08:14:37+00:00"
+      "updated_at_utc": "2026-10-03T13:40:17+00:00"
     }
   },
   "note": "Historical failure memory is diagnostic evidence only. It cannot loosen gates or create READY."
