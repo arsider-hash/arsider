@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-03T10:41:03+00:00",
+  "generated_at_utc": "2026-10-03T12:10:47+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -30,17 +30,17 @@
     "stable_dislocation|FDUSD:Binance": {
       "strategy": "stable_dislocation",
       "label": "FDUSD:Binance",
-      "snapshots": 126,
+      "snapshots": 127,
       "survives": 0,
       "rejected": 0,
-      "insufficient": 126,
-      "consecutive_non_survivals": 126,
+      "insufficient": 127,
+      "consecutive_non_survivals": 127,
       "reason_counts": {
-        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 126,
+        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 127,
         "persistence=0.486; need at least 0.70": 1,
         "persistence=0.500; need at least 0.70": 1,
         "persistence=0.543; need at least 0.70": 1,
-        "persistence=0.556; need at least 0.70": 4,
+        "persistence=0.556; need at least 0.70": 5,
         "persistence=0.600; need at least 0.70": 1,
         "persistence=0.629; need at least 0.70": 1,
         "persistence=0.639; need at least 0.70": 1,
@@ -53,7 +53,7 @@
         "persistence=0.568; need at least 0.70": 1
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-10-03T10:37:23+00:00",
+      "last_seen_utc": "2026-10-03T12:07:08+00:00",
       "last_latest_edge_bps": 10.5,
       "last_median_positive_edge_bps": 11.5,
       "last_persistence": 0.5556,
@@ -61,7 +61,7 @@
         "persistence=0.556; need at least 0.70",
         "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified"
       ],
-      "updated_at_utc": "2026-10-03T10:41:03+00:00"
+      "updated_at_utc": "2026-10-03T12:10:47+00:00"
     },
     "funding_spread|VTHOUSDT": {
       "strategy": "funding_spread",
@@ -1221,18 +1221,18 @@
     "funding_spread|ARKUSDT": {
       "strategy": "funding_spread",
       "label": "ARKUSDT",
-      "snapshots": 16,
+      "snapshots": 17,
       "survives": 3,
-      "rejected": 11,
+      "rejected": 12,
       "insufficient": 2,
-      "consecutive_non_survivals": 11,
+      "consecutive_non_survivals": 12,
       "reason_counts": {
         "5 observations; need at least 6": 2,
         "latest/median edge ratio=0.004; latest=0.720 bps/8h, median=178.080; require >= 0.25 to rule out sharp edge decay": 1,
         "no matching executable-entry probe at EUR 250 for ARKUSDT long Bitget / short Gate": 1,
         "candidate age 34431s": 1,
         "persistence=0.476; need at least 0.70": 6,
-        "no matching executable-entry probe at EUR 250 for ARKUSDT short Bitget / long Gate": 11,
+        "no matching executable-entry probe at EUR 250 for ARKUSDT short Bitget / long Gate": 12,
         "candidate age 36270s": 1,
         "candidate age 59274s": 1,
         "candidate age 61147s": 1,
@@ -1242,19 +1242,21 @@
         "candidate age 117726s": 1,
         "candidate age 120870s": 1,
         "candidate age 131971s": 1,
-        "candidate age 151168s": 1
+        "candidate age 151168s": 1,
+        "candidate age 156552s": 1,
+        "4 observations; need at least 6": 1
       },
       "last_verdict": "REJECTED",
       "last_seen_utc": "2026-10-01T16:41:35+00:00",
       "last_latest_edge_bps": 9.28,
-      "last_median_positive_edge_bps": 17.92,
-      "last_persistence": 0.8,
+      "last_median_positive_edge_bps": 16.16,
+      "last_persistence": 0.75,
       "last_reasons": [
-        "candidate age 151168s",
-        "5 observations; need at least 6",
+        "candidate age 156552s",
+        "4 observations; need at least 6",
         "no matching executable-entry probe at EUR 250 for ARKUSDT short Bitget / long Gate"
       ],
-      "updated_at_utc": "2026-10-03T10:41:03+00:00"
+      "updated_at_utc": "2026-10-03T12:10:47+00:00"
     },
     "funding_spread|TSLAUSDT": {
       "strategy": "funding_spread",
