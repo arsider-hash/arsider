@@ -1,12 +1,12 @@
 {
-  "generated_at_utc": "2026-10-03T21:09:48+00:00",
+  "generated_at_utc": "2026-10-03T23:16:49+00:00",
   "status": "SIMULATED",
   "starting_capital_eur": 250.0,
   "window_days": 30,
-  "window_end_utc": "2026-10-03T21:07:46+00:00",
-  "window_start_utc": "2026-09-03T21:07:46+00:00",
-  "proof_window_span_days": 14.0898,
-  "eligible_events": 44,
+  "window_end_utc": "2026-10-03T23:14:48+00:00",
+  "window_start_utc": "2026-09-03T23:14:48+00:00",
+  "proof_window_span_days": 14.178,
+  "eligible_events": 45,
   "rejected_input_events": 0,
   "plans_tested": 3,
   "best_plan": {
@@ -17,10 +17,10 @@
     "venue_count": 2,
     "total_preallocated_eur": 250.0,
     "idle_unallocated_eur": 0.0,
-    "accepted_events": 2,
-    "net_eur": 0.291532,
-    "human_minutes": 4.0,
-    "average_locked_capital_eur": 116.667,
+    "accepted_events": 3,
+    "net_eur": 0.327416,
+    "human_minutes": 6.0,
+    "average_locked_capital_eur": 175.0,
     "missed": {
       "capital_busy": 42
     },
@@ -51,6 +51,20 @@
           "Gate": 125.0
         },
         "expected_net_eur": 0.07227375,
+        "human_minutes": 2.0
+      },
+      {
+        "event_id": "crypto|funding_spread|QNTUSDT|2026-10-03T23:14:48+00:00|250",
+        "observed_at_utc": "2026-10-03T23:14:48+00:00",
+        "release_at_utc": "2026-10-10T23:14:48+00:00",
+        "habitat": "crypto",
+        "strategy": "funding_spread",
+        "label": "QNTUSDT",
+        "required_preallocation_eur": {
+          "Bitget": 125.0,
+          "Gate": 125.0
+        },
+        "expected_net_eur": 0.03588375,
         "human_minutes": 2.0
       }
     ]
@@ -63,10 +77,10 @@
     "venue_count": 2,
     "total_preallocated_eur": 250.0,
     "idle_unallocated_eur": 0.0,
-    "accepted_events": 2,
-    "net_eur": 0.291532,
-    "human_minutes": 4.0,
-    "average_locked_capital_eur": 116.667,
+    "accepted_events": 3,
+    "net_eur": 0.327416,
+    "human_minutes": 6.0,
+    "average_locked_capital_eur": 175.0,
     "missed": {
       "capital_busy": 42
     },
@@ -97,6 +111,20 @@
           "Gate": 125.0
         },
         "expected_net_eur": 0.07227375,
+        "human_minutes": 2.0
+      },
+      {
+        "event_id": "crypto|funding_spread|QNTUSDT|2026-10-03T23:14:48+00:00|250",
+        "observed_at_utc": "2026-10-03T23:14:48+00:00",
+        "release_at_utc": "2026-10-10T23:14:48+00:00",
+        "habitat": "crypto",
+        "strategy": "funding_spread",
+        "label": "QNTUSDT",
+        "required_preallocation_eur": {
+          "Bitget": 125.0,
+          "Gate": 125.0
+        },
+        "expected_net_eur": 0.03588375,
         "human_minutes": 2.0
       }
     ]
