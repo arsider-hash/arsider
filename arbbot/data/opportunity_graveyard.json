@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-06T21:00:40+00:00",
+  "generated_at_utc": "2026-10-06T21:28:27+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -1168,11 +1168,11 @@
     "funding_spread|NMRUSDT": {
       "strategy": "funding_spread",
       "label": "NMRUSDT",
-      "snapshots": 27,
+      "snapshots": 28,
       "survives": 0,
       "rejected": 24,
-      "insufficient": 3,
-      "consecutive_non_survivals": 27,
+      "insufficient": 4,
+      "consecutive_non_survivals": 28,
       "reason_counts": {
         "4 observations; need at least 6": 1,
         "5 observations; need at least 6": 25,
@@ -1202,18 +1202,18 @@
         "candidate age 154171s": 1,
         "candidate age 157205s": 1,
         "persistence=0.667; need at least 0.70": 1,
-        "latest/median edge ratio=0.199; latest=10.320 bps/8h, median=51.980; require >= 0.25 to rule out sharp edge decay": 1
+        "latest/median edge ratio=0.199; latest=10.320 bps/8h, median=51.980; require >= 0.25 to rule out sharp edge decay": 1,
+        "latest/median edge ratio=0.155; latest=7.260 bps/8h, median=46.960; require >= 0.25 to rule out sharp edge decay": 1
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-10-06T20:58:43+00:00",
-      "last_latest_edge_bps": 10.32,
-      "last_median_positive_edge_bps": 51.98,
-      "last_persistence": 0.6667,
+      "last_seen_utc": "2026-10-06T21:26:32+00:00",
+      "last_latest_edge_bps": 7.26,
+      "last_median_positive_edge_bps": 46.96,
+      "last_persistence": 0.7143,
       "last_reasons": [
-        "persistence=0.667; need at least 0.70",
-        "latest/median edge ratio=0.199; latest=10.320 bps/8h, median=51.980; require >= 0.25 to rule out sharp edge decay"
+        "latest/median edge ratio=0.155; latest=7.260 bps/8h, median=46.960; require >= 0.25 to rule out sharp edge decay"
       ],
-      "updated_at_utc": "2026-10-06T21:00:40+00:00"
+      "updated_at_utc": "2026-10-06T21:28:27+00:00"
     },
     "funding_spread|ARKUSDT": {
       "strategy": "funding_spread",
