@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-06T16:52:18+00:00",
+  "generated_at_utc": "2026-10-06T19:19:31+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -1352,47 +1352,50 @@
     "funding_spread|QNTUSDT": {
       "strategy": "funding_spread",
       "label": "QNTUSDT",
-      "snapshots": 49,
+      "snapshots": 50,
       "survives": 46,
       "rejected": 2,
-      "insufficient": 1,
-      "consecutive_non_survivals": 0,
+      "insufficient": 2,
+      "consecutive_non_survivals": 1,
       "reason_counts": {
         "latest/median edge ratio=0.199; latest=1.840 bps/8h, median=9.250; require >= 0.25 to rule out sharp edge decay": 1,
-        "no matching executable-entry probe at EUR 250 for QNTUSDT short Bitget / long Gate": 3,
+        "no matching executable-entry probe at EUR 250 for QNTUSDT short Bitget / long Gate": 4,
         "candidate age 5559s": 1,
         "candidate age 13090s": 1
       },
-      "last_verdict": "SURVIVES_KILLER",
-      "last_seen_utc": "2026-10-06T16:50:36+00:00",
-      "last_latest_edge_bps": 3.41,
-      "last_median_positive_edge_bps": 7.21,
-      "last_persistence": 0.9167,
-      "last_reasons": [],
-      "updated_at_utc": "2026-10-06T16:52:18+00:00"
+      "last_verdict": "INSUFFICIENT_EVIDENCE",
+      "last_seen_utc": "2026-10-06T19:17:33+00:00",
+      "last_latest_edge_bps": 1.98,
+      "last_median_positive_edge_bps": 6.88,
+      "last_persistence": 0.8571,
+      "last_reasons": [
+        "no matching executable-entry probe at EUR 250 for QNTUSDT short Bitget / long Gate"
+      ],
+      "updated_at_utc": "2026-10-06T19:19:31+00:00"
     },
     "funding_spread|MOVRUSDT": {
       "strategy": "funding_spread",
       "label": "MOVRUSDT",
-      "snapshots": 1,
+      "snapshots": 2,
       "survives": 0,
-      "rejected": 1,
+      "rejected": 2,
       "insufficient": 0,
-      "consecutive_non_survivals": 1,
+      "consecutive_non_survivals": 2,
       "reason_counts": {
         "candidate age 24937s": 1,
-        "no matching executable-entry probe at EUR 250 for MOVRUSDT short Bitget / long Gate": 1
+        "no matching executable-entry probe at EUR 250 for MOVRUSDT short Bitget / long Gate": 2,
+        "candidate age 36399s": 1
       },
       "last_verdict": "REJECTED",
       "last_seen_utc": "2026-10-06T09:12:51+00:00",
       "last_latest_edge_bps": 10.06,
-      "last_median_positive_edge_bps": 8.85,
-      "last_persistence": 0.7647,
+      "last_median_positive_edge_bps": 8.87,
+      "last_persistence": 0.75,
       "last_reasons": [
-        "candidate age 24937s",
+        "candidate age 36399s",
         "no matching executable-entry probe at EUR 250 for MOVRUSDT short Bitget / long Gate"
       ],
-      "updated_at_utc": "2026-10-06T16:08:28+00:00"
+      "updated_at_utc": "2026-10-06T19:19:31+00:00"
     }
   },
   "note": "Historical failure memory is diagnostic evidence only. It cannot loosen gates or create READY."
