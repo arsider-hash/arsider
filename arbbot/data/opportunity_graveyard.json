@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-06T19:19:31+00:00",
+  "generated_at_utc": "2026-10-06T21:00:40+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -1168,11 +1168,11 @@
     "funding_spread|NMRUSDT": {
       "strategy": "funding_spread",
       "label": "NMRUSDT",
-      "snapshots": 26,
+      "snapshots": 27,
       "survives": 0,
       "rejected": 24,
-      "insufficient": 2,
-      "consecutive_non_survivals": 26,
+      "insufficient": 3,
+      "consecutive_non_survivals": 27,
       "reason_counts": {
         "4 observations; need at least 6": 1,
         "5 observations; need at least 6": 25,
@@ -1200,19 +1200,20 @@
         "candidate age 140294s": 1,
         "candidate age 149543s": 1,
         "candidate age 154171s": 1,
-        "candidate age 157205s": 1
+        "candidate age 157205s": 1,
+        "persistence=0.667; need at least 0.70": 1,
+        "latest/median edge ratio=0.199; latest=10.320 bps/8h, median=51.980; require >= 0.25 to rule out sharp edge decay": 1
       },
-      "last_verdict": "REJECTED",
-      "last_seen_utc": "2026-09-29T23:11:02+00:00",
-      "last_latest_edge_bps": 20.37,
-      "last_median_positive_edge_bps": 17.2,
-      "last_persistence": 1.0,
+      "last_verdict": "INSUFFICIENT_EVIDENCE",
+      "last_seen_utc": "2026-10-06T20:58:43+00:00",
+      "last_latest_edge_bps": 10.32,
+      "last_median_positive_edge_bps": 51.98,
+      "last_persistence": 0.6667,
       "last_reasons": [
-        "candidate age 157205s",
-        "5 observations; need at least 6",
-        "no matching executable-entry probe at EUR 250 for NMRUSDT short Bitget / long Gate"
+        "persistence=0.667; need at least 0.70",
+        "latest/median edge ratio=0.199; latest=10.320 bps/8h, median=51.980; require >= 0.25 to rule out sharp edge decay"
       ],
-      "updated_at_utc": "2026-10-01T18:51:07+00:00"
+      "updated_at_utc": "2026-10-06T21:00:40+00:00"
     },
     "funding_spread|ARKUSDT": {
       "strategy": "funding_spread",
@@ -1352,26 +1353,28 @@
     "funding_spread|QNTUSDT": {
       "strategy": "funding_spread",
       "label": "QNTUSDT",
-      "snapshots": 50,
+      "snapshots": 51,
       "survives": 46,
       "rejected": 2,
-      "insufficient": 2,
-      "consecutive_non_survivals": 1,
+      "insufficient": 3,
+      "consecutive_non_survivals": 2,
       "reason_counts": {
         "latest/median edge ratio=0.199; latest=1.840 bps/8h, median=9.250; require >= 0.25 to rule out sharp edge decay": 1,
-        "no matching executable-entry probe at EUR 250 for QNTUSDT short Bitget / long Gate": 4,
+        "no matching executable-entry probe at EUR 250 for QNTUSDT short Bitget / long Gate": 5,
         "candidate age 5559s": 1,
-        "candidate age 13090s": 1
+        "candidate age 13090s": 1,
+        "latest/median edge ratio=0.212; latest=1.440 bps/8h, median=6.790; require >= 0.25 to rule out sharp edge decay": 1
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-10-06T19:17:33+00:00",
-      "last_latest_edge_bps": 1.98,
-      "last_median_positive_edge_bps": 6.88,
-      "last_persistence": 0.8571,
+      "last_seen_utc": "2026-10-06T20:58:43+00:00",
+      "last_latest_edge_bps": 1.44,
+      "last_median_positive_edge_bps": 6.79,
+      "last_persistence": 0.8286,
       "last_reasons": [
+        "latest/median edge ratio=0.212; latest=1.440 bps/8h, median=6.790; require >= 0.25 to rule out sharp edge decay",
         "no matching executable-entry probe at EUR 250 for QNTUSDT short Bitget / long Gate"
       ],
-      "updated_at_utc": "2026-10-06T19:19:31+00:00"
+      "updated_at_utc": "2026-10-06T21:00:40+00:00"
     },
     "funding_spread|MOVRUSDT": {
       "strategy": "funding_spread",
