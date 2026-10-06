@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-06T16:08:28+00:00",
+  "generated_at_utc": "2026-10-06T16:52:18+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -1352,27 +1352,24 @@
     "funding_spread|QNTUSDT": {
       "strategy": "funding_spread",
       "label": "QNTUSDT",
-      "snapshots": 48,
-      "survives": 45,
+      "snapshots": 49,
+      "survives": 46,
       "rejected": 2,
       "insufficient": 1,
-      "consecutive_non_survivals": 1,
+      "consecutive_non_survivals": 0,
       "reason_counts": {
         "latest/median edge ratio=0.199; latest=1.840 bps/8h, median=9.250; require >= 0.25 to rule out sharp edge decay": 1,
         "no matching executable-entry probe at EUR 250 for QNTUSDT short Bitget / long Gate": 3,
         "candidate age 5559s": 1,
         "candidate age 13090s": 1
       },
-      "last_verdict": "REJECTED",
-      "last_seen_utc": "2026-10-06T10:13:26+00:00",
-      "last_latest_edge_bps": 6.58,
-      "last_median_positive_edge_bps": 7.46,
-      "last_persistence": 0.9412,
-      "last_reasons": [
-        "candidate age 13090s",
-        "no matching executable-entry probe at EUR 250 for QNTUSDT short Bitget / long Gate"
-      ],
-      "updated_at_utc": "2026-10-06T13:51:36+00:00"
+      "last_verdict": "SURVIVES_KILLER",
+      "last_seen_utc": "2026-10-06T16:50:36+00:00",
+      "last_latest_edge_bps": 3.41,
+      "last_median_positive_edge_bps": 7.21,
+      "last_persistence": 0.9167,
+      "last_reasons": [],
+      "updated_at_utc": "2026-10-06T16:52:18+00:00"
     },
     "funding_spread|MOVRUSDT": {
       "strategy": "funding_spread",
