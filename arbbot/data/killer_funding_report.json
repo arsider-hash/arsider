@@ -1,6 +1,6 @@
 {
-  "generated_at_utc": "2026-10-06T00:34:51+00:00",
-  "verdict": "REJECTED",
+  "generated_at_utc": "2026-10-06T02:19:45+00:00",
+  "verdict": "SURVIVES_KILLER",
   "selected": {
     "key": "funding_spread|QNTUSDT",
     "strategy": "funding_spread",
@@ -13,12 +13,12 @@
     "median_positive_edge_bps": 9.36,
     "p90_positive_edge_bps": 16.41,
     "max_edge_bps": 17.88,
-    "latest_edge_bps": 3.36,
+    "latest_edge_bps": 3.77,
     "research_score": 83.56,
-    "classification": "noise",
-    "last_seen_utc": "2026-10-05T23:02:13+00:00",
-    "latest_age_seconds": 5556.9,
-    "current_signal_fresh": false,
+    "classification": "strong_watch",
+    "last_seen_utc": "2026-10-06T02:17:59+00:00",
+    "latest_age_seconds": 104.8,
+    "current_signal_fresh": true,
     "current_direction_stability": 1.0,
     "current_direction_observations": 35,
     "direction_stability_required_for_watch": 0.5,
@@ -166,9 +166,9 @@
   "checks": [
     {
       "check": "freshness",
-      "status": "FAIL",
+      "status": "PASS",
       "severity": "hard",
-      "detail": "candidate age 5559s"
+      "detail": "candidate age 107s"
     },
     {
       "check": "sample_presence",
@@ -192,7 +192,7 @@
       "check": "latest_edge_sign",
       "status": "PASS",
       "severity": "soft",
-      "detail": "latest_edge_bps=3.3600"
+      "detail": "latest_edge_bps=3.7700"
     },
     {
       "check": "economic_relevance",
@@ -204,7 +204,7 @@
       "check": "funding_regime_decay",
       "status": "PASS",
       "severity": "hard",
-      "detail": "latest/median edge ratio=0.359; latest=3.360 bps/8h, median=9.360; require >= 0.25 to rule out sharp edge decay"
+      "detail": "latest/median edge ratio=0.403; latest=3.770 bps/8h, median=9.360; require >= 0.25 to rule out sharp edge decay"
     },
     {
       "check": "funding_basis_persistence",
@@ -220,23 +220,19 @@
     },
     {
       "check": "funding_executable_entry",
-      "status": "INSUFFICIENT",
+      "status": "PASS",
       "severity": "hard",
-      "detail": "no matching executable-entry probe at EUR 250 for QNTUSDT short Bitget / long Gate"
+      "detail": "EUR 250 executable adverse basis=1.122 bps, recovery=0.30 funding periods; require <= 3.00"
     },
     {
       "check": "shadow_evidence",
       "status": "PASS",
       "severity": "soft",
-      "detail": "count=41, positive_rate=1.000, cumulative_paper_pnl=0.818797"
+      "detail": "count=42, positive_rate=1.000, cumulative_paper_pnl=0.824651"
     }
   ],
-  "hard_failures": [
-    "candidate age 5559s"
-  ],
-  "insufficient_evidence": [
-    "no matching executable-entry probe at EUR 250 for QNTUSDT short Bitget / long Gate"
-  ],
+  "hard_failures": [],
+  "insufficient_evidence": [],
   "policy": {
     "max_staleness_seconds": 900,
     "min_candidate_observations": 6,
