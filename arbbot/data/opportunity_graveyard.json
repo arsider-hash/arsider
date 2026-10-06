@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-06T21:28:27+00:00",
+  "generated_at_utc": "2026-10-06T21:37:08+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -1168,11 +1168,11 @@
     "funding_spread|NMRUSDT": {
       "strategy": "funding_spread",
       "label": "NMRUSDT",
-      "snapshots": 28,
+      "snapshots": 29,
       "survives": 0,
       "rejected": 24,
-      "insufficient": 4,
-      "consecutive_non_survivals": 28,
+      "insufficient": 5,
+      "consecutive_non_survivals": 29,
       "reason_counts": {
         "4 observations; need at least 6": 1,
         "5 observations; need at least 6": 25,
@@ -1203,17 +1203,18 @@
         "candidate age 157205s": 1,
         "persistence=0.667; need at least 0.70": 1,
         "latest/median edge ratio=0.199; latest=10.320 bps/8h, median=51.980; require >= 0.25 to rule out sharp edge decay": 1,
-        "latest/median edge ratio=0.155; latest=7.260 bps/8h, median=46.960; require >= 0.25 to rule out sharp edge decay": 1
+        "latest/median edge ratio=0.155; latest=7.260 bps/8h, median=46.960; require >= 0.25 to rule out sharp edge decay": 1,
+        "latest/median edge ratio=0.248; latest=7.100 bps/8h, median=28.640; require >= 0.25 to rule out sharp edge decay": 1
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-10-06T21:26:32+00:00",
-      "last_latest_edge_bps": 7.26,
-      "last_median_positive_edge_bps": 46.96,
-      "last_persistence": 0.7143,
+      "last_seen_utc": "2026-10-06T21:35:18+00:00",
+      "last_latest_edge_bps": 7.1,
+      "last_median_positive_edge_bps": 28.64,
+      "last_persistence": 0.75,
       "last_reasons": [
-        "latest/median edge ratio=0.155; latest=7.260 bps/8h, median=46.960; require >= 0.25 to rule out sharp edge decay"
+        "latest/median edge ratio=0.248; latest=7.100 bps/8h, median=28.640; require >= 0.25 to rule out sharp edge decay"
       ],
-      "updated_at_utc": "2026-10-06T21:28:27+00:00"
+      "updated_at_utc": "2026-10-06T21:37:08+00:00"
     },
     "funding_spread|ARKUSDT": {
       "strategy": "funding_spread",
