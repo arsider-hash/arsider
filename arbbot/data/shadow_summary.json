@@ -1,7 +1,7 @@
 {
-  "generated_at_utc": "2026-10-05T23:03:49+00:00",
-  "total_shadow_trades_raw": 328,
-  "total_shadow_trades_evidence": 323,
+  "generated_at_utc": "2026-10-06T00:34:51+00:00",
+  "total_shadow_trades_raw": 329,
+  "total_shadow_trades_evidence": 324,
   "excluded_unverified_stable_rows": 4,
   "excluded_heuristic_funding_rows": 1,
   "best": {
@@ -195,6 +195,15 @@
       "last_recorded_at_utc": "2026-09-09T19:37:40+00:00"
     },
     {
+      "key": "funding_spread|SKHYUSDT",
+      "count": 2,
+      "positive_count": 2,
+      "positive_rate": 1.0,
+      "cumulative_paper_pnl": 0.015331,
+      "median_paper_pnl": 0.007666,
+      "last_recorded_at_utc": "2026-10-06T00:34:51+00:00"
+    },
+    {
       "key": "funding_spread|SAMSUNGUSDT",
       "count": 2,
       "positive_count": 2,
@@ -274,15 +283,6 @@
       "cumulative_paper_pnl": 0.001475,
       "median_paper_pnl": 0.001475,
       "last_recorded_at_utc": "2026-09-24T11:51:25+00:00"
-    },
-    {
-      "key": "funding_spread|SKHYUSDT",
-      "count": 1,
-      "positive_count": 1,
-      "positive_rate": 1.0,
-      "cumulative_paper_pnl": 0.001428,
-      "median_paper_pnl": 0.001428,
-      "last_recorded_at_utc": "2026-10-02T12:59:34+00:00"
     }
   ],
   "warning": "Shadow PnL is simulated and is not proof of live fill performance. Stablecoin signals require a verified exit; funding signals require current edge after cost/basis haircuts."
