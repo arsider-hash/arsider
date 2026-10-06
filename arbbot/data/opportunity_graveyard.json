@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-06T21:37:08+00:00",
+  "generated_at_utc": "2026-10-06T23:16:58+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -1380,15 +1380,16 @@
     "funding_spread|MOVRUSDT": {
       "strategy": "funding_spread",
       "label": "MOVRUSDT",
-      "snapshots": 2,
+      "snapshots": 3,
       "survives": 0,
-      "rejected": 2,
+      "rejected": 3,
       "insufficient": 0,
-      "consecutive_non_survivals": 2,
+      "consecutive_non_survivals": 3,
       "reason_counts": {
         "candidate age 24937s": 1,
-        "no matching executable-entry probe at EUR 250 for MOVRUSDT short Bitget / long Gate": 2,
-        "candidate age 36399s": 1
+        "no matching executable-entry probe at EUR 250 for MOVRUSDT short Bitget / long Gate": 3,
+        "candidate age 36399s": 1,
+        "candidate age 50647s": 1
       },
       "last_verdict": "REJECTED",
       "last_seen_utc": "2026-10-06T09:12:51+00:00",
@@ -1396,10 +1397,31 @@
       "last_median_positive_edge_bps": 8.87,
       "last_persistence": 0.75,
       "last_reasons": [
-        "candidate age 36399s",
+        "candidate age 50647s",
         "no matching executable-entry probe at EUR 250 for MOVRUSDT short Bitget / long Gate"
       ],
-      "updated_at_utc": "2026-10-06T19:19:31+00:00"
+      "updated_at_utc": "2026-10-06T23:16:58+00:00"
+    },
+    "funding_spread|ORCAUSDT": {
+      "strategy": "funding_spread",
+      "label": "ORCAUSDT",
+      "snapshots": 1,
+      "survives": 0,
+      "rejected": 1,
+      "insufficient": 0,
+      "consecutive_non_survivals": 1,
+      "reason_counts": {
+        "EUR 250 executable adverse basis=13.658 bps, recovery=3.58 funding periods; require <= 3.00": 1
+      },
+      "last_verdict": "REJECTED",
+      "last_seen_utc": "2026-10-06T23:15:08+00:00",
+      "last_latest_edge_bps": 3.82,
+      "last_median_positive_edge_bps": 3.72,
+      "last_persistence": 0.7143,
+      "last_reasons": [
+        "EUR 250 executable adverse basis=13.658 bps, recovery=3.58 funding periods; require <= 3.00"
+      ],
+      "updated_at_utc": "2026-10-06T23:16:58+00:00"
     }
   },
   "note": "Historical failure memory is diagnostic evidence only. It cannot loosen gates or create READY."
