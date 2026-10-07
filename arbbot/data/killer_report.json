@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-07T14:02:29+00:00",
+  "generated_at_utc": "2026-10-07T16:25:58+00:00",
   "verdict": "INSUFFICIENT_EVIDENCE",
   "selected": {
     "key": "stable_dislocation|FDUSD:Binance",
@@ -7,21 +7,21 @@
     "label": "FDUSD:Binance",
     "direction": "below peg",
     "venue": "Binance",
-    "observations": 29,
-    "positive_observations": 20,
-    "persistence": 0.6897,
+    "observations": 28,
+    "positive_observations": 21,
+    "persistence": 0.75,
     "median_positive_edge_bps": 10.5,
-    "p90_positive_edge_bps": 11.0,
+    "p90_positive_edge_bps": 11.5,
     "max_edge_bps": 13.5,
     "latest_edge_bps": 13.5,
-    "research_score": 71.06,
-    "classification": "watch",
-    "last_seen_utc": "2026-10-07T13:58:49+00:00",
-    "latest_age_seconds": 59.8,
+    "research_score": 74.38,
+    "classification": "strong_watch",
+    "last_seen_utc": "2026-10-07T16:22:20+00:00",
+    "latest_age_seconds": 59.0,
     "current_signal_fresh": true,
     "capital_utilisation": 1.0,
-    "capital_efficiency_score": 25.12,
-    "economic_relevance_score": 25.12,
+    "capital_efficiency_score": 28.59,
+    "economic_relevance_score": 28.59,
     "economic_relevance": {
       "reference_budget_eur": 250,
       "reference_basis": "paper_profit_per_event_at_median_edge",
@@ -78,25 +78,25 @@
       "check": "freshness",
       "status": "PASS",
       "severity": "hard",
-      "detail": "candidate age 221s"
+      "detail": "candidate age 219s"
     },
     {
       "check": "sample_presence",
       "status": "PASS",
       "severity": "hard",
-      "detail": "29 observations; need at least 6"
+      "detail": "28 observations; need at least 6"
     },
     {
       "check": "positive_edge_evidence",
       "status": "PASS",
       "severity": "hard",
-      "detail": "positive_observations=20, median_positive_edge_bps=10.5000"
+      "detail": "positive_observations=21, median_positive_edge_bps=10.5000"
     },
     {
       "check": "persistence",
-      "status": "INSUFFICIENT",
+      "status": "PASS",
       "severity": "hard",
-      "detail": "persistence=0.690; need at least 0.70"
+      "detail": "persistence=0.750; need at least 0.70"
     },
     {
       "check": "latest_edge_sign",
@@ -108,7 +108,7 @@
       "check": "economic_relevance",
       "status": "PASS",
       "severity": "soft",
-      "detail": "economic_relevance_score=25.12"
+      "detail": "economic_relevance_score=28.59"
     },
     {
       "check": "burst_validation",
@@ -137,7 +137,6 @@
   ],
   "hard_failures": [],
   "insufficient_evidence": [
-    "persistence=0.690; need at least 0.70",
     "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified"
   ],
   "policy": {
