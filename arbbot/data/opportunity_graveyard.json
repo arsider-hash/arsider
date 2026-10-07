@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-07T06:51:42+00:00",
+  "generated_at_utc": "2026-10-07T08:35:18+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -139,11 +139,11 @@
     "funding_spread|BZUSDT": {
       "strategy": "funding_spread",
       "label": "BZUSDT",
-      "snapshots": 8,
-      "survives": 4,
+      "snapshots": 9,
+      "survives": 5,
       "rejected": 0,
       "insufficient": 4,
-      "consecutive_non_survivals": 1,
+      "consecutive_non_survivals": 0,
       "reason_counts": {
         "persistence=0.607; need at least 0.70": 1,
         "latest/median edge ratio=0.000; latest=0.000 bps/8h, median=17.410; require >= 0.25 to rule out sharp edge decay": 1,
@@ -154,15 +154,13 @@
         "latest/median edge ratio=0.000; latest=0.000 bps/8h, median=18.740; require >= 0.25 to rule out sharp edge decay": 1,
         "no matching executable-entry probe at EUR 250 for BZUSDT short Bitget / long Gate": 1
       },
-      "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-10-07T02:37:33+00:00",
-      "last_latest_edge_bps": 0.91,
-      "last_median_positive_edge_bps": 3.105,
-      "last_persistence": 0.7647,
-      "last_reasons": [
-        "no matching executable-entry probe at EUR 250 for BZUSDT short Bitget / long Gate"
-      ],
-      "updated_at_utc": "2026-10-07T02:39:13+00:00"
+      "last_verdict": "SURVIVES_KILLER",
+      "last_seen_utc": "2026-10-07T08:33:30+00:00",
+      "last_latest_edge_bps": 7.28,
+      "last_median_positive_edge_bps": 3.14,
+      "last_persistence": 0.7297,
+      "last_reasons": [],
+      "updated_at_utc": "2026-10-07T08:35:18+00:00"
     },
     "funding_spread|LSKUSDT": {
       "strategy": "funding_spread",
@@ -1172,11 +1170,11 @@
     "funding_spread|NMRUSDT": {
       "strategy": "funding_spread",
       "label": "NMRUSDT",
-      "snapshots": 32,
+      "snapshots": 33,
       "survives": 0,
       "rejected": 24,
-      "insufficient": 8,
-      "consecutive_non_survivals": 32,
+      "insufficient": 9,
+      "consecutive_non_survivals": 33,
       "reason_counts": {
         "4 observations; need at least 6": 1,
         "5 observations; need at least 6": 25,
@@ -1212,17 +1210,20 @@
         "persistence=0.455; need at least 0.70": 1,
         "latest funding direction matches 45% of independent basis buckets; require >= 50%": 1,
         "persistence=0.500; need at least 0.70": 1,
-        "persistence=0.538; need at least 0.70": 1
+        "persistence=0.538; need at least 0.70": 1,
+        "persistence=0.444; need at least 0.70": 1,
+        "latest funding direction matches 44% of independent basis buckets; require >= 50%": 1
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-10-07T01:26:37+00:00",
-      "last_latest_edge_bps": 14.72,
-      "last_median_positive_edge_bps": 22.06,
-      "last_persistence": 0.5385,
+      "last_seen_utc": "2026-10-07T08:33:30+00:00",
+      "last_latest_edge_bps": 15.42,
+      "last_median_positive_edge_bps": 18.74,
+      "last_persistence": 0.4444,
       "last_reasons": [
-        "persistence=0.538; need at least 0.70"
+        "persistence=0.444; need at least 0.70",
+        "latest funding direction matches 44% of independent basis buckets; require >= 50%"
       ],
-      "updated_at_utc": "2026-10-07T01:28:10+00:00"
+      "updated_at_utc": "2026-10-07T08:35:18+00:00"
     },
     "funding_spread|ARKUSDT": {
       "strategy": "funding_spread",
