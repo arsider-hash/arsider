@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-07T08:35:18+00:00",
+  "generated_at_utc": "2026-10-07T09:20:51+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -139,8 +139,8 @@
     "funding_spread|BZUSDT": {
       "strategy": "funding_spread",
       "label": "BZUSDT",
-      "snapshots": 9,
-      "survives": 5,
+      "snapshots": 10,
+      "survives": 6,
       "rejected": 0,
       "insufficient": 4,
       "consecutive_non_survivals": 0,
@@ -155,12 +155,12 @@
         "no matching executable-entry probe at EUR 250 for BZUSDT short Bitget / long Gate": 1
       },
       "last_verdict": "SURVIVES_KILLER",
-      "last_seen_utc": "2026-10-07T08:33:30+00:00",
-      "last_latest_edge_bps": 7.28,
-      "last_median_positive_edge_bps": 3.14,
-      "last_persistence": 0.7297,
+      "last_seen_utc": "2026-10-07T09:19:19+00:00",
+      "last_latest_edge_bps": 5.83,
+      "last_median_positive_edge_bps": 3.44,
+      "last_persistence": 0.7436,
       "last_reasons": [],
-      "updated_at_utc": "2026-10-07T08:35:18+00:00"
+      "updated_at_utc": "2026-10-07T09:20:51+00:00"
     },
     "funding_spread|LSKUSDT": {
       "strategy": "funding_spread",
@@ -1389,18 +1389,19 @@
     "funding_spread|MOVRUSDT": {
       "strategy": "funding_spread",
       "label": "MOVRUSDT",
-      "snapshots": 5,
+      "snapshots": 6,
       "survives": 0,
-      "rejected": 5,
+      "rejected": 6,
       "insufficient": 0,
-      "consecutive_non_survivals": 5,
+      "consecutive_non_survivals": 6,
       "reason_counts": {
         "candidate age 24937s": 1,
-        "no matching executable-entry probe at EUR 250 for MOVRUSDT short Bitget / long Gate": 5,
+        "no matching executable-entry probe at EUR 250 for MOVRUSDT short Bitget / long Gate": 6,
         "candidate age 36399s": 1,
         "candidate age 50647s": 1,
         "candidate age 62782s": 1,
-        "candidate age 77931s": 1
+        "candidate age 77931s": 1,
+        "candidate age 86880s": 1
       },
       "last_verdict": "REJECTED",
       "last_seen_utc": "2026-10-06T09:12:51+00:00",
@@ -1408,10 +1409,10 @@
       "last_median_positive_edge_bps": 8.87,
       "last_persistence": 0.75,
       "last_reasons": [
-        "candidate age 77931s",
+        "candidate age 86880s",
         "no matching executable-entry probe at EUR 250 for MOVRUSDT short Bitget / long Gate"
       ],
-      "updated_at_utc": "2026-10-07T06:51:42+00:00"
+      "updated_at_utc": "2026-10-07T09:20:51+00:00"
     },
     "funding_spread|ORCAUSDT": {
       "strategy": "funding_spread",
