@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-08T08:11:58+00:00",
+  "generated_at_utc": "2026-10-08T08:54:44+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -30,13 +30,13 @@
     "stable_dislocation|FDUSD:Binance": {
       "strategy": "stable_dislocation",
       "label": "FDUSD:Binance",
-      "snapshots": 144,
+      "snapshots": 145,
       "survives": 0,
       "rejected": 0,
-      "insufficient": 144,
-      "consecutive_non_survivals": 144,
+      "insufficient": 145,
+      "consecutive_non_survivals": 145,
       "reason_counts": {
-        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 144,
+        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 145,
         "persistence=0.486; need at least 0.70": 1,
         "persistence=0.500; need at least 0.70": 1,
         "persistence=0.543; need at least 0.70": 1,
@@ -55,14 +55,14 @@
         "persistence=0.690; need at least 0.70": 1
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-10-08T08:08:07+00:00",
-      "last_latest_edge_bps": 20.5,
+      "last_seen_utc": "2026-10-08T08:51:05+00:00",
+      "last_latest_edge_bps": 21.0,
       "last_median_positive_edge_bps": 13.5,
-      "last_persistence": 0.8065,
+      "last_persistence": 0.8125,
       "last_reasons": [
         "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified"
       ],
-      "updated_at_utc": "2026-10-08T08:11:58+00:00"
+      "updated_at_utc": "2026-10-08T08:54:44+00:00"
     },
     "funding_spread|VTHOUSDT": {
       "strategy": "funding_spread",
@@ -1456,6 +1456,27 @@
         "no matching executable-entry probe at EUR 250 for ORCAUSDT short Bitget / long Gate"
       ],
       "updated_at_utc": "2026-10-08T06:06:41+00:00"
+    },
+    "funding_spread|METUSDT": {
+      "strategy": "funding_spread",
+      "label": "METUSDT",
+      "snapshots": 1,
+      "survives": 0,
+      "rejected": 0,
+      "insufficient": 1,
+      "consecutive_non_survivals": 1,
+      "reason_counts": {
+        "4 observations; need at least 6": 1
+      },
+      "last_verdict": "INSUFFICIENT_EVIDENCE",
+      "last_seen_utc": "2026-10-08T08:50:14+00:00",
+      "last_latest_edge_bps": 10.56,
+      "last_median_positive_edge_bps": 9.84,
+      "last_persistence": 0.75,
+      "last_reasons": [
+        "4 observations; need at least 6"
+      ],
+      "updated_at_utc": "2026-10-08T08:54:44+00:00"
     }
   },
   "note": "Historical failure memory is diagnostic evidence only. It cannot loosen gates or create READY."
