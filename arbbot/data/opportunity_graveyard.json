@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-08T03:14:28+00:00",
+  "generated_at_utc": "2026-10-08T06:06:41+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -30,13 +30,13 @@
     "stable_dislocation|FDUSD:Binance": {
       "strategy": "stable_dislocation",
       "label": "FDUSD:Binance",
-      "snapshots": 142,
+      "snapshots": 143,
       "survives": 0,
       "rejected": 0,
-      "insufficient": 142,
-      "consecutive_non_survivals": 142,
+      "insufficient": 143,
+      "consecutive_non_survivals": 143,
       "reason_counts": {
-        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 142,
+        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 143,
         "persistence=0.486; need at least 0.70": 1,
         "persistence=0.500; need at least 0.70": 1,
         "persistence=0.543; need at least 0.70": 1,
@@ -55,14 +55,14 @@
         "persistence=0.690; need at least 0.70": 1
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-10-08T03:10:48+00:00",
-      "last_latest_edge_bps": 15.5,
-      "last_median_positive_edge_bps": 12.0,
-      "last_persistence": 0.8,
+      "last_seen_utc": "2026-10-08T06:03:01+00:00",
+      "last_latest_edge_bps": 21.5,
+      "last_median_positive_edge_bps": 13.5,
+      "last_persistence": 0.8065,
       "last_reasons": [
         "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified"
       ],
-      "updated_at_utc": "2026-10-08T03:14:28+00:00"
+      "updated_at_utc": "2026-10-08T06:06:41+00:00"
     },
     "funding_spread|VTHOUSDT": {
       "strategy": "funding_spread",
@@ -1433,23 +1433,28 @@
     "funding_spread|ORCAUSDT": {
       "strategy": "funding_spread",
       "label": "ORCAUSDT",
-      "snapshots": 1,
+      "snapshots": 2,
       "survives": 0,
-      "rejected": 1,
+      "rejected": 2,
       "insufficient": 0,
-      "consecutive_non_survivals": 1,
+      "consecutive_non_survivals": 2,
       "reason_counts": {
-        "EUR 250 executable adverse basis=13.658 bps, recovery=3.58 funding periods; require <= 3.00": 1
+        "EUR 250 executable adverse basis=13.658 bps, recovery=3.58 funding periods; require <= 3.00": 1,
+        "candidate age 22011s": 1,
+        "persistence=0.538; need at least 0.70": 1,
+        "no matching executable-entry probe at EUR 250 for ORCAUSDT short Bitget / long Gate": 1
       },
       "last_verdict": "REJECTED",
-      "last_seen_utc": "2026-10-06T23:15:08+00:00",
-      "last_latest_edge_bps": 3.82,
-      "last_median_positive_edge_bps": 3.72,
-      "last_persistence": 0.7143,
+      "last_seen_utc": "2026-10-07T23:59:50+00:00",
+      "last_latest_edge_bps": 6.36,
+      "last_median_positive_edge_bps": 4.68,
+      "last_persistence": 0.5385,
       "last_reasons": [
-        "EUR 250 executable adverse basis=13.658 bps, recovery=3.58 funding periods; require <= 3.00"
+        "candidate age 22011s",
+        "persistence=0.538; need at least 0.70",
+        "no matching executable-entry probe at EUR 250 for ORCAUSDT short Bitget / long Gate"
       ],
-      "updated_at_utc": "2026-10-06T23:16:58+00:00"
+      "updated_at_utc": "2026-10-08T06:06:41+00:00"
     }
   },
   "note": "Historical failure memory is diagnostic evidence only. It cannot loosen gates or create READY."
