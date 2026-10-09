@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-09T11:33:21+00:00",
+  "generated_at_utc": "2026-10-09T14:31:51+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -30,13 +30,13 @@
     "stable_dislocation|FDUSD:Binance": {
       "strategy": "stable_dislocation",
       "label": "FDUSD:Binance",
-      "snapshots": 157,
+      "snapshots": 158,
       "survives": 0,
       "rejected": 0,
-      "insufficient": 157,
-      "consecutive_non_survivals": 157,
+      "insufficient": 158,
+      "consecutive_non_survivals": 158,
       "reason_counts": {
-        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 157,
+        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 158,
         "persistence=0.486; need at least 0.70": 1,
         "persistence=0.500; need at least 0.70": 1,
         "persistence=0.543; need at least 0.70": 1,
@@ -55,14 +55,14 @@
         "persistence=0.690; need at least 0.70": 1
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-10-09T11:29:40+00:00",
-      "last_latest_edge_bps": 19.5,
+      "last_seen_utc": "2026-10-09T14:28:11+00:00",
+      "last_latest_edge_bps": 17.5,
       "last_median_positive_edge_bps": 20.5,
       "last_persistence": 1.0,
       "last_reasons": [
         "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified"
       ],
-      "updated_at_utc": "2026-10-09T11:33:21+00:00"
+      "updated_at_utc": "2026-10-09T14:31:51+00:00"
     },
     "funding_spread|VTHOUSDT": {
       "strategy": "funding_spread",
@@ -1439,34 +1439,35 @@
     "funding_spread|ORCAUSDT": {
       "strategy": "funding_spread",
       "label": "ORCAUSDT",
-      "snapshots": 7,
+      "snapshots": 8,
       "survives": 0,
-      "rejected": 7,
+      "rejected": 8,
       "insufficient": 0,
-      "consecutive_non_survivals": 7,
+      "consecutive_non_survivals": 8,
       "reason_counts": {
         "EUR 250 executable adverse basis=13.658 bps, recovery=3.58 funding periods; require <= 3.00": 1,
         "candidate age 22011s": 1,
         "persistence=0.538; need at least 0.70": 1,
-        "no matching executable-entry probe at EUR 250 for ORCAUSDT short Bitget / long Gate": 6,
+        "no matching executable-entry probe at EUR 250 for ORCAUSDT short Bitget / long Gate": 7,
         "candidate age 93983s": 1,
         "persistence=0.562; need at least 0.70": 1,
         "candidate age 96159s": 1,
         "persistence=0.643; need at least 0.70": 2,
         "candidate age 102726s": 1,
         "candidate age 111724s": 1,
-        "candidate age 118729s": 1
+        "candidate age 118729s": 1,
+        "candidate age 138721s": 1
       },
       "last_verdict": "REJECTED",
       "last_seen_utc": "2026-10-07T23:59:50+00:00",
       "last_latest_edge_bps": 6.36,
-      "last_median_positive_edge_bps": 6.36,
-      "last_persistence": 0.8182,
+      "last_median_positive_edge_bps": 7.18,
+      "last_persistence": 1.0,
       "last_reasons": [
-        "candidate age 118729s",
+        "candidate age 138721s",
         "no matching executable-entry probe at EUR 250 for ORCAUSDT short Bitget / long Gate"
       ],
-      "updated_at_utc": "2026-10-09T08:58:39+00:00"
+      "updated_at_utc": "2026-10-09T14:31:51+00:00"
     },
     "funding_spread|METUSDT": {
       "strategy": "funding_spread",
