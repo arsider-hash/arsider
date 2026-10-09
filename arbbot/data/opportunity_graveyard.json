@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-09T19:55:12+00:00",
+  "generated_at_utc": "2026-10-09T21:24:31+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -1529,23 +1529,21 @@
     "funding_spread|KAIAUSDT": {
       "strategy": "funding_spread",
       "label": "KAIAUSDT",
-      "snapshots": 1,
-      "survives": 0,
+      "snapshots": 2,
+      "survives": 1,
       "rejected": 0,
       "insufficient": 1,
-      "consecutive_non_survivals": 1,
+      "consecutive_non_survivals": 0,
       "reason_counts": {
         "4 observations; need at least 6": 1
       },
-      "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-10-09T17:33:20+00:00",
-      "last_latest_edge_bps": 6.56,
-      "last_median_positive_edge_bps": 22.52,
-      "last_persistence": 1.0,
-      "last_reasons": [
-        "4 observations; need at least 6"
-      ],
-      "updated_at_utc": "2026-10-09T17:37:27+00:00"
+      "last_verdict": "SURVIVES_KILLER",
+      "last_seen_utc": "2026-10-09T21:20:04+00:00",
+      "last_latest_edge_bps": 16.16,
+      "last_median_positive_edge_bps": 17.04,
+      "last_persistence": 0.75,
+      "last_reasons": [],
+      "updated_at_utc": "2026-10-09T21:24:31+00:00"
     }
   },
   "note": "Historical failure memory is diagnostic evidence only. It cannot loosen gates or create READY."
