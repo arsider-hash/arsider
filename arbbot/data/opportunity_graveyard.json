@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-09T16:44:30+00:00",
+  "generated_at_utc": "2026-10-09T17:37:27+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -30,13 +30,13 @@
     "stable_dislocation|FDUSD:Binance": {
       "strategy": "stable_dislocation",
       "label": "FDUSD:Binance",
-      "snapshots": 160,
+      "snapshots": 161,
       "survives": 0,
       "rejected": 0,
-      "insufficient": 160,
-      "consecutive_non_survivals": 160,
+      "insufficient": 161,
+      "consecutive_non_survivals": 161,
       "reason_counts": {
-        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 160,
+        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 161,
         "persistence=0.486; need at least 0.70": 1,
         "persistence=0.500; need at least 0.70": 1,
         "persistence=0.543; need at least 0.70": 1,
@@ -55,14 +55,14 @@
         "persistence=0.690; need at least 0.70": 1
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-10-09T16:40:47+00:00",
-      "last_latest_edge_bps": 21.5,
+      "last_seen_utc": "2026-10-09T17:33:56+00:00",
+      "last_latest_edge_bps": 22.0,
       "last_median_positive_edge_bps": 20.5,
       "last_persistence": 1.0,
       "last_reasons": [
         "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified"
       ],
-      "updated_at_utc": "2026-10-09T16:44:30+00:00"
+      "updated_at_utc": "2026-10-09T17:37:27+00:00"
     },
     "funding_spread|VTHOUSDT": {
       "strategy": "funding_spread",
@@ -1525,6 +1525,27 @@
         "no matching executable-entry probe at EUR 250 for CLUSDT long Bitget / short Gate"
       ],
       "updated_at_utc": "2026-10-09T00:56:53+00:00"
+    },
+    "funding_spread|KAIAUSDT": {
+      "strategy": "funding_spread",
+      "label": "KAIAUSDT",
+      "snapshots": 1,
+      "survives": 0,
+      "rejected": 0,
+      "insufficient": 1,
+      "consecutive_non_survivals": 1,
+      "reason_counts": {
+        "4 observations; need at least 6": 1
+      },
+      "last_verdict": "INSUFFICIENT_EVIDENCE",
+      "last_seen_utc": "2026-10-09T17:33:20+00:00",
+      "last_latest_edge_bps": 6.56,
+      "last_median_positive_edge_bps": 22.52,
+      "last_persistence": 1.0,
+      "last_reasons": [
+        "4 observations; need at least 6"
+      ],
+      "updated_at_utc": "2026-10-09T17:37:27+00:00"
     }
   },
   "note": "Historical failure memory is diagnostic evidence only. It cannot loosen gates or create READY."
