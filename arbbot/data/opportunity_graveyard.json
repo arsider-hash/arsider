@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-09T23:49:24+00:00",
+  "generated_at_utc": "2026-10-10T01:09:46+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -30,13 +30,13 @@
     "stable_dislocation|FDUSD:Binance": {
       "strategy": "stable_dislocation",
       "label": "FDUSD:Binance",
-      "snapshots": 163,
+      "snapshots": 164,
       "survives": 0,
       "rejected": 0,
-      "insufficient": 163,
-      "consecutive_non_survivals": 163,
+      "insufficient": 164,
+      "consecutive_non_survivals": 164,
       "reason_counts": {
-        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 163,
+        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 164,
         "persistence=0.486; need at least 0.70": 1,
         "persistence=0.500; need at least 0.70": 1,
         "persistence=0.543; need at least 0.70": 1,
@@ -55,14 +55,14 @@
         "persistence=0.690; need at least 0.70": 1
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-10-09T23:45:43+00:00",
+      "last_seen_utc": "2026-10-10T01:06:14+00:00",
       "last_latest_edge_bps": 21.5,
       "last_median_positive_edge_bps": 20.5,
       "last_persistence": 1.0,
       "last_reasons": [
         "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified"
       ],
-      "updated_at_utc": "2026-10-09T23:49:24+00:00"
+      "updated_at_utc": "2026-10-10T01:09:46+00:00"
     },
     "funding_spread|VTHOUSDT": {
       "strategy": "funding_spread",
@@ -139,11 +139,11 @@
     "funding_spread|BZUSDT": {
       "strategy": "funding_spread",
       "label": "BZUSDT",
-      "snapshots": 15,
+      "snapshots": 16,
       "survives": 6,
-      "rejected": 0,
+      "rejected": 1,
       "insufficient": 9,
-      "consecutive_non_survivals": 5,
+      "consecutive_non_survivals": 6,
       "reason_counts": {
         "persistence=0.607; need at least 0.70": 1,
         "latest/median edge ratio=0.000; latest=0.000 bps/8h, median=17.410; require >= 0.25 to rule out sharp edge decay": 1,
@@ -155,17 +155,22 @@
         "no matching executable-entry probe at EUR 250 for BZUSDT short Bitget / long Gate": 1,
         "persistence=0.605; need at least 0.70": 2,
         "persistence=0.575; need at least 0.70": 2,
-        "persistence=0.487; need at least 0.70": 1
+        "persistence=0.487; need at least 0.70": 1,
+        "EUR 250 executable adverse basis=15.711 bps, recovery=6.02 funding periods; require <= 3.00": 1,
+        "persistence=0.636; need at least 0.70": 1,
+        "latest/median edge ratio=0.193; latest=2.610 bps/8h, median=13.540; require >= 0.25 to rule out sharp edge decay": 1
       },
-      "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-10-09T23:44:53+00:00",
-      "last_latest_edge_bps": 13.92,
-      "last_median_positive_edge_bps": 13.915,
-      "last_persistence": 0.6047,
+      "last_verdict": "REJECTED",
+      "last_seen_utc": "2026-10-10T01:05:39+00:00",
+      "last_latest_edge_bps": 2.61,
+      "last_median_positive_edge_bps": 13.54,
+      "last_persistence": 0.6364,
       "last_reasons": [
-        "persistence=0.605; need at least 0.70"
+        "EUR 250 executable adverse basis=15.711 bps, recovery=6.02 funding periods; require <= 3.00",
+        "persistence=0.636; need at least 0.70",
+        "latest/median edge ratio=0.193; latest=2.610 bps/8h, median=13.540; require >= 0.25 to rule out sharp edge decay"
       ],
-      "updated_at_utc": "2026-10-09T23:49:24+00:00"
+      "updated_at_utc": "2026-10-10T01:09:46+00:00"
     },
     "funding_spread|LSKUSDT": {
       "strategy": "funding_spread",
