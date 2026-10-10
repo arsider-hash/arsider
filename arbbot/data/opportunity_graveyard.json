@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-10T19:46:39+00:00",
+  "generated_at_utc": "2026-10-10T20:04:50+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -1534,11 +1534,11 @@
     "funding_spread|KAIAUSDT": {
       "strategy": "funding_spread",
       "label": "KAIAUSDT",
-      "snapshots": 13,
-      "survives": 3,
+      "snapshots": 14,
+      "survives": 4,
       "rejected": 0,
       "insufficient": 10,
-      "consecutive_non_survivals": 9,
+      "consecutive_non_survivals": 0,
       "reason_counts": {
         "4 observations; need at least 6": 1,
         "persistence=0.643; need at least 0.70": 2,
@@ -1551,15 +1551,13 @@
         "no matching executable-entry probe at EUR 250 for KAIAUSDT short Bitget / long Gate": 1,
         "persistence=0.679; need at least 0.70": 1
       },
-      "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-10-10T18:40:43+00:00",
-      "last_latest_edge_bps": 7.84,
-      "last_median_positive_edge_bps": 10.88,
-      "last_persistence": 0.6786,
-      "last_reasons": [
-        "persistence=0.679; need at least 0.70"
-      ],
-      "updated_at_utc": "2026-10-10T18:44:55+00:00"
+      "last_verdict": "SURVIVES_KILLER",
+      "last_seen_utc": "2026-10-10T20:00:25+00:00",
+      "last_latest_edge_bps": 10.32,
+      "last_median_positive_edge_bps": 10.32,
+      "last_persistence": 0.7,
+      "last_reasons": [],
+      "updated_at_utc": "2026-10-10T20:04:50+00:00"
     },
     "funding_spread|MAGICUSDT": {
       "strategy": "funding_spread",
