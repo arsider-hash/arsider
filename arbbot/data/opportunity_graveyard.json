@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-11T02:01:38+00:00",
+  "generated_at_utc": "2026-10-11T05:40:41+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -1593,28 +1593,24 @@
     "funding_spread|ERAUSDT": {
       "strategy": "funding_spread",
       "label": "ERAUSDT",
-      "snapshots": 2,
-      "survives": 0,
+      "snapshots": 3,
+      "survives": 1,
       "rejected": 0,
       "insufficient": 2,
-      "consecutive_non_survivals": 2,
+      "consecutive_non_survivals": 0,
       "reason_counts": {
         "4 observations; need at least 6": 1,
         "persistence=0.500; need at least 0.70": 1,
         "latest/median edge ratio=0.080; latest=1.400 bps/8h, median=17.450; require >= 0.25 to rule out sharp edge decay": 1,
         "no matching executable-entry probe at EUR 250 for ERAUSDT short Bitget / long Gate": 1
       },
-      "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-10-10T19:42:34+00:00",
-      "last_latest_edge_bps": 1.4,
-      "last_median_positive_edge_bps": 17.45,
-      "last_persistence": 0.5,
-      "last_reasons": [
-        "persistence=0.500; need at least 0.70",
-        "latest/median edge ratio=0.080; latest=1.400 bps/8h, median=17.450; require >= 0.25 to rule out sharp edge decay",
-        "no matching executable-entry probe at EUR 250 for ERAUSDT short Bitget / long Gate"
-      ],
-      "updated_at_utc": "2026-10-10T19:46:39+00:00"
+      "last_verdict": "SURVIVES_KILLER",
+      "last_seen_utc": "2026-10-11T05:36:09+00:00",
+      "last_latest_edge_bps": 95.96,
+      "last_median_positive_edge_bps": 9.38,
+      "last_persistence": 0.7368,
+      "last_reasons": [],
+      "updated_at_utc": "2026-10-11T05:40:41+00:00"
     }
   },
   "note": "Historical failure memory is diagnostic evidence only. It cannot loosen gates or create READY."
