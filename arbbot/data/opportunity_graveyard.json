@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-11T15:05:06+00:00",
+  "generated_at_utc": "2026-10-11T18:12:52+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -30,13 +30,13 @@
     "stable_dislocation|FDUSD:Binance": {
       "strategy": "stable_dislocation",
       "label": "FDUSD:Binance",
-      "snapshots": 183,
+      "snapshots": 184,
       "survives": 0,
       "rejected": 0,
-      "insufficient": 183,
-      "consecutive_non_survivals": 183,
+      "insufficient": 184,
+      "consecutive_non_survivals": 184,
       "reason_counts": {
-        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 183,
+        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 184,
         "persistence=0.486; need at least 0.70": 1,
         "persistence=0.500; need at least 0.70": 1,
         "persistence=0.543; need at least 0.70": 1,
@@ -55,14 +55,14 @@
         "persistence=0.690; need at least 0.70": 1
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-10-11T15:01:28+00:00",
-      "last_latest_edge_bps": 20.5,
+      "last_seen_utc": "2026-10-11T18:09:17+00:00",
+      "last_latest_edge_bps": 13.5,
       "last_median_positive_edge_bps": 21.5,
       "last_persistence": 1.0,
       "last_reasons": [
         "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified"
       ],
-      "updated_at_utc": "2026-10-11T15:05:06+00:00"
+      "updated_at_utc": "2026-10-11T18:12:52+00:00"
     },
     "funding_spread|VTHOUSDT": {
       "strategy": "funding_spread",
@@ -1622,6 +1622,29 @@
         "no matching executable-entry probe at EUR 250 for ERAUSDT short Bitget / long Gate"
       ],
       "updated_at_utc": "2026-10-11T12:43:29+00:00"
+    },
+    "funding_spread|OGNUSDT": {
+      "strategy": "funding_spread",
+      "label": "OGNUSDT",
+      "snapshots": 1,
+      "survives": 0,
+      "rejected": 1,
+      "insufficient": 0,
+      "consecutive_non_survivals": 1,
+      "reason_counts": {
+        "candidate age 141355s": 1,
+        "no matching executable-entry probe at EUR 250 for OGNUSDT short Bitget / long Gate": 1
+      },
+      "last_verdict": "REJECTED",
+      "last_seen_utc": "2026-10-10T02:56:57+00:00",
+      "last_latest_edge_bps": 6.1,
+      "last_median_positive_edge_bps": 5.54,
+      "last_persistence": 1.0,
+      "last_reasons": [
+        "candidate age 141355s",
+        "no matching executable-entry probe at EUR 250 for OGNUSDT short Bitget / long Gate"
+      ],
+      "updated_at_utc": "2026-10-11T18:12:52+00:00"
     }
   },
   "note": "Historical failure memory is diagnostic evidence only. It cannot loosen gates or create READY."
