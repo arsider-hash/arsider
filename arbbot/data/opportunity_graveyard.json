@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-12T19:01:47+00:00",
+  "generated_at_utc": "2026-10-12T19:36:57+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -30,13 +30,13 @@
     "stable_dislocation|FDUSD:Binance": {
       "strategy": "stable_dislocation",
       "label": "FDUSD:Binance",
-      "snapshots": 200,
+      "snapshots": 201,
       "survives": 0,
       "rejected": 0,
-      "insufficient": 200,
-      "consecutive_non_survivals": 200,
+      "insufficient": 201,
+      "consecutive_non_survivals": 201,
       "reason_counts": {
-        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 200,
+        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 201,
         "persistence=0.486; need at least 0.70": 1,
         "persistence=0.500; need at least 0.70": 1,
         "persistence=0.543; need at least 0.70": 1,
@@ -55,14 +55,14 @@
         "persistence=0.690; need at least 0.70": 1
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-10-12T18:58:06+00:00",
+      "last_seen_utc": "2026-10-12T19:33:15+00:00",
       "last_latest_edge_bps": 18.5,
-      "last_median_positive_edge_bps": 19.5,
+      "last_median_positive_edge_bps": 18.5,
       "last_persistence": 1.0,
       "last_reasons": [
         "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified"
       ],
-      "updated_at_utc": "2026-10-12T19:01:47+00:00"
+      "updated_at_utc": "2026-10-12T19:36:57+00:00"
     },
     "funding_spread|VTHOUSDT": {
       "strategy": "funding_spread",
@@ -1671,6 +1671,27 @@
         "no matching executable-entry probe at EUR 250 for OGNUSDT short Bitget / long Gate"
       ],
       "updated_at_utc": "2026-10-12T00:59:24+00:00"
+    },
+    "funding_spread|RSRUSDT": {
+      "strategy": "funding_spread",
+      "label": "RSRUSDT",
+      "snapshots": 1,
+      "survives": 0,
+      "rejected": 0,
+      "insufficient": 1,
+      "consecutive_non_survivals": 1,
+      "reason_counts": {
+        "5 observations; need at least 6": 1
+      },
+      "last_verdict": "INSUFFICIENT_EVIDENCE",
+      "last_seen_utc": "2026-10-12T19:32:22+00:00",
+      "last_latest_edge_bps": 11.48,
+      "last_median_positive_edge_bps": 29.36,
+      "last_persistence": 1.0,
+      "last_reasons": [
+        "5 observations; need at least 6"
+      ],
+      "updated_at_utc": "2026-10-12T19:36:57+00:00"
     }
   },
   "note": "Historical failure memory is diagnostic evidence only. It cannot loosen gates or create READY."
