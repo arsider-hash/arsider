@@ -1,6 +1,6 @@
 {
-  "generated_at_utc": "2026-10-13T10:56:09+00:00",
-  "verdict": "INSUFFICIENT_EVIDENCE",
+  "generated_at_utc": "2026-10-13T15:18:31+00:00",
+  "verdict": "REJECTED",
   "selected": {
     "key": "funding_spread|RSRUSDT",
     "strategy": "funding_spread",
@@ -17,8 +17,8 @@
     "research_score": 66.39,
     "classification": "noise",
     "last_seen_utc": "2026-10-13T10:52:01+00:00",
-    "latest_age_seconds": 92.0,
-    "current_signal_fresh": true,
+    "latest_age_seconds": 15829.3,
+    "current_signal_fresh": false,
     "current_direction_stability": 0.3889,
     "current_direction_observations": 7,
     "direction_stability_required_for_watch": 0.5,
@@ -166,9 +166,9 @@
   "checks": [
     {
       "check": "freshness",
-      "status": "PASS",
+      "status": "FAIL",
       "severity": "hard",
-      "detail": "candidate age 248s"
+      "detail": "candidate age 15990s"
     },
     {
       "check": "sample_presence",
@@ -220,9 +220,9 @@
     },
     {
       "check": "funding_executable_entry",
-      "status": "PASS",
+      "status": "INSUFFICIENT",
       "severity": "hard",
-      "detail": "EUR 250 executable adverse basis=10.979 bps, recovery=2.49 funding periods; require <= 3.00"
+      "detail": "no matching executable-entry probe at EUR 250 for RSRUSDT short Bitget / long Gate"
     },
     {
       "check": "shadow_evidence",
@@ -231,11 +231,14 @@
       "detail": "no matching shadow history"
     }
   ],
-  "hard_failures": [],
+  "hard_failures": [
+    "candidate age 15990s"
+  ],
   "insufficient_evidence": [
     "persistence=0.389; need at least 0.70",
     "latest/median edge ratio=0.152; latest=4.410 bps/8h, median=29.000; require >= 0.25 to rule out sharp edge decay",
-    "latest funding direction matches 39% of independent basis buckets; require >= 50%"
+    "latest funding direction matches 39% of independent basis buckets; require >= 50%",
+    "no matching executable-entry probe at EUR 250 for RSRUSDT short Bitget / long Gate"
   ],
   "policy": {
     "max_staleness_seconds": 900,
