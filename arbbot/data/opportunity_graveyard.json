@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-12T23:06:36+00:00",
+  "generated_at_utc": "2026-10-13T00:58:46+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -30,13 +30,13 @@
     "stable_dislocation|FDUSD:Binance": {
       "strategy": "stable_dislocation",
       "label": "FDUSD:Binance",
-      "snapshots": 202,
+      "snapshots": 203,
       "survives": 0,
       "rejected": 0,
-      "insufficient": 202,
-      "consecutive_non_survivals": 202,
+      "insufficient": 203,
+      "consecutive_non_survivals": 203,
       "reason_counts": {
-        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 202,
+        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 203,
         "persistence=0.486; need at least 0.70": 1,
         "persistence=0.500; need at least 0.70": 1,
         "persistence=0.543; need at least 0.70": 1,
@@ -55,14 +55,14 @@
         "persistence=0.690; need at least 0.70": 1
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-10-12T23:02:57+00:00",
+      "last_seen_utc": "2026-10-13T00:55:05+00:00",
       "last_latest_edge_bps": 19.5,
-      "last_median_positive_edge_bps": 18.0,
+      "last_median_positive_edge_bps": 16.5,
       "last_persistence": 1.0,
       "last_reasons": [
         "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified"
       ],
-      "updated_at_utc": "2026-10-12T23:06:36+00:00"
+      "updated_at_utc": "2026-10-13T00:58:46+00:00"
     },
     "funding_spread|VTHOUSDT": {
       "strategy": "funding_spread",
@@ -1675,23 +1675,26 @@
     "funding_spread|RSRUSDT": {
       "strategy": "funding_spread",
       "label": "RSRUSDT",
-      "snapshots": 1,
+      "snapshots": 2,
       "survives": 0,
       "rejected": 0,
-      "insufficient": 1,
-      "consecutive_non_survivals": 1,
+      "insufficient": 2,
+      "consecutive_non_survivals": 2,
       "reason_counts": {
-        "5 observations; need at least 6": 1
+        "5 observations; need at least 6": 1,
+        "persistence=0.375; need at least 0.70": 1,
+        "latest funding direction matches 38% of independent basis buckets; require >= 50%": 1
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-10-12T19:32:22+00:00",
-      "last_latest_edge_bps": 11.48,
-      "last_median_positive_edge_bps": 29.36,
-      "last_persistence": 1.0,
+      "last_seen_utc": "2026-10-13T00:54:09+00:00",
+      "last_latest_edge_bps": 42.16,
+      "last_median_positive_edge_bps": 42.16,
+      "last_persistence": 0.375,
       "last_reasons": [
-        "5 observations; need at least 6"
+        "persistence=0.375; need at least 0.70",
+        "latest funding direction matches 38% of independent basis buckets; require >= 50%"
       ],
-      "updated_at_utc": "2026-10-12T19:36:57+00:00"
+      "updated_at_utc": "2026-10-13T00:58:46+00:00"
     },
     "funding_spread|MINAUSDT": {
       "strategy": "funding_spread",
