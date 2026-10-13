@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-13T20:51:02+00:00",
+  "generated_at_utc": "2026-10-13T21:42:54+00:00",
   "verdict": "INSUFFICIENT_EVIDENCE",
   "selected": {
     "key": "stable_dislocation|FDUSD:Binance",
@@ -7,21 +7,21 @@
     "label": "FDUSD:Binance",
     "direction": "below peg",
     "venue": "Binance",
-    "observations": 29,
+    "observations": 30,
     "positive_observations": 20,
-    "persistence": 0.6897,
+    "persistence": 0.6667,
     "median_positive_edge_bps": 14.5,
     "p90_positive_edge_bps": 19.5,
     "max_edge_bps": 19.5,
     "latest_edge_bps": 9.5,
-    "research_score": 76.06,
+    "research_score": 74.79,
     "classification": "watch",
-    "last_seen_utc": "2026-10-13T20:47:19+00:00",
-    "latest_age_seconds": 63.8,
+    "last_seen_utc": "2026-10-13T21:39:20+00:00",
+    "latest_age_seconds": 57.6,
     "current_signal_fresh": true,
     "capital_utilisation": 1.0,
-    "capital_efficiency_score": 32.13,
-    "economic_relevance_score": 32.13,
+    "capital_efficiency_score": 30.54,
+    "economic_relevance_score": 30.54,
     "economic_relevance": {
       "reference_budget_eur": 250,
       "reference_basis": "paper_profit_per_event_at_median_edge",
@@ -78,13 +78,13 @@
       "check": "freshness",
       "status": "PASS",
       "severity": "hard",
-      "detail": "candidate age 224s"
+      "detail": "candidate age 214s"
     },
     {
       "check": "sample_presence",
       "status": "PASS",
       "severity": "hard",
-      "detail": "29 observations; need at least 6"
+      "detail": "30 observations; need at least 6"
     },
     {
       "check": "positive_edge_evidence",
@@ -96,7 +96,7 @@
       "check": "persistence",
       "status": "INSUFFICIENT",
       "severity": "hard",
-      "detail": "persistence=0.690; need at least 0.70"
+      "detail": "persistence=0.667; need at least 0.70"
     },
     {
       "check": "latest_edge_sign",
@@ -108,7 +108,7 @@
       "check": "economic_relevance",
       "status": "PASS",
       "severity": "soft",
-      "detail": "economic_relevance_score=32.13"
+      "detail": "economic_relevance_score=30.54"
     },
     {
       "check": "burst_validation",
@@ -137,7 +137,7 @@
   ],
   "hard_failures": [],
   "insufficient_evidence": [
-    "persistence=0.690; need at least 0.70",
+    "persistence=0.667; need at least 0.70",
     "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified"
   ],
   "policy": {

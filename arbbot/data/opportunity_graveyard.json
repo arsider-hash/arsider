@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-13T20:51:02+00:00",
+  "generated_at_utc": "2026-10-13T21:42:54+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -30,13 +30,13 @@
     "stable_dislocation|FDUSD:Binance": {
       "strategy": "stable_dislocation",
       "label": "FDUSD:Binance",
-      "snapshots": 212,
+      "snapshots": 213,
       "survives": 0,
       "rejected": 0,
-      "insufficient": 212,
-      "consecutive_non_survivals": 212,
+      "insufficient": 213,
+      "consecutive_non_survivals": 213,
       "reason_counts": {
-        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 212,
+        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 213,
         "persistence=0.486; need at least 0.70": 1,
         "persistence=0.500; need at least 0.70": 1,
         "persistence=0.543; need at least 0.70": 1,
@@ -44,7 +44,7 @@
         "persistence=0.600; need at least 0.70": 1,
         "persistence=0.629; need at least 0.70": 1,
         "persistence=0.639; need at least 0.70": 1,
-        "persistence=0.667; need at least 0.70": 3,
+        "persistence=0.667; need at least 0.70": 4,
         "persistence=0.656; need at least 0.70": 2,
         "persistence=0.645; need at least 0.70": 1,
         "persistence=0.429; need at least 0.70": 1,
@@ -55,15 +55,15 @@
         "persistence=0.690; need at least 0.70": 2
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-10-13T20:47:19+00:00",
+      "last_seen_utc": "2026-10-13T21:39:20+00:00",
       "last_latest_edge_bps": 9.5,
       "last_median_positive_edge_bps": 14.5,
-      "last_persistence": 0.6897,
+      "last_persistence": 0.6667,
       "last_reasons": [
-        "persistence=0.690; need at least 0.70",
+        "persistence=0.667; need at least 0.70",
         "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified"
       ],
-      "updated_at_utc": "2026-10-13T20:51:02+00:00"
+      "updated_at_utc": "2026-10-13T21:42:54+00:00"
     },
     "funding_spread|VTHOUSDT": {
       "strategy": "funding_spread",
@@ -1676,25 +1676,26 @@
     "funding_spread|RSRUSDT": {
       "strategy": "funding_spread",
       "label": "RSRUSDT",
-      "snapshots": 12,
+      "snapshots": 13,
       "survives": 3,
-      "rejected": 5,
+      "rejected": 6,
       "insufficient": 4,
-      "consecutive_non_survivals": 6,
+      "consecutive_non_survivals": 7,
       "reason_counts": {
         "5 observations; need at least 6": 1,
         "persistence=0.375; need at least 0.70": 1,
         "latest funding direction matches 38% of independent basis buckets; require >= 50%": 1,
         "persistence=0.667; need at least 0.70": 1,
-        "persistence=0.389; need at least 0.70": 6,
-        "latest/median edge ratio=0.152; latest=4.410 bps/8h, median=29.000; require >= 0.25 to rule out sharp edge decay": 6,
-        "latest funding direction matches 39% of independent basis buckets; require >= 50%": 6,
+        "persistence=0.389; need at least 0.70": 7,
+        "latest/median edge ratio=0.152; latest=4.410 bps/8h, median=29.000; require >= 0.25 to rule out sharp edge decay": 7,
+        "latest funding direction matches 39% of independent basis buckets; require >= 50%": 7,
         "candidate age 15990s": 1,
-        "no matching executable-entry probe at EUR 250 for RSRUSDT short Bitget / long Gate": 5,
+        "no matching executable-entry probe at EUR 250 for RSRUSDT short Bitget / long Gate": 6,
         "candidate age 20807s": 1,
         "candidate age 24317s": 1,
         "candidate age 25816s": 1,
-        "candidate age 35941s": 1
+        "candidate age 35941s": 1,
+        "candidate age 39053s": 1
       },
       "last_verdict": "REJECTED",
       "last_seen_utc": "2026-10-13T10:52:01+00:00",
@@ -1702,13 +1703,13 @@
       "last_median_positive_edge_bps": 29.0,
       "last_persistence": 0.3889,
       "last_reasons": [
-        "candidate age 35941s",
+        "candidate age 39053s",
         "persistence=0.389; need at least 0.70",
         "latest/median edge ratio=0.152; latest=4.410 bps/8h, median=29.000; require >= 0.25 to rule out sharp edge decay",
         "latest funding direction matches 39% of independent basis buckets; require >= 50%",
         "no matching executable-entry probe at EUR 250 for RSRUSDT short Bitget / long Gate"
       ],
-      "updated_at_utc": "2026-10-13T20:51:02+00:00"
+      "updated_at_utc": "2026-10-13T21:42:54+00:00"
     },
     "funding_spread|MINAUSDT": {
       "strategy": "funding_spread",
