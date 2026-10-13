@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-13T07:30:26+00:00",
+  "generated_at_utc": "2026-10-13T08:46:15+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -30,13 +30,13 @@
     "stable_dislocation|FDUSD:Binance": {
       "strategy": "stable_dislocation",
       "label": "FDUSD:Binance",
-      "snapshots": 204,
+      "snapshots": 205,
       "survives": 0,
       "rejected": 0,
-      "insufficient": 204,
-      "consecutive_non_survivals": 204,
+      "insufficient": 205,
+      "consecutive_non_survivals": 205,
       "reason_counts": {
-        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 204,
+        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 205,
         "persistence=0.486; need at least 0.70": 1,
         "persistence=0.500; need at least 0.70": 1,
         "persistence=0.543; need at least 0.70": 1,
@@ -55,14 +55,14 @@
         "persistence=0.690; need at least 0.70": 1
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-10-13T01:16:50+00:00",
-      "last_latest_edge_bps": 19.5,
-      "last_median_positive_edge_bps": 16.5,
-      "last_persistence": 1.0,
+      "last_seen_utc": "2026-10-13T08:42:33+00:00",
+      "last_latest_edge_bps": 6.5,
+      "last_median_positive_edge_bps": 14.5,
+      "last_persistence": 0.931,
       "last_reasons": [
         "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified"
       ],
-      "updated_at_utc": "2026-10-13T01:20:35+00:00"
+      "updated_at_utc": "2026-10-13T08:46:15+00:00"
     },
     "funding_spread|VTHOUSDT": {
       "strategy": "funding_spread",
@@ -1718,6 +1718,31 @@
         "no matching executable-entry probe at EUR 250 for MINAUSDT short Bitget / long Gate"
       ],
       "updated_at_utc": "2026-10-12T23:06:36+00:00"
+    },
+    "funding_spread|DOSUSDT": {
+      "strategy": "funding_spread",
+      "label": "DOSUSDT",
+      "snapshots": 1,
+      "survives": 0,
+      "rejected": 0,
+      "insufficient": 1,
+      "consecutive_non_survivals": 1,
+      "reason_counts": {
+        "persistence=0.400; need at least 0.70": 1,
+        "latest/median edge ratio=0.000; latest=0.000 bps/8h, median=27.580; require >= 0.25 to rule out sharp edge decay": 1,
+        "no matching executable-entry probe at EUR 250 for DOSUSDT long Bitget / short Gate": 1
+      },
+      "last_verdict": "INSUFFICIENT_EVIDENCE",
+      "last_seen_utc": "2026-10-13T08:41:40+00:00",
+      "last_latest_edge_bps": 0.0,
+      "last_median_positive_edge_bps": 27.58,
+      "last_persistence": 0.4,
+      "last_reasons": [
+        "persistence=0.400; need at least 0.70",
+        "latest/median edge ratio=0.000; latest=0.000 bps/8h, median=27.580; require >= 0.25 to rule out sharp edge decay",
+        "no matching executable-entry probe at EUR 250 for DOSUSDT long Bitget / short Gate"
+      ],
+      "updated_at_utc": "2026-10-13T08:46:15+00:00"
     }
   },
   "note": "Historical failure memory is diagnostic evidence only. It cannot loosen gates or create READY."
