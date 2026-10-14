@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-14T06:14:09+00:00",
+  "generated_at_utc": "2026-10-14T07:30:47+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -1677,21 +1677,21 @@
     "funding_spread|RSRUSDT": {
       "strategy": "funding_spread",
       "label": "RSRUSDT",
-      "snapshots": 22,
+      "snapshots": 23,
       "survives": 3,
-      "rejected": 15,
+      "rejected": 16,
       "insufficient": 4,
-      "consecutive_non_survivals": 16,
+      "consecutive_non_survivals": 17,
       "reason_counts": {
         "5 observations; need at least 6": 1,
         "persistence=0.375; need at least 0.70": 1,
         "latest funding direction matches 38% of independent basis buckets; require >= 50%": 1,
         "persistence=0.667; need at least 0.70": 1,
-        "persistence=0.389; need at least 0.70": 16,
-        "latest/median edge ratio=0.152; latest=4.410 bps/8h, median=29.000; require >= 0.25 to rule out sharp edge decay": 16,
-        "latest funding direction matches 39% of independent basis buckets; require >= 50%": 16,
+        "persistence=0.389; need at least 0.70": 17,
+        "latest/median edge ratio=0.152; latest=4.410 bps/8h, median=29.000; require >= 0.25 to rule out sharp edge decay": 17,
+        "latest funding direction matches 39% of independent basis buckets; require >= 50%": 17,
         "candidate age 15990s": 1,
-        "no matching executable-entry probe at EUR 250 for RSRUSDT short Bitget / long Gate": 15,
+        "no matching executable-entry probe at EUR 250 for RSRUSDT short Bitget / long Gate": 16,
         "candidate age 20807s": 1,
         "candidate age 24317s": 1,
         "candidate age 25816s": 1,
@@ -1705,7 +1705,8 @@
         "candidate age 54070s": 1,
         "candidate age 64876s": 1,
         "candidate age 67768s": 1,
-        "candidate age 69728s": 1
+        "candidate age 69728s": 1,
+        "candidate age 74326s": 1
       },
       "last_verdict": "REJECTED",
       "last_seen_utc": "2026-10-13T10:52:01+00:00",
@@ -1713,13 +1714,13 @@
       "last_median_positive_edge_bps": 29.0,
       "last_persistence": 0.3889,
       "last_reasons": [
-        "candidate age 69728s",
+        "candidate age 74326s",
         "persistence=0.389; need at least 0.70",
         "latest/median edge ratio=0.152; latest=4.410 bps/8h, median=29.000; require >= 0.25 to rule out sharp edge decay",
         "latest funding direction matches 39% of independent basis buckets; require >= 50%",
         "no matching executable-entry probe at EUR 250 for RSRUSDT short Bitget / long Gate"
       ],
-      "updated_at_utc": "2026-10-14T06:14:09+00:00"
+      "updated_at_utc": "2026-10-14T07:30:47+00:00"
     },
     "funding_spread|MINAUSDT": {
       "strategy": "funding_spread",
@@ -1799,8 +1800,8 @@
     "funding_spread|KORUUSDT": {
       "strategy": "funding_spread",
       "label": "KORUUSDT",
-      "snapshots": 3,
-      "survives": 2,
+      "snapshots": 4,
+      "survives": 3,
       "rejected": 0,
       "insufficient": 1,
       "consecutive_non_survivals": 0,
@@ -1808,12 +1809,12 @@
         "4 observations; need at least 6": 1
       },
       "last_verdict": "SURVIVES_KILLER",
-      "last_seen_utc": "2026-10-14T06:12:26+00:00",
-      "last_latest_edge_bps": 5.26,
-      "last_median_positive_edge_bps": 4.66,
-      "last_persistence": 0.8571,
+      "last_seen_utc": "2026-10-14T07:29:11+00:00",
+      "last_latest_edge_bps": 5.23,
+      "last_median_positive_edge_bps": 4.83,
+      "last_persistence": 0.875,
       "last_reasons": [],
-      "updated_at_utc": "2026-10-14T06:14:09+00:00"
+      "updated_at_utc": "2026-10-14T07:30:47+00:00"
     }
   },
   "note": "Historical failure memory is diagnostic evidence only. It cannot loosen gates or create READY."
