@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-15T19:14:57+00:00",
+  "generated_at_utc": "2026-10-15T19:33:15+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -1821,25 +1821,25 @@
     "funding_spread|KORUUSDT": {
       "strategy": "funding_spread",
       "label": "KORUUSDT",
-      "snapshots": 27,
+      "snapshots": 28,
       "survives": 23,
       "rejected": 1,
-      "insufficient": 3,
-      "consecutive_non_survivals": 3,
+      "insufficient": 4,
+      "consecutive_non_survivals": 4,
       "reason_counts": {
         "4 observations; need at least 6": 1,
         "EUR 250 executable adverse basis=12.049 bps, recovery=4.78 funding periods; require <= 3.00": 1,
-        "no matching executable-entry probe at EUR 250 for KORUUSDT short Bitget / long Gate": 2
+        "no matching executable-entry probe at EUR 250 for KORUUSDT short Bitget / long Gate": 3
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-10-15T19:12:56+00:00",
-      "last_latest_edge_bps": 1.74,
+      "last_seen_utc": "2026-10-15T19:31:19+00:00",
+      "last_latest_edge_bps": 1.64,
       "last_median_positive_edge_bps": 5.245,
-      "last_persistence": 0.9362,
+      "last_persistence": 0.898,
       "last_reasons": [
         "no matching executable-entry probe at EUR 250 for KORUUSDT short Bitget / long Gate"
       ],
-      "updated_at_utc": "2026-10-15T19:14:57+00:00"
+      "updated_at_utc": "2026-10-15T19:33:15+00:00"
     },
     "funding_spread|WALUSDT": {
       "strategy": "funding_spread",
