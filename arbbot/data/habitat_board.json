@@ -1,19 +1,178 @@
 {
-  "generated_at_utc": "2026-10-16T12:24:10+00:00",
+  "generated_at_utc": "2026-10-16T17:25:09+00:00",
   "principle": "new habitats compete for the same EUR250 pool; no habitat replaces or bypasses existing KILLER gates",
   "habitats": [
     {
       "habitat": "crypto",
       "status": "ACTIVE_BASELINE",
-      "killer_survivors": 0,
-      "best": null,
-      "scheduler_adapter_status": "NO_ELIGIBLE_EVENT",
-      "scheduler_events_appended": 0,
+      "killer_survivors": 1,
+      "best": {
+        "key": "funding_spread|SOXLUSDT",
+        "strategy": "funding_spread",
+        "label": "SOXLUSDT",
+        "direction": "short Bitget / long Gate",
+        "venue": "Bitget<->Gate",
+        "observations": 50,
+        "positive_observations": 43,
+        "persistence": 0.86,
+        "median_positive_edge_bps": 6.65,
+        "p90_positive_edge_bps": 11.2,
+        "max_edge_bps": 20.18,
+        "latest_edge_bps": 5.97,
+        "research_score": 75.61,
+        "classification": "strong_watch",
+        "last_seen_utc": "2026-10-16T17:20:23+00:00",
+        "latest_age_seconds": 108.4,
+        "current_signal_fresh": true,
+        "current_direction_stability": 0.92,
+        "current_direction_observations": 46,
+        "direction_stability_required_for_watch": 0.5,
+        "funding_cost_model": {
+          "gross_median_spread_bps_per_8h": 6.65,
+          "round_trip_cost_bps": 30.0,
+          "holding_horizon_days": 7.0,
+          "holding_periods_8h": 21.0,
+          "amortized_cost_bps_per_8h": 1.4286,
+          "amortized_adverse_basis_bps_per_8h": 0.0452,
+          "net_median_spread_bps_per_8h": 5.1762,
+          "survives_cost_and_basis_haircuts": true
+        },
+        "funding_basis_model": {
+          "lookback_hours": 48,
+          "evidence_bucket_minutes": 15,
+          "observations": 50,
+          "min_observations": 4,
+          "evidence_sufficient": true,
+          "median_adverse_basis_bps": 0.9489,
+          "median_aligned_basis_bps": -0.9489,
+          "amortized_adverse_basis_bps_per_8h": 0.0452
+        },
+        "capital_utilisation": 0.5,
+        "capital_efficiency_score": 12.34,
+        "economic_relevance_score": 8.24,
+        "economic_relevance": {
+          "reference_budget_eur": 250,
+          "reference_basis": "paper_daily_carry_after_cost_and_basis_haircuts",
+          "reference_payoff_eur": 0.1669,
+          "reference_target_eur": 0.25,
+          "relevance_factor": 0.6676,
+          "economically_material_at_reference_budget": false
+        },
+        "paper_economics": {
+          "25": {
+            "total_budget": 25,
+            "effective_capital_per_edge": 12.5,
+            "paper_profit_per_event_at_median_edge": 0.0065,
+            "paper_daily_carry_if_persistence_continues": 0.0167,
+            "gross_median_funding_spread_bps_per_8h": 6.65,
+            "amortized_round_trip_cost_bps_per_8h": 1.4286,
+            "amortized_adverse_basis_bps_per_8h": 0.0452,
+            "net_median_funding_spread_bps_per_8h": 5.1762
+          },
+          "50": {
+            "total_budget": 50,
+            "effective_capital_per_edge": 25.0,
+            "paper_profit_per_event_at_median_edge": 0.0129,
+            "paper_daily_carry_if_persistence_continues": 0.0334,
+            "gross_median_funding_spread_bps_per_8h": 6.65,
+            "amortized_round_trip_cost_bps_per_8h": 1.4286,
+            "amortized_adverse_basis_bps_per_8h": 0.0452,
+            "net_median_funding_spread_bps_per_8h": 5.1762
+          },
+          "100": {
+            "total_budget": 100,
+            "effective_capital_per_edge": 50.0,
+            "paper_profit_per_event_at_median_edge": 0.0259,
+            "paper_daily_carry_if_persistence_continues": 0.0668,
+            "gross_median_funding_spread_bps_per_8h": 6.65,
+            "amortized_round_trip_cost_bps_per_8h": 1.4286,
+            "amortized_adverse_basis_bps_per_8h": 0.0452,
+            "net_median_funding_spread_bps_per_8h": 5.1762
+          },
+          "250": {
+            "total_budget": 250,
+            "effective_capital_per_edge": 125.0,
+            "paper_profit_per_event_at_median_edge": 0.0647,
+            "paper_daily_carry_if_persistence_continues": 0.1669,
+            "gross_median_funding_spread_bps_per_8h": 6.65,
+            "amortized_round_trip_cost_bps_per_8h": 1.4286,
+            "amortized_adverse_basis_bps_per_8h": 0.0452,
+            "net_median_funding_spread_bps_per_8h": 5.1762
+          },
+          "500": {
+            "total_budget": 500,
+            "effective_capital_per_edge": 250.0,
+            "paper_profit_per_event_at_median_edge": 0.1294,
+            "paper_daily_carry_if_persistence_continues": 0.3339,
+            "gross_median_funding_spread_bps_per_8h": 6.65,
+            "amortized_round_trip_cost_bps_per_8h": 1.4286,
+            "amortized_adverse_basis_bps_per_8h": 0.0452,
+            "net_median_funding_spread_bps_per_8h": 5.1762
+          },
+          "1000": {
+            "total_budget": 1000,
+            "effective_capital_per_edge": 500.0,
+            "paper_profit_per_event_at_median_edge": 0.2588,
+            "paper_daily_carry_if_persistence_continues": 0.6677,
+            "gross_median_funding_spread_bps_per_8h": 6.65,
+            "amortized_round_trip_cost_bps_per_8h": 1.4286,
+            "amortized_adverse_basis_bps_per_8h": 0.0452,
+            "net_median_funding_spread_bps_per_8h": 5.1762
+          }
+        },
+        "monthly_income_lens": {
+          "mode": "paper_carry_run_rate",
+          "days_per_month": 30.0,
+          "targets_eur": [
+            100,
+            200
+          ],
+          "by_budget": {
+            "25": {
+              "paper_monthly_run_rate_if_persistence_continues": 0.5,
+              "reaches_100_eur_month": false,
+              "reaches_200_eur_month": false
+            },
+            "50": {
+              "paper_monthly_run_rate_if_persistence_continues": 1.0,
+              "reaches_100_eur_month": false,
+              "reaches_200_eur_month": false
+            },
+            "100": {
+              "paper_monthly_run_rate_if_persistence_continues": 2.0,
+              "reaches_100_eur_month": false,
+              "reaches_200_eur_month": false
+            },
+            "250": {
+              "paper_monthly_run_rate_if_persistence_continues": 5.01,
+              "reaches_100_eur_month": false,
+              "reaches_200_eur_month": false
+            },
+            "500": {
+              "paper_monthly_run_rate_if_persistence_continues": 10.02,
+              "reaches_100_eur_month": false,
+              "reaches_200_eur_month": false
+            },
+            "1000": {
+              "paper_monthly_run_rate_if_persistence_continues": 20.03,
+              "reaches_100_eur_month": false,
+              "reaches_200_eur_month": false
+            }
+          },
+          "approx_total_capital_required_eur": {
+            "100": 4993.01,
+            "200": 9986.02
+          },
+          "warning": "Linear scaling assumes the same edge, persistence, costs and capacity survive at larger size; this must be separately validated."
+        }
+      },
+      "scheduler_adapter_status": "APPENDED_EXECUTABLE_SHADOW_EVENT",
+      "scheduler_events_appended": 1,
       "adapter_attempted": [
         {
           "strategy": "funding_spread",
-          "result": "SKIP",
-          "reason": "general_killer_not_survived"
+          "result": "EMIT",
+          "reason": null
         }
       ],
       "note": "Existing crypto HUNTER/KILLER/ALLOCATOR remains unchanged; only fresh survivors can enter the shared EUR250 scheduler."
@@ -44,7 +203,7 @@
       "human_minutes": 8.0,
       "average_locked_capital_eur": 233.333,
       "missed": {
-        "capital_busy": 80
+        "capital_busy": 81
       },
       "accepted": [
         {
@@ -105,8 +264,8 @@
         }
       ]
     },
-    "proof_window_span_days": 26.5034,
-    "eligible_events": 84
+    "proof_window_span_days": 26.9319,
+    "eligible_events": 85
   },
   "safety": "research/shadow only; no orders, custody, transfers, signing or live-trading enablement"
 }
