@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-16T00:47:44+00:00",
+  "generated_at_utc": "2026-10-16T00:59:48+00:00",
   "verdict": "SURVIVES_KILLER",
   "selected": {
     "key": "funding_spread|KORUUSDT",
@@ -13,11 +13,11 @@
     "median_positive_edge_bps": 5.22,
     "p90_positive_edge_bps": 9.14,
     "max_edge_bps": 9.88,
-    "latest_edge_bps": 2.8,
+    "latest_edge_bps": 2.67,
     "research_score": 76.03,
     "classification": "strong_watch",
-    "last_seen_utc": "2026-10-16T00:46:11+00:00",
-    "latest_age_seconds": 91.1,
+    "last_seen_utc": "2026-10-16T00:57:54+00:00",
+    "latest_age_seconds": 112.1,
     "current_signal_fresh": true,
     "current_direction_stability": 1.0,
     "current_direction_observations": 50,
@@ -168,7 +168,7 @@
       "check": "freshness",
       "status": "PASS",
       "severity": "hard",
-      "detail": "candidate age 94s"
+      "detail": "candidate age 115s"
     },
     {
       "check": "sample_presence",
@@ -192,7 +192,7 @@
       "check": "latest_edge_sign",
       "status": "PASS",
       "severity": "soft",
-      "detail": "latest_edge_bps=2.8000"
+      "detail": "latest_edge_bps=2.6700"
     },
     {
       "check": "economic_relevance",
@@ -204,7 +204,7 @@
       "check": "funding_regime_decay",
       "status": "PASS",
       "severity": "hard",
-      "detail": "latest/median edge ratio=0.536; latest=2.800 bps/8h, median=5.220; require >= 0.25 to rule out sharp edge decay"
+      "detail": "latest/median edge ratio=0.511; latest=2.670 bps/8h, median=5.220; require >= 0.25 to rule out sharp edge decay"
     },
     {
       "check": "funding_basis_persistence",
@@ -222,13 +222,13 @@
       "check": "funding_executable_entry",
       "status": "PASS",
       "severity": "hard",
-      "detail": "EUR 250 executable basis is non-adverse; adverse basis=0.000 bps, recovery=0.00 funding periods"
+      "detail": "EUR 250 executable adverse basis=6.047 bps, recovery=2.27 funding periods; require <= 3.00"
     },
     {
       "check": "shadow_evidence",
       "status": "PASS",
       "severity": "soft",
-      "detail": "count=32, positive_rate=1.000, cumulative_paper_pnl=0.275532"
+      "detail": "count=33, positive_rate=1.000, cumulative_paper_pnl=0.278635"
     }
   ],
   "hard_failures": [],
