@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-16T10:20:26+00:00",
+  "generated_at_utc": "2026-10-16T12:23:51+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -1868,19 +1868,46 @@
     "funding_spread|SOXLUSDT": {
       "strategy": "funding_spread",
       "label": "SOXLUSDT",
-      "snapshots": 6,
+      "snapshots": 7,
       "survives": 6,
-      "rejected": 0,
+      "rejected": 1,
       "insufficient": 0,
-      "consecutive_non_survivals": 0,
-      "reason_counts": {},
-      "last_verdict": "SURVIVES_KILLER",
-      "last_seen_utc": "2026-10-16T10:18:33+00:00",
-      "last_latest_edge_bps": 2.92,
-      "last_median_positive_edge_bps": 6.625,
-      "last_persistence": 0.8148,
-      "last_reasons": [],
-      "updated_at_utc": "2026-10-16T10:20:26+00:00"
+      "consecutive_non_survivals": 1,
+      "reason_counts": {
+        "EUR 250 executable adverse basis=11.598 bps, recovery=3.14 funding periods; require <= 3.00": 1
+      },
+      "last_verdict": "REJECTED",
+      "last_seen_utc": "2026-10-16T12:19:26+00:00",
+      "last_latest_edge_bps": 3.69,
+      "last_median_positive_edge_bps": 6.6,
+      "last_persistence": 0.8654,
+      "last_reasons": [
+        "EUR 250 executable adverse basis=11.598 bps, recovery=3.14 funding periods; require <= 3.00"
+      ],
+      "updated_at_utc": "2026-10-16T12:23:51+00:00"
+    },
+    "stable_dislocation|USDC:Binance": {
+      "strategy": "stable_dislocation",
+      "label": "USDC:Binance",
+      "snapshots": 1,
+      "survives": 0,
+      "rejected": 0,
+      "insufficient": 1,
+      "consecutive_non_survivals": 1,
+      "reason_counts": {
+        "no EUR 250 stable round-trip probe": 1,
+        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 1
+      },
+      "last_verdict": "INSUFFICIENT_EVIDENCE",
+      "last_seen_utc": "2026-10-16T12:20:12+00:00",
+      "last_latest_edge_bps": 11.65,
+      "last_median_positive_edge_bps": 11.25,
+      "last_persistence": 0.7209,
+      "last_reasons": [
+        "no EUR 250 stable round-trip probe",
+        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified"
+      ],
+      "updated_at_utc": "2026-10-16T12:23:51+00:00"
     }
   },
   "note": "Historical failure memory is diagnostic evidence only. It cannot loosen gates or create READY."
