@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-17T13:43:18+00:00",
+  "generated_at_utc": "2026-10-17T14:06:53+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -1911,48 +1911,50 @@
     "stable_dislocation|USDC:Binance": {
       "strategy": "stable_dislocation",
       "label": "USDC:Binance",
-      "snapshots": 9,
+      "snapshots": 10,
       "survives": 0,
       "rejected": 0,
-      "insufficient": 9,
-      "consecutive_non_survivals": 9,
+      "insufficient": 10,
+      "consecutive_non_survivals": 10,
       "reason_counts": {
-        "no EUR 250 stable round-trip probe": 9,
-        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 9
+        "no EUR 250 stable round-trip probe": 10,
+        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 10
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-10-17T13:39:39+00:00",
+      "last_seen_utc": "2026-10-17T14:03:23+00:00",
       "last_latest_edge_bps": 12.35,
       "last_median_positive_edge_bps": 12.35,
-      "last_persistence": 0.7838,
+      "last_persistence": 0.7895,
       "last_reasons": [
         "no EUR 250 stable round-trip probe",
         "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified"
       ],
-      "updated_at_utc": "2026-10-17T13:43:18+00:00"
+      "updated_at_utc": "2026-10-17T14:06:53+00:00"
     },
     "funding_spread|ICNTUSDT": {
       "strategy": "funding_spread",
       "label": "ICNTUSDT",
-      "snapshots": 1,
+      "snapshots": 2,
       "survives": 0,
-      "rejected": 1,
+      "rejected": 2,
       "insufficient": 0,
-      "consecutive_non_survivals": 1,
+      "consecutive_non_survivals": 2,
       "reason_counts": {
         "EUR 250 executable adverse basis=28.735 bps, recovery=6.87 funding periods; require <= 3.00": 1,
-        "4 observations; need at least 6": 1
+        "4 observations; need at least 6": 1,
+        "6 independent 15m buckets; median adverse basis costs 3.60 funding periods; median aligned basis=-16.325 bps": 1,
+        "EUR 250 executable adverse basis=26.853 bps, recovery=7.26 funding periods; require <= 3.00": 1
       },
       "last_verdict": "REJECTED",
-      "last_seen_utc": "2026-10-17T13:38:51+00:00",
-      "last_latest_edge_bps": 4.18,
-      "last_median_positive_edge_bps": 5.81,
-      "last_persistence": 0.75,
+      "last_seen_utc": "2026-10-17T14:02:52+00:00",
+      "last_latest_edge_bps": 3.7,
+      "last_median_positive_edge_bps": 4.18,
+      "last_persistence": 0.8333,
       "last_reasons": [
-        "EUR 250 executable adverse basis=28.735 bps, recovery=6.87 funding periods; require <= 3.00",
-        "4 observations; need at least 6"
+        "6 independent 15m buckets; median adverse basis costs 3.60 funding periods; median aligned basis=-16.325 bps",
+        "EUR 250 executable adverse basis=26.853 bps, recovery=7.26 funding periods; require <= 3.00"
       ],
-      "updated_at_utc": "2026-10-17T13:43:18+00:00"
+      "updated_at_utc": "2026-10-17T14:06:53+00:00"
     }
   },
   "note": "Historical failure memory is diagnostic evidence only. It cannot loosen gates or create READY."
