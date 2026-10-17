@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-17T04:26:12+00:00",
+  "generated_at_utc": "2026-10-17T04:31:11+00:00",
   "verdict": "INSUFFICIENT_EVIDENCE",
   "selected": {
     "key": "funding_spread|MSTRUSDT",
@@ -13,11 +13,11 @@
     "median_positive_edge_bps": 5.16,
     "p90_positive_edge_bps": 5.57,
     "max_edge_bps": 5.97,
-    "latest_edge_bps": 0.45,
+    "latest_edge_bps": 0.22,
     "research_score": 68.51,
     "classification": "strong_watch",
-    "last_seen_utc": "2026-10-17T04:21:44+00:00",
-    "latest_age_seconds": 107.5,
+    "last_seen_utc": "2026-10-17T04:27:09+00:00",
+    "latest_age_seconds": 86.5,
     "current_signal_fresh": true,
     "current_direction_stability": 1.0,
     "current_direction_observations": 17,
@@ -168,7 +168,7 @@
       "check": "freshness",
       "status": "PASS",
       "severity": "hard",
-      "detail": "candidate age 269s"
+      "detail": "candidate age 243s"
     },
     {
       "check": "sample_presence",
@@ -192,7 +192,7 @@
       "check": "latest_edge_sign",
       "status": "PASS",
       "severity": "soft",
-      "detail": "latest_edge_bps=0.4500"
+      "detail": "latest_edge_bps=0.2200"
     },
     {
       "check": "economic_relevance",
@@ -204,7 +204,7 @@
       "check": "funding_regime_decay",
       "status": "INSUFFICIENT",
       "severity": "hard",
-      "detail": "latest/median edge ratio=0.087; latest=0.450 bps/8h, median=5.160; require >= 0.25 to rule out sharp edge decay"
+      "detail": "latest/median edge ratio=0.043; latest=0.220 bps/8h, median=5.160; require >= 0.25 to rule out sharp edge decay"
     },
     {
       "check": "funding_basis_persistence",
@@ -233,7 +233,7 @@
   ],
   "hard_failures": [],
   "insufficient_evidence": [
-    "latest/median edge ratio=0.087; latest=0.450 bps/8h, median=5.160; require >= 0.25 to rule out sharp edge decay",
+    "latest/median edge ratio=0.043; latest=0.220 bps/8h, median=5.160; require >= 0.25 to rule out sharp edge decay",
     "no matching executable-entry probe at EUR 250 for MSTRUSDT short Bitget / long Gate"
   ],
   "policy": {
