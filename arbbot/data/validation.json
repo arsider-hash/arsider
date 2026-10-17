@@ -1,30 +1,30 @@
 {
-  "generated_at_utc": "2026-10-17T22:17:08+00:00",
+  "generated_at_utc": "2026-10-17T23:15:18+00:00",
   "selected": {
     "key": "stable_dislocation|USDC:Binance",
     "strategy": "stable_dislocation",
     "label": "USDC:Binance",
     "direction": "above peg",
     "venue": "Binance",
-    "observations": 38,
-    "positive_observations": 36,
-    "persistence": 0.9474,
-    "median_positive_edge_bps": 11.8,
-    "p90_positive_edge_bps": 13.15,
+    "observations": 37,
+    "positive_observations": 37,
+    "persistence": 1.0,
+    "median_positive_edge_bps": 11.75,
+    "p90_positive_edge_bps": 13.05,
     "max_edge_bps": 13.35,
-    "latest_edge_bps": 11.65,
-    "research_score": 86.86,
+    "latest_edge_bps": 11.15,
+    "research_score": 89.69,
     "classification": "strong_watch",
-    "last_seen_utc": "2026-10-17T22:13:28+00:00",
-    "latest_age_seconds": 60.9,
+    "last_seen_utc": "2026-10-17T23:11:49+00:00",
+    "latest_age_seconds": 54.5,
     "current_signal_fresh": true,
     "capital_utilisation": 1.0,
-    "capital_efficiency_score": 44.85,
-    "economic_relevance_score": 44.85,
+    "capital_efficiency_score": 48.77,
+    "economic_relevance_score": 48.77,
     "economic_relevance": {
       "reference_budget_eur": 250,
       "reference_basis": "paper_profit_per_event_at_median_edge",
-      "reference_payoff_eur": 0.295,
+      "reference_payoff_eur": 0.2938,
       "reference_target_eur": 0.25,
       "relevance_factor": 1.0,
       "economically_material_at_reference_budget": true
@@ -33,32 +33,32 @@
       "25": {
         "total_budget": 25,
         "effective_capital_per_edge": 25.0,
-        "paper_profit_per_event_at_median_edge": 0.0295
+        "paper_profit_per_event_at_median_edge": 0.0294
       },
       "50": {
         "total_budget": 50,
         "effective_capital_per_edge": 50.0,
-        "paper_profit_per_event_at_median_edge": 0.059
+        "paper_profit_per_event_at_median_edge": 0.0587
       },
       "100": {
         "total_budget": 100,
         "effective_capital_per_edge": 100.0,
-        "paper_profit_per_event_at_median_edge": 0.118
+        "paper_profit_per_event_at_median_edge": 0.1175
       },
       "250": {
         "total_budget": 250,
         "effective_capital_per_edge": 250.0,
-        "paper_profit_per_event_at_median_edge": 0.295
+        "paper_profit_per_event_at_median_edge": 0.2938
       },
       "500": {
         "total_budget": 500,
         "effective_capital_per_edge": 500.0,
-        "paper_profit_per_event_at_median_edge": 0.59
+        "paper_profit_per_event_at_median_edge": 0.5875
       },
       "1000": {
         "total_budget": 1000,
         "effective_capital_per_edge": 1000.0,
-        "paper_profit_per_event_at_median_edge": 1.18
+        "paper_profit_per_event_at_median_edge": 1.175
       }
     },
     "monthly_income_lens": {
@@ -74,39 +74,39 @@
   "valid_edge_samples": 6,
   "positive_samples": 6,
   "survival_rate": 1.0,
-  "median_stressed_bps": 11.65,
-  "min_stressed_bps": 11.55,
-  "max_stressed_bps": 11.75,
+  "median_stressed_bps": 11.15,
+  "min_stressed_bps": 11.15,
+  "max_stressed_bps": 11.15,
   "verdict": "SURVIVES_BURST",
   "samples": [
     {
-      "timestamp_utc": "2026-10-17T22:14:49+00:00",
-      "stressed_bps": 11.65,
+      "timestamp_utc": "2026-10-17T23:13:03+00:00",
+      "stressed_bps": 11.15,
       "candidate": true
     },
     {
-      "timestamp_utc": "2026-10-17T22:15:17+00:00",
-      "stressed_bps": 11.65,
+      "timestamp_utc": "2026-10-17T23:13:30+00:00",
+      "stressed_bps": 11.15,
       "candidate": true
     },
     {
-      "timestamp_utc": "2026-10-17T22:15:44+00:00",
-      "stressed_bps": 11.65,
+      "timestamp_utc": "2026-10-17T23:13:57+00:00",
+      "stressed_bps": 11.15,
       "candidate": true
     },
     {
-      "timestamp_utc": "2026-10-17T22:16:12+00:00",
-      "stressed_bps": 11.75,
+      "timestamp_utc": "2026-10-17T23:14:24+00:00",
+      "stressed_bps": 11.15,
       "candidate": true
     },
     {
-      "timestamp_utc": "2026-10-17T22:16:40+00:00",
-      "stressed_bps": 11.65,
+      "timestamp_utc": "2026-10-17T23:14:51+00:00",
+      "stressed_bps": 11.15,
       "candidate": true
     },
     {
-      "timestamp_utc": "2026-10-17T22:17:08+00:00",
-      "stressed_bps": 11.55,
+      "timestamp_utc": "2026-10-17T23:15:18+00:00",
+      "stressed_bps": 11.15,
       "candidate": true
     }
   ],
