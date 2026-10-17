@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-17T16:07:17+00:00",
+  "generated_at_utc": "2026-10-17T17:12:44+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -1911,25 +1911,25 @@
     "stable_dislocation|USDC:Binance": {
       "strategy": "stable_dislocation",
       "label": "USDC:Binance",
-      "snapshots": 11,
+      "snapshots": 12,
       "survives": 0,
       "rejected": 0,
-      "insufficient": 11,
-      "consecutive_non_survivals": 11,
+      "insufficient": 12,
+      "consecutive_non_survivals": 12,
       "reason_counts": {
-        "no EUR 250 stable round-trip probe": 11,
-        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 11
+        "no EUR 250 stable round-trip probe": 12,
+        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 12
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-10-17T16:03:46+00:00",
-      "last_latest_edge_bps": 11.45,
+      "last_seen_utc": "2026-10-17T17:09:05+00:00",
+      "last_latest_edge_bps": 11.65,
       "last_median_positive_edge_bps": 12.35,
-      "last_persistence": 0.8333,
+      "last_persistence": 0.8378,
       "last_reasons": [
         "no EUR 250 stable round-trip probe",
         "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified"
       ],
-      "updated_at_utc": "2026-10-17T16:07:17+00:00"
+      "updated_at_utc": "2026-10-17T17:12:44+00:00"
     },
     "funding_spread|ICNTUSDT": {
       "strategy": "funding_spread",
@@ -1959,23 +1959,28 @@
     "funding_spread|QUSDT": {
       "strategy": "funding_spread",
       "label": "QUSDT",
-      "snapshots": 1,
+      "snapshots": 2,
       "survives": 0,
       "rejected": 0,
-      "insufficient": 1,
-      "consecutive_non_survivals": 1,
+      "insufficient": 2,
+      "consecutive_non_survivals": 2,
       "reason_counts": {
-        "persistence=0.133; need at least 0.70": 1
+        "persistence=0.133; need at least 0.70": 1,
+        "persistence=0.118; need at least 0.70": 1,
+        "latest/median edge ratio=0.012; latest=0.700 bps/8h, median=59.810; require >= 0.25 to rule out sharp edge decay": 1,
+        "no matching executable-entry probe at EUR 250 for QUSDT long Bitget / short Gate": 1
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-10-17T16:03:01+00:00",
-      "last_latest_edge_bps": 117.5,
+      "last_seen_utc": "2026-10-17T17:08:17+00:00",
+      "last_latest_edge_bps": 0.7,
       "last_median_positive_edge_bps": 59.81,
-      "last_persistence": 0.1333,
+      "last_persistence": 0.1176,
       "last_reasons": [
-        "persistence=0.133; need at least 0.70"
+        "persistence=0.118; need at least 0.70",
+        "latest/median edge ratio=0.012; latest=0.700 bps/8h, median=59.810; require >= 0.25 to rule out sharp edge decay",
+        "no matching executable-entry probe at EUR 250 for QUSDT long Bitget / short Gate"
       ],
-      "updated_at_utc": "2026-10-17T16:07:17+00:00"
+      "updated_at_utc": "2026-10-17T17:12:44+00:00"
     }
   },
   "note": "Historical failure memory is diagnostic evidence only. It cannot loosen gates or create READY."
