@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-17T04:31:12+00:00",
+  "generated_at_utc": "2026-10-17T06:21:16+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -1828,27 +1828,31 @@
     "funding_spread|KORUUSDT": {
       "strategy": "funding_spread",
       "label": "KORUUSDT",
-      "snapshots": 34,
+      "snapshots": 35,
       "survives": 25,
       "rejected": 3,
-      "insufficient": 6,
-      "consecutive_non_survivals": 1,
+      "insufficient": 7,
+      "consecutive_non_survivals": 2,
       "reason_counts": {
         "4 observations; need at least 6": 1,
         "EUR 250 executable adverse basis=12.049 bps, recovery=4.78 funding periods; require <= 3.00": 1,
-        "no matching executable-entry probe at EUR 250 for KORUUSDT short Bitget / long Gate": 5,
+        "no matching executable-entry probe at EUR 250 for KORUUSDT short Bitget / long Gate": 6,
         "EUR 250 executable adverse basis=10.067 bps, recovery=4.77 funding periods; require <= 3.00": 1,
-        "EUR 250 executable adverse basis=19.528 bps, recovery=8.17 funding periods; require <= 3.00": 1
+        "EUR 250 executable adverse basis=19.528 bps, recovery=8.17 funding periods; require <= 3.00": 1,
+        "persistence=0.592; need at least 0.70": 1,
+        "latest/median edge ratio=0.196; latest=0.660 bps/8h, median=3.360; require >= 0.25 to rule out sharp edge decay": 1
       },
-      "last_verdict": "REJECTED",
-      "last_seen_utc": "2026-10-16T01:12:19+00:00",
-      "last_latest_edge_bps": 2.39,
-      "last_median_positive_edge_bps": 5.19,
-      "last_persistence": 0.902,
+      "last_verdict": "INSUFFICIENT_EVIDENCE",
+      "last_seen_utc": "2026-10-17T06:16:50+00:00",
+      "last_latest_edge_bps": 0.66,
+      "last_median_positive_edge_bps": 3.36,
+      "last_persistence": 0.5918,
       "last_reasons": [
-        "EUR 250 executable adverse basis=19.528 bps, recovery=8.17 funding periods; require <= 3.00"
+        "persistence=0.592; need at least 0.70",
+        "latest/median edge ratio=0.196; latest=0.660 bps/8h, median=3.360; require >= 0.25 to rule out sharp edge decay",
+        "no matching executable-entry probe at EUR 250 for KORUUSDT short Bitget / long Gate"
       ],
-      "updated_at_utc": "2026-10-16T01:14:12+00:00"
+      "updated_at_utc": "2026-10-17T06:21:16+00:00"
     },
     "funding_spread|WALUSDT": {
       "strategy": "funding_spread",
@@ -1894,25 +1898,25 @@
     "stable_dislocation|USDC:Binance": {
       "strategy": "stable_dislocation",
       "label": "USDC:Binance",
-      "snapshots": 3,
+      "snapshots": 4,
       "survives": 0,
       "rejected": 0,
-      "insufficient": 3,
-      "consecutive_non_survivals": 3,
+      "insufficient": 4,
+      "consecutive_non_survivals": 4,
       "reason_counts": {
-        "no EUR 250 stable round-trip probe": 3,
-        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 3
+        "no EUR 250 stable round-trip probe": 4,
+        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 4
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-10-17T04:27:40+00:00",
-      "last_latest_edge_bps": 13.35,
-      "last_median_positive_edge_bps": 11.45,
-      "last_persistence": 0.7949,
+      "last_seen_utc": "2026-10-17T06:17:36+00:00",
+      "last_latest_edge_bps": 13.05,
+      "last_median_positive_edge_bps": 11.7,
+      "last_persistence": 0.7895,
       "last_reasons": [
         "no EUR 250 stable round-trip probe",
         "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified"
       ],
-      "updated_at_utc": "2026-10-17T04:31:12+00:00"
+      "updated_at_utc": "2026-10-17T06:21:16+00:00"
     }
   },
   "note": "Historical failure memory is diagnostic evidence only. It cannot loosen gates or create READY."
