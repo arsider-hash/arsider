@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-17T10:46:54+00:00",
+  "generated_at_utc": "2026-10-17T12:41:51+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -1051,30 +1051,32 @@
     "funding_spread|SKHYNIXUSDT": {
       "strategy": "funding_spread",
       "label": "SKHYNIXUSDT",
-      "snapshots": 4,
+      "snapshots": 5,
       "survives": 1,
       "rejected": 0,
-      "insufficient": 3,
-      "consecutive_non_survivals": 3,
+      "insufficient": 4,
+      "consecutive_non_survivals": 4,
       "reason_counts": {
         "persistence=0.417; need at least 0.70": 1,
         "latest/median edge ratio=0.000; latest=0.000 bps/8h, median=4.790; require >= 0.25 to rule out sharp edge decay": 2,
-        "no matching executable-entry probe at EUR 250 for SKHYNIXUSDT long Bitget / short Gate": 3,
+        "no matching executable-entry probe at EUR 250 for SKHYNIXUSDT long Bitget / short Gate": 4,
         "persistence=0.408; need at least 0.70": 1,
         "persistence=0.375; need at least 0.70": 1,
-        "latest/median edge ratio=0.000; latest=0.000 bps/8h, median=4.720; require >= 0.25 to rule out sharp edge decay": 1
+        "latest/median edge ratio=0.000; latest=0.000 bps/8h, median=4.720; require >= 0.25 to rule out sharp edge decay": 1,
+        "persistence=0.333; need at least 0.70": 1,
+        "latest/median edge ratio=0.000; latest=0.000 bps/8h, median=4.600; require >= 0.25 to rule out sharp edge decay": 1
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-10-17T10:42:49+00:00",
+      "last_seen_utc": "2026-10-17T12:37:47+00:00",
       "last_latest_edge_bps": 0.0,
-      "last_median_positive_edge_bps": 4.72,
-      "last_persistence": 0.375,
+      "last_median_positive_edge_bps": 4.6,
+      "last_persistence": 0.3333,
       "last_reasons": [
-        "persistence=0.375; need at least 0.70",
-        "latest/median edge ratio=0.000; latest=0.000 bps/8h, median=4.720; require >= 0.25 to rule out sharp edge decay",
+        "persistence=0.333; need at least 0.70",
+        "latest/median edge ratio=0.000; latest=0.000 bps/8h, median=4.600; require >= 0.25 to rule out sharp edge decay",
         "no matching executable-entry probe at EUR 250 for SKHYNIXUSDT long Bitget / short Gate"
       ],
-      "updated_at_utc": "2026-10-17T10:46:54+00:00"
+      "updated_at_utc": "2026-10-17T12:41:51+00:00"
     },
     "funding_spread|MUUSDT": {
       "strategy": "funding_spread",
@@ -1909,25 +1911,25 @@
     "stable_dislocation|USDC:Binance": {
       "strategy": "stable_dislocation",
       "label": "USDC:Binance",
-      "snapshots": 7,
+      "snapshots": 8,
       "survives": 0,
       "rejected": 0,
-      "insufficient": 7,
-      "consecutive_non_survivals": 7,
+      "insufficient": 8,
+      "consecutive_non_survivals": 8,
       "reason_counts": {
-        "no EUR 250 stable round-trip probe": 7,
-        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 7
+        "no EUR 250 stable round-trip probe": 8,
+        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 8
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-10-17T10:43:22+00:00",
-      "last_latest_edge_bps": 13.15,
-      "last_median_positive_edge_bps": 11.85,
+      "last_seen_utc": "2026-10-17T12:38:18+00:00",
+      "last_latest_edge_bps": 12.85,
+      "last_median_positive_edge_bps": 12.05,
       "last_persistence": 0.7838,
       "last_reasons": [
         "no EUR 250 stable round-trip probe",
         "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified"
       ],
-      "updated_at_utc": "2026-10-17T10:46:54+00:00"
+      "updated_at_utc": "2026-10-17T12:41:51+00:00"
     }
   },
   "note": "Historical failure memory is diagnostic evidence only. It cannot loosen gates or create READY."
