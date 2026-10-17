@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-17T17:12:44+00:00",
+  "generated_at_utc": "2026-10-17T18:36:54+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -1356,15 +1356,15 @@
     "funding_spread|SANDUSDT": {
       "strategy": "funding_spread",
       "label": "SANDUSDT",
-      "snapshots": 18,
+      "snapshots": 19,
       "survives": 1,
       "rejected": 1,
-      "insufficient": 16,
-      "consecutive_non_survivals": 14,
+      "insufficient": 17,
+      "consecutive_non_survivals": 15,
       "reason_counts": {
         "4 observations; need at least 6": 1,
         "persistence=0.500; need at least 0.70": 2,
-        "5 observations; need at least 6": 1,
+        "5 observations; need at least 6": 2,
         "persistence=0.600; need at least 0.70": 2,
         "persistence=0.667; need at least 0.70": 1,
         "latest/median edge ratio=0.246; latest=6.110 bps/8h, median=24.790; require >= 0.25 to rule out sharp edge decay": 1,
@@ -1390,15 +1390,14 @@
         "latest funding direction matches 37% of independent basis buckets; require >= 50%": 1
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-10-04T00:39:14+00:00",
-      "last_latest_edge_bps": 32.41,
-      "last_median_positive_edge_bps": 32.44,
-      "last_persistence": 0.3488,
+      "last_seen_utc": "2026-10-17T18:32:48+00:00",
+      "last_latest_edge_bps": 10.8,
+      "last_median_positive_edge_bps": 15.21,
+      "last_persistence": 1.0,
       "last_reasons": [
-        "persistence=0.349; need at least 0.70",
-        "latest funding direction matches 37% of independent basis buckets; require >= 50%"
+        "5 observations; need at least 6"
       ],
-      "updated_at_utc": "2026-10-04T00:41:06+00:00"
+      "updated_at_utc": "2026-10-17T18:36:54+00:00"
     },
     "funding_spread|QNTUSDT": {
       "strategy": "funding_spread",
@@ -1911,25 +1910,25 @@
     "stable_dislocation|USDC:Binance": {
       "strategy": "stable_dislocation",
       "label": "USDC:Binance",
-      "snapshots": 12,
+      "snapshots": 13,
       "survives": 0,
       "rejected": 0,
-      "insufficient": 12,
-      "consecutive_non_survivals": 12,
+      "insufficient": 13,
+      "consecutive_non_survivals": 13,
       "reason_counts": {
-        "no EUR 250 stable round-trip probe": 12,
-        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 12
+        "no EUR 250 stable round-trip probe": 13,
+        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 13
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-10-17T17:09:05+00:00",
+      "last_seen_utc": "2026-10-17T18:33:22+00:00",
       "last_latest_edge_bps": 11.65,
-      "last_median_positive_edge_bps": 12.35,
-      "last_persistence": 0.8378,
+      "last_median_positive_edge_bps": 12.2,
+      "last_persistence": 0.8649,
       "last_reasons": [
         "no EUR 250 stable round-trip probe",
         "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified"
       ],
-      "updated_at_utc": "2026-10-17T17:12:44+00:00"
+      "updated_at_utc": "2026-10-17T18:36:54+00:00"
     },
     "funding_spread|ICNTUSDT": {
       "strategy": "funding_spread",
