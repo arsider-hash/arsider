@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-17T01:51:05+00:00",
+  "generated_at_utc": "2026-10-17T04:26:13+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -702,19 +702,25 @@
     "funding_spread|MSTRUSDT": {
       "strategy": "funding_spread",
       "label": "MSTRUSDT",
-      "snapshots": 1,
+      "snapshots": 2,
       "survives": 1,
       "rejected": 0,
-      "insufficient": 0,
-      "consecutive_non_survivals": 0,
-      "reason_counts": {},
-      "last_verdict": "SURVIVES_KILLER",
-      "last_seen_utc": "2026-09-20T12:37:28+00:00",
-      "last_latest_edge_bps": 5.4,
-      "last_median_positive_edge_bps": 5.48,
-      "last_persistence": 0.7143,
-      "last_reasons": [],
-      "updated_at_utc": "2026-09-20T12:39:22+00:00"
+      "insufficient": 1,
+      "consecutive_non_survivals": 1,
+      "reason_counts": {
+        "latest/median edge ratio=0.087; latest=0.450 bps/8h, median=5.160; require >= 0.25 to rule out sharp edge decay": 1,
+        "no matching executable-entry probe at EUR 250 for MSTRUSDT short Bitget / long Gate": 1
+      },
+      "last_verdict": "INSUFFICIENT_EVIDENCE",
+      "last_seen_utc": "2026-10-17T04:21:44+00:00",
+      "last_latest_edge_bps": 0.45,
+      "last_median_positive_edge_bps": 5.16,
+      "last_persistence": 0.7647,
+      "last_reasons": [
+        "latest/median edge ratio=0.087; latest=0.450 bps/8h, median=5.160; require >= 0.25 to rule out sharp edge decay",
+        "no matching executable-entry probe at EUR 250 for MSTRUSDT short Bitget / long Gate"
+      ],
+      "updated_at_utc": "2026-10-17T04:26:13+00:00"
     },
     "funding_spread|CELRUSDT": {
       "strategy": "funding_spread",
@@ -1887,25 +1893,25 @@
     "stable_dislocation|USDC:Binance": {
       "strategy": "stable_dislocation",
       "label": "USDC:Binance",
-      "snapshots": 1,
+      "snapshots": 2,
       "survives": 0,
       "rejected": 0,
-      "insufficient": 1,
-      "consecutive_non_survivals": 1,
+      "insufficient": 2,
+      "consecutive_non_survivals": 2,
       "reason_counts": {
-        "no EUR 250 stable round-trip probe": 1,
-        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 1
+        "no EUR 250 stable round-trip probe": 2,
+        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 2
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-10-16T12:20:12+00:00",
-      "last_latest_edge_bps": 11.65,
-      "last_median_positive_edge_bps": 11.25,
-      "last_persistence": 0.7209,
+      "last_seen_utc": "2026-10-17T04:22:32+00:00",
+      "last_latest_edge_bps": 13.35,
+      "last_median_positive_edge_bps": 11.45,
+      "last_persistence": 0.7895,
       "last_reasons": [
         "no EUR 250 stable round-trip probe",
         "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified"
       ],
-      "updated_at_utc": "2026-10-16T12:23:51+00:00"
+      "updated_at_utc": "2026-10-17T04:26:13+00:00"
     }
   },
   "note": "Historical failure memory is diagnostic evidence only. It cannot loosen gates or create READY."
