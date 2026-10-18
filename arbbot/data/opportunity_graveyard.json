@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-18T01:12:20+00:00",
+  "generated_at_utc": "2026-10-18T05:58:06+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -904,11 +904,11 @@
     "funding_spread|BRUSDT": {
       "strategy": "funding_spread",
       "label": "BRUSDT",
-      "snapshots": 11,
-      "survives": 6,
+      "snapshots": 12,
+      "survives": 7,
       "rejected": 5,
       "insufficient": 0,
-      "consecutive_non_survivals": 5,
+      "consecutive_non_survivals": 0,
       "reason_counts": {
         "candidate age 16359s": 1,
         "no matching executable-entry probe at EUR 250 for BRUSDT long Bitget / short Gate": 4,
@@ -918,15 +918,13 @@
         "candidate age 153929s": 1,
         "EUR 250 executable adverse basis=18.526 bps, recovery=3.43 funding periods; require <= 3.00": 1
       },
-      "last_verdict": "REJECTED",
-      "last_seen_utc": "2026-10-18T01:07:52+00:00",
-      "last_latest_edge_bps": 5.4,
-      "last_median_positive_edge_bps": 10.5,
+      "last_verdict": "SURVIVES_KILLER",
+      "last_seen_utc": "2026-10-18T05:53:44+00:00",
+      "last_latest_edge_bps": 8.6,
+      "last_median_positive_edge_bps": 8.94,
       "last_persistence": 1.0,
-      "last_reasons": [
-        "EUR 250 executable adverse basis=18.526 bps, recovery=3.43 funding periods; require <= 3.00"
-      ],
-      "updated_at_utc": "2026-10-18T01:12:20+00:00"
+      "last_reasons": [],
+      "updated_at_utc": "2026-10-18T05:58:06+00:00"
     },
     "funding_spread|RAREUSDT": {
       "strategy": "funding_spread",
