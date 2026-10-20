@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-20T04:52:12+00:00",
+  "generated_at_utc": "2026-10-20T05:23:25+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -30,13 +30,13 @@
     "stable_dislocation|FDUSD:Binance": {
       "strategy": "stable_dislocation",
       "label": "FDUSD:Binance",
-      "snapshots": 244,
+      "snapshots": 245,
       "survives": 0,
       "rejected": 0,
-      "insufficient": 244,
-      "consecutive_non_survivals": 244,
+      "insufficient": 245,
+      "consecutive_non_survivals": 245,
       "reason_counts": {
-        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 244,
+        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 245,
         "persistence=0.486; need at least 0.70": 1,
         "persistence=0.500; need at least 0.70": 2,
         "persistence=0.543; need at least 0.70": 1,
@@ -56,14 +56,14 @@
         "persistence=0.567; need at least 0.70": 1
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-10-20T04:48:34+00:00",
+      "last_seen_utc": "2026-10-20T05:19:49+00:00",
       "last_latest_edge_bps": 16.5,
       "last_median_positive_edge_bps": 16.5,
       "last_persistence": 1.0,
       "last_reasons": [
         "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified"
       ],
-      "updated_at_utc": "2026-10-20T04:52:12+00:00"
+      "updated_at_utc": "2026-10-20T05:23:25+00:00"
     },
     "funding_spread|VTHOUSDT": {
       "strategy": "funding_spread",
@@ -1630,16 +1630,16 @@
     "funding_spread|ERAUSDT": {
       "strategy": "funding_spread",
       "label": "ERAUSDT",
-      "snapshots": 18,
+      "snapshots": 19,
       "survives": 3,
-      "rejected": 8,
+      "rejected": 9,
       "insufficient": 7,
-      "consecutive_non_survivals": 13,
+      "consecutive_non_survivals": 14,
       "reason_counts": {
         "4 observations; need at least 6": 1,
         "persistence=0.500; need at least 0.70": 2,
         "latest/median edge ratio=0.080; latest=1.400 bps/8h, median=17.450; require >= 0.25 to rule out sharp edge decay": 1,
-        "no matching executable-entry probe at EUR 250 for ERAUSDT short Bitget / long Gate": 10,
+        "no matching executable-entry probe at EUR 250 for ERAUSDT short Bitget / long Gate": 11,
         "persistence=0.667; need at least 0.70": 1,
         "latest/median edge ratio=0.073; latest=1.000 bps/8h, median=13.740; require >= 0.25 to rule out sharp edge decay": 1,
         "persistence=0.526; need at least 0.70": 1,
@@ -1655,8 +1655,9 @@
         "candidate age 62361s": 1,
         "candidate age 63333s": 1,
         "candidate age 69896s": 1,
-        "persistence=0.609; need at least 0.70": 2,
-        "candidate age 78766s": 1
+        "persistence=0.609; need at least 0.70": 3,
+        "candidate age 78766s": 1,
+        "candidate age 80639s": 1
       },
       "last_verdict": "REJECTED",
       "last_seen_utc": "2026-10-19T06:59:26+00:00",
@@ -1664,11 +1665,11 @@
       "last_median_positive_edge_bps": 20.83,
       "last_persistence": 0.6087,
       "last_reasons": [
-        "candidate age 78766s",
+        "candidate age 80639s",
         "persistence=0.609; need at least 0.70",
         "no matching executable-entry probe at EUR 250 for ERAUSDT short Bitget / long Gate"
       ],
-      "updated_at_utc": "2026-10-20T04:52:12+00:00"
+      "updated_at_utc": "2026-10-20T05:23:25+00:00"
     },
     "funding_spread|OGNUSDT": {
       "strategy": "funding_spread",
