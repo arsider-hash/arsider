@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-21T16:38:34+00:00",
+  "generated_at_utc": "2026-10-21T19:06:18+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -30,13 +30,13 @@
     "stable_dislocation|FDUSD:Binance": {
       "strategy": "stable_dislocation",
       "label": "FDUSD:Binance",
-      "snapshots": 261,
+      "snapshots": 262,
       "survives": 0,
       "rejected": 0,
-      "insufficient": 261,
-      "consecutive_non_survivals": 261,
+      "insufficient": 262,
+      "consecutive_non_survivals": 262,
       "reason_counts": {
-        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 261,
+        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 262,
         "persistence=0.486; need at least 0.70": 1,
         "persistence=0.500; need at least 0.70": 2,
         "persistence=0.543; need at least 0.70": 1,
@@ -56,14 +56,14 @@
         "persistence=0.567; need at least 0.70": 1
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-10-21T15:42:38+00:00",
-      "last_latest_edge_bps": 5.5,
+      "last_seen_utc": "2026-10-21T19:02:34+00:00",
+      "last_latest_edge_bps": 12.5,
       "last_median_positive_edge_bps": 13.5,
-      "last_persistence": 0.875,
+      "last_persistence": 0.8537,
       "last_reasons": [
         "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified"
       ],
-      "updated_at_utc": "2026-10-21T15:46:19+00:00"
+      "updated_at_utc": "2026-10-21T19:06:18+00:00"
     },
     "funding_spread|VTHOUSDT": {
       "strategy": "funding_spread",
@@ -2045,29 +2045,32 @@
     "funding_spread|JCTUSDT": {
       "strategy": "funding_spread",
       "label": "JCTUSDT",
-      "snapshots": 17,
+      "snapshots": 18,
       "survives": 12,
       "rejected": 0,
-      "insufficient": 5,
-      "consecutive_non_survivals": 3,
+      "insufficient": 6,
+      "consecutive_non_survivals": 4,
       "reason_counts": {
         "latest/median edge ratio=0.000; latest=0.000 bps/8h, median=10.590; require >= 0.25 to rule out sharp edge decay": 1,
-        "no matching executable-entry probe at EUR 250 for JCTUSDT long Bitget / short Gate": 3,
+        "no matching executable-entry probe at EUR 250 for JCTUSDT long Bitget / short Gate": 4,
         "latest/median edge ratio=0.208; latest=2.140 bps/8h, median=10.300; require >= 0.25 to rule out sharp edge decay": 1,
         "latest/median edge ratio=0.212; latest=2.080 bps/8h, median=9.800; require >= 0.25 to rule out sharp edge decay": 1,
         "latest/median edge ratio=0.143; latest=1.400 bps/8h, median=9.800; require >= 0.25 to rule out sharp edge decay": 1,
-        "latest/median edge ratio=0.033; latest=0.320 bps/8h, median=9.800; require >= 0.25 to rule out sharp edge decay": 1
+        "latest/median edge ratio=0.033; latest=0.320 bps/8h, median=9.800; require >= 0.25 to rule out sharp edge decay": 1,
+        "persistence=0.625; need at least 0.70": 1,
+        "latest/median edge ratio=0.000; latest=0.000 bps/8h, median=9.800; require >= 0.25 to rule out sharp edge decay": 1
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-10-21T15:06:32+00:00",
-      "last_latest_edge_bps": 0.32,
+      "last_seen_utc": "2026-10-21T19:01:40+00:00",
+      "last_latest_edge_bps": 0.0,
       "last_median_positive_edge_bps": 9.8,
-      "last_persistence": 0.7143,
+      "last_persistence": 0.625,
       "last_reasons": [
-        "latest/median edge ratio=0.033; latest=0.320 bps/8h, median=9.800; require >= 0.25 to rule out sharp edge decay",
+        "persistence=0.625; need at least 0.70",
+        "latest/median edge ratio=0.000; latest=0.000 bps/8h, median=9.800; require >= 0.25 to rule out sharp edge decay",
         "no matching executable-entry probe at EUR 250 for JCTUSDT long Bitget / short Gate"
       ],
-      "updated_at_utc": "2026-10-21T15:11:07+00:00"
+      "updated_at_utc": "2026-10-21T19:06:18+00:00"
     },
     "funding_spread|DOODUSDT": {
       "strategy": "funding_spread",
