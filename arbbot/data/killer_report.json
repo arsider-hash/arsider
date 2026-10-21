@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-21T19:06:18+00:00",
+  "generated_at_utc": "2026-10-21T19:47:29+00:00",
   "verdict": "INSUFFICIENT_EVIDENCE",
   "selected": {
     "key": "stable_dislocation|FDUSD:Binance",
@@ -7,25 +7,25 @@
     "label": "FDUSD:Binance",
     "direction": "below peg",
     "venue": "Binance",
-    "observations": 41,
-    "positive_observations": 35,
-    "persistence": 0.8537,
-    "median_positive_edge_bps": 13.5,
+    "observations": 42,
+    "positive_observations": 36,
+    "persistence": 0.8571,
+    "median_positive_edge_bps": 13.0,
     "p90_positive_edge_bps": 18.5,
     "max_edge_bps": 18.5,
-    "latest_edge_bps": 12.5,
-    "research_score": 83.83,
+    "latest_edge_bps": 10.5,
+    "research_score": 83.39,
     "classification": "strong_watch",
-    "last_seen_utc": "2026-10-21T19:02:34+00:00",
-    "latest_age_seconds": 61.3,
+    "last_seen_utc": "2026-10-21T19:43:50+00:00",
+    "latest_age_seconds": 59.1,
     "current_signal_fresh": true,
     "capital_utilisation": 1.0,
-    "capital_efficiency_score": 42.04,
-    "economic_relevance_score": 42.04,
+    "capital_efficiency_score": 41.1,
+    "economic_relevance_score": 41.1,
     "economic_relevance": {
       "reference_budget_eur": 250,
       "reference_basis": "paper_profit_per_event_at_median_edge",
-      "reference_payoff_eur": 0.3375,
+      "reference_payoff_eur": 0.325,
       "reference_target_eur": 0.25,
       "relevance_factor": 1.0,
       "economically_material_at_reference_budget": true
@@ -34,32 +34,32 @@
       "25": {
         "total_budget": 25,
         "effective_capital_per_edge": 25.0,
-        "paper_profit_per_event_at_median_edge": 0.0338
+        "paper_profit_per_event_at_median_edge": 0.0325
       },
       "50": {
         "total_budget": 50,
         "effective_capital_per_edge": 50.0,
-        "paper_profit_per_event_at_median_edge": 0.0675
+        "paper_profit_per_event_at_median_edge": 0.065
       },
       "100": {
         "total_budget": 100,
         "effective_capital_per_edge": 100.0,
-        "paper_profit_per_event_at_median_edge": 0.135
+        "paper_profit_per_event_at_median_edge": 0.13
       },
       "250": {
         "total_budget": 250,
         "effective_capital_per_edge": 250.0,
-        "paper_profit_per_event_at_median_edge": 0.3375
+        "paper_profit_per_event_at_median_edge": 0.325
       },
       "500": {
         "total_budget": 500,
         "effective_capital_per_edge": 500.0,
-        "paper_profit_per_event_at_median_edge": 0.675
+        "paper_profit_per_event_at_median_edge": 0.65
       },
       "1000": {
         "total_budget": 1000,
         "effective_capital_per_edge": 1000.0,
-        "paper_profit_per_event_at_median_edge": 1.35
+        "paper_profit_per_event_at_median_edge": 1.3
       }
     },
     "monthly_income_lens": {
@@ -78,37 +78,37 @@
       "check": "freshness",
       "status": "PASS",
       "severity": "hard",
-      "detail": "candidate age 225s"
+      "detail": "candidate age 220s"
     },
     {
       "check": "sample_presence",
       "status": "PASS",
       "severity": "hard",
-      "detail": "41 observations; need at least 6"
+      "detail": "42 observations; need at least 6"
     },
     {
       "check": "positive_edge_evidence",
       "status": "PASS",
       "severity": "hard",
-      "detail": "positive_observations=35, median_positive_edge_bps=13.5000"
+      "detail": "positive_observations=36, median_positive_edge_bps=13.0000"
     },
     {
       "check": "persistence",
       "status": "PASS",
       "severity": "hard",
-      "detail": "persistence=0.854; need at least 0.70"
+      "detail": "persistence=0.857; need at least 0.70"
     },
     {
       "check": "latest_edge_sign",
       "status": "PASS",
       "severity": "soft",
-      "detail": "latest_edge_bps=12.5000"
+      "detail": "latest_edge_bps=10.5000"
     },
     {
       "check": "economic_relevance",
       "status": "PASS",
       "severity": "soft",
-      "detail": "economic_relevance_score=42.04"
+      "detail": "economic_relevance_score=41.10"
     },
     {
       "check": "burst_validation",
