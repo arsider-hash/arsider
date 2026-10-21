@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-21T20:08:45+00:00",
+  "generated_at_utc": "2026-10-21T20:26:01+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -2078,25 +2078,22 @@
     "funding_spread|DOODUSDT": {
       "strategy": "funding_spread",
       "label": "DOODUSDT",
-      "snapshots": 3,
-      "survives": 2,
+      "snapshots": 4,
+      "survives": 3,
       "rejected": 0,
       "insufficient": 1,
-      "consecutive_non_survivals": 1,
+      "consecutive_non_survivals": 0,
       "reason_counts": {
         "persistence=0.364; need at least 0.70": 1,
         "latest funding direction matches 36% of independent basis buckets; require >= 50%": 1
       },
-      "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-10-21T15:41:47+00:00",
-      "last_latest_edge_bps": 200.0,
-      "last_median_positive_edge_bps": 123.81,
-      "last_persistence": 0.3636,
-      "last_reasons": [
-        "persistence=0.364; need at least 0.70",
-        "latest funding direction matches 36% of independent basis buckets; require >= 50%"
-      ],
-      "updated_at_utc": "2026-10-21T15:46:19+00:00"
+      "last_verdict": "SURVIVES_KILLER",
+      "last_seen_utc": "2026-10-21T20:21:53+00:00",
+      "last_latest_edge_bps": 13.28,
+      "last_median_positive_edge_bps": 9.145,
+      "last_persistence": 0.7059,
+      "last_reasons": [],
+      "updated_at_utc": "2026-10-21T20:26:01+00:00"
     }
   },
   "note": "Historical failure memory is diagnostic evidence only. It cannot loosen gates or create READY."
