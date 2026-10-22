@@ -1,6 +1,6 @@
 {
-  "generated_at_utc": "2026-10-22T21:38:50+00:00",
-  "verdict": "INSUFFICIENT_EVIDENCE",
+  "generated_at_utc": "2026-10-22T22:54:16+00:00",
+  "verdict": "REJECTED",
   "selected": {
     "key": "funding_spread|IOSTUSDT",
     "strategy": "funding_spread",
@@ -15,10 +15,10 @@
     "max_edge_bps": 433.52,
     "latest_edge_bps": 0.16,
     "research_score": 65.48,
-    "classification": "watch",
+    "classification": "noise",
     "last_seen_utc": "2026-10-22T21:34:28+00:00",
-    "latest_age_seconds": 103.6,
-    "current_signal_fresh": true,
+    "latest_age_seconds": 4628.9,
+    "current_signal_fresh": false,
     "current_direction_stability": 0.5238,
     "current_direction_observations": 22,
     "direction_stability_required_for_watch": 0.5,
@@ -166,9 +166,9 @@
   "checks": [
     {
       "check": "freshness",
-      "status": "PASS",
+      "status": "FAIL",
       "severity": "hard",
-      "detail": "candidate age 263s"
+      "detail": "candidate age 4789s"
     },
     {
       "check": "sample_presence",
@@ -231,7 +231,9 @@
       "detail": "count=2, positive_rate=1.000, cumulative_paper_pnl=0.162611"
     }
   ],
-  "hard_failures": [],
+  "hard_failures": [
+    "candidate age 4789s"
+  ],
   "insufficient_evidence": [
     "persistence=0.452; need at least 0.70",
     "latest/median edge ratio=0.010; latest=0.160 bps/8h, median=16.480; require >= 0.25 to rule out sharp edge decay",
