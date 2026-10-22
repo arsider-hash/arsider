@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-22T22:54:17+00:00",
+  "generated_at_utc": "2026-10-22T23:19:58+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -30,13 +30,13 @@
     "stable_dislocation|FDUSD:Binance": {
       "strategy": "stable_dislocation",
       "label": "FDUSD:Binance",
-      "snapshots": 280,
+      "snapshots": 281,
       "survives": 0,
       "rejected": 0,
-      "insufficient": 280,
-      "consecutive_non_survivals": 280,
+      "insufficient": 281,
+      "consecutive_non_survivals": 281,
       "reason_counts": {
-        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 280,
+        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 281,
         "persistence=0.486; need at least 0.70": 1,
         "persistence=0.500; need at least 0.70": 2,
         "persistence=0.543; need at least 0.70": 1,
@@ -56,14 +56,14 @@
         "persistence=0.567; need at least 0.70": 1
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-10-22T22:50:36+00:00",
+      "last_seen_utc": "2026-10-22T23:16:17+00:00",
       "last_latest_edge_bps": 17.5,
       "last_median_positive_edge_bps": 12.5,
-      "last_persistence": 0.907,
+      "last_persistence": 0.9091,
       "last_reasons": [
         "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified"
       ],
-      "updated_at_utc": "2026-10-22T22:54:17+00:00"
+      "updated_at_utc": "2026-10-22T23:19:58+00:00"
     },
     "funding_spread|VTHOUSDT": {
       "strategy": "funding_spread",
@@ -243,11 +243,11 @@
     "funding_spread|IOSTUSDT": {
       "strategy": "funding_spread",
       "label": "IOSTUSDT",
-      "snapshots": 16,
+      "snapshots": 17,
       "survives": 1,
-      "rejected": 7,
+      "rejected": 8,
       "insufficient": 8,
-      "consecutive_non_survivals": 13,
+      "consecutive_non_survivals": 14,
       "reason_counts": {
         "candidate age 160270s": 1,
         "no matching executable-entry probe at EUR 250 for IOSTUSDT long Bitget / short Gate": 1,
@@ -265,7 +265,7 @@
         "persistence=0.458; need at least 0.70": 1,
         "persistence=0.423; need at least 0.70": 1,
         "latest/median edge ratio=0.016; latest=0.480 bps/8h, median=29.960; require >= 0.25 to rule out sharp edge decay": 1,
-        "no matching executable-entry probe at EUR 250 for IOSTUSDT short Bitget / long Gate": 3,
+        "no matching executable-entry probe at EUR 250 for IOSTUSDT short Bitget / long Gate": 4,
         "persistence=0.448; need at least 0.70": 1,
         "EUR 250 executable adverse basis=50.905 bps, recovery=12.24 funding periods; require <= 3.00": 1,
         "persistence=0.467; need at least 0.70": 1,
@@ -274,9 +274,10 @@
         "persistence=0.471; need at least 0.70": 1,
         "EUR 250 executable adverse basis=49.098 bps, recovery=11.16 funding periods; require <= 3.00": 1,
         "persistence=0.463; need at least 0.70": 1,
-        "persistence=0.452; need at least 0.70": 2,
-        "latest/median edge ratio=0.010; latest=0.160 bps/8h, median=16.480; require >= 0.25 to rule out sharp edge decay": 2,
-        "candidate age 4789s": 1
+        "persistence=0.452; need at least 0.70": 3,
+        "latest/median edge ratio=0.010; latest=0.160 bps/8h, median=16.480; require >= 0.25 to rule out sharp edge decay": 3,
+        "candidate age 4789s": 1,
+        "candidate age 6330s": 1
       },
       "last_verdict": "REJECTED",
       "last_seen_utc": "2026-10-22T21:34:28+00:00",
@@ -284,12 +285,12 @@
       "last_median_positive_edge_bps": 16.48,
       "last_persistence": 0.4524,
       "last_reasons": [
-        "candidate age 4789s",
+        "candidate age 6330s",
         "persistence=0.452; need at least 0.70",
         "latest/median edge ratio=0.010; latest=0.160 bps/8h, median=16.480; require >= 0.25 to rule out sharp edge decay",
         "no matching executable-entry probe at EUR 250 for IOSTUSDT short Bitget / long Gate"
       ],
-      "updated_at_utc": "2026-10-22T22:54:17+00:00"
+      "updated_at_utc": "2026-10-22T23:19:58+00:00"
     },
     "funding_spread|CVCUSDT": {
       "strategy": "funding_spread",
