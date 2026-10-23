@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-23T09:56:41+00:00",
+  "generated_at_utc": "2026-10-23T10:01:51+00:00",
   "verdict": "REJECTED",
   "selected": {
     "key": "funding_spread|IOSTUSDT",
@@ -17,7 +17,7 @@
     "research_score": 65.48,
     "classification": "noise",
     "last_seen_utc": "2026-10-22T21:34:28+00:00",
-    "latest_age_seconds": 44376.2,
+    "latest_age_seconds": 44681.7,
     "current_signal_fresh": false,
     "current_direction_stability": 0.5238,
     "current_direction_observations": 22,
@@ -168,7 +168,7 @@
       "check": "freshness",
       "status": "FAIL",
       "severity": "hard",
-      "detail": "candidate age 44533s"
+      "detail": "candidate age 44844s"
     },
     {
       "check": "sample_presence",
@@ -210,13 +210,13 @@
       "check": "funding_basis_persistence",
       "status": "PASS",
       "severity": "hard",
-      "detail": "42 independent 15m buckets; median adverse basis costs 0.00 funding periods; median aligned basis=0.020 bps"
+      "detail": "41 independent 15m buckets; median adverse basis costs 0.00 funding periods; median aligned basis=-1.025 bps"
     },
     {
       "check": "funding_direction_stability",
       "status": "PASS",
       "severity": "hard",
-      "detail": "latest funding direction matches 52% of independent basis buckets; require >= 50%"
+      "detail": "latest funding direction matches 51% of independent basis buckets; require >= 50%"
     },
     {
       "check": "funding_executable_entry",
@@ -232,7 +232,7 @@
     }
   ],
   "hard_failures": [
-    "candidate age 44533s"
+    "candidate age 44844s"
   ],
   "insufficient_evidence": [
     "persistence=0.452; need at least 0.70",
