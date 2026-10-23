@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-23T14:47:54+00:00",
+  "generated_at_utc": "2026-10-23T15:01:04+00:00",
   "verdict": "INSUFFICIENT_EVIDENCE",
   "selected": {
     "key": "stable_dislocation|FDUSD:Binance",
@@ -8,24 +8,24 @@
     "direction": "below peg",
     "venue": "Binance",
     "observations": 43,
-    "positive_observations": 39,
-    "persistence": 0.907,
-    "median_positive_edge_bps": 15.5,
+    "positive_observations": 40,
+    "persistence": 0.9302,
+    "median_positive_edge_bps": 16.0,
     "p90_positive_edge_bps": 17.5,
     "max_edge_bps": 17.5,
     "latest_edge_bps": 16.5,
-    "research_score": 89.26,
+    "research_score": 91.16,
     "classification": "strong_watch",
-    "last_seen_utc": "2026-10-23T14:44:13+00:00",
-    "latest_age_seconds": 60.8,
+    "last_seen_utc": "2026-10-23T14:57:23+00:00",
+    "latest_age_seconds": 60.0,
     "current_signal_fresh": true,
     "capital_utilisation": 1.0,
-    "capital_efficiency_score": 51.61,
-    "economic_relevance_score": 51.61,
+    "capital_efficiency_score": 55.12,
+    "economic_relevance_score": 55.12,
     "economic_relevance": {
       "reference_budget_eur": 250,
       "reference_basis": "paper_profit_per_event_at_median_edge",
-      "reference_payoff_eur": 0.3875,
+      "reference_payoff_eur": 0.4,
       "reference_target_eur": 0.25,
       "relevance_factor": 1.0,
       "economically_material_at_reference_budget": true
@@ -34,32 +34,32 @@
       "25": {
         "total_budget": 25,
         "effective_capital_per_edge": 25.0,
-        "paper_profit_per_event_at_median_edge": 0.0387
+        "paper_profit_per_event_at_median_edge": 0.04
       },
       "50": {
         "total_budget": 50,
         "effective_capital_per_edge": 50.0,
-        "paper_profit_per_event_at_median_edge": 0.0775
+        "paper_profit_per_event_at_median_edge": 0.08
       },
       "100": {
         "total_budget": 100,
         "effective_capital_per_edge": 100.0,
-        "paper_profit_per_event_at_median_edge": 0.155
+        "paper_profit_per_event_at_median_edge": 0.16
       },
       "250": {
         "total_budget": 250,
         "effective_capital_per_edge": 250.0,
-        "paper_profit_per_event_at_median_edge": 0.3875
+        "paper_profit_per_event_at_median_edge": 0.4
       },
       "500": {
         "total_budget": 500,
         "effective_capital_per_edge": 500.0,
-        "paper_profit_per_event_at_median_edge": 0.775
+        "paper_profit_per_event_at_median_edge": 0.8
       },
       "1000": {
         "total_budget": 1000,
         "effective_capital_per_edge": 1000.0,
-        "paper_profit_per_event_at_median_edge": 1.55
+        "paper_profit_per_event_at_median_edge": 1.6
       }
     },
     "monthly_income_lens": {
@@ -90,13 +90,13 @@
       "check": "positive_edge_evidence",
       "status": "PASS",
       "severity": "hard",
-      "detail": "positive_observations=39, median_positive_edge_bps=15.5000"
+      "detail": "positive_observations=40, median_positive_edge_bps=16.0000"
     },
     {
       "check": "persistence",
       "status": "PASS",
       "severity": "hard",
-      "detail": "persistence=0.907; need at least 0.70"
+      "detail": "persistence=0.930; need at least 0.70"
     },
     {
       "check": "latest_edge_sign",
@@ -108,7 +108,7 @@
       "check": "economic_relevance",
       "status": "PASS",
       "severity": "soft",
-      "detail": "economic_relevance_score=51.61"
+      "detail": "economic_relevance_score=55.12"
     },
     {
       "check": "burst_validation",
