@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-24T14:31:01+00:00",
+  "generated_at_utc": "2026-10-24T17:07:05+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -1685,11 +1685,11 @@
     "funding_spread|ERAUSDT": {
       "strategy": "funding_spread",
       "label": "ERAUSDT",
-      "snapshots": 30,
-      "survives": 3,
+      "snapshots": 31,
+      "survives": 4,
       "rejected": 18,
       "insufficient": 9,
-      "consecutive_non_survivals": 25,
+      "consecutive_non_survivals": 0,
       "reason_counts": {
         "4 observations; need at least 6": 2,
         "persistence=0.500; need at least 0.70": 2,
@@ -1726,15 +1726,13 @@
         "candidate age 122144s": 1,
         "5 observations; need at least 6": 1
       },
-      "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-10-24T09:59:17+00:00",
-      "last_latest_edge_bps": 18.62,
-      "last_median_positive_edge_bps": 27.98,
-      "last_persistence": 1.0,
-      "last_reasons": [
-        "5 observations; need at least 6"
-      ],
-      "updated_at_utc": "2026-10-24T10:03:25+00:00"
+      "last_verdict": "SURVIVES_KILLER",
+      "last_seen_utc": "2026-10-24T17:02:58+00:00",
+      "last_latest_edge_bps": 17.86,
+      "last_median_positive_edge_bps": 25.26,
+      "last_persistence": 0.9091,
+      "last_reasons": [],
+      "updated_at_utc": "2026-10-24T17:07:05+00:00"
     },
     "funding_spread|OGNUSDT": {
       "strategy": "funding_spread",
