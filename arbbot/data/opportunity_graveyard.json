@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-24T01:14:23+00:00",
+  "generated_at_utc": "2026-10-24T05:00:26+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -30,13 +30,13 @@
     "stable_dislocation|FDUSD:Binance": {
       "strategy": "stable_dislocation",
       "label": "FDUSD:Binance",
-      "snapshots": 294,
+      "snapshots": 295,
       "survives": 0,
       "rejected": 0,
-      "insufficient": 294,
-      "consecutive_non_survivals": 294,
+      "insufficient": 295,
+      "consecutive_non_survivals": 295,
       "reason_counts": {
-        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 294,
+        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 295,
         "persistence=0.486; need at least 0.70": 1,
         "persistence=0.500; need at least 0.70": 2,
         "persistence=0.543; need at least 0.70": 1,
@@ -56,14 +56,14 @@
         "persistence=0.567; need at least 0.70": 1
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-10-24T01:10:43+00:00",
-      "last_latest_edge_bps": 19.0,
+      "last_seen_utc": "2026-10-24T04:56:52+00:00",
+      "last_latest_edge_bps": 18.5,
       "last_median_positive_edge_bps": 16.5,
       "last_persistence": 1.0,
       "last_reasons": [
         "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified"
       ],
-      "updated_at_utc": "2026-10-24T01:14:23+00:00"
+      "updated_at_utc": "2026-10-24T05:00:26+00:00"
     },
     "funding_spread|VTHOUSDT": {
       "strategy": "funding_spread",
@@ -2157,6 +2157,29 @@
         "no matching executable-entry probe at EUR 250 for DOODUSDT long Bitget / short Gate"
       ],
       "updated_at_utc": "2026-10-23T14:47:54+00:00"
+    },
+    "funding_spread|BIRBUSDT": {
+      "strategy": "funding_spread",
+      "label": "BIRBUSDT",
+      "snapshots": 1,
+      "survives": 0,
+      "rejected": 0,
+      "insufficient": 1,
+      "consecutive_non_survivals": 1,
+      "reason_counts": {
+        "4 observations; need at least 6": 1,
+        "latest/median edge ratio=0.072; latest=5.620 bps/8h, median=77.560; require >= 0.25 to rule out sharp edge decay": 1
+      },
+      "last_verdict": "INSUFFICIENT_EVIDENCE",
+      "last_seen_utc": "2026-10-24T04:56:18+00:00",
+      "last_latest_edge_bps": 5.62,
+      "last_median_positive_edge_bps": 77.56,
+      "last_persistence": 1.0,
+      "last_reasons": [
+        "4 observations; need at least 6",
+        "latest/median edge ratio=0.072; latest=5.620 bps/8h, median=77.560; require >= 0.25 to rule out sharp edge decay"
+      ],
+      "updated_at_utc": "2026-10-24T05:00:26+00:00"
     }
   },
   "note": "Historical failure memory is diagnostic evidence only. It cannot loosen gates or create READY."
