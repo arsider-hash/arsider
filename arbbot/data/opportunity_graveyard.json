@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-24T10:03:25+00:00",
+  "generated_at_utc": "2026-10-24T10:53:38+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -30,13 +30,13 @@
     "stable_dislocation|FDUSD:Binance": {
       "strategy": "stable_dislocation",
       "label": "FDUSD:Binance",
-      "snapshots": 298,
+      "snapshots": 299,
       "survives": 0,
       "rejected": 0,
-      "insufficient": 298,
-      "consecutive_non_survivals": 298,
+      "insufficient": 299,
+      "consecutive_non_survivals": 299,
       "reason_counts": {
-        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 298,
+        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 299,
         "persistence=0.486; need at least 0.70": 1,
         "persistence=0.500; need at least 0.70": 2,
         "persistence=0.543; need at least 0.70": 1,
@@ -56,14 +56,14 @@
         "persistence=0.567; need at least 0.70": 1
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-10-24T09:59:53+00:00",
+      "last_seen_utc": "2026-10-24T10:49:59+00:00",
       "last_latest_edge_bps": 18.5,
-      "last_median_positive_edge_bps": 16.5,
+      "last_median_positive_edge_bps": 17.0,
       "last_persistence": 1.0,
       "last_reasons": [
         "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified"
       ],
-      "updated_at_utc": "2026-10-24T10:03:25+00:00"
+      "updated_at_utc": "2026-10-24T10:53:38+00:00"
     },
     "funding_spread|VTHOUSDT": {
       "strategy": "funding_spread",
@@ -2179,6 +2179,27 @@
         "latest/median edge ratio=0.112; latest=4.520 bps/8h, median=40.240; require >= 0.25 to rule out sharp edge decay"
       ],
       "updated_at_utc": "2026-10-24T05:52:50+00:00"
+    },
+    "funding_spread|INUSDT": {
+      "strategy": "funding_spread",
+      "label": "INUSDT",
+      "snapshots": 1,
+      "survives": 0,
+      "rejected": 0,
+      "insufficient": 1,
+      "consecutive_non_survivals": 1,
+      "reason_counts": {
+        "4 observations; need at least 6": 1
+      },
+      "last_verdict": "INSUFFICIENT_EVIDENCE",
+      "last_seen_utc": "2026-10-24T10:49:13+00:00",
+      "last_latest_edge_bps": 34.66,
+      "last_median_positive_edge_bps": 68.05,
+      "last_persistence": 1.0,
+      "last_reasons": [
+        "4 observations; need at least 6"
+      ],
+      "updated_at_utc": "2026-10-24T10:53:38+00:00"
     }
   },
   "note": "Historical failure memory is diagnostic evidence only. It cannot loosen gates or create READY."
