@@ -1,6 +1,6 @@
 {
-  "generated_at_utc": "2026-10-25T07:10:40+00:00",
-  "verdict": "SURVIVES_KILLER",
+  "generated_at_utc": "2026-10-25T09:30:20+00:00",
+  "verdict": "REJECTED",
   "selected": {
     "key": "funding_spread|INUSDT",
     "strategy": "funding_spread",
@@ -15,10 +15,10 @@
     "max_edge_bps": 89.74,
     "latest_edge_bps": 9.08,
     "research_score": 85.74,
-    "classification": "strong_watch",
+    "classification": "noise",
     "last_seen_utc": "2026-10-25T07:06:10+00:00",
-    "latest_age_seconds": 110.1,
-    "current_signal_fresh": true,
+    "latest_age_seconds": 8490.6,
+    "current_signal_fresh": false,
     "current_direction_stability": 0.7778,
     "current_direction_observations": 21,
     "direction_stability_required_for_watch": 0.5,
@@ -166,9 +166,9 @@
   "checks": [
     {
       "check": "freshness",
-      "status": "PASS",
+      "status": "FAIL",
       "severity": "hard",
-      "detail": "candidate age 271s"
+      "detail": "candidate age 8650s"
     },
     {
       "check": "sample_presence",
@@ -220,9 +220,9 @@
     },
     {
       "check": "funding_executable_entry",
-      "status": "PASS",
+      "status": "INSUFFICIENT",
       "severity": "hard",
-      "detail": "EUR 250 executable adverse basis=22.599 bps, recovery=2.49 funding periods; require <= 3.00"
+      "detail": "no matching executable-entry probe at EUR 250 for INUSDT short Bitget / long Gate"
     },
     {
       "check": "shadow_evidence",
@@ -231,8 +231,12 @@
       "detail": "no matching shadow history"
     }
   ],
-  "hard_failures": [],
-  "insufficient_evidence": [],
+  "hard_failures": [
+    "candidate age 8650s"
+  ],
+  "insufficient_evidence": [
+    "no matching executable-entry probe at EUR 250 for INUSDT short Bitget / long Gate"
+  ],
   "policy": {
     "max_staleness_seconds": 900,
     "min_candidate_observations": 6,
