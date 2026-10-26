@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-26T22:11:42+00:00",
+  "generated_at_utc": "2026-10-26T23:58:39+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -30,13 +30,13 @@
     "stable_dislocation|FDUSD:Binance": {
       "strategy": "stable_dislocation",
       "label": "FDUSD:Binance",
-      "snapshots": 322,
+      "snapshots": 323,
       "survives": 0,
       "rejected": 0,
-      "insufficient": 322,
-      "consecutive_non_survivals": 322,
+      "insufficient": 323,
+      "consecutive_non_survivals": 323,
       "reason_counts": {
-        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 322,
+        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 323,
         "persistence=0.486; need at least 0.70": 1,
         "persistence=0.500; need at least 0.70": 2,
         "persistence=0.543; need at least 0.70": 1,
@@ -56,14 +56,14 @@
         "persistence=0.567; need at least 0.70": 1
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-10-26T22:08:03+00:00",
-      "last_latest_edge_bps": 18.5,
+      "last_seen_utc": "2026-10-26T23:54:59+00:00",
+      "last_latest_edge_bps": 19.5,
       "last_median_positive_edge_bps": 18.5,
       "last_persistence": 1.0,
       "last_reasons": [
         "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified"
       ],
-      "updated_at_utc": "2026-10-26T22:11:42+00:00"
+      "updated_at_utc": "2026-10-26T23:58:39+00:00"
     },
     "funding_spread|VTHOUSDT": {
       "strategy": "funding_spread",
@@ -2215,40 +2215,41 @@
     "funding_spread|ORDERUSDT": {
       "strategy": "funding_spread",
       "label": "ORDERUSDT",
-      "snapshots": 25,
+      "snapshots": 26,
       "survives": 14,
-      "rejected": 9,
+      "rejected": 10,
       "insufficient": 2,
-      "consecutive_non_survivals": 9,
+      "consecutive_non_survivals": 10,
       "reason_counts": {
         "latest/median edge ratio=0.242; latest=10.480 bps/8h, median=43.280; require >= 0.25 to rule out sharp edge decay": 1,
         "latest/median edge ratio=0.186; latest=7.040 bps/8h, median=37.840; require >= 0.25 to rule out sharp edge decay": 1,
         "candidate age 34134s": 1,
         "latest/median edge ratio=0.095; latest=2.320 bps/8h, median=24.340; require >= 0.25 to rule out sharp edge decay": 3,
-        "no matching executable-entry probe at EUR 250 for ORDERUSDT short Bitget / long Gate": 9,
+        "no matching executable-entry probe at EUR 250 for ORDERUSDT short Bitget / long Gate": 10,
         "candidate age 35071s": 1,
         "candidate age 39309s": 1,
         "candidate age 44638s": 1,
-        "latest/median edge ratio=0.082; latest=2.320 bps/8h, median=28.240; require >= 0.25 to rule out sharp edge decay": 3,
+        "latest/median edge ratio=0.082; latest=2.320 bps/8h, median=28.240; require >= 0.25 to rule out sharp edge decay": 4,
         "candidate age 56283s": 1,
         "candidate age 57137s": 1,
         "candidate age 62271s": 1,
         "latest/median edge ratio=0.082; latest=2.320 bps/8h, median=28.280; require >= 0.25 to rule out sharp edge decay": 2,
         "candidate age 65363s": 1,
         "candidate age 72835s": 1,
-        "latest/median edge ratio=0.082; latest=2.320 bps/8h, median=28.320; require >= 0.25 to rule out sharp edge decay": 1
+        "latest/median edge ratio=0.082; latest=2.320 bps/8h, median=28.320; require >= 0.25 to rule out sharp edge decay": 1,
+        "candidate age 79252s": 1
       },
       "last_verdict": "REJECTED",
       "last_seen_utc": "2026-10-26T01:57:47+00:00",
       "last_latest_edge_bps": 2.32,
-      "last_median_positive_edge_bps": 28.32,
-      "last_persistence": 0.9512,
+      "last_median_positive_edge_bps": 28.24,
+      "last_persistence": 0.9487,
       "last_reasons": [
-        "candidate age 72835s",
-        "latest/median edge ratio=0.082; latest=2.320 bps/8h, median=28.320; require >= 0.25 to rule out sharp edge decay",
+        "candidate age 79252s",
+        "latest/median edge ratio=0.082; latest=2.320 bps/8h, median=28.240; require >= 0.25 to rule out sharp edge decay",
         "no matching executable-entry probe at EUR 250 for ORDERUSDT short Bitget / long Gate"
       ],
-      "updated_at_utc": "2026-10-26T22:11:42+00:00"
+      "updated_at_utc": "2026-10-26T23:58:39+00:00"
     },
     "funding_spread|UNITREEUSDT": {
       "strategy": "funding_spread",
