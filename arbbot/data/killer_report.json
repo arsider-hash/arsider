@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-26T06:05:44+00:00",
+  "generated_at_utc": "2026-10-26T07:16:55+00:00",
   "verdict": "INSUFFICIENT_EVIDENCE",
   "selected": {
     "key": "stable_dislocation|FDUSD:Binance",
@@ -7,8 +7,8 @@
     "label": "FDUSD:Binance",
     "direction": "below peg",
     "venue": "Binance",
-    "observations": 45,
-    "positive_observations": 45,
+    "observations": 46,
+    "positive_observations": 46,
     "persistence": 1.0,
     "median_positive_edge_bps": 18.5,
     "p90_positive_edge_bps": 21.5,
@@ -16,8 +16,8 @@
     "latest_edge_bps": 18.0,
     "research_score": 98.12,
     "classification": "strong_watch",
-    "last_seen_utc": "2026-10-26T06:02:06+00:00",
-    "latest_age_seconds": 58.5,
+    "last_seen_utc": "2026-10-26T07:13:16+00:00",
+    "latest_age_seconds": 58.8,
     "current_signal_fresh": true,
     "capital_utilisation": 1.0,
     "capital_efficiency_score": 69.91,
@@ -78,19 +78,19 @@
       "check": "freshness",
       "status": "PASS",
       "severity": "hard",
-      "detail": "candidate age 219s"
+      "detail": "candidate age 220s"
     },
     {
       "check": "sample_presence",
       "status": "PASS",
       "severity": "hard",
-      "detail": "45 observations; need at least 6"
+      "detail": "46 observations; need at least 6"
     },
     {
       "check": "positive_edge_evidence",
       "status": "PASS",
       "severity": "hard",
-      "detail": "positive_observations=45, median_positive_edge_bps=18.5000"
+      "detail": "positive_observations=46, median_positive_edge_bps=18.5000"
     },
     {
       "check": "persistence",
