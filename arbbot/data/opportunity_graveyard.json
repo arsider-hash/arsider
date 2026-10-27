@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-27T12:36:47+00:00",
+  "generated_at_utc": "2026-10-27T13:00:30+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -30,13 +30,13 @@
     "stable_dislocation|FDUSD:Binance": {
       "strategy": "stable_dislocation",
       "label": "FDUSD:Binance",
-      "snapshots": 332,
+      "snapshots": 333,
       "survives": 0,
       "rejected": 0,
-      "insufficient": 332,
-      "consecutive_non_survivals": 332,
+      "insufficient": 333,
+      "consecutive_non_survivals": 333,
       "reason_counts": {
-        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 332,
+        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 333,
         "persistence=0.486; need at least 0.70": 1,
         "persistence=0.500; need at least 0.70": 2,
         "persistence=0.543; need at least 0.70": 1,
@@ -56,14 +56,14 @@
         "persistence=0.567; need at least 0.70": 1
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-10-27T12:33:05+00:00",
+      "last_seen_utc": "2026-10-27T12:56:50+00:00",
       "last_latest_edge_bps": 14.5,
       "last_median_positive_edge_bps": 18.0,
       "last_persistence": 1.0,
       "last_reasons": [
         "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified"
       ],
-      "updated_at_utc": "2026-10-27T12:36:47+00:00"
+      "updated_at_utc": "2026-10-27T13:00:30+00:00"
     },
     "funding_spread|VTHOUSDT": {
       "strategy": "funding_spread",
@@ -2215,17 +2215,17 @@
     "funding_spread|ORDERUSDT": {
       "strategy": "funding_spread",
       "label": "ORDERUSDT",
-      "snapshots": 35,
+      "snapshots": 36,
       "survives": 14,
-      "rejected": 19,
+      "rejected": 20,
       "insufficient": 2,
-      "consecutive_non_survivals": 19,
+      "consecutive_non_survivals": 20,
       "reason_counts": {
         "latest/median edge ratio=0.242; latest=10.480 bps/8h, median=43.280; require >= 0.25 to rule out sharp edge decay": 1,
         "latest/median edge ratio=0.186; latest=7.040 bps/8h, median=37.840; require >= 0.25 to rule out sharp edge decay": 1,
         "candidate age 34134s": 1,
         "latest/median edge ratio=0.095; latest=2.320 bps/8h, median=24.340; require >= 0.25 to rule out sharp edge decay": 3,
-        "no matching executable-entry probe at EUR 250 for ORDERUSDT short Bitget / long Gate": 19,
+        "no matching executable-entry probe at EUR 250 for ORDERUSDT short Bitget / long Gate": 20,
         "candidate age 35071s": 1,
         "candidate age 39309s": 1,
         "candidate age 44638s": 1,
@@ -2251,19 +2251,21 @@
         "latest/median edge ratio=0.111; latest=2.320 bps/8h, median=20.880; require >= 0.25 to rule out sharp edge decay": 1,
         "candidate age 117066s": 1,
         "latest/median edge ratio=0.117; latest=2.320 bps/8h, median=19.800; require >= 0.25 to rule out sharp edge decay": 2,
-        "candidate age 124739s": 1
+        "candidate age 124739s": 1,
+        "candidate age 126163s": 1,
+        "latest/median edge ratio=0.117; latest=2.320 bps/8h, median=19.840; require >= 0.25 to rule out sharp edge decay": 1
       },
       "last_verdict": "REJECTED",
       "last_seen_utc": "2026-10-26T01:57:47+00:00",
       "last_latest_edge_bps": 2.32,
-      "last_median_positive_edge_bps": 19.8,
-      "last_persistence": 0.9565,
+      "last_median_positive_edge_bps": 19.84,
+      "last_persistence": 0.9545,
       "last_reasons": [
-        "candidate age 124739s",
-        "latest/median edge ratio=0.117; latest=2.320 bps/8h, median=19.800; require >= 0.25 to rule out sharp edge decay",
+        "candidate age 126163s",
+        "latest/median edge ratio=0.117; latest=2.320 bps/8h, median=19.840; require >= 0.25 to rule out sharp edge decay",
         "no matching executable-entry probe at EUR 250 for ORDERUSDT short Bitget / long Gate"
       ],
-      "updated_at_utc": "2026-10-27T12:36:47+00:00"
+      "updated_at_utc": "2026-10-27T13:00:30+00:00"
     },
     "funding_spread|UNITREEUSDT": {
       "strategy": "funding_spread",
