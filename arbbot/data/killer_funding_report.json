@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-27T06:20:00+00:00",
+  "generated_at_utc": "2026-10-27T07:00:08+00:00",
   "verdict": "REJECTED",
   "selected": {
     "key": "funding_spread|ORDERUSDT",
@@ -17,7 +17,7 @@
     "research_score": 98.17,
     "classification": "noise",
     "last_seen_utc": "2026-10-26T01:57:47+00:00",
-    "latest_age_seconds": 101973.9,
+    "latest_age_seconds": 104384.9,
     "current_signal_fresh": false,
     "current_direction_stability": 1.0,
     "current_direction_observations": 30,
@@ -168,7 +168,7 @@
       "check": "freshness",
       "status": "FAIL",
       "severity": "hard",
-      "detail": "candidate age 102133s"
+      "detail": "candidate age 104542s"
     },
     {
       "check": "sample_presence",
@@ -210,7 +210,7 @@
       "check": "funding_basis_persistence",
       "status": "PASS",
       "severity": "hard",
-      "detail": "30 independent 15m buckets; median adverse basis costs 0.11 funding periods; median aligned basis=-2.186 bps"
+      "detail": "29 independent 15m buckets; median adverse basis costs 0.11 funding periods; median aligned basis=-2.211 bps"
     },
     {
       "check": "funding_direction_stability",
@@ -232,7 +232,7 @@
     }
   ],
   "hard_failures": [
-    "candidate age 102133s"
+    "candidate age 104542s"
   ],
   "insufficient_evidence": [
     "latest/median edge ratio=0.105; latest=2.320 bps/8h, median=22.080; require >= 0.25 to rule out sharp edge decay",
