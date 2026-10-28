@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-28T15:28:38+00:00",
+  "generated_at_utc": "2026-10-28T16:01:00+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -2278,11 +2278,11 @@
     "funding_spread|UNITREEUSDT": {
       "strategy": "funding_spread",
       "label": "UNITREEUSDT",
-      "snapshots": 12,
-      "survives": 0,
+      "snapshots": 13,
+      "survives": 1,
       "rejected": 11,
       "insufficient": 1,
-      "consecutive_non_survivals": 12,
+      "consecutive_non_survivals": 0,
       "reason_counts": {
         "4 observations; need at least 6": 1,
         "candidate age 76963s": 1,
@@ -2298,16 +2298,13 @@
         "candidate age 135218s": 1,
         "candidate age 137082s": 1
       },
-      "last_verdict": "REJECTED",
-      "last_seen_utc": "2026-10-27T01:23:56+00:00",
-      "last_latest_edge_bps": 31.84,
-      "last_median_positive_edge_bps": 16.52,
+      "last_verdict": "SURVIVES_KILLER",
+      "last_seen_utc": "2026-10-28T15:56:33+00:00",
+      "last_latest_edge_bps": 42.88,
+      "last_median_positive_edge_bps": 16.63,
       "last_persistence": 1.0,
-      "last_reasons": [
-        "candidate age 137082s",
-        "no matching executable-entry probe at EUR 250 for UNITREEUSDT short Bitget / long Gate"
-      ],
-      "updated_at_utc": "2026-10-28T15:28:38+00:00"
+      "last_reasons": [],
+      "updated_at_utc": "2026-10-28T16:01:00+00:00"
     }
   },
   "note": "Historical failure memory is diagnostic evidence only. It cannot loosen gates or create READY."
