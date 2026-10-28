@@ -1,6 +1,6 @@
 {
-  "generated_at_utc": "2026-10-28T20:10:09+00:00",
-  "verdict": "SURVIVES_KILLER",
+  "generated_at_utc": "2026-10-28T20:36:04+00:00",
+  "verdict": "REJECTED",
   "selected": {
     "key": "funding_spread|UNITREEUSDT",
     "strategy": "funding_spread",
@@ -15,10 +15,10 @@
     "max_edge_bps": 42.88,
     "latest_edge_bps": 41.1,
     "research_score": 90.0,
-    "classification": "strong_watch",
+    "classification": "noise",
     "last_seen_utc": "2026-10-28T20:05:39+00:00",
-    "latest_age_seconds": 110.3,
-    "current_signal_fresh": true,
+    "latest_age_seconds": 1666.1,
+    "current_signal_fresh": false,
     "current_direction_stability": 1.0,
     "current_direction_observations": 6,
     "direction_stability_required_for_watch": 0.5,
@@ -166,9 +166,9 @@
   "checks": [
     {
       "check": "freshness",
-      "status": "PASS",
+      "status": "FAIL",
       "severity": "hard",
-      "detail": "candidate age 271s"
+      "detail": "candidate age 1826s"
     },
     {
       "check": "sample_presence",
@@ -220,9 +220,9 @@
     },
     {
       "check": "funding_executable_entry",
-      "status": "PASS",
+      "status": "INSUFFICIENT",
       "severity": "hard",
-      "detail": "EUR 250 executable basis is non-adverse; adverse basis=0.000 bps, recovery=0.00 funding periods"
+      "detail": "no matching executable-entry probe at EUR 250 for UNITREEUSDT short Bitget / long Gate"
     },
     {
       "check": "shadow_evidence",
@@ -231,8 +231,12 @@
       "detail": "no matching shadow history"
     }
   ],
-  "hard_failures": [],
-  "insufficient_evidence": [],
+  "hard_failures": [
+    "candidate age 1826s"
+  ],
+  "insufficient_evidence": [
+    "no matching executable-entry probe at EUR 250 for UNITREEUSDT short Bitget / long Gate"
+  ],
   "policy": {
     "max_staleness_seconds": 900,
     "min_candidate_observations": 6,
