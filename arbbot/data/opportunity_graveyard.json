@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-29T00:04:34+00:00",
+  "generated_at_utc": "2026-10-29T00:31:49+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -30,13 +30,13 @@
     "stable_dislocation|FDUSD:Binance": {
       "strategy": "stable_dislocation",
       "label": "FDUSD:Binance",
-      "snapshots": 354,
+      "snapshots": 355,
       "survives": 0,
       "rejected": 0,
-      "insufficient": 354,
-      "consecutive_non_survivals": 354,
+      "insufficient": 355,
+      "consecutive_non_survivals": 355,
       "reason_counts": {
-        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 354,
+        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 355,
         "persistence=0.486; need at least 0.70": 1,
         "persistence=0.500; need at least 0.70": 2,
         "persistence=0.543; need at least 0.70": 1,
@@ -56,14 +56,14 @@
         "persistence=0.567; need at least 0.70": 1
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-10-29T00:00:52+00:00",
+      "last_seen_utc": "2026-10-29T00:28:09+00:00",
       "last_latest_edge_bps": 12.5,
-      "last_median_positive_edge_bps": 14.5,
+      "last_median_positive_edge_bps": 14.0,
       "last_persistence": 1.0,
       "last_reasons": [
         "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified"
       ],
-      "updated_at_utc": "2026-10-29T00:04:34+00:00"
+      "updated_at_utc": "2026-10-29T00:31:49+00:00"
     },
     "funding_spread|VTHOUSDT": {
       "strategy": "funding_spread",
@@ -2278,15 +2278,15 @@
     "funding_spread|UNITREEUSDT": {
       "strategy": "funding_spread",
       "label": "UNITREEUSDT",
-      "snapshots": 17,
+      "snapshots": 18,
       "survives": 2,
-      "rejected": 14,
+      "rejected": 15,
       "insufficient": 1,
-      "consecutive_non_survivals": 3,
+      "consecutive_non_survivals": 4,
       "reason_counts": {
-        "4 observations; need at least 6": 2,
+        "4 observations; need at least 6": 3,
         "candidate age 76963s": 1,
-        "no matching executable-entry probe at EUR 250 for UNITREEUSDT short Bitget / long Gate": 14,
+        "no matching executable-entry probe at EUR 250 for UNITREEUSDT short Bitget / long Gate": 15,
         "candidate age 79460s": 1,
         "candidate age 85931s": 1,
         "candidate age 87860s": 1,
@@ -2299,7 +2299,8 @@
         "candidate age 137082s": 1,
         "candidate age 1826s": 1,
         "candidate age 3397s": 1,
-        "candidate age 14334s": 1
+        "candidate age 14334s": 1,
+        "candidate age 15970s": 1
       },
       "last_verdict": "REJECTED",
       "last_seen_utc": "2026-10-28T20:05:39+00:00",
@@ -2307,11 +2308,11 @@
       "last_median_positive_edge_bps": 36.47,
       "last_persistence": 1.0,
       "last_reasons": [
-        "candidate age 14334s",
+        "candidate age 15970s",
         "4 observations; need at least 6",
         "no matching executable-entry probe at EUR 250 for UNITREEUSDT short Bitget / long Gate"
       ],
-      "updated_at_utc": "2026-10-29T00:04:34+00:00"
+      "updated_at_utc": "2026-10-29T00:31:49+00:00"
     }
   },
   "note": "Historical failure memory is diagnostic evidence only. It cannot loosen gates or create READY."
