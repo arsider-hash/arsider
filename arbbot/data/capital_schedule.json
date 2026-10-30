@@ -1,12 +1,12 @@
 {
-  "generated_at_utc": "2026-10-30T19:17:12+00:00",
+  "generated_at_utc": "2026-10-30T20:43:19+00:00",
   "status": "SIMULATED",
   "starting_capital_eur": 250.0,
   "window_days": 30,
-  "window_end_utc": "2026-10-28T20:05:39+00:00",
-  "window_start_utc": "2026-09-28T20:05:39+00:00",
-  "proof_window_span_days": 27.8403,
-  "eligible_events": 87,
+  "window_end_utc": "2026-10-30T20:38:02+00:00",
+  "window_start_utc": "2026-09-30T20:38:02+00:00",
+  "proof_window_span_days": 29.8628,
+  "eligible_events": 88,
   "rejected_input_events": 0,
   "plans_tested": 3,
   "best_plan": {
@@ -17,10 +17,10 @@
     "venue_count": 2,
     "total_preallocated_eur": 250.0,
     "idle_unallocated_eur": 0.0,
-    "accepted_events": 4,
-    "net_eur": 1.201535,
-    "human_minutes": 8.0,
-    "average_locked_capital_eur": 233.333,
+    "accepted_events": 5,
+    "net_eur": 1.254544,
+    "human_minutes": 10.0,
+    "average_locked_capital_eur": 291.667,
     "missed": {
       "capital_busy": 83
     },
@@ -79,6 +79,20 @@
           "Gate": 125.0
         },
         "expected_net_eur": 0.01125875,
+        "human_minutes": 2.0
+      },
+      {
+        "event_id": "crypto|funding_spread|INTWUSDT|2026-10-30T20:38:02+00:00|250",
+        "observed_at_utc": "2026-10-30T20:38:02+00:00",
+        "release_at_utc": "2026-11-06T20:38:02+00:00",
+        "habitat": "crypto",
+        "strategy": "funding_spread",
+        "label": "INTWUSDT",
+        "required_preallocation_eur": {
+          "Bitget": 125.0,
+          "Gate": 125.0
+        },
+        "expected_net_eur": 0.05300875,
         "human_minutes": 2.0
       }
     ]
@@ -91,10 +105,10 @@
     "venue_count": 2,
     "total_preallocated_eur": 250.0,
     "idle_unallocated_eur": 0.0,
-    "accepted_events": 4,
-    "net_eur": 1.201535,
-    "human_minutes": 8.0,
-    "average_locked_capital_eur": 233.333,
+    "accepted_events": 5,
+    "net_eur": 1.254544,
+    "human_minutes": 10.0,
+    "average_locked_capital_eur": 291.667,
     "missed": {
       "capital_busy": 83
     },
@@ -153,6 +167,20 @@
           "Gate": 125.0
         },
         "expected_net_eur": 0.01125875,
+        "human_minutes": 2.0
+      },
+      {
+        "event_id": "crypto|funding_spread|INTWUSDT|2026-10-30T20:38:02+00:00|250",
+        "observed_at_utc": "2026-10-30T20:38:02+00:00",
+        "release_at_utc": "2026-11-06T20:38:02+00:00",
+        "habitat": "crypto",
+        "strategy": "funding_spread",
+        "label": "INTWUSDT",
+        "required_preallocation_eur": {
+          "Bitget": 125.0,
+          "Gate": 125.0
+        },
+        "expected_net_eur": 0.05300875,
         "human_minutes": 2.0
       }
     ]
