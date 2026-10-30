@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-30T02:44:11+00:00",
+  "generated_at_utc": "2026-10-30T03:07:12+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -30,13 +30,13 @@
     "stable_dislocation|FDUSD:Binance": {
       "strategy": "stable_dislocation",
       "label": "FDUSD:Binance",
-      "snapshots": 371,
+      "snapshots": 372,
       "survives": 0,
       "rejected": 0,
-      "insufficient": 371,
-      "consecutive_non_survivals": 371,
+      "insufficient": 372,
+      "consecutive_non_survivals": 372,
       "reason_counts": {
-        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 371,
+        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 372,
         "persistence=0.486; need at least 0.70": 1,
         "persistence=0.500; need at least 0.70": 2,
         "persistence=0.543; need at least 0.70": 1,
@@ -56,14 +56,14 @@
         "persistence=0.567; need at least 0.70": 1
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-10-30T02:40:33+00:00",
+      "last_seen_utc": "2026-10-30T03:03:31+00:00",
       "last_latest_edge_bps": 21.5,
       "last_median_positive_edge_bps": 13.5,
       "last_persistence": 1.0,
       "last_reasons": [
         "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified"
       ],
-      "updated_at_utc": "2026-10-30T02:44:11+00:00"
+      "updated_at_utc": "2026-10-30T03:07:12+00:00"
     },
     "funding_spread|VTHOUSDT": {
       "strategy": "funding_spread",
@@ -2353,6 +2353,27 @@
         "no matching executable-entry probe at EUR 250 for IRYSUSDT short Bitget / long Gate"
       ],
       "updated_at_utc": "2026-10-30T00:54:03+00:00"
+    },
+    "funding_spread|TRXUSDT": {
+      "strategy": "funding_spread",
+      "label": "TRXUSDT",
+      "snapshots": 1,
+      "survives": 0,
+      "rejected": 0,
+      "insufficient": 1,
+      "consecutive_non_survivals": 1,
+      "reason_counts": {
+        "persistence=0.429; need at least 0.70": 1
+      },
+      "last_verdict": "INSUFFICIENT_EVIDENCE",
+      "last_seen_utc": "2026-10-30T03:02:38+00:00",
+      "last_latest_edge_bps": 18.4,
+      "last_median_positive_edge_bps": 18.73,
+      "last_persistence": 0.4286,
+      "last_reasons": [
+        "persistence=0.429; need at least 0.70"
+      ],
+      "updated_at_utc": "2026-10-30T03:07:12+00:00"
     }
   },
   "note": "Historical failure memory is diagnostic evidence only. It cannot loosen gates or create READY."
