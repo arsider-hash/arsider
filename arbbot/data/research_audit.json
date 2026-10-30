@@ -1,214 +1,144 @@
 {
-  "generated_at_utc": "2026-10-30T14:05:35+00:00",
+  "generated_at_utc": "2026-10-30T16:01:29+00:00",
   "mode": "read_only_research_audit",
   "can_promote_candidate": false,
   "feed_health": {
     "health.json": {
       "status": "fresh",
-      "age_seconds": 20.7,
+      "age_seconds": 0.8,
       "timestamp_field": "unified_lab_utc",
-      "timestamp": "2026-10-30T14:05:15+00:00"
+      "timestamp": "2026-10-30T16:01:29+00:00"
     },
     "market_latest.json": {
       "status": "fresh",
-      "age_seconds": 240.7,
+      "age_seconds": 215.8,
       "timestamp_field": "generated_at_utc",
-      "timestamp": "2026-10-30T14:01:35+00:00"
+      "timestamp": "2026-10-30T15:57:54+00:00"
     },
     "eu_latest.json": {
       "status": "fresh",
-      "age_seconds": 184.7,
+      "age_seconds": 164.8,
       "timestamp_field": "generated_at_utc",
-      "timestamp": "2026-10-30T14:02:31+00:00"
+      "timestamp": "2026-10-30T15:58:45+00:00"
     },
     "funding_latest.json": {
       "status": "fresh",
-      "age_seconds": 299.7,
+      "age_seconds": 256.8,
       "timestamp_field": "generated_at_utc",
-      "timestamp": "2026-10-30T14:00:36+00:00"
+      "timestamp": "2026-10-30T15:57:13+00:00"
     },
     "latest.json": {
       "status": "fresh",
-      "age_seconds": 299.7,
+      "age_seconds": 257.8,
       "timestamp_field": "generated_at_utc",
-      "timestamp": "2026-10-30T14:00:36+00:00"
+      "timestamp": "2026-10-30T15:57:12+00:00"
     },
     "yield_latest.json": {
       "status": "fresh",
-      "age_seconds": 182.7,
+      "age_seconds": 159.8,
       "timestamp_field": "generated_at_utc",
-      "timestamp": "2026-10-30T14:02:33+00:00"
+      "timestamp": "2026-10-30T15:58:50+00:00"
     },
     "scoreboard.json": {
       "status": "fresh",
-      "age_seconds": 181.7,
+      "age_seconds": 159.8,
       "timestamp_field": "generated_at_utc",
-      "timestamp": "2026-10-30T14:02:34+00:00"
+      "timestamp": "2026-10-30T15:58:50+00:00"
     },
     "capital_rank.json": {
       "status": "fresh",
-      "age_seconds": 180.7,
+      "age_seconds": 158.8,
       "timestamp_field": "generated_at_utc",
-      "timestamp": "2026-10-30T14:02:35+00:00"
+      "timestamp": "2026-10-30T15:58:51+00:00"
     },
     "validation.json": {
       "status": "fresh",
-      "age_seconds": 22.7,
+      "age_seconds": 2.8,
       "timestamp_field": "generated_at_utc",
-      "timestamp": "2026-10-30T14:05:13+00:00"
+      "timestamp": "2026-10-30T16:01:27+00:00"
     },
     "depth_validation.json": {
       "status": "fresh",
-      "age_seconds": 22.7,
+      "age_seconds": 2.8,
       "timestamp_field": "generated_at_utc",
-      "timestamp": "2026-10-30T14:05:13+00:00"
+      "timestamp": "2026-10-30T16:01:27+00:00"
     },
     "killer_report.json": {
       "status": "fresh",
-      "age_seconds": 20.7,
+      "age_seconds": 0.8,
       "timestamp_field": "generated_at_utc",
-      "timestamp": "2026-10-30T14:05:15+00:00"
+      "timestamp": "2026-10-30T16:01:29+00:00"
     },
     "killer_funding_report.json": {
       "status": "fresh",
-      "age_seconds": 21.7,
+      "age_seconds": 1.8,
       "timestamp_field": "generated_at_utc",
-      "timestamp": "2026-10-30T14:05:14+00:00"
+      "timestamp": "2026-10-30T16:01:28+00:00"
     },
     "shadow_summary.json": {
       "status": "fresh",
-      "age_seconds": 21.7,
+      "age_seconds": 1.8,
       "timestamp_field": "generated_at_utc",
-      "timestamp": "2026-10-30T14:05:14+00:00"
+      "timestamp": "2026-10-30T16:01:28+00:00"
     },
     "decision.json": {
       "status": "fresh",
-      "age_seconds": 20.7,
+      "age_seconds": 0.8,
       "timestamp_field": "generated_at_utc",
-      "timestamp": "2026-10-30T14:05:15+00:00"
+      "timestamp": "2026-10-30T16:01:29+00:00"
     }
   },
   "killer_alignment": {
-    "primary_verdict": "INSUFFICIENT_EVIDENCE",
-    "funding_verdict": "REJECTED",
+    "primary_verdict": "SURVIVES_KILLER",
+    "funding_verdict": "SURVIVES_KILLER",
     "primary_selected": {
-      "key": "stable_dislocation|FDUSD:Binance",
-      "strategy": "stable_dislocation",
-      "label": "FDUSD:Binance",
-      "direction": "below peg",
-      "venue": "Binance",
-      "observations": 29,
-      "positive_observations": 29,
-      "persistence": 1.0,
-      "median_positive_edge_bps": 17.5,
-      "p90_positive_edge_bps": 21.5,
-      "max_edge_bps": 24.5,
-      "latest_edge_bps": 18.5,
-      "research_score": 96.88,
-      "classification": "strong_watch",
-      "last_seen_utc": "2026-10-30T14:01:35+00:00",
-      "latest_age_seconds": 59.1,
-      "current_signal_fresh": true,
-      "capital_utilisation": 1.0,
-      "capital_efficiency_score": 66.6,
-      "economic_relevance_score": 66.6,
-      "economic_relevance": {
-        "reference_budget_eur": 250,
-        "reference_basis": "paper_profit_per_event_at_median_edge",
-        "reference_payoff_eur": 0.4375,
-        "reference_target_eur": 0.25,
-        "relevance_factor": 1.0,
-        "economically_material_at_reference_budget": true
-      },
-      "paper_economics": {
-        "25": {
-          "total_budget": 25,
-          "effective_capital_per_edge": 25.0,
-          "paper_profit_per_event_at_median_edge": 0.0437
-        },
-        "50": {
-          "total_budget": 50,
-          "effective_capital_per_edge": 50.0,
-          "paper_profit_per_event_at_median_edge": 0.0875
-        },
-        "100": {
-          "total_budget": 100,
-          "effective_capital_per_edge": 100.0,
-          "paper_profit_per_event_at_median_edge": 0.175
-        },
-        "250": {
-          "total_budget": 250,
-          "effective_capital_per_edge": 250.0,
-          "paper_profit_per_event_at_median_edge": 0.4375
-        },
-        "500": {
-          "total_budget": 500,
-          "effective_capital_per_edge": 500.0,
-          "paper_profit_per_event_at_median_edge": 0.875
-        },
-        "1000": {
-          "total_budget": 1000,
-          "effective_capital_per_edge": 1000.0,
-          "paper_profit_per_event_at_median_edge": 1.75
-        }
-      },
-      "monthly_income_lens": {
-        "mode": "insufficient_turnover_model",
-        "targets_eur": [
-          100,
-          200
-        ],
-        "note": "Event frequency/turnover is not modelled conservatively enough for a monthly-income estimate."
-      }
-    },
-    "funding_selected": {
       "key": "funding_spread|PARTIUSDT",
       "strategy": "funding_spread",
       "label": "PARTIUSDT",
       "direction": "short Bitget / long Gate",
       "venue": "Bitget<->Gate",
-      "observations": 5,
-      "positive_observations": 5,
+      "observations": 6,
+      "positive_observations": 6,
       "persistence": 1.0,
-      "median_positive_edge_bps": 9.9,
-      "p90_positive_edge_bps": 13.32,
+      "median_positive_edge_bps": 10.27,
+      "p90_positive_edge_bps": 10.82,
       "max_edge_bps": 13.32,
-      "latest_edge_bps": 6.64,
-      "research_score": 75.71,
+      "latest_edge_bps": 10.64,
+      "research_score": 77.84,
       "classification": "strong_watch",
-      "last_seen_utc": "2026-10-30T14:00:36+00:00",
-      "latest_age_seconds": 118.1,
+      "last_seen_utc": "2026-10-30T15:57:13+00:00",
+      "latest_age_seconds": 97.6,
       "current_signal_fresh": true,
       "current_direction_stability": 1.0,
-      "current_direction_observations": 5,
+      "current_direction_observations": 6,
       "direction_stability_required_for_watch": 0.5,
       "funding_cost_model": {
-        "gross_median_spread_bps_per_8h": 9.9,
+        "gross_median_spread_bps_per_8h": 10.27,
         "round_trip_cost_bps": 30.0,
         "holding_horizon_days": 7.0,
         "holding_periods_8h": 21.0,
         "amortized_cost_bps_per_8h": 1.4286,
-        "amortized_adverse_basis_bps_per_8h": 0.5428,
-        "net_median_spread_bps_per_8h": 7.9287,
+        "amortized_adverse_basis_bps_per_8h": 0.8513,
+        "net_median_spread_bps_per_8h": 7.9901,
         "survives_cost_and_basis_haircuts": true
       },
       "funding_basis_model": {
         "lookback_hours": 48,
         "evidence_bucket_minutes": 15,
-        "observations": 5,
+        "observations": 6,
         "min_observations": 4,
         "evidence_sufficient": true,
-        "median_adverse_basis_bps": 11.3982,
-        "median_aligned_basis_bps": -11.3982,
-        "amortized_adverse_basis_bps_per_8h": 0.5428
+        "median_adverse_basis_bps": 17.8769,
+        "median_aligned_basis_bps": -17.8769,
+        "amortized_adverse_basis_bps_per_8h": 0.8513
       },
       "capital_utilisation": 0.5,
-      "capital_efficiency_score": 16.97,
-      "economic_relevance_score": 16.97,
+      "capital_efficiency_score": 17.5,
+      "economic_relevance_score": 17.5,
       "economic_relevance": {
         "reference_budget_eur": 250,
         "reference_basis": "paper_daily_carry_after_cost_and_basis_haircuts",
-        "reference_payoff_eur": 0.2973,
+        "reference_payoff_eur": 0.2996,
         "reference_target_eur": 0.25,
         "relevance_factor": 1.0,
         "economically_material_at_reference_budget": true
@@ -217,62 +147,62 @@
         "25": {
           "total_budget": 25,
           "effective_capital_per_edge": 12.5,
-          "paper_profit_per_event_at_median_edge": 0.0099,
-          "paper_daily_carry_if_persistence_continues": 0.0297,
-          "gross_median_funding_spread_bps_per_8h": 9.9,
+          "paper_profit_per_event_at_median_edge": 0.01,
+          "paper_daily_carry_if_persistence_continues": 0.03,
+          "gross_median_funding_spread_bps_per_8h": 10.27,
           "amortized_round_trip_cost_bps_per_8h": 1.4286,
-          "amortized_adverse_basis_bps_per_8h": 0.5428,
-          "net_median_funding_spread_bps_per_8h": 7.9287
+          "amortized_adverse_basis_bps_per_8h": 0.8513,
+          "net_median_funding_spread_bps_per_8h": 7.9901
         },
         "50": {
           "total_budget": 50,
           "effective_capital_per_edge": 25.0,
-          "paper_profit_per_event_at_median_edge": 0.0198,
-          "paper_daily_carry_if_persistence_continues": 0.0595,
-          "gross_median_funding_spread_bps_per_8h": 9.9,
+          "paper_profit_per_event_at_median_edge": 0.02,
+          "paper_daily_carry_if_persistence_continues": 0.0599,
+          "gross_median_funding_spread_bps_per_8h": 10.27,
           "amortized_round_trip_cost_bps_per_8h": 1.4286,
-          "amortized_adverse_basis_bps_per_8h": 0.5428,
-          "net_median_funding_spread_bps_per_8h": 7.9287
+          "amortized_adverse_basis_bps_per_8h": 0.8513,
+          "net_median_funding_spread_bps_per_8h": 7.9901
         },
         "100": {
           "total_budget": 100,
           "effective_capital_per_edge": 50.0,
-          "paper_profit_per_event_at_median_edge": 0.0396,
-          "paper_daily_carry_if_persistence_continues": 0.1189,
-          "gross_median_funding_spread_bps_per_8h": 9.9,
+          "paper_profit_per_event_at_median_edge": 0.04,
+          "paper_daily_carry_if_persistence_continues": 0.1199,
+          "gross_median_funding_spread_bps_per_8h": 10.27,
           "amortized_round_trip_cost_bps_per_8h": 1.4286,
-          "amortized_adverse_basis_bps_per_8h": 0.5428,
-          "net_median_funding_spread_bps_per_8h": 7.9287
+          "amortized_adverse_basis_bps_per_8h": 0.8513,
+          "net_median_funding_spread_bps_per_8h": 7.9901
         },
         "250": {
           "total_budget": 250,
           "effective_capital_per_edge": 125.0,
-          "paper_profit_per_event_at_median_edge": 0.0991,
-          "paper_daily_carry_if_persistence_continues": 0.2973,
-          "gross_median_funding_spread_bps_per_8h": 9.9,
+          "paper_profit_per_event_at_median_edge": 0.0999,
+          "paper_daily_carry_if_persistence_continues": 0.2996,
+          "gross_median_funding_spread_bps_per_8h": 10.27,
           "amortized_round_trip_cost_bps_per_8h": 1.4286,
-          "amortized_adverse_basis_bps_per_8h": 0.5428,
-          "net_median_funding_spread_bps_per_8h": 7.9287
+          "amortized_adverse_basis_bps_per_8h": 0.8513,
+          "net_median_funding_spread_bps_per_8h": 7.9901
         },
         "500": {
           "total_budget": 500,
           "effective_capital_per_edge": 250.0,
-          "paper_profit_per_event_at_median_edge": 0.1982,
-          "paper_daily_carry_if_persistence_continues": 0.5946,
-          "gross_median_funding_spread_bps_per_8h": 9.9,
+          "paper_profit_per_event_at_median_edge": 0.1998,
+          "paper_daily_carry_if_persistence_continues": 0.5993,
+          "gross_median_funding_spread_bps_per_8h": 10.27,
           "amortized_round_trip_cost_bps_per_8h": 1.4286,
-          "amortized_adverse_basis_bps_per_8h": 0.5428,
-          "net_median_funding_spread_bps_per_8h": 7.9287
+          "amortized_adverse_basis_bps_per_8h": 0.8513,
+          "net_median_funding_spread_bps_per_8h": 7.9901
         },
         "1000": {
           "total_budget": 1000,
           "effective_capital_per_edge": 500.0,
-          "paper_profit_per_event_at_median_edge": 0.3964,
-          "paper_daily_carry_if_persistence_continues": 1.1893,
-          "gross_median_funding_spread_bps_per_8h": 9.9,
+          "paper_profit_per_event_at_median_edge": 0.3995,
+          "paper_daily_carry_if_persistence_continues": 1.1985,
+          "gross_median_funding_spread_bps_per_8h": 10.27,
           "amortized_round_trip_cost_bps_per_8h": 1.4286,
-          "amortized_adverse_basis_bps_per_8h": 0.5428,
-          "net_median_funding_spread_bps_per_8h": 7.9287
+          "amortized_adverse_basis_bps_per_8h": 0.8513,
+          "net_median_funding_spread_bps_per_8h": 7.9901
         }
       },
       "monthly_income_lens": {
@@ -284,46 +214,242 @@
         ],
         "by_budget": {
           "25": {
-            "paper_monthly_run_rate_if_persistence_continues": 0.89,
+            "paper_monthly_run_rate_if_persistence_continues": 0.9,
             "reaches_100_eur_month": false,
             "reaches_200_eur_month": false
           },
           "50": {
-            "paper_monthly_run_rate_if_persistence_continues": 1.78,
+            "paper_monthly_run_rate_if_persistence_continues": 1.8,
             "reaches_100_eur_month": false,
             "reaches_200_eur_month": false
           },
           "100": {
-            "paper_monthly_run_rate_if_persistence_continues": 3.57,
+            "paper_monthly_run_rate_if_persistence_continues": 3.6,
             "reaches_100_eur_month": false,
             "reaches_200_eur_month": false
           },
           "250": {
-            "paper_monthly_run_rate_if_persistence_continues": 8.92,
+            "paper_monthly_run_rate_if_persistence_continues": 8.99,
             "reaches_100_eur_month": false,
             "reaches_200_eur_month": false
           },
           "500": {
-            "paper_monthly_run_rate_if_persistence_continues": 17.84,
+            "paper_monthly_run_rate_if_persistence_continues": 17.98,
             "reaches_100_eur_month": false,
             "reaches_200_eur_month": false
           },
           "1000": {
-            "paper_monthly_run_rate_if_persistence_continues": 35.68,
+            "paper_monthly_run_rate_if_persistence_continues": 35.95,
             "reaches_100_eur_month": false,
             "reaches_200_eur_month": false
           }
         },
         "approx_total_capital_required_eur": {
-          "100": 2803.0,
-          "200": 5606.01
+          "100": 2781.49,
+          "200": 5562.97
+        },
+        "warning": "Linear scaling assumes the same edge, persistence, costs and capacity survive at larger size; this must be separately validated."
+      }
+    },
+    "funding_selected": {
+      "key": "funding_spread|PARTIUSDT",
+      "strategy": "funding_spread",
+      "label": "PARTIUSDT",
+      "direction": "short Bitget / long Gate",
+      "venue": "Bitget<->Gate",
+      "observations": 6,
+      "positive_observations": 6,
+      "persistence": 1.0,
+      "median_positive_edge_bps": 10.27,
+      "p90_positive_edge_bps": 10.82,
+      "max_edge_bps": 13.32,
+      "latest_edge_bps": 10.64,
+      "research_score": 77.84,
+      "classification": "strong_watch",
+      "last_seen_utc": "2026-10-30T15:57:13+00:00",
+      "latest_age_seconds": 97.6,
+      "current_signal_fresh": true,
+      "current_direction_stability": 1.0,
+      "current_direction_observations": 6,
+      "direction_stability_required_for_watch": 0.5,
+      "funding_cost_model": {
+        "gross_median_spread_bps_per_8h": 10.27,
+        "round_trip_cost_bps": 30.0,
+        "holding_horizon_days": 7.0,
+        "holding_periods_8h": 21.0,
+        "amortized_cost_bps_per_8h": 1.4286,
+        "amortized_adverse_basis_bps_per_8h": 0.8513,
+        "net_median_spread_bps_per_8h": 7.9901,
+        "survives_cost_and_basis_haircuts": true
+      },
+      "funding_basis_model": {
+        "lookback_hours": 48,
+        "evidence_bucket_minutes": 15,
+        "observations": 6,
+        "min_observations": 4,
+        "evidence_sufficient": true,
+        "median_adverse_basis_bps": 17.8769,
+        "median_aligned_basis_bps": -17.8769,
+        "amortized_adverse_basis_bps_per_8h": 0.8513
+      },
+      "capital_utilisation": 0.5,
+      "capital_efficiency_score": 17.5,
+      "economic_relevance_score": 17.5,
+      "economic_relevance": {
+        "reference_budget_eur": 250,
+        "reference_basis": "paper_daily_carry_after_cost_and_basis_haircuts",
+        "reference_payoff_eur": 0.2996,
+        "reference_target_eur": 0.25,
+        "relevance_factor": 1.0,
+        "economically_material_at_reference_budget": true
+      },
+      "paper_economics": {
+        "25": {
+          "total_budget": 25,
+          "effective_capital_per_edge": 12.5,
+          "paper_profit_per_event_at_median_edge": 0.01,
+          "paper_daily_carry_if_persistence_continues": 0.03,
+          "gross_median_funding_spread_bps_per_8h": 10.27,
+          "amortized_round_trip_cost_bps_per_8h": 1.4286,
+          "amortized_adverse_basis_bps_per_8h": 0.8513,
+          "net_median_funding_spread_bps_per_8h": 7.9901
+        },
+        "50": {
+          "total_budget": 50,
+          "effective_capital_per_edge": 25.0,
+          "paper_profit_per_event_at_median_edge": 0.02,
+          "paper_daily_carry_if_persistence_continues": 0.0599,
+          "gross_median_funding_spread_bps_per_8h": 10.27,
+          "amortized_round_trip_cost_bps_per_8h": 1.4286,
+          "amortized_adverse_basis_bps_per_8h": 0.8513,
+          "net_median_funding_spread_bps_per_8h": 7.9901
+        },
+        "100": {
+          "total_budget": 100,
+          "effective_capital_per_edge": 50.0,
+          "paper_profit_per_event_at_median_edge": 0.04,
+          "paper_daily_carry_if_persistence_continues": 0.1199,
+          "gross_median_funding_spread_bps_per_8h": 10.27,
+          "amortized_round_trip_cost_bps_per_8h": 1.4286,
+          "amortized_adverse_basis_bps_per_8h": 0.8513,
+          "net_median_funding_spread_bps_per_8h": 7.9901
+        },
+        "250": {
+          "total_budget": 250,
+          "effective_capital_per_edge": 125.0,
+          "paper_profit_per_event_at_median_edge": 0.0999,
+          "paper_daily_carry_if_persistence_continues": 0.2996,
+          "gross_median_funding_spread_bps_per_8h": 10.27,
+          "amortized_round_trip_cost_bps_per_8h": 1.4286,
+          "amortized_adverse_basis_bps_per_8h": 0.8513,
+          "net_median_funding_spread_bps_per_8h": 7.9901
+        },
+        "500": {
+          "total_budget": 500,
+          "effective_capital_per_edge": 250.0,
+          "paper_profit_per_event_at_median_edge": 0.1998,
+          "paper_daily_carry_if_persistence_continues": 0.5993,
+          "gross_median_funding_spread_bps_per_8h": 10.27,
+          "amortized_round_trip_cost_bps_per_8h": 1.4286,
+          "amortized_adverse_basis_bps_per_8h": 0.8513,
+          "net_median_funding_spread_bps_per_8h": 7.9901
+        },
+        "1000": {
+          "total_budget": 1000,
+          "effective_capital_per_edge": 500.0,
+          "paper_profit_per_event_at_median_edge": 0.3995,
+          "paper_daily_carry_if_persistence_continues": 1.1985,
+          "gross_median_funding_spread_bps_per_8h": 10.27,
+          "amortized_round_trip_cost_bps_per_8h": 1.4286,
+          "amortized_adverse_basis_bps_per_8h": 0.8513,
+          "net_median_funding_spread_bps_per_8h": 7.9901
+        }
+      },
+      "monthly_income_lens": {
+        "mode": "paper_carry_run_rate",
+        "days_per_month": 30.0,
+        "targets_eur": [
+          100,
+          200
+        ],
+        "by_budget": {
+          "25": {
+            "paper_monthly_run_rate_if_persistence_continues": 0.9,
+            "reaches_100_eur_month": false,
+            "reaches_200_eur_month": false
+          },
+          "50": {
+            "paper_monthly_run_rate_if_persistence_continues": 1.8,
+            "reaches_100_eur_month": false,
+            "reaches_200_eur_month": false
+          },
+          "100": {
+            "paper_monthly_run_rate_if_persistence_continues": 3.6,
+            "reaches_100_eur_month": false,
+            "reaches_200_eur_month": false
+          },
+          "250": {
+            "paper_monthly_run_rate_if_persistence_continues": 8.99,
+            "reaches_100_eur_month": false,
+            "reaches_200_eur_month": false
+          },
+          "500": {
+            "paper_monthly_run_rate_if_persistence_continues": 17.98,
+            "reaches_100_eur_month": false,
+            "reaches_200_eur_month": false
+          },
+          "1000": {
+            "paper_monthly_run_rate_if_persistence_continues": 35.95,
+            "reaches_100_eur_month": false,
+            "reaches_200_eur_month": false
+          }
+        },
+        "approx_total_capital_required_eur": {
+          "100": 2781.49,
+          "200": 5562.97
         },
         "warning": "Linear scaling assumes the same edge, persistence, costs and capacity survive at larger size; this must be separately validated."
       }
     }
   },
-  "funding_multi_size_execution": null,
-  "best_candidate_small_capital_payoff": null,
+  "funding_multi_size_execution": {
+    "25": {
+      "present": true,
+      "depth_sufficient_both_legs": true,
+      "recovery_periods": 2.1
+    },
+    "50": {
+      "present": true,
+      "depth_sufficient_both_legs": true,
+      "recovery_periods": 2.1
+    },
+    "100": {
+      "present": true,
+      "depth_sufficient_both_legs": true,
+      "recovery_periods": 2.1
+    },
+    "250": {
+      "present": true,
+      "depth_sufficient_both_legs": true,
+      "recovery_periods": 2.234
+    },
+    "500": {
+      "present": true,
+      "depth_sufficient_both_legs": true,
+      "recovery_periods": 2.358
+    },
+    "1000": {
+      "present": true,
+      "depth_sufficient_both_legs": true,
+      "recovery_periods": 2.419
+    }
+  },
+  "best_candidate_small_capital_payoff": {
+    "100": 0.1199,
+    "250": 0.2996,
+    "500": 0.5993,
+    "1000": 1.1985
+  },
   "anomaly_count": 0,
   "anomalies": [],
   "safety": "Diagnostic only. An audit PASS cannot create READY and cannot bypass KILLER or manual authorization."
