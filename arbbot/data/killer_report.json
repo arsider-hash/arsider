@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-31T09:10:24+00:00",
+  "generated_at_utc": "2026-10-31T11:19:23+00:00",
   "verdict": "INSUFFICIENT_EVIDENCE",
   "selected": {
     "key": "stable_dislocation|FDUSD:Binance",
@@ -7,8 +7,8 @@
     "label": "FDUSD:Binance",
     "direction": "below peg",
     "venue": "Binance",
-    "observations": 30,
-    "positive_observations": 30,
+    "observations": 31,
+    "positive_observations": 31,
     "persistence": 1.0,
     "median_positive_edge_bps": 17.5,
     "p90_positive_edge_bps": 21.5,
@@ -16,8 +16,8 @@
     "latest_edge_bps": 14.5,
     "research_score": 96.88,
     "classification": "strong_watch",
-    "last_seen_utc": "2026-10-31T09:06:45+00:00",
-    "latest_age_seconds": 59.1,
+    "last_seen_utc": "2026-10-31T11:15:44+00:00",
+    "latest_age_seconds": 58.2,
     "current_signal_fresh": true,
     "capital_utilisation": 1.0,
     "capital_efficiency_score": 66.6,
@@ -78,19 +78,19 @@
       "check": "freshness",
       "status": "PASS",
       "severity": "hard",
-      "detail": "candidate age 220s"
+      "detail": "candidate age 219s"
     },
     {
       "check": "sample_presence",
       "status": "PASS",
       "severity": "hard",
-      "detail": "30 observations; need at least 6"
+      "detail": "31 observations; need at least 6"
     },
     {
       "check": "positive_edge_evidence",
       "status": "PASS",
       "severity": "hard",
-      "detail": "positive_observations=30, median_positive_edge_bps=17.5000"
+      "detail": "positive_observations=31, median_positive_edge_bps=17.5000"
     },
     {
       "check": "persistence",
@@ -120,7 +120,7 @@
       "check": "stable_execution_diagnostic",
       "status": "PASS",
       "severity": "soft",
-      "detail": "6 multi-size probes present; EUR 250 immediate round-trip=-1.001 bps; hypothetical convergence positive through EUR 1000"
+      "detail": "6 multi-size probes present; EUR 250 immediate round-trip=-1.002 bps; hypothetical convergence positive through EUR 1000"
     },
     {
       "check": "verified_exit_path",
