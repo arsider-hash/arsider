@@ -1,26 +1,26 @@
 {
-  "generated_at_utc": "2026-10-30T23:42:50+00:00",
-  "verdict": "INSUFFICIENT_EVIDENCE",
+  "generated_at_utc": "2026-10-31T00:07:08+00:00",
+  "verdict": "SURVIVES_KILLER",
   "selected": {
     "key": "funding_spread|INTWUSDT",
     "strategy": "funding_spread",
     "label": "INTWUSDT",
     "direction": "short Bitget / long Gate",
     "venue": "Bitget<->Gate",
-    "observations": 10,
-    "positive_observations": 10,
+    "observations": 12,
+    "positive_observations": 12,
     "persistence": 1.0,
     "median_positive_edge_bps": 8.755,
     "p90_positive_edge_bps": 12.14,
     "max_edge_bps": 16.24,
-    "latest_edge_bps": 2.06,
-    "research_score": 82.61,
+    "latest_edge_bps": 10.13,
+    "research_score": 85.94,
     "classification": "strong_watch",
-    "last_seen_utc": "2026-10-30T23:38:38+00:00",
-    "latest_age_seconds": 93.1,
+    "last_seen_utc": "2026-10-31T00:02:33+00:00",
+    "latest_age_seconds": 116.2,
     "current_signal_fresh": true,
     "current_direction_stability": 1.0,
-    "current_direction_observations": 10,
+    "current_direction_observations": 12,
     "direction_stability_required_for_watch": 0.5,
     "funding_cost_model": {
       "gross_median_spread_bps_per_8h": 8.755,
@@ -35,16 +35,16 @@
     "funding_basis_model": {
       "lookback_hours": 48,
       "evidence_bucket_minutes": 15,
-      "observations": 10,
+      "observations": 12,
       "min_observations": 4,
       "evidence_sufficient": true,
       "median_adverse_basis_bps": 0.0,
-      "median_aligned_basis_bps": 13.4085,
+      "median_aligned_basis_bps": 15.6342,
       "amortized_adverse_basis_bps_per_8h": 0.0
     },
     "capital_utilisation": 0.5,
-    "capital_efficiency_score": 17.89,
-    "economic_relevance_score": 17.89,
+    "capital_efficiency_score": 18.61,
+    "economic_relevance_score": 18.61,
     "economic_relevance": {
       "reference_budget_eur": 250,
       "reference_basis": "paper_daily_carry_after_cost_and_basis_haircuts",
@@ -168,19 +168,19 @@
       "check": "freshness",
       "status": "PASS",
       "severity": "hard",
-      "detail": "candidate age 252s"
+      "detail": "candidate age 275s"
     },
     {
       "check": "sample_presence",
       "status": "PASS",
       "severity": "hard",
-      "detail": "10 observations; need at least 6"
+      "detail": "12 observations; need at least 6"
     },
     {
       "check": "positive_edge_evidence",
       "status": "PASS",
       "severity": "hard",
-      "detail": "positive_observations=10, median_positive_edge_bps=8.7550"
+      "detail": "positive_observations=12, median_positive_edge_bps=8.7550"
     },
     {
       "check": "persistence",
@@ -192,25 +192,25 @@
       "check": "latest_edge_sign",
       "status": "PASS",
       "severity": "soft",
-      "detail": "latest_edge_bps=2.0600"
+      "detail": "latest_edge_bps=10.1300"
     },
     {
       "check": "economic_relevance",
       "status": "PASS",
       "severity": "soft",
-      "detail": "economic_relevance_score=17.89"
+      "detail": "economic_relevance_score=18.61"
     },
     {
       "check": "funding_regime_decay",
-      "status": "INSUFFICIENT",
+      "status": "PASS",
       "severity": "hard",
-      "detail": "latest/median edge ratio=0.235; latest=2.060 bps/8h, median=8.755; require >= 0.25 to rule out sharp edge decay"
+      "detail": "latest/median edge ratio=1.157; latest=10.130 bps/8h, median=8.755; require >= 0.25 to rule out sharp edge decay"
     },
     {
       "check": "funding_basis_persistence",
       "status": "PASS",
       "severity": "hard",
-      "detail": "10 independent 15m buckets; median adverse basis costs 0.00 funding periods; median aligned basis=13.409 bps"
+      "detail": "12 independent 15m buckets; median adverse basis costs 0.00 funding periods; median aligned basis=15.634 bps"
     },
     {
       "check": "funding_direction_stability",
@@ -232,9 +232,7 @@
     }
   ],
   "hard_failures": [],
-  "insufficient_evidence": [
-    "latest/median edge ratio=0.235; latest=2.060 bps/8h, median=8.755; require >= 0.25 to rule out sharp edge decay"
-  ],
+  "insufficient_evidence": [],
   "policy": {
     "max_staleness_seconds": 900,
     "min_candidate_observations": 6,
