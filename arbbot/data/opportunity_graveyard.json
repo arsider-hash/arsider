@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-31T13:47:21+00:00",
+  "generated_at_utc": "2026-10-31T15:28:26+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -702,11 +702,11 @@
     "funding_spread|AKEUSDT": {
       "strategy": "funding_spread",
       "label": "AKEUSDT",
-      "snapshots": 42,
-      "survives": 27,
+      "snapshots": 43,
+      "survives": 28,
       "rejected": 3,
       "insufficient": 12,
-      "consecutive_non_survivals": 7,
+      "consecutive_non_survivals": 0,
       "reason_counts": {
         "latest/median edge ratio=0.083; latest=1.120 bps/8h, median=13.420; require >= 0.25 to rule out sharp edge decay": 1,
         "no matching executable-entry probe at EUR 250 for AKEUSDT long Bitget / short Gate": 6,
@@ -727,15 +727,13 @@
         "4 observations; need at least 6": 1,
         "5 observations; need at least 6": 1
       },
-      "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-10-31T13:42:51+00:00",
-      "last_latest_edge_bps": 47.06,
-      "last_median_positive_edge_bps": 54.64,
+      "last_verdict": "SURVIVES_KILLER",
+      "last_seen_utc": "2026-10-31T15:24:16+00:00",
+      "last_latest_edge_bps": 36.9,
+      "last_median_positive_edge_bps": 54.45,
       "last_persistence": 1.0,
-      "last_reasons": [
-        "5 observations; need at least 6"
-      ],
-      "updated_at_utc": "2026-10-31T13:47:21+00:00"
+      "last_reasons": [],
+      "updated_at_utc": "2026-10-31T15:28:26+00:00"
     },
     "funding_spread|GUSDT": {
       "strategy": "funding_spread",
