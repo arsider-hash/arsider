@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-01T01:04:26+00:00",
+  "generated_at_utc": "2026-11-01T01:39:38+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -2437,6 +2437,23 @@
         "EUR 250 executable adverse basis=21.796 bps, recovery=5.72 funding periods; require <= 3.00"
       ],
       "updated_at_utc": "2026-10-31T05:43:13+00:00"
+    },
+    "funding_spread|SOPHUSDT": {
+      "strategy": "funding_spread",
+      "label": "SOPHUSDT",
+      "snapshots": 1,
+      "survives": 1,
+      "rejected": 0,
+      "insufficient": 0,
+      "consecutive_non_survivals": 0,
+      "reason_counts": {},
+      "last_verdict": "SURVIVES_KILLER",
+      "last_seen_utc": "2026-11-01T01:35:25+00:00",
+      "last_latest_edge_bps": 29.66,
+      "last_median_positive_edge_bps": 22.43,
+      "last_persistence": 1.0,
+      "last_reasons": [],
+      "updated_at_utc": "2026-11-01T01:39:38+00:00"
     }
   },
   "note": "Historical failure memory is diagnostic evidence only. It cannot loosen gates or create READY."
