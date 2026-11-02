@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-02T23:30:16+00:00",
+  "generated_at_utc": "2026-11-02T23:43:46+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -30,13 +30,13 @@
     "stable_dislocation|FDUSD:Binance": {
       "strategy": "stable_dislocation",
       "label": "FDUSD:Binance",
-      "snapshots": 412,
+      "snapshots": 413,
       "survives": 0,
       "rejected": 0,
-      "insufficient": 412,
-      "consecutive_non_survivals": 412,
+      "insufficient": 413,
+      "consecutive_non_survivals": 413,
       "reason_counts": {
-        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 412,
+        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 413,
         "persistence=0.486; need at least 0.70": 1,
         "persistence=0.500; need at least 0.70": 2,
         "persistence=0.543; need at least 0.70": 1,
@@ -56,14 +56,14 @@
         "persistence=0.567; need at least 0.70": 1
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-11-02T23:26:43+00:00",
-      "last_latest_edge_bps": 28.5,
-      "last_median_positive_edge_bps": 21.0,
+      "last_seen_utc": "2026-11-02T23:40:11+00:00",
+      "last_latest_edge_bps": 27.5,
+      "last_median_positive_edge_bps": 21.5,
       "last_persistence": 1.0,
       "last_reasons": [
         "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified"
       ],
-      "updated_at_utc": "2026-11-02T23:30:16+00:00"
+      "updated_at_utc": "2026-11-02T23:43:46+00:00"
     },
     "funding_spread|VTHOUSDT": {
       "strategy": "funding_spread",
@@ -702,11 +702,11 @@
     "funding_spread|AKEUSDT": {
       "strategy": "funding_spread",
       "label": "AKEUSDT",
-      "snapshots": 74,
+      "snapshots": 75,
       "survives": 33,
-      "rejected": 29,
+      "rejected": 30,
       "insufficient": 12,
-      "consecutive_non_survivals": 17,
+      "consecutive_non_survivals": 18,
       "reason_counts": {
         "latest/median edge ratio=0.083; latest=1.120 bps/8h, median=13.420; require >= 0.25 to rule out sharp edge decay": 1,
         "no matching executable-entry probe at EUR 250 for AKEUSDT long Bitget / short Gate": 6,
@@ -771,18 +771,18 @@
         "43 independent 15m buckets; median adverse basis costs 3.69 funding periods; median aligned basis=-130.287 bps": 1,
         "EUR 250 executable adverse basis=121.043 bps, recovery=5.88 funding periods; require <= 3.00": 1,
         "36 independent 15m buckets; median adverse basis costs 3.78 funding periods; median aligned basis=-144.443 bps": 1,
-        "EUR 250 executable adverse basis=166.013 bps, recovery=3.10 funding periods; require <= 3.00": 1
+        "EUR 250 executable adverse basis=166.013 bps, recovery=3.10 funding periods; require <= 3.00": 1,
+        "37 independent 15m buckets; median adverse basis costs 3.77 funding periods; median aligned basis=-143.672 bps": 1
       },
       "last_verdict": "REJECTED",
-      "last_seen_utc": "2026-11-02T23:26:06+00:00",
-      "last_latest_edge_bps": 53.54,
-      "last_median_positive_edge_bps": 35.19,
+      "last_seen_utc": "2026-11-02T23:39:34+00:00",
+      "last_latest_edge_bps": 54.5,
+      "last_median_positive_edge_bps": 36.54,
       "last_persistence": 1.0,
       "last_reasons": [
-        "36 independent 15m buckets; median adverse basis costs 3.78 funding periods; median aligned basis=-144.443 bps",
-        "EUR 250 executable adverse basis=166.013 bps, recovery=3.10 funding periods; require <= 3.00"
+        "37 independent 15m buckets; median adverse basis costs 3.77 funding periods; median aligned basis=-143.672 bps"
       ],
-      "updated_at_utc": "2026-11-02T23:30:16+00:00"
+      "updated_at_utc": "2026-11-02T23:43:46+00:00"
     },
     "funding_spread|GUSDT": {
       "strategy": "funding_spread",
