@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-03T11:59:38+00:00",
+  "generated_at_utc": "2026-11-03T15:04:02+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -30,13 +30,13 @@
     "stable_dislocation|FDUSD:Binance": {
       "strategy": "stable_dislocation",
       "label": "FDUSD:Binance",
-      "snapshots": 419,
+      "snapshots": 420,
       "survives": 0,
       "rejected": 0,
-      "insufficient": 419,
-      "consecutive_non_survivals": 419,
+      "insufficient": 420,
+      "consecutive_non_survivals": 420,
       "reason_counts": {
-        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 419,
+        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 420,
         "persistence=0.486; need at least 0.70": 1,
         "persistence=0.500; need at least 0.70": 2,
         "persistence=0.543; need at least 0.70": 1,
@@ -56,14 +56,14 @@
         "persistence=0.567; need at least 0.70": 1
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-11-03T11:56:06+00:00",
-      "last_latest_edge_bps": 26.5,
+      "last_seen_utc": "2026-11-03T15:00:27+00:00",
+      "last_latest_edge_bps": 23.5,
       "last_median_positive_edge_bps": 22.5,
       "last_persistence": 1.0,
       "last_reasons": [
         "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified"
       ],
-      "updated_at_utc": "2026-11-03T11:59:38+00:00"
+      "updated_at_utc": "2026-11-03T15:04:02+00:00"
     },
     "funding_spread|VTHOUSDT": {
       "strategy": "funding_spread",
@@ -799,25 +799,26 @@
     "funding_spread|GUSDT": {
       "strategy": "funding_spread",
       "label": "GUSDT",
-      "snapshots": 2,
+      "snapshots": 3,
       "survives": 1,
-      "rejected": 1,
+      "rejected": 2,
       "insufficient": 0,
-      "consecutive_non_survivals": 1,
+      "consecutive_non_survivals": 2,
       "reason_counts": {
         "candidate age 103316s": 1,
-        "no matching executable-entry probe at EUR 250 for GUSDT short Bitget / long Gate": 1
+        "no matching executable-entry probe at EUR 250 for GUSDT short Bitget / long Gate": 2,
+        "candidate age 133639s": 1
       },
       "last_verdict": "REJECTED",
       "last_seen_utc": "2026-11-02T01:56:42+00:00",
       "last_latest_edge_bps": 5.0,
       "last_median_positive_edge_bps": 15.2,
-      "last_persistence": 0.7333,
+      "last_persistence": 0.9167,
       "last_reasons": [
-        "candidate age 103316s",
+        "candidate age 133639s",
         "no matching executable-entry probe at EUR 250 for GUSDT short Bitget / long Gate"
       ],
-      "updated_at_utc": "2026-11-03T06:38:38+00:00"
+      "updated_at_utc": "2026-11-03T15:04:02+00:00"
     },
     "funding_spread|MSTRUSDT": {
       "strategy": "funding_spread",
