@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-04T00:08:00+00:00",
+  "generated_at_utc": "2026-11-04T01:16:46+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -30,13 +30,13 @@
     "stable_dislocation|FDUSD:Binance": {
       "strategy": "stable_dislocation",
       "label": "FDUSD:Binance",
-      "snapshots": 426,
+      "snapshots": 427,
       "survives": 0,
       "rejected": 0,
-      "insufficient": 426,
-      "consecutive_non_survivals": 426,
+      "insufficient": 427,
+      "consecutive_non_survivals": 427,
       "reason_counts": {
-        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 426,
+        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 427,
         "persistence=0.486; need at least 0.70": 1,
         "persistence=0.500; need at least 0.70": 2,
         "persistence=0.543; need at least 0.70": 1,
@@ -56,14 +56,14 @@
         "persistence=0.567; need at least 0.70": 1
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-11-03T22:33:19+00:00",
-      "last_latest_edge_bps": 21.5,
-      "last_median_positive_edge_bps": 22.0,
+      "last_seen_utc": "2026-11-04T01:15:19+00:00",
+      "last_latest_edge_bps": 22.5,
+      "last_median_positive_edge_bps": 22.5,
       "last_persistence": 1.0,
       "last_reasons": [
         "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified"
       ],
-      "updated_at_utc": "2026-11-03T22:36:54+00:00"
+      "updated_at_utc": "2026-11-04T01:16:46+00:00"
     },
     "funding_spread|VTHOUSDT": {
       "strategy": "funding_spread",
@@ -702,11 +702,11 @@
     "funding_spread|AKEUSDT": {
       "strategy": "funding_spread",
       "label": "AKEUSDT",
-      "snapshots": 80,
+      "snapshots": 81,
       "survives": 33,
-      "rejected": 35,
+      "rejected": 36,
       "insufficient": 12,
-      "consecutive_non_survivals": 23,
+      "consecutive_non_survivals": 24,
       "reason_counts": {
         "latest/median edge ratio=0.083; latest=1.120 bps/8h, median=13.420; require >= 0.25 to rule out sharp edge decay": 1,
         "no matching executable-entry probe at EUR 250 for AKEUSDT long Bitget / short Gate": 6,
@@ -782,19 +782,24 @@
         "EUR 250 executable adverse basis=144.167 bps, recovery=3.70 funding periods; require <= 3.00": 1,
         "35 independent 15m buckets; median adverse basis costs 3.79 funding periods; median aligned basis=-145.214 bps": 1,
         "latest/median edge ratio=0.007; latest=0.240 bps/8h, median=36.540; require >= 0.25 to rule out sharp edge decay": 1,
-        "no matching executable-entry probe at EUR 250 for AKEUSDT short Bitget / long Gate": 1
+        "no matching executable-entry probe at EUR 250 for AKEUSDT short Bitget / long Gate": 1,
+        "32 independent 15m buckets; median adverse basis costs 3.44 funding periods; median aligned basis=-105.139 bps": 1,
+        "EUR 250 executable adverse basis=58.848 bps, recovery=13.20 funding periods; require <= 3.00": 1,
+        "persistence=0.625; need at least 0.70": 1,
+        "latest/median edge ratio=0.144; latest=4.460 bps/8h, median=30.980; require >= 0.25 to rule out sharp edge decay": 1
       },
       "last_verdict": "REJECTED",
-      "last_seen_utc": "2026-11-03T11:55:26+00:00",
-      "last_latest_edge_bps": 0.24,
-      "last_median_positive_edge_bps": 36.54,
-      "last_persistence": 0.9429,
+      "last_seen_utc": "2026-11-04T01:14:28+00:00",
+      "last_latest_edge_bps": 4.46,
+      "last_median_positive_edge_bps": 30.98,
+      "last_persistence": 0.625,
       "last_reasons": [
-        "35 independent 15m buckets; median adverse basis costs 3.79 funding periods; median aligned basis=-145.214 bps",
-        "latest/median edge ratio=0.007; latest=0.240 bps/8h, median=36.540; require >= 0.25 to rule out sharp edge decay",
-        "no matching executable-entry probe at EUR 250 for AKEUSDT short Bitget / long Gate"
+        "32 independent 15m buckets; median adverse basis costs 3.44 funding periods; median aligned basis=-105.139 bps",
+        "EUR 250 executable adverse basis=58.848 bps, recovery=13.20 funding periods; require <= 3.00",
+        "persistence=0.625; need at least 0.70",
+        "latest/median edge ratio=0.144; latest=4.460 bps/8h, median=30.980; require >= 0.25 to rule out sharp edge decay"
       ],
-      "updated_at_utc": "2026-11-03T11:59:38+00:00"
+      "updated_at_utc": "2026-11-04T01:16:46+00:00"
     },
     "funding_spread|GUSDT": {
       "strategy": "funding_spread",
