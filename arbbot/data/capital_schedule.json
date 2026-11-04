@@ -1,12 +1,12 @@
 {
-  "generated_at_utc": "2026-11-03T21:00:08+00:00",
+  "generated_at_utc": "2026-11-04T00:08:23+00:00",
   "status": "SIMULATED",
   "starting_capital_eur": 250.0,
   "window_days": 30,
-  "window_end_utc": "2026-11-01T09:44:23+00:00",
-  "window_start_utc": "2026-10-02T09:44:23+00:00",
-  "proof_window_span_days": 29.592,
-  "eligible_events": 90,
+  "window_end_utc": "2026-11-04T00:03:45+00:00",
+  "window_start_utc": "2026-10-05T00:03:45+00:00",
+  "proof_window_span_days": 29.9694,
+  "eligible_events": 78,
   "rejected_input_events": 0,
   "plans_tested": 3,
   "best_plan": {
@@ -17,82 +17,68 @@
     "venue_count": 2,
     "total_preallocated_eur": 250.0,
     "idle_unallocated_eur": 0.0,
-    "accepted_events": 5,
-    "net_eur": 0.247541,
-    "human_minutes": 10.0,
-    "average_locked_capital_eur": 291.667,
+    "accepted_events": 4,
+    "net_eur": 0.509597,
+    "human_minutes": 8.0,
+    "average_locked_capital_eur": 233.333,
     "missed": {
-      "capital_busy": 85
+      "capital_busy": 74
     },
     "accepted": [
       {
-        "event_id": "crypto|funding_spread|SANDUSDT|2026-10-02T19:31:51+00:00|250",
-        "observed_at_utc": "2026-10-02T19:31:51+00:00",
-        "release_at_utc": "2026-10-09T19:31:51+00:00",
+        "event_id": "crypto|funding_spread|QNTUSDT|2026-10-05T00:47:49+00:00|250",
+        "observed_at_utc": "2026-10-05T00:47:49+00:00",
+        "release_at_utc": "2026-10-12T00:47:49+00:00",
         "habitat": "crypto",
         "strategy": "funding_spread",
-        "label": "SANDUSDT",
+        "label": "QNTUSDT",
         "required_preallocation_eur": {
           "Bitget": 125.0,
           "Gate": 125.0
         },
-        "expected_net_eur": 0.07643125,
+        "expected_net_eur": 0.09494625,
         "human_minutes": 2.0
       },
       {
-        "event_id": "crypto|funding_spread|KAIAUSDT|2026-10-09T21:36:29+00:00|250",
-        "observed_at_utc": "2026-10-09T21:36:29+00:00",
-        "release_at_utc": "2026-10-16T21:36:29+00:00",
+        "event_id": "crypto|funding_spread|RSRUSDT|2026-10-13T07:26:08+00:00|250",
+        "observed_at_utc": "2026-10-13T07:26:08+00:00",
+        "release_at_utc": "2026-10-20T07:26:08+00:00",
         "habitat": "crypto",
         "strategy": "funding_spread",
-        "label": "KAIAUSDT",
+        "label": "RSRUSDT",
         "required_preallocation_eur": {
           "Bitget": 125.0,
           "Gate": 125.0
         },
-        "expected_net_eur": 0.1114075,
+        "expected_net_eur": 0.11338375,
         "human_minutes": 2.0
       },
       {
-        "event_id": "crypto|funding_spread|SOXLUSDT|2026-10-16T23:28:56+00:00|250",
-        "observed_at_utc": "2026-10-16T23:28:56+00:00",
-        "release_at_utc": "2026-10-23T23:28:56+00:00",
+        "event_id": "crypto|funding_spread|JCTUSDT|2026-10-20T19:28:35+00:00|250",
+        "observed_at_utc": "2026-10-20T19:28:35+00:00",
+        "release_at_utc": "2026-10-27T19:28:35+00:00",
         "habitat": "crypto",
         "strategy": "funding_spread",
-        "label": "SOXLUSDT",
+        "label": "JCTUSDT",
         "required_preallocation_eur": {
           "Bitget": 125.0,
           "Gate": 125.0
         },
-        "expected_net_eur": 0.03299688,
+        "expected_net_eur": 0.04219625,
         "human_minutes": 2.0
       },
       {
-        "event_id": "crypto|funding_spread|SOXLUSDT|2026-10-24T00:19:29+00:00|250",
-        "observed_at_utc": "2026-10-24T00:19:29+00:00",
-        "release_at_utc": "2026-10-31T00:19:29+00:00",
+        "event_id": "crypto|funding_spread|UNITREEUSDT|2026-10-28T15:56:33+00:00|250",
+        "observed_at_utc": "2026-10-28T15:56:33+00:00",
+        "release_at_utc": "2026-11-04T15:56:33+00:00",
         "habitat": "crypto",
         "strategy": "funding_spread",
-        "label": "SOXLUSDT",
+        "label": "UNITREEUSDT",
         "required_preallocation_eur": {
           "Bitget": 125.0,
           "Gate": 125.0
         },
-        "expected_net_eur": 0.00688375,
-        "human_minutes": 2.0
-      },
-      {
-        "event_id": "crypto|funding_spread|INTWUSDT|2026-10-31T05:24:13+00:00|250",
-        "observed_at_utc": "2026-10-31T05:24:13+00:00",
-        "release_at_utc": "2026-11-07T05:24:13+00:00",
-        "habitat": "crypto",
-        "strategy": "funding_spread",
-        "label": "INTWUSDT",
-        "required_preallocation_eur": {
-          "Bitget": 125.0,
-          "Gate": 125.0
-        },
-        "expected_net_eur": 0.01982125,
+        "expected_net_eur": 0.25907125,
         "human_minutes": 2.0
       }
     ]
@@ -105,82 +91,68 @@
     "venue_count": 2,
     "total_preallocated_eur": 250.0,
     "idle_unallocated_eur": 0.0,
-    "accepted_events": 5,
-    "net_eur": 0.247541,
-    "human_minutes": 10.0,
-    "average_locked_capital_eur": 291.667,
+    "accepted_events": 4,
+    "net_eur": 0.509597,
+    "human_minutes": 8.0,
+    "average_locked_capital_eur": 233.333,
     "missed": {
-      "capital_busy": 85
+      "capital_busy": 74
     },
     "accepted": [
       {
-        "event_id": "crypto|funding_spread|SANDUSDT|2026-10-02T19:31:51+00:00|250",
-        "observed_at_utc": "2026-10-02T19:31:51+00:00",
-        "release_at_utc": "2026-10-09T19:31:51+00:00",
+        "event_id": "crypto|funding_spread|QNTUSDT|2026-10-05T00:47:49+00:00|250",
+        "observed_at_utc": "2026-10-05T00:47:49+00:00",
+        "release_at_utc": "2026-10-12T00:47:49+00:00",
         "habitat": "crypto",
         "strategy": "funding_spread",
-        "label": "SANDUSDT",
+        "label": "QNTUSDT",
         "required_preallocation_eur": {
           "Bitget": 125.0,
           "Gate": 125.0
         },
-        "expected_net_eur": 0.07643125,
+        "expected_net_eur": 0.09494625,
         "human_minutes": 2.0
       },
       {
-        "event_id": "crypto|funding_spread|KAIAUSDT|2026-10-09T21:36:29+00:00|250",
-        "observed_at_utc": "2026-10-09T21:36:29+00:00",
-        "release_at_utc": "2026-10-16T21:36:29+00:00",
+        "event_id": "crypto|funding_spread|RSRUSDT|2026-10-13T07:26:08+00:00|250",
+        "observed_at_utc": "2026-10-13T07:26:08+00:00",
+        "release_at_utc": "2026-10-20T07:26:08+00:00",
         "habitat": "crypto",
         "strategy": "funding_spread",
-        "label": "KAIAUSDT",
+        "label": "RSRUSDT",
         "required_preallocation_eur": {
           "Bitget": 125.0,
           "Gate": 125.0
         },
-        "expected_net_eur": 0.1114075,
+        "expected_net_eur": 0.11338375,
         "human_minutes": 2.0
       },
       {
-        "event_id": "crypto|funding_spread|SOXLUSDT|2026-10-16T23:28:56+00:00|250",
-        "observed_at_utc": "2026-10-16T23:28:56+00:00",
-        "release_at_utc": "2026-10-23T23:28:56+00:00",
+        "event_id": "crypto|funding_spread|JCTUSDT|2026-10-20T19:28:35+00:00|250",
+        "observed_at_utc": "2026-10-20T19:28:35+00:00",
+        "release_at_utc": "2026-10-27T19:28:35+00:00",
         "habitat": "crypto",
         "strategy": "funding_spread",
-        "label": "SOXLUSDT",
+        "label": "JCTUSDT",
         "required_preallocation_eur": {
           "Bitget": 125.0,
           "Gate": 125.0
         },
-        "expected_net_eur": 0.03299688,
+        "expected_net_eur": 0.04219625,
         "human_minutes": 2.0
       },
       {
-        "event_id": "crypto|funding_spread|SOXLUSDT|2026-10-24T00:19:29+00:00|250",
-        "observed_at_utc": "2026-10-24T00:19:29+00:00",
-        "release_at_utc": "2026-10-31T00:19:29+00:00",
+        "event_id": "crypto|funding_spread|UNITREEUSDT|2026-10-28T15:56:33+00:00|250",
+        "observed_at_utc": "2026-10-28T15:56:33+00:00",
+        "release_at_utc": "2026-11-04T15:56:33+00:00",
         "habitat": "crypto",
         "strategy": "funding_spread",
-        "label": "SOXLUSDT",
+        "label": "UNITREEUSDT",
         "required_preallocation_eur": {
           "Bitget": 125.0,
           "Gate": 125.0
         },
-        "expected_net_eur": 0.00688375,
-        "human_minutes": 2.0
-      },
-      {
-        "event_id": "crypto|funding_spread|INTWUSDT|2026-10-31T05:24:13+00:00|250",
-        "observed_at_utc": "2026-10-31T05:24:13+00:00",
-        "release_at_utc": "2026-11-07T05:24:13+00:00",
-        "habitat": "crypto",
-        "strategy": "funding_spread",
-        "label": "INTWUSDT",
-        "required_preallocation_eur": {
-          "Bitget": 125.0,
-          "Gate": 125.0
-        },
-        "expected_net_eur": 0.01982125,
+        "expected_net_eur": 0.25907125,
         "human_minutes": 2.0
       }
     ]
