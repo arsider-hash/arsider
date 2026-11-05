@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-05T20:40:48+00:00",
+  "generated_at_utc": "2026-11-05T22:25:26+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -30,13 +30,13 @@
     "stable_dislocation|FDUSD:Binance": {
       "strategy": "stable_dislocation",
       "label": "FDUSD:Binance",
-      "snapshots": 452,
+      "snapshots": 453,
       "survives": 0,
       "rejected": 0,
-      "insufficient": 452,
-      "consecutive_non_survivals": 452,
+      "insufficient": 453,
+      "consecutive_non_survivals": 453,
       "reason_counts": {
-        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 452,
+        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 453,
         "persistence=0.486; need at least 0.70": 1,
         "persistence=0.500; need at least 0.70": 2,
         "persistence=0.543; need at least 0.70": 1,
@@ -56,14 +56,14 @@
         "persistence=0.567; need at least 0.70": 1
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-11-05T20:37:16+00:00",
-      "last_latest_edge_bps": 18.5,
-      "last_median_positive_edge_bps": 16.5,
+      "last_seen_utc": "2026-11-05T22:21:45+00:00",
+      "last_latest_edge_bps": 19.5,
+      "last_median_positive_edge_bps": 15.5,
       "last_persistence": 1.0,
       "last_reasons": [
         "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified"
       ],
-      "updated_at_utc": "2026-11-05T20:40:48+00:00"
+      "updated_at_utc": "2026-11-05T22:25:26+00:00"
     },
     "funding_spread|VTHOUSDT": {
       "strategy": "funding_spread",
@@ -702,11 +702,11 @@
     "funding_spread|AKEUSDT": {
       "strategy": "funding_spread",
       "label": "AKEUSDT",
-      "snapshots": 94,
+      "snapshots": 95,
       "survives": 33,
       "rejected": 39,
-      "insufficient": 22,
-      "consecutive_non_survivals": 37,
+      "insufficient": 23,
+      "consecutive_non_survivals": 38,
       "reason_counts": {
         "latest/median edge ratio=0.083; latest=1.120 bps/8h, median=13.420; require >= 0.25 to rule out sharp edge decay": 1,
         "no matching executable-entry probe at EUR 250 for AKEUSDT long Bitget / short Gate": 6,
@@ -808,18 +808,20 @@
         "latest funding direction matches 48% of independent basis buckets; require >= 50%": 1,
         "persistence=0.425; need at least 0.70": 1,
         "persistence=0.463; need at least 0.70": 1,
-        "latest funding direction matches 46% of independent basis buckets; require >= 50%": 1
+        "latest funding direction matches 46% of independent basis buckets; require >= 50%": 1,
+        "persistence=0.488; need at least 0.70": 1,
+        "latest funding direction matches 49% of independent basis buckets; require >= 50%": 1
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-11-05T18:06:32+00:00",
-      "last_latest_edge_bps": 75.92,
-      "last_median_positive_edge_bps": 21.62,
-      "last_persistence": 0.4634,
+      "last_seen_utc": "2026-11-05T22:20:52+00:00",
+      "last_latest_edge_bps": 21.14,
+      "last_median_positive_edge_bps": 21.38,
+      "last_persistence": 0.4878,
       "last_reasons": [
-        "persistence=0.463; need at least 0.70",
-        "latest funding direction matches 46% of independent basis buckets; require >= 50%"
+        "persistence=0.488; need at least 0.70",
+        "latest funding direction matches 49% of independent basis buckets; require >= 50%"
       ],
-      "updated_at_utc": "2026-11-05T18:11:08+00:00"
+      "updated_at_utc": "2026-11-05T22:25:26+00:00"
     },
     "funding_spread|GUSDT": {
       "strategy": "funding_spread",
