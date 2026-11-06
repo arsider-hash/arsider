@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-06T07:32:40+00:00",
+  "generated_at_utc": "2026-11-06T09:21:14+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -30,13 +30,13 @@
     "stable_dislocation|FDUSD:Binance": {
       "strategy": "stable_dislocation",
       "label": "FDUSD:Binance",
-      "snapshots": 459,
+      "snapshots": 460,
       "survives": 0,
       "rejected": 0,
-      "insufficient": 459,
-      "consecutive_non_survivals": 459,
+      "insufficient": 460,
+      "consecutive_non_survivals": 460,
       "reason_counts": {
-        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 459,
+        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 460,
         "persistence=0.486; need at least 0.70": 1,
         "persistence=0.500; need at least 0.70": 2,
         "persistence=0.543; need at least 0.70": 1,
@@ -56,14 +56,14 @@
         "persistence=0.567; need at least 0.70": 1
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-11-06T07:29:00+00:00",
-      "last_latest_edge_bps": 20.5,
+      "last_seen_utc": "2026-11-06T09:17:33+00:00",
+      "last_latest_edge_bps": 19.5,
       "last_median_positive_edge_bps": 15.5,
       "last_persistence": 1.0,
       "last_reasons": [
         "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified"
       ],
-      "updated_at_utc": "2026-11-06T07:32:40+00:00"
+      "updated_at_utc": "2026-11-06T09:21:14+00:00"
     },
     "funding_spread|VTHOUSDT": {
       "strategy": "funding_spread",
@@ -702,11 +702,11 @@
     "funding_spread|AKEUSDT": {
       "strategy": "funding_spread",
       "label": "AKEUSDT",
-      "snapshots": 100,
+      "snapshots": 101,
       "survives": 33,
       "rejected": 43,
-      "insufficient": 24,
-      "consecutive_non_survivals": 43,
+      "insufficient": 25,
+      "consecutive_non_survivals": 44,
       "reason_counts": {
         "latest/median edge ratio=0.083; latest=1.120 bps/8h, median=13.420; require >= 0.25 to rule out sharp edge decay": 1,
         "no matching executable-entry probe at EUR 250 for AKEUSDT long Bitget / short Gate": 6,
@@ -818,19 +818,20 @@
         "EUR 250 executable adverse basis=46.353 bps, recovery=3.83 funding periods; require <= 3.00": 1,
         "persistence=0.550; need at least 0.70": 2,
         "EUR 250 executable adverse basis=27.948 bps, recovery=7.81 funding periods; require <= 3.00": 1,
-        "latest/median edge ratio=0.170; latest=3.580 bps/8h, median=21.000; require >= 0.25 to rule out sharp edge decay": 1
+        "latest/median edge ratio=0.170; latest=3.580 bps/8h, median=21.000; require >= 0.25 to rule out sharp edge decay": 1,
+        "persistence=0.575; need at least 0.70": 1,
+        "latest/median edge ratio=0.145; latest=3.020 bps/8h, median=20.860; require >= 0.25 to rule out sharp edge decay": 1
       },
-      "last_verdict": "REJECTED",
-      "last_seen_utc": "2026-11-06T03:45:59+00:00",
-      "last_latest_edge_bps": 3.58,
-      "last_median_positive_edge_bps": 21.0,
-      "last_persistence": 0.55,
+      "last_verdict": "INSUFFICIENT_EVIDENCE",
+      "last_seen_utc": "2026-11-06T09:16:41+00:00",
+      "last_latest_edge_bps": 3.02,
+      "last_median_positive_edge_bps": 20.86,
+      "last_persistence": 0.575,
       "last_reasons": [
-        "EUR 250 executable adverse basis=27.948 bps, recovery=7.81 funding periods; require <= 3.00",
-        "persistence=0.550; need at least 0.70",
-        "latest/median edge ratio=0.170; latest=3.580 bps/8h, median=21.000; require >= 0.25 to rule out sharp edge decay"
+        "persistence=0.575; need at least 0.70",
+        "latest/median edge ratio=0.145; latest=3.020 bps/8h, median=20.860; require >= 0.25 to rule out sharp edge decay"
       ],
-      "updated_at_utc": "2026-11-06T03:50:30+00:00"
+      "updated_at_utc": "2026-11-06T09:21:14+00:00"
     },
     "funding_spread|GUSDT": {
       "strategy": "funding_spread",
