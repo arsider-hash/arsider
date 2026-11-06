@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-06T09:21:14+00:00",
+  "generated_at_utc": "2026-11-06T10:00:28+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -30,13 +30,13 @@
     "stable_dislocation|FDUSD:Binance": {
       "strategy": "stable_dislocation",
       "label": "FDUSD:Binance",
-      "snapshots": 460,
+      "snapshots": 461,
       "survives": 0,
       "rejected": 0,
-      "insufficient": 460,
-      "consecutive_non_survivals": 460,
+      "insufficient": 461,
+      "consecutive_non_survivals": 461,
       "reason_counts": {
-        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 460,
+        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 461,
         "persistence=0.486; need at least 0.70": 1,
         "persistence=0.500; need at least 0.70": 2,
         "persistence=0.543; need at least 0.70": 1,
@@ -56,14 +56,14 @@
         "persistence=0.567; need at least 0.70": 1
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-11-06T09:17:33+00:00",
+      "last_seen_utc": "2026-11-06T09:56:47+00:00",
       "last_latest_edge_bps": 19.5,
       "last_median_positive_edge_bps": 15.5,
       "last_persistence": 1.0,
       "last_reasons": [
         "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified"
       ],
-      "updated_at_utc": "2026-11-06T09:21:14+00:00"
+      "updated_at_utc": "2026-11-06T10:00:28+00:00"
     },
     "funding_spread|VTHOUSDT": {
       "strategy": "funding_spread",
@@ -702,11 +702,11 @@
     "funding_spread|AKEUSDT": {
       "strategy": "funding_spread",
       "label": "AKEUSDT",
-      "snapshots": 101,
+      "snapshots": 102,
       "survives": 33,
       "rejected": 43,
-      "insufficient": 25,
-      "consecutive_non_survivals": 44,
+      "insufficient": 26,
+      "consecutive_non_survivals": 45,
       "reason_counts": {
         "latest/median edge ratio=0.083; latest=1.120 bps/8h, median=13.420; require >= 0.25 to rule out sharp edge decay": 1,
         "no matching executable-entry probe at EUR 250 for AKEUSDT long Bitget / short Gate": 6,
@@ -782,7 +782,7 @@
         "EUR 250 executable adverse basis=144.167 bps, recovery=3.70 funding periods; require <= 3.00": 1,
         "35 independent 15m buckets; median adverse basis costs 3.79 funding periods; median aligned basis=-145.214 bps": 1,
         "latest/median edge ratio=0.007; latest=0.240 bps/8h, median=36.540; require >= 0.25 to rule out sharp edge decay": 1,
-        "no matching executable-entry probe at EUR 250 for AKEUSDT short Bitget / long Gate": 1,
+        "no matching executable-entry probe at EUR 250 for AKEUSDT short Bitget / long Gate": 2,
         "32 independent 15m buckets; median adverse basis costs 3.44 funding periods; median aligned basis=-105.139 bps": 1,
         "EUR 250 executable adverse basis=58.848 bps, recovery=13.20 funding periods; require <= 3.00": 1,
         "persistence=0.625; need at least 0.70": 2,
@@ -820,18 +820,21 @@
         "EUR 250 executable adverse basis=27.948 bps, recovery=7.81 funding periods; require <= 3.00": 1,
         "latest/median edge ratio=0.170; latest=3.580 bps/8h, median=21.000; require >= 0.25 to rule out sharp edge decay": 1,
         "persistence=0.575; need at least 0.70": 1,
-        "latest/median edge ratio=0.145; latest=3.020 bps/8h, median=20.860; require >= 0.25 to rule out sharp edge decay": 1
+        "latest/median edge ratio=0.145; latest=3.020 bps/8h, median=20.860; require >= 0.25 to rule out sharp edge decay": 1,
+        "persistence=0.590; need at least 0.70": 1,
+        "latest/median edge ratio=0.045; latest=0.940 bps/8h, median=20.860; require >= 0.25 to rule out sharp edge decay": 1
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-11-06T09:16:41+00:00",
-      "last_latest_edge_bps": 3.02,
+      "last_seen_utc": "2026-11-06T09:55:58+00:00",
+      "last_latest_edge_bps": 0.94,
       "last_median_positive_edge_bps": 20.86,
-      "last_persistence": 0.575,
+      "last_persistence": 0.5897,
       "last_reasons": [
-        "persistence=0.575; need at least 0.70",
-        "latest/median edge ratio=0.145; latest=3.020 bps/8h, median=20.860; require >= 0.25 to rule out sharp edge decay"
+        "persistence=0.590; need at least 0.70",
+        "latest/median edge ratio=0.045; latest=0.940 bps/8h, median=20.860; require >= 0.25 to rule out sharp edge decay",
+        "no matching executable-entry probe at EUR 250 for AKEUSDT short Bitget / long Gate"
       ],
-      "updated_at_utc": "2026-11-06T09:21:14+00:00"
+      "updated_at_utc": "2026-11-06T10:00:28+00:00"
     },
     "funding_spread|GUSDT": {
       "strategy": "funding_spread",
