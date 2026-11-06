@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-06T03:50:30+00:00",
+  "generated_at_utc": "2026-11-06T07:32:40+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -30,13 +30,13 @@
     "stable_dislocation|FDUSD:Binance": {
       "strategy": "stable_dislocation",
       "label": "FDUSD:Binance",
-      "snapshots": 458,
+      "snapshots": 459,
       "survives": 0,
       "rejected": 0,
-      "insufficient": 458,
-      "consecutive_non_survivals": 458,
+      "insufficient": 459,
+      "consecutive_non_survivals": 459,
       "reason_counts": {
-        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 458,
+        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 459,
         "persistence=0.486; need at least 0.70": 1,
         "persistence=0.500; need at least 0.70": 2,
         "persistence=0.543; need at least 0.70": 1,
@@ -56,14 +56,14 @@
         "persistence=0.567; need at least 0.70": 1
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-11-06T03:46:50+00:00",
-      "last_latest_edge_bps": 24.5,
+      "last_seen_utc": "2026-11-06T07:29:00+00:00",
+      "last_latest_edge_bps": 20.5,
       "last_median_positive_edge_bps": 15.5,
       "last_persistence": 1.0,
       "last_reasons": [
         "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified"
       ],
-      "updated_at_utc": "2026-11-06T03:50:30+00:00"
+      "updated_at_utc": "2026-11-06T07:32:40+00:00"
     },
     "funding_spread|VTHOUSDT": {
       "strategy": "funding_spread",
@@ -2581,6 +2581,29 @@
         "no matching executable-entry probe at EUR 250 for SOPHUSDT long Bitget / short Gate"
       ],
       "updated_at_utc": "2026-11-02T19:57:32+00:00"
+    },
+    "funding_spread|AMDUSDT": {
+      "strategy": "funding_spread",
+      "label": "AMDUSDT",
+      "snapshots": 1,
+      "survives": 0,
+      "rejected": 1,
+      "insufficient": 0,
+      "consecutive_non_survivals": 1,
+      "reason_counts": {
+        "candidate age 134856s": 1,
+        "no matching executable-entry probe at EUR 250 for AMDUSDT short Bitget / long Gate": 1
+      },
+      "last_verdict": "REJECTED",
+      "last_seen_utc": "2026-11-04T18:05:04+00:00",
+      "last_latest_edge_bps": 5.73,
+      "last_median_positive_edge_bps": 5.65,
+      "last_persistence": 1.0,
+      "last_reasons": [
+        "candidate age 134856s",
+        "no matching executable-entry probe at EUR 250 for AMDUSDT short Bitget / long Gate"
+      ],
+      "updated_at_utc": "2026-11-06T07:32:40+00:00"
     }
   },
   "note": "Historical failure memory is diagnostic evidence only. It cannot loosen gates or create READY."
