@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-06T00:38:10+00:00",
+  "generated_at_utc": "2026-11-06T01:33:52+00:00",
   "verdict": "REJECTED",
   "selected": {
     "key": "funding_spread|AKEUSDT",
@@ -13,11 +13,11 @@
     "median_positive_edge_bps": 20.86,
     "p90_positive_edge_bps": 138.82,
     "max_edge_bps": 162.14,
-    "latest_edge_bps": 7.94,
+    "latest_edge_bps": 12.12,
     "research_score": 75.85,
     "classification": "watch",
-    "last_seen_utc": "2026-11-06T00:33:41+00:00",
-    "latest_age_seconds": 109.8,
+    "last_seen_utc": "2026-11-06T01:29:19+00:00",
+    "latest_age_seconds": 113.9,
     "current_signal_fresh": true,
     "current_direction_stability": 0.561,
     "current_direction_observations": 23,
@@ -168,7 +168,7 @@
       "check": "freshness",
       "status": "PASS",
       "severity": "hard",
-      "detail": "candidate age 270s"
+      "detail": "candidate age 273s"
     },
     {
       "check": "sample_presence",
@@ -192,7 +192,7 @@
       "check": "latest_edge_sign",
       "status": "PASS",
       "severity": "soft",
-      "detail": "latest_edge_bps=7.9400"
+      "detail": "latest_edge_bps=12.1200"
     },
     {
       "check": "economic_relevance",
@@ -204,7 +204,7 @@
       "check": "funding_regime_decay",
       "status": "PASS",
       "severity": "hard",
-      "detail": "latest/median edge ratio=0.381; latest=7.940 bps/8h, median=20.860; require >= 0.25 to rule out sharp edge decay"
+      "detail": "latest/median edge ratio=0.581; latest=12.120 bps/8h, median=20.860; require >= 0.25 to rule out sharp edge decay"
     },
     {
       "check": "funding_basis_persistence",
@@ -222,7 +222,7 @@
       "check": "funding_executable_entry",
       "status": "FAIL",
       "severity": "hard",
-      "detail": "EUR 250 executable adverse basis=57.783 bps, recovery=7.28 funding periods; require <= 3.00"
+      "detail": "EUR 250 executable adverse basis=46.353 bps, recovery=3.83 funding periods; require <= 3.00"
     },
     {
       "check": "shadow_evidence",
@@ -232,7 +232,7 @@
     }
   ],
   "hard_failures": [
-    "EUR 250 executable adverse basis=57.783 bps, recovery=7.28 funding periods; require <= 3.00"
+    "EUR 250 executable adverse basis=46.353 bps, recovery=3.83 funding periods; require <= 3.00"
   ],
   "insufficient_evidence": [
     "persistence=0.561; need at least 0.70"
