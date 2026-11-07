@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-07T01:05:11+00:00",
+  "generated_at_utc": "2026-11-07T02:14:14+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -30,13 +30,13 @@
     "stable_dislocation|FDUSD:Binance": {
       "strategy": "stable_dislocation",
       "label": "FDUSD:Binance",
-      "snapshots": 467,
+      "snapshots": 468,
       "survives": 0,
       "rejected": 0,
-      "insufficient": 467,
-      "consecutive_non_survivals": 467,
+      "insufficient": 468,
+      "consecutive_non_survivals": 468,
       "reason_counts": {
-        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 467,
+        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 468,
         "persistence=0.486; need at least 0.70": 1,
         "persistence=0.500; need at least 0.70": 2,
         "persistence=0.543; need at least 0.70": 1,
@@ -56,14 +56,14 @@
         "persistence=0.567; need at least 0.70": 1
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-11-07T01:01:31+00:00",
+      "last_seen_utc": "2026-11-07T02:10:35+00:00",
       "last_latest_edge_bps": 21.5,
       "last_median_positive_edge_bps": 20.5,
       "last_persistence": 1.0,
       "last_reasons": [
         "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified"
       ],
-      "updated_at_utc": "2026-11-07T01:05:11+00:00"
+      "updated_at_utc": "2026-11-07T02:14:14+00:00"
     },
     "funding_spread|VTHOUSDT": {
       "strategy": "funding_spread",
@@ -1223,11 +1223,11 @@
     "funding_spread|SKHYNIXUSDT": {
       "strategy": "funding_spread",
       "label": "SKHYNIXUSDT",
-      "snapshots": 5,
+      "snapshots": 6,
       "survives": 1,
       "rejected": 0,
-      "insufficient": 4,
-      "consecutive_non_survivals": 4,
+      "insufficient": 5,
+      "consecutive_non_survivals": 5,
       "reason_counts": {
         "persistence=0.417; need at least 0.70": 1,
         "latest/median edge ratio=0.000; latest=0.000 bps/8h, median=4.790; require >= 0.25 to rule out sharp edge decay": 2,
@@ -1236,19 +1236,24 @@
         "persistence=0.375; need at least 0.70": 1,
         "latest/median edge ratio=0.000; latest=0.000 bps/8h, median=4.720; require >= 0.25 to rule out sharp edge decay": 1,
         "persistence=0.333; need at least 0.70": 1,
-        "latest/median edge ratio=0.000; latest=0.000 bps/8h, median=4.600; require >= 0.25 to rule out sharp edge decay": 1
+        "latest/median edge ratio=0.000; latest=0.000 bps/8h, median=4.600; require >= 0.25 to rule out sharp edge decay": 1,
+        "persistence=0.390; need at least 0.70": 1,
+        "latest/median edge ratio=0.086; latest=1.740 bps/8h, median=20.200; require >= 0.25 to rule out sharp edge decay": 1,
+        "latest funding direction matches 44% of independent basis buckets; require >= 50%": 1,
+        "no matching executable-entry probe at EUR 250 for SKHYNIXUSDT short Bitget / long Gate": 1
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-10-17T12:42:28+00:00",
-      "last_latest_edge_bps": 0.0,
-      "last_median_positive_edge_bps": 4.6,
-      "last_persistence": 0.3333,
+      "last_seen_utc": "2026-11-07T02:09:50+00:00",
+      "last_latest_edge_bps": 1.74,
+      "last_median_positive_edge_bps": 20.2,
+      "last_persistence": 0.3902,
       "last_reasons": [
-        "persistence=0.333; need at least 0.70",
-        "latest/median edge ratio=0.000; latest=0.000 bps/8h, median=4.600; require >= 0.25 to rule out sharp edge decay",
-        "no matching executable-entry probe at EUR 250 for SKHYNIXUSDT long Bitget / short Gate"
+        "persistence=0.390; need at least 0.70",
+        "latest/median edge ratio=0.086; latest=1.740 bps/8h, median=20.200; require >= 0.25 to rule out sharp edge decay",
+        "latest funding direction matches 44% of independent basis buckets; require >= 50%",
+        "no matching executable-entry probe at EUR 250 for SKHYNIXUSDT short Bitget / long Gate"
       ],
-      "updated_at_utc": "2026-10-17T12:46:35+00:00"
+      "updated_at_utc": "2026-11-07T02:14:14+00:00"
     },
     "funding_spread|MUUSDT": {
       "strategy": "funding_spread",
