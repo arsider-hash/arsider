@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-07T19:36:41+00:00",
+  "generated_at_utc": "2026-11-07T20:29:48+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -30,13 +30,13 @@
     "stable_dislocation|FDUSD:Binance": {
       "strategy": "stable_dislocation",
       "label": "FDUSD:Binance",
-      "snapshots": 471,
+      "snapshots": 472,
       "survives": 0,
       "rejected": 0,
-      "insufficient": 471,
-      "consecutive_non_survivals": 471,
+      "insufficient": 472,
+      "consecutive_non_survivals": 472,
       "reason_counts": {
-        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 471,
+        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 472,
         "persistence=0.486; need at least 0.70": 1,
         "persistence=0.500; need at least 0.70": 2,
         "persistence=0.543; need at least 0.70": 1,
@@ -56,14 +56,14 @@
         "persistence=0.567; need at least 0.70": 1
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-11-07T07:10:36+00:00",
-      "last_latest_edge_bps": 20.5,
-      "last_median_positive_edge_bps": 20.5,
+      "last_seen_utc": "2026-11-07T20:26:15+00:00",
+      "last_latest_edge_bps": 21.0,
+      "last_median_positive_edge_bps": 21.5,
       "last_persistence": 1.0,
       "last_reasons": [
         "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified"
       ],
-      "updated_at_utc": "2026-11-07T07:14:15+00:00"
+      "updated_at_utc": "2026-11-07T20:29:48+00:00"
     },
     "funding_spread|VTHOUSDT": {
       "strategy": "funding_spread",
@@ -492,11 +492,11 @@
     "funding_spread|ONEUSDT": {
       "strategy": "funding_spread",
       "label": "ONEUSDT",
-      "snapshots": 68,
+      "snapshots": 69,
       "survives": 7,
-      "rejected": 60,
+      "rejected": 61,
       "insufficient": 1,
-      "consecutive_non_survivals": 0,
+      "consecutive_non_survivals": 1,
       "reason_counts": {
         "5 independent 15m buckets; median adverse basis costs 3.52 funding periods; median aligned basis=-261.830 bps": 1,
         "EUR 250 executable adverse basis=277.307 bps, recovery=3.40 funding periods; require <= 3.00": 1,
@@ -622,15 +622,18 @@
         "candidate age 135767s": 1,
         "candidate age 141786s": 1,
         "EUR 250 executable adverse basis=38.149 bps, recovery=4.66 funding periods; require <= 3.00": 1,
-        "4 observations; need at least 6": 1
+        "4 observations; need at least 6": 1,
+        "EUR 250 executable adverse basis=36.426 bps, recovery=4.12 funding periods; require <= 3.00": 1
       },
-      "last_verdict": "SURVIVES_KILLER",
-      "last_seen_utc": "2026-11-07T19:32:36+00:00",
-      "last_latest_edge_bps": 13.01,
-      "last_median_positive_edge_bps": 11.4,
+      "last_verdict": "REJECTED",
+      "last_seen_utc": "2026-11-07T20:25:42+00:00",
+      "last_latest_edge_bps": 8.84,
+      "last_median_positive_edge_bps": 11.255,
       "last_persistence": 1.0,
-      "last_reasons": [],
-      "updated_at_utc": "2026-11-07T19:36:41+00:00"
+      "last_reasons": [
+        "EUR 250 executable adverse basis=36.426 bps, recovery=4.12 funding periods; require <= 3.00"
+      ],
+      "updated_at_utc": "2026-11-07T20:29:48+00:00"
     },
     "funding_spread|FUSDT": {
       "strategy": "funding_spread",
