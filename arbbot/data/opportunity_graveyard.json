@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-10T04:04:49+00:00",
+  "generated_at_utc": "2026-11-10T07:20:41+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -30,13 +30,13 @@
     "stable_dislocation|FDUSD:Binance": {
       "strategy": "stable_dislocation",
       "label": "FDUSD:Binance",
-      "snapshots": 494,
+      "snapshots": 495,
       "survives": 0,
       "rejected": 0,
-      "insufficient": 494,
-      "consecutive_non_survivals": 494,
+      "insufficient": 495,
+      "consecutive_non_survivals": 495,
       "reason_counts": {
-        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 494,
+        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 495,
         "persistence=0.486; need at least 0.70": 1,
         "persistence=0.500; need at least 0.70": 2,
         "persistence=0.543; need at least 0.70": 1,
@@ -56,14 +56,14 @@
         "persistence=0.567; need at least 0.70": 1
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-11-09T21:47:58+00:00",
+      "last_seen_utc": "2026-11-10T07:17:02+00:00",
       "last_latest_edge_bps": 23.5,
-      "last_median_positive_edge_bps": 21.5,
+      "last_median_positive_edge_bps": 23.5,
       "last_persistence": 1.0,
       "last_reasons": [
         "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified"
       ],
-      "updated_at_utc": "2026-11-09T21:51:39+00:00"
+      "updated_at_utc": "2026-11-10T07:20:41+00:00"
     },
     "funding_spread|VTHOUSDT": {
       "strategy": "funding_spread",
@@ -2664,6 +2664,31 @@
         "no matching executable-entry probe at EUR 250 for UAIUSDT short Bitget / long Gate"
       ],
       "updated_at_utc": "2026-11-08T20:45:05+00:00"
+    },
+    "funding_spread|IDOLUSDT": {
+      "strategy": "funding_spread",
+      "label": "IDOLUSDT",
+      "snapshots": 1,
+      "survives": 0,
+      "rejected": 1,
+      "insufficient": 0,
+      "consecutive_non_survivals": 1,
+      "reason_counts": {
+        "candidate age 124801s": 1,
+        "10 independent 15m buckets; median adverse basis costs 3.50 funding periods; median aligned basis=-14.419 bps": 1,
+        "no matching executable-entry probe at EUR 250 for IDOLUSDT long Bitget / short Gate": 1
+      },
+      "last_verdict": "REJECTED",
+      "last_seen_utc": "2026-11-08T20:40:40+00:00",
+      "last_latest_edge_bps": 11.8,
+      "last_median_positive_edge_bps": 4.16,
+      "last_persistence": 0.9,
+      "last_reasons": [
+        "candidate age 124801s",
+        "10 independent 15m buckets; median adverse basis costs 3.50 funding periods; median aligned basis=-14.419 bps",
+        "no matching executable-entry probe at EUR 250 for IDOLUSDT long Bitget / short Gate"
+      ],
+      "updated_at_utc": "2026-11-10T07:20:41+00:00"
     }
   },
   "note": "Historical failure memory is diagnostic evidence only. It cannot loosen gates or create READY."
