@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-10T08:22:51+00:00",
+  "generated_at_utc": "2026-11-10T12:41:53+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -2690,6 +2690,23 @@
         "no matching executable-entry probe at EUR 250 for IDOLUSDT long Bitget / short Gate"
       ],
       "updated_at_utc": "2026-11-10T08:22:51+00:00"
+    },
+    "funding_spread|INITUSDT": {
+      "strategy": "funding_spread",
+      "label": "INITUSDT",
+      "snapshots": 1,
+      "survives": 1,
+      "rejected": 0,
+      "insufficient": 0,
+      "consecutive_non_survivals": 0,
+      "reason_counts": {},
+      "last_verdict": "SURVIVES_KILLER",
+      "last_seen_utc": "2026-11-10T12:37:28+00:00",
+      "last_latest_edge_bps": 135.97,
+      "last_median_positive_edge_bps": 49.62,
+      "last_persistence": 0.8333,
+      "last_reasons": [],
+      "updated_at_utc": "2026-11-10T12:41:53+00:00"
     }
   },
   "note": "Historical failure memory is diagnostic evidence only. It cannot loosen gates or create READY."
