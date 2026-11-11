@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-10T22:22:53+00:00",
+  "generated_at_utc": "2026-11-11T00:47:59+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -30,13 +30,13 @@
     "stable_dislocation|FDUSD:Binance": {
       "strategy": "stable_dislocation",
       "label": "FDUSD:Binance",
-      "snapshots": 499,
+      "snapshots": 500,
       "survives": 0,
       "rejected": 0,
-      "insufficient": 499,
-      "consecutive_non_survivals": 499,
+      "insufficient": 500,
+      "consecutive_non_survivals": 500,
       "reason_counts": {
-        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 499,
+        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 500,
         "persistence=0.486; need at least 0.70": 1,
         "persistence=0.500; need at least 0.70": 2,
         "persistence=0.543; need at least 0.70": 1,
@@ -56,14 +56,14 @@
         "persistence=0.567; need at least 0.70": 1
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-11-10T16:59:35+00:00",
+      "last_seen_utc": "2026-11-11T00:44:25+00:00",
       "last_latest_edge_bps": 27.5,
       "last_median_positive_edge_bps": 23.5,
       "last_persistence": 1.0,
       "last_reasons": [
         "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified"
       ],
-      "updated_at_utc": "2026-11-10T17:03:15+00:00"
+      "updated_at_utc": "2026-11-11T00:47:59+00:00"
     },
     "funding_spread|VTHOUSDT": {
       "strategy": "funding_spread",
@@ -2240,11 +2240,11 @@
     "funding_spread|JCTUSDT": {
       "strategy": "funding_spread",
       "label": "JCTUSDT",
-      "snapshots": 28,
+      "snapshots": 29,
       "survives": 15,
-      "rejected": 0,
+      "rejected": 1,
       "insufficient": 13,
-      "consecutive_non_survivals": 0,
+      "consecutive_non_survivals": 1,
       "reason_counts": {
         "latest/median edge ratio=0.000; latest=0.000 bps/8h, median=10.590; require >= 0.25 to rule out sharp edge decay": 1,
         "no matching executable-entry probe at EUR 250 for JCTUSDT long Bitget / short Gate": 5,
@@ -2262,15 +2262,18 @@
         "persistence=0.378; need at least 0.70": 1,
         "persistence=0.395; need at least 0.70": 1,
         "persistence=0.436; need at least 0.70": 1,
-        "persistence=0.600; need at least 0.70": 1
+        "persistence=0.600; need at least 0.70": 1,
+        "EUR 250 executable adverse basis=42.113 bps, recovery=8.53 funding periods; require <= 3.00": 1
       },
-      "last_verdict": "SURVIVES_KILLER",
-      "last_seen_utc": "2026-11-10T04:00:26+00:00",
-      "last_latest_edge_bps": 8.16,
-      "last_median_positive_edge_bps": 13.47,
-      "last_persistence": 0.8667,
-      "last_reasons": [],
-      "updated_at_utc": "2026-11-10T04:04:49+00:00"
+      "last_verdict": "REJECTED",
+      "last_seen_utc": "2026-11-11T00:43:51+00:00",
+      "last_latest_edge_bps": 4.94,
+      "last_median_positive_edge_bps": 7.88,
+      "last_persistence": 0.7576,
+      "last_reasons": [
+        "EUR 250 executable adverse basis=42.113 bps, recovery=8.53 funding periods; require <= 3.00"
+      ],
+      "updated_at_utc": "2026-11-11T00:47:59+00:00"
     },
     "funding_spread|DOODUSDT": {
       "strategy": "funding_spread",
