@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-12T12:13:36+00:00",
+  "generated_at_utc": "2026-11-12T18:14:53+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -30,13 +30,13 @@
     "stable_dislocation|FDUSD:Binance": {
       "strategy": "stable_dislocation",
       "label": "FDUSD:Binance",
-      "snapshots": 511,
+      "snapshots": 512,
       "survives": 0,
       "rejected": 0,
-      "insufficient": 511,
-      "consecutive_non_survivals": 511,
+      "insufficient": 512,
+      "consecutive_non_survivals": 512,
       "reason_counts": {
-        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 511,
+        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 512,
         "persistence=0.486; need at least 0.70": 1,
         "persistence=0.500; need at least 0.70": 2,
         "persistence=0.543; need at least 0.70": 1,
@@ -56,14 +56,14 @@
         "persistence=0.567; need at least 0.70": 1
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-11-12T12:09:56+00:00",
-      "last_latest_edge_bps": 27.5,
-      "last_median_positive_edge_bps": 25.5,
+      "last_seen_utc": "2026-11-12T18:11:12+00:00",
+      "last_latest_edge_bps": 30.5,
+      "last_median_positive_edge_bps": 26.5,
       "last_persistence": 1.0,
       "last_reasons": [
         "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified"
       ],
-      "updated_at_utc": "2026-11-12T12:13:36+00:00"
+      "updated_at_utc": "2026-11-12T18:14:53+00:00"
     },
     "funding_spread|VTHOUSDT": {
       "strategy": "funding_spread",
@@ -2703,11 +2703,11 @@
     "funding_spread|INITUSDT": {
       "strategy": "funding_spread",
       "label": "INITUSDT",
-      "snapshots": 24,
+      "snapshots": 25,
       "survives": 13,
-      "rejected": 1,
+      "rejected": 2,
       "insufficient": 10,
-      "consecutive_non_survivals": 2,
+      "consecutive_non_survivals": 3,
       "reason_counts": {
         "persistence=0.316; need at least 0.70": 2,
         "latest funding direction matches 32% of independent basis buckets; require >= 50%": 2,
@@ -2721,17 +2721,20 @@
         "latest/median edge ratio=0.231; latest=25.360 bps/8h, median=110.000; require >= 0.25 to rule out sharp edge decay": 1,
         "EUR 250 executable adverse basis=34.995 bps, recovery=4.01 funding periods; require <= 3.00": 1,
         "latest/median edge ratio=0.093; latest=8.720 bps/8h, median=93.600; require >= 0.25 to rule out sharp edge decay": 1,
-        "latest/median edge ratio=0.139; latest=12.400 bps/8h, median=89.240; require >= 0.25 to rule out sharp edge decay": 1
+        "latest/median edge ratio=0.139; latest=12.400 bps/8h, median=89.240; require >= 0.25 to rule out sharp edge decay": 1,
+        "EUR 250 executable adverse basis=49.997 bps, recovery=4.56 funding periods; require <= 3.00": 1,
+        "latest/median edge ratio=0.225; latest=10.960 bps/8h, median=48.720; require >= 0.25 to rule out sharp edge decay": 1
       },
-      "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-11-12T12:09:09+00:00",
-      "last_latest_edge_bps": 12.4,
-      "last_median_positive_edge_bps": 89.24,
-      "last_persistence": 0.7895,
+      "last_verdict": "REJECTED",
+      "last_seen_utc": "2026-11-12T18:10:22+00:00",
+      "last_latest_edge_bps": 10.96,
+      "last_median_positive_edge_bps": 48.72,
+      "last_persistence": 0.8182,
       "last_reasons": [
-        "latest/median edge ratio=0.139; latest=12.400 bps/8h, median=89.240; require >= 0.25 to rule out sharp edge decay"
+        "EUR 250 executable adverse basis=49.997 bps, recovery=4.56 funding periods; require <= 3.00",
+        "latest/median edge ratio=0.225; latest=10.960 bps/8h, median=48.720; require >= 0.25 to rule out sharp edge decay"
       ],
-      "updated_at_utc": "2026-11-12T12:13:36+00:00"
+      "updated_at_utc": "2026-11-12T18:14:53+00:00"
     },
     "funding_spread|ARIAUSDT": {
       "strategy": "funding_spread",
