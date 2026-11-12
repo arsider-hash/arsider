@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-12T03:52:57+00:00",
+  "generated_at_utc": "2026-11-12T09:46:58+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -30,13 +30,13 @@
     "stable_dislocation|FDUSD:Binance": {
       "strategy": "stable_dislocation",
       "label": "FDUSD:Binance",
-      "snapshots": 509,
+      "snapshots": 510,
       "survives": 0,
       "rejected": 0,
-      "insufficient": 509,
-      "consecutive_non_survivals": 509,
+      "insufficient": 510,
+      "consecutive_non_survivals": 510,
       "reason_counts": {
-        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 509,
+        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 510,
         "persistence=0.486; need at least 0.70": 1,
         "persistence=0.500; need at least 0.70": 2,
         "persistence=0.543; need at least 0.70": 1,
@@ -56,14 +56,14 @@
         "persistence=0.567; need at least 0.70": 1
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-11-11T23:04:58+00:00",
-      "last_latest_edge_bps": 24.5,
-      "last_median_positive_edge_bps": 24.25,
+      "last_seen_utc": "2026-11-12T09:43:17+00:00",
+      "last_latest_edge_bps": 27.5,
+      "last_median_positive_edge_bps": 25.5,
       "last_persistence": 1.0,
       "last_reasons": [
         "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified"
       ],
-      "updated_at_utc": "2026-11-11T23:08:34+00:00"
+      "updated_at_utc": "2026-11-12T09:46:58+00:00"
     },
     "funding_spread|VTHOUSDT": {
       "strategy": "funding_spread",
@@ -2703,11 +2703,11 @@
     "funding_spread|INITUSDT": {
       "strategy": "funding_spread",
       "label": "INITUSDT",
-      "snapshots": 22,
+      "snapshots": 23,
       "survives": 13,
-      "rejected": 0,
+      "rejected": 1,
       "insufficient": 9,
-      "consecutive_non_survivals": 0,
+      "consecutive_non_survivals": 1,
       "reason_counts": {
         "persistence=0.316; need at least 0.70": 2,
         "latest funding direction matches 32% of independent basis buckets; require >= 50%": 2,
@@ -2718,15 +2718,20 @@
         "persistence=0.696; need at least 0.70": 1,
         "latest/median edge ratio=0.218; latest=28.720 bps/8h, median=132.045; require >= 0.25 to rule out sharp edge decay": 1,
         "latest/median edge ratio=0.230; latest=27.360 bps/8h, median=119.060; require >= 0.25 to rule out sharp edge decay": 1,
-        "latest/median edge ratio=0.231; latest=25.360 bps/8h, median=110.000; require >= 0.25 to rule out sharp edge decay": 1
+        "latest/median edge ratio=0.231; latest=25.360 bps/8h, median=110.000; require >= 0.25 to rule out sharp edge decay": 1,
+        "EUR 250 executable adverse basis=34.995 bps, recovery=4.01 funding periods; require <= 3.00": 1,
+        "latest/median edge ratio=0.093; latest=8.720 bps/8h, median=93.600; require >= 0.25 to rule out sharp edge decay": 1
       },
-      "last_verdict": "SURVIVES_KILLER",
-      "last_seen_utc": "2026-11-12T03:48:45+00:00",
-      "last_latest_edge_bps": 24.0,
-      "last_median_positive_edge_bps": 84.88,
-      "last_persistence": 0.8158,
-      "last_reasons": [],
-      "updated_at_utc": "2026-11-12T03:52:57+00:00"
+      "last_verdict": "REJECTED",
+      "last_seen_utc": "2026-11-12T09:42:23+00:00",
+      "last_latest_edge_bps": 8.72,
+      "last_median_positive_edge_bps": 93.6,
+      "last_persistence": 0.8286,
+      "last_reasons": [
+        "EUR 250 executable adverse basis=34.995 bps, recovery=4.01 funding periods; require <= 3.00",
+        "latest/median edge ratio=0.093; latest=8.720 bps/8h, median=93.600; require >= 0.25 to rule out sharp edge decay"
+      ],
+      "updated_at_utc": "2026-11-12T09:46:58+00:00"
     }
   },
   "note": "Historical failure memory is diagnostic evidence only. It cannot loosen gates or create READY."
