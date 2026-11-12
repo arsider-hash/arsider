@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-11T23:08:34+00:00",
+  "generated_at_utc": "2026-11-12T01:33:03+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -2703,11 +2703,11 @@
     "funding_spread|INITUSDT": {
       "strategy": "funding_spread",
       "label": "INITUSDT",
-      "snapshots": 19,
-      "survives": 10,
+      "snapshots": 20,
+      "survives": 11,
       "rejected": 0,
       "insufficient": 9,
-      "consecutive_non_survivals": 3,
+      "consecutive_non_survivals": 0,
       "reason_counts": {
         "persistence=0.316; need at least 0.70": 2,
         "latest funding direction matches 32% of independent basis buckets; require >= 50%": 2,
@@ -2720,15 +2720,13 @@
         "latest/median edge ratio=0.230; latest=27.360 bps/8h, median=119.060; require >= 0.25 to rule out sharp edge decay": 1,
         "latest/median edge ratio=0.231; latest=25.360 bps/8h, median=110.000; require >= 0.25 to rule out sharp edge decay": 1
       },
-      "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-11-11T23:04:09+00:00",
-      "last_latest_edge_bps": 25.36,
-      "last_median_positive_edge_bps": 110.0,
-      "last_persistence": 0.7941,
-      "last_reasons": [
-        "latest/median edge ratio=0.231; latest=25.360 bps/8h, median=110.000; require >= 0.25 to rule out sharp edge decay"
-      ],
-      "updated_at_utc": "2026-11-11T23:08:34+00:00"
+      "last_verdict": "SURVIVES_KILLER",
+      "last_seen_utc": "2026-11-12T01:28:27+00:00",
+      "last_latest_edge_bps": 44.88,
+      "last_median_positive_edge_bps": 101.8,
+      "last_persistence": 0.8,
+      "last_reasons": [],
+      "updated_at_utc": "2026-11-12T01:33:03+00:00"
     }
   },
   "note": "Historical failure memory is diagnostic evidence only. It cannot loosen gates or create READY."
