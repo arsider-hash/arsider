@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-12T19:59:01+00:00",
+  "generated_at_utc": "2026-11-13T00:14:12+00:00",
   "state": "DIAGNOSTIC_ONLY",
   "selected": {
     "key": "stable_dislocation|FDUSD:Binance",
@@ -7,25 +7,25 @@
     "label": "FDUSD:Binance",
     "direction": "below peg",
     "venue": "Binance",
-    "observations": 27,
-    "positive_observations": 27,
+    "observations": 24,
+    "positive_observations": 24,
     "persistence": 1.0,
-    "median_positive_edge_bps": 26.5,
+    "median_positive_edge_bps": 27.5,
     "p90_positive_edge_bps": 29.5,
-    "max_edge_bps": 30.5,
-    "latest_edge_bps": 29.0,
+    "max_edge_bps": 31.5,
+    "latest_edge_bps": 31.5,
     "research_score": 100.0,
     "classification": "strong_watch",
-    "last_seen_utc": "2026-11-12T19:55:28+00:00",
-    "latest_age_seconds": 56.6,
+    "last_seen_utc": "2026-11-13T00:10:32+00:00",
+    "latest_age_seconds": 59.8,
     "current_signal_fresh": true,
     "capital_utilisation": 1.0,
-    "capital_efficiency_score": 91.25,
-    "economic_relevance_score": 91.25,
+    "capital_efficiency_score": 93.75,
+    "economic_relevance_score": 93.75,
     "economic_relevance": {
       "reference_budget_eur": 250,
       "reference_basis": "paper_profit_per_event_at_median_edge",
-      "reference_payoff_eur": 0.6625,
+      "reference_payoff_eur": 0.6875,
       "reference_target_eur": 0.25,
       "relevance_factor": 1.0,
       "economically_material_at_reference_budget": true
@@ -34,32 +34,32 @@
       "25": {
         "total_budget": 25,
         "effective_capital_per_edge": 25.0,
-        "paper_profit_per_event_at_median_edge": 0.0663
+        "paper_profit_per_event_at_median_edge": 0.0688
       },
       "50": {
         "total_budget": 50,
         "effective_capital_per_edge": 50.0,
-        "paper_profit_per_event_at_median_edge": 0.1325
+        "paper_profit_per_event_at_median_edge": 0.1375
       },
       "100": {
         "total_budget": 100,
         "effective_capital_per_edge": 100.0,
-        "paper_profit_per_event_at_median_edge": 0.265
+        "paper_profit_per_event_at_median_edge": 0.275
       },
       "250": {
         "total_budget": 250,
         "effective_capital_per_edge": 250.0,
-        "paper_profit_per_event_at_median_edge": 0.6625
+        "paper_profit_per_event_at_median_edge": 0.6875
       },
       "500": {
         "total_budget": 500,
         "effective_capital_per_edge": 500.0,
-        "paper_profit_per_event_at_median_edge": 1.325
+        "paper_profit_per_event_at_median_edge": 1.375
       },
       "1000": {
         "total_budget": 1000,
         "effective_capital_per_edge": 1000.0,
-        "paper_profit_per_event_at_median_edge": 2.65
+        "paper_profit_per_event_at_median_edge": 2.75
       }
     },
     "monthly_income_lens": {
@@ -78,75 +78,75 @@
   "rows": [
     {
       "budget": 25,
-      "entry_vwap": 0.9972,
-      "base_qty": 25.07019655,
-      "immediate_exit_vwap": 0.997,
-      "immediate_roundtrip_edge_bps": -2.0056,
+      "entry_vwap": 0.9969,
+      "base_qty": 25.077741,
+      "immediate_exit_vwap": 0.9968,
+      "immediate_roundtrip_edge_bps": -1.0031,
       "convergence_exit_price_assumption": 0.9999,
-      "convergence_edge_before_friction_bps": 27.0758,
+      "convergence_edge_before_friction_bps": 30.0933,
       "friction_stress_bps": 5.0,
-      "convergence_edge_after_friction_bps": 22.0758,
-      "paper_profit_eur_if_full_convergence": 0.0552
+      "convergence_edge_after_friction_bps": 25.0933,
+      "paper_profit_eur_if_full_convergence": 0.0627
     },
     {
       "budget": 50,
-      "entry_vwap": 0.9972,
-      "base_qty": 50.1403931,
-      "immediate_exit_vwap": 0.997,
-      "immediate_roundtrip_edge_bps": -2.0056,
+      "entry_vwap": 0.9969,
+      "base_qty": 50.15548199,
+      "immediate_exit_vwap": 0.9968,
+      "immediate_roundtrip_edge_bps": -1.0031,
       "convergence_exit_price_assumption": 0.9999,
-      "convergence_edge_before_friction_bps": 27.0758,
+      "convergence_edge_before_friction_bps": 30.0933,
       "friction_stress_bps": 5.0,
-      "convergence_edge_after_friction_bps": 22.0758,
-      "paper_profit_eur_if_full_convergence": 0.1104
+      "convergence_edge_after_friction_bps": 25.0933,
+      "paper_profit_eur_if_full_convergence": 0.1255
     },
     {
       "budget": 100,
-      "entry_vwap": 0.9972,
-      "base_qty": 100.2807862,
-      "immediate_exit_vwap": 0.997,
-      "immediate_roundtrip_edge_bps": -2.0056,
+      "entry_vwap": 0.9969,
+      "base_qty": 100.31096399,
+      "immediate_exit_vwap": 0.9968,
+      "immediate_roundtrip_edge_bps": -1.0031,
       "convergence_exit_price_assumption": 0.9999,
-      "convergence_edge_before_friction_bps": 27.0758,
+      "convergence_edge_before_friction_bps": 30.0933,
       "friction_stress_bps": 5.0,
-      "convergence_edge_after_friction_bps": 22.0758,
-      "paper_profit_eur_if_full_convergence": 0.2208
+      "convergence_edge_after_friction_bps": 25.0933,
+      "paper_profit_eur_if_full_convergence": 0.2509
     },
     {
       "budget": 250,
-      "entry_vwap": 0.9972,
-      "base_qty": 250.7019655,
-      "immediate_exit_vwap": 0.997,
-      "immediate_roundtrip_edge_bps": -2.0056,
+      "entry_vwap": 0.9969,
+      "base_qty": 250.77740997,
+      "immediate_exit_vwap": 0.9968,
+      "immediate_roundtrip_edge_bps": -1.0031,
       "convergence_exit_price_assumption": 0.9999,
-      "convergence_edge_before_friction_bps": 27.0758,
+      "convergence_edge_before_friction_bps": 30.0933,
       "friction_stress_bps": 5.0,
-      "convergence_edge_after_friction_bps": 22.0758,
-      "paper_profit_eur_if_full_convergence": 0.5519
+      "convergence_edge_after_friction_bps": 25.0933,
+      "paper_profit_eur_if_full_convergence": 0.6273
     },
     {
       "budget": 500,
-      "entry_vwap": 0.9972,
-      "base_qty": 501.40393101,
-      "immediate_exit_vwap": 0.997,
-      "immediate_roundtrip_edge_bps": -2.0056,
+      "entry_vwap": 0.9969,
+      "base_qty": 501.55481994,
+      "immediate_exit_vwap": 0.9968,
+      "immediate_roundtrip_edge_bps": -1.0031,
       "convergence_exit_price_assumption": 0.9999,
-      "convergence_edge_before_friction_bps": 27.0758,
+      "convergence_edge_before_friction_bps": 30.0933,
       "friction_stress_bps": 5.0,
-      "convergence_edge_after_friction_bps": 22.0758,
-      "paper_profit_eur_if_full_convergence": 1.1038
+      "convergence_edge_after_friction_bps": 25.0933,
+      "paper_profit_eur_if_full_convergence": 1.2547
     },
     {
       "budget": 1000,
-      "entry_vwap": 0.9972,
-      "base_qty": 1002.80786201,
-      "immediate_exit_vwap": 0.997,
-      "immediate_roundtrip_edge_bps": -2.0056,
+      "entry_vwap": 0.9969,
+      "base_qty": 1003.10963988,
+      "immediate_exit_vwap": 0.9968,
+      "immediate_roundtrip_edge_bps": -1.0031,
       "convergence_exit_price_assumption": 0.9999,
-      "convergence_edge_before_friction_bps": 27.0758,
+      "convergence_edge_before_friction_bps": 30.0933,
       "friction_stress_bps": 5.0,
-      "convergence_edge_after_friction_bps": 22.0758,
-      "paper_profit_eur_if_full_convergence": 2.2076
+      "convergence_edge_after_friction_bps": 25.0933,
+      "paper_profit_eur_if_full_convergence": 2.5093
     }
   ],
   "max_positive_budget_under_hypothetical_convergence": 1000,
