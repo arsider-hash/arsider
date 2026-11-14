@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-14T03:08:18+00:00",
+  "generated_at_utc": "2026-11-14T08:19:25+00:00",
   "verdict": "INSUFFICIENT_EVIDENCE",
   "selected": {
     "key": "stable_dislocation|FDUSD:Binance",
@@ -7,17 +7,17 @@
     "label": "FDUSD:Binance",
     "direction": "below peg",
     "venue": "Binance",
-    "observations": 21,
-    "positive_observations": 21,
+    "observations": 20,
+    "positive_observations": 20,
     "persistence": 1.0,
     "median_positive_edge_bps": 31.5,
     "p90_positive_edge_bps": 34.5,
     "max_edge_bps": 35.5,
-    "latest_edge_bps": 31.5,
+    "latest_edge_bps": 35.5,
     "research_score": 100.0,
     "classification": "strong_watch",
-    "last_seen_utc": "2026-11-14T03:04:50+00:00",
-    "latest_age_seconds": 52.7,
+    "last_seen_utc": "2026-11-14T08:15:45+00:00",
+    "latest_age_seconds": 59.6,
     "current_signal_fresh": true,
     "capital_utilisation": 1.0,
     "capital_efficiency_score": 100.0,
@@ -78,19 +78,19 @@
       "check": "freshness",
       "status": "PASS",
       "severity": "hard",
-      "detail": "candidate age 209s"
+      "detail": "candidate age 221s"
     },
     {
       "check": "sample_presence",
       "status": "PASS",
       "severity": "hard",
-      "detail": "21 observations; need at least 6"
+      "detail": "20 observations; need at least 6"
     },
     {
       "check": "positive_edge_evidence",
       "status": "PASS",
       "severity": "hard",
-      "detail": "positive_observations=21, median_positive_edge_bps=31.5000"
+      "detail": "positive_observations=20, median_positive_edge_bps=31.5000"
     },
     {
       "check": "persistence",
@@ -102,7 +102,7 @@
       "check": "latest_edge_sign",
       "status": "PASS",
       "severity": "soft",
-      "detail": "latest_edge_bps=31.5000"
+      "detail": "latest_edge_bps=35.5000"
     },
     {
       "check": "economic_relevance",
@@ -120,7 +120,7 @@
       "check": "stable_execution_diagnostic",
       "status": "PASS",
       "severity": "soft",
-      "detail": "6 multi-size probes present; EUR 250 immediate round-trip=-1.003 bps; hypothetical convergence positive through EUR 1000"
+      "detail": "6 multi-size probes present; EUR 250 immediate round-trip=-1.004 bps; hypothetical convergence positive through EUR 1000"
     },
     {
       "check": "verified_exit_path",
