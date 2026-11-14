@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-14T08:19:25+00:00",
+  "generated_at_utc": "2026-11-14T09:06:44+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -2767,25 +2767,23 @@
     "funding_spread|BARDUSDT": {
       "strategy": "funding_spread",
       "label": "BARDUSDT",
-      "snapshots": 3,
-      "survives": 1,
+      "snapshots": 4,
+      "survives": 2,
       "rejected": 2,
       "insufficient": 0,
-      "consecutive_non_survivals": 2,
+      "consecutive_non_survivals": 0,
       "reason_counts": {
         "EUR 250 executable adverse basis=45.215 bps, recovery=11.71 funding periods; require <= 3.00": 1,
         "latest/median edge ratio=0.205; latest=3.860 bps/8h, median=18.850; require >= 0.25 to rule out sharp edge decay": 1,
         "EUR 250 executable adverse basis=31.496 bps, recovery=3.81 funding periods; require <= 3.00": 1
       },
-      "last_verdict": "REJECTED",
-      "last_seen_utc": "2026-11-14T08:15:01+00:00",
-      "last_latest_edge_bps": 8.26,
-      "last_median_positive_edge_bps": 16.65,
-      "last_persistence": 0.9231,
-      "last_reasons": [
-        "EUR 250 executable adverse basis=31.496 bps, recovery=3.81 funding periods; require <= 3.00"
-      ],
-      "updated_at_utc": "2026-11-14T08:19:25+00:00"
+      "last_verdict": "SURVIVES_KILLER",
+      "last_seen_utc": "2026-11-14T09:02:45+00:00",
+      "last_latest_edge_bps": 17.96,
+      "last_median_positive_edge_bps": 17.34,
+      "last_persistence": 0.9333,
+      "last_reasons": [],
+      "updated_at_utc": "2026-11-14T09:06:44+00:00"
     }
   },
   "note": "Historical failure memory is diagnostic evidence only. It cannot loosen gates or create READY."
