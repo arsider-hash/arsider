@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-14T09:06:44+00:00",
+  "generated_at_utc": "2026-11-14T10:17:31+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -30,13 +30,13 @@
     "stable_dislocation|FDUSD:Binance": {
       "strategy": "stable_dislocation",
       "label": "FDUSD:Binance",
-      "snapshots": 524,
+      "snapshots": 525,
       "survives": 0,
       "rejected": 0,
-      "insufficient": 524,
-      "consecutive_non_survivals": 524,
+      "insufficient": 525,
+      "consecutive_non_survivals": 525,
       "reason_counts": {
-        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 524,
+        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 525,
         "persistence=0.486; need at least 0.70": 1,
         "persistence=0.500; need at least 0.70": 2,
         "persistence=0.543; need at least 0.70": 1,
@@ -56,14 +56,14 @@
         "persistence=0.567; need at least 0.70": 1
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-11-14T08:15:45+00:00",
-      "last_latest_edge_bps": 35.5,
+      "last_seen_utc": "2026-11-14T10:13:50+00:00",
+      "last_latest_edge_bps": 27.5,
       "last_median_positive_edge_bps": 31.5,
       "last_persistence": 1.0,
       "last_reasons": [
         "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified"
       ],
-      "updated_at_utc": "2026-11-14T08:19:25+00:00"
+      "updated_at_utc": "2026-11-14T10:17:31+00:00"
     },
     "funding_spread|VTHOUSDT": {
       "strategy": "funding_spread",
@@ -2767,23 +2767,28 @@
     "funding_spread|BARDUSDT": {
       "strategy": "funding_spread",
       "label": "BARDUSDT",
-      "snapshots": 4,
+      "snapshots": 5,
       "survives": 2,
       "rejected": 2,
-      "insufficient": 0,
-      "consecutive_non_survivals": 0,
+      "insufficient": 1,
+      "consecutive_non_survivals": 1,
       "reason_counts": {
         "EUR 250 executable adverse basis=45.215 bps, recovery=11.71 funding periods; require <= 3.00": 1,
         "latest/median edge ratio=0.205; latest=3.860 bps/8h, median=18.850; require >= 0.25 to rule out sharp edge decay": 1,
-        "EUR 250 executable adverse basis=31.496 bps, recovery=3.81 funding periods; require <= 3.00": 1
+        "EUR 250 executable adverse basis=31.496 bps, recovery=3.81 funding periods; require <= 3.00": 1,
+        "latest/median edge ratio=0.110; latest=1.900 bps/8h, median=17.340; require >= 0.25 to rule out sharp edge decay": 1,
+        "no matching executable-entry probe at EUR 250 for BARDUSDT short Bitget / long Gate": 1
       },
-      "last_verdict": "SURVIVES_KILLER",
-      "last_seen_utc": "2026-11-14T09:02:45+00:00",
-      "last_latest_edge_bps": 17.96,
+      "last_verdict": "INSUFFICIENT_EVIDENCE",
+      "last_seen_utc": "2026-11-14T10:13:03+00:00",
+      "last_latest_edge_bps": 1.9,
       "last_median_positive_edge_bps": 17.34,
-      "last_persistence": 0.9333,
-      "last_reasons": [],
-      "updated_at_utc": "2026-11-14T09:06:44+00:00"
+      "last_persistence": 0.875,
+      "last_reasons": [
+        "latest/median edge ratio=0.110; latest=1.900 bps/8h, median=17.340; require >= 0.25 to rule out sharp edge decay",
+        "no matching executable-entry probe at EUR 250 for BARDUSDT short Bitget / long Gate"
+      ],
+      "updated_at_utc": "2026-11-14T10:17:31+00:00"
     }
   },
   "note": "Historical failure memory is diagnostic evidence only. It cannot loosen gates or create READY."
