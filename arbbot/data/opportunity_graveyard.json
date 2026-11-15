@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-15T00:12:06+00:00",
+  "generated_at_utc": "2026-11-15T01:50:38+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -2806,25 +2806,22 @@
     "funding_spread|KAVAUSDT": {
       "strategy": "funding_spread",
       "label": "KAVAUSDT",
-      "snapshots": 1,
-      "survives": 0,
+      "snapshots": 2,
+      "survives": 1,
       "rejected": 1,
       "insufficient": 0,
-      "consecutive_non_survivals": 1,
+      "consecutive_non_survivals": 0,
       "reason_counts": {
         "EUR 250 executable adverse basis=124.202 bps, recovery=3.93 funding periods; require <= 3.00": 1,
         "latest/median edge ratio=0.238; latest=31.620 bps/8h, median=133.100; require >= 0.25 to rule out sharp edge decay": 1
       },
-      "last_verdict": "REJECTED",
-      "last_seen_utc": "2026-11-15T00:07:29+00:00",
-      "last_latest_edge_bps": 31.62,
-      "last_median_positive_edge_bps": 133.1,
-      "last_persistence": 0.7143,
-      "last_reasons": [
-        "EUR 250 executable adverse basis=124.202 bps, recovery=3.93 funding periods; require <= 3.00",
-        "latest/median edge ratio=0.238; latest=31.620 bps/8h, median=133.100; require >= 0.25 to rule out sharp edge decay"
-      ],
-      "updated_at_utc": "2026-11-15T00:12:06+00:00"
+      "last_verdict": "SURVIVES_KILLER",
+      "last_seen_utc": "2026-11-15T01:46:24+00:00",
+      "last_latest_edge_bps": 277.0,
+      "last_median_positive_edge_bps": 135.12,
+      "last_persistence": 0.75,
+      "last_reasons": [],
+      "updated_at_utc": "2026-11-15T01:50:38+00:00"
     }
   },
   "note": "Historical failure memory is diagnostic evidence only. It cannot loosen gates or create READY."
