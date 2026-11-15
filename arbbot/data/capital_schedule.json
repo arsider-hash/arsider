@@ -1,12 +1,12 @@
 {
-  "generated_at_utc": "2026-11-14T21:26:44+00:00",
+  "generated_at_utc": "2026-11-15T01:50:59+00:00",
   "status": "SIMULATED",
   "starting_capital_eur": 250.0,
   "window_days": 30,
-  "window_end_utc": "2026-11-13T00:09:39+00:00",
-  "window_start_utc": "2026-10-14T00:09:39+00:00",
-  "proof_window_span_days": 28.9697,
-  "eligible_events": 73,
+  "window_end_utc": "2026-11-15T01:46:24+00:00",
+  "window_start_utc": "2026-10-16T01:46:24+00:00",
+  "proof_window_span_days": 29.8483,
+  "eligible_events": 68,
   "rejected_input_events": 0,
   "plans_tested": 3,
   "best_plan": {
@@ -17,40 +17,40 @@
     "venue_count": 2,
     "total_preallocated_eur": 250.0,
     "idle_unallocated_eur": 0.0,
-    "accepted_events": 4,
-    "net_eur": 0.224216,
-    "human_minutes": 8.0,
-    "average_locked_capital_eur": 233.333,
+    "accepted_events": 5,
+    "net_eur": 1.833024,
+    "human_minutes": 10.0,
+    "average_locked_capital_eur": 291.667,
     "missed": {
-      "capital_busy": 69
+      "capital_busy": 63
     },
     "accepted": [
       {
-        "event_id": "crypto|funding_spread|KORUUSDT|2026-10-15T00:53:20+00:00|250",
-        "observed_at_utc": "2026-10-15T00:53:20+00:00",
-        "release_at_utc": "2026-10-22T00:53:20+00:00",
+        "event_id": "crypto|funding_spread|SOXLUSDT|2026-10-16T05:24:49+00:00|250",
+        "observed_at_utc": "2026-10-16T05:24:49+00:00",
+        "release_at_utc": "2026-10-23T05:24:49+00:00",
         "habitat": "crypto",
         "strategy": "funding_spread",
-        "label": "KORUUSDT",
+        "label": "SOXLUSDT",
         "required_preallocation_eur": {
           "Bitget": 125.0,
           "Gate": 125.0
         },
-        "expected_net_eur": 0.05282125,
+        "expected_net_eur": 0.0130675,
         "human_minutes": 2.0
       },
       {
-        "event_id": "crypto|funding_spread|DOODUSDT|2026-10-22T07:02:34+00:00|250",
-        "observed_at_utc": "2026-10-22T07:02:34+00:00",
-        "release_at_utc": "2026-10-29T07:02:34+00:00",
+        "event_id": "crypto|funding_spread|SOXLUSDT|2026-10-23T19:05:53+00:00|250",
+        "observed_at_utc": "2026-10-23T19:05:53+00:00",
+        "release_at_utc": "2026-10-30T19:05:53+00:00",
         "habitat": "crypto",
         "strategy": "funding_spread",
-        "label": "DOODUSDT",
+        "label": "SOXLUSDT",
         "required_preallocation_eur": {
           "Bitget": 125.0,
           "Gate": 125.0
         },
-        "expected_net_eur": 0.04807125,
+        "expected_net_eur": 0.01125875,
         "human_minutes": 2.0
       },
       {
@@ -79,6 +79,20 @@
           "Gate": 125.0
         },
         "expected_net_eur": 0.07031437,
+        "human_minutes": 2.0
+      },
+      {
+        "event_id": "crypto|funding_spread|KAVAUSDT|2026-11-15T01:46:24+00:00|250",
+        "observed_at_utc": "2026-11-15T01:46:24+00:00",
+        "release_at_utc": "2026-11-22T01:46:24+00:00",
+        "habitat": "crypto",
+        "strategy": "funding_spread",
+        "label": "KAVAUSDT",
+        "required_preallocation_eur": {
+          "Bitget": 125.0,
+          "Gate": 125.0
+        },
+        "expected_net_eur": 1.685375,
         "human_minutes": 2.0
       }
     ]
@@ -91,40 +105,40 @@
     "venue_count": 2,
     "total_preallocated_eur": 250.0,
     "idle_unallocated_eur": 0.0,
-    "accepted_events": 4,
-    "net_eur": 0.224216,
-    "human_minutes": 8.0,
-    "average_locked_capital_eur": 233.333,
+    "accepted_events": 5,
+    "net_eur": 1.833024,
+    "human_minutes": 10.0,
+    "average_locked_capital_eur": 291.667,
     "missed": {
-      "capital_busy": 69
+      "capital_busy": 63
     },
     "accepted": [
       {
-        "event_id": "crypto|funding_spread|KORUUSDT|2026-10-15T00:53:20+00:00|250",
-        "observed_at_utc": "2026-10-15T00:53:20+00:00",
-        "release_at_utc": "2026-10-22T00:53:20+00:00",
+        "event_id": "crypto|funding_spread|SOXLUSDT|2026-10-16T05:24:49+00:00|250",
+        "observed_at_utc": "2026-10-16T05:24:49+00:00",
+        "release_at_utc": "2026-10-23T05:24:49+00:00",
         "habitat": "crypto",
         "strategy": "funding_spread",
-        "label": "KORUUSDT",
+        "label": "SOXLUSDT",
         "required_preallocation_eur": {
           "Bitget": 125.0,
           "Gate": 125.0
         },
-        "expected_net_eur": 0.05282125,
+        "expected_net_eur": 0.0130675,
         "human_minutes": 2.0
       },
       {
-        "event_id": "crypto|funding_spread|DOODUSDT|2026-10-22T07:02:34+00:00|250",
-        "observed_at_utc": "2026-10-22T07:02:34+00:00",
-        "release_at_utc": "2026-10-29T07:02:34+00:00",
+        "event_id": "crypto|funding_spread|SOXLUSDT|2026-10-23T19:05:53+00:00|250",
+        "observed_at_utc": "2026-10-23T19:05:53+00:00",
+        "release_at_utc": "2026-10-30T19:05:53+00:00",
         "habitat": "crypto",
         "strategy": "funding_spread",
-        "label": "DOODUSDT",
+        "label": "SOXLUSDT",
         "required_preallocation_eur": {
           "Bitget": 125.0,
           "Gate": 125.0
         },
-        "expected_net_eur": 0.04807125,
+        "expected_net_eur": 0.01125875,
         "human_minutes": 2.0
       },
       {
@@ -153,6 +167,20 @@
           "Gate": 125.0
         },
         "expected_net_eur": 0.07031437,
+        "human_minutes": 2.0
+      },
+      {
+        "event_id": "crypto|funding_spread|KAVAUSDT|2026-11-15T01:46:24+00:00|250",
+        "observed_at_utc": "2026-11-15T01:46:24+00:00",
+        "release_at_utc": "2026-11-22T01:46:24+00:00",
+        "habitat": "crypto",
+        "strategy": "funding_spread",
+        "label": "KAVAUSDT",
+        "required_preallocation_eur": {
+          "Bitget": 125.0,
+          "Gate": 125.0
+        },
+        "expected_net_eur": 1.685375,
         "human_minutes": 2.0
       }
     ]
