@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-15T10:53:55+00:00",
+  "generated_at_utc": "2026-11-15T14:18:12+00:00",
   "verdict": "REJECTED",
   "selected": {
     "key": "funding_spread|KAVAUSDT",
@@ -15,10 +15,10 @@
     "max_edge_bps": 277.0,
     "latest_edge_bps": 3.34,
     "research_score": 78.0,
-    "classification": "watch",
+    "classification": "noise",
     "last_seen_utc": "2026-11-15T10:49:46+00:00",
-    "latest_age_seconds": 91.7,
-    "current_signal_fresh": true,
+    "latest_age_seconds": 12348.4,
+    "current_signal_fresh": false,
     "current_direction_stability": 0.8,
     "current_direction_observations": 12,
     "direction_stability_required_for_watch": 0.5,
@@ -166,9 +166,9 @@
   "checks": [
     {
       "check": "freshness",
-      "status": "PASS",
+      "status": "FAIL",
       "severity": "hard",
-      "detail": "candidate age 249s"
+      "detail": "candidate age 12506s"
     },
     {
       "check": "sample_presence",
@@ -220,9 +220,9 @@
     },
     {
       "check": "funding_executable_entry",
-      "status": "FAIL",
+      "status": "INSUFFICIENT",
       "severity": "hard",
-      "detail": "EUR 250 executable adverse basis=61.501 bps, recovery=18.41 funding periods; require <= 3.00"
+      "detail": "no matching executable-entry probe at EUR 250 for KAVAUSDT short Bitget / long Gate"
     },
     {
       "check": "shadow_evidence",
@@ -232,11 +232,12 @@
     }
   ],
   "hard_failures": [
-    "EUR 250 executable adverse basis=61.501 bps, recovery=18.41 funding periods; require <= 3.00"
+    "candidate age 12506s"
   ],
   "insufficient_evidence": [
     "persistence=0.600; need at least 0.70",
-    "latest/median edge ratio=0.024; latest=3.340 bps/8h, median=137.140; require >= 0.25 to rule out sharp edge decay"
+    "latest/median edge ratio=0.024; latest=3.340 bps/8h, median=137.140; require >= 0.25 to rule out sharp edge decay",
+    "no matching executable-entry probe at EUR 250 for KAVAUSDT short Bitget / long Gate"
   ],
   "policy": {
     "max_staleness_seconds": 900,
