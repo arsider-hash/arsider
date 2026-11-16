@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-16T00:10:06+00:00",
+  "generated_at_utc": "2026-11-16T02:03:28+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -30,13 +30,13 @@
     "stable_dislocation|FDUSD:Binance": {
       "strategy": "stable_dislocation",
       "label": "FDUSD:Binance",
-      "snapshots": 546,
+      "snapshots": 547,
       "survives": 0,
       "rejected": 0,
-      "insufficient": 546,
-      "consecutive_non_survivals": 546,
+      "insufficient": 547,
+      "consecutive_non_survivals": 547,
       "reason_counts": {
-        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 546,
+        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 547,
         "persistence=0.486; need at least 0.70": 1,
         "persistence=0.500; need at least 0.70": 2,
         "persistence=0.543; need at least 0.70": 1,
@@ -56,14 +56,14 @@
         "persistence=0.567; need at least 0.70": 1
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-11-16T00:06:26+00:00",
-      "last_latest_edge_bps": 32.5,
+      "last_seen_utc": "2026-11-16T01:59:48+00:00",
+      "last_latest_edge_bps": 35.5,
       "last_median_positive_edge_bps": 39.5,
       "last_persistence": 1.0,
       "last_reasons": [
         "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified"
       ],
-      "updated_at_utc": "2026-11-16T00:10:06+00:00"
+      "updated_at_utc": "2026-11-16T02:03:28+00:00"
     },
     "funding_spread|VTHOUSDT": {
       "strategy": "funding_spread",
@@ -2808,11 +2808,11 @@
     "funding_spread|KAVAUSDT": {
       "strategy": "funding_spread",
       "label": "KAVAUSDT",
-      "snapshots": 15,
+      "snapshots": 16,
       "survives": 2,
-      "rejected": 11,
+      "rejected": 12,
       "insufficient": 2,
-      "consecutive_non_survivals": 12,
+      "consecutive_non_survivals": 13,
       "reason_counts": {
         "EUR 250 executable adverse basis=124.202 bps, recovery=3.93 funding periods; require <= 3.00": 1,
         "latest/median edge ratio=0.238; latest=31.620 bps/8h, median=133.100; require >= 0.25 to rule out sharp edge decay": 1,
@@ -2820,7 +2820,7 @@
         "latest/median edge ratio=0.018; latest=2.500 bps/8h, median=137.140; require >= 0.25 to rule out sharp edge decay": 1,
         "persistence=0.667; need at least 0.70": 1,
         "latest/median edge ratio=0.014; latest=1.960 bps/8h, median=139.060; require >= 0.25 to rule out sharp edge decay": 1,
-        "no matching executable-entry probe at EUR 250 for KAVAUSDT short Bitget / long Gate": 10,
+        "no matching executable-entry probe at EUR 250 for KAVAUSDT short Bitget / long Gate": 11,
         "EUR 250 executable adverse basis=61.501 bps, recovery=18.41 funding periods; require <= 3.00": 1,
         "persistence=0.600; need at least 0.70": 7,
         "latest/median edge ratio=0.024; latest=3.340 bps/8h, median=137.140; require >= 0.25 to rule out sharp edge decay": 7,
@@ -2830,9 +2830,10 @@
         "candidate age 24667s": 1,
         "candidate age 33244s": 1,
         "candidate age 39322s": 1,
-        "persistence=0.625; need at least 0.70": 3,
+        "persistence=0.625; need at least 0.70": 4,
         "candidate age 6307s": 1,
-        "candidate age 7462s": 1
+        "candidate age 7462s": 1,
+        "candidate age 14264s": 1
       },
       "last_verdict": "REJECTED",
       "last_seen_utc": "2026-11-15T22:05:44+00:00",
@@ -2840,11 +2841,11 @@
       "last_median_positive_edge_bps": 135.12,
       "last_persistence": 0.625,
       "last_reasons": [
-        "candidate age 7462s",
+        "candidate age 14264s",
         "persistence=0.625; need at least 0.70",
         "no matching executable-entry probe at EUR 250 for KAVAUSDT short Bitget / long Gate"
       ],
-      "updated_at_utc": "2026-11-16T00:10:06+00:00"
+      "updated_at_utc": "2026-11-16T02:03:28+00:00"
     }
   },
   "note": "Historical failure memory is diagnostic evidence only. It cannot loosen gates or create READY."
