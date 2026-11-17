@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-17T05:03:09+00:00",
+  "generated_at_utc": "2026-11-17T08:19:43+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -30,13 +30,13 @@
     "stable_dislocation|FDUSD:Binance": {
       "strategy": "stable_dislocation",
       "label": "FDUSD:Binance",
-      "snapshots": 560,
+      "snapshots": 561,
       "survives": 0,
       "rejected": 0,
-      "insufficient": 560,
-      "consecutive_non_survivals": 560,
+      "insufficient": 561,
+      "consecutive_non_survivals": 561,
       "reason_counts": {
-        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 560,
+        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 561,
         "persistence=0.486; need at least 0.70": 1,
         "persistence=0.500; need at least 0.70": 2,
         "persistence=0.543; need at least 0.70": 1,
@@ -56,14 +56,14 @@
         "persistence=0.567; need at least 0.70": 1
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-11-17T04:59:36+00:00",
-      "last_latest_edge_bps": 32.5,
+      "last_seen_utc": "2026-11-17T08:16:09+00:00",
+      "last_latest_edge_bps": 30.5,
       "last_median_positive_edge_bps": 33.5,
       "last_persistence": 1.0,
       "last_reasons": [
         "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified"
       ],
-      "updated_at_utc": "2026-11-17T05:03:09+00:00"
+      "updated_at_utc": "2026-11-17T08:19:43+00:00"
     },
     "funding_spread|VTHOUSDT": {
       "strategy": "funding_spread",
@@ -2708,11 +2708,11 @@
     "funding_spread|INITUSDT": {
       "strategy": "funding_spread",
       "label": "INITUSDT",
-      "snapshots": 38,
+      "snapshots": 39,
       "survives": 14,
-      "rejected": 14,
+      "rejected": 15,
       "insufficient": 10,
-      "consecutive_non_survivals": 12,
+      "consecutive_non_survivals": 13,
       "reason_counts": {
         "persistence=0.316; need at least 0.70": 2,
         "latest funding direction matches 32% of independent basis buckets; require >= 50%": 2,
@@ -2732,7 +2732,7 @@
         "EUR 250 executable adverse basis=101.208 bps, recovery=3.81 funding periods; require <= 3.00": 1,
         "EUR 250 executable adverse basis=86.460 bps, recovery=6.36 funding periods; require <= 3.00": 1,
         "candidate age 23086s": 1,
-        "no matching executable-entry probe at EUR 250 for INITUSDT long Bitget / short Gate": 10,
+        "no matching executable-entry probe at EUR 250 for INITUSDT long Bitget / short Gate": 11,
         "candidate age 25135s": 1,
         "candidate age 53006s": 1,
         "candidate age 54095s": 1,
@@ -2741,8 +2741,9 @@
         "candidate age 75406s": 1,
         "candidate age 77926s": 1,
         "candidate age 52576s": 1,
-        "persistence=0.550; need at least 0.70": 2,
-        "candidate age 57156s": 1
+        "persistence=0.550; need at least 0.70": 3,
+        "candidate age 57156s": 1,
+        "candidate age 68950s": 1
       },
       "last_verdict": "REJECTED",
       "last_seen_utc": "2026-11-16T13:10:33+00:00",
@@ -2750,11 +2751,11 @@
       "last_median_positive_edge_bps": 20.24,
       "last_persistence": 0.55,
       "last_reasons": [
-        "candidate age 57156s",
+        "candidate age 68950s",
         "persistence=0.550; need at least 0.70",
         "no matching executable-entry probe at EUR 250 for INITUSDT long Bitget / short Gate"
       ],
-      "updated_at_utc": "2026-11-17T05:03:09+00:00"
+      "updated_at_utc": "2026-11-17T08:19:43+00:00"
     },
     "funding_spread|ARIAUSDT": {
       "strategy": "funding_spread",
