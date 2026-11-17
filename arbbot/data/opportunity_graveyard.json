@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-17T17:53:59+00:00",
+  "generated_at_utc": "2026-11-17T19:58:25+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -30,13 +30,13 @@
     "stable_dislocation|FDUSD:Binance": {
       "strategy": "stable_dislocation",
       "label": "FDUSD:Binance",
-      "snapshots": 565,
+      "snapshots": 566,
       "survives": 0,
       "rejected": 0,
-      "insufficient": 565,
-      "consecutive_non_survivals": 565,
+      "insufficient": 566,
+      "consecutive_non_survivals": 566,
       "reason_counts": {
-        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 565,
+        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 566,
         "persistence=0.486; need at least 0.70": 1,
         "persistence=0.500; need at least 0.70": 2,
         "persistence=0.543; need at least 0.70": 1,
@@ -56,14 +56,14 @@
         "persistence=0.567; need at least 0.70": 1
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-11-17T17:50:19+00:00",
+      "last_seen_utc": "2026-11-17T19:54:50+00:00",
       "last_latest_edge_bps": 37.5,
       "last_median_positive_edge_bps": 32.5,
       "last_persistence": 1.0,
       "last_reasons": [
         "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified"
       ],
-      "updated_at_utc": "2026-11-17T17:53:59+00:00"
+      "updated_at_utc": "2026-11-17T19:58:25+00:00"
     },
     "funding_spread|VTHOUSDT": {
       "strategy": "funding_spread",
@@ -2873,6 +2873,27 @@
         "no matching executable-entry probe at EUR 250 for KAVAUSDT short Bitget / long Gate"
       ],
       "updated_at_utc": "2026-11-17T02:39:29+00:00"
+    },
+    "funding_spread|BREVUSDT": {
+      "strategy": "funding_spread",
+      "label": "BREVUSDT",
+      "snapshots": 1,
+      "survives": 0,
+      "rejected": 0,
+      "insufficient": 1,
+      "consecutive_non_survivals": 1,
+      "reason_counts": {
+        "4 observations; need at least 6": 1
+      },
+      "last_verdict": "INSUFFICIENT_EVIDENCE",
+      "last_seen_utc": "2026-11-17T19:54:15+00:00",
+      "last_latest_edge_bps": 28.24,
+      "last_median_positive_edge_bps": 39.96,
+      "last_persistence": 1.0,
+      "last_reasons": [
+        "4 observations; need at least 6"
+      ],
+      "updated_at_utc": "2026-11-17T19:58:25+00:00"
     }
   },
   "note": "Historical failure memory is diagnostic evidence only. It cannot loosen gates or create READY."
