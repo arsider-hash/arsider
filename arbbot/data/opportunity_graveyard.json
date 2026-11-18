@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-18T03:56:29+00:00",
+  "generated_at_utc": "2026-11-18T04:14:29+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -30,13 +30,13 @@
     "stable_dislocation|FDUSD:Binance": {
       "strategy": "stable_dislocation",
       "label": "FDUSD:Binance",
-      "snapshots": 569,
+      "snapshots": 570,
       "survives": 0,
       "rejected": 0,
-      "insufficient": 569,
-      "consecutive_non_survivals": 569,
+      "insufficient": 570,
+      "consecutive_non_survivals": 570,
       "reason_counts": {
-        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 569,
+        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 570,
         "persistence=0.486; need at least 0.70": 1,
         "persistence=0.500; need at least 0.70": 2,
         "persistence=0.543; need at least 0.70": 1,
@@ -56,14 +56,14 @@
         "persistence=0.567; need at least 0.70": 1
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-11-18T03:52:54+00:00",
+      "last_seen_utc": "2026-11-18T04:10:47+00:00",
       "last_latest_edge_bps": 33.5,
       "last_median_positive_edge_bps": 32.5,
       "last_persistence": 1.0,
       "last_reasons": [
         "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified"
       ],
-      "updated_at_utc": "2026-11-18T03:56:29+00:00"
+      "updated_at_utc": "2026-11-18T04:14:29+00:00"
     },
     "funding_spread|VTHOUSDT": {
       "strategy": "funding_spread",
@@ -2597,11 +2597,11 @@
     "funding_spread|SOPHUSDT": {
       "strategy": "funding_spread",
       "label": "SOPHUSDT",
-      "snapshots": 9,
+      "snapshots": 10,
       "survives": 2,
-      "rejected": 6,
+      "rejected": 7,
       "insufficient": 1,
-      "consecutive_non_survivals": 7,
+      "consecutive_non_survivals": 8,
       "reason_counts": {
         "candidate age 149304s": 1,
         "no matching executable-entry probe at EUR 250 for SOPHUSDT long Bitget / short Gate": 1,
@@ -2609,10 +2609,11 @@
         "EUR 250 executable adverse basis=21.888 bps, recovery=6.05 funding periods; require <= 3.00": 1,
         "latest/median edge ratio=0.133; latest=3.620 bps/8h, median=27.220; require >= 0.25 to rule out sharp edge decay": 1,
         "candidate age 104362s": 1,
-        "no matching executable-entry probe at EUR 250 for SOPHUSDT short Bitget / long Gate": 4,
+        "no matching executable-entry probe at EUR 250 for SOPHUSDT short Bitget / long Gate": 5,
         "candidate age 116735s": 1,
         "candidate age 133710s": 1,
-        "candidate age 152885s": 1
+        "candidate age 152885s": 1,
+        "candidate age 153965s": 1
       },
       "last_verdict": "REJECTED",
       "last_seen_utc": "2026-11-16T09:28:24+00:00",
@@ -2620,10 +2621,10 @@
       "last_median_positive_edge_bps": 14.44,
       "last_persistence": 1.0,
       "last_reasons": [
-        "candidate age 152885s",
+        "candidate age 153965s",
         "no matching executable-entry probe at EUR 250 for SOPHUSDT short Bitget / long Gate"
       ],
-      "updated_at_utc": "2026-11-18T03:56:29+00:00"
+      "updated_at_utc": "2026-11-18T04:14:29+00:00"
     },
     "funding_spread|AMDUSDT": {
       "strategy": "funding_spread",
