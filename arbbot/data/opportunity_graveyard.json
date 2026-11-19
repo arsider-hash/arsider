@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-19T21:59:34+00:00",
+  "generated_at_utc": "2026-11-19T23:51:31+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -350,11 +350,11 @@
     "funding_spread|BTWUSDT": {
       "strategy": "funding_spread",
       "label": "BTWUSDT",
-      "snapshots": 44,
-      "survives": 12,
+      "snapshots": 45,
+      "survives": 13,
       "rejected": 18,
       "insufficient": 14,
-      "consecutive_non_survivals": 16,
+      "consecutive_non_survivals": 0,
       "reason_counts": {
         "candidate age 169391s": 1,
         "4 independent 15m buckets; median adverse basis costs 3.24 funding periods; median aligned basis=-19.157 bps": 1,
@@ -400,15 +400,13 @@
         "persistence=0.560; need at least 0.70": 1,
         "persistence=0.408; need at least 0.70": 1
       },
-      "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-10-31T11:14:55+00:00",
-      "last_latest_edge_bps": 6.66,
-      "last_median_positive_edge_bps": 15.93,
-      "last_persistence": 1.0,
-      "last_reasons": [
-        "4 observations; need at least 6"
-      ],
-      "updated_at_utc": "2026-10-31T11:19:23+00:00"
+      "last_verdict": "SURVIVES_KILLER",
+      "last_seen_utc": "2026-11-19T23:46:55+00:00",
+      "last_latest_edge_bps": 8.844,
+      "last_median_positive_edge_bps": 4.82,
+      "last_persistence": 0.9444,
+      "last_reasons": [],
+      "updated_at_utc": "2026-11-19T23:51:31+00:00"
     },
     "funding_spread|STEEMUSDT": {
       "strategy": "funding_spread",
