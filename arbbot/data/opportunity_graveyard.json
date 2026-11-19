@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-19T08:13:15+00:00",
+  "generated_at_utc": "2026-11-19T10:40:09+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -30,13 +30,13 @@
     "stable_dislocation|FDUSD:Binance": {
       "strategy": "stable_dislocation",
       "label": "FDUSD:Binance",
-      "snapshots": 584,
+      "snapshots": 585,
       "survives": 0,
       "rejected": 0,
-      "insufficient": 584,
-      "consecutive_non_survivals": 584,
+      "insufficient": 585,
+      "consecutive_non_survivals": 585,
       "reason_counts": {
-        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 584,
+        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 585,
         "persistence=0.486; need at least 0.70": 1,
         "persistence=0.500; need at least 0.70": 2,
         "persistence=0.543; need at least 0.70": 1,
@@ -56,14 +56,14 @@
         "persistence=0.567; need at least 0.70": 1
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-11-19T08:09:36+00:00",
-      "last_latest_edge_bps": 34.5,
-      "last_median_positive_edge_bps": 34.5,
+      "last_seen_utc": "2026-11-19T10:36:34+00:00",
+      "last_latest_edge_bps": 35.5,
+      "last_median_positive_edge_bps": 35.0,
       "last_persistence": 1.0,
       "last_reasons": [
         "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified"
       ],
-      "updated_at_utc": "2026-11-19T08:13:15+00:00"
+      "updated_at_utc": "2026-11-19T10:40:09+00:00"
     },
     "funding_spread|VTHOUSDT": {
       "strategy": "funding_spread",
@@ -2477,11 +2477,11 @@
     "funding_spread|IRYSUSDT": {
       "strategy": "funding_spread",
       "label": "IRYSUSDT",
-      "snapshots": 14,
+      "snapshots": 15,
       "survives": 0,
       "rejected": 14,
-      "insufficient": 0,
-      "consecutive_non_survivals": 14,
+      "insufficient": 1,
+      "consecutive_non_survivals": 15,
       "reason_counts": {
         "candidate age 98382s": 1,
         "no matching executable-entry probe at EUR 250 for IRYSUSDT short Bitget / long Gate": 14,
@@ -2498,19 +2498,18 @@
         "candidate age 161235s": 1,
         "candidate age 162463s": 1,
         "5 observations; need at least 6": 2,
-        "candidate age 167023s": 1
+        "candidate age 167023s": 1,
+        "persistence=0.667; need at least 0.70": 1
       },
-      "last_verdict": "REJECTED",
-      "last_seen_utc": "2026-10-28T02:30:20+00:00",
-      "last_latest_edge_bps": 10.96,
-      "last_median_positive_edge_bps": 23.94,
-      "last_persistence": 1.0,
+      "last_verdict": "INSUFFICIENT_EVIDENCE",
+      "last_seen_utc": "2026-11-19T10:36:02+00:00",
+      "last_latest_edge_bps": 10.952,
+      "last_median_positive_edge_bps": 23.483,
+      "last_persistence": 0.6667,
       "last_reasons": [
-        "candidate age 167023s",
-        "5 observations; need at least 6",
-        "no matching executable-entry probe at EUR 250 for IRYSUSDT short Bitget / long Gate"
+        "persistence=0.667; need at least 0.70"
       ],
-      "updated_at_utc": "2026-10-30T00:54:03+00:00"
+      "updated_at_utc": "2026-11-19T10:40:09+00:00"
     },
     "funding_spread|TRXUSDT": {
       "strategy": "funding_spread",
