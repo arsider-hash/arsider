@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-21T00:59:41+00:00",
+  "generated_at_utc": "2026-11-21T01:28:16+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -2123,25 +2123,23 @@
     "funding_spread|SOXLUSDT": {
       "strategy": "funding_spread",
       "label": "SOXLUSDT",
-      "snapshots": 28,
-      "survives": 25,
+      "snapshots": 29,
+      "survives": 26,
       "rejected": 1,
       "insufficient": 2,
-      "consecutive_non_survivals": 2,
+      "consecutive_non_survivals": 0,
       "reason_counts": {
         "EUR 250 executable adverse basis=11.598 bps, recovery=3.14 funding periods; require <= 3.00": 1,
         "persistence=0.632; need at least 0.70": 1,
         "persistence=0.650; need at least 0.70": 1
       },
-      "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-11-04T18:05:04+00:00",
-      "last_latest_edge_bps": 7.16,
-      "last_median_positive_edge_bps": 6.825,
-      "last_persistence": 0.65,
-      "last_reasons": [
-        "persistence=0.650; need at least 0.70"
-      ],
-      "updated_at_utc": "2026-11-04T18:09:21+00:00"
+      "last_verdict": "SURVIVES_KILLER",
+      "last_seen_utc": "2026-11-21T01:23:44+00:00",
+      "last_latest_edge_bps": 8.24,
+      "last_median_positive_edge_bps": 4.808,
+      "last_persistence": 0.8,
+      "last_reasons": [],
+      "updated_at_utc": "2026-11-21T01:28:16+00:00"
     },
     "stable_dislocation|USDC:Binance": {
       "strategy": "stable_dislocation",
