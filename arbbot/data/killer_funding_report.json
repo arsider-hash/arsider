@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-21T17:11:35+00:00",
+  "generated_at_utc": "2026-11-21T17:26:52+00:00",
   "verdict": "REJECTED",
   "selected": {
     "key": "funding_spread|IRYSUSDT",
@@ -17,7 +17,7 @@
     "research_score": 64.78,
     "classification": "noise",
     "last_seen_utc": "2026-11-21T02:14:28+00:00",
-    "latest_age_seconds": 53670.5,
+    "latest_age_seconds": 54583.5,
     "current_signal_fresh": false,
     "current_direction_stability": 0.5556,
     "current_direction_observations": 15,
@@ -168,7 +168,7 @@
       "check": "freshness",
       "status": "FAIL",
       "severity": "hard",
-      "detail": "candidate age 53828s"
+      "detail": "candidate age 54744s"
     },
     {
       "check": "sample_presence",
@@ -210,13 +210,13 @@
       "check": "funding_basis_persistence",
       "status": "PASS",
       "severity": "hard",
-      "detail": "27 independent 15m buckets; median adverse basis costs 0.49 funding periods; median aligned basis=-9.242 bps"
+      "detail": "26 independent 15m buckets; median adverse basis costs 0.25 funding periods; median aligned basis=-4.621 bps"
     },
     {
       "check": "funding_direction_stability",
       "status": "PASS",
       "severity": "hard",
-      "detail": "latest funding direction matches 56% of independent basis buckets; require >= 50%"
+      "detail": "latest funding direction matches 58% of independent basis buckets; require >= 50%"
     },
     {
       "check": "funding_executable_entry",
@@ -232,7 +232,7 @@
     }
   ],
   "hard_failures": [
-    "candidate age 53828s"
+    "candidate age 54744s"
   ],
   "insufficient_evidence": [
     "persistence=0.481; need at least 0.70",
