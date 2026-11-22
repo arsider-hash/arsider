@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-22T17:59:10+00:00",
+  "generated_at_utc": "2026-11-22T19:32:03+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -2993,23 +2993,21 @@
     "funding_spread|DGAIUSDT": {
       "strategy": "funding_spread",
       "label": "DGAIUSDT",
-      "snapshots": 1,
-      "survives": 0,
+      "snapshots": 2,
+      "survives": 1,
       "rejected": 0,
       "insufficient": 1,
-      "consecutive_non_survivals": 1,
+      "consecutive_non_survivals": 0,
       "reason_counts": {
         "5 observations; need at least 6": 1
       },
-      "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-11-22T17:54:40+00:00",
-      "last_latest_edge_bps": 10.98,
-      "last_median_positive_edge_bps": 10.66,
+      "last_verdict": "SURVIVES_KILLER",
+      "last_seen_utc": "2026-11-22T19:27:56+00:00",
+      "last_latest_edge_bps": 15.68,
+      "last_median_positive_edge_bps": 10.82,
       "last_persistence": 1.0,
-      "last_reasons": [
-        "5 observations; need at least 6"
-      ],
-      "updated_at_utc": "2026-11-22T17:59:10+00:00"
+      "last_reasons": [],
+      "updated_at_utc": "2026-11-22T19:32:03+00:00"
     }
   },
   "note": "Historical failure memory is diagnostic evidence only. It cannot loosen gates or create READY."
