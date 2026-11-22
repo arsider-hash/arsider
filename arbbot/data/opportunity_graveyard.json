@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-22T06:49:26+00:00",
+  "generated_at_utc": "2026-11-22T08:56:38+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -30,13 +30,13 @@
     "stable_dislocation|FDUSD:Binance": {
       "strategy": "stable_dislocation",
       "label": "FDUSD:Binance",
-      "snapshots": 621,
+      "snapshots": 622,
       "survives": 0,
       "rejected": 0,
-      "insufficient": 621,
-      "consecutive_non_survivals": 621,
+      "insufficient": 622,
+      "consecutive_non_survivals": 622,
       "reason_counts": {
-        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 621,
+        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 622,
         "persistence=0.486; need at least 0.70": 1,
         "persistence=0.500; need at least 0.70": 2,
         "persistence=0.543; need at least 0.70": 1,
@@ -56,14 +56,14 @@
         "persistence=0.567; need at least 0.70": 1
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-11-22T06:45:46+00:00",
-      "last_latest_edge_bps": 36.5,
+      "last_seen_utc": "2026-11-22T08:53:05+00:00",
+      "last_latest_edge_bps": 39.5,
       "last_median_positive_edge_bps": 37.5,
       "last_persistence": 1.0,
       "last_reasons": [
         "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified"
       ],
-      "updated_at_utc": "2026-11-22T06:49:26+00:00"
+      "updated_at_utc": "2026-11-22T08:56:38+00:00"
     },
     "funding_spread|VTHOUSDT": {
       "strategy": "funding_spread",
@@ -1394,24 +1394,27 @@
     "funding_spread|SAMSUNGUSDT": {
       "strategy": "funding_spread",
       "label": "SAMSUNGUSDT",
-      "snapshots": 4,
+      "snapshots": 5,
       "survives": 0,
-      "rejected": 0,
+      "rejected": 1,
       "insufficient": 4,
-      "consecutive_non_survivals": 4,
+      "consecutive_non_survivals": 5,
       "reason_counts": {
         "4 observations; need at least 6": 2,
-        "5 observations; need at least 6": 2
+        "5 observations; need at least 6": 2,
+        "candidate age 128803s": 1,
+        "no matching executable-entry probe at EUR 250 for SAMSUNGUSDT long Bitget / short Gate": 1
       },
-      "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-11-09T16:45:01+00:00",
-      "last_latest_edge_bps": 23.66,
-      "last_median_positive_edge_bps": 22.82,
-      "last_persistence": 1.0,
+      "last_verdict": "REJECTED",
+      "last_seen_utc": "2026-11-20T21:09:55+00:00",
+      "last_latest_edge_bps": 5.41,
+      "last_median_positive_edge_bps": 4.078,
+      "last_persistence": 0.9,
       "last_reasons": [
-        "5 observations; need at least 6"
+        "candidate age 128803s",
+        "no matching executable-entry probe at EUR 250 for SAMSUNGUSDT long Bitget / short Gate"
       ],
-      "updated_at_utc": "2026-11-09T16:49:09+00:00"
+      "updated_at_utc": "2026-11-22T08:56:38+00:00"
     },
     "funding_spread|NMRUSDT": {
       "strategy": "funding_spread",
