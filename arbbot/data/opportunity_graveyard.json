@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-22T03:06:37+00:00",
+  "generated_at_utc": "2026-11-22T06:49:26+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -30,13 +30,13 @@
     "stable_dislocation|FDUSD:Binance": {
       "strategy": "stable_dislocation",
       "label": "FDUSD:Binance",
-      "snapshots": 620,
+      "snapshots": 621,
       "survives": 0,
       "rejected": 0,
-      "insufficient": 620,
-      "consecutive_non_survivals": 620,
+      "insufficient": 621,
+      "consecutive_non_survivals": 621,
       "reason_counts": {
-        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 620,
+        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 621,
         "persistence=0.486; need at least 0.70": 1,
         "persistence=0.500; need at least 0.70": 2,
         "persistence=0.543; need at least 0.70": 1,
@@ -56,14 +56,14 @@
         "persistence=0.567; need at least 0.70": 1
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-11-22T03:02:56+00:00",
+      "last_seen_utc": "2026-11-22T06:45:46+00:00",
       "last_latest_edge_bps": 36.5,
       "last_median_positive_edge_bps": 37.5,
       "last_persistence": 1.0,
       "last_reasons": [
         "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified"
       ],
-      "updated_at_utc": "2026-11-22T03:06:37+00:00"
+      "updated_at_utc": "2026-11-22T06:49:26+00:00"
     },
     "funding_spread|VTHOUSDT": {
       "strategy": "funding_spread",
@@ -2736,11 +2736,11 @@
     "funding_spread|IDOLUSDT": {
       "strategy": "funding_spread",
       "label": "IDOLUSDT",
-      "snapshots": 5,
+      "snapshots": 6,
       "survives": 1,
       "rejected": 4,
-      "insufficient": 0,
-      "consecutive_non_survivals": 0,
+      "insufficient": 1,
+      "consecutive_non_survivals": 1,
       "reason_counts": {
         "candidate age 124801s": 1,
         "10 independent 15m buckets; median adverse basis costs 3.50 funding periods; median aligned basis=-14.419 bps": 1,
@@ -2749,15 +2749,20 @@
         "candidate age 156491s": 1,
         "candidate age 159755s": 1,
         "4 independent 15m buckets; median adverse basis costs 3.50 funding periods; median aligned basis=-14.419 bps": 1,
-        "4 observations; need at least 6": 1
+        "4 observations; need at least 6": 1,
+        "latest/median edge ratio=0.055; latest=0.322 bps/8h, median=5.854; require >= 0.25 to rule out sharp edge decay": 1,
+        "no matching executable-entry probe at EUR 250 for IDOLUSDT short Bitget / long Gate": 1
       },
-      "last_verdict": "SURVIVES_KILLER",
-      "last_seen_utc": "2026-11-22T01:34:33+00:00",
-      "last_latest_edge_bps": 17.578,
-      "last_median_positive_edge_bps": 10.696,
-      "last_persistence": 0.8571,
-      "last_reasons": [],
-      "updated_at_utc": "2026-11-22T01:39:04+00:00"
+      "last_verdict": "INSUFFICIENT_EVIDENCE",
+      "last_seen_utc": "2026-11-22T06:44:56+00:00",
+      "last_latest_edge_bps": 0.322,
+      "last_median_positive_edge_bps": 5.854,
+      "last_persistence": 0.7,
+      "last_reasons": [
+        "latest/median edge ratio=0.055; latest=0.322 bps/8h, median=5.854; require >= 0.25 to rule out sharp edge decay",
+        "no matching executable-entry probe at EUR 250 for IDOLUSDT short Bitget / long Gate"
+      ],
+      "updated_at_utc": "2026-11-22T06:49:26+00:00"
     },
     "funding_spread|INITUSDT": {
       "strategy": "funding_spread",
