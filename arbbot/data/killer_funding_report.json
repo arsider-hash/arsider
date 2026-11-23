@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-23T13:14:26+00:00",
+  "generated_at_utc": "2026-11-23T21:17:51+00:00",
   "verdict": "REJECTED",
   "selected": {
     "key": "funding_spread|ACEUSDT",
@@ -15,10 +15,10 @@
     "max_edge_bps": 903.8,
     "latest_edge_bps": 903.8,
     "research_score": 100.0,
-    "classification": "strong_watch",
+    "classification": "noise",
     "last_seen_utc": "2026-11-23T13:09:49+00:00",
-    "latest_age_seconds": 115.1,
-    "current_signal_fresh": true,
+    "latest_age_seconds": 29124.5,
+    "current_signal_fresh": false,
     "current_direction_stability": 1.0,
     "current_direction_observations": 15,
     "direction_stability_required_for_watch": 0.5,
@@ -166,9 +166,9 @@
   "checks": [
     {
       "check": "freshness",
-      "status": "PASS",
+      "status": "FAIL",
       "severity": "hard",
-      "detail": "candidate age 277s"
+      "detail": "candidate age 29282s"
     },
     {
       "check": "sample_presence",
@@ -220,9 +220,9 @@
     },
     {
       "check": "funding_executable_entry",
-      "status": "FAIL",
+      "status": "INSUFFICIENT",
       "severity": "hard",
-      "detail": "EUR 250 executable adverse basis=9905.956 bps, recovery=10.96 funding periods; require <= 3.00"
+      "detail": "no matching executable-entry probe at EUR 250 for ACEUSDT long Bitget / short Gate"
     },
     {
       "check": "shadow_evidence",
@@ -232,10 +232,12 @@
     }
   ],
   "hard_failures": [
-    "15 independent 15m buckets; median adverse basis costs 5.78 funding periods; median aligned basis=-1552.680 bps",
-    "EUR 250 executable adverse basis=9905.956 bps, recovery=10.96 funding periods; require <= 3.00"
+    "candidate age 29282s",
+    "15 independent 15m buckets; median adverse basis costs 5.78 funding periods; median aligned basis=-1552.680 bps"
   ],
-  "insufficient_evidence": [],
+  "insufficient_evidence": [
+    "no matching executable-entry probe at EUR 250 for ACEUSDT long Bitget / short Gate"
+  ],
   "policy": {
     "max_staleness_seconds": 900,
     "min_candidate_observations": 6,
