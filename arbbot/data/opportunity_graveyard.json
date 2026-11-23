@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-23T00:50:20+00:00",
+  "generated_at_utc": "2026-11-23T01:45:21+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -30,13 +30,13 @@
     "stable_dislocation|FDUSD:Binance": {
       "strategy": "stable_dislocation",
       "label": "FDUSD:Binance",
-      "snapshots": 631,
+      "snapshots": 632,
       "survives": 0,
       "rejected": 0,
-      "insufficient": 631,
-      "consecutive_non_survivals": 631,
+      "insufficient": 632,
+      "consecutive_non_survivals": 632,
       "reason_counts": {
-        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 631,
+        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 632,
         "persistence=0.486; need at least 0.70": 1,
         "persistence=0.500; need at least 0.70": 2,
         "persistence=0.543; need at least 0.70": 1,
@@ -56,14 +56,14 @@
         "persistence=0.567; need at least 0.70": 1
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-11-23T00:46:39+00:00",
+      "last_seen_utc": "2026-11-23T01:41:40+00:00",
       "last_latest_edge_bps": 35.5,
       "last_median_positive_edge_bps": 37.5,
       "last_persistence": 1.0,
       "last_reasons": [
         "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified"
       ],
-      "updated_at_utc": "2026-11-23T00:50:20+00:00"
+      "updated_at_utc": "2026-11-23T01:45:21+00:00"
     },
     "funding_spread|VTHOUSDT": {
       "strategy": "funding_spread",
@@ -3015,11 +3015,11 @@
     "funding_spread|ACEUSDT": {
       "strategy": "funding_spread",
       "label": "ACEUSDT",
-      "snapshots": 3,
+      "snapshots": 4,
       "survives": 0,
-      "rejected": 3,
+      "rejected": 4,
       "insufficient": 0,
-      "consecutive_non_survivals": 3,
+      "consecutive_non_survivals": 4,
       "reason_counts": {
         "4 independent 15m buckets; median adverse basis costs 4.55 funding periods; median aligned basis=-1606.564 bps": 1,
         "EUR 250 executable adverse basis=2701.962 bps, recovery=10.47 funding periods; require <= 3.00": 1,
@@ -3029,18 +3029,20 @@
         "5 observations; need at least 6": 1,
         "latest/median edge ratio=0.020; latest=5.792 bps/8h, median=284.484; require >= 0.25 to rule out sharp edge decay": 1,
         "6 independent 15m buckets; median adverse basis costs 4.55 funding periods; median aligned basis=-1550.475 bps": 1,
-        "EUR 250 executable adverse basis=2507.441 bps, recovery=26.52 funding periods; require <= 3.00": 1
+        "EUR 250 executable adverse basis=2507.441 bps, recovery=26.52 funding periods; require <= 3.00": 1,
+        "7 independent 15m buckets; median adverse basis costs 5.46 funding periods; median aligned basis=-1548.270 bps": 1,
+        "EUR 250 executable adverse basis=1851.489 bps, recovery=15.36 funding periods; require <= 3.00": 1
       },
       "last_verdict": "REJECTED",
-      "last_seen_utc": "2026-11-23T00:45:47+00:00",
-      "last_latest_edge_bps": 94.54,
-      "last_median_positive_edge_bps": 271.261,
+      "last_seen_utc": "2026-11-23T01:40:46+00:00",
+      "last_latest_edge_bps": 120.56,
+      "last_median_positive_edge_bps": 258.038,
       "last_persistence": 1.0,
       "last_reasons": [
-        "6 independent 15m buckets; median adverse basis costs 4.55 funding periods; median aligned basis=-1550.475 bps",
-        "EUR 250 executable adverse basis=2507.441 bps, recovery=26.52 funding periods; require <= 3.00"
+        "7 independent 15m buckets; median adverse basis costs 5.46 funding periods; median aligned basis=-1548.270 bps",
+        "EUR 250 executable adverse basis=1851.489 bps, recovery=15.36 funding periods; require <= 3.00"
       ],
-      "updated_at_utc": "2026-11-23T00:50:20+00:00"
+      "updated_at_utc": "2026-11-23T01:45:21+00:00"
     }
   },
   "note": "Historical failure memory is diagnostic evidence only. It cannot loosen gates or create READY."
