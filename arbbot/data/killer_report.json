@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-23T12:26:08+00:00",
+  "generated_at_utc": "2026-11-23T13:14:26+00:00",
   "verdict": "INSUFFICIENT_EVIDENCE",
   "selected": {
     "key": "stable_dislocation|FDUSD:Binance",
@@ -10,14 +10,14 @@
     "observations": 29,
     "positive_observations": 29,
     "persistence": 1.0,
-    "median_positive_edge_bps": 37.5,
+    "median_positive_edge_bps": 36.5,
     "p90_positive_edge_bps": 38.5,
     "max_edge_bps": 39.5,
     "latest_edge_bps": 34.5,
     "research_score": 100.0,
     "classification": "strong_watch",
-    "last_seen_utc": "2026-11-23T12:22:35+00:00",
-    "latest_age_seconds": 55.3,
+    "last_seen_utc": "2026-11-23T13:10:44+00:00",
+    "latest_age_seconds": 60.1,
     "current_signal_fresh": true,
     "capital_utilisation": 1.0,
     "capital_efficiency_score": 100.0,
@@ -25,7 +25,7 @@
     "economic_relevance": {
       "reference_budget_eur": 250,
       "reference_basis": "paper_profit_per_event_at_median_edge",
-      "reference_payoff_eur": 0.9375,
+      "reference_payoff_eur": 0.9125,
       "reference_target_eur": 0.25,
       "relevance_factor": 1.0,
       "economically_material_at_reference_budget": true
@@ -34,32 +34,32 @@
       "25": {
         "total_budget": 25,
         "effective_capital_per_edge": 25.0,
-        "paper_profit_per_event_at_median_edge": 0.0938
+        "paper_profit_per_event_at_median_edge": 0.0912
       },
       "50": {
         "total_budget": 50,
         "effective_capital_per_edge": 50.0,
-        "paper_profit_per_event_at_median_edge": 0.1875
+        "paper_profit_per_event_at_median_edge": 0.1825
       },
       "100": {
         "total_budget": 100,
         "effective_capital_per_edge": 100.0,
-        "paper_profit_per_event_at_median_edge": 0.375
+        "paper_profit_per_event_at_median_edge": 0.365
       },
       "250": {
         "total_budget": 250,
         "effective_capital_per_edge": 250.0,
-        "paper_profit_per_event_at_median_edge": 0.9375
+        "paper_profit_per_event_at_median_edge": 0.9125
       },
       "500": {
         "total_budget": 500,
         "effective_capital_per_edge": 500.0,
-        "paper_profit_per_event_at_median_edge": 1.875
+        "paper_profit_per_event_at_median_edge": 1.825
       },
       "1000": {
         "total_budget": 1000,
         "effective_capital_per_edge": 1000.0,
-        "paper_profit_per_event_at_median_edge": 3.75
+        "paper_profit_per_event_at_median_edge": 3.65
       }
     },
     "monthly_income_lens": {
@@ -78,7 +78,7 @@
       "check": "freshness",
       "status": "PASS",
       "severity": "hard",
-      "detail": "candidate age 214s"
+      "detail": "candidate age 223s"
     },
     {
       "check": "sample_presence",
@@ -90,7 +90,7 @@
       "check": "positive_edge_evidence",
       "status": "PASS",
       "severity": "hard",
-      "detail": "positive_observations=29, median_positive_edge_bps=37.5000"
+      "detail": "positive_observations=29, median_positive_edge_bps=36.5000"
     },
     {
       "check": "persistence",
