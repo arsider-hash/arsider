@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-27T05:09:36+00:00",
+  "generated_at_utc": "2026-11-27T05:39:01+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -1251,11 +1251,11 @@
     "funding_spread|SKHYNIXUSDT": {
       "strategy": "funding_spread",
       "label": "SKHYNIXUSDT",
-      "snapshots": 17,
-      "survives": 9,
+      "snapshots": 18,
+      "survives": 10,
       "rejected": 0,
       "insufficient": 8,
-      "consecutive_non_survivals": 1,
+      "consecutive_non_survivals": 0,
       "reason_counts": {
         "persistence=0.417; need at least 0.70": 1,
         "latest/median edge ratio=0.000; latest=0.000 bps/8h, median=4.790; require >= 0.25 to rule out sharp edge decay": 2,
@@ -1274,15 +1274,13 @@
         "persistence=0.696; need at least 0.70": 1,
         "latest/median edge ratio=0.190; latest=6.666 bps/8h, median=35.049; require >= 0.25 to rule out sharp edge decay": 1
       },
-      "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-11-27T05:05:12+00:00",
-      "last_latest_edge_bps": 6.666,
-      "last_median_positive_edge_bps": 35.049,
-      "last_persistence": 0.8333,
-      "last_reasons": [
-        "latest/median edge ratio=0.190; latest=6.666 bps/8h, median=35.049; require >= 0.25 to rule out sharp edge decay"
-      ],
-      "updated_at_utc": "2026-11-27T05:09:36+00:00"
+      "last_verdict": "SURVIVES_KILLER",
+      "last_seen_utc": "2026-11-27T05:34:30+00:00",
+      "last_latest_edge_bps": 8.978,
+      "last_median_positive_edge_bps": 34.179,
+      "last_persistence": 0.8462,
+      "last_reasons": [],
+      "updated_at_utc": "2026-11-27T05:39:01+00:00"
     },
     "funding_spread|MUUSDT": {
       "strategy": "funding_spread",
