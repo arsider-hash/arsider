@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-27T22:02:15+00:00",
+  "generated_at_utc": "2026-11-27T23:35:04+00:00",
   "verdict": "INSUFFICIENT_EVIDENCE",
   "selected": {
     "key": "stable_dislocation|FDUSD:Binance",
@@ -7,17 +7,17 @@
     "label": "FDUSD:Binance",
     "direction": "below peg",
     "venue": "Binance",
-    "observations": 20,
-    "positive_observations": 20,
+    "observations": 19,
+    "positive_observations": 19,
     "persistence": 1.0,
     "median_positive_edge_bps": 38.5,
     "p90_positive_edge_bps": 39.5,
-    "max_edge_bps": 40.5,
-    "latest_edge_bps": 39.5,
+    "max_edge_bps": 39.5,
+    "latest_edge_bps": 36.5,
     "research_score": 100.0,
     "classification": "strong_watch",
-    "last_seen_utc": "2026-11-27T21:58:35+00:00",
-    "latest_age_seconds": 58.4,
+    "last_seen_utc": "2026-11-27T23:31:31+00:00",
+    "latest_age_seconds": 55.1,
     "current_signal_fresh": true,
     "capital_utilisation": 1.0,
     "capital_efficiency_score": 100.0,
@@ -78,19 +78,19 @@
       "check": "freshness",
       "status": "PASS",
       "severity": "hard",
-      "detail": "candidate age 221s"
+      "detail": "candidate age 214s"
     },
     {
       "check": "sample_presence",
       "status": "PASS",
       "severity": "hard",
-      "detail": "20 observations; need at least 6"
+      "detail": "19 observations; need at least 6"
     },
     {
       "check": "positive_edge_evidence",
       "status": "PASS",
       "severity": "hard",
-      "detail": "positive_observations=20, median_positive_edge_bps=38.5000"
+      "detail": "positive_observations=19, median_positive_edge_bps=38.5000"
     },
     {
       "check": "persistence",
@@ -102,7 +102,7 @@
       "check": "latest_edge_sign",
       "status": "PASS",
       "severity": "soft",
-      "detail": "latest_edge_bps=39.5000"
+      "detail": "latest_edge_bps=36.5000"
     },
     {
       "check": "economic_relevance",
