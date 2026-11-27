@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-26T23:57:07+00:00",
+  "generated_at_utc": "2026-11-27T03:34:39+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -2777,11 +2777,11 @@
     "funding_spread|INITUSDT": {
       "strategy": "funding_spread",
       "label": "INITUSDT",
-      "snapshots": 41,
-      "survives": 14,
+      "snapshots": 42,
+      "survives": 15,
       "rejected": 17,
       "insufficient": 10,
-      "consecutive_non_survivals": 15,
+      "consecutive_non_survivals": 0,
       "reason_counts": {
         "persistence=0.316; need at least 0.70": 2,
         "latest funding direction matches 32% of independent basis buckets; require >= 50%": 2,
@@ -2817,17 +2817,13 @@
         "persistence=0.611; need at least 0.70": 2,
         "candidate age 86515s": 1
       },
-      "last_verdict": "REJECTED",
-      "last_seen_utc": "2026-11-16T13:10:33+00:00",
-      "last_latest_edge_bps": 22.08,
-      "last_median_positive_edge_bps": 20.24,
-      "last_persistence": 0.6111,
-      "last_reasons": [
-        "candidate age 86515s",
-        "persistence=0.611; need at least 0.70",
-        "no matching executable-entry probe at EUR 250 for INITUSDT long Bitget / short Gate"
-      ],
-      "updated_at_utc": "2026-11-17T13:12:28+00:00"
+      "last_verdict": "SURVIVES_KILLER",
+      "last_seen_utc": "2026-11-27T03:30:13+00:00",
+      "last_latest_edge_bps": 38.36,
+      "last_median_positive_edge_bps": 38.36,
+      "last_persistence": 0.8333,
+      "last_reasons": [],
+      "updated_at_utc": "2026-11-27T03:34:39+00:00"
     },
     "funding_spread|ARIAUSDT": {
       "strategy": "funding_spread",
