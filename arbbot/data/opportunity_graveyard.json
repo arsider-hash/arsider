@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-27T23:35:05+00:00",
+  "generated_at_utc": "2026-11-27T23:54:43+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -30,13 +30,13 @@
     "stable_dislocation|FDUSD:Binance": {
       "strategy": "stable_dislocation",
       "label": "FDUSD:Binance",
-      "snapshots": 666,
+      "snapshots": 667,
       "survives": 0,
       "rejected": 0,
-      "insufficient": 666,
-      "consecutive_non_survivals": 666,
+      "insufficient": 667,
+      "consecutive_non_survivals": 667,
       "reason_counts": {
-        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 666,
+        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 667,
         "persistence=0.486; need at least 0.70": 1,
         "persistence=0.500; need at least 0.70": 2,
         "persistence=0.543; need at least 0.70": 1,
@@ -56,14 +56,14 @@
         "persistence=0.567; need at least 0.70": 1
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-11-27T23:31:31+00:00",
+      "last_seen_utc": "2026-11-27T23:51:04+00:00",
       "last_latest_edge_bps": 36.5,
       "last_median_positive_edge_bps": 38.5,
       "last_persistence": 1.0,
       "last_reasons": [
         "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified"
       ],
-      "updated_at_utc": "2026-11-27T23:35:05+00:00"
+      "updated_at_utc": "2026-11-27T23:54:43+00:00"
     },
     "funding_spread|VTHOUSDT": {
       "strategy": "funding_spread",
@@ -1251,15 +1251,15 @@
     "funding_spread|SKHYNIXUSDT": {
       "strategy": "funding_spread",
       "label": "SKHYNIXUSDT",
-      "snapshots": 24,
+      "snapshots": 25,
       "survives": 11,
       "rejected": 0,
-      "insufficient": 13,
-      "consecutive_non_survivals": 3,
+      "insufficient": 14,
+      "consecutive_non_survivals": 4,
       "reason_counts": {
         "persistence=0.417; need at least 0.70": 1,
         "latest/median edge ratio=0.000; latest=0.000 bps/8h, median=4.790; require >= 0.25 to rule out sharp edge decay": 2,
-        "no matching executable-entry probe at EUR 250 for SKHYNIXUSDT long Bitget / short Gate": 8,
+        "no matching executable-entry probe at EUR 250 for SKHYNIXUSDT long Bitget / short Gate": 9,
         "persistence=0.408; need at least 0.70": 1,
         "persistence=0.375; need at least 0.70": 1,
         "latest/median edge ratio=0.000; latest=0.000 bps/8h, median=4.720; require >= 0.25 to rule out sharp edge decay": 1,
@@ -1277,18 +1277,18 @@
         "latest/median edge ratio=0.018; latest=0.636 bps/8h, median=35.049; require >= 0.25 to rule out sharp edge decay": 1,
         "latest/median edge ratio=0.105; latest=3.160 bps/8h, median=30.011; require >= 0.25 to rule out sharp edge decay": 1,
         "latest/median edge ratio=0.000; latest=0.000 bps/8h, median=30.011; require >= 0.25 to rule out sharp edge decay": 1,
-        "latest/median edge ratio=0.000; latest=0.000 bps/8h, median=34.674; require >= 0.25 to rule out sharp edge decay": 1
+        "latest/median edge ratio=0.000; latest=0.000 bps/8h, median=34.674; require >= 0.25 to rule out sharp edge decay": 2
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-11-27T23:30:59+00:00",
+      "last_seen_utc": "2026-11-27T23:50:21+00:00",
       "last_latest_edge_bps": 0.0,
       "last_median_positive_edge_bps": 34.674,
-      "last_persistence": 0.75,
+      "last_persistence": 0.7241,
       "last_reasons": [
         "latest/median edge ratio=0.000; latest=0.000 bps/8h, median=34.674; require >= 0.25 to rule out sharp edge decay",
         "no matching executable-entry probe at EUR 250 for SKHYNIXUSDT long Bitget / short Gate"
       ],
-      "updated_at_utc": "2026-11-27T23:35:05+00:00"
+      "updated_at_utc": "2026-11-27T23:54:43+00:00"
     },
     "funding_spread|MUUSDT": {
       "strategy": "funding_spread",
