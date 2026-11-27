@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-27T15:43:32+00:00",
+  "generated_at_utc": "2026-11-27T18:55:54+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -30,13 +30,13 @@
     "stable_dislocation|FDUSD:Binance": {
       "strategy": "stable_dislocation",
       "label": "FDUSD:Binance",
-      "snapshots": 663,
+      "snapshots": 664,
       "survives": 0,
       "rejected": 0,
-      "insufficient": 663,
-      "consecutive_non_survivals": 663,
+      "insufficient": 664,
+      "consecutive_non_survivals": 664,
       "reason_counts": {
-        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 663,
+        "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified": 664,
         "persistence=0.486; need at least 0.70": 1,
         "persistence=0.500; need at least 0.70": 2,
         "persistence=0.543; need at least 0.70": 1,
@@ -56,14 +56,14 @@
         "persistence=0.567; need at least 0.70": 1
       },
       "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-11-27T15:40:00+00:00",
-      "last_latest_edge_bps": 36.5,
+      "last_seen_utc": "2026-11-27T18:52:19+00:00",
+      "last_latest_edge_bps": 37.5,
       "last_median_positive_edge_bps": 38.5,
       "last_persistence": 1.0,
       "last_reasons": [
         "peg deviation is not executable profit until a concrete redemption/convergence exit path, fees and settlement friction are verified"
       ],
-      "updated_at_utc": "2026-11-27T15:43:32+00:00"
+      "updated_at_utc": "2026-11-27T18:55:54+00:00"
     },
     "funding_spread|VTHOUSDT": {
       "strategy": "funding_spread",
@@ -3105,6 +3105,29 @@
         "no matching executable-entry probe at EUR 250 for PROMUSDT short Bitget / long Gate"
       ],
       "updated_at_utc": "2026-11-25T22:55:23+00:00"
+    },
+    "funding_spread|MANTRAUSDT": {
+      "strategy": "funding_spread",
+      "label": "MANTRAUSDT",
+      "snapshots": 1,
+      "survives": 0,
+      "rejected": 1,
+      "insufficient": 0,
+      "consecutive_non_survivals": 1,
+      "reason_counts": {
+        "candidate age 50273s": 1,
+        "no matching executable-entry probe at EUR 250 for MANTRAUSDT short Bitget / long Gate": 1
+      },
+      "last_verdict": "REJECTED",
+      "last_seen_utc": "2026-11-27T04:58:01+00:00",
+      "last_latest_edge_bps": 22.192,
+      "last_median_positive_edge_bps": 10.162,
+      "last_persistence": 0.7778,
+      "last_reasons": [
+        "candidate age 50273s",
+        "no matching executable-entry probe at EUR 250 for MANTRAUSDT short Bitget / long Gate"
+      ],
+      "updated_at_utc": "2026-11-27T18:55:54+00:00"
     }
   },
   "note": "Historical failure memory is diagnostic evidence only. It cannot loosen gates or create READY."
