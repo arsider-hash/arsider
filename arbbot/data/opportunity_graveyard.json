@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-28T03:58:57+00:00",
+  "generated_at_utc": "2026-11-28T05:14:43+00:00",
   "mode": "falsification_memory_only",
   "can_promote_candidate": false,
   "entries": {
@@ -1549,11 +1549,11 @@
     "funding_spread|SKHYUSDT": {
       "strategy": "funding_spread",
       "label": "SKHYUSDT",
-      "snapshots": 5,
-      "survives": 1,
+      "snapshots": 6,
+      "survives": 2,
       "rejected": 0,
       "insufficient": 4,
-      "consecutive_non_survivals": 1,
+      "consecutive_non_survivals": 0,
       "reason_counts": {
         "persistence=0.500; need at least 0.70": 2,
         "latest/median edge ratio=0.000; latest=0.000 bps/8h, median=5.925; require >= 0.25 to rule out sharp edge decay": 2,
@@ -1561,16 +1561,13 @@
         "persistence=0.476; need at least 0.70": 1,
         "latest/median edge ratio=0.137; latest=0.760 bps/8h, median=5.540; require >= 0.25 to rule out sharp edge decay": 1
       },
-      "last_verdict": "INSUFFICIENT_EVIDENCE",
-      "last_seen_utc": "2026-10-06T13:49:57+00:00",
-      "last_latest_edge_bps": 0.76,
-      "last_median_positive_edge_bps": 5.54,
-      "last_persistence": 0.7333,
-      "last_reasons": [
-        "latest/median edge ratio=0.137; latest=0.760 bps/8h, median=5.540; require >= 0.25 to rule out sharp edge decay",
-        "no matching executable-entry probe at EUR 250 for SKHYUSDT long Bitget / short Gate"
-      ],
-      "updated_at_utc": "2026-10-06T13:51:36+00:00"
+      "last_verdict": "SURVIVES_KILLER",
+      "last_seen_utc": "2026-11-28T05:10:33+00:00",
+      "last_latest_edge_bps": 6.184,
+      "last_median_positive_edge_bps": 11.097,
+      "last_persistence": 0.8214,
+      "last_reasons": [],
+      "updated_at_utc": "2026-11-28T05:14:43+00:00"
     },
     "funding_spread|SANDUSDT": {
       "strategy": "funding_spread",
